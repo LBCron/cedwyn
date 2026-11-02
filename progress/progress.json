@@ -1,0 +1,786 @@
+{
+ "title": "Research progress — the Great House (Tŷ Mawr) records programme",
+ "generated": "2026-11-02T22:04Z",
+ "about": "Counts from the project correspondence register: every records question sent to an institution and every reply. Organisations only; no message text and no personal names.",
+ "totals": {
+  "institutions": 69,
+  "questions_sent": 524,
+  "replies": 246,
+  "automatic_acknowledgements": 291,
+  "records_disclosed": 47,
+  "not_held": 57,
+  "refused": 6,
+  "pointed_elsewhere": 47
+ },
+ "last_30_days": {
+  "questions_sent": 216,
+  "replies": 84,
+  "automatic_acknowledgements": 90
+ },
+ "waiting_on_institutions": 36,
+ "by_month": [
+  {
+   "month": "2026-01",
+   "asked": 11,
+   "replies": 0,
+   "records": 0
+  },
+  {
+   "month": "2026-02",
+   "asked": 25,
+   "replies": 16,
+   "records": 4
+  },
+  {
+   "month": "2026-03",
+   "asked": 5,
+   "replies": 3,
+   "records": 1
+  },
+  {
+   "month": "2026-04",
+   "asked": 5,
+   "replies": 3,
+   "records": 1
+  },
+  {
+   "month": "2026-05",
+   "asked": 23,
+   "replies": 13,
+   "records": 2
+  },
+  {
+   "month": "2026-06",
+   "asked": 48,
+   "replies": 20,
+   "records": 7
+  },
+  {
+   "month": "2026-07",
+   "asked": 43,
+   "replies": 27,
+   "records": 4
+  },
+  {
+   "month": "2026-08",
+   "asked": 56,
+   "replies": 33,
+   "records": 3
+  },
+  {
+   "month": "2026-09",
+   "asked": 81,
+   "replies": 42,
+   "records": 12
+  },
+  {
+   "month": "2026-10",
+   "asked": 213,
+   "replies": 78,
+   "records": 12
+  },
+  {
+   "month": "2026-11",
+   "asked": 5,
+   "replies": 6,
+   "records": 0
+  }
+ ],
+ "institutions": [
+  {
+   "institution": "Glamorgan Archives",
+   "questions_sent": 45,
+   "replies": 38,
+   "outcomes": {
+    "asked for clarification or a fee": 5,
+    "answered, no records": 5,
+    "pointed elsewhere": 5,
+    "records disclosed": 13,
+    "not held": 10
+   },
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Vale of Glamorgan Council",
+   "questions_sent": 56,
+   "replies": 17,
+   "outcomes": {
+    "answered, no records": 6,
+    "asked for clarification or a fee": 4,
+    "records disclosed": 3,
+    "review / complaint outcome": 3,
+    "pointed elsewhere": 1
+   },
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Welsh Government / Cadw",
+   "questions_sent": 45,
+   "replies": 16,
+   "outcomes": {
+    "pointed elsewhere": 2,
+    "records disclosed": 5,
+    "answered, no records": 4,
+    "review / complaint outcome": 1,
+    "not held": 4
+   },
+   "last_activity": "2026-10-30",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "HM Land Registry",
+   "questions_sent": 36,
+   "replies": 7,
+   "outcomes": {
+    "asked for clarification or a fee": 2,
+    "pointed elsewhere": 3,
+    "answered, no records": 2
+   },
+   "last_activity": "2026-10-31",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "The National Archives",
+   "questions_sent": 27,
+   "replies": 12,
+   "outcomes": {
+    "pointed elsewhere": 3,
+    "not held": 3,
+    "records disclosed": 4,
+    "asked for clarification or a fee": 2
+   },
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Amgueddfa Cymru - Museum Wales",
+   "questions_sent": 21,
+   "replies": 17,
+   "outcomes": {
+    "asked for clarification or a fee": 2,
+    "not held": 8,
+    "review / complaint outcome": 2,
+    "answered, no records": 2,
+    "records disclosed": 3
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Ministry of Justice / HMCTS",
+   "questions_sent": 18,
+   "replies": 14,
+   "outcomes": {
+    "answered, no records": 1,
+    "asked for clarification or a fee": 6,
+    "not held": 3,
+    "records disclosed": 2,
+    "pointed elsewhere": 1,
+    "review / complaint outcome": 1
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "National Library of Wales",
+   "questions_sent": 21,
+   "replies": 11,
+   "outcomes": {
+    "pointed elsewhere": 2,
+    "records disclosed": 3,
+    "review / complaint outcome": 1,
+    "answered, no records": 4,
+    "not held": 1
+   },
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Llandough Community Council",
+   "questions_sent": 19,
+   "replies": 10,
+   "outcomes": {
+    "answered, no records": 7,
+    "pointed elsewhere": 1,
+    "not held": 1,
+    "refused": 1
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Heneb (formerly GGAT) / Historic Environment Record",
+   "questions_sent": 18,
+   "replies": 10,
+   "outcomes": {
+    "pointed elsewhere": 2,
+    "not held": 3,
+    "records disclosed": 2,
+    "refused": 3
+   },
+   "last_activity": "2026-11-02",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "RCAHMW (Royal Commission)",
+   "questions_sent": 20,
+   "replies": 8,
+   "outcomes": {
+    "records disclosed": 7,
+    "asked for clarification or a fee": 1
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "South Wales Police",
+   "questions_sent": 17,
+   "replies": 9,
+   "outcomes": {
+    "pointed elsewhere": 2,
+    "not held": 2,
+    "asked for clarification or a fee": 3,
+    "answered, no records": 1
+   },
+   "last_activity": "2026-10-31",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Member of Parliament",
+   "questions_sent": 19,
+   "replies": 3,
+   "outcomes": {
+    "pointed elsewhere": 1,
+    "asked for clarification or a fee": 1,
+    "records disclosed": 1
+   },
+   "last_activity": "2026-10-21",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Senedd",
+   "questions_sent": 13,
+   "replies": 6,
+   "outcomes": {
+    "pointed elsewhere": 5,
+    "answered, no records": 1
+   },
+   "last_activity": "2026-09-28",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Cardiff and Vale University Health Board",
+   "questions_sent": 9,
+   "replies": 8,
+   "outcomes": {
+    "not held": 2,
+    "asked for clarification or a fee": 1,
+    "pointed elsewhere": 3,
+    "answered, no records": 2
+   },
+   "last_activity": "2026-10-21",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "BP",
+   "questions_sent": 11,
+   "replies": 3,
+   "outcomes": {
+    "refused": 1,
+    "not held": 1
+   },
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "ITV Archive",
+   "questions_sent": 7,
+   "replies": 5,
+   "outcomes": {
+    "asked for clarification or a fee": 2,
+    "answered, no records": 1,
+    "pointed elsewhere": 2
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Dwr Cymru Welsh Water",
+   "questions_sent": 8,
+   "replies": 3,
+   "outcomes": {
+    "not held": 3
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Coroner's Service (RCT Council)",
+   "questions_sent": 5,
+   "replies": 4,
+   "outcomes": {
+    "refused": 1,
+    "not held": 2,
+    "pointed elsewhere": 1
+   },
+   "last_activity": "2026-10-26",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Crown Prosecution Service",
+   "questions_sent": 5,
+   "replies": 3,
+   "outcomes": {
+    "pointed elsewhere": 2,
+    "asked for clarification or a fee": 1
+   },
+   "last_activity": "2026-10-26",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "HM Land Registry (Independent Complaints Reviewer)",
+   "questions_sent": 5,
+   "replies": 3,
+   "outcomes": {
+    "answered, no records": 2,
+    "review / complaint outcome": 1
+   },
+   "last_activity": "2026-10-21",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "The Postal Museum",
+   "questions_sent": 4,
+   "replies": 4,
+   "outcomes": {
+    "not held": 4
+   },
+   "last_activity": "2026-08-06",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Vale of Glamorgan Council (Scrutiny)",
+   "questions_sent": 6,
+   "replies": 1,
+   "outcomes": {
+    "answered, no records": 1
+   },
+   "last_activity": "2026-10-26",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Defra",
+   "questions_sent": 3,
+   "replies": 3,
+   "outcomes": {
+    "not held": 3
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Northern Ireland Office",
+   "questions_sent": 2,
+   "replies": 4,
+   "outcomes": {
+    "not held": 2,
+    "answered, no records": 2
+   },
+   "last_activity": "2026-11-02",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Ordnance Survey",
+   "questions_sent": 4,
+   "replies": 2,
+   "outcomes": {
+    "pointed elsewhere": 1,
+    "asked for clarification or a fee": 1
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Parliamentary and Health Service Ombudsman",
+   "questions_sent": 4,
+   "replies": 2,
+   "outcomes": {
+    "pointed elsewhere": 1,
+    "asked for clarification or a fee": 1
+   },
+   "last_activity": "2026-07-20",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Historic England",
+   "questions_sent": 3,
+   "replies": 2,
+   "outcomes": {
+    "records disclosed": 2
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Information Commissioner's Office",
+   "questions_sent": 3,
+   "replies": 2,
+   "outcomes": {
+    "pointed elsewhere": 2
+   },
+   "last_activity": "2026-10-27",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Legal regulators",
+   "questions_sent": 4,
+   "replies": 1,
+   "outcomes": {
+    "answered, no records": 1
+   },
+   "last_activity": "2026-10-16",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Audit Wales",
+   "questions_sent": 4,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Cardiff / Vale Register Office",
+   "questions_sent": 2,
+   "replies": 2,
+   "outcomes": {
+    "pointed elsewhere": 2
+   },
+   "last_activity": "2026-09-30",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Companies House",
+   "questions_sent": 2,
+   "replies": 2,
+   "outcomes": {
+    "pointed elsewhere": 1,
+    "asked for clarification or a fee": 1
+   },
+   "last_activity": "2026-10-31",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Government Legal Department (Bona Vacantia)",
+   "questions_sent": 4,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Mount Stuart (Bute archive)",
+   "questions_sent": 4,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Persimmon Homes",
+   "questions_sent": 4,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Archaeology Data Service",
+   "questions_sent": 2,
+   "replies": 1,
+   "outcomes": {
+    "records disclosed": 1
+   },
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Blake Morgan LLP",
+   "questions_sent": 2,
+   "replies": 1,
+   "outcomes": {
+    "not held": 1
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Cardiff Council",
+   "questions_sent": 3,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Cotswold Archaeology",
+   "questions_sent": 2,
+   "replies": 1,
+   "outcomes": {
+    "pointed elsewhere": 1
+   },
+   "last_activity": "2026-10-19",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Department for Culture, Media and Sport",
+   "questions_sent": 2,
+   "replies": 1,
+   "outcomes": {
+    "not held": 1
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Local Government Association / WLGA",
+   "questions_sent": 3,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Ministry of Defence",
+   "questions_sent": 3,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-30",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Public Administration and Constitutional Affairs Committee",
+   "questions_sent": 2,
+   "replies": 1,
+   "outcomes": {
+    "answered, no records": 1
+   },
+   "last_activity": "2026-02-05",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Public Services Ombudsman for Wales",
+   "questions_sent": 0,
+   "replies": 3,
+   "outcomes": {
+    "pointed elsewhere": 3
+   },
+   "last_activity": "2026-05-09",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "RICS (Royal Institution of Chartered Surveyors)",
+   "questions_sent": 2,
+   "replies": 1,
+   "outcomes": {
+    "asked for clarification or a fee": 1
+   },
+   "last_activity": "2026-10-27",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Valuation Office Agency / HMRC",
+   "questions_sent": 3,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Wales Office",
+   "questions_sent": 3,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "BT Archives",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {
+    "records disclosed": 1
+   },
+   "last_activity": "2026-10-20",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Cardiff Central Library",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {},
+   "last_activity": "2026-10-23",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Darwin Gray",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {
+    "not held": 1
+   },
+   "last_activity": "2026-11-02",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Forest of Cardiff (registered charity)",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {
+    "not held": 1
+   },
+   "last_activity": "2026-10-29",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Historic Buildings & Places",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {
+    "not held": 1
+   },
+   "last_activity": "2026-11-02",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Linklaters",
+   "questions_sent": 2,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Natural Resources Wales",
+   "questions_sent": 2,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Arts Council England",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Capital Law",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Church of England archives (Lambeth Palace Library)",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-20",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Health and Safety Executive",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Hugh James (successor to John Loosemore & Co.)",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Loosemores (successor to John Loosemore & Co.)",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-29",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Modern Records Centre (University of Warwick)",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Prime Minister's Office / Cabinet Office",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-31",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "SPAB (Society for the Protection of Ancient Buildings)",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "The Law Society",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Counter Terrorism Policing (NaCTSO)",
+   "questions_sent": 0,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-13",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "SFO",
+   "questions_sent": 0,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-07-21",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Transport for Wales",
+   "questions_sent": 0,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-09-24",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "WhatDoTheyKnow",
+   "questions_sent": 0,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2025-06-28",
+   "waiting_on": "us"
+  }
+ ]
+}
