@@ -1,4 +1,4 @@
-// cedwyn-garden-store — REALM · Garden Store (webapp 46 of 59): our own plant store mirroring Garden City's catalogue
+// cedwyn-garden-store — Garden Store (webapp 46 of 59): our own plant store mirroring Garden City's catalogue
 // (gardencity.cymru). Every "Buy" opens HER product page in a new tab; she sells, takes payment and delivers. We never take payment.
 // Served at https://bucklerfamily.estate/garden-store/ (apex router -> cedwyn.bucklerfamily.estate/garden-store* -> this Worker).
 // Own database: SQLite-backed Durable Object GardenDB (catalogue rows + guest book), refreshed from her public /products.json
@@ -142,7 +142,7 @@ const CSS = `
 .gs-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--mut);border-bottom:1px solid var(--line);padding:6px 0;margin-bottom:10px;flex-wrap:wrap}
 .gs-bar a{color:var(--g);text-decoration:none}.gs-bar b{color:var(--ink)}
 .gs h1{font-size:1.6rem;margin:.3em 0 .1em;color:var(--g)}.gs h1 small{display:block;font-size:.8rem;color:var(--mut);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
-.gs-intro{color:var(--mut);margin:.2em 0 .8em;max-width:60ch}
+.gs-prov{margin:.35em 0 .5em;max-width:62ch;font-size:1.02rem;line-height:1.45;color:var(--g);font-style:italic}.gs-intro{color:var(--mut);margin:.2em 0 .8em;max-width:60ch}
 .gs-sold{display:inline-block;background:var(--g2);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px;color:var(--g)}
 .gs-tools{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
 .gs-tools input{flex:1 1 180px;min-width:0;padding:9px 11px;border:1px solid var(--line);border-radius:10px;font:inherit}
@@ -182,7 +182,7 @@ function shell(title, desc, body, extraHead) {
 }
 
 function navBar() {
-  return `<nav class="gs-bar" aria-label="Webapps"><a href="/analytics/" rel="prev">‹ Analytics</a><b>REALM · Garden Store · ${SLOT} of ${OF}</b><a href="/wiki/" rel="next">Wiki ›</a></nav>`;
+  return `<nav class="gs-bar" aria-label="Webapps"><a href="/analytics/" rel="prev">‹ Analytics</a><b>Garden Store · ${SLOT} of ${OF}</b><a href="/wiki/" rel="next">Wiki ›</a></nav>`;
 }
 
 function footer(gb) {
@@ -225,7 +225,8 @@ async function home(env) {
   const chips = groups + Object.entries(types).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<button type="button" data-f="${esc(slug(k))}" aria-pressed="false">${esc(k)} (${n})</button>`).join('');
   const inStock = ps.filter(p => p.a).length;
   const body = `${navBar()}
-<h1><small>REALM flowers &amp; plants</small>Garden Store</h1>
+<h1><small>Order the Garden&rsquo;s surviving flowers</small>Garden Store</h1>
+<p class="gs-prov">These flowers are grown by Mary Buckler II, granddaughter of Mary Williams of Great House Farm, Llandough &mdash; the Williams matriarchy estate and realm.</p>
 <p class="gs-intro">Peat-free plants grown in Wales, plus home and gift pieces, from Garden City's own catalogue: ${nPl} plants and ${ps.length - nPl} home &amp; gift items, ${inStock} in stock. Pick one here, then buy it on Garden City's shop.</p>
 <span class="gs-sold">Sold and fulfilled by Garden City (gardencity.cymru)</span>
 <div class="gs-tools"><input type="search" id="gs-q" placeholder="Search plants" aria-label="Search plants"></div>
@@ -237,7 +238,7 @@ ${footer(await gbEntries(env))}
 function go(){var t=(q.value||'').toLowerCase().trim(),k=0;cs.forEach(function(c){var ok=(!f||c.dataset.ty===f)&&(!g||c.dataset.g===g)&&(!t||c.dataset.q.indexOf(t)>=0);c.classList.toggle('gs-hide',!ok);if(ok)k++});n.textContent=(t||f||g)?k+' shown':''}
 q.addEventListener('input',go);[].forEach.call(document.querySelectorAll('.gs-chips button'),function(b){b.addEventListener('click',function(){f=b.dataset.f||'';g=b.dataset.g||'';[].forEach.call(document.querySelectorAll('.gs-chips button'),function(x){x.setAttribute('aria-pressed',x===b)});go()})})})();</script>
 ${WEBMCP}`;
-  return shell('Garden Store · REALM flowers & plants from Garden City, Wales', 'Peat-free plants grown in Wales from Garden City (gardencity.cymru). Prices are hers; every Buy opens her own product page. Sold and fulfilled by Garden City.', body);
+  return shell('Garden Store · Flowers & plants from Garden City, Wales', 'Peat-free plants grown in Wales from Garden City (gardencity.cymru). Prices are hers; every Buy opens her own product page. Sold and fulfilled by Garden City.', body);
 }
 
 async function product(env, h) {
@@ -270,7 +271,7 @@ function api(p) {
 }
 
 function llms(cat) {
-  return `# Garden Store (REALM flowers & plants) — webapp ${SLOT} of ${OF}
+  return `# Garden Store (flowers & plants) — webapp ${SLOT} of ${OF}
 > Our own plant store mirroring Garden City's catalogue (gardencity.cymru, peat-free plants grown in Wales). Garden City sells, takes payment and delivers; every buy link is her own product page. This store never takes payment.
 
 Version: ${VERSION}. Products: ${cat.products.length}. Catalogue last read: ${cat.fetched} (${cat.source}).
