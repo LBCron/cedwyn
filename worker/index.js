@@ -2,10 +2,12 @@
 // (gardencity.cymru). Every "Buy" opens HER product page in a new tab; she sells, takes payment and delivers. We never take payment.
 // Served at https://bucklerfamily.estate/garden-store/ (apex router -> cedwyn.bucklerfamily.estate/garden-store* -> this Worker).
 // Own database: SQLite-backed Durable Object GardenDB (catalogue rows + guest book), refreshed from her public /products.json
-// every 6 h by a DO alarm, seeded from the branch snapshot (catalogue.js). Images are shown from her own Shopify CDN (hotlinked).
+// every 6 h by a DO alarm, seeded from the branch snapshot (catalogue.js). 0.4.1: her newer photos are hosted here as phone-sized webp
+// (R2 binding IMG, served at /garden-store/img/<key>-800.webp | -400.webp; map in images.js from images.json); the rest still load from her Shopify CDN.
 // Source: unclehowell/cedwyn branch section/garden-store. — Sion's Tab agent
 import SEED from './catalogue.js';
 import META from './meta.js';
+import IMGMAP from './images.js';
 const VERSION = META.version;
 const SHOP = 'https://gardencity.cymru';
 const UTM = 'utm_source=bucklerfamily&utm_medium=garden-store';
@@ -16,7 +18,10 @@ const REFRESH_MS = 6 * 3600 * 1000;
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const gbp = p => '£' + Number(p || 0).toFixed(2);
 const buyUrl = (h, vid) => SHOP + '/products/' + encodeURIComponent(h) + '?' + UTM + (vid ? '&variant=' + vid : '');
-const img = (u, w) => u ? u + (u.includes('?') ? '&' : '?') + 'width=' + w : '';
+const IMG_BASE = 'https://bucklerfamily.estate/garden-store/img/';
+const IMAX = 16;
+const hosted = u => { const k = IMGMAP[String(u || '').split('?')[0]]; return k ? IMG_BASE + k + '-800.webp' : u; };
+const img = (u, w) => !u ? '' : u.startsWith(IMG_BASE) ? (w <= 400 ? u.replace(/-800\.webp$/, '-400.webp') : u) : u + (u.includes('?') ? '&' : '?') + 'width=' + w;
 const PLANT = /plant|shrub|grass|flower|bulb|tree|perennial|herb|fern|climber|hedg|lily|lilies|rose|fruit|seed|succulent|cact|palm|bamboo|phormium|hosta|alpine|bedding/i;
 const isPlant = p => PLANT.test(p.ty + ' ' + p.tg.join(' ') + ' ' + p.t);
 const slug = s => String(s || 'other').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'other';
@@ -43,7 +48,7 @@ const money = x => Number(x || 0).toFixed(2);
 function productLD(p) {
   const vs = p.v.length ? p.v : [['', p.p, p.a, '']];
   return [{ '@context': 'https://schema.org', '@type': 'Product', '@id': pageUrl(p) + '#product', name: p.t, description: p.d || p.t,
-    image: p.i.slice(0, 4), sku: p.h, brand: { '@type': 'Brand', name: 'Garden City' }, category: p.ty || 'Plants', url: pageUrl(p),
+    image: p.i.slice(0, IMAX), sku: p.h, brand: { '@type': 'Brand', name: 'Garden City' }, category: p.ty || 'Plants', url: pageUrl(p),
     offers: vs.map(v => ({ '@type': 'Offer', sku: String(v[3] || p.h), name: vname(v) || undefined, url: pageUrl(p), price: money(v[1]), priceCurrency: 'GBP',
       availability: v[2] ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock', itemCondition: 'https://schema.org/NewCondition',
       seller: SELLER_LD, shippingDetails: SHIP_LD, hasMerchantReturnPolicy: RET_LD })) },
@@ -62,7 +67,7 @@ function compact(p) {
   if (d.length > 420) d = d.slice(0, 420).replace(/\s+\S*$/, '') + '…';
   return { h: p.handle, t: String(p.title || '').trim(), ty: String(p.product_type || '').trim(), tg: (p.tags || []).slice(0, 6),
     p: mn.toFixed(2), pm: mx.toFixed(2), c: cmp.length && Math.max(...cmp) > mx ? Math.max(...cmp).toFixed(2) : '',
-    a: vs.some(v => v.available), i: (p.images || []).slice(0, 4).map(x => x.src).filter(Boolean),
+    a: vs.some(v => v.available), i: (p.images || []).slice(0, IMAX).map(x => x.src).filter(Boolean).map(hosted),
     v: vs.slice(0, 30).map(v => [String(v.title || '').trim(), v.price || '', !!v.available, v.id]), d, u: String(p.updated_at || '').slice(0, 10) };
 }
 
@@ -124,6 +129,7 @@ export class GardenDB {
     const u = new URL(req.url);
     if (!this.meta('count')) this.store(SEED.products, 'snapshot', SEED.fetched);
     if (!(await this.state.storage.getAlarm())) await this.state.storage.setAlarm(Date.now() + 2000);
+    if (this.meta('seed_build') !== META.build) { this.meta('seed_build', META.build); if (Date.parse(SEED.fetched) >= (Date.parse(this.meta('fetched')) || 0)) this.store(SEED.products, 'snapshot', SEED.fetched); }
     if (this.meta('source') === 'snapshot' && this.meta('retry_build') !== META.build) { this.meta('retry_build', META.build); await this.state.storage.setAlarm(Date.now() + 2000); }
     if (u.pathname === '/cat') {
       const rows = this.sql.exec('SELECT data FROM products ORDER BY seq').toArray().map(r => JSON.parse(r.data));
@@ -386,13 +392,13 @@ function sitemapXml(c) {
   const newest = ps.map(p => p.u || '').sort().pop() || '';
   const u = [`<url><loc>${SITE}${BASE}/</loc>${newest ? `<lastmod>${newest}</lastmod>` : ''}</url>`];
   for (let n = 2; n <= pages; n++) u.push(`<url><loc>${SITE}${BASE}/?page=${n}</loc></url>`);
-  for (const p of ps) u.push(`<url><loc>${xesc(pageUrl(p))}</loc>${p.u ? `<lastmod>${p.u}</lastmod>` : ''}${p.i[0] ? `<image:image><image:loc>${xesc(p.i[0])}</image:loc></image:image>` : ''}</url>`);
+  for (const p of ps) u.push(`<url><loc>${xesc(pageUrl(p))}</loc>${p.u ? `<lastmod>${p.u}</lastmod>` : ''}${p.i.map(x => `<image:image><image:loc>${xesc(x)}</image:loc></image:image>`).join('')}</url>`);
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${u.join('\n')}\n</urlset>\n`;
 }
 function feedRows(c) {
   const rows = [];
   for (const p of c.products) {
-    const vs = p.v.length ? p.v : [['', p.p, p.a, p.h]], many = vs.length > 1, link = pageUrl(p), desc = p.d || p.t, gpc = isPlant(p) ? '985' : '', more = p.i.slice(1, 4);
+    const vs = p.v.length ? p.v : [['', p.p, p.a, p.h]], many = vs.length > 1, link = pageUrl(p), desc = p.d || p.t, gpc = isPlant(p) ? '985' : '', more = p.i.slice(1, 11);
     for (const v of vs) {
       const vn = vname(v), reg = p.c && parseFloat(p.c) > parseFloat(v[1]) ? money(p.c) : '';
       rows.push({ p, id: String(v[3] || p.h), item_group_id: many ? p.h : '', title: (vn ? p.t + ' - ' + vn : p.t).slice(0, 150),
@@ -510,6 +516,13 @@ export default {
     if (p === BASE) return new Response(null, { status: 301, headers: { location: BASE + '/' + u.search } });
     if (!p.startsWith(BASE + '/')) return new Response('not found', { status: 404 });
     p = p.slice(BASE.length);
+    if (p.startsWith('/img/')) {
+      const key = p.slice(5);
+      if (!/^[a-z0-9-]+-(800|400)\.webp$/.test(key) || !env.IMG) return new Response('not found', { status: 404 });
+      const o = await env.IMG.get('garden-store/img/' + key);
+      if (!o) return new Response('not found', { status: 404 });
+      return new Response(o.body, { headers: { 'content-type': 'image/webp', 'cache-control': 'public, max-age=31536000, immutable', 'access-control-allow-origin': '*', etag: o.httpEtag } });
+    }
     if (p === '/' || p === '/index.html') return H(await home(env, u));
     if (p === '/version.json') return J({ version: VERSION, slot: SLOT, of: OF, seller: SHOP });
     if (p === '/llms.txt') return new Response(llms(await catalogue(env)), { headers: { 'content-type': 'text/plain; charset=utf-8' } });
