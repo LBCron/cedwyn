@@ -9,6 +9,8 @@ every Buy opens her product page; she takes payment and delivers. We never take 
 - Agents: /garden-store/llms.txt, /garden-store/catalogue.json, /garden-store/api/search?q=, /garden-store/api/product/<handle>,
   WebMCP garden_store_search / garden_store_product / garden_store_buy_link / garden_store_guestbook_sign
 - Images are shown from her own Shopify CDN, never copied. Guest book collapsed by default. No cross-promo rows.
+- Google (0.4.0): Product/Offer JSON-LD on product pages, /garden-store/sitemap.xml (in apex robots.txt + merged into apex /sitemap.xml by the agent-ready Worker via a service binding), Merchant Center feed /garden-store/feed.xml and /garden-store/feed.tsv
+- Dropship/agents (0.4.0): /garden-store/products.json, MCP POST /garden-store/mcp (discovery /garden-store/.well-known/mcp), WebMCP on document.modelContext + declarative search form
 - Option B (we hold the cart and send her the order) is a proposal only: OPTION-B.md.
 
 — Sion's Tab agent

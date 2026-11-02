@@ -21,6 +21,37 @@ const PLANT = /plant|shrub|grass|flower|bulb|tree|perennial|herb|fern|climber|he
 const isPlant = p => PLANT.test(p.ty + ' ' + p.tg.join(' ') + ' ' + p.t);
 const slug = s => String(s || 'other').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'other';
 
+// 0.4.0: Google (schema.org Product/Offer, Merchant Center feed, sitemap) + agents (WebMCP, MCP endpoint, dropship JSON).
+const SITE = 'https://bucklerfamily.estate';
+const SUPPLIER = { name: 'Garden City', legal_name: 'Garden City Cymru', url: SHOP, country: 'GB', platform: 'Shopify',
+  fulfilment: 'The supplier ships each order direct to the customer (dropship). Orders are placed on the supplier product page (order_url); the supplier takes the payment.',
+  dispatch: 'within 48 hours', delivery: '1-6 working days (UK)', shipping_gbp: 6, free_shipping_over_gbp: 50,
+  returns: '30 days from purchase; change-of-mind returns at the customer cost; damaged items replaced or refunded by the supplier',
+  policies: { shipping: SHOP + '/policies/shipping-policy', returns: SHOP + '/policies/refund-policy', terms: SHOP + '/policies/terms-of-service' } };
+const SHIP_LD = { '@type': 'OfferShippingDetails', shippingRate: { '@type': 'MonetaryAmount', value: 6, currency: 'GBP' },
+  shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'GB' },
+  deliveryTime: { '@type': 'ShippingDeliveryTime', handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 2, unitCode: 'DAY' },
+    transitTime: { '@type': 'QuantitativeValue', minValue: 1, maxValue: 6, unitCode: 'DAY' } } };
+const RET_LD = { '@type': 'MerchantReturnPolicy', applicableCountry: 'GB', returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+  merchantReturnDays: 30, returnMethod: 'https://schema.org/ReturnByMail', returnFees: 'https://schema.org/ReturnShippingFees' };
+const SELLER_LD = { '@type': 'Organization', name: 'Garden City', url: SHOP };
+const vname = v => (v && v[0] && !/^default title$/i.test(v[0])) ? v[0] : '';
+const pageUrl = p => SITE + BASE + '/p/' + encodeURIComponent(p.h) + '/';
+const ld = o => '<script type="application/ld+json">' + JSON.stringify(o).replace(/</g, '\\u003c') + '</script>';
+const xesc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[c])).replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '');
+const money = x => Number(x || 0).toFixed(2);
+function productLD(p) {
+  const vs = p.v.length ? p.v : [['', p.p, p.a, '']];
+  return [{ '@context': 'https://schema.org', '@type': 'Product', '@id': pageUrl(p) + '#product', name: p.t, description: p.d || p.t,
+    image: p.i.slice(0, 4), sku: p.h, brand: { '@type': 'Brand', name: 'Garden City' }, category: p.ty || 'Plants', url: pageUrl(p),
+    offers: vs.map(v => ({ '@type': 'Offer', sku: String(v[3] || p.h), name: vname(v) || undefined, url: pageUrl(p), price: money(v[1]), priceCurrency: 'GBP',
+      availability: v[2] ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock', itemCondition: 'https://schema.org/NewCondition',
+      seller: SELLER_LD, shippingDetails: SHIP_LD, hasMerchantReturnPolicy: RET_LD })) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Garden Store', item: SITE + BASE + '/' },
+    { '@type': 'ListItem', position: 2, name: p.t, item: pageUrl(p) }] }];
+}
+
 function compact(p) {
   const vs = p.variants || [];
   const prices = vs.map(v => parseFloat(v.price)).filter(x => !isNaN(x));
@@ -183,9 +214,9 @@ const CSS = `
 function shell(title, desc, body, extraHead) {
   return `<!doctype html><html lang="en" data-cw-noclip data-cw-nolevels><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><meta name="theme-color" content="#2f5d3a">
-<link rel="canonical" href="https://bucklerfamily.estate${extraHead && extraHead.canon || BASE + '/'}">
-<link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="For AI agents"><link rel="alternate" type="application/json" href="${BASE}/catalogue.json" title="Catalogue (JSON)">
-<meta name="ai-agents" content="Catalogue: ${BASE}/catalogue.json · search: ${BASE}/api/search?q= · product: ${BASE}/api/product/<handle> · WebMCP tools garden_store_* · guest book: POST ${BASE}/api/guestbook">
+<link rel="canonical" href="https://bucklerfamily.estate${extraHead && extraHead.canon || BASE + '/'}">${extraHead && extraHead.head || ''}
+<link rel="alternate" type="text/plain" href="${BASE}/llms.txt" title="For AI agents"><link rel="alternate" type="application/json" href="${BASE}/catalogue.json" title="Catalogue (JSON)"><link rel="alternate" type="application/rss+xml" href="${BASE}/feed.xml" title="Product feed"><link rel="sitemap" type="application/xml" href="${BASE}/sitemap.xml">
+<meta name="ai-agents" content="Dropship catalogue: ${BASE}/products.json · MCP: POST ${BASE}/mcp (discovery ${BASE}/.well-known/mcp) · search: ${BASE}/api/search?q= · product: ${BASE}/api/product/<handle> · WebMCP tools garden_store_* · Merchant feed: ${BASE}/feed.xml · guest book: POST ${BASE}/api/guestbook">
 <style>${CSS}</style><script src="/_cedwyn/ghf/ghf-boot.js?v=2.1.19"></script></head><body class="gs"><main class="gs-w" data-scope="online">${body}</main></body></html>`;
 }
 
@@ -202,16 +233,20 @@ function footer(gb) {
 <p><b>Sold and fulfilled by Garden City (gardencity.cymru).</b> This store mirrors Garden City's own catalogue: prices are hers, and every Buy button opens her product page, where she takes the order, the payment and the delivery. We never take payment and hold no card details.</p>
 <details class="gs-ver" id="gs-ver"><summary>v${esc(VERSION)} ⓘ changelog</summary><div class="gs-tw"><table><thead><tr><th>Version</th><th>Date</th><th>Change</th></tr></thead><tbody>${rows}</tbody></table></div></details>
 <details class="gs-gb" id="gs-gb"><summary>Agent guest book (${n})</summary><div class="gs-tw"><table><thead><tr><th>Date</th><th>Version</th><th>Change</th><th>Who</th></tr></thead><tbody>${gbr}</tbody></table></div></details>
-<p data-for-agents hidden>Agents: read ${BASE}/llms.txt. Catalogue ${BASE}/catalogue.json; search ${BASE}/api/search?q=; one product ${BASE}/api/product/&lt;handle&gt; (its buy_url is Garden City's own product page). Log every change you make to this webapp with POST ${BASE}/api/guestbook {"who","change","version"} or the WebMCP tool garden_store_guestbook_sign.</p>
+<p data-for-agents hidden>Agents: read ${BASE}/llms.txt. Dropship catalogue ${BASE}/products.json; MCP POST ${BASE}/mcp; catalogue ${BASE}/catalogue.json; search ${BASE}/api/search?q=; one product ${BASE}/api/product/&lt;handle&gt; (its buy_url is Garden City's own product page). Log every change you make to this webapp with POST ${BASE}/api/guestbook {"who","change","version"} or the WebMCP tool garden_store_guestbook_sign.</p>
 </footer>`;
 }
 
 const WEBMCP = `<script>(function(){var B='${BASE}';function j(u,o){return fetch(u,o).then(function(r){return r.json()})}
-var tools=[{name:'garden_store_search',description:'Search the Garden Store (plants from Garden City, gardencity.cymru). Returns products with price, stock and buy_url (her product page).',inputSchema:{type:'object',properties:{query:{type:'string'},type:{type:'string'},in_stock_only:{type:'boolean'}}},execute:function(a){a=a||{};return j(B+'/api/search?q='+encodeURIComponent(a.query||'')+'&type='+encodeURIComponent(a.type||'')+(a.in_stock_only?'&stock=1':''))}},
-{name:'garden_store_product',description:'One product by handle: variants, prices, images and buy_url (Garden City product page; she takes payment).',inputSchema:{type:'object',properties:{handle:{type:'string'}},required:['handle']},execute:function(a){return j(B+'/api/product/'+encodeURIComponent(a.handle))}},
-{name:'garden_store_buy_link',description:'The exact Garden City product page to buy a product (opens her shop; we never take payment).',inputSchema:{type:'object',properties:{handle:{type:'string'},variant_id:{type:'number'}},required:['handle']},execute:function(a){return {buy_url:'${SHOP}/products/'+encodeURIComponent(a.handle)+'?${UTM}'+(a.variant_id?'&variant='+a.variant_id:'')}}},
-{name:'garden_store_guestbook_sign',description:'Log a change you made to this webapp in its agent guest book.',inputSchema:{type:'object',properties:{who:{type:'string'},change:{type:'string'},version:{type:'string'}},required:['who','change']},execute:function(a){return j(B+'/api/guestbook',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(a)})}}];
-var mc=navigator.modelContext;if(mc){if(typeof mc.registerTool==='function')tools.forEach(function(t){try{mc.registerTool(t)}catch(e){}});else if(typeof mc.provideContext==='function')try{mc.provideContext({tools:tools})}catch(e){}}
+var RO={readOnlyHint:true,untrustedContentHint:true},S={type:'object',properties:{query:{type:'string',description:'Words to match in the product name, type, tags or description'},type:{type:'string',description:'Product type, e.g. Perennial'},in_stock_only:{type:'boolean'}}};
+var tools=[{name:'garden_store_search',title:'Search the garden store',description:'Search the Garden Store catalogue (plants and home & gift items supplied and shipped by Garden City, gardencity.cymru). Returns up to 50 products with price (GBP), stock, supplier order_url and dropship details. Read-only; never takes payment.',inputSchema:S,annotations:RO,execute:function(a){a=a||{};return j(B+'/api/search?q='+encodeURIComponent(a.query||'')+'&type='+encodeURIComponent(a.type||'')+(a.in_stock_only?'&stock=1':''))}},
+{name:'garden_store_list_products',title:'List products (paged)',description:'Page through the whole dropship catalogue: products with variants, prices (GBP), stock, images, supplier order_url, shipping and returns terms. Read-only.',inputSchema:{type:'object',properties:{page:{type:'integer',minimum:1},per_page:{type:'integer',minimum:1,maximum:100},in_stock_only:{type:'boolean'}}},annotations:RO,execute:function(a){a=a||{};return j(B+'/products.json?page='+(a.page||1)+'&per_page='+(a.per_page||50)+(a.in_stock_only?'&in_stock=1':''))}},
+{name:'garden_store_product',title:'Get one product',description:'One product by handle: variants, prices, images, the supplier order_url and dropship terms. Garden City takes the order, payment and delivery.',inputSchema:{type:'object',properties:{handle:{type:'string'}},required:['handle']},annotations:RO,execute:function(a){return j(B+'/api/product/'+encodeURIComponent(a.handle))}},
+{name:'garden_store_dropship_terms',title:'Dropship and reseller terms',description:'Supplier, fulfilment, shipping, returns, referral tagging and the rule that this store never takes payment.',inputSchema:{type:'object',properties:{}},annotations:{readOnlyHint:true},execute:function(){return j(B+'/products.json?per_page=1').then(function(r){return {supplier:r.supplier,ordering:r.ordering,referral:r.referral,reseller_rules:r.reseller_rules}})}},
+{name:'garden_store_buy_link',title:'Supplier order link',description:'The exact Garden City product page where a customer places the order and pays (opens her shop; this store never takes payment).',inputSchema:{type:'object',properties:{handle:{type:'string'},variant_id:{type:'number'}},required:['handle']},annotations:{readOnlyHint:true},execute:function(a){return {order_url:'${SHOP}/products/'+encodeURIComponent(a.handle)+'?${UTM}'+(a.variant_id?'&variant='+a.variant_id:'')}}},
+{name:'garden_store_guestbook_sign',title:'Sign the agent guest book',description:'Log a change you made to this webapp in its agent guest book.',inputSchema:{type:'object',properties:{who:{type:'string'},change:{type:'string'},version:{type:'string'}},required:['who','change']},annotations:{readOnlyHint:false},execute:function(a){return j(B+'/api/guestbook',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(a)})}}];
+var mc=(document.modelContext)||(navigator.modelContext);if(mc){if(typeof mc.registerTool==='function')tools.forEach(function(t){try{var r=mc.registerTool(t);if(r&&r.catch)r.catch(function(){})}catch(e){}});else if(typeof mc.provideContext==='function')try{mc.provideContext({tools:tools})}catch(e){}}
+var fm=document.getElementById('gs-form');if(fm)fm.addEventListener('submit',function(e){e.preventDefault();if(e.agentInvoked&&typeof e.respondWith==='function'){var q=document.getElementById('gs-q');e.respondWith(j(B+'/api/search?q='+encodeURIComponent(q?q.value:'')))}});
 window.cedwynGardenStore={tools:tools};
 function slot(){var s=document.querySelector('.ghf-v2-name small');if(s&&!s.textContent.trim())s.textContent='${SLOT} of ${OF}'}document.addEventListener('DOMContentLoaded',function(){slot();setTimeout(slot,1500)});})();</script>`;
 
@@ -266,7 +301,7 @@ async function home(env, u) {
 <p class="gs-prov">These flowers are grown by Mary Buckler II, granddaughter of Mary Williams of Great House Farm, Llandough &mdash; the Williams matriarchy estate and realm.</p>
 <p class="gs-intro">Peat-free plants grown in Wales, plus home and gift pieces, from Garden City's own catalogue: ${nPl} plants and ${ps.length - nPl} home &amp; gift items, ${inStock} in stock. Pick one here, then buy it on Garden City's shop.</p>
 <span class="gs-sold">Sold and fulfilled by Garden City (gardencity.cymru)</span>
-<div class="gs-tools"><input type="search" id="gs-q" placeholder="Search plants" aria-label="Search plants"></div>
+<form class="gs-tools" id="gs-form" role="search" action="${BASE}/" method="get" toolname="garden_store_search_form" tooldescription="Search the Garden Store catalogue of plants and home &amp; gift items supplied by Garden City; returns matching products as JSON with prices and supplier order links."><input type="search" id="gs-q" name="q" placeholder="Search plants" aria-label="Search plants" toolparamdescription="Words to match in the product name, type or tags"></form>
 <div class="gs-chips" role="group" aria-label="Filter by type"><button type="button" data-f="" aria-pressed="true">All (${ps.length})</button>${chips}</div>
 <p class="gs-note" id="gs-n" aria-live="polite">${shown.length ? first + '–' + last + ' of ' + shown.length : 'Nothing matches'}</p>
 <div class="gs-grid" id="gs-grid">${ps.map(p => card(p, !onPage.has(p.h))).join('')}</div>
@@ -284,7 +319,12 @@ pg.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest
 window.addEventListener('popstate',function(){read();go(false);setTimeout(function(){if(top)top.scrollIntoView({block:'start'})},60)});
 read();if(/page=\\d/.test(location.hash))history.replaceState(null,'',href(page));go(false)})();</script>
 ${WEBMCP}`;
-  return shell('Garden Store · Flowers & plants from Garden City, Wales', 'Peat-free plants grown in Wales from Garden City (gardencity.cymru). Prices are hers; every Buy opens her own product page. Sold and fulfilled by Garden City.', body);
+  const plain = !fq && !ft && !fg, canon = BASE + '/' + (plain && cur > 1 ? '?page=' + cur : '');
+  const listLD = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Garden Store' + (cur > 1 ? ' · page ' + cur : ''), url: SITE + canon,
+    mainEntity: { '@type': 'ItemList', numberOfItems: shown.length, itemListElement: shown.slice((cur - 1) * PER, cur * PER).map((p, k) => ({ '@type': 'ListItem', position: (cur - 1) * PER + k + 1, url: pageUrl(p), name: p.t })) } };
+  const rel = (cur > 1 ? `<link rel="prev" href="${esc(qs(cur - 1))}">` : '') + (cur < pages ? `<link rel="next" href="${esc(qs(cur + 1))}">` : '');
+  return shell('Garden Store · Flowers & plants from Garden City, Wales' + (cur > 1 ? ' · page ' + cur : ''), 'Peat-free plants grown in Wales from Garden City (gardencity.cymru). Prices are hers; every Buy opens her own product page. Sold and fulfilled by Garden City.', body,
+    { canon, head: rel + (plain ? '' : '<meta name="robots" content="noindex,follow">') + ld(listLD) });
 }
 
 async function product(env, h) {
@@ -307,13 +347,128 @@ ${p.d ? `<p style="margin-top:12px">${esc(p.d)}</p>` : ''}</div></div>
 ${footer(await gbEntries(env))}
 <script>(function(){var m=document.getElementById('gs-main');[].forEach.call(document.querySelectorAll('.gs-th a'),function(a){a.addEventListener('click',function(e){e.preventDefault();if(m)m.src=a.dataset.big})})})();</script>
 ${WEBMCP}`;
-  return shell(p.t + ' · Garden Store', (p.d || p.t).slice(0, 160), body, { canon: BASE + '/p/' + p.h + '/' });
+  const og = `<meta property="og:type" content="product"><meta property="og:title" content="${esc(p.t)}"><meta property="og:url" content="${esc(pageUrl(p))}">${p.i[0] ? `<meta property="og:image" content="${esc(img(p.i[0], 1200))}">` : ''}<meta property="product:price:amount" content="${money(p.p)}"><meta property="product:price:currency" content="GBP">`;
+  return shell(p.t + ' · Garden Store', (p.d || p.t).slice(0, 160), body, { canon: BASE + '/p/' + encodeURIComponent(p.h) + '/', head: og + productLD(p).map(ld).join('') });
 }
 
 function api(p) {
   return { handle: p.h, title: p.t, type: p.ty, tags: p.tg, price_gbp: p.p, price_max_gbp: p.pm, compare_at_gbp: p.c || null, in_stock: p.a,
     images: p.i, variants: p.v.map(v => ({ title: v[0], price_gbp: v[1], in_stock: v[2], variant_id: v[3], buy_url: buyUrl(p.h, v[3]) })),
-    description: p.d, page: 'https://bucklerfamily.estate' + BASE + '/p/' + p.h + '/', buy_url: buyUrl(p.h), seller: 'Garden City (gardencity.cymru)' };
+    description: p.d, page: 'https://bucklerfamily.estate' + BASE + '/p/' + p.h + '/', buy_url: buyUrl(p.h), seller: 'Garden City (gardencity.cymru)',
+    order_url: buyUrl(p.h), supplier_url: SHOP + '/products/' + encodeURIComponent(p.h), supplier: SUPPLIER.name, currency: 'GBP', rrp_gbp: p.p,
+    brand: 'Garden City', category: isPlant(p) ? 'plant' : 'home-and-gift', updated: p.u || null,
+    dropship: { fulfilled_by: SUPPLIER.name, ships_from: 'GB', dispatch: SUPPLIER.dispatch, delivery: SUPPLIER.delivery, shipping_gbp: SUPPLIER.shipping_gbp, free_shipping_over_gbp: SUPPLIER.free_shipping_over_gbp, returns: SUPPLIER.returns }, payment_taken_here: false };
+}
+
+// ---- 0.4.0 machine-facing outputs (no human page text)
+const RESELLER_RULES = ['Every order is placed and paid on the supplier product page (order_url). This store and its tools never take payment, hold card details or accept orders.',
+  'Prices are the supplier retail prices in GBP (rrp_gbp); check price and stock on order_url before quoting a customer.',
+  'Images are served from the supplier own CDN; link to them, do not re-host them.',
+  'Keep the referral tags on order_url so the referral is attributed; commission terms are not published and are a matter for the supplier.',
+  'Say "Sold and fulfilled by Garden City (gardencity.cymru)" wherever you list these products.'];
+const REFERRAL = { params: UTM, example: SHOP + '/products/<handle>?' + UTM, commission: 'not published; arrange with the supplier' };
+function filterProducts(ps, q, ty, stock) {
+  q = (q || '').toLowerCase().trim(); ty = (ty || '').toLowerCase().trim();
+  return ps.filter(x => (!q || (x.t + ' ' + x.ty + ' ' + x.tg.join(' ') + ' ' + x.d).toLowerCase().includes(q)) && (!ty || x.ty.toLowerCase().includes(ty)) && (!stock || x.a));
+}
+function productsJson(c, u) {
+  const sp = u.searchParams, all = filterProducts(c.products, sp.get('q'), sp.get('type'), sp.get('in_stock') === '1' || sp.get('stock') === '1');
+  const per = Math.min(250, Math.max(1, parseInt(sp.get('per_page') || '100', 10) || 100)), pages = Math.max(1, Math.ceil(all.length / per));
+  const page = Math.min(pages, Math.max(1, parseInt(sp.get('page') || '1', 10) || 1));
+  return { schema: 'garden-store-dropship/1', store: 'Garden Store', url: SITE + BASE + '/', version: VERSION, generated: new Date().toISOString(), catalogue_read: c.fetched,
+    supplier: SUPPLIER, ordering: { how: 'Send the customer to order_url (or the variant buy_url); the supplier takes the order, the payment and the delivery.', payment_taken_here: false },
+    referral: REFERRAL, reseller_rules: RESELLER_RULES, licence: 'Product data mirrors the supplier public catalogue; link back to order_url.',
+    count: all.length, page, per_page: per, pages, next: page < pages ? SITE + BASE + '/products.json?page=' + (page + 1) + '&per_page=' + per : null,
+    products: all.slice((page - 1) * per, page * per).map(api) };
+}
+function sitemapXml(c) {
+  const ps = c.products.filter(isPlant).concat(c.products.filter(p => !isPlant(p))), pages = Math.max(1, Math.ceil(ps.length / PER));
+  const newest = ps.map(p => p.u || '').sort().pop() || '';
+  const u = [`<url><loc>${SITE}${BASE}/</loc>${newest ? `<lastmod>${newest}</lastmod>` : ''}</url>`];
+  for (let n = 2; n <= pages; n++) u.push(`<url><loc>${SITE}${BASE}/?page=${n}</loc></url>`);
+  for (const p of ps) u.push(`<url><loc>${xesc(pageUrl(p))}</loc>${p.u ? `<lastmod>${p.u}</lastmod>` : ''}${p.i[0] ? `<image:image><image:loc>${xesc(p.i[0])}</image:loc></image:image>` : ''}</url>`);
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${u.join('\n')}\n</urlset>\n`;
+}
+function feedRows(c) {
+  const rows = [];
+  for (const p of c.products) {
+    const vs = p.v.length ? p.v : [['', p.p, p.a, p.h]], many = vs.length > 1, link = pageUrl(p), desc = p.d || p.t, gpc = isPlant(p) ? '985' : '', more = p.i.slice(1, 4);
+    for (const v of vs) {
+      const vn = vname(v), reg = p.c && parseFloat(p.c) > parseFloat(v[1]) ? money(p.c) : '';
+      rows.push({ p, id: String(v[3] || p.h), item_group_id: many ? p.h : '', title: (vn ? p.t + ' - ' + vn : p.t).slice(0, 150),
+        description: desc, link, image_link: p.i[0] || '', additional_image_link: more,
+        availability: v[2] ? 'in_stock' : 'out_of_stock', price: (reg || money(v[1])) + ' GBP', sale_price: reg ? money(v[1]) + ' GBP' : '',
+        brand: 'Garden City', condition: 'new', identifier_exists: 'no', google_product_category: gpc, product_type: p.ty || '' });
+    }
+  }
+  return rows;
+}
+const MEMO = {};
+function memo(k, c, f) { const key = k + '|' + c.fetched + '|' + c.products.length; if (!MEMO[k] || MEMO[k].key !== key) MEMO[k] = { key, v: f(c) }; return MEMO[k].v; }
+const cdata = s => '<![CDATA[' + String(s).split(']]>').join(']]]]><![CDATA[>') + ']]>';
+function feedXml(c) {
+  const t = (k, v) => v ? '<g:' + k + '>' + v + '</g:' + k + '>' : '';
+  const PD = new Map(), SHIPX = '<g:shipping><g:country>GB</g:country><g:price>6.00 GBP</g:price><g:min_handling_time>0</g:min_handling_time><g:max_handling_time>2</g:max_handling_time><g:min_transit_time>1</g:min_transit_time><g:max_transit_time>6</g:max_transit_time></g:shipping>';
+  const out = [];
+  for (const r of feedRows(c)) {
+    let pd = PD.get(r.p);
+    if (!pd) { pd = '<description>' + cdata(r.description) + '</description><link>' + xesc(r.link) + '</link>' + t('image_link', xesc(r.image_link)) + r.additional_image_link.map(x => t('additional_image_link', xesc(x))).join('') + t('brand', 'Garden City') + '<g:condition>new</g:condition><g:identifier_exists>no</g:identifier_exists>' + t('google_product_category', r.google_product_category) + t('product_type', cdata(r.product_type).replace(/^<!\[CDATA\[\]\]>$/, '')) + SHIPX; PD.set(r.p, pd); }
+    out.push('<item>' + t('id', r.id) + t('item_group_id', xesc(r.item_group_id)) + '<title>' + cdata(r.title) + '</title>' + pd + t('availability', r.availability) + t('price', r.price) + t('sale_price', r.sale_price) + '</item>');
+  }
+  return '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0"><channel><title>Garden Store · plants from Garden City, Wales</title><link>' + SITE + BASE + '/</link><description>Product feed for Google Merchant Center (free listings). Sold and fulfilled by Garden City (gardencity.cymru).</description>\n' + out.join('\n') + '\n</channel></rss>\n';
+}
+function feedTsv(c) {
+  const cols = ['id', 'item_group_id', 'title', 'description', 'link', 'image_link', 'additional_image_link', 'availability', 'price', 'sale_price', 'brand', 'condition', 'identifier_exists', 'google_product_category', 'product_type', 'shipping'];
+  const cl = v => String(Array.isArray(v) ? v.join(',') : v == null ? '' : v).replace(/[\t\r\n]+/g, ' ');
+  return cols.join('\t') + '\n' + feedRows(c).map(r => cols.map(k => cl(k === 'shipping' ? 'GB:::6.00 GBP' : r[k])).join('\t')).join('\n') + '\n';
+}
+
+// MCP (Streamable HTTP, JSON responses only, read-only): POST ${BASE}/mcp with JSON-RPC 2.0.
+const MCP_TOOLS = [
+  { name: 'search_products', title: 'Search products', description: 'Search the dropship catalogue (plants and home & gift items supplied and shipped by Garden City, gardencity.cymru). Returns products with GBP prices, stock, images, order_url and dropship terms.',
+    inputSchema: { type: 'object', properties: { query: { type: 'string' }, type: { type: 'string' }, in_stock_only: { type: 'boolean' }, limit: { type: 'integer', minimum: 1, maximum: 50 } } }, annotations: { readOnlyHint: true, openWorldHint: false } },
+  { name: 'list_products', title: 'List products (paged)', description: 'Page through every product with variants and supplier order links.',
+    inputSchema: { type: 'object', properties: { page: { type: 'integer', minimum: 1 }, per_page: { type: 'integer', minimum: 1, maximum: 100 }, in_stock_only: { type: 'boolean' } } }, annotations: { readOnlyHint: true, openWorldHint: false } },
+  { name: 'get_product', title: 'Get product', description: 'One product by handle with all variants, images, order_url per variant and dropship terms.',
+    inputSchema: { type: 'object', properties: { handle: { type: 'string' } }, required: ['handle'] }, annotations: { readOnlyHint: true, openWorldHint: false } },
+  { name: 'get_dropship_terms', title: 'Dropship terms', description: 'Supplier, fulfilment, shipping, returns, referral tagging and reseller rules. This store never takes payment.',
+    inputSchema: { type: 'object', properties: {} }, annotations: { readOnlyHint: true, openWorldHint: false } }];
+function mcpDiscovery() {
+  return { schema: 'mcp-discovery/1', name: 'garden-store', title: 'Garden Store (dropship plant catalogue)', version: VERSION,
+    description: 'Read-only tools for AI agents to list, search and get products supplied and shipped by Garden City (gardencity.cymru), with order links for resellers. No payment is taken by this store or its tools.',
+    mcp: { endpoint: SITE + BASE + '/mcp', transport: 'streamable-http', protocolVersion: '2025-06-18', auth: 'none', methods: ['initialize', 'tools/list', 'tools/call', 'ping'] },
+    webmcp: { page: SITE + BASE + '/', api: 'document.modelContext.registerTool (navigator.modelContext fallback)', tools: ['garden_store_search', 'garden_store_list_products', 'garden_store_product', 'garden_store_dropship_terms', 'garden_store_buy_link', 'garden_store_guestbook_sign'], declarative_form: 'garden_store_search_form' },
+    http: { products: SITE + BASE + '/products.json', search: SITE + BASE + '/api/search?q=', product: SITE + BASE + '/api/product/<handle>', catalogue: SITE + BASE + '/catalogue.json', merchant_feed_xml: SITE + BASE + '/feed.xml', merchant_feed_tsv: SITE + BASE + '/feed.tsv', sitemap: SITE + BASE + '/sitemap.xml', llms: SITE + BASE + '/llms.txt' },
+    tools: MCP_TOOLS, supplier: SUPPLIER, referral: REFERRAL, reseller_rules: RESELLER_RULES };
+}
+async function mcpCall(env, name, a) {
+  const c = await catalogue(env); a = a || {};
+  if (name === 'search_products') { const r = filterProducts(c.products, a.query, a.type, !!a.in_stock_only); return { count: r.length, products: r.slice(0, Math.min(50, a.limit || 20)).map(api) }; }
+  if (name === 'list_products') { const u = new URL(SITE + BASE + '/products.json'); u.searchParams.set('page', a.page || 1); u.searchParams.set('per_page', Math.min(100, a.per_page || 50)); if (a.in_stock_only) u.searchParams.set('in_stock', '1'); const j = productsJson(c, u); return { count: j.count, page: j.page, pages: j.pages, products: j.products }; }
+  if (name === 'get_product') { const x = c.products.find(y => y.h === String(a.handle || '')); if (!x) throw new Error('no such product: ' + a.handle); return api(x); }
+  if (name === 'get_dropship_terms') return { supplier: SUPPLIER, ordering: { how: 'Send the customer to order_url; the supplier takes the order, payment and delivery.', payment_taken_here: false }, referral: REFERRAL, reseller_rules: RESELLER_RULES };
+  throw new Error('unknown tool: ' + name);
+}
+async function mcpHandle(req, env) {
+  const H = { 'content-type': 'application/json; charset=utf-8', 'access-control-allow-origin': '*', 'access-control-allow-headers': 'content-type, mcp-protocol-version, mcp-session-id', 'cache-control': 'no-store' };
+  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: { ...H, 'access-control-allow-methods': 'POST, GET, OPTIONS' } });
+  if (req.method !== 'POST') return new Response(JSON.stringify(mcpDiscovery()), { status: 200, headers: H });
+  let msg; try { msg = await req.json(); } catch (e) { return new Response(JSON.stringify({ jsonrpc: '2.0', id: null, error: { code: -32700, message: 'Parse error' } }), { status: 400, headers: H }); }
+  const one = async m => {
+    if (!m || m.jsonrpc !== '2.0' || typeof m.method !== 'string') return { jsonrpc: '2.0', id: m && m.id != null ? m.id : null, error: { code: -32600, message: 'Invalid Request' } };
+    if (m.id === undefined) return null; // notification
+    try {
+      if (m.method === 'initialize') return { jsonrpc: '2.0', id: m.id, result: { protocolVersion: (m.params && m.params.protocolVersion) || '2025-06-18', capabilities: { tools: { listChanged: false } }, serverInfo: { name: 'garden-store', title: 'Garden Store', version: VERSION }, instructions: 'Read-only dropship catalogue. Orders are placed and paid on the supplier order_url; this server never takes payment.' } };
+      if (m.method === 'ping') return { jsonrpc: '2.0', id: m.id, result: {} };
+      if (m.method === 'tools/list') return { jsonrpc: '2.0', id: m.id, result: { tools: MCP_TOOLS } };
+      if (m.method === 'tools/call') { const p = m.params || {}; try { const out = await mcpCall(env, p.name, p.arguments); return { jsonrpc: '2.0', id: m.id, result: { content: [{ type: 'text', text: JSON.stringify(out) }], structuredContent: out, isError: false } }; } catch (e) { return { jsonrpc: '2.0', id: m.id, result: { content: [{ type: 'text', text: String(e.message || e) }], isError: true } }; } }
+      if (m.method === 'resources/list') return { jsonrpc: '2.0', id: m.id, result: { resources: [] } };
+      if (m.method === 'prompts/list') return { jsonrpc: '2.0', id: m.id, result: { prompts: [] } };
+      return { jsonrpc: '2.0', id: m.id, error: { code: -32601, message: 'Method not found' } };
+    } catch (e) { return { jsonrpc: '2.0', id: m.id, error: { code: -32603, message: 'Internal error' } }; }
+  };
+  if (Array.isArray(msg)) { const out = (await Promise.all(msg.map(one))).filter(Boolean); return out.length ? new Response(JSON.stringify(out), { headers: H }) : new Response(null, { status: 202, headers: H }); }
+  const out = await one(msg); return out ? new Response(JSON.stringify(out), { headers: H }) : new Response(null, { status: 202, headers: H });
 }
 
 function llms(cat) {
@@ -328,14 +483,19 @@ Version: ${VERSION}. Products: ${cat.products.length}. Catalogue last read: ${ca
 - ${BASE}/api/product/<handle> — one product with variants and buy_url
 - ${BASE}/?page=<n> — the grid for people, 20 products per page (also &q=, &type=, &group=plant|home)
 - ${BASE}/p/<handle>/ — the product page for people
+- ${BASE}/products.json?page=<n>&per_page=<1-250>&q=&type=&in_stock=1 — dropship catalogue for resellers: supplier, order_url per variant, shipping, returns, referral tags
+- ${BASE}/feed.xml and ${BASE}/feed.tsv — Google Merchant Center product feed (one row per variant)
+- ${BASE}/sitemap.xml — every page and product
 
 ## Talk
-- WebMCP tools on every page: garden_store_search, garden_store_product, garden_store_buy_link, garden_store_guestbook_sign
+- MCP server (Streamable HTTP, JSON, read-only, no auth): POST ${BASE}/mcp — tools search_products, list_products, get_product, get_dropship_terms; discovery ${BASE}/.well-known/mcp
+- WebMCP tools on every page (document.modelContext): garden_store_search, garden_store_list_products, garden_store_product, garden_store_dropship_terms, garden_store_buy_link, garden_store_guestbook_sign; declarative search form garden_store_search_form
 - POST ${BASE}/api/guestbook {"who","change","version"} — log any change you make to this webapp
 - POST ${BASE}/api/refresh — re-read Garden City's catalogue now (at most every 10 minutes; it also refreshes itself every 6 hours)
 
 ## Rules
 - Buy links go to ${SHOP}/products/<handle>?${UTM}. Never build a checkout, cart or payment form here.
+- Dropship: Garden City ships each order direct to the customer (dispatch within 48 hours, 1-6 working days, £6 shipping, free over £50, 30-day returns). Resellers send customers to order_url; keep the referral tags.
 - Prices are Garden City's; show "Sold and fulfilled by Garden City (gardencity.cymru)".
 - Images are shown from Garden City's own CDN; do not copy them elsewhere.
 `;
@@ -354,6 +514,12 @@ export default {
     if (p === '/version.json') return J({ version: VERSION, slot: SLOT, of: OF, seller: SHOP });
     if (p === '/llms.txt') return new Response(llms(await catalogue(env)), { headers: { 'content-type': 'text/plain; charset=utf-8' } });
     if (p === '/catalogue.json') { const c = await catalogue(env); return J({ version: VERSION, source: SHOP, catalogue: c.source, fetched: c.fetched, last_ok: c.last_ok || null, last_error: c.last_error || null, count: c.products.length, seller: 'Garden City (gardencity.cymru)', buy_url_pattern: SHOP + '/products/<handle>?' + UTM, products: c.products }); }
+    if (p === '/products.json') return J(productsJson(await catalogue(env), u));
+    if (p === '/sitemap.xml') return new Response(memo('sm', await catalogue(env), sitemapXml), { headers: { 'content-type': 'application/xml; charset=utf-8', 'cache-control': 'public, max-age=3600', 'access-control-allow-origin': '*' } });
+    if (p === '/feed.xml') return new Response(memo('fx', await catalogue(env), feedXml), { headers: { 'content-type': 'application/xml; charset=utf-8', 'cache-control': 'public, max-age=3600', 'access-control-allow-origin': '*' } });
+    if (p === '/feed.tsv') return new Response(memo('ft', await catalogue(env), feedTsv), { headers: { 'content-type': 'text/tab-separated-values; charset=utf-8', 'cache-control': 'public, max-age=3600', 'access-control-allow-origin': '*' } });
+    if (p === '/.well-known/mcp' || p === '/.well-known/mcp.json' || p === '/.well-known/webmcp.json') return J(mcpDiscovery());
+    if (p === '/mcp' || p === '/mcp/') return mcpHandle(req, env);
     if (p === '/api/search' || p === '/api/') {
       const c = await catalogue(env), q = (u.searchParams.get('q') || '').toLowerCase().trim(), ty = (u.searchParams.get('type') || '').toLowerCase().trim(), st = u.searchParams.get('stock') === '1';
       const r = c.products.filter(x => (!q || (x.t + ' ' + x.ty + ' ' + x.tg.join(' ') + ' ' + x.d).toLowerCase().includes(q)) && (!ty || x.ty.toLowerCase().includes(ty)) && (!st || x.a));
