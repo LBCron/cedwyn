@@ -36,12 +36,12 @@ var map=L.map("map",{zoomControl:true,attributionControl:true}).setView([51.4545
 var osm=L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{subdomains:"abc",maxZoom:19,attribution:"© OpenStreetMap contributors"}).addTo(map);
 var os6=L.tileLayer("https://mapseries-tilesets.s3.amazonaws.com/os/6inchsecond/{z}/{x}/{y}.png",{maxZoom:18,attribution:"OS six-inch c.1900, National Library of Scotland"});
 var D,tithe,stew,outl=L.layerGroup().addTo(map),hexL=L.layerGroup().addTo(map),res=12,sel=null;
-fetch("data/parcels.json?v=0.1.0").then(function(r){return r.json();}).then(function(d){D=d;init();});
+fetch("data/parcels.json?v=0.2.0").then(function(r){return r.json();}).then(function(d){D=d;init();});
 function hexPoly(c,r){var ce=D.c[c],t=D.tmpl[String(r)];return t.map(function(o){return [ce[0]+o[0],ce[1]+o[1]];});}
 function init(){
  var op=document.getElementById("l-op").value/100;
- tithe=L.imageOverlay("img/tithe-1841-overlay.webp",D.bounds,{opacity:op,attribution:"Tithe map 1841, National Library of Wales"}).addTo(map);
- stew=L.imageOverlay("img/stewart-plan-overlay.webp",D.bounds,{opacity:op});
+ tithe=L.imageOverlay("img/tithe-1841-overlay.webp?v=0.2.0",D.bounds,{opacity:op,attribution:"Tithe map 1841, National Library of Wales"}).addTo(map);
+ stew=L.imageOverlay("img/stewart-plan-overlay.webp?v=0.2.0",D.bounds,{opacity:op});
  var all=[];
  D.parcels.forEach(function(p,i){
   var pg=L.polygon(p.poly,{color:"#111",weight:1.4,fill:true,fillOpacity:0.04,fillColor:col(p),dashArray:p.read==="not read"?"4 3":null});
@@ -79,3 +79,11 @@ document.getElementById("l-os").addEventListener("change",function(e){e.target.c
 document.getElementById("l-op").addEventListener("input",function(e){var v=e.target.value/100;tithe&&tithe.setOpacity(v);stew&&stew.setOpacity(v);});
 Array.prototype.forEach.call(document.querySelectorAll("[data-r]"),function(b){b.addEventListener("click",function(){res=+b.getAttribute("data-r");Array.prototype.forEach.call(document.querySelectorAll("[data-r]"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});drawHex();});});
 })();
+/* v0.2.0: the (i) button and the Changelog link open the changelog table; Esc, the close button or a tap outside close it. - Cedwyn editors */
+(function(){var d=document,m=d.getElementById("changelog");if(!m)return;
+function op(e){if(e)e.preventDefault();if(m.showModal){if(!m.open)m.showModal();}else m.setAttribute("open","");}
+function cl(){if(m.close)m.close();else m.removeAttribute("open");}
+Array.prototype.forEach.call(d.querySelectorAll("[data-th3-info]"),function(b){b.addEventListener("click",op);});
+Array.prototype.forEach.call(d.querySelectorAll("[data-th3-close]"),function(b){b.addEventListener("click",cl);});
+m.addEventListener("click",function(e){if(e.target===m)cl();});
+if(location.hash==="#changelog")op();})();

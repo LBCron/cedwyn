@@ -27,3 +27,14 @@
 /* v0.1.1: the header's third row shows nothing but the shared Garden banner on this webapp (the e-book strip is gone) */
 .ghf-v2-up:not(.cw-gdn-on){display:none!important}
 .ghf-v2-name small[data-th3-slot] a:hover{text-decoration:underline!important}
+
+/* v0.2.0: (i) changelog modal */
+.th3-info{font:inherit;line-height:1;border:1px solid #1e4d45;color:#1e4d45;background:#fff;border-radius:50%;width:22px;height:22px;padding:0;cursor:pointer;vertical-align:middle}
+.th3-modal{border:0;border-radius:10px;padding:0;max-width:min(560px,94vw);width:94vw;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.th3-modal::backdrop{background:rgba(0,0,0,.45)}
+.th3-mhead{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#1e4d45;color:#fff}
+.th3-x{background:none;border:0;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+.th3-mbody{padding:8px 10px;max-height:70vh;overflow:auto}
+.th3-ctable{border-collapse:collapse;width:100%;font-size:.85rem}
+.th3-ctable th,.th3-ctable td{border-bottom:1px solid #e3dccb;padding:5px 6px;text-align:left;vertical-align:top}
+.th3-ctable td:first-child,.th3-ctable td:nth-child(2){white-space:nowrap}
