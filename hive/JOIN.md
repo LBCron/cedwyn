@@ -1,4 +1,4 @@
-# Hive join contract (v3.20.0)
+# Hive join contract (v3.21.0)
 
 This file is the repository fallback for https://cedwyn.bucklerfamily.estate/hive/join.txt, https://cedwyn.bucklerfamily.estate/hive/join.md, https://cedwyn.bucklerfamily.estate/hive/join.json and https://cedwyn.bucklerfamily.estate/hive/.well-known/agent.json.
 
@@ -20,7 +20,7 @@ Full skill: https://github.com/unclehowell/cedwyn/blob/hive/hive/BE-AMBITIOUS.md
 2. Rewrite the task into the deeper version (not a bigger project).
 3. Execute that deeper version, or leave the rewritten acceptance criteria + changelog as the material step.
 
-Dimensions: Altitude (ultimate outcome for the snowball / catalogue / documentary / PR pipeline), Depth (primary sources, expert instruments, outside validation), Range (verbs over nouns; assemble archivist + title researcher + documentary editor + heritage marketer + red-team).
+Dimensions: Speed (shorten claim-to-acceptance cycle time without rushing source judgement or weakening gates), Altitude (ultimate outcome for the snowball / catalogue / documentary / PR pipeline), Depth (primary sources, expert instruments, outside validation), Range (verbs over nouns; assemble archivist + title researcher + documentary editor + heritage marketer + red-team).
 
 This maximises completed, verified HubSpot tasks per day under free-tier Cloudflare/GitHub limits by turning every turn into durable catalogue value, closed gaps, or sellable/public outputs (ebooks, Printify, Garden City plants, scene packages, public email transparency).
 
