@@ -1,5 +1,5 @@
 /* That Old Chestnut — generative UI, built in the browser on page load from _ui/index.a2ui.json + _db/view.json.
-   No model, no paid service, no network beyond these two same-site files. v0.3.1 */
+   No model, no paid service, no network beyond these two same-site files. v0.3.2 */
 (function(){
 "use strict";
 var app=document.getElementById("toc-app"); if(!app) return;
@@ -29,9 +29,9 @@ function clsLabel(c){return T(c==="clear"?"clear":c==="borderline"?"borderline":
 var C={};
 /* ---------- v0.3.0 old chestnuts: passages that raise why a record was not disclosed sooner ----------
    Detection is automatic and data-driven: every clause of a record's conduct note and of its reply quotes is scored against
-   the rule list below (or the same list in _ui/chestnuts.rules.json when present). Clauses scoring >= min_clause get the
+   the rule list below (or the same list in _ui/chestnut-rules.a2ui.json when present). Clauses scoring >= min_clause get the
    crescendo highlight (level 1-3 by score); a record whose best clause scores >= min_record is an "old chestnut" and joins the
-   🌰 list, with that clause as its headline. Manual overrides: chestnuts.rules.json "overrides" by record id
+   🌰 list, with that clause as its headline. Manual overrides: chestnut-rules.a2ui.json "overrides" by record id
    ({"exclude":true} | {"headline":"…"} | {"include":true}) or the record's own finding.chestnut (false | true | "headline"). */
 var CN={min_clause:2,min_record:3,overrides:{},rules:[
  {k:"scope",w:3,p:"\\b(?:withheld|left out|excluded|set aside|treated)\\b[^.;]{0,40}\\b(?:out of|outside(?: of)?)(?: the| our)? scope\\b"},
@@ -254,5 +254,5 @@ function boot(){try{var p=new URLSearchParams(location.search);F.inst=p.get("ins
  render(false);cnHash();window.addEventListener("hashchange",cnHash);
  new MutationObserver(function(){if(lang()!==LANG)render(false);}).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});}
 function j(u){return fetch(u,{credentials:"same-origin"}).then(function(r){if(!r.ok)throw new Error(u+" "+r.status);return r.json();});}
-Promise.all([j(app.getAttribute("data-ui")),j(app.getAttribute("data-db")),j(app.getAttribute("data-rules")||"_ui/chestnuts.rules.json").catch(function(){return null;})]).then(function(v){UI=v[0];DB=v[1];cnRules(v[2]);boot();}).catch(function(){var ld=app.querySelector(".toc-loading");if(ld)ld.textContent="Audit in progress. The data for this page could not be loaded just now; please try again shortly.";});
+Promise.all([j(app.getAttribute("data-ui")),j(app.getAttribute("data-db")),j(app.getAttribute("data-rules")||"_ui/chestnut-rules.a2ui.json").catch(function(){return null;})]).then(function(v){UI=v[0];DB=v[1];cnRules(v[2]);boot();}).catch(function(){var ld=app.querySelector(".toc-loading");if(ld)ld.textContent="Audit in progress. The data for this page could not be loaded just now; please try again shortly.";});
 })();
