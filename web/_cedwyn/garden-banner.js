@@ -1,32 +1,36 @@
-/*! garden-banner.js — the one shared Garden City banner in the header strip of every Cedwyn webapp · v2.1.0 (2 Nov 2026) · Cedwyn editors
+/*! garden-banner.js — the one shared Garden City banner in the header strip of every Cedwyn webapp · v2.2.0 (2 Nov 2026) · Cedwyn editors
  * 00:48 GMT 2 Nov 2026: the cross-promo chrome (graph promo strip, section ribbon chips, coming-soon teasers, e-book strips,
  * the "Outside records" popup) is gone. 03:25 GMT 2 Nov 2026: in its place this one banner promotes the REALM flowers and plants
  * of Garden City Cymru (gardencity.cymru) on every webapp. It takes over the header's slim strip (.ghf-v2-up, basecamp.js), so it
  * never covers content and the header with its burger menu and "N of 59" number stays exactly as it is. Webapps that hid that
  * strip to drop the old promo get it back for the banner only. A × closes it for 30 days (this browser only).
  * Data: /_cedwyn/garden-banner/products.json (name, handle, sprite tile) + sprite.webp, made from the Garden City catalogue by
- * tools/garden_banner.py. Links open gardencity.cymru (home page, or /products/<handle>) in a new tab: the one outside shop the
+ * tools/garden_banner.py. Up to 2.1.0 links opened gardencity.cymru (home page, or /products/<handle>) in a new tab: the one outside shop the
  * site links to, allowed in runtime.js pass() and selfcontain.py OUT_SITE. No prices.
  * 2.1.0 (owner, 03:45 GMT 2 Nov 2026): one consistent banner on every webapp, the Argentina scope included (/argentina/, /patagonia/,
  * html[data-cedwyn-scope=argentina]); there it carries no prices or money words (products whose names carry one are left out) and only
  * Garden City's own product photos, never farm flower or NFT images. Off on machine-facing pages (/academy/, /agents/, /hive/),
- * /garden/ and framed pages. Spec: docs/GARDEN-BANNER.md */
+ * /garden/ and framed pages. Spec: docs/GARDEN-BANNER.md
+ * 2.2.0 (owner, 06:13 GMT 2 Nov 2026): the banner opens our own Garden Store webapp (https://bucklerfamily.estate/garden-store/, product
+ * cards at /garden-store/p/<handle>/), which mirrors the Garden City catalogue and sends each purchase to gardencity.cymru; the banner no
+ * longer links to gardencity.cymru directly. Also hides and removes any section ribbon (.cedwyn-rib) drawn by a section.js a browser still
+ * holds from before 2 Nov, so the retired coming-soon / Museum / The retelling row cannot come back from a cache. */
 (function () {
   'use strict';
   if (window.CedwynGardenBanner) return;
-  var d = document, de = d.documentElement, VER = '2.1.0', GC = 'https://gardencity.cymru', XK = 'cw_gdn_x', XDAYS = 30;
+  var d = document, de = d.documentElement, VER = '2.2.0', GC = 'https://gardencity.cymru', STORE = 'https://bucklerfamily.estate/garden-store/', XK = 'cw_gdn_x', XDAYS = 30;
   window.CedwynGardenBanner = { v: VER };
   var DATA = '/_cedwyn/garden-banner/products.json?v=' + VER;
   var T = {
-    en: { lead: 'REALM', sub: 'Garden City Cymru', cta: 'Visit', x: 'Close the Garden City banner', aria: 'REALM: flowers and plants grown in Wales, from Garden City Cymru (opens gardencity.cymru)' },
-    cy: { lead: 'REALM', sub: 'Garden City Cymru', cta: 'Ymweld', x: 'Cau baner Garden City', aria: 'REALM: blodau a phlanhigion a dyfwyd yng Nghymru, gan Garden City Cymru (yn agor gardencity.cymru)' },
-    es: { lead: 'REALM', sub: 'Garden City Cymru', cta: 'Visitar', x: 'Cerrar el banner de Garden City', aria: 'REALM: flores y plantas cultivadas en Gales, de Garden City Cymru (abre gardencity.cymru)' }
+    en: { lead: 'REALM', sub: 'Garden City Cymru', cta: 'Visit', x: 'Close the Garden City banner', aria: 'REALM: flowers and plants grown in Wales, from Garden City Cymru (opens our Garden Store)' },
+    cy: { lead: 'REALM', sub: 'Garden City Cymru', cta: 'Ymweld', x: 'Cau baner Garden City', aria: 'REALM: blodau a phlanhigion a dyfwyd yng Nghymru, gan Garden City Cymru (yn agor ein Siop Ardd)' },
+    es: { lead: 'REALM', sub: 'Garden City Cymru', cta: 'Visitar', x: 'Cerrar el banner de Garden City', aria: 'REALM: flores y plantas cultivadas en Gales, de Garden City Cymru (abre nuestra tienda de jard\u00edn)' }
   };
   function lg() { var l = ''; try { l = window.__cedwynLang || localStorage.getItem('ghf_lang') || ''; } catch (e) {} l = (l || de.getAttribute('lang') || 'en').slice(0, 2).toLowerCase(); return T[l] ? l : 'en'; }
   function path() { var p = (window.__cedwynLP || location.pathname || '/').toLowerCase(); return p; }
   function off() {
     var p = path();
-    if (/^\/((wales|argentina)\/)?(garden|academy|agents|hive)(\/|$)/.test(p)) return true;
+    if (/^\/((wales|argentina)\/)?(garden|garden-store|academy|agents|hive)(\/|$)/.test(p)) return true;
     if (window.self !== window.top) return true;
     try { var x = +localStorage.getItem(XK) || 0; if (x && Date.now() - x < XDAYS * 864e5) return true; } catch (e) {}
     return false;
@@ -59,15 +63,16 @@
     '<circle cx="12" cy="9" r="2.4"/><path d="M12 6.6c0-2 1.2-3.6 2.6-3.6s2.2 1.8 1 3.4M14.4 9c2 0 3.6 1.2 3.6 2.6s-1.8 2.2-3.4 1M12 11.4c0 2-1.2 3.6-2.6 3.6S7.2 13.2 8.4 11.6M9.6 9C7.6 9 6 7.8 6 6.4s1.8-2.2 3.4-1M12 11.5V21M12 17c-2.5 0-4-1.5-4.5-3M12 18.5c2.2 0 3.6-1.3 4-2.8"/></svg>';
   var data = null, slot = null, built = false;
   function css() { if (d.getElementById('cw-gdn-css')) return; var s = mk('style'); s.id = 'cw-gdn-css'; s.textContent = CSS; (d.head || de).appendChild(s); }
-  function ext(a, href) { a.href = href; a.target = '_blank'; a.rel = 'noopener'; }
+  function ext(a, href) { a.setAttributeNS(null, 'href', href); }   // 2.2.0: our own Garden Store, same tab. setAttributeNS keeps the address as
+  // written: runtime.js's theme-link fixer (setAttribute/href hooks) would map the apex address onto an old apex theme folder
   function hide(up) { up.style.setProperty('display', 'none', 'important'); up.setAttribute('aria-hidden', 'true'); try { window.dispatchEvent(new Event('resize')); } catch (e) {} }
   function fill(up) {
     if (!up || up.querySelector('.cw-gdn')) return;
     if (off()) { up.textContent = ''; hide(up); return; }
     css();
     var tt = T[lg()], w = mk('div', 'cw-gdn'), l = mk('a', 'cw-gdn-l'), r = mk('div', 'cw-gdn-r'), c = mk('a', 'cw-gdn-c', tt.cta + ' \u203a'), x = mk('button', 'cw-gdn-x', '\u00d7');
-    ext(l, GC + '/'); l.innerHTML = ICON; l.appendChild(mk('span', null, tt.lead)); l.appendChild(mk('small', null, tt.sub)); l.setAttribute('aria-label', tt.aria);
-    ext(c, GC + '/'); c.setAttribute('aria-label', tt.aria);
+    ext(l, STORE); l.innerHTML = ICON; l.appendChild(mk('span', null, tt.lead)); l.appendChild(mk('small', null, tt.sub)); l.setAttribute('aria-label', tt.aria);
+    ext(c, STORE); c.setAttribute('aria-label', tt.aria);
     x.type = 'button'; x.setAttribute('aria-label', tt.x); x.title = tt.x;
     x.addEventListener('click', function (e) { e.preventDefault(); try { localStorage.setItem(XK, String(Date.now())); } catch (er) {} up.textContent = ''; up.classList.remove('cw-gdn-on'); hide(up); });
     w.appendChild(l); w.appendChild(r); w.appendChild(c); w.appendChild(x);
@@ -89,7 +94,7 @@
     var bg = 'url(' + sp.src + ')', bs = (cols * n) + 'px auto';
     function one(it) {
       var a = mk('a', 'cw-gdn-i'), p = mk('span', 'cw-gdn-p'), k = it[2];
-      ext(a, GC + '/products/' + encodeURIComponent(it[0]));
+      ext(a, STORE + 'p/' + encodeURIComponent(it[0]) + '/');
       p.style.backgroundImage = bg; p.style.backgroundSize = bs;
       p.style.backgroundPosition = (-(k % cols) * n) + 'px ' + (-Math.floor(k / cols) * n) + 'px';
       p.setAttribute('aria-hidden', 'true'); a.appendChild(p); a.appendChild(mk('span', null, it[1])); r.appendChild(a);
@@ -115,14 +120,18 @@
       else if (++n > 100) clearInterval(iv);
     }, 100);
   }
-  // A page still holding an older cached runtime.js (before gardencity.cymru joined pass()) would send these clicks to the archive
-  // interface; for banner links only, its capture-phase guard is not reached and the link opens Garden City as written.
+  // Banner links open the Garden Store as written: a page's capture-phase link guard (runtime.js) is not reached for them.
   window.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('.cw-gdn a[href]') : null;
-    if (!a || a.href.indexOf(GC + '/') !== 0) return;
-    var c = window.__cedwyn; if (c && c.pass && c.pass(a.href)) return;
+    if (!a || a.href.indexOf(STORE) !== 0) return;
     e.stopPropagation();
   }, true);
   d.addEventListener('ghf-lang-change', function () { if (slot) { var w = slot.querySelector('.cw-gdn'); if (w) { slot.removeChild(w); } fill(slot); } });
+  // 2.2.0: the section ribbon is retired (section.js 1.3.0 draws none); a section.js a browser still holds from before 2 Nov could
+  // draw it again, so it is hidden by CSS at once and removed from the page.
+  (function rib() {
+    if (!d.getElementById('cw-gdn-rib')) { var s = mk('style'); s.id = 'cw-gdn-rib'; s.textContent = '.cedwyn-rib{display:none!important}'; (d.head || de).appendChild(s); }
+    var n = 0, iv = setInterval(function () { var r = d.querySelectorAll('.cedwyn-rib'); for (var i = 0; i < r.length; i++) r[i].parentNode && r[i].parentNode.removeChild(r[i]); if (++n > 40) clearInterval(iv); }, 250);
+  })();
   watch();
 })();
