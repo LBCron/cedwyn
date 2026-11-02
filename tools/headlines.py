@@ -1,31 +1,22 @@
 #!/usr/bin/env python3
-"""headlines.py - three-line "read more" on every human page (Sion, 23:32 GMT 26 Oct 2026). - Sion's Tab agent
-Sion: "You've gone overkill on the 'read more' whereby its literally a header then 'read more'. Thats not how read more works.
-You basically are supposed to have a rule like don't show more than 3 lines of text on any page load, just crop it at 3 lines
-and end the last of the 3rd line with 'read more' to expand to see more. But also have 'read more' become 'less' link, to
-collapse that expanded segment. Apply this site wide."
+"""headlines.py - shared animated reader loader across human-facing Cedwyn pages and webapps.
 
-This replaces the heading-then-"Learn more" folds (PRs #7-#11). One pass over every page the build wrote:
-1. unwrap: any old fold (<details class="cw-more">, levels 2 and 3, its "Show less" button and its CSS), which section snapshots
-   taken while the folds were live still carry, goes; its content returns to the normal flow, word for word.
-2. clamp: the page gets /_cedwyn/clamp.js and its small CSS. In the browser every text block shows its first three lines and,
-   only when it runs longer, ends the third line with "… read more", which opens it in place and turns into "less".
-   Headings, images, video, tables, navigation, tiles, buttons and forms are never cropped; no JavaScript = every word shows.
-Never touched: the landing page (/), archived copies of outside websites (/wayback/websites/), letters (/email/), the e-book
-shop and readers, the database, /agents/, /academy/, single-page shells keep the script only (it clamps what they render).
-Runs from tools/site.py after ebook_editions and before guestbook. Report: dist/_cedwyn/reports/headlines.json.
+The build uses one common reader (/_cedwyn/clamp.js -> cw-graph.js) on every human-facing
+first-party page, including app, chat, chess, ebooks, shop, academy, email and exploration
+routes. The reader turns structured text into nested previews with animated expand/back
+transitions. It does not rewrite the source text. Machine/data endpoints and mirrored copies
+of outside websites remain untouched; app controls are protected by the runtime's container
+safety checks and explicit data-cw-nolevels opt-outs.
 
-27 Oct 2026 (Sion, WhatsApp 06:16 GMT): clamp.js v2 reads a run of paragraphs as ONE segment: the first three lines show, then
-"read more" opens one paragraph at a time, a new "read more" at the end of each, and "less" closes it back to the opening lines.
-A page can mark its own segment with data-cw-seg (its children are the paragraphs); opt out with data-cw-noclamp, .cw-noclamp or
-.no-readmore. Every word stays in the HTML. - Sion's Tab agent
+Before injecting the loader, unwrap only the old Cedwyn-specific cw-more/ghf-rm wrappers so
+pages do not present two competing disclosure systems. Native details used as menus, keys or
+timeline records are otherwise left for the shared reader. Report: dist/_cedwyn/reports/headlines.json.
 """
 import json, pathlib, re, sys
 
-SKIP_DIRS = ('_blob/', '_ext/', 'db/', '_cedwyn/', 'wayback/websites/', 'email/', 'emails/view/', 'graphql/', 'catalogue/',
-             'guestbook/', 'explore/', 'ebooks/', 'shop/', 'app/', 'chess/', 'chat/', 'agents/', 'academy/')
+SKIP_DIRS = ('_blob/', '_ext/', 'db/', '_cedwyn/', 'wayback/websites/', 'graphql/', 'catalogue/', 'agents/')
 SKIP_FILES = {'index.html', '404.html'}          # index.html = the landing page: two tiles, stays as it is
-JS = '<script src="/_cedwyn/clamp.js?v=3" defer></script>'   # v2: paragraph-at-a-time read more (27 Oct 2026)   # v3 (2 Nov 2026): new cache key; clamp.js loads cw-graph 1.3.0 (no graph promo strip)
+JS = '<script src="/_cedwyn/clamp.js?v=4" defer></script>'   # v4 (2 Nov 2026): site-wide animated nested reading levels; cw-graph 1.3.1
 CSS = '<style id="cw-clamp-css">.cw-c{display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:3!important;line-clamp:3;overflow:hidden!important;position:relative}.cw-h{display:none!important}@media print{.cw-c{display:block!important;-webkit-line-clamp:unset!important;overflow:visible!important}.cw-h{display:revert!important}}</style>'   # the rest of the styling ships inside clamp.js v2
 
 OPEN = re.compile(r'<details class="cw-more(?: cw-more-3)?"><summary data-cw-more><span class="cw-more-l">[^<]*</span></summary><div class="cw-more-b">')
@@ -40,8 +31,16 @@ def unwrap(t):
     return t, a
 
 def inject(t):
-    if '/_cedwyn/clamp.js' in t:   # a snapshot that already carries the script: move it to the current version and CSS
-        return re.sub(r'<style id="cw-clamp-css">.*?</style>', lambda m: CSS, t.replace('/_cedwyn/clamp.js?v=1', '/_cedwyn/clamp.js?v=3').replace('/_cedwyn/clamp.js?v=2', '/_cedwyn/clamp.js?v=3'), count=1, flags=re.S)
+    # Existing pages may already carry an older loader URL. Upgrade it in place, and make sure
+    # the stylesheet is present, rather than duplicating scripts or leaving stale browser caches.
+    if re.search(r'<script\b[^>]*\bsrc\s*=\s*["\']/_cedwyn/clamp\.js(?:\?[^"\']*)?["\']', t, re.I):
+        t = re.sub(r'(/_cedwyn/clamp\.js)(?:\?[^"\'>\s]*)?', r'\1?v=4', t)
+        if 'id="cw-clamp-css"' in t:
+            t = re.sub(r'<style id="cw-clamp-css">.*?</style>', lambda m: CSS, t, count=1, flags=re.S)
+        else:
+            i = t.lower().find('</head>')
+            t = (t[:i] + CSS + t[i:]) if i >= 0 else CSS + t
+        return t
     i = t.lower().find('</head>')
     add = CSS + JS
     return (t[:i] + add + t[i:]) if i >= 0 else add + t
