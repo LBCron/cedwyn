@@ -1,8 +1,8 @@
 {
  "a2ui": "0.9",
  "surface": "that-old-chestnut-latest-mail",
- "version": "0.3.3",
- "note": "That Old Chestnut v0.3.3: replies received after the last full audit (31 Oct 2026), in the same record shape as the chestnuts collection of _db/view.json. toc.js adds a record only when the catalogue does not already carry its id, so the catalogue wins once it holds these rows. Mail read up to 2026-11-02T14:20Z.",
+ "version": "0.3.4",
+ "note": "That Old Chestnut v0.3.4: replies received after the last full audit (31 Oct 2026), in the same record shape as the chestnuts collection of _db/view.json. toc.js adds a record only when the catalogue does not already carry its id, so the catalogue wins once it holds these rows. Mail read up to 2026-11-02T14:20Z. v0.3.4 adds TOC-E05 (solicitors, reply of 2026-11-02) and TOC-E06 (bp legal team, reply of 2026-10-23): preservation notice, then 'not seen' or no reply, then no preservation undertaking. Staff names and phone numbers withheld.",
  "mail_read_to": "2026-11-02",
  "i18n": {
   "en": {
@@ -210,6 +210,112 @@
    },
    "updated": "2026-11-02",
    "date_display": "2026-11-02",
+   "source_text": "Correspondence held on file (not published)",
+   "evidence_links": []
+  },
+  {
+   "id": "TOC-E05",
+   "title": "Darwin Gray LLP (solicitors, Cardiff) · reply of 2026-11-02",
+   "date": {
+    "display": "2026-11-02",
+    "sort": "2026-11-02",
+    "precision": "day"
+   },
+   "provenance": {
+    "holder": "Darwin Gray LLP (solicitors, Cardiff)",
+    "reference": "Correspondence held on file (not published)",
+    "date": "2026-11-02"
+   },
+   "evidence": [],
+   "finding": {
+    "class": "language",
+    "institution": "Darwin Gray LLP (solicitors, Cardiff)",
+    "negative_date": "2026-11-02",
+    "positive_date": "",
+    "months_elapsed": null,
+    "email_volume": "",
+    "negative_quote": "we have not seen any communication or document from you on that date. We have the enquiries you have sent to us on 19 and 21 September 2026 … we do not hold anything relating to this matter apart from what you have sent us, which you will be able to obtain from your own ‘sent items’ in your email account.",
+    "positive_quote": "",
+    "positive_nature": "",
+    "trigger": "Follow-up of 31 October 2026 from the enquirer, citing the preservation notice of 28 September 2026: was any file held, what searches were made, was anything destroyed or transferred, and a request that nothing be destroyed while the enquiries are open.",
+    "disclosure_type": "",
+    "conduct": "The enquirer's Sent folder holds the preservation notice of 28 September 2026 (22:39 UK time), addressed to two of the firm's email addresses, one in To and one in Cc, with no delivery-failure notice for either; the firm's mail server had returned an immediate rejection for a different address on 21 September. Two further emails of 27 September and 7 October also went to the firm's general address. The reply of 2 November names only the enquiries of 19 and 21 September, states that the firm was founded in 2002, was never instructed about the land and holds nothing beyond the enquirer's own emails. It gives no account of a search of its mail system or quarantine for the 28 September notice, and no undertaking that nothing will be destroyed.",
+    "interim_disclosure": "",
+    "terms": [
+     {
+      "term": "have not seen any communication or document from you on that date",
+      "statute": "No delivery failure was recorded for either address; the notice's Message-ID can be traced in the firm's own mail logs. A UK GDPR Art. 15 subject access request (one month) covers every email from the enquirer the firm holds.",
+      "note": ""
+     },
+     {
+      "term": "we do not hold anything … apart from what you have sent us",
+      "statute": "UK GDPR Art. 15(1)(d): the retention period for the enquirer's own emails is not stated",
+      "note": ""
+     },
+     {
+      "term": "no preservation undertaking",
+      "statute": "A private firm has no FOIA s.77 duty; a duty to preserve arises for a likely party to proceedings (CPR PD 31B para 7; PD 57AD para 3.1); after a subject access request, DPA 2018 s.173 makes deletion to prevent disclosure an offence",
+      "note": ""
+     }
+    ],
+    "open": true,
+    "held_back": []
+   },
+   "updated": "2026-11-02",
+   "date_display": "2026-11-02",
+   "source_text": "Correspondence held on file (not published)",
+   "evidence_links": []
+  },
+  {
+   "id": "TOC-E06",
+   "title": "bp (legal team, via a contractor) · reply of 2026-10-23",
+   "date": {
+    "display": "2026-10-23",
+    "sort": "2026-10-23",
+    "precision": "day"
+   },
+   "provenance": {
+    "holder": "bp (legal team, via a contractor)",
+    "reference": "Correspondence held on file (not published)",
+    "date": "2026-10-23"
+   },
+   "evidence": [],
+   "finding": {
+    "class": "language",
+    "institution": "bp (legal team, via a contractor)",
+    "negative_date": "2026-10-23",
+    "positive_date": "",
+    "months_elapsed": null,
+    "email_volume": "",
+    "negative_quote": "we are not aware of any outstanding or live cause of action that bp or any related entity would need to answer in relation to this property. … we are not in a position to understand why a document preservation obligation would exist, and we are therefore not able to confirm that a preservation hold of the kind you describe will be put in place.",
+    "positive_quote": "",
+    "positive_nature": "",
+    "trigger": "Preservation notice of 16 October 2026 to a named bp lawyer, asking for a hold on records about the farm from 1969; it was passed to a contractor in the legal team.",
+    "disclosure_type": "",
+    "conduct": "The first preservation notice, of 28 September 2026, went to BP Archive with no delivery failure and has had no reply; records enquiries of 19 and 29 October to the same address are also unanswered. The reply of 23 October answers the later notice of 16 October only, does not mention the 28 September notice, declines to confirm a preservation hold, finds many of the notice's links inaccessible and asks for the basis of any new case, the legal grounds and the relief sought. Follow-ups of 24 October (asking for hold confirmation by 7 November 2026) and 31 October had automatic out-of-office replies only, up to 2 November 2026.",
+    "interim_disclosure": "",
+    "terms": [
+     {
+      "term": "not able to confirm that a preservation hold … will be put in place",
+      "statute": "A party's duty to preserve arises once it knows it may become a party to proceedings (PD 57AD para 3.1; CPR PD 31B para 7); the reply ties the hold to the absence of a live cause of action",
+      "note": ""
+     },
+     {
+      "term": "not aware of any outstanding or live cause of action",
+      "statute": "Concluded litigation (Court of Appeal, 1987) cited as the reason no hold is needed; no statement of the company's retention schedule or of any destruction",
+      "note": ""
+     },
+     {
+      "term": "no reply to the notice of 28 September 2026",
+      "statute": "A company has no FOIA s.77 duty; a UK GDPR Art. 15 subject access request can ask for retention periods (Art. 15(1)(d))",
+      "note": ""
+     }
+    ],
+    "open": true,
+    "held_back": []
+   },
+   "updated": "2026-11-02",
+   "date_display": "2026-10-23",
    "source_text": "Correspondence held on file (not published)",
    "evidence_links": []
   }
