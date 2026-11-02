@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.2] - 2026-11-02
+
+### Added
+- "Who uses this wording": three wordings that showed "no institutional use found yet" now list catalogue records from The National Archives' Discovery catalogue (exact wording, case and accents counted): "Llandough, Cardiff" (ADM 188/796/74967, [1917]), "Urban District of Penarth" (YHL/PO/JO/10/10/673/1063, 1920; YHL/PO/JO/10/11/355/784, 1954; MT 78/139/9, 1957) and "Parish of Llandough" (YHL/PO/PB/3/plan1888/G10, 1888, as "Parish of Llandough juxta Cardiff"). Earliest dated use updated for each.
+- public/usage.json carries the same references. Same-name records for other places and personal names (Cedwin, Kedwyn, Cedwyn) were checked and not counted.
+
 ## [1.0.1] - 2026-10-24
 
 ### Improved
