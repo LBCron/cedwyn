@@ -36,6 +36,9 @@ CHECKOUT = ('buy.stripe.com', 'checkout.stripe.com', 'gumroad.com')   # checkout
 # 2 Nov 2026 (owner, 03:25 GMT): Garden City Cymru is the one outside shop the site promotes (garden-banner.js on every webapp);
 # its address stays direct, like the checkout hosts, and runtime.js pass() lets the click through. - Sion's Tab agent
 OUT_SITE = ('gardencity.cymru',)
+# 2 Nov 2026 (garden-banner 2.2.0): apex webapps served by their own Worker, not by a cedwyn theme, keep their apex address as
+# written. Without this the apex rule ('/' -> dartboard) turns https://bucklerfamily.estate/garden-store/ into /dartboard/garden-store/. — Sion's Tab agent
+APEX_KEEP = ('/garden-store/',)
 # 31 Oct 2026 (P-114): the WordPress copy's privacy script asks public-api.wordpress.com/geo/ for the visitor's region with an
 # XHR and JSON.parse()s the answer. Sent to /wayback/go/ it got an HTML page and threw "Unexpected token '<' ... is not valid
 # JSON" on every wiki page. It now gets an empty JSON answer as a data: address (region '' = no state privacy rule applies; no
@@ -88,6 +91,7 @@ def classify(m):
         return 'tile', None
     # 25 Oct 2026: any address a theme was served from (every *.bucklerfamily.estate site, and the Legal Wiki's own
     # greathousefarmwiki.wordpress.com) is a theme link: it goes to the internal /<theme>/ route, never to /wayback/go/
+    if host in ('bucklerfamily.estate', 'www.bucklerfamily.estate') and any(path.startswith(p) for p in APEX_KEEP): return 'ns', None   # APEX_KEEP
     if host in HOST or host == 'bucklerfamily.estate' or host.endswith('.bucklerfamily.estate'):
         return 'sub', None
     if host in CDN: return 'cdn', None
