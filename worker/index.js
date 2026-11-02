@@ -65,8 +65,27 @@ export class GardenDB {
     this.store(out, 'live', new Date().toISOString());
     return out.length;
   }
+  // Her shop rate-limits some cloud addresses (429). Fallback: the branch snapshot that sync.py --commit keeps fresh from the box.
+  async fromBranch() {
+    const r = await fetch('https://raw.githubusercontent.com/unclehowell/cedwyn/section/garden-store/catalogue.json?_cb=' + Date.now());
+    if (!r.ok) throw new Error('branch snapshot answered ' + r.status);
+    const j = await r.json();
+    if (!j.products || !j.products.length) throw new Error('branch snapshot empty');
+    if (this.meta('source') === 'live' && Date.parse(this.meta('fetched')) >= Date.parse(j.fetched)) return 0;
+    this.store(j.products, 'branch snapshot', j.fetched);
+    return j.products.length;
+  }
+  async update() {
+    try { const n = await this.refresh(); this.meta('last_ok', new Date().toISOString() + ' live (' + n + ')'); return { ok: true, products: n, via: 'live' }; }
+    catch (e) {
+      this.meta('last_error', new Date().toISOString() + ' ' + String(e.message || e).slice(0, 200));
+      const n = await this.fromBranch();
+      this.meta('last_ok', new Date().toISOString() + ' branch snapshot (' + n + ')');
+      return { ok: true, products: n, via: 'branch snapshot', live_error: String(e.message || e) };
+    }
+  }
   async alarm() {
-    try { const n = await this.refresh(); this.meta('last_ok', new Date().toISOString() + ' (' + n + ')'); }
+    try { await this.update(); }
     catch (e) { this.meta('last_error', new Date().toISOString() + ' ' + String(e.message || e).slice(0, 200)); }
     await this.state.storage.setAlarm(Date.now() + REFRESH_MS);
   }
@@ -74,6 +93,7 @@ export class GardenDB {
     const u = new URL(req.url);
     if (!this.meta('count')) this.store(SEED.products, 'snapshot', SEED.fetched);
     if (!(await this.state.storage.getAlarm())) await this.state.storage.setAlarm(Date.now() + 2000);
+    if (this.meta('source') === 'snapshot' && this.meta('retry_build') !== META.build) { this.meta('retry_build', META.build); await this.state.storage.setAlarm(Date.now() + 2000); }
     if (u.pathname === '/cat') {
       const rows = this.sql.exec('SELECT data FROM products ORDER BY seq').toArray().map(r => JSON.parse(r.data));
       return Response.json({ source: this.meta('source'), fetched: this.meta('fetched'), last_ok: this.meta('last_ok'), last_error: this.meta('last_error'), products: rows });
@@ -82,7 +102,7 @@ export class GardenDB {
       const last = Date.parse(this.meta('manual_at') || 0) || 0;
       if (Date.now() - last < 10 * 60 * 1000) return Response.json({ ok: false, why: 'refreshed less than 10 minutes ago', fetched: this.meta('fetched') }, { status: 429 });
       this.meta('manual_at', new Date().toISOString());
-      try { const n = await this.refresh(); return Response.json({ ok: true, products: n, fetched: this.meta('fetched') }); }
+      try { const o = await this.update(); return Response.json(Object.assign(o, { fetched: this.meta('fetched'), source: this.meta('source') })); }
       catch (e) { return Response.json({ ok: false, why: String(e.message || e) }, { status: 502 }); }
     }
     if (u.pathname === '/gb' && req.method === 'POST') {
@@ -285,7 +305,7 @@ export default {
     if (p === '/' || p === '/index.html') return H(await home(env));
     if (p === '/version.json') return J({ version: VERSION, slot: SLOT, of: OF, seller: SHOP });
     if (p === '/llms.txt') return new Response(llms(await catalogue(env)), { headers: { 'content-type': 'text/plain; charset=utf-8' } });
-    if (p === '/catalogue.json') { const c = await catalogue(env); return J({ version: VERSION, source: SHOP, catalogue: c.source, fetched: c.fetched, count: c.products.length, seller: 'Garden City (gardencity.cymru)', buy_url_pattern: SHOP + '/products/<handle>?' + UTM, products: c.products }); }
+    if (p === '/catalogue.json') { const c = await catalogue(env); return J({ version: VERSION, source: SHOP, catalogue: c.source, fetched: c.fetched, last_ok: c.last_ok || null, last_error: c.last_error || null, count: c.products.length, seller: 'Garden City (gardencity.cymru)', buy_url_pattern: SHOP + '/products/<handle>?' + UTM, products: c.products }); }
     if (p === '/api/search' || p === '/api/') {
       const c = await catalogue(env), q = (u.searchParams.get('q') || '').toLowerCase().trim(), ty = (u.searchParams.get('type') || '').toLowerCase().trim(), st = u.searchParams.get('stock') === '1';
       const r = c.products.filter(x => (!q || (x.t + ' ' + x.ty + ' ' + x.tg.join(' ') + ' ' + x.d).toLowerCase().includes(q)) && (!ty || x.ty.toLowerCase().includes(ty)) && (!st || x.a));
