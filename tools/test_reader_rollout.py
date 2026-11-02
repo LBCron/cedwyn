@@ -20,6 +20,7 @@ def main():
         "shop/index.html", "email/reference/example/index.html",
         "emails/view/example/index.html", "explore/index.html",
         "guestbook/index.html", "terrain/index.html", "wayback/index.html",
+        "research/old-loader/index.html",
     ]
     machine = [
         "_cedwyn/example.html", "_blob/example.html", "_ext/example.html",
@@ -31,11 +32,15 @@ def main():
         for rel in human + machine:
             p = dist / rel
             p.parent.mkdir(parents=True, exist_ok=True)
-            p.write_text("<!doctype html><html><head></head><body><main><h1>Example</h1><p>Text.</p></main></body></html>", encoding="utf-8")
+            html = "<!doctype html><html><head></head><body><main><h1>Example</h1><p>Text.</p></main></body></html>"
+            if rel == "research/old-loader/index.html":
+                html = '<!doctype html><html><head><style id="cw-clamp-css">old</style><script src="/_cedwyn/clamp.js?v=3" defer></script></head><body><main><h1>Example</h1></main></body></html>'
+            p.write_text(html, encoding="utf-8")
         report = headlines.run(dist)
         for rel in human:
             page = (dist / rel).read_text(encoding="utf-8")
             require('/_cedwyn/clamp.js?v=4' in page, "reader not installed on " + rel)
+            require(page.count('/_cedwyn/clamp.js') == 1, "duplicate reader loader on " + rel)
             require('id="cw-clamp-css"' in page, "reader CSS missing on " + rel)
         for rel in machine:
             page = (dist / rel).read_text(encoding="utf-8")
@@ -43,11 +48,13 @@ def main():
         require(report["pages"] == len(human), "unexpected HTML injection count: %r" % report["pages"])
 
     graph = (ROOT / "web" / "_cedwyn" / "cw-graph.js").read_text(encoding="utf-8")
-    match = re.search(r"function levels\\(\\) \\{([\\s\\S]*?)\\n  \\}\\n  function start\\(\\)", graph)
+    match = re.search(r"function levels\(\) \{([\s\S]*?)\n  \}\n  function start\(\)", graph)
     require(bool(match), "could not locate shared levels() routine")
     level_code = match.group(1)
     require("NOCLIP.test(location.pathname)" not in level_code, "legacy route exclusions still block text reader")
     require("data-cw-nolevels" in level_code, "explicit per-page opt-out was lost")
+    require("buildWholePage(P)" in level_code, "unstructured prose fallback is missing")
+    require("clean(P.textContent).length < 240" in level_code, "text fallback threshold changed unexpectedly")
     for token in ("form,input,select,textarea,button,canvas,video,audio,iframe,object,embed",
                   '[role="application"]', '[role="grid"]', '[role="button"]'):
         require(token in level_code, "interactive safety selector missing: " + token)
