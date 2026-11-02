@@ -6,6 +6,7 @@ Version 2.1.0, 2 Nov 2026. Owner instructions: 00:48 GMT 2 Nov 2026, the cross-p
 
 | Version | Date | Change |
 |---|---|---|
+| 2.1.1 | 2 Nov 2026 | Page boot key ?v=2.1.22 (tools/selfcontain.py): ?v=2.1.20 was already held at the edge with an older boot, so after the 2.1.0 build most pages still showed the old e-book strip; banner file unchanged |
 | 2.1.0 | 2 Nov 2026 | Shown on the Argentina scope too (owner, 03:45 GMT): one consistent banner on every webapp; there no prices or money words (products whose names carry one are left out) and only Garden City's own product photos, never farm flower or NFT images |
 | 2.0.0 | 2 Nov 2026 | Links open gardencity.cymru (home page, or /products/<handle> for a product) in a new tab; × closes it for 30 days; shows on webapps that had hidden the header strip; gardencity.cymru allowed in runtime.js pass() and selfcontain.py OUT_SITE; new cache keys (boot 2.1.20, section.js 1.3.0, clamp.js v3) |
 | 1.0.0 | 2 Nov 2026 | Cross-promo chrome retired; banner of Garden City products in the header strip, linking to /garden/ |
