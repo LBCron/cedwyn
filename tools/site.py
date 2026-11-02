@@ -99,11 +99,12 @@ _nav_online = set(_HV.get('online_only', []))
 # apex header read it from here - Sion's Tab agent
 _nav_apex = {_t['id']: str(_t['apex']).strip('/') for _t in CFG['themes'] if _t.get('apex')}
 for _a in _nav:
-    _a['apex'] = 'https://bucklerfamily.estate/%s/' % (_nav_apex.get(_a['id']) or _a['id'])
+    # 1.1.1: a path, not an absolute URL - selfcontain.py rewrites every https://bucklerfamily.estate/... it finds (build 41402080152)
+    _a['apex'] = '/%s/' % (_nav_apex.get(_a['id']) or _a['id'])
     _a['href'] = '/online/%s/' % _a['id'] if _a['id'] in _nav_online else _a['path']
     _a['sec'] = not _a.get('webapp') and _a['href'] == _a['path'] and _a['id'] != 'wales'
 _nav.sort(key=lambda a: int(a.get('slot') or 999))
-chain = [[a['id'], a['title'], a['group'], a['cy'], a['es'], a['skip_in'], int(a.get('slot') or 0), a['href'], 1 if a['sec'] else 0, a['apex'][len('https://bucklerfamily.estate'):]] for a in _nav if a['built']]
+chain = [[a['id'], a['title'], a['group'], a['cy'], a['es'], a['skip_in'], int(a.get('slot') or 0), a['href'], 1 if a['sec'] else 0, a['apex']] for a in _nav if a['built']]
 json.dump({'schema': 'cedwyn_areas/v1', 'source': 'data/site-areas.json + themes.json slot', 'order': 'main menu reading order; previous/next wrap from the last area to the first',
            'count': len(_areas_pub), 'parcel_total': _area_doc.get('parcel_total', 59), 'areas': _areas_pub,
            'nav_version': '1.1.0', 'nav_order': 'slot order; previous/next step through every built slot and wrap from the last to the first', 'nav': _nav}, open(DIST / 'areas.json', 'w'), ensure_ascii=False, indent=1)
