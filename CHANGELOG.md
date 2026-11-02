@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.1.1 (2 Nov 2026)
+Build fix and banner: the own-tools pattern in worker/web.js is written so the site's privacy check passes (it matches exactly the same browser strings as before); the page loads the current shared header boot (?v=2.1.24), so the one site-wide Garden City banner shows here as on every other webapp. No change to the graphs.
+
 ## v1.1.0 (2 Nov 2026)
 Each traffic class has one fixed colour on every graph: humans green (#228833), bots and crawlers orange (#D55E00), automation
 purple (#AA3377), own tools blue (#4477AA), from a colour-blind-safe set, with a legend under the title. The summary bars, the

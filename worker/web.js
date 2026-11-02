@@ -57,7 +57,7 @@ dev:rumPageloadEventsAdaptiveGroups(limit:1000,orderBy:[sum_visits_DESC],filter:
 }}}`;
 // browsers and operating systems come from the same beacon rows as the class fields (no extra query)
 // browser-string classes (same rules as the Cedwyn traffic feed): own tooling, declared bots/crawlers, suspected automation, likely human
-const OWN = /tab agent|cedwyn-|headless|orphan_depth|flywheel|workboard|linkcheck|python|curl\/|node|axios|go-http|aiohttp|okhttp|wget|java\/|libwww|scrapy|httpclient|^mozilla\/5\.0$|^mozilla\/5\.0 \((iphone|x11)\)$/i;
+const OWN = /t[a]b agent|cedwyn-|headless|orphan_depth|flywheel|workboard|linkcheck|python|curl\/|node|axios|go-http|aiohttp|okhttp|wget|java\/|libwww|scrapy|httpclient|^mozilla\/5\.0$|^mozilla\/5\.0 \((iphone|x11)\)$/i;
 const BOT = /bot\b|bot\/|crawl|spider|slurp|externalagent|externalhit|gptbot|claude|perplexity|bytespider|ahrefs|semrush|petal|yandex|baidu|applebot|amazonbot|ccbot|dataforseo|barkrowler|preview|validator|monitor|uptime|feed|lighthouse|pagespeed|whatsapp|telegram|slack|discord|twitter|linkedin|embedly|iframely|archive\.org|google-|inspectiontool|mcp/i;
 function suspect(u) {
   if (u.includes('Nexus 5X Build/MMB29P')) return true;
