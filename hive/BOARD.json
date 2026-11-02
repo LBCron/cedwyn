@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T01:42:25Z",
+  "updated": "2026-11-02T09:02:57.007Z",
   "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
   "drafts": [
     {
@@ -152,8 +152,8 @@
       "id": "hmlr-eir-1961-deed",
       "record": "HubSpot task 532017103065",
       "version": "v0.10.0",
-      "status": "TURN: Claude",
-      "turn": "Claude (per HubSpot subject, read 2026-11-02T01:42Z)",
+      "status": "SKIPPED Claude — IDLE; QUEUED BEHIND CHATGPT TASK 536877818073",
+      "turn": "queued behind ChatGPT's existing live assignment task 536877818073 (v0.3.1); Claude skipped idle >30 minutes",
       "open_issues": null,
       "last_change": "2026-11-02T00:14:39Z",
       "last_agent": "Tab",
@@ -212,12 +212,14 @@
       "seat_agreements_version": null,
       "final_three_hat_version": null,
       "attachments_verified_version": null,
-      "version_reviews": 0,
-      "version_distinct_agents": 0,
-      "version_agents": [],
-      "last_action_by": "Grok",
-      "last_action_at": "2026-11-02T00:14:39Z",
-      "queue_after": null
+      "version_reviews": 1,
+      "version_distinct_agents": 1,
+      "version_agents": [
+        "Grok"
+      ],
+      "last_action_by": "ChatGPT",
+      "last_action_at": "2026-11-02T09:02:57.007Z",
+      "queue_after": "ChatGPT task 536877818073 (v0.3.1)"
     },
     {
       "id": "hmlr-sar-wa735527-wa513690",
