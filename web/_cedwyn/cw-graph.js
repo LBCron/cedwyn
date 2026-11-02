@@ -1,4 +1,7 @@
-/* cw-graph.js v1.2.4 (30 Oct 2026 21:20Z: on a page carrying the parcel-story panel, the panel leaves the page flow and opens
+/* cw-graph.js v1.3.1 (2 Nov 2026: shared animated reading levels across all human-facing Cedwyn themes and webapps;
+   text-only sections expand into nested previews with animated forward/back transitions; interactive controls and live app panels remain intact.
+   1.3.0: graph promo strip removed; the graph modal and card-level reader remain. - Cedwyn editors
+   The older 1.2.4 parcel-story panel note is retained below for history:
    in this modal under a 'Parcel story' tab (last tab); on /research/ an 'Instruments & registrations' tab plotting /_cedwyn/graph/parcels.json opens first; 1.2.3 (30 Oct 2026: long axis names wrap to two lines at 390 px; 1.2.2: a graph may fix its own colours, data.c.colors — Dartboard green/amber/red) - graph promo banner, full-screen scatter modal and 100vh "Read more" clip for every Cedwyn page.
    Asked for 01:27 GMT 30 Oct 2026: the closable header strip becomes a graph promotion; tapping it slides a full-screen
    scatter graph of the data the page/section shows down over the page (it slides back up on close, Esc or swipe up);
@@ -8,7 +11,7 @@
 (function () {
   'use strict';
   if (window.__cwGraph) return;
-  var d = document, de = d.documentElement, VER = '1.3.0';
+  var d = document, de = d.documentElement, VER = '1.3.1';
   window.__cwGraph = { v: VER };
   var RM = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
   var T = {
@@ -628,11 +631,17 @@
     paint(lvl || null, 0); setTimeout(function () { try { tg.scrollIntoView({ block: 'start' }); scrollBy(0, -topOff() - 52); } catch (e) {} }, 30);
   }
   function levels() {
-    if (NOCLIP.test(location.pathname) || location.pathname === '/' || /^\/(?:wales|argentina)\/?$/.test(location.pathname) || de.hasAttribute('data-cw-nolevels') || location.search.indexOf('full=1') >= 0) return;
-    var c = content(); if (!c || c.closest('.ghf-ui')) return;
-    if (c.querySelector('canvas,video,iframe[src*="player"],[data-cw-nolevels]') && clean(c.textContent).length < 4000) return;
+    /* Text reading levels now apply across themes and webapps. Do not use the legacy NOCLIP
+       route list here: it belongs to the old viewport clip, not this nested reader. */
+    if (location.pathname === '/' || /^\\/(?:wales|argentina)\\/?$/.test(location.pathname) || de.hasAttribute('data-cw-nolevels') || location.search.indexOf('full=1') >= 0) return;
+    var c = content(); if (!c || c.closest('.ghf-ui') || c.hasAttribute('data-cw-nolevels')) return;
     var fp = flowParent(c), bp = blockParent(c), P = null, root = null;
-    function ok(x) { return x && !x.p.querySelector('input,select,textarea'); }
+    function ok(x) {
+      if (!x || !x.p || x.p.hasAttribute('data-cw-nolevels')) return false;
+      /* Never rearrange a live app/control surface. A separate text-only wrapper can still
+         qualify even when a sibling part of the page contains a widget. */
+      return !x.p.querySelector('form,input,select,textarea,button,canvas,video,audio,iframe,object,embed,[contenteditable="true"],[role="application"],[role="grid"],[role="button"],[data-cw-nolevels],.ghf-ui');
+    }
     if (ok(bp) && (!ok(fp) || bp.n > fp.n || bp.p.contains(fp.p) && bp.n >= 3)) { P = bp.p; root = buildBlocks(P); }
     if (!root && ok(fp)) { P = fp.p; root = buildFlow(P); }
     if (!root || clean(P.textContent).length < 1200) return;
@@ -641,11 +650,21 @@
     var bk = mk('button', 'cwl-back'); bk.type = 'button'; bk.innerHTML = '<span class="cwl-ba" aria-hidden="true">‹</span><span>' + lvTxt(0) + '</span><span class="cwl-bt"></span>'; bk.hidden = true;
     bk.onclick = upOne; P.insertBefore(bk, P.firstChild); LV.back = bk;
     P.addEventListener('click', function (e) {
-      var card = e.target.closest('.cwl-card'); if (!card || !P.contains(card)) return;
-      var a = e.target.closest('a[href]'); if (a && !card.querySelector('.cwl-pv').contains(a) && card !== a) { if (!card.classList.contains('cwl-card')) return; }
+      var target = e.target && e.target.nodeType === 1 ? e.target : e.target && e.target.parentElement;
+      if (!target) return;
+      var control = target.closest('a[href],button,input,select,textarea,summary,[role="button"],[contenteditable="true"]');
+      if (control && !control.classList.contains('cwl-card')) return; /* let links and controls do their own job */
+      var card = target.closest('.cwl-card'); if (!card || !P.contains(card)) return;
       e.preventDefault(); e.stopPropagation(); enterCard(card);
     });
-    P.addEventListener('keydown', function (e) { var card = e.target.closest && e.target.closest('.cwl-card'); if (card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); enterCard(card); } });
+    P.addEventListener('keydown', function (e) {
+      var target = e.target && e.target.nodeType === 1 ? e.target : e.target && e.target.parentElement;
+      if (!target) return;
+      var control = target.closest('a[href],button,input,select,textarea,summary,[role="button"],[contenteditable="true"]');
+      if (control && !control.classList.contains('cwl-card')) return;
+      var card = target.closest('.cwl-card');
+      if (card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); enterCard(card); }
+    });
     d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && LV.cur && !de.classList.contains('cw-gm-lock')) upOne(); });
     addEventListener('popstate', onPop);
     d.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a || a.closest('.cwl-card')) return; var id = decodeURIComponent(a.getAttribute('href').slice(1)), tg = id && d.getElementById(id); if (tg && P.contains(tg) && tg.getClientRects().length === 0) { e.preventDefault(); history.pushState({ cwl: 1 }, '', '#' + id); openFor(tg); } }, true);
