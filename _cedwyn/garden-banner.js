@@ -11,14 +11,14 @@
  * html[data-cedwyn-scope=argentina]); there it carries no prices or money words (products whose names carry one are left out) and only
  * Garden City's own product photos, never farm flower or NFT images. Off on machine-facing pages (/academy/, /agents/, /hive/),
  * /garden/ and framed pages. Spec: docs/GARDEN-BANNER.md
- * 2.2.0 (owner, 06:13 GMT 2 Nov 2026): the banner opens our own Garden Store webapp (https://cedwyn.bucklerfamily.estate/dartboard/garden-store/, product
+ * 2.2.0 (owner, 06:13 GMT 2 Nov 2026): the banner opens our own Garden Store webapp (https://bucklerfamily.estate/garden-store/, product
  * cards at /garden-store/p/<handle>/), which mirrors the Garden City catalogue and sends each purchase to gardencity.cymru; the banner no
  * longer links to gardencity.cymru directly. Also hides and removes any section ribbon (.cedwyn-rib) drawn by a section.js a browser still
  * holds from before 2 Nov, so the retired coming-soon / Museum / The retelling row cannot come back from a cache. */
 (function () {
   'use strict';
   if (window.CedwynGardenBanner) return;
-  var d = document, de = d.documentElement, VER = '2.2.0', GC = 'https://gardencity.cymru', STORE = 'https://cedwyn.bucklerfamily.estate/dartboard/garden-store/', XK = 'cw_gdn_x', XDAYS = 30;
+  var d = document, de = d.documentElement, VER = '2.2.0', GC = 'https://gardencity.cymru', STORE = 'https://bucklerfamily.estate/garden-store/', XK = 'cw_gdn_x', XDAYS = 30;
   window.CedwynGardenBanner = { v: VER };
   var DATA = '/_cedwyn/garden-banner/products.json?v=' + VER;
   var T = {
