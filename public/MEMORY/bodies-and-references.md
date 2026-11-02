@@ -9,9 +9,10 @@
 | South Wales Police | Police records relevant to the case and its history |
 | Vale of Glamorgan Council | Planning, listing and demolition files; council minutes |
 | Llandough Community Council | Local minutes and the green / Church View Close history |
-| Cadw and Heneb (the Welsh archaeological trust) | 1988 survey and listing records; the 1983 fire report. A Heneb complaint outcome and a Heneb refusal arrived on separate threads: each gets its own draft |
+| Cadw and Heneb (the Welsh archaeological trust) | 1988 survey and listing records; the 1983 fire report. A Heneb complaint outcome and a Heneb refusal arrived on separate threads: each gets its own draft. Heneb is not itself covered by FOI (whether the environmental information rules reach it is arguable); it keeps the historic environment record on behalf of the Welsh Ministers, so a request to the Welsh Government is the route the ICO can enforce |
 | Glamorgan Archives | Council series DCVG/C/4/36/11, DCVG/C/1/2, DCVG/C/2/1, SC/C/1/2 (1974) |
 | National Library of Wales | Bute estate catalogue (D 219 heading; the D 205/6–7 exchange papers) |
+| Companies House | Filing histories of the dissolved companies in the title chain: Western Ground Rents Ltd 00342092 (1938–1997) and Mountjoy Ltd 00179977 (1922–2001) |
 | Museum Wales | Objects and photographs |
 | Defra | Agricultural records; FOI2026/23886 searched again on 29 Oct 2026 (records management included) and still holds nothing; the next step is the Welsh Government and the TNA series MAF 32 / MAF 73, not yet checked |
 | Ordnance Survey | Survey and name records; FOI-26-46 clarified on 29 Oct 2026 |

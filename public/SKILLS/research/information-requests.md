@@ -8,4 +8,5 @@
 4. Pre-empt the three replies: the hostile one, the obtuse gatekeeper, and the paywall or other excuse — then sweep for a fourth excuse.
 5. Ask for routes that cost nothing: inspection, electronic copies, narrowing to stay inside cost limits, the duty to advise and assist.
 6. When a body answers "not held", check what it searched: which systems, which dates, which terms. Missing search terms are grounds for an internal review; a refused review goes to the Information Commissioner.
-7. Draft only. The draft goes through the hive; the project lead sends.
+7. When a body sits outside FOI, find whose records it keeps: a request to the authority it holds them for can be enforced through the Information Commissioner.
+8. Draft only. The draft goes through the hive; the project lead sends.
