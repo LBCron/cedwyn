@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.1.1] - 2026-11-02
+
+### Fixed
+- The Wayback section works after the site build routes every outside address in data files through `/wayback/go/`: rows, captures and the weekly status still match, and each outside page opens through `/wayback/go/` like the rest of the site.
+- `data/targets.json` carries the first-pass captures saved so far (capture links are built from the timestamp); the weekly re-save now runs back to back from Sunday 03:15 UTC until the list is done.
+
 ## [3.1.0] - 2026-11-02
 
 ### Added
