@@ -33,8 +33,8 @@ def unwrap(t):
 def inject(t):
     # Existing pages may already carry an older loader URL. Upgrade it in place, and make sure
     # the stylesheet is present, rather than duplicating scripts or leaving stale browser caches.
-    if re.search(r'<script\\b[^>]*\\bsrc\\s*=\\s*["\\']/_cedwyn/clamp\\.js(?:\\?[^"\\']*)?["\\']', t, re.I):
-        t = re.sub(r'(/_cedwyn/clamp\\.js)(?:\\?[^"\\'>\\s]*)?', r'\\1?v=4', t)
+    if re.search(r'<script\b[^>]*\bsrc\s*=\s*["\']/_cedwyn/clamp\.js(?:\?[^"\']*)?["\']', t, re.I):
+        t = re.sub(r'(/_cedwyn/clamp\.js)(?:\?[^"\'>\s]*)?', r'\1?v=4', t)
         if 'id="cw-clamp-css"' in t:
             t = re.sub(r'<style id="cw-clamp-css">.*?</style>', lambda m: CSS, t, count=1, flags=re.S)
         else:
