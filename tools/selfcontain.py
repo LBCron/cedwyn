@@ -22,7 +22,7 @@ FIX = '--fix' in sys.argv
 ONLY = [a.split('=', 1)[1] for a in sys.argv if a.startswith('--only=')]
 SELF = 'cedwyn.bucklerfamily.estate'
 ABS = 'https://' + SELF
-BOOT = '/_cedwyn/ghf/ghf-boot.js?v=2.1.22'   # 2.1.22 (2 Nov 2026, 06:10 GMT): fresh cache key. ?v=2.1.20 was already cached at the edge from #108's boot (no Garden City banner, old cw-graph/basecamp), so most pages kept the old strip; 2.1.22 also carries f05b60d's basecamp ?v=2.1.21 to phones
+BOOT = '/_cedwyn/ghf/ghf-boot.js?v=2.1.24'   # 2.1.24 (2 Nov 2026, 06:35 GMT): fresh cache key for the boot that loads garden-banner 2.2.0 (2.1.22 kept the 2.1.0 loader). ?v=2.1.20 was already cached at the edge from #108's boot (no Garden City banner, old cw-graph/basecamp), so most pages kept the old strip; 2.1.22 also carries f05b60d's basecamp ?v=2.1.21 to phones
 TIDS = [t['id'] for t in CFG['themes']]
 HOST = {}
 for t in CFG['themes']:
