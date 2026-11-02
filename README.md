@@ -1,4 +1,4 @@
-# Garden Store (REALM flowers & plants), webapp 46 of 59
+# Garden Store (flowers & plants), webapp 46 of 59
 Our own plant store mirroring Garden City's catalogue (gardencity.cymru). Garden City is the supplier and seller:
 every Buy opens her product page; she takes payment and delivers. We never take payment.
 
