@@ -38,11 +38,11 @@ glossary of refusal grounds. Labels in en / cy / es follow `<html lang>` (the si
 An "old chestnut" is a passage that raises why a record was not disclosed sooner: records set aside as out of scope,
 released weeks later on a new request, found after a "not held" answer, or produced only after a challenge.
 - **Detection is automatic.** `public/toc.js` splits each record's conduct note and reply quotes into clauses and scores each one
-  against the rule list in `public/_ui/chestnuts.rules.json` (case-insensitive patterns with a kind and a weight; toc.js carries
+  against the rule list in `public/_ui/chestnut-rules.a2ui.json` (case-insensitive patterns with a kind and a weight; toc.js carries
   the same list as a fallback). A clause scoring at least `min_clause` gets the crescendo highlight: level 1 below 3, level 2 from
   3 to 5, level 3 from 6. A record whose best clause scores at least `min_record` joins the 🌰 list, with that clause as its headline.
   New replies are picked up the moment they reach the catalogue. To catch a new kind of wording, add a rule.
-- **Manual override.** In `chestnuts.rules.json` "overrides", set a record id to `{"exclude":true}`, `{"include":true}` or
+- **Manual override.** In `chestnut-rules.a2ui.json` "overrides", set a record id to `{"exclude":true}`, `{"include":true}` or
   `{"headline":"…"}`. A catalogue record can also carry `finding.chestnut` (false, true, or a headline string).
 - **Details.** The "details" link and a tap on a radar blip open one dialog: the extract with the chestnut highlighted, the
   source (body, date, reference), the timeline (first reply, what reopened it, later disclosure, gap in days and weeks) and why
