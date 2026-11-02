@@ -38,8 +38,8 @@
     },
     "analytics": {
       "branch": "section/analytics",
-      "pinned_utc": "2026-11-02T04:24:30Z",
-      "sha": "5c57d62b6a51c4e3c95e2c91cfb32af95a47d9c4"
+      "pinned_utc": "2026-11-02T06:58:42Z",
+      "sha": "a1ff8ffe216329b4e977c3ff2aec40fccdf0e6ab"
     },
     "cloudflare": {
       "branch": "section/cloudflare",
