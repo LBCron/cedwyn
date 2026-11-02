@@ -124,7 +124,7 @@
   var SKIPQ = '.ghf-ui,header,nav,footer,script,style,noscript,#cedwyn-guestbook,#ghf-agent-footer,[data-for-agents],.cw-gm,.cw-vh-bar,.cwl-pv,.cwl-rm,.cwl-back,.cwl-more,.cwl-gt,.cwl-gh,[aria-hidden=true],template';
   function content() {
     var c = d.querySelector('main,[role=main]') || d.querySelector('article') || d.querySelector('#content,.content,#main');
-    if (c && (c.textContent || '').length > 300) return c;
+    if (c && (c.textContent || '').length > 160) return c;
     var best = null, bl = 0, k = d.body ? d.body.children : [];
     for (var i = 0; i < k.length; i++) {
       var e = k[i]; if (e.matches(SKIPQ) || /^(SCRIPT|STYLE|LINK)$/.test(e.tagName)) continue;
@@ -630,10 +630,25 @@
     var pg = 0; if (lvl && lvl.parent && lvl.parent.h) { /* none */ }
     paint(lvl || null, 0); setTimeout(function () { try { tg.scrollIntoView({ block: 'start' }); scrollBy(0, -topOff() - 52); } catch (e) {} }, 30);
   }
+  function buildWholePage(P) {
+    /* A short, structured page still gets the same reversible reading treatment:
+       retain its H1, then put the remaining text behind one expandable page card. */
+    if (!P || P.hasAttribute('data-cw-nolevels')) return null;
+    var keep = P.firstElementChild && P.firstElementChild.tagName === 'H1' ? P.firstElementChild : null;
+    var bodyNodes = [].slice.call(P.childNodes).filter(function (n) { return n !== keep; });
+    var bodyText = clean(bodyNodes.map(function (n) { return n.textContent || ''; }).join(' '));
+    if (bodyText.length < 180) return null;
+    var h = mk('h2', 'cwl-gh', LV_TITLE() || (keep ? clean(keep.textContent) : lvTxt(4)));
+    P.insertBefore(h, keep ? keep.nextSibling : P.firstChild);
+    var root = { kids: [], body: [], lvl: 1, el: P, key: '' };
+    var s = { h: h, lvl: 2, kids: [], body: bodyNodes, parent: root, el: null, key: '' };
+    root.kids.push(s); materialize(s, {}, 1);
+    return root;
+  }
   function levels() {
-    /* Text reading levels now apply across themes and webapps. Do not use the legacy NOCLIP
-       route list here: it belongs to the old viewport clip, not this nested reader. */
-    if (location.pathname === '/' || /^\\/(?:wales|argentina)\\/?$/.test(location.pathname) || de.hasAttribute('data-cw-nolevels') || location.search.indexOf('full=1') >= 0) return;
+    /* Text reading levels apply across themes and webapps. The legacy NOCLIP route list
+       belongs to the old viewport clip, not this nested reader. */
+    if (location.pathname === '/' || /^\/(?:wales|argentina)\/?$/.test(location.pathname) || de.hasAttribute('data-cw-nolevels') || location.search.indexOf('full=1') >= 0) return;
     var c = content(); if (!c || c.closest('.ghf-ui') || c.hasAttribute('data-cw-nolevels')) return;
     var fp = flowParent(c), bp = blockParent(c), P = null, root = null;
     function ok(x) {
@@ -644,7 +659,10 @@
     }
     if (ok(bp) && (!ok(fp) || bp.n > fp.n || bp.p.contains(fp.p) && bp.n >= 3)) { P = bp.p; root = buildBlocks(P); }
     if (!root && ok(fp)) { P = fp.p; root = buildFlow(P); }
-    if (!root || clean(P.textContent).length < 1200) return;
+    /* If the page has prose but no heading hierarchy, use one page-level disclosure instead
+       of leaving it as an unresponsive wall of text. */
+    if (!root) { P = c; if (ok({ p: P })) root = buildWholePage(P); }
+    if (!root || clean(P.textContent).length < 240) return;
     var h1 = d.querySelector('main h1,article h1,h1'); LV = { P: P, root: root, cur: null, pg: 0, scrolls: {}, busy: false, title: h1 ? clean(h1.textContent).split(/ [—–:|] /)[0] : '' };
     P.classList.add('cwl-on');
     var bk = mk('button', 'cwl-back'); bk.type = 'button'; bk.innerHTML = '<span class="cwl-ba" aria-hidden="true">‹</span><span>' + lvTxt(0) + '</span><span class="cwl-bt"></span>'; bk.hidden = true;
@@ -653,7 +671,7 @@
       var target = e.target && e.target.nodeType === 1 ? e.target : e.target && e.target.parentElement;
       if (!target) return;
       var control = target.closest('a[href],button,input,select,textarea,summary,[role="button"],[contenteditable="true"]');
-      if (control && !control.classList.contains('cwl-card')) return; /* let links and controls do their own job */
+      if (control && !control.classList.contains('cwl-card')) return; /* preserve links and controls */
       var card = target.closest('.cwl-card'); if (!card || !P.contains(card)) return;
       e.preventDefault(); e.stopPropagation(); enterCard(card);
     });
