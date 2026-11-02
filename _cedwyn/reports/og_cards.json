@@ -4,8 +4,8 @@
   "Hive": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-hive.jpg",
   "Home": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-home.jpg"
  },
- "pages_changed": 8608,
- "tags_added": 140013,
+ "pages_changed": 8610,
+ "tags_added": 140046,
  "pages_already_complete": 0,
  "pillow": true,
  "font": true,
@@ -14,6 +14,7 @@
   "Home": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-home-e79f07de.jpg",
   "Academy": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-academy-d1890a7c.jpg",
   "Counting House": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-counting-house-25683568.jpg",
+  "Analytics": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-analytics-d814fc73.jpg",
   "Case Office": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-case-office-dd4dce8d.jpg",
   "Arcade": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-arcade-22b8a0a4.jpg",
   "Argentina": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-argentina-aca4e16a.jpg",
@@ -65,6 +66,7 @@
   "Independent Review": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-independent-review-a41e819c.jpg",
   "Self-Assessment": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-self-assessment-cb0f1152.jpg",
   "Gift Shop": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-gift-shop-9a64b8c9.jpg",
+  "Spill": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-spill-26f9b0f7.jpg",
   "The Story": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-the-story-b7887fea.jpg",
   "Terrain": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-terrain-56ae8bb7.jpg",
   "That Old Chestnut": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-that-old-chestnut-06f9b097.jpg",
@@ -93,6 +95,10 @@
   "accounts": [
    "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Counting House",
    "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-counting-house-25683568.jpg"
+  ],
+  "analytics": [
+   "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Analytics",
+   "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-analytics-d814fc73.jpg"
   ],
   "app": [
    "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Case Office",
@@ -301,6 +307,10 @@
   "shop": [
    "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Gift Shop",
    "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-gift-shop-9a64b8c9.jpg"
+  ],
+  "spill": [
+   "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Spill",
+   "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-spill-26f9b0f7.jpg"
   ],
   "story": [
    "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 The Story",

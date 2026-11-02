@@ -33,7 +33,7 @@
   var tc = d.querySelector('meta[name="theme-color"]'); if (!tc) { tc = d.createElement("meta"); tc.name = "theme-color"; (d.head || de).appendChild(tc); }
   tc.removeAttribute("media"); tc.content = M === "day" ? "#f7f2e7" : "#000000";
   var B = (me && me.src ? me.src.replace(/[^\/?#]*([?#].*)?$/, "") : "") || "/_cedwyn/ghf/";
-  var V = "?v=2.1.19", sync = d.readyState === "loading" && me && !me.async && !me.defer;
+  var V = "?v=2.1.22", sync = d.readyState === "loading" && me && !me.async && !me.defer;
   de.className += (de.className ? " " : "") + "ghf-v2-pre";
   var s = d.createElement("style"); s.setAttribute("data-ghf-boot", "");
   s.textContent = "html.ghf-v2-pre body::before{content:'';display:block;height:148px;background:#000}@media (min-width:783px){html.ghf-v2-pre body::before{height:152px}}.ghf-v2-up>a.ghf-v2-upa{visibility:hidden}";
@@ -49,7 +49,7 @@
   var needBc = !window.GHFBasecamp && !d.querySelector('script[src*="basecamp.js"]');
   if (needBc) out += '<script src="' + B + "basecamp.js" + V + '"><\/script>';
   if (!d.querySelector('script[src*="cw-graph.js"]')) out += '<script src="/_cedwyn/cw-graph.js?v=1.3.0" defer><\/script>'; // 30 Oct 2026: 100vh Read more on every page with the header (2 Nov 2026: its graph promo strip is retired)
-  if (!window.CedwynGardenBanner && !d.querySelector('script[src*="garden-banner.js"]')) out += '<script src="/_cedwyn/garden-banner.js?v=2.1.0" defer><\/script>'; // 2 Nov 2026: the one Garden City banner in the header strip (replaces the graph promo, section ribbon and e-book strips). 2.0.0: links to gardencity.cymru (owner, 03:25 GMT 2 Nov). Spec: docs/GARDEN-BANNER.md
+  if (!window.CedwynGardenBanner && !d.querySelector('script[src*="garden-banner.js"]')) out += '<script src="/_cedwyn/garden-banner.js?v=2.2.0" defer><\/script>'; // 2 Nov 2026: the one Garden City banner in the header strip (replaces the graph promo, section ribbon and e-book strips). 2.0.0: links to gardencity.cymru (owner, 03:25 GMT 2 Nov). Spec: docs/GARDEN-BANNER.md
   if (!d.querySelector('script[data-cedwyn-wikilinks]')) out += '<script src="https://cedwyn.bucklerfamily.estate/nomenclature/wikilinks.js?v=1.0.1" defer data-cedwyn-wikilinks><\/script>'; // 31 Oct 2026: lexicon-backed cross-theme name links
   if (!window.CedwynVersionGate && !d.querySelector('script[src*="/_cedwyn/version-gate.js"]')) out += '<script src="/_cedwyn/version-gate.js?v=1.0.0" defer><\/script>'; // 1 Nov 2026: version gate (a click-to-load "Select a version" facade in the media slot + upgrade bar). Spec: docs/VERSION-GATE.md
   if (!d.querySelector('script[src*="landing-map-views.js"]')) out += '<script src="/_cedwyn/landing-map-views.js?v=1.0.0" defer><\/script>';

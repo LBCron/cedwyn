@@ -1,0 +1,9 @@
+# Analytics (webapp 45 of 59)
+> Website analytics for bucklerfamily.estate and its subdomains, as graphs for people and as data for agents. Aggregates only. Refreshed every 15 min.
+
+Page: https://cedwyn.bucklerfamily.estate/analytics/  (also https://bucklerfamily.estate/analytics)
+JSON: https://cedwyn.bucklerfamily.estate/analytics/api/snapshot (latest), https://cedwyn.bucklerfamily.estate/analytics/api/history?hours=48 (time series from the webapp database)
+MCP (JSON-RPC 2.0, POST): https://cedwyn.bucklerfamily.estate/analytics/api/mcp — tools: analytics_summary, analytics_traffic_by_day, analytics_top_pages, analytics_referrers, analytics_audience, analytics_hosts, analytics_status_and_bots, analytics_history, analytics_guestbook_read, analytics_guestbook_sign
+WebMCP: the page registers the same tools with document.modelContext (or navigator.modelContext); fallback window.__cedwynAnalyticsMCP.run(name, args)
+Guest book: GET/POST https://cedwyn.bucklerfamily.estate/analytics/api/guestbook — log every change you make to this webapp ({"who","change","version"}).
+Sources: Cloudflare Web Analytics (browser beacon, sampled) and Cloudflare zone analytics (edge). Source code: github.com/unclehowell/cedwyn branch section/analytics.
