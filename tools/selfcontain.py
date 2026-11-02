@@ -539,6 +539,11 @@ def main():
             ROOT_RW = ['/assets/fonts/* /_cedwyn/ghf/fonts/:splat 200', '/locations-img/* /dartboard/locations-img/:splat 200',
                        '/dartboard/ghf-lang/* /_cedwyn/ghf/:splat 200']
             out = [l for l in ROOT_RW if l not in out] + out
+            # 2 Nov 2026 (P-122 regression): Cloudflare reads only 100 rules from the first splat/placeholder rule on, so these
+            # three must not open the file (they did, and every rule past line 100 went dead: /ebooks/api/*, /r/:c, /wales/:theme/*).
+            # Keep site.py's order: exact-path rules first, then the pattern rules, each in their original order. - Sion's Tab agent
+            _dyn = [l for l in out if l.split() and ('*' in l.split()[0] or ':' in l.split()[0])]
+            out = [l for l in out if l not in _dyn] + _dyn
             rp.write_text('\n'.join(out) + '\n', 'utf-8'); stats['redirects_to_themes'] = nmap
         for t in CFG['themes']:
             if t.get('redirect_to'):
