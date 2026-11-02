@@ -13,9 +13,10 @@ var css=document.createElement('style');css.textContent='#wayback-body .wbr{marg
 function wkey(){var n=new Date(),t=new Date(Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate())),dy=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-dy);var y0=new Date(Date.UTC(t.getUTCFullYear(),0,1));return t.getUTCFullYear()+'-W'+String(Math.ceil(((t-y0)/864e5+1)/7)).padStart(2,'0');}
 function row(p,L){
  p.u=rawu(p.u); var w=p.wb||{},k=(L.pages||{})[p.u]||{},best=null;
- if(w.ts)best={ts:w.ts};if(k.ts&&(!best||k.ts>best.ts))best={ts:k.ts};
- var cap=best?'<a href="'+e(IA+best.ts+'/'+p.u)+'" rel="nofollow noopener">Wayback capture, '+d(ts2iso(best.ts))+'</a>':'<span class="no">not yet in the Wayback Machine</span>';
- var wk=k.week?(k.ts&&k.week===wkey()?'<span class="ok">saved this week</span>':k.week===wkey()?'<span class="no">tried this week ('+e(k.code)+')</span>':'last weekly save '+d(k.ok_at||k.last_try)):'weekly save from Sunday';
+ if(w.ts)best={ts:w.ts};else if(p.prior)best={ts:p.prior,old:1};if(k.ts&&(!best||best.old||k.ts>best.ts))best={ts:k.ts};
+ var cap=best?'<a href="'+e(IA+best.ts+'/'+p.u)+'" rel="nofollow noopener">'+(best.old?'earlier Wayback capture, ':'Wayback capture, ')+d(ts2iso(best.ts))+'</a>':'<span class="no">not yet in the Wayback Machine</span>';
+ var why=function(c){c=String(c||'');return c==='520'?'the archive could not fetch it this week':c==='523'?'site unreachable this week':c==='429'?'archive busy, retrying':'tried this week ('+e(c)+')';};
+ var wk=k.week?(k.ts&&k.week===wkey()?'<span class="ok">saved this week</span>':k.week===wkey()?'<span class="no">'+why(k.code)+'</span>':'last weekly save '+d(k.ok_at||k.last_try)):'weekly save from Sunday';
  return '<div class="wbr"><a href="'+e(go(p.u))+'" rel="nofollow noopener">'+e(p.title||p.u)+'</a><br><small>'+e(p.host||'')+' · first seen '+d(p.first_seen)+'</small><br>'+
   (p.terms||[]).map(function(t){return '<span class="tg">'+e(t)+'</span>';}).join('')+(p.ambiguous?'<span class="tg amb">possibly the other Llandough</span>':'')+
   '<br><small>'+cap+' · '+wk+'</small></div>';
@@ -24,7 +25,7 @@ Promise.all([fetch('data/targets.json?v='+Date.now()).then(function(r){return r.
  fetch(API+'?v='+Date.now()).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})]).then(function(a){
  var T=a[0],L=a[1]||{},ps=T.targets||[],H={};
  ps.forEach(function(p){p.u=rawu(p.u);});
- var saved=ps.filter(function(p){var k=(L.pages||{})[p.u]||{};return (p.wb&&p.wb.ts)||k.ts;}).length;
+ var saved=ps.filter(function(p){var k=(L.pages||{})[p.u]||{};return (p.wb&&p.wb.ts)||k.ts||p.prior;}).length;
  var wp=L.week_progress,h='<p><small>'+e(T.about)+' Weekly re-save: '+e(T.weekly.schedule)+'.'+(wp?' This week: '+wp.done+' of '+wp.of+(wp.finished?' done.':' so far.'):'')+(L.updated?' Status updated '+d(L.updated)+'.':'')+'</small></p>';
  h+='<p>'+ps.length+' pages · '+saved+' in the Wayback Machine · '+(T.counts&&T.counts.new_2026_11_02||0)+' added on 2 Nov 2026</p>';
  ps.forEach(function(p){(H[p.host]=H[p.host]||[]).push(p);});
