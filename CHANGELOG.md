@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.1.2] - 2026-11-02
+
+### Improved
+- Weekly status in plain words ("the archive could not fetch it this week", "site unreachable this week", "archive busy, retrying") instead of a bare code.
+- Where a page could not be fetched by the archive this week but an earlier Wayback capture exists, the row links that earlier capture and says so.
+
 ## [3.1.1] - 2026-11-02
 
 ### Fixed
