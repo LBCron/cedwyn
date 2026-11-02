@@ -1,33 +1,33 @@
-/*! garden-banner.js — the one shared Garden City banner in the header strip of every Cedwyn webapp · v2.2.0 (2 Nov 2026) · Cedwyn editors
+/*! garden-banner.js — the one shared Garden banner in the header strip of every Cedwyn webapp · v2.3.0 (2 Nov 2026) · Cedwyn editors
  * 00:48 GMT 2 Nov 2026: the cross-promo chrome (graph promo strip, section ribbon chips, coming-soon teasers, e-book strips,
- * the "Outside records" popup) is gone. 03:25 GMT 2 Nov 2026: in its place this one banner promotes the REALM flowers and plants
+ * the "Outside records" popup) is gone. 03:25 GMT 2 Nov 2026: in its place this one banner promotes the flowers and plants
  * of Garden City Cymru (gardencity.cymru) on every webapp. It takes over the header's slim strip (.ghf-v2-up, basecamp.js), so it
  * never covers content and the header with its burger menu and "N of 59" number stays exactly as it is. Webapps that hid that
  * strip to drop the old promo get it back for the banner only. A × closes it for 30 days (this browser only).
- * Data: /_cedwyn/garden-banner/products.json (name, handle, sprite tile) + sprite.webp, made from the Garden City catalogue by
- * tools/garden_banner.py. Up to 2.1.0 links opened gardencity.cymru (home page, or /products/<handle>) in a new tab: the one outside shop the
- * site links to, allowed in runtime.js pass() and selfcontain.py OUT_SITE. No prices.
  * 2.1.0 (owner, 03:45 GMT 2 Nov 2026): one consistent banner on every webapp, the Argentina scope included (/argentina/, /patagonia/,
- * html[data-cedwyn-scope=argentina]); there it carries no prices or money words (products whose names carry one are left out) and only
- * Garden City's own product photos, never farm flower or NFT images. Off on machine-facing pages (/academy/, /agents/, /hive/),
- * /garden/ and framed pages. Spec: docs/GARDEN-BANNER.md
- * 2.2.0 (owner, 06:13 GMT 2 Nov 2026): the banner opens our own Garden Store webapp (https://bucklerfamily.estate/garden-store/, product
- * cards at /garden-store/p/<handle>/), which mirrors the Garden City catalogue and sends each purchase to gardencity.cymru; the banner no
- * longer links to gardencity.cymru directly. Also hides and removes any section ribbon (.cedwyn-rib) drawn by a section.js a browser still
- * holds from before 2 Nov, so the retired coming-soon / Museum / The retelling row cannot come back from a cache. */
+ * html[data-cedwyn-scope=argentina]); there it carries no prices or money words and only Garden City's own product photos, never farm
+ * flower or NFT images. Off on machine-facing pages (/academy/, /agents/, /hive/), /garden/, /garden-store/ and framed pages. Spec: docs/GARDEN-BANNER.md
+ * 2.2.0 (owner, 06:13 GMT 2 Nov 2026): the banner opens our own Garden Store webapp (https://bucklerfamily.estate/garden-store/), which
+ * mirrors the Garden City catalogue and sends each purchase to gardencity.cymru. Also hides and removes any section ribbon (.cedwyn-rib)
+ * drawn by a section.js a browser still holds from before 2 Nov.
+ * 2.3.0 (owner, 10:06 GMT 2 Nov 2026): titled "Order the Garden's surviving flowers", with one provenance line (the only place it appears
+ * on the banner); the old all-caps store label is no longer used as a store name or label; no scrolling or moving text (the product strip and its drift are
+ * gone); twice the height (68 px instead of 34 px) on phone and desktop; the whole background is a Garden Gallery (NFT) painting,
+ * NFA-0054 "Behind the Dry-Stone Wall" (a field of foxgloves), cover-fit under a dark overlay. Argentina scope keeps its 2.1.0 rule:
+ * there the background is a Garden City product photo (a hydrangea), never farm or NFT art. */
 (function () {
   'use strict';
   if (window.CedwynGardenBanner) return;
-  var d = document, de = d.documentElement, VER = '2.2.0', GC = 'https://gardencity.cymru', STORE = 'https://bucklerfamily.estate/garden-store/', XK = 'cw_gdn_x', XDAYS = 30;
+  var d = document, de = d.documentElement, VER = '2.3.0', STORE = 'https://bucklerfamily.estate/garden-store/', XK = 'cw_gdn_x', XDAYS = 30;
   window.CedwynGardenBanner = { v: VER };
-  var DATA = '/_cedwyn/garden-banner/products.json?v=' + VER;
+  var BG = '/_cedwyn/garden-banner/bg-nfa-0054.webp?v=' + VER, BGA = '/_cedwyn/garden-banner/bg-gc-hydrangea.webp?v=' + VER;
   var T = {
-    en: { lead: 'REALM', sub: 'Garden City Cymru', cta: 'Visit', x: 'Close the Garden City banner', aria: 'REALM: flowers and plants grown in Wales, from Garden City Cymru (opens our Garden Store)' },
-    cy: { lead: 'REALM', sub: 'Garden City Cymru', cta: 'Ymweld', x: 'Cau baner Garden City', aria: 'REALM: blodau a phlanhigion a dyfwyd yng Nghymru, gan Garden City Cymru (yn agor ein Siop Ardd)' },
-    es: { lead: 'REALM', sub: 'Garden City Cymru', cta: 'Visitar', x: 'Cerrar el banner de Garden City', aria: 'REALM: flores y plantas cultivadas en Gales, de Garden City Cymru (abre nuestra tienda de jard\u00edn)' }
+    en: { t: 'Order the Garden\u2019s surviving flowers', s: 'These flowers are grown by Mary Buckler II, granddaughter of Mary Williams of Great House Farm, Llandough \u2014 the Williams matriarchy estate and realm.', cta: 'Visit', x: 'Close the Garden banner' },
+    cy: { t: 'Archebwch flodau\u2019r Ardd a oroesodd', s: 'Mae\u2019r blodau hyn yn cael eu tyfu gan Mary Buckler II, wyres Mary Williams o Fferm T\u0177 Mawr (Great House Farm), Llandochau \u2014 yst\u00e2d a theyrnas matriarchaeth y Williams.', cta: 'Ymweld', x: 'Cau baner yr Ardd' },
+    es: { t: 'Encargue las flores supervivientes del Jard\u00edn', s: 'Estas flores las cultiva Mary Buckler II, nieta de Mary Williams de Great House Farm, Llandough: la finca y el reino del matriarcado Williams.', cta: 'Visitar', x: 'Cerrar el banner del Jard\u00edn' }
   };
   function lg() { var l = ''; try { l = window.__cedwynLang || localStorage.getItem('ghf_lang') || ''; } catch (e) {} l = (l || de.getAttribute('lang') || 'en').slice(0, 2).toLowerCase(); return T[l] ? l : 'en'; }
-  function path() { var p = (window.__cedwynLP || location.pathname || '/').toLowerCase(); return p; }
+  function path() { return (window.__cedwynLP || location.pathname || '/').toLowerCase(); }
   function off() {
     var p = path();
     if (/^\/((wales|argentina)\/)?(garden|garden-store|academy|agents|hive)(\/|$)/.test(p)) return true;
@@ -35,83 +35,46 @@
     try { var x = +localStorage.getItem(XK) || 0; if (x && Date.now() - x < XDAYS * 864e5) return true; } catch (e) {}
     return false;
   }
-  function arg() {   // Argentina scope: the banner shows, with no money words (2.1.0)
+  function arg() {   // Argentina scope (2.1.0): no money words, no farm or NFT art
     var p = path(), sc = de.getAttribute('data-cedwyn-scope') || '', sec = de.getAttribute('data-cedwyn-sec') || '';
     return sc === 'argentina' || sec === 'argentina' || /^\/(argentina|patagonia)(\/|$)/.test(p) || /^\/(wales|argentina)\/patagonia(\/|$)/.test(p);
   }
-  var MONEY = /gift ?card|voucher|\u00a3|\$|\u20ac|price|\bsale\b|offer|discount|\bfree\b|\bbuy\b|\bshop\b|\bcost|\bpay/i;
   function mk(tag, cls, txt) { var e = d.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  var H = 68;   // 2.3.0: twice the old 34 px strip
   var CSS =
-    '.ghf-v2-up.cw-gdn-on{padding:0!important}' +
-    '.cw-gdn{display:flex;align-items:center;width:100%;min-width:0;height:34px;font:13px/1 Barlow,system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:.02em;color:#fff}' +
-    '.cw-gdn a{color:inherit!important;text-decoration:none!important}' +
-    '.cw-gdn-l{flex:0 0 auto;display:flex;align-items:center;gap:6px;height:34px;padding:0 10px;font-weight:700;color:var(--ghf-s,#9be15d)!important;white-space:nowrap}' +
-    '.cw-gdn-l svg{display:block}.cw-gdn-l small{font-weight:500;font-size:12px;color:#fff;opacity:.85}' +
-    '.cw-gdn-r{flex:1 1 auto;min-width:0;height:34px;display:flex;align-items:center;gap:12px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;' +
-      '-webkit-mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 16px),transparent);mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 16px),transparent)}' +
-    '.cw-gdn-r::-webkit-scrollbar{display:none}' +
-    '.cw-gdn-i{flex:0 0 auto;display:flex;align-items:center;gap:6px;height:30px;max-width:190px}' +
-    '.cw-gdn-i span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}' +
-    '.cw-gdn-p{flex:0 0 auto;width:26px;height:26px;border-radius:6px;background-color:#2a3a2a;background-repeat:no-repeat}' +
-    '.cw-gdn-c{flex:0 0 auto;height:34px;display:flex;align-items:center;padding:0 4px 0 8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85;white-space:nowrap}' +
-    '.cw-gdn-x{flex:0 0 auto;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:0;background:none;color:inherit;font:18px/1 system-ui,sans-serif;opacity:.7;cursor:pointer;padding:0}' +
+    '.ghf-v2-up.cw-gdn-on{padding:0!important;height:' + H + 'px!important;min-height:' + H + 'px!important;max-height:' + H + 'px!important;background:#10180f!important;overflow:hidden!important}' +
+    '.cw-gdn{position:relative;display:flex;align-items:center;width:100%;min-width:0;height:' + H + 'px;font:13px/1.2 Barlow,system-ui,-apple-system,Segoe UI,sans-serif;color:#fff;' +
+      'background-color:#10180f;background-repeat:no-repeat;background-size:cover;background-position:center 45%}' +
+    '.cw-gdn::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.38) 100%);pointer-events:none}' +
+    '.cw-gdn>*{position:relative}' +
+    '.cw-gdn a{color:#fff!important;text-decoration:none!important}' +
+    '.cw-gdn-l{flex:1 1 auto;min-width:0;height:100%;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:0 6px 0 12px;overflow:hidden}' +
+    '.cw-gdn-t{display:block;font-weight:700;font-size:16px;line-height:1.15;letter-spacing:.01em;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 2px rgba(0,0,0,.6)}' +
+    '.cw-gdn-s{display:block;font-size:12px;line-height:1.25;color:rgba(255,255,255,.92);overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;text-shadow:0 1px 2px rgba(0,0,0,.6)}' +
+    '.cw-gdn-c{flex:0 0 auto;align-self:center;display:flex;align-items:center;height:32px;margin:0 2px 0 6px;padding:0 12px;border:1px solid rgba(255,255,255,.75);border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;background:rgba(0,0,0,.25)}' +
+    '.cw-gdn-x{flex:0 0 auto;width:36px;height:' + H + 'px;display:flex;align-items:center;justify-content:center;border:0;background:none;color:#fff;font:20px/1 system-ui,sans-serif;opacity:.8;cursor:pointer;padding:0}' +
     '.cw-gdn-x:hover,.cw-gdn-x:focus-visible{opacity:1}' +
-    '.cw-gdn a:focus-visible{outline:2px solid var(--ghf-s,#9be15d);outline-offset:-2px}' +
-    'html[data-ghf-mode=day] .cw-gdn{color:#000}html[data-ghf-mode=day] .cw-gdn-l{color:var(--ghf-p,#1e4d2b)!important}html[data-ghf-mode=day] .cw-gdn-l small{color:#000}' +
-    '@media (max-width:430px){.cw-gdn-l small{display:none}}';
-  var ICON = '<svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
-    '<circle cx="12" cy="9" r="2.4"/><path d="M12 6.6c0-2 1.2-3.6 2.6-3.6s2.2 1.8 1 3.4M14.4 9c2 0 3.6 1.2 3.6 2.6s-1.8 2.2-3.4 1M12 11.4c0 2-1.2 3.6-2.6 3.6S7.2 13.2 8.4 11.6M9.6 9C7.6 9 6 7.8 6 6.4s1.8-2.2 3.4-1M12 11.5V21M12 17c-2.5 0-4-1.5-4.5-3M12 18.5c2.2 0 3.6-1.3 4-2.8"/></svg>';
-  var data = null, slot = null, built = false;
+    '.cw-gdn a:focus-visible,.cw-gdn-x:focus-visible{outline:2px solid #fff;outline-offset:-3px}' +
+    '@media (max-width:560px){.cw-gdn-l{padding-left:10px;gap:2px}.cw-gdn-t{font-size:14px}.cw-gdn-s{font-size:10.5px;line-height:1.2;-webkit-line-clamp:3}.cw-gdn-c{padding:0;width:28px;justify-content:center;border:0;background:none;font-size:22px;letter-spacing:0}.cw-gdn-c span{display:none}.cw-gdn-x{width:30px}}';
+  var slot = null;
   function css() { if (d.getElementById('cw-gdn-css')) return; var s = mk('style'); s.id = 'cw-gdn-css'; s.textContent = CSS; (d.head || de).appendChild(s); }
-  function ext(a, href) { a.setAttributeNS(null, 'href', href); }   // 2.2.0: our own Garden Store, same tab. setAttributeNS keeps the address as
+  function ext(a, href) { a.setAttributeNS(null, 'href', href); }   // our own Garden Store, same tab. setAttributeNS keeps the address as
   // written: runtime.js's theme-link fixer (setAttribute/href hooks) would map the apex address onto an old apex theme folder
   function hide(up) { up.style.setProperty('display', 'none', 'important'); up.setAttribute('aria-hidden', 'true'); try { window.dispatchEvent(new Event('resize')); } catch (e) {} }
   function fill(up) {
     if (!up || up.querySelector('.cw-gdn')) return;
     if (off()) { up.textContent = ''; hide(up); return; }
     css();
-    var tt = T[lg()], w = mk('div', 'cw-gdn'), l = mk('a', 'cw-gdn-l'), r = mk('div', 'cw-gdn-r'), c = mk('a', 'cw-gdn-c', tt.cta + ' \u203a'), x = mk('button', 'cw-gdn-x', '\u00d7');
-    ext(l, STORE); l.innerHTML = ICON; l.appendChild(mk('span', null, tt.lead)); l.appendChild(mk('small', null, tt.sub)); l.setAttribute('aria-label', tt.aria);
-    ext(c, STORE); c.setAttribute('aria-label', tt.aria);
+    var tt = T[lg()], w = mk('div', 'cw-gdn'), l = mk('a', 'cw-gdn-l'), c = mk('a', 'cw-gdn-c'), x = mk('button', 'cw-gdn-x', '\u00d7');
+    w.style.backgroundImage = 'url(' + (arg() ? BGA : BG) + ')';
+    ext(l, STORE); l.appendChild(mk('span', 'cw-gdn-t', tt.t)); l.appendChild(mk('span', 'cw-gdn-s', tt.s)); l.setAttribute('aria-label', tt.t + '. ' + tt.s);
+    ext(c, STORE); c.appendChild(mk('span', null, tt.cta)); c.appendChild(d.createTextNode(' \u203a')); c.setAttribute('aria-label', tt.cta + ': ' + tt.t);
     x.type = 'button'; x.setAttribute('aria-label', tt.x); x.title = tt.x;
     x.addEventListener('click', function (e) { e.preventDefault(); try { localStorage.setItem(XK, String(Date.now())); } catch (er) {} up.textContent = ''; up.classList.remove('cw-gdn-on'); hide(up); });
-    w.appendChild(l); w.appendChild(r); w.appendChild(c); w.appendChild(x);
-    up.textContent = ''; up.appendChild(w); up.classList.add('cw-gdn-on'); up.setAttribute('aria-label', tt.aria); up.removeAttribute('aria-hidden');
-    up.style.setProperty('display', 'flex', 'important');   // 2.0.0: also on webapps whose own CSS hid this strip to drop the old promo
+    w.appendChild(l); w.appendChild(c); w.appendChild(x);
+    up.textContent = ''; up.appendChild(w); up.classList.add('cw-gdn-on'); up.setAttribute('aria-label', tt.t); up.removeAttribute('aria-hidden');
+    up.style.setProperty('display', 'flex', 'important');   // also on webapps whose own CSS hid this strip to drop the old promo
     try { window.dispatchEvent(new Event('resize')); } catch (e) {}
-    if (data) items(r); else load(function () { items(r); });
-  }
-  function load(cb) {
-    if (data) return cb();
-    var x = new XMLHttpRequest(); x.open('GET', DATA, true);
-    x.onload = function () { try { data = JSON.parse(x.responseText); } catch (e) { data = null; } if (data && data.items) cb(); };
-    x.send();
-  }
-  function items(r) {
-    if (!data || r.childNodes.length) return;
-    var sp = data.sprite || {}, n = 26, cols = sp.cols || 16, list = data.items || [], i = 0;
-    if (arg()) list = list.filter(function (it) { return !MONEY.test(it[1] || ''); });
-    var bg = 'url(' + sp.src + ')', bs = (cols * n) + 'px auto';
-    function one(it) {
-      var a = mk('a', 'cw-gdn-i'), p = mk('span', 'cw-gdn-p'), k = it[2];
-      ext(a, STORE + 'p/' + encodeURIComponent(it[0]) + '/');
-      p.style.backgroundImage = bg; p.style.backgroundSize = bs;
-      p.style.backgroundPosition = (-(k % cols) * n) + 'px ' + (-Math.floor(k / cols) * n) + 'px';
-      p.setAttribute('aria-hidden', 'true'); a.appendChild(p); a.appendChild(mk('span', null, it[1])); r.appendChild(a);
-    }
-    function batch() { var end = Math.min(list.length, i + 40); for (; i < end; i++) one(list[i]); if (i < list.length) { if (window.requestIdleCallback) window.requestIdleCallback(batch, { timeout: 600 }); else setTimeout(batch, 60); } }
-    batch(); drift(r);
-  }
-  function drift(r) {   // a gentle sideways drift; stops for good the moment the visitor touches, scrolls or focuses it
-    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var on = true, last = 0, acc = 0;
-    ['pointerdown', 'touchstart', 'wheel', 'focusin', 'keydown'].forEach(function (ev) { r.addEventListener(ev, function () { on = false; }, { passive: true }); });
-    function step(t) {
-      if (!on || !r.isConnected) return;
-      if (last) { acc += (t - last) * 0.022; var px = Math.floor(acc); if (px) { acc -= px; if (r.scrollLeft + r.clientWidth >= r.scrollWidth - 1) r.scrollLeft = 0; else r.scrollLeft += px; } }
-      last = t; requestAnimationFrame(step);
-    }
-    setTimeout(function () { requestAnimationFrame(step); }, 2500);
   }
   function watch() {
     var n = 0, iv = setInterval(function () {
