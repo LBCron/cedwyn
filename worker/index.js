@@ -169,6 +169,14 @@ const CSS = `
 .gs-f details{margin:8px 0}.gs-f summary{cursor:pointer;color:var(--g);font-weight:600}
 .gs-f table{width:100%;border-collapse:collapse;font-size:12.5px}.gs-f td,.gs-f th{border-top:1px solid var(--line);padding:4px;text-align:left;vertical-align:top}
 .gs-tw{overflow-x:auto;max-width:100%}
+.gs-pg{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px;margin:22px 0 6px;font-size:15px}
+.gs-pg a,.gs-pg span{min-width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;text-decoration:none;color:var(--g);padding:0 6px;box-sizing:border-box}
+.gs-pg a:hover,.gs-pg a:focus-visible{background:var(--g2)}
+.gs-pg span[aria-current]{background:var(--g);color:#fff;font-weight:700}
+.gs-pg .gs-el{min-width:14px;padding:0;color:var(--mut)}
+.gs-pg .gs-pn{font-weight:600;padding:0 8px}
+.gs-tools{scroll-margin-top:76px}
+@media(max-width:420px){.gs-pg .gs-pl{display:none}.gs-pg .gs-pn{padding:0 6px}}
 .gs-hide{display:none!important}
 `;
 
@@ -207,16 +215,36 @@ var mc=navigator.modelContext;if(mc){if(typeof mc.registerTool==='function')tool
 window.cedwynGardenStore={tools:tools};
 function slot(){var s=document.querySelector('.ghf-v2-name small');if(s&&!s.textContent.trim())s.textContent='${SLOT} of ${OF}'}document.addEventListener('DOMContentLoaded',function(){slot();setTimeout(slot,1500)});})();</script>`;
 
-function card(p) {
+function card(p, hide) {
   const price = p.p === p.pm ? gbp(p.p) : 'from ' + gbp(p.p);
-  return `<article class="gs-card" data-ty="${esc(slug(p.ty))}" data-g="${isPlant(p) ? 'plant' : 'home'}" data-q="${esc((p.t + ' ' + p.ty + ' ' + p.tg.join(' ')).toLowerCase())}">
+  return `<article class="gs-card${hide ? ' gs-hide' : ''}" data-ty="${esc(slug(p.ty))}" data-g="${isPlant(p) ? 'plant' : 'home'}" data-q="${esc((p.t + ' ' + p.ty + ' ' + p.tg.join(' ')).toLowerCase())}">
 <a class="gs-ph" href="${BASE}/p/${esc(p.h)}/">${p.i[0] ? `<img src="${esc(img(p.i[0], 400))}" alt="${esc(p.t)}" loading="lazy" width="400" height="400" referrerpolicy="no-referrer">` : ''}</a>
 <div class="gs-cb"><span class="gs-ty">${esc(p.ty || 'Plant')}</span><h2><a href="${BASE}/p/${esc(p.h)}/">${esc(p.t)}</a></h2>
 <span class="gs-pr">${price}${p.c ? `<s>${gbp(p.c)}</s>` : ''}</span>${p.a ? '' : '<span class="gs-out">Sold out at Garden City</span>'}
 <a class="gs-buy" href="${esc(buyUrl(p.h))}" target="_blank" rel="noopener" data-buy="${esc(p.h)}">Buy on Garden City ↗</a></div></article>`;
 }
 
-async function home(env) {
+// 0.3.0: 20 products per page with a Google-style page bar (owner request 14:11 GMT 2 Nov 2026).
+const PER = 20;
+function pagesList(total, cur, r) {
+  var b = 2 * r + 3, out = [], i;
+  if (total <= b + 2) { for (i = 1; i <= total; i++) out.push(i); return out; }
+  if (cur <= b - 1) { for (i = 1; i <= b; i++) out.push(i); out.push(0, total); return out; }
+  if (cur >= total - b + 2) { out.push(1, 0); for (i = total - b + 1; i <= total; i++) out.push(i); return out; }
+  out.push(1, 0); for (i = cur - r; i <= cur + r; i++) out.push(i); out.push(0, total); return out;
+}
+function pagerHtml(total, cur, href) {
+  if (total <= 1) return '';
+  var h = '';
+  if (cur > 1) h += '<a class="gs-pn" rel="prev" href="' + href(cur - 1) + '" data-p="' + (cur - 1) + '" aria-label="Previous page">‹<span class="gs-pl">&nbsp;Previous</span></a>';
+  pagesList(total, cur, 1).forEach(function (n) {
+    h += n === 0 ? '<span class="gs-el" aria-hidden="true">…</span>' : n === cur ? '<span aria-current="page">' + n + '</span>' : '<a href="' + href(n) + '" data-p="' + n + '" aria-label="Page ' + n + '">' + n + '</a>';
+  });
+  if (cur < total) h += '<a class="gs-pn" rel="next" href="' + href(cur + 1) + '" data-p="' + (cur + 1) + '" aria-label="Next page"><span class="gs-pl">Next&nbsp;</span>›</a>';
+  return h;
+}
+
+async function home(env, u) {
   const cat = await catalogue(env);
   const ps = cat.products.filter(isPlant).concat(cat.products.filter(p => !isPlant(p)));
   const nPl = cat.products.filter(isPlant).length;
@@ -224,6 +252,15 @@ async function home(env) {
   const groups = `<button type="button" data-g="plant" aria-pressed="false">Plants (${nPl})</button><button type="button" data-g="home" aria-pressed="false">Home &amp; gifts (${ps.length - nPl})</button>`;
   const chips = groups + Object.entries(types).sort((a, b) => b[1] - a[1]).map(([k, n]) => `<button type="button" data-f="${esc(slug(k))}" aria-pressed="false">${esc(k)} (${n})</button>`).join('');
   const inStock = ps.filter(p => p.a).length;
+  const sp = u ? u.searchParams : new URLSearchParams();
+  const fq = (sp.get('q') || '').toLowerCase().trim(), ft = sp.get('type') || '', fg = sp.get('group') || '';
+  const shown = ps.filter(p => (!ft || slug(p.ty) === ft) && (!fg || (isPlant(p) ? 'plant' : 'home') === fg) && (!fq || (p.t + ' ' + p.ty + ' ' + p.tg.join(' ')).toLowerCase().includes(fq)));
+  const pages = Math.max(1, Math.ceil(shown.length / PER));
+  const hm = String(sp.get('page') || '').match(/^\d+$/);
+  const cur = Math.min(pages, Math.max(1, hm ? parseInt(hm[0], 10) : 1));
+  const onPage = new Set(shown.slice((cur - 1) * PER, cur * PER).map(p => p.h));
+  const qs = n => { const s = new URLSearchParams(); if (fq) s.set('q', fq); if (ft) s.set('type', ft); if (fg) s.set('group', fg); if (n > 1) s.set('page', n); const t = s.toString(); return BASE + '/' + (t ? '?' + t : ''); };
+  const first = shown.length ? (cur - 1) * PER + 1 : 0, last = Math.min(cur * PER, shown.length);
   const body = `${navBar()}
 <h1><small>Order the Garden&rsquo;s surviving flowers</small>Garden Store</h1>
 <p class="gs-prov">These flowers are grown by Mary Buckler II, granddaughter of Mary Williams of Great House Farm, Llandough &mdash; the Williams matriarchy estate and realm.</p>
@@ -231,12 +268,21 @@ async function home(env) {
 <span class="gs-sold">Sold and fulfilled by Garden City (gardencity.cymru)</span>
 <div class="gs-tools"><input type="search" id="gs-q" placeholder="Search plants" aria-label="Search plants"></div>
 <div class="gs-chips" role="group" aria-label="Filter by type"><button type="button" data-f="" aria-pressed="true">All (${ps.length})</button>${chips}</div>
-<p class="gs-note" id="gs-n" aria-live="polite"></p>
-<div class="gs-grid" id="gs-grid">${ps.map(card).join('')}</div>
+<p class="gs-note" id="gs-n" aria-live="polite">${shown.length ? first + '–' + last + ' of ' + shown.length : 'Nothing matches'}</p>
+<div class="gs-grid" id="gs-grid">${ps.map(p => card(p, !onPage.has(p.h))).join('')}</div>
+<nav class="gs-pg" id="gs-pg" aria-label="Pages">${pagerHtml(pages, cur, qs)}</nav>
 ${footer(await gbEntries(env))}
-<script>(function(){var q=document.getElementById('gs-q'),cs=[].slice.call(document.querySelectorAll('.gs-card')),f='',g='',n=document.getElementById('gs-n');
-function go(){var t=(q.value||'').toLowerCase().trim(),k=0;cs.forEach(function(c){var ok=(!f||c.dataset.ty===f)&&(!g||c.dataset.g===g)&&(!t||c.dataset.q.indexOf(t)>=0);c.classList.toggle('gs-hide',!ok);if(ok)k++});n.textContent=(t||f||g)?k+' shown':''}
-q.addEventListener('input',go);[].forEach.call(document.querySelectorAll('.gs-chips button'),function(b){b.addEventListener('click',function(){f=b.dataset.f||'';g=b.dataset.g||'';[].forEach.call(document.querySelectorAll('.gs-chips button'),function(x){x.setAttribute('aria-pressed',x===b)});go()})})})();</script>
+<script>(function(){var PER=${PER},q=document.getElementById('gs-q'),cs=[].slice.call(document.querySelectorAll('.gs-card')),bs=[].slice.call(document.querySelectorAll('.gs-chips button')),f='',g='',page=1,n=document.getElementById('gs-n'),pg=document.getElementById('gs-pg'),top=document.querySelector('.gs-tools');
+${pagesList.toString()}
+${pagerHtml.toString()}
+function href(p){var s=new URLSearchParams(),t=(q.value||'').toLowerCase().trim();if(t)s.set('q',t);if(f)s.set('type',f);if(g)s.set('group',g);if(p>1)s.set('page',p);s=s.toString();return location.pathname+(s?'?'+s:'')}
+function read(){var s=new URLSearchParams(location.search),h=(location.hash.match(/page=(\\d+)/)||[])[1];q.value=s.get('q')||'';f=s.get('type')||'';g=s.get('group')||'';page=parseInt(s.get('page')||h||'1',10)||1;bs.forEach(function(x){x.setAttribute('aria-pressed',String(f?x.dataset.f===f:g?x.dataset.g===g:(!x.dataset.g&&!x.dataset.f)))})}
+function go(scroll){var t=(q.value||'').toLowerCase().trim(),m=cs.filter(function(c){return(!f||c.dataset.ty===f)&&(!g||c.dataset.g===g)&&(!t||c.dataset.q.indexOf(t)>=0)}),total=Math.max(1,Math.ceil(m.length/PER));page=Math.min(total,Math.max(1,page));var a=(page-1)*PER,b=Math.min(a+PER,m.length);cs.forEach(function(c){c.classList.add('gs-hide')});m.slice(a,b).forEach(function(c){c.classList.remove('gs-hide')});n.textContent=m.length?(a+1)+'–'+b+' of '+m.length:'Nothing matches';pg.innerHTML=pagerHtml(total,page,href);if(scroll&&top)top.scrollIntoView({block:'start'})}
+function filt(){page=1;history.replaceState(null,'',href(1));go(false)}
+q.addEventListener('input',filt);bs.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f||'';g=b.dataset.g||'';bs.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});filt()})});
+pg.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-p]');if(!a||e.metaKey||e.ctrlKey||e.shiftKey)return;e.preventDefault();page=parseInt(a.dataset.p,10)||1;history.pushState({p:page},'',href(page));go(true)});
+window.addEventListener('popstate',function(){read();go(false);setTimeout(function(){if(top)top.scrollIntoView({block:'start'})},60)});
+read();if(/page=\\d/.test(location.hash))history.replaceState(null,'',href(page));go(false)})();</script>
 ${WEBMCP}`;
   return shell('Garden Store · Flowers & plants from Garden City, Wales', 'Peat-free plants grown in Wales from Garden City (gardencity.cymru). Prices are hers; every Buy opens her own product page. Sold and fulfilled by Garden City.', body);
 }
@@ -280,6 +326,7 @@ Version: ${VERSION}. Products: ${cat.products.length}. Catalogue last read: ${ca
 - ${BASE}/catalogue.json — every product (compact form)
 - ${BASE}/api/search?q=<words>&type=<product type>&stock=1 — search
 - ${BASE}/api/product/<handle> — one product with variants and buy_url
+- ${BASE}/?page=<n> — the grid for people, 20 products per page (also &q=, &type=, &group=plant|home)
 - ${BASE}/p/<handle>/ — the product page for people
 
 ## Talk
@@ -303,7 +350,7 @@ export default {
     if (p === BASE) return new Response(null, { status: 301, headers: { location: BASE + '/' + u.search } });
     if (!p.startsWith(BASE + '/')) return new Response('not found', { status: 404 });
     p = p.slice(BASE.length);
-    if (p === '/' || p === '/index.html') return H(await home(env));
+    if (p === '/' || p === '/index.html') return H(await home(env, u));
     if (p === '/version.json') return J({ version: VERSION, slot: SLOT, of: OF, seller: SHOP });
     if (p === '/llms.txt') return new Response(llms(await catalogue(env)), { headers: { 'content-type': 'text/plain; charset=utf-8' } });
     if (p === '/catalogue.json') { const c = await catalogue(env); return J({ version: VERSION, source: SHOP, catalogue: c.source, fetched: c.fetched, last_ok: c.last_ok || null, last_error: c.last_error || null, count: c.products.length, seller: 'Garden City (gardencity.cymru)', buy_url_pattern: SHOP + '/products/<handle>?' + UTM, products: c.products }); }
