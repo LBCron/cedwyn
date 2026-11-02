@@ -1,0 +1,217 @@
+{
+ "a2ui": "0.9",
+ "surface": "that-old-chestnut-latest-mail",
+ "version": "0.3.3",
+ "note": "That Old Chestnut v0.3.3: replies received after the last full audit (31 Oct 2026), in the same record shape as the chestnuts collection of _db/view.json. toc.js adds a record only when the catalogue does not already carry its id, so the catalogue wins once it holds these rows. Mail read up to 2026-11-02T14:20Z.",
+ "mail_read_to": "2026-11-02",
+ "i18n": {
+  "en": {
+   "mail_to": "Replies received up to {d} are included."
+  },
+  "cy": {
+   "mail_to": "Mae atebion a ddaeth i law hyd at {d} wedi'u cynnwys."
+  },
+  "es": {
+   "mail_to": "Se incluyen las respuestas recibidas hasta el {d}."
+  }
+ },
+ "chestnuts": [
+  {
+   "id": "TOC-E01",
+   "title": "Heneb (HER) · reply of 2026-11-02",
+   "date": {
+    "display": "2026-11-02",
+    "sort": "2026-11-02",
+    "precision": "day"
+   },
+   "provenance": {
+    "holder": "Heneb (HER)",
+    "reference": "Correspondence held on file (not published)",
+    "date": "2026-11-02"
+   },
+   "evidence": [],
+   "finding": {
+    "class": "language",
+    "institution": "Heneb (HER)",
+    "negative_date": "2026-11-02",
+    "positive_date": "",
+    "months_elapsed": null,
+    "email_volume": "",
+    "negative_quote": "This information is not held in the HER. As previously advised, we are unable to undertake research on your behalf, please do search Archwilio and submit requests for any specific paper HER records which you wish to review.",
+    "positive_quote": "",
+    "positive_nature": "",
+    "trigger": "",
+    "disclosure_type": "",
+    "conduct": "The request named three historical title records and asked which searches and indexes were checked. The reply is a one-line 'not held' with no account of the searches, followed by the standing line that the HER will not research on the requester's behalf and a pointer to the public database.",
+    "interim_disclosure": "",
+    "terms": [
+     {
+      "term": "not held",
+      "statute": "EIR reg 12(4)(a) / FOIA s.1(1)(a); no account of the searches made",
+      "note": ""
+     },
+     {
+      "term": "unable to undertake research on your behalf",
+      "statute": "EIR reg 9 / FOIA s.16 duty to advise and assist; no exception cited (EIR reg 12(4)(b) / FOIA s.12–s.14 not formally applied)",
+      "note": ""
+     },
+     {
+      "term": "search Archwilio (pointed to the public database)",
+      "statute": "EIR reg 6(1)(b) / FOIA s.21 information already publicly accessible; not formally cited, and it applies only to information the body itself holds",
+      "note": ""
+     }
+    ],
+    "open": true,
+    "held_back": []
+   },
+   "updated": "2026-11-02",
+   "date_display": "2026-11-02",
+   "source_text": "Correspondence held on file (not published)",
+   "evidence_links": []
+  },
+  {
+   "id": "TOC-E02",
+   "title": "Heneb (HER) · reply of 2026-11-02",
+   "date": {
+    "display": "2026-11-02",
+    "sort": "2026-11-02",
+    "precision": "day"
+   },
+   "provenance": {
+    "holder": "Heneb (HER)",
+    "reference": "Correspondence held on file (not published)",
+    "date": "2026-11-02"
+   },
+   "evidence": [],
+   "finding": {
+    "class": "language",
+    "institution": "Heneb (HER)",
+    "negative_date": "2026-11-02",
+    "positive_date": "",
+    "months_elapsed": null,
+    "email_volume": "",
+    "negative_quote": "As previously advised, we are unable to undertake research on your behalf.",
+    "positive_quote": "",
+    "positive_nature": "",
+    "trigger": "",
+    "disclosure_type": "",
+    "conduct": "The reply answers a list of alternative names and spellings supplied for the existing requests. It does not say whether any of the names were searched; it repeats the earlier line.",
+    "interim_disclosure": "",
+    "terms": [
+     {
+      "term": "unable to undertake research on your behalf",
+      "statute": "EIR reg 9 / FOIA s.16 duty to advise and assist; no exception cited (EIR reg 12(4)(b) / FOIA s.12–s.14 not formally applied)",
+      "note": ""
+     },
+     {
+      "term": "as previously advised (earlier answer repeated)",
+      "statute": "EIR reg 5(1) / FOIA s.1(1): a request supplied with further names is to be searched and answered; reg 9 / s.16 advice on which names would help",
+      "note": ""
+     }
+    ],
+    "open": true,
+    "held_back": []
+   },
+   "updated": "2026-11-02",
+   "date_display": "2026-11-02",
+   "source_text": "Correspondence held on file (not published)",
+   "evidence_links": []
+  },
+  {
+   "id": "TOC-E03",
+   "title": "Heneb (HER) · reply of 2026-11-02",
+   "date": {
+    "display": "2026-11-02",
+    "sort": "2026-11-02",
+    "precision": "day"
+   },
+   "provenance": {
+    "holder": "Heneb (HER)",
+    "reference": "Correspondence held on file (not published)",
+    "date": "2026-11-02"
+   },
+   "evidence": [],
+   "finding": {
+    "class": "language",
+    "institution": "Heneb (HER)",
+    "negative_date": "2026-11-02",
+    "positive_date": "",
+    "months_elapsed": null,
+    "email_volume": "",
+    "negative_quote": "We are unable to undertake research on your behalf. You are welcome to search Archwilio and submit requests for any specific paper HER records which you wish to review.",
+    "positive_quote": "",
+    "positive_nature": "",
+    "trigger": "",
+    "disclosure_type": "",
+    "conduct": "The request asked for earlier 'not held' searches about the 1983 fire and the Roman villa finds to be run again with newly found historical names. The reply treats it as a research request and points to the public database; it does not say whether the new names were searched.",
+    "interim_disclosure": "",
+    "terms": [
+     {
+      "term": "unable to undertake research on your behalf",
+      "statute": "EIR reg 9 / FOIA s.16 duty to advise and assist; no exception cited (EIR reg 12(4)(b) / FOIA s.12–s.14 not formally applied)",
+      "note": ""
+     },
+     {
+      "term": "search Archwilio (pointed to the public database)",
+      "statute": "EIR reg 6(1)(b) / FOIA s.21 information already publicly accessible; not formally cited, and it applies only to information the body itself holds",
+      "note": ""
+     }
+    ],
+    "open": true,
+    "held_back": []
+   },
+   "updated": "2026-11-02",
+   "date_display": "2026-11-02",
+   "source_text": "Correspondence held on file (not published)",
+   "evidence_links": []
+  },
+  {
+   "id": "TOC-E04",
+   "title": "Health and Safety Executive · reply of 2026-11-02",
+   "date": {
+    "display": "2026-11-02",
+    "sort": "2026-11-02",
+    "precision": "day"
+   },
+   "provenance": {
+    "holder": "Health and Safety Executive",
+    "reference": "Correspondence held on file (not published)",
+    "date": "2026-11-02"
+   },
+   "evidence": [],
+   "finding": {
+    "class": "language",
+    "institution": "Health and Safety Executive",
+    "negative_date": "2026-11-02",
+    "positive_date": "",
+    "months_elapsed": null,
+    "email_volume": "",
+    "negative_quote": "HSE request you do not seek an update on the status of your request before the statutory / recommended date for response has expired. Please be advised that HSE is currently experiencing an increased volume of information requests. This has resulted in HSE not always being in a position to respond to requests within the statutory deadlines detailed above.",
+    "positive_quote": "",
+    "positive_nature": "",
+    "trigger": "",
+    "disclosure_type": "",
+    "conduct": "Automatic receipt for a request about 1988–89 demolition notifications. Before any work is done it asks the requester not to chase and warns that replies are not always sent within the statutory time.",
+    "interim_disclosure": "",
+    "terms": [
+     {
+      "term": "do not seek an update",
+      "statute": "FOIA s.10(1) / EIR reg 5(2): a reply is due within 20 working days; nothing in either bars a requester from asking about progress",
+      "note": ""
+     },
+     {
+      "term": "advance warning of late replies",
+      "statute": "FOIA s.10(1) / EIR reg 5(2) 20 working days; an EIR reg 7 extension needs complexity and volume, notified within the 20 days",
+      "note": ""
+     }
+    ],
+    "open": true,
+    "held_back": []
+   },
+   "updated": "2026-11-02",
+   "date_display": "2026-11-02",
+   "source_text": "Correspondence held on file (not published)",
+   "evidence_links": []
+  }
+ ]
+}
