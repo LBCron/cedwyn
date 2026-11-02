@@ -42,6 +42,8 @@ item, and while it is open the visitor can see that a newer full version is avai
 Add an entry to `version-gate.json` (`ebooks.<book id before the @>`: `card`, `price` of the latest version, `unit`, `versions[]` oldest first with `v`, `date`, `pages`, `change`). Then run `python3 tools/version_audit.py`.
 Take page counts and prices from data/ebooks.json and the e-book archive; never invent a price.
 
+Source: owner request of 1 Nov 2026 (site editorial decision); the rules it follows are docs/VERSION-STANDARD.md.
+
 ## CHANGELOG
 - 1.1.0 (2026-11-01): Selector UI rule (standard §2a): placeholder "Select a version", no label, no button or line under the drop-down, cover on load, NFT prompt only after play/open with no version chosen, choosing acts at once; e-book `cover` field. — Cedwyn editors
 - 1.0.0 (2026-11-01): first version: e-book reader facade + bar, (i) version table with the one-step price ladder, session memory, counts, cy/en/es. — Cedwyn editors
