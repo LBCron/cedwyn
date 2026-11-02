@@ -77,8 +77,37 @@ for _c, _area in zip(chain, _areas):
     _areas_pub.append({'id': _area['id'], 'path': _p, 'title': _c[1], 'cy': _c[3], 'es': _c[4], 'group': _c[2],
                        'aliases': _al, 'skip_in': _c[5], 'built': _built,
                        'slot': _area.get('serendipity_slot'), 'of': _area_doc.get('parcel_total', 59)})
-json.dump({'schema': 'cedwyn_areas/v1', 'source': 'data/site-areas.json', 'order': 'main menu reading order; previous/next wrap from the last area to the first',
-           'count': len(_areas_pub), 'parcel_total': _area_doc.get('parcel_total', 59), 'areas': _areas_pub}, open(DIST / 'areas.json', 'w'), ensure_ascii=False, indent=1)
+# 2 Nov 2026, nav 1.0.0 (owner, 04:13 GMT: "the way the navigation is done is flawed architecturally ... Fix it"): /areas.json
+# also carries "nav", the ONE ordered slot list that every header, menu and no-JS bar steps through: the areas above (slots 1-39,
+# data/site-areas.json, untouched) plus every webapp that declares its slot once, on its own themes.json entry ("slot": N,
+# optional "path"; "served_by": "worker" when a Worker serves it), sorted by slot. "href" is the address a link opens with no
+# redirect hop (/online/<id>/ for data/halves.json online_only apps); "src" is the built folder. "areas" stays as it was for
+# its other readers. tools/nav.py stamps the bar into every slot page and fails the build on a broken slot (docs/NAV.md).
+# - Sion's Tab agent
+_nav = [dict(a, src=a['path']) for a in _areas_pub]
+_nav_seen = {a['id'] for a in _areas_pub} | set(_source_to_area)
+for _t in CFG['themes']:
+    if not _t.get('slot') or _t['id'] in _nav_seen: continue
+    _p = _t.get('path') or '/' + _t['id'] + '/'
+    _nav.append({'id': _t['id'], 'path': _p, 'src': _p, 'title': _t.get('nav_title') or _t.get('title') or _t['id'], 'cy': _t.get('cy', ''), 'es': _t.get('es', ''),
+                 'group': _t.get('group') or CFG.get('default_group') or '', 'aliases': [], 'skip_in': [h for h in ('wales', 'patagonia') if _t['id'] in _XH[h]],
+                 'built': (DIST / _p.strip('/')).is_dir() or _t.get('served_by') == 'worker', 'slot': int(_t['slot']), 'of': _area_doc.get('parcel_total', 59), 'webapp': True,
+                 'worker': _t.get('served_by') == 'worker'})
+_nav_online = set(_HV.get('online_only', []))
+# nav 1.1.0 (owner, 05:07 GMT 2 Nov 2026: every webapp at bucklerfamily.estate/<name>/, the cedwyn subdomain to be phased out):
+# "apex" is each slot's flat address on the apex; a themes.json "apex" names it when it is not the id. The apex router and the
+# apex header read it from here - Sion's Tab agent
+_nav_apex = {_t['id']: str(_t['apex']).strip('/') for _t in CFG['themes'] if _t.get('apex')}
+for _a in _nav:
+    # 1.1.1: a path, not an absolute URL - selfcontain.py rewrites every https://bucklerfamily.estate/... it finds (build 41402080152)
+    _a['apex'] = '/%s/' % (_nav_apex.get(_a['id']) or _a['id'])
+    _a['href'] = '/online/%s/' % _a['id'] if _a['id'] in _nav_online else _a['path']
+    _a['sec'] = not _a.get('webapp') and _a['href'] == _a['path'] and _a['id'] != 'wales'
+_nav.sort(key=lambda a: int(a.get('slot') or 999))
+chain = [[a['id'], a['title'], a['group'], a['cy'], a['es'], a['skip_in'], int(a.get('slot') or 0), a['href'], 1 if a['sec'] else 0, a['apex']] for a in _nav if a['built']]
+json.dump({'schema': 'cedwyn_areas/v1', 'source': 'data/site-areas.json + themes.json slot', 'order': 'main menu reading order; previous/next wrap from the last area to the first',
+           'count': len(_areas_pub), 'parcel_total': _area_doc.get('parcel_total', 59), 'areas': _areas_pub,
+           'nav_version': '1.1.0', 'nav_order': 'slot order; previous/next step through every built slot and wrap from the last to the first', 'nav': _nav}, open(DIST / 'areas.json', 'w'), ensure_ascii=False, indent=1)
 bc.write_text(bc.read_text().replace('/*CEDWYN_CHAIN*/null', json.dumps(chain, ensure_ascii=False)).replace('/*CEDWYN_GROUPS*/null', json.dumps(menu_groups, ensure_ascii=False)).replace('/*CEDWYN_SMAP*/{}', json.dumps(_source_to_area, ensure_ascii=False))
               .replace('HOME = "https://bucklerfamily.estate/cedwyn/"', 'HOME = "/"')
               # DARTBOARD_NAMES: the dartboard theme is the dartboard app now, not the home (header and menu names)
@@ -460,7 +489,10 @@ def _shop_strip(dist):
                # sf40 (31 Oct 2026): document pages that real phone visitors (non-US, non-NL) reach with no route to /ebooks/ near
                # the top (CF 3 days to 16:00Z: fcg 56, oldbill 40, qa 29, cyberspace 21, thousand-cuts 18, emails 18; /wales/ and
                # /argentina/ serve the same file, so one strip covers all three). Full-screen apps (chess, maps, story) stay out.
-               'fcg', 'oldbill', 'qa', 'cyberspace', 'thousand-cuts', 'emails'):
+               'fcg', 'oldbill', 'qa', 'cyberspace', 'thousand-cuts', 'emails',
+               # sf48 (1 Nov 2026): /calendar/ is the 2nd most-visited page by non-US readers (CF 24 h to 16:01Z: 52 loads, 5x /ebooks/)
+               # and /fb2/ took 18; neither had any link to /ebooks/. Calendar strip goes under its heading (see below).
+               'calendar', 'fb2'):
         targets.append((_s + '/index.html', _s.replace('/', '-')))
     # sf41 (31 Oct 2026): the Wales and Patagonia front pages are their own files (wales/index.html, argentina/index.html), not
     # copies of /, so the sf40 note above did not cover them and neither showed a strip (CF 3 days to 19:00Z, non-US excl. NL:
@@ -495,6 +527,11 @@ def _shop_strip(dist):
         line = ('<p class="ebook-strip" style="margin:.5rem 0 .75rem;font-size:16px;line-height:1.4">'
                 '<a href="/r/strip-%s">%s</a></p>' % (tag, text))
         at = m.end()
+        if tag == 'calendar':  # sf48: under the page heading, above the month grid
+            mh = _re.compile(r'</h1>').search(h, m.end())
+            at = mh.end() if mh else m.end()
+        if tag == 'fb2':  # sf48: the album's <main> has no side padding, so the strip carries its own
+            line = line.replace('margin:.5rem 0 .75rem', 'margin:.5rem 14px .75rem')
         if tag in ('wales', 'argentina'):  # sf41: under the hero header inside <main>, in the page's default language
             mh = _re.compile(r'</header>').search(h, m.end())
             at = mh.end() if mh else m.end()
@@ -505,10 +542,14 @@ def _shop_strip(dist):
         f.write_text(h[:at] + line + h[at:], encoding='utf-8')
         n += 1
     print('shop strip: added to', n, 'pages')
+# 2 Nov 2026 (owner, 00:48 GMT): the e-book strip is retired on every page, with the rest of the cross-promo chrome; _shop_strip is
+# no longer called. purge_promo.py removes the strip, the home e-book button, the outside-records popup and the section ribbon from
+# every built page, including copies kept from earlier builds. The Garden banner (garden-banner.js) replaces them. Never stops a build - Sion's Tab agent
 try:
-    _shop_strip(DIST)
+    import purge_promo
+    purge_promo.run(DIST)
 except Exception as _e:
-    print('shop strip failed:', _e)
+    print('promo purge failed:', _e)
 
 # Holdings wording (owner rule, 22:25 GMT 30 Oct 2026; P-104): public text never states whether the family holds a record; it names
 # which other party should hold the original and what it has disclosed. Exact-phrase rewrites from data/holdings-wording.json over

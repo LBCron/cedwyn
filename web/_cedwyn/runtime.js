@@ -15,7 +15,7 @@
     DE0.setAttribute('data-cedwyn-sec', SEC || SS);
     if (!DE0.getAttribute('data-ghf-lang-default')) DE0.setAttribute('data-ghf-lang-default', (SEC || SS) === 'wales' ? 'cy' : 'es');
     if (SEC && SECTION_SPA.indexOf(T) >= 0) try { history.replaceState(history.state, '', LP + location.search + location.hash); } catch (e) {}   // a client-side router reads the plain theme path
-    var SJ = document.createElement('script'); SJ.src = '/_cedwyn/section.js?v=1.2.0'; SJ.async = true; (document.head || DE0).appendChild(SJ);
+    var SJ = document.createElement('script'); SJ.src = '/_cedwyn/section.js?v=1.3.0';   // 1.3.0 (2 Nov 2026): fresh key; ?v=1.2.0 was held at the edge with the old section.js that still drew the retired ribbon SJ.async = true; (document.head || DE0).appendChild(SJ);
   }
   window.__cedwynSec = SEC; window.__cedwynLP = LP;
   // the shared header (basecamp.js) reads the theme's former address from <html data-ghf-host / data-ghf-path>
@@ -88,6 +88,9 @@
   // a buy button opens Stripe/Gumroad checkout instead of the archive page (26 Oct 2026: the mailing list is now Cedwyn's own, below).
   function pass(u) { var m = /^https:\/\/([^\/?#:]+)/i.exec(u || ''), h; if (!m) return false; h = m[1].toLowerCase();
     return h === 'buy.stripe.com' || h === 'checkout.stripe.com' || h === 'gumroad.com' || /\.gumroad\.com$/.test(h)
+      // 2 Nov 2026 (owner, 03:25 GMT): Garden City Cymru (the REALM flowers and plants) is the one outside shop the site promotes; the
+      // Garden City banner (garden-banner.js 2.0.0) on every webapp opens gardencity.cymru directly, never the archive page
+      || h === 'gardencity.cymru'
       // 26 Oct 2026: the Agent guest book's version links (commits of this site's own repository) open GitHub directly; the owner allowed them out
       || (h === 'github.com' && /^\/unclehowell\/cedwyn\/commits?\/[^\s]+$/i.test(u.replace(/^https:\/\/[^\/]+/i, '').split(/[?#]/)[0])); }   // 27 Oct 2026: also a page's commit history (commits/<branch>/<path>), the version table's "See all"
   window.__cedwyn.pass = pass;

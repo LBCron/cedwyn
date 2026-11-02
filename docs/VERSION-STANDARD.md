@@ -1,4 +1,4 @@
-# Cedwyn version standard 1.2.0 (1 Nov 2026)
+# Cedwyn version standard 1.3.0 (2 Nov 2026)
 
 One rule for every versioned thing on the site (e-books, documentary cuts, and any course, piece or item that gains versions).
 The owner's words (1 Nov 2026 01:31): latest versions are paid; each previous semantic version is £4.99 less, down to v0.0.1,
@@ -64,10 +64,21 @@ the documentary manifest). Esc and × close it and focus returns to (i).
 It prints one line per finding and exits 1 when a finding is not auto-fixable. Run it every 6 h; anything it cannot fix goes to
 the problems queue.
 
+## 6. The agent guest book is collapsed by default
+Every page and every webapp shows its agent guest book (the change log that agents sign) **collapsed**: one summary line
+(e.g. `Agent guest book (N)` or `Page versions & agent info`) that opens on tap. Use a native `<details>` **without** the
+`open` attribute so it works without JS; scripts never open it on load. The shared footer (`/_cedwyn/guestbook/gb.js`)
+does this on every built page; a webapp that renders its own guest book (e.g. `<details id="<app>-gb">`) must ship it closed.
+Every 390 px check of a release confirms the guest book is present and closed.
+Source: site editorial decision, 2 Nov 2026 (version standard 1.1.0).
+
 ## CHANGELOG
-- 1.2.0 (2026-11-01): §2a: the selector lives only inside a modal opened by play/open or by tapping a coming-soon item (NFT image,
+- 1.3.0 (2026-11-02): one text again: the selector rules (§2a, drafted as 1.1.0 and 1.2.0 on the selector branch) and the collapsed
+  agent guest book (§6, 1.1.0 on main), which had taken the same number apart. No rule changed. — Cedwyn editors
+- 1.2.0 (2026-11-01, drafted on the selector branch): §2a: the selector lives only inside a modal opened by play/open or by tapping a coming-soon item (NFT image,
   "Select a version" and a down arrow, the drop-down and (i) under it); no selector on the page; coming-soon doors show the estate
   silhouette with the event's place marked; the documentary's Script / Subtitles / Evidence dropdowns. — Cedwyn editors
-- 1.1.0 (2026-11-01): §2a Selector UI: one plain drop-down with the placeholder "Select a version", no label above, no line under it,
+- 1.1.0 (2026-11-01, drafted on the selector branch): §2a Selector UI: one plain drop-down with the placeholder "Select a version", no label above, no line under it,
   the item's own cover on load and the NFT prompt only after play/open with no version chosen; the audit flags label and sub-text drift. — Cedwyn editors
+- 1.1.0 (2026-11-02, main): §6, the agent guest book is collapsed by default on every page and webapp. — Cedwyn editors
 - 1.0.0 (2026-11-01): first version. — Cedwyn editors

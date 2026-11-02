@@ -1,17 +1,17 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9164,
+  "pages_scanned": 9170,
   "references_checked": {
-    "resource": 207041,
-    "nav": 471349
+    "resource": 209817,
+    "nav": 469549
   },
-  "database_backed_paths": 7356,
-  "unique_missing_destinations": 5332,
-  "missing_references": 54076,
-  "missing_navigation_references": 38474,
-  "missing_resource_references": 15602,
-  "unique_broken_fragments": 1819,
-  "broken_fragment_references": 3377,
+  "database_backed_paths": 7372,
+  "unique_missing_destinations": 5430,
+  "missing_references": 51442,
+  "missing_navigation_references": 35841,
+  "missing_resource_references": 15601,
+  "unique_broken_fragments": 1832,
+  "broken_fragment_references": 3390,
   "form_or_endpoint_actions_not_checked": {
     "form[action]": 2550
   },
@@ -19,7 +19,7 @@
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9132,
+      "references": 9138,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9129,
+      "references": 9135,
       "examples": [
         {
           "from": "/",
@@ -73,7 +73,7 @@
     {
       "kind": "resource",
       "path": "/blog/rss.xml",
-      "references": 6534,
+      "references": 6541,
       "examples": [
         {
           "from": "/review/",
@@ -100,7 +100,7 @@
     {
       "kind": "resource",
       "path": "/blog/atom.xml",
-      "references": 6534,
+      "references": 6541,
       "examples": [
         {
           "from": "/review/",
@@ -148,33 +148,6 @@
           "from": "/wiki/evidence-chain/",
           "attribute": "img[srcset]",
           "url": "/_ext/s-ssl.wordpress.com/i/logo/wpcom-gray-white.png"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/r/strip-ev",
-      "references": 1731,
-      "examples": [
-        {
-          "from": "/research/evidence-chain/",
-          "attribute": "a[href]",
-          "url": "/r/strip-ev"
-        },
-        {
-          "from": "/research/evidence-library/",
-          "attribute": "a[href]",
-          "url": "/r/strip-ev"
-        },
-        {
-          "from": "/research/evidence/",
-          "attribute": "a[href]",
-          "url": "/r/strip-ev"
-        },
-        {
-          "from": "/research/forensic-evidence-capture-decisive-document-schedule-6-october-2026/",
-          "attribute": "a[href]",
-          "url": "/r/strip-ev"
         }
       ]
     },
@@ -229,60 +202,6 @@
           "from": "/fb2/profiles.html",
           "attribute": "a[href]",
           "url": "/fb/m/login"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/r/strip-art",
-      "references": 637,
-      "examples": [
-        {
-          "from": "/research/the-tightrope/",
-          "attribute": "a[href]",
-          "url": "/r/strip-art"
-        },
-        {
-          "from": "/research/missing-records/",
-          "attribute": "a[href]",
-          "url": "/r/strip-art"
-        },
-        {
-          "from": "/research/bp-properties-v-buckler/",
-          "attribute": "a[href]",
-          "url": "/r/strip-art"
-        },
-        {
-          "from": "/research/family-legal-case-control-room/",
-          "attribute": "a[href]",
-          "url": "/r/strip-art"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/r/strip-dir",
-      "references": 307,
-      "examples": [
-        {
-          "from": "/directory/p/llandough-and-leckwith-war-memorial-institute/",
-          "attribute": "a[href]",
-          "url": "/r/strip-dir"
-        },
-        {
-          "from": "/directory/p/pigsys-hot-food/",
-          "attribute": "a[href]",
-          "url": "/r/strip-dir"
-        },
-        {
-          "from": "/directory/p/redimo/",
-          "attribute": "a[href]",
-          "url": "/r/strip-dir"
-        },
-        {
-          "from": "/directory/p/rhythm-creations/",
-          "attribute": "a[href]",
-          "url": "/r/strip-dir"
         }
       ]
     },
@@ -585,33 +504,6 @@
     },
     {
       "kind": "nav",
-      "path": "/r/strip-kf",
-      "references": 51,
-      "examples": [
-        {
-          "from": "/kissed-frogs/",
-          "attribute": "a[href]",
-          "url": "/r/strip-kf"
-        },
-        {
-          "from": "/kissed-frogs/kf-45-re-nisbet-and-potts-contract-1906/",
-          "attribute": "a[href]",
-          "url": "/r/strip-kf"
-        },
-        {
-          "from": "/kissed-frogs/kf-18-cardiff-urban-district-council-as-the-water/",
-          "attribute": "a[href]",
-          "url": "/r/strip-kf"
-        },
-        {
-          "from": "/kissed-frogs/kf-37-poaching-great-house-farm-1908/",
-          "attribute": "a[href]",
-          "url": "/r/strip-kf"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
       "path": "/argentina/thousand-cuts/",
       "references": 49,
       "examples": [
@@ -883,7 +775,7 @@
     {
       "kind": "nav",
       "path": "/research/>*.html",
-      "references": 35,
+      "references": 34,
       "examples": [
         {
           "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
@@ -985,33 +877,6 @@
           "from": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/deletable_layout/fixed-header.html",
           "attribute": "script[src]",
           "url": "../js/adminlte.js"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/r/strip-nom-c",
-      "references": 26,
-      "examples": [
-        {
-          "from": "/nomenclature/c/parcel-a/",
-          "attribute": "a[href]",
-          "url": "/r/strip-nom-c"
-        },
-        {
-          "from": "/nomenclature/c/hmlr/",
-          "attribute": "a[href]",
-          "url": "/r/strip-nom-c"
-        },
-        {
-          "from": "/nomenclature/c/parcel-b/",
-          "attribute": "a[href]",
-          "url": "/r/strip-nom-c"
-        },
-        {
-          "from": "/nomenclature/c/museum-wales/",
-          "attribute": "a[href]",
-          "url": "/r/strip-nom-c"
         }
       ]
     },
@@ -3419,33 +3284,6 @@
       ]
     },
     {
-      "kind": "resource",
-      "path": "/dartboard/fonts/barlow-latin-300-normal.woff2",
-      "references": 9,
-      "examples": [
-        {
-          "from": "/cyberspace/",
-          "attribute": "link[href]",
-          "url": "/dartboard/fonts/barlow-latin-300-normal.woff2"
-        },
-        {
-          "from": "/cyberspace/",
-          "attribute": "style-block[url()]",
-          "url": "/dartboard/fonts/barlow-latin-300-normal.woff2"
-        },
-        {
-          "from": "/estate/",
-          "attribute": "style-block[url()]",
-          "url": "/dartboard/fonts/barlow-latin-300-normal.woff2"
-        },
-        {
-          "from": "/patagonia/",
-          "attribute": "link[href]",
-          "url": "/dartboard/fonts/barlow-latin-300-normal.woff2"
-        }
-      ]
-    },
-    {
       "kind": "nav",
       "path": "/forensic/wiki/records-access-chronology/source-conflicts-register/",
       "references": 9,
@@ -4063,6 +3901,168 @@
           "from": "/docs/ghf_wiki/ot_developerguide/latest/html/en/",
           "attribute": "a[href]",
           "url": "1-record.html#preferred-information-density-convention"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#name-and-status-timeline"
+        },
+        {
+          "from": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#when-two-women-could-each-be-mary-buckler"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#what-the-reported-judgment-identifies"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#lead-register"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#thread-index"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#thread-6-internal-review-1188-26-of-foi-719-26"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#before-after-record"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#change-log-addendum-21-october-2026"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/rg_bpvsbucklerarchiveresearchleads/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/rg_bpvsbucklerarchiveresearchleads/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rg_bpvsbucklerarchiveresearchleads/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rg_bpvsbucklerarchiveresearchleads/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#archive-material-now-verified-from-the-family-wayback-image-archive"
+        },
+        {
+          "from": "/docs/ghf_wiki/rg_bpvsbucklerarchiveresearchleads/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#manorial-and-ownership-chain-before-1877"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/co_welshgovernmentandcadwemailcorrespondenc/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/co_welshgovernmentandcadwemailcorrespondenc/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_welshgovernmentandcadwemailcorrespondenc/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_welshgovernmentandcadwemailcorrespondenc/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#thread-index"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_welshgovernmentandcadwemailcorrespondenc/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#thread-1-cadw-foi-request-of-23-january-2026-rejected-by-cadw-gov-wales"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
  "dartboard": {
-  "points": 250,
+  "points": 256,
   "source": "/dartboard/data/snl-mail.json",
   "own_db": true
  },
