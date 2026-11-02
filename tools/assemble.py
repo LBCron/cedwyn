@@ -114,9 +114,9 @@ def one(t):
                 how = 'branch'
             d = work / t['dir'] if t['dir'] else work
             if d.exists() and any(d.iterdir()):
-                shutil.copytree(d, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
+                shutil.copytree(d, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github', 'worker'))
                 if t.get('overlay') and (work / t['overlay']).is_dir():   # the folder the live site serves at its root (e.g. qa: static/qa)
-                    shutil.copytree(work / t['overlay'], out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', 'functions'))
+                    shutil.copytree(work / t['overlay'], out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', 'functions', 'worker'))
                     how += '+overlay'
                 n = sum(1 for _ in out.rglob('*') if _.is_file())
         shutil.rmtree(work, ignore_errors=True)
