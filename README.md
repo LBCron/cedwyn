@@ -49,6 +49,9 @@ released weeks later on a new request, found after a "not held" answer, or produ
   it matters. Esc, × and a tap on the backdrop close it. Without dialog support the link goes to the same details on the page
   (`#cn-<record id>`).
 
+## Latest mail (v0.3.3)
+Replies that arrive after the last full audit go into `public/_ui/latest-mail.a2ui.json`: the same record shape as the `chestnuts` collection of `_db/view.json` (ids `TOC-E01`…), plus `mail_read_to` (the last day of mail read) and its status-line text in en / cy / es. `toc.js` adds a record only when the catalogue does not already carry its id, puts the newest first, and shows "Replies received up to <day> are included." The file is in `_ui/` because the site build publishes only `_ui/*.a2ui.json` as plain files. When `tools/chestnut_sync.py` next brings these replies into the catalogue under the same ids, the file can be emptied.
+
 ## Editorial
 Role titles only, no individual officers; neutral labels; internal links only; the public gate in `tools/views.py`
 applies to everything published.
