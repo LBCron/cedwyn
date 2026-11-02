@@ -1,8 +1,8 @@
 # Webapps
 
-Every webapp on the site (formerly called themes): 49 in the registry, each served at its own path, each on its own branch or snapshot. The state column is how hard-coded its content is today; the view rule is the selection that will feed its own view database; the wave is its work package. Machine-readable: [architecture.json](architecture.json).
+Every webapp on the site (formerly called themes): 53 in the registry, each served at its own path, each on its own branch or snapshot. The state column is how hard-coded its content is today; the view rule is the selection that will feed its own view database; the wave is its work package. Machine-readable: [architecture.json](architecture.json).
 
-States: BUILT 2 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 1 · MIXED 13 · SNAPSHOT 14.
+States: BUILT 2 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 4 · MIXED 13 · SNAPSHOT 15.
 
 - **DATA-DRIVEN**: pages rendered from the webapp's view of the central catalogue.
 - **GENERATED**: generated on main from repository data files.
@@ -23,6 +23,7 @@ States: BUILT 2 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 1 · MI
 | The Map Room | `/maps/` | The Map Room: historic and modern maps, plans and the tithe parcels | branch maps, folder public | 1 data JSON file(s) in the branch, 2 pre-generated HTML pages | MIXED | to be written in its work package | WP5 (wave 1) |
 | The Farm Album | `/fb/` | The Farm Album: photographs and posts from the farm years | branch fb, folder site | 336 hand-written or pre-generated HTML pages; no data file | HARD-CODED | to be written in its work package | WP7 (wave 3) |
 | Great House Farm II · Patagonia Museum | `/patagonia/` | Great House Farm II: the Patagonia museum area | branch section/patagonia (snapshot pinned in sections.lock) | content baked into the crawled or pinned HTML/JS; must be extracted to core first | SNAPSHOT | content layer only (texts, stops, questions) from core or an app register; game and engine code stays code | WP7 (wave 3) |
+| Tithe H3 | `/tithe-h3/` | The parcels of the David Stewart estate plan of Cedfin alias Ty Mawr, traced through the 1841 tithe map onto today's map, each with an OS grid reference and H3 hexagons (webapp 42 of 59) | branch section/tithe-h3 (snapshot pinned in sections.lock) | its own parcel table drawn from the estate plan and tithe records in the central catalogue | SNAPSHOT | one row per traced parcel with grid reference, hexagons and its catalogue ids | standalone webapp, 2 Nov 2026 |
 
 ## Interactive
 
@@ -41,6 +42,9 @@ States: BUILT 2 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 1 · MI
 | Terrain · Cedwyn Estate in 3D | `/terrain/` | Terrain: the estate in 3D | crawled from its running app at build time | content baked into the crawled or pinned HTML/JS; must be extracted to core first | SNAPSHOT | content layer only (texts, stops, questions) from core or an app register; game and engine code stays code | WP7 (wave 3) |
 | The Digital Estate | `/cyberspace/` | The online side of the estate. Its scope label reads "Online" (cy "Ar-lein", es "En línea") from 1 Nov 2026; the path and the cyberspace key stay. Online scope shows online-only content (games, library, photos) and links to Wales or Argentina for on-the-ground and replica content | branch section/cyberspace (snapshot pinned in sections.lock) | content baked into the crawled or pinned HTML/JS; must be extracted to core first | SNAPSHOT | content layer only (texts, stops, questions) from core or an app register; game and engine code stays code | WP7 (wave 3) |
 | The Garden Gallery | `/nft-art/` | The Garden Gallery: digital editions repainted as gardens from archive photographs, maps and plans | branch nft-art, folder public | 1 hand-written or pre-generated HTML pages; no data file | HARD-CODED | to be written in its work package | WP7 (wave 3) |
+| Cloudflare usage | `/cloudflare/` | The estate's hosting usage as graphs against the free plan (database rows written and read, storage, worker requests, errors and CPU, key-value operations, site traffic), refreshed every 15 minutes; graphs only, no prose (webapp 43 of 59) | branch section/cloudflare, with a same-origin worker route for its live data | its own serverless backend and SQLite database parsed from the hosting account's analytics; WebMCP tools; agent guest book | LIVE | usage series per product against the free-plan limit | standalone webapp, 2 Nov 2026 |
+| Spill | `/spill/` | The protocol an agent follows to submit sourced, in-scope facts from its own conversation with the project lead since its previous spill that the evidence catalogue does not hold; checked items enter the master catalogue first, then the dependent webapps are re-released (webapp 44 of 59) | branch section/spill, with a same-origin worker route for intake and its database | its own SQLite database of submitted items, per-agent spill marks and a guest book; protocol files llms.txt and protocol.json; WebMCP tools | LIVE | items by status: new, queued, accepted, released, declined, duplicate | standalone webapp, 2 Nov 2026 |
+| Analytics | `/analytics/` | Website analytics for the estate's sites as graphs (visits, page views, unique visitors, top pages, referrers, countries, devices, status codes, humans and bots), refreshed every 15 minutes; traffic classes keep fixed colours on every graph (webapp 45 of 59) | branch section/analytics, backed by a module inside the analytics worker | its own serverless backend and SQLite database parsed from the hosting account's traffic analytics; WebMCP tools; agent guest book | LIVE | graphs only, with a legend for the traffic-class colours | standalone webapp, 2 Nov 2026 |
 
 ## A story to be retold
 

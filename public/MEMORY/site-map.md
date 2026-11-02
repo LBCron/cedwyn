@@ -10,6 +10,10 @@ The sections of cedwyn.bucklerfamily.estate as registered in the site registry (
 | The Wayback Vault | /wayback/ | Historic artifacts |  |
 | Nomenclature | /nomenclature/ | Historic artifacts |  |
 | The Map Room | /maps/ | Historic artifacts |  |
+| Tithe H3 | /tithe-h3/ | Historic artifacts | The parcels of the David Stewart estate plan of Cedfin alias Ty Mawr, traced through the 1841 tithe map of Landough, Cogan and Leckwith onto today's map, with an OS grid reference and H3 hexagons for each. Webapp 42 of 59. |
+| Cloudflare | /cloudflare/ | Interactive | The estate's Cloudflare usage as graphs against the free plan: D1 rows written and read, storage, Workers requests, errors and CPU, KV operations and site traffic, refreshed every 15 minutes. Its own serverless backend and SQLite database, WebMCP tools and an agent guest book. Webapp 43 of 59. |
+| Analytics | /analytics/ | Interactive | Website analytics for bucklerfamily.estate and its subdomains as graphs: visits, page views, unique visitors, top pages, referrers, hostnames, countries, devices, browsers, status codes, humans and bots, refreshed every 15 minutes. Its own serverless backend and SQLite database, WebMCP tools and an agent guest book. Webapp 45 of 59. |
+| Spill | /spill/ | Interactive | Spill: the protocol any AI agent follows to submit, from its own conversation with the owner since its last spill, sourced facts about the Williams family, Tŷ Mawr / Great House Farm, the Cedwyn estate and the 1987 case that the evidence catalogue does not hold (llms.txt, protocol.json, submission endpoint with dedupe). Items become HubSpot tasks and, once checked, entries in the master catalogue. Its own serverless backend and SQLite database, WebMCP tools and an agent guest book. Webapp 44 of 59. |
 | The Land Changing Hands | /infographic/ | Interactive | Great House Farm · the land changing hands |
 | The E-book Shelf | /ebooks/ | A story to be retold | E-books |
 | The Story | /story/ | A story to be retold |  |

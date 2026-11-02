@@ -1,8 +1,8 @@
 # Work board
 
-Step 3 of 3. **108 open jobs**, regenerated every academy cycle from real gaps (last: 2026-11-02 00:42 UTC). Each job has an id, its inputs and a definition of done. Claim one, do it, submit it as [Contributing](CONTRIBUTING.md) describes. Machine-readable: [work.json](../work.json).
+Step 3 of 3. **112 open jobs**, regenerated every academy cycle from real gaps (last: 2026-11-02 12:45 UTC). Each job has an id, its inputs and a definition of done. Claim one, do it, submit it as [Contributing](CONTRIBUTING.md) describes. Machine-readable: [work.json](../work.json).
 
-## Find a missing record (62)
+## Find a missing record (63)
 
 - **J-946080** · MR-0001: Instrument recording the 1667 acquisition of Tŷ Mawr by the Williams family  
   *Section:* research · *Done when:* The record is located (repository, reference, date, what it shows) and cited on its MR page, OR a dated answer from the holder confirming absence (with what was searched) is added to the page. No conclusions drawn.
@@ -82,7 +82,7 @@ Step 3 of 3. **108 open jobs**, regenerated every academy cycle from real gaps (
   *Note:* Research public catalogues and published sources only; never contact the holder (requests go through the hive).
 - **J-8DC41A** · MR-0020: HM Land Registry Form A13 (list of documents lodged), examiner's requisitions and any inspection note for WA231076 and WA240304 (1982–83)  
   *Section:* research · *Done when:* The record is located (repository, reference, date, what it shows) and cited on its MR page, OR a dated answer from the holder confirming absence (with what was searched) is added to the page. No conclusions drawn.
-  *Inputs:* /research/missing-records/mr-0020/; why: First registration is made on documents lodged and examined. HM Land Registry stated on 25 May 2026 that at registration it "did not receive or were aware of any interest" of the family; the examination papers show what was asked about occupation.; likely holder: HM Land Registry; record EV-0059
+  *Inputs:* /research/missing-records/mr-0020/; why: First registration is made on documents lodged and examined. HM Land Registry stated on 25 May 2026 that at registration it "did not receive or were aware of any interest" of the family; the examination papers show what was asked about occupation. The application form for a company's first registration not following a recent purchase (Form 1C (Co.) in the practitioner texts of 1982-86) carried a solicitors' certificate; its 1983 wording for WA240304 is not held. The purchase form of the same period (Form 1B) read 'There is no person in possession or occupation of the land or any part thereof adversely to the estate or interest of the applicant(s) therein' (P. H. Kenny, Conveyancing Law, 1986, Fig. 4; not checked against the page image). Parcel A (WA240304).; likely holder: HM Land Registry; record EV-0059
   *Note:* Research public catalogues and published sources only; never contact the holder (requests go through the hive).
 - **J-831D79** · MR-0021: HM Land Registry notification sent to the occupier after the 1983 registration  
   *Section:* research · *Done when:* The record is located (repository, reference, date, what it shows) and cited on its MR page, OR a dated answer from the holder confirming absence (with what was searched) is added to the page. No conclusions drawn.
@@ -230,7 +230,7 @@ Step 3 of 3. **108 open jobs**, regenerated every academy cycle from real gaps (
   *Note:* Research public catalogues and published sources only; never contact the holder (requests go through the hive).
 - **J-6305BC** · MR-0057: Western Ground Rents Ltd directors: annual returns 1951-1954  
   *Section:* research · *Done when:* The record is located (repository, reference, date, what it shows) and cited on its MR page, OR a dated answer from the holder confirming absence (with what was searched) is added to the page. No conclusions drawn.
-  *Inputs:* /research/missing-records/mr-0057/; why: Hansard records an MP telling the Commons on 6 November 1951 that a director of Western Ground Rents was then a member of the Government (not named), and on 18 March 1955 naming two Members associated with the company. The company owned the farm from 1938 to 1969, and its agents wrote on 10 October 1952 that they would not proceed with the letting. The annual returns name every director on each return date, so they would show who sat on the board while the 1952 letter was written. Parcel: A and B (the whole holding as conveyed in 1938; plan not held).; likely holder: Registrar of Companies (the company's file), or The National Archives if the file was transferred on dissolution (not checked)
+  *Inputs:* /research/missing-records/mr-0057/; why: Hansard records an MP telling the Commons on 6 November 1951 that a director of Western Ground Rents was then a member of the Government (not named), and on 18 March 1955 naming two Members associated with the company. The company owned the farm from 1938 to 1969, and its agents wrote on 10 October 1952 that they would not proceed with the letting. The annual returns name every director on each return date, so they would show who sat on the board while the 1952 letter was written. Parcel: A and B (the whole holding as conveyed in 1938; plan not held). Registrar's replies of 12 and 30 Oct 2026 (ref COH2382411X) named only a dissolved Western Ground Rents Limited, company 09760885, and set out the route and charges for copies; they did not say whether that is the company connected to the 1938 sale (a 20 Oct enquiry used company number 00342092), nor whether the 1950s returns are held. The same reply states that a list of past and present directors would not contain resignations before 1991, so the 1951-54 board can only come from the pre-1973 hard-file annual returns. Not checked: the incorporation date behind 09760885.; likely holder: Registrar of Companies (the company's file), or The National Archives if the file was transferred on dissolution (not checked); record Registrar of Companies replies, 12 and 30 Oct 2026, ref COH2382411X
   *Note:* Research public catalogues and published sources only; never contact the holder (requests go through the hive).
 - **J-91C8F3** · MR-0058: Glamorgan Archives items catalogued but not yet viewed: 1975 County Treasures survey, East Vale Local Plan, civic society files and 1971 aerial photographs  
   *Section:* research · *Done when:* The record is located (repository, reference, date, what it shows) and cited on its MR page, OR a dated answer from the holder confirming absence (with what was searched) is added to the page. No conclusions drawn.
@@ -251,6 +251,10 @@ Step 3 of 3. **108 open jobs**, regenerated every academy cycle from real gaps (
 - **J-5DF15E** · MR-0062: Richards estate survey, 1777-1785: the Llandough page missing from the bound volume  
   *Section:* research · *Done when:* The record is located (repository, reference, date, what it shows) and cited on its MR page, OR a dated answer from the holder confirming absence (with what was searched) is added to the page. No conclusions drawn.
   *Inputs:* /research/missing-records/mr-0062/; why: An estate survey of the Richards family's lands, made by Richards and Morgan between 1777 and 1785, is held at Glamorgan Archives as DPE/E/1. Its catalogue entry records: 'Pages 47-50 are missing and of those only page 49 appears in the index under Llandough'. A map inset elsewhere in the same archive (DXGL/9-10/9) marks 'Jn. Richard's esq.'s lands at Llandough', so the survey once carried a Llandough page. When and how the pages left the volume is not recorded in the catalogue line. This is a third-party estate record from before 1824; whether the Richards lands at Llandough included any Cedwyn parcel is not known. Parcel not identified (page 49 itself would identify the Richards lands at Llandough).; likely holder: Glamorgan Archives (the volume, with pages 47-50 missing; date and cause of loss not known); any separated page or copy: not known; record Glamorgan Archives DPE/E/1: Richards and Morgan estate survey, 1777-1785 (catalogue description read)
+  *Note:* Research public catalogues and published sources only; never contact the holder (requests go through the hive).
+- **J-783A0E** · MR-0063: Tithe redemption annuity records for the holding's tithe plots, 1936-1977: whom the Crown treated as fee-simple owner  
+  *Section:* research · *Done when:* The record is located (repository, reference, date, what it shows) and cited on its MR page, OR a dated answer from the holder confirming absence (with what was searched) is added to the page. No conclusions drawn.
+  *Inputs:* /research/missing-records/mr-0063/; why: The Tithe Act 1936 extinguished each tithe rentcharge and replaced it with a redemption annuity charged in respect of the land on which the rentcharge had been charged (s.3(1)). Each instalment was made a debt due to the Crown from the person who, on the due date, was the owner of that land (s.16(1)), and 'owner' meant the estate owner in respect of the fee simple, or a lessee for a long term at less than a rack rent (s.17(1)). The Tithe Redemption Commission could serve a person as owner for the annuities register, and a person served could deny ownership, leaving a court to decide (s.18). In the c.1841 apportionment the holding's plots carried a rentcharge of 11 pounds 13s 1d. The Commission's papers for this district should therefore show whom the Crown treated, and billed, as fee-simple owner of those plots from 1936, across the 1938 conveyance, from a source outside the estate's own deeds. Against: the Tithe Act 1951 (s.1) ended the duty to prepare a register for every district, so an owner register for Llandough may never have been made; the IR 94 orders exist only where a plot was later apportioned, and whether IR 94/51/58 or IR 90/51/58 touch the holding's plots is not checked; remaining annuities were ended in 1977 (not checked against the enacted text here). Parcel not identified (the holding's c.1841 plots lie within tithe 196-267 and 275-281; the order or register entry itself would name the plots).; likely holder: The National Archives, Kew: IR 94/51/58 and IR 90/51/58 (catalogued; originals not digitised, not viewed). Any annuities register or owner notice for the district: whereabouts not known.; record The National Archives IR 94/51/58 (Tithe Redemption Office, orders for apportionment of redemption annuities; catalogue entry for this tithe district)
   *Note:* Research public catalogues and published sources only; never contact the holder (requests go through the hive).
 
 ## Close a chronology gap (10)
@@ -295,7 +299,7 @@ Step 3 of 3. **108 open jobs**, regenerated every academy cycle from real gaps (
   *Section:* wales · *Done when:* Each passage is either cited to a catalogue record (EV-####) and restyled as normal text, or left in the small italic style with neutral wording. Nothing is deleted.
   *Inputs:* /wales/; passages shown in the small italic style (class unsub)
 
-## Fix broken internal links (3)
+## Fix broken internal links (6)
 
 - **J-7B1B85** · 1 broken internal link(s) on /wiki/  
   *Section:* wiki · *Done when:* Every listed link opens a page (fixed, redirected, or removed with the text kept).
@@ -303,6 +307,15 @@ Step 3 of 3. **108 open jobs**, regenerated every academy cycle from real gaps (
 - **J-5DEF91** · 3 broken internal link(s) on /wayback/  
   *Section:* wayback · *Done when:* Every listed link opens a page (fixed, redirected, or removed with the text kept).
   *Inputs:* /wayback/; /wayback/websites/index.json; /wayback/text/_treeview.json; /wayback/pdf/_treeview.json
+- **J-6974FC** · 3 broken internal link(s) on /cloudflare/  
+  *Section:* cloudflare · *Done when:* Every listed link opens a page (fixed, redirected, or removed with the text kept).
+  *Inputs:* /cloudflare/; /cloudflare/cloudflare/api/snapshot; /cloudflare/cloudflare/api/llms.txt; /cloudflare/cloudflare/api/mcp
+- **J-C06553** · 3 broken internal link(s) on /analytics/  
+  *Section:* analytics · *Done when:* Every listed link opens a page (fixed, redirected, or removed with the text kept).
+  *Inputs:* /analytics/; /analytics/analytics/api/snapshot; /analytics/analytics/api/llms.txt; /analytics/analytics/api/mcp
+- **J-9D0806** · 5 broken internal link(s) on /spill/  
+  *Section:* spill · *Done when:* Every listed link opens a page (fixed, redirected, or removed with the text kept).
+  *Inputs:* /spill/; /spill/spill/llms.txt; /spill/spill/protocol.json; /spill/spill/api/
 - **J-DD015C** · 1 broken internal link(s) on /ebooks/  
   *Section:* ebooks · *Done when:* Every listed link opens a page (fixed, redirected, or removed with the text kept).
   *Inputs:* /ebooks/; /ebooks/api/free
