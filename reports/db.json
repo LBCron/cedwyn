@@ -30,7 +30,7 @@
  "title_theory_refs": 36,
  "blobmap_paths": 7367,
  "blobmap_blobs": 4795,
- "db_version": "53ed0023f96a",
+ "db_version": "69dc9399fe27",
  "db_bytes": 831250432,
  "chunks": 3171,
  "chunk_max_bytes": 262144
