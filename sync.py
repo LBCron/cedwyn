@@ -7,13 +7,20 @@ catalogue our plant store (bucklerfamily.estate/garden-store/, Worker cedwyn-gar
   python3 sync.py --commit   ... and commit catalogue.json to unclehowell/cedwyn branch section/garden-store when it changed
   python3 sync.py --poke     ... and ask the live Worker to refresh its own database now (it also refreshes itself every 6 h)
 
-Read-only on her site: public /products.json, polite pace (2 s between pages), cache-busted. Images are NOT downloaded:
-the store shows them from her own Shopify CDN. Never buys, never contacts anyone. Commits through
+Read-only on her site: public /products.json, polite pace (2 s between pages), cache-busted. Images: the ones images.py has hosted (images.json)
+are written as our own webp URLs (/garden-store/img/<key>-800.webp); the rest are her Shopify CDN URLs. Never buys, never contacts anyone. Commits through
 work/site-flywheels/tools/gh.py (no force-push). - Sion's Tab agent"""
 import json, os, re, sys, time, html, hashlib, urllib.request, pathlib, base64
 SHOP = 'https://gardencity.cymru'
 HERE = pathlib.Path(__file__).resolve().parent
 OUT = HERE / 'catalogue.json'
+MAPF = HERE / 'images.json'
+IMG_BASE = 'https://bucklerfamily.estate/garden-store/img/'
+IMAX = 16
+IMAP = json.loads(MAPF.read_text())['map'] if MAPF.exists() else {}
+def hosted(u):
+    k = IMAP.get((u or '').split('?')[0])
+    return IMG_BASE + k + '-800.webp' if k else u
 STATE = HERE / 'state.json'
 REPO, BRANCH = 'unclehowell/cedwyn', 'section/garden-store'
 UA = {'User-Agent': 'Mozilla/5.0 (compatible; bucklerfamily-garden-store-sync/0.1; +https://bucklerfamily.estate/garden-store/)'}
@@ -36,7 +43,7 @@ def compact(p):
             'tg': (p.get('tags') or [])[:6], 'p': '%.2f' % min(prices), 'pm': '%.2f' % max(prices),
             'c': ('%.2f' % max(cmp_)) if cmp_ and max(cmp_) > max(prices) else '',
             'a': any(v.get('available') for v in vs),
-            'i': [im['src'] for im in (p.get('images') or [])[:4] if im.get('src')],
+            'i': [hosted(im['src']) for im in (p.get('images') or [])[:IMAX] if im.get('src')],
             'v': [[(v.get('title') or '').strip(), v.get('price') or '', bool(v.get('available')), v.get('id')] for v in vs[:30]],
             'd': text(p.get('body_html')), 'u': (p.get('updated_at') or '')[:10]}
 
