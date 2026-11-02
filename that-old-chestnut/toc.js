@@ -1,5 +1,5 @@
 /* That Old Chestnut — generative UI, built in the browser on page load from _ui/index.a2ui.json + _db/view.json.
-   No model, no paid service, no network beyond these two same-site files. v0.3.2 */
+   No model, no paid service, no network beyond these same-site files. v0.3.3: plus _ui/latest-mail.a2ui.json (replies received after the last full audit). */
 (function(){
 "use strict";
 var app=document.getElementById("toc-app"); if(!app) return;
@@ -146,7 +146,9 @@ C.Status=function(){var R=rows(),A=get(DB,"copy.audit")||{},done=A.complete;
  var cv=A.coverage||{},kids=[];
  if(cv.conversations_reviewed)kids.push($("span",{text:T("coverage").replace("{c}",fmt(cv.conversations_reviewed)).replace("{m}",fmt(cv.messages_reviewed||0)).replace("{r}",fmt(cv.received_messages_scanned||0))}));
  if(A.still_to_read)kids.push($("span",{text:" "+T("unread").replace("{n}",fmt(A.still_to_read))}));
+ if(A.mail_read_to)kids.push($("span",{text:" "+T("mail_to").replace("{d}",fmtDay(A.mail_read_to))}));
  return kids.length?$("p",{cls:"toc-note",role:"status"},kids):null;};
+function fmtDay(s){try{return new Date(s+"T12:00:00Z").toLocaleDateString(LANG==="cy"?"cy-GB":LANG==="es"?"es-ES":"en-GB",{day:"numeric",month:"long",year:"numeric"});}catch(e){return s;}}
 function fmt(n){try{return Number(n).toLocaleString(LANG==="cy"?"cy-GB":LANG==="es"?"es-ES":"en-GB");}catch(e){return String(n);}}
 C.Highlight=function(){var h=get(DB,"copy.audit.highlight");if(!h||!h.term)return null;
  var s=$("section",{cls:"toc-word","aria-labelledby":"toc-word-h"},[$("h2",{id:"toc-word-h",text:T("word_h")}),
@@ -254,5 +256,12 @@ function boot(){try{var p=new URLSearchParams(location.search);F.inst=p.get("ins
  render(false);cnHash();window.addEventListener("hashchange",cnHash);
  new MutationObserver(function(){if(lang()!==LANG)render(false);}).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});}
 function j(u){return fetch(u,{credentials:"same-origin"}).then(function(r){if(!r.ok)throw new Error(u+" "+r.status);return r.json();});}
-Promise.all([j(app.getAttribute("data-ui")),j(app.getAttribute("data-db")),j(app.getAttribute("data-rules")||"_ui/chestnut-rules.a2ui.json").catch(function(){return null;})]).then(function(v){UI=v[0];DB=v[1];cnRules(v[2]);boot();}).catch(function(){var ld=app.querySelector(".toc-loading");if(ld)ld.textContent="Audit in progress. The data for this page could not be loaded just now; please try again shortly.";});
+/* v0.3.3: replies received after the last full audit, same record shape as the chestnuts collection. A record whose id the catalogue already carries is skipped,
+   so the catalogue wins once it holds the rows; the newest replies lead the list. The file sits in _ui/ because the site build publishes only _ui/*.a2ui.json as plain files. */
+function addLatest(L){if(!L||!DB)return;var have={};rows().forEach(function(r){have[r.id]=1;});var add=[];
+ (L.chestnuts||[]).forEach(function(r){if(r&&r.id&&!have[r.id]){add.push(r);have[r.id]=1;}});
+ add.sort(function(a,b){var x=get(a,"date.sort")||"",y=get(b,"date.sort")||"";return x<y?1:x>y?-1:0;});DB.chestnuts=add.concat(rows());
+ var C0=DB.copy=DB.copy||{},I0=C0.i18n=C0.i18n||{en:{}},A=C0.audit=C0.audit||{};if(L.mail_read_to&&(!A.mail_read_to||L.mail_read_to>A.mail_read_to))A.mail_read_to=L.mail_read_to;
+ var I=L.i18n||{};Object.keys(I).forEach(function(l){var d=I0[l]=I0[l]||{};Object.keys(I[l]).forEach(function(k){if(d[k]==null)d[k]=I[l][k];});});}
+Promise.all([j(app.getAttribute("data-ui")),j(app.getAttribute("data-db")),j(app.getAttribute("data-rules")||"_ui/chestnut-rules.a2ui.json").catch(function(){return null;}),j(app.getAttribute("data-latest")||"_ui/latest-mail.a2ui.json").catch(function(){return null;})]).then(function(v){UI=v[0];DB=v[1];cnRules(v[2]);addLatest(v[3]);boot();}).catch(function(){var ld=app.querySelector(".toc-loading");if(ld)ld.textContent="Audit in progress. The data for this page could not be loaded just now; please try again shortly.";});
 })();
