@@ -1,0 +1,71 @@
+{
+ "schema": "cedwyn-catalogue-db/1",
+ "note": "Data-only mirror of the central catalogue (main data/core/records). Derived copy: never edited by hand; rebuilt by the catalogue sync. Changes to records go through owner-approved pull requests on main.",
+ "source": {
+  "repo": "unclehowell/cedwyn",
+  "ref": "main",
+  "commit": "52fbd319278df76c76fd07d4448ceb507dad8f68",
+  "path": "data/core/records/",
+  "schema": "data/core/schema/core-record.schema.json"
+ },
+ "exported_at": "2026-11-03T20:39:25Z",
+ "record_count": 153,
+ "uid_pattern": "^(EV|MR|CC|KF|RET|PL|PE|EVT|AR|TS|OBS|TOC)-[A-Z0-9-]+$",
+ "files": [
+  {
+   "path": "records/foi-chestnuts.json",
+   "source": "data/core/records/foi-chestnuts.json",
+   "records": 25,
+   "kinds": {
+    "foi_finding": 25
+   },
+   "sha256": "658d6c0d9a7d10e0231f9a2e181b625a71da11f65ea27e3d62dcee9a9816f48e"
+  },
+  {
+   "path": "records/foi-response-attachments.json",
+   "source": "data/core/records/foi-response-attachments.json",
+   "records": 67,
+   "kinds": {
+    "artifact": 67
+   },
+   "sha256": "89f8a90a1c477b40bd2c790e66abb2dadc8d12afc984830fca3c84478c7e565b"
+  },
+  {
+   "path": "records/places.json",
+   "source": "data/core/records/places.json",
+   "records": 3,
+   "kinds": {
+    "place": 3
+   },
+   "sha256": "27c82064fc3a79b177bf303e45a6d386edeb9044ce1d5173c12c1318f890cdeb"
+  },
+  {
+   "path": "records/recreation-scenes.json",
+   "source": "data/core/records/recreation-scenes.json",
+   "records": 2,
+   "kinds": {
+    "artifact": 2
+   },
+   "sha256": "1a7f33329345c51fe537f3c1a755da385ad7c413ca532649eec599c43ddf41f3"
+  },
+  {
+   "path": "records/screening.json",
+   "source": "data/core/records/screening.json",
+   "records": 56,
+   "kinds": {
+    "screening_lead": 56
+   },
+   "sha256": "6f0b97d064000cdc6265b92d49e69bcb51042cce234c03e699f4b94a63da7efa"
+  }
+ ],
+ "d1": {
+  "database": "cedwyn-apps",
+  "tables": [
+   "core_items",
+   "core_links",
+   "core_changes"
+  ],
+  "loaded_by": "core_load.py (sync time only)"
+ },
+ "rev": "274de535e1bd"
+}
