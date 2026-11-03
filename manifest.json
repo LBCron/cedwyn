@@ -1,0 +1,189 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "wayback",
+ "uid": "APP-03",
+ "slot": {
+  "n": 3,
+  "of": 59,
+  "label": "3 of 59"
+ },
+ "status": "live",
+ "section": "Wales",
+ "sections_shown": [
+  "Wales",
+  "Argentina"
+ ],
+ "group": "artifacts",
+ "title": {
+  "en": "Wayback Vault",
+  "cy": "Claddgell Wayback",
+  "es": "La Bóveda Wayback"
+ },
+ "description": "Archived source copies.",
+ "path": "/wayback/",
+ "aliases": [],
+ "legacy_hosts": [
+  "wayback.bucklerfamily.estate"
+ ],
+ "branch": {
+  "name": "wayback",
+  "exists": true,
+  "standard_name": "webapp/wayback",
+  "source_dir": "wayback",
+  "other_branches": [
+   "wayback-html",
+   "wayback-img",
+   "wayback-pdf",
+   "wayback-text",
+   "wayback-video"
+  ]
+ },
+ "front_end": {
+  "kind": "static",
+  "hosting": "cloudflare_pages",
+  "project": "cedwyn (cedwyn-274.pages.dev, production branch site)",
+  "build": "build-cedwyn (GitHub Actions) writes branch site",
+  "worker_on_read": false,
+  "notes": "apex bucklerfamily.estate reads run the router Worker until the static-first cutover (PR #157)"
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en",
+   "cy",
+   "es"
+  ],
+  "scripts": [
+   "/_cedwyn/runtime.js",
+   "/_cedwyn/ghf/ghf-boot.js"
+  ],
+  "status": "legacy"
+ },
+ "data": {
+  "slice": "wayback-index",
+  "query": {
+   "kinds": [
+    "artifact",
+    "evidence"
+   ],
+   "uid_prefixes": [
+    "AR",
+    "EV"
+   ],
+   "tags": [],
+   "where": "every public capture, grouped by kind image / video / book-doc / web",
+   "public_only": true
+  },
+  "registers": [
+   "wayback/agent-index.json",
+   "wayback/pdf/_treeview.json",
+   "wayback-img, wayback-video, wayback-pdf, wayback-text, wayback-html branches"
+  ],
+  "catalogue_status": "partly"
+ },
+ "local_store": {
+  "static": [
+   "/wayback/_data/wayback-index.json",
+   "/wayback/api/v1/index.json"
+  ],
+  "client_cache": {
+   "enabled": true,
+   "store": "indexeddb",
+   "strategy": "stale-while-revalidate",
+   "max_age_s": 3600,
+   "revalidate_with": "/wayback/api/v1/index.json rev",
+   "pull_from": "/catalogue-db/ static export (never a Worker)"
+  }
+ },
+ "api": {
+  "base": "/wayback/api/v1/",
+  "outputs": [
+   {
+    "path": "/wayback/api/v1/index.json",
+    "format": "json",
+    "description": "list + counts + rev + generated_at"
+   },
+   {
+    "path": "/wayback/api/v1/items/{uid}.json",
+    "format": "json",
+    "description": "one record in this app's presentation, keyed by catalogue UID"
+   },
+   {
+    "path": "/wayback/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "JSON Feed 1.1, newest first"
+   },
+   {
+    "path": "/wayback/api/v1/feed.xml",
+    "format": "atom",
+    "description": "Atom 1.0 feed"
+   },
+   {
+    "path": "/wayback/api/v1/rss.xml",
+    "format": "rss",
+    "description": "RSS 2.0 feed"
+   },
+   {
+    "path": "/wayback/api/v1/data.xml",
+    "format": "xml",
+    "description": "the whole slice as XML"
+   }
+  ],
+  "cors": "*",
+  "cache_control": "public, max-age=300",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [],
+ "consumed_by": [
+  "wiki",
+  "docs",
+  "story",
+  "research",
+  "watchtower",
+  "forensic"
+ ],
+ "external_sources": [
+  {
+   "name": "Internet Archive",
+   "adapter": "archive.org availability + CDX (read-only)",
+   "cadence": "daily",
+   "auth": "none",
+   "writes": "/wayback/_data/ia-captures.json"
+  }
+ ],
+ "dynamic_endpoints": [],
+ "migration": {
+  "phase": "branch",
+  "phases_done": [
+   "inventory",
+   "manifest",
+   "branch"
+  ],
+  "rag": "amber",
+  "next_action": "pilot: standard build on the migration pages.dev project",
+  "blockers": [
+   "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval"
+  ],
+  "prs": [],
+  "pilot": true
+ },
+ "owner": "Cedwyn editors (owner approval for catalogue changes)",
+ "version": "0.1.0",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "summary": "Manifest created from the live tour inventory (/areas.json nav), themes.json, data/site-areas.json and data/halves.json 1.4.0."
+  }
+ ],
+ "sources": [
+  "/areas.json nav (cedwyn-274.pages.dev, read 2026-11-03)",
+  "themes.json@main",
+  "data/site-areas.json@main",
+  "data/halves.json@PR#154 (1.4.0)",
+  "cedwyn branch list (git ls-remote)"
+ ]
+}

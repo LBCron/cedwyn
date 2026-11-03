@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wayback Vault · Cedwyn (standard pilot)</title>
+<meta name="description" content="Every public source copy in the Cedwyn vault, searchable like results: images, videos, books and documents, web pages.">
+<link rel="alternate" type="application/atom+xml" title="Wayback Vault" href="api/v1/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Wayback Vault (RSS)" href="api/v1/rss.xml">
+<link rel="alternate" type="application/feed+json" title="Wayback Vault (JSON Feed)" href="api/v1/feed.json">
+<link rel="stylesheet" href="/_std/cw-std.css">
+<script src="/_std/cw-cache.js" defer></script><script src="/_std/cw-header.js" defer></script>
+</head><body>
+<header data-cw-app="wayback">Cedwyn</header>
+<main>
+<h1>Wayback Vault</h1>
+<p class="lede">Source copies held in the vault. Items with a catalogue UID are records in the central catalogue; the rest are files waiting for a catalogue entry.</p>
+<input type="search" id="q" placeholder="Search titles, holders, UIDs" aria-label="Search the vault">
+<div class="chips" id="kinds" role="group" aria-label="Kind"></div>
+<p class="meta" id="count">Loading…</p>
+<ul class="res" id="res"></ul>
+<noscript><p><a href="api/v1/index.json">Open the list as JSON</a></p></noscript>
+</main>
+<footer><span class="apis">API: <a href="api/v1/index.json">index.json</a><a href="api/v1/feed.xml">Atom</a><a href="api/v1/rss.xml">RSS</a><a href="api/v1/data.xml">XML</a><a href="manifest.json">manifest</a></span><br>
+Standard webapp pilot (cedwyn-webapp/1.0.0). Data rev <span id="rev">…</span>. <a href="/">Migration status</a></footer>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var LBL = {all:'All', image:'Images', video:'Videos', 'book-doc':'Books & documents', web:'Web pages'};
+  var state = {q:'', kind:'all', items:[]};
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function draw(){
+    var q = state.q.toLowerCase(), out = state.items.filter(function(it){
+      if(state.kind !== 'all' && it.kind !== state.kind) return false;
+      return !q || ((it.title||'') + ' ' + (it.holder||'') + ' ' + (it.uid||'') + ' ' + (it.summary||'')).toLowerCase().indexOf(q) >= 0;
+    });
+    document.getElementById('count').textContent = out.length + ' of ' + state.items.length + ' items';
+    document.getElementById('res').innerHTML = out.slice(0, 200).map(function(it){
+      var href = it.url || ('api/v1/items/' + it.key + '.json');
+      return '<li><a href="' + esc(href) + '">' + esc(it.title) + '</a><div class="meta">' + esc(LBL[it.kind]||it.kind) +
+        (it.date ? ' · ' + esc(it.date) : '') + (it.holder ? ' · ' + esc(it.holder) : '') + ' · ' +
+        (it.uid ? '<span class="uid">' + esc(it.uid) + '</span>' : 'not yet catalogued') +
+        ' · <a href="api/v1/items/' + esc(it.key) + '.json">json</a></div></li>';
+    }).join('');
+  }
+  function chips(){
+    var c = {all: state.items.length}; state.items.forEach(function(it){ c[it.kind] = (c[it.kind]||0) + 1; });
+    var el = document.getElementById('kinds');
+    el.innerHTML = Object.keys(LBL).filter(function(k){ return c[k]; }).map(function(k){
+      return '<button type="button" data-k="' + k + '" aria-pressed="' + (state.kind===k) + '">' + LBL[k] + ' (' + c[k] + ')</button>';
+    }).join('');
+    el.onclick = function(e){ var k = e.target.getAttribute('data-k'); if(!k) return; state.kind = k; chips(); draw(); };
+  }
+  document.getElementById('q').addEventListener('input', function(e){ state.q = e.target.value; draw(); });
+  CW.cache.get('api/v1/index.json', {maxAge:3600}, function(d){
+    state.items = d.items || []; document.getElementById('rev').textContent = d.rev; chips(); draw();
+  }).catch(function(){ document.getElementById('count').textContent = 'The list could not be loaded.'; });
+});
+</script>
+</body></html>
