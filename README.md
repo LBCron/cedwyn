@@ -5,6 +5,9 @@ FOI / EIR / SAR replies about Great House Farm / Tŷ Mawr, read line by line: re
 `/that-old-chestnut/`, canonical address `/online/that-old-chestnut/` (v0.3.0; it is not Patagonia-specific, and `/argentina/that-old-chestnut/` answers 301). Dark radar display: a back-and-forth sweep arm crosses incoming email blips and flips the read ones
 into chestnuts.
 
+## Scope (v0.3.5)
+That Old Chestnut is about the wording of replies from 2025 onwards: how requests are narrowed, delayed or declined. Records that were already mislabelled, misdescribed, misplaced or said not to be there belong to **Peekaboo** (`/peekaboo/`, webapp 47 of 59). Overlap is expected: TOC-F01 (Museum Wales), TOC-F02 (Historic England), TOC-F03 (Vale of Glamorgan Council) and TOC-F05 (Cadw) stay here for their wording and are also listed in Peekaboo, which reads them from the central catalogue by id and links back to `#cn-<id>`. Nothing was moved out of this app.
+
 ## Parcel duty
 Every Cedwyn webapp is one of the estate's 59 land parcels and carries "NN of 59" in its header, linked to the shared
 parcel modal (`/_cedwyn/parcel-modal.js`, on main under `web/_cedwyn/`). This app holds slot **37** in the registry
