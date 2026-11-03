@@ -28,8 +28,8 @@
   },
   "forensic": {
    "branch": "section/forensic",
-   "sha": "91bd4aad76af3c168124da37c6f3983dbb9fd161",
-   "pinned_utc": "2026-11-03T04:04:06Z"
+   "sha": "8af21139fe45b6550577f76b972cc356b4aa7451",
+   "pinned_utc": "2026-11-03T04:05:18Z"
   },
   "patagonia": {
    "branch": "section/patagonia",
