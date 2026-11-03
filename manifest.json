@@ -75,60 +75,60 @@
  "local_store": {
   "static": [
    "/spill/_data/spill.json",
-   "/spill/api/v1/index.json",
-   "/spill/api/v1/overview.json",
-   "/spill/api/v1/guestbook.json",
-   "/spill/api/v1/tools.json"
+   "/spill/snapshot/v1/index.json",
+   "/spill/snapshot/v1/overview.json",
+   "/spill/snapshot/v1/guestbook.json",
+   "/spill/snapshot/v1/tools.json"
   ],
   "client_cache": {
    "enabled": true,
    "store": "indexeddb",
    "strategy": "stale-while-revalidate",
    "max_age_s": 3600,
-   "revalidate_with": "/spill/api/v1/index.json rev",
+   "revalidate_with": "/spill/snapshot/v1/index.json rev",
    "pull_from": "Migration build's static output from three read-only Spill API snapshots; never a Worker on page load."
   }
  },
  "api": {
-  "base": "/spill/api/v1/",
+  "base": "/spill/snapshot/v1/",
   "outputs": [
    {
-    "path": "/spill/api/v1/index.json",
+    "path": "/spill/snapshot/v1/index.json",
     "format": "json",
     "description": "static build index and revision"
    },
    {
-    "path": "/spill/api/v1/overview.json",
+    "path": "/spill/snapshot/v1/overview.json",
     "format": "json",
     "description": "build-time stats snapshot"
    },
    {
-    "path": "/spill/api/v1/guestbook.json",
+    "path": "/spill/snapshot/v1/guestbook.json",
     "format": "json",
     "description": "build-time guest-book snapshot"
    },
    {
-    "path": "/spill/api/v1/tools.json",
+    "path": "/spill/snapshot/v1/tools.json",
     "format": "json",
     "description": "build-time MCP tool definitions for WebMCP registration"
    },
    {
-    "path": "/spill/api/v1/feed.json",
+    "path": "/spill/snapshot/v1/feed.json",
     "format": "jsonfeed",
     "description": "static JSON Feed"
    },
    {
-    "path": "/spill/api/v1/feed.xml",
+    "path": "/spill/snapshot/v1/feed.xml",
     "format": "atom",
     "description": "static Atom feed"
    },
    {
-    "path": "/spill/api/v1/rss.xml",
+    "path": "/spill/snapshot/v1/rss.xml",
     "format": "rss",
     "description": "static RSS feed"
    },
    {
-    "path": "/spill/api/v1/data.xml",
+    "path": "/spill/snapshot/v1/data.xml",
     "format": "xml",
     "description": "static XML slice"
    }
@@ -145,7 +145,7 @@
    "adapter": "GET https://cedwyn.bucklerfamily.estate/spill/api/stats in the migration build",
    "cadence": "Each Pages build",
    "auth": "none",
-   "writes": "/spill/api/v1/overview.json",
+   "writes": "/spill/snapshot/v1/overview.json",
    "notes": "Build-time snapshot only; the browser does not call the Worker for page display."
   },
   {
@@ -153,7 +153,7 @@
    "adapter": "GET https://cedwyn.bucklerfamily.estate/spill/api/guestbook in the migration build",
    "cadence": "Each Pages build",
    "auth": "none",
-   "writes": "/spill/api/v1/guestbook.json",
+   "writes": "/spill/snapshot/v1/guestbook.json",
    "notes": "Build-time snapshot only; writes remain on the live API."
   },
   {
@@ -161,7 +161,7 @@
    "adapter": "GET https://cedwyn.bucklerfamily.estate/spill/api/mcp in the migration build",
    "cadence": "Each Pages build",
    "auth": "none",
-   "writes": "/spill/api/v1/tools.json",
+   "writes": "/spill/snapshot/v1/tools.json",
    "notes": "Tool metadata is static; tool execution remains POST to the existing Worker."
   }
  ],
