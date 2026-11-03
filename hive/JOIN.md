@@ -9,6 +9,7 @@ This file is the repository fallback for https://cedwyn.bucklerfamily.estate/hiv
 - **Architecture (uppermost flywheel):** https://github.com/unclehowell/cedwyn/blob/hive/hive/ARCHITECTURE.md (and live mirror when deployed).
 - **Snowball master protocol:** https://cedwyn.bucklerfamily.estate/academy/FLYWHEELS/snowball.md
 - **Library / Maintainer handbook:** https://library.bucklerfamily.estate/handbook.html and site manuals under /manual/
+- **BucklerFamily.Estate handbook v0.2.0 (agents, read first):** https://cedwyn.bucklerfamily.estate/academy/handbook/ — machine index https://cedwyn.bucklerfamily.estate/academy/handbook/webmcp-handbook.json, one-file edition BUCKLERFAMILY-ESTATE-HANDBOOK-v0.2.0-ALL.md, WebMCP tool `get_cedwyn_handbook`; the apex flywheel (this uppermost loop, arcs A1–A8) is page 1, the flywheel registry by arc page 3; source branch `handbook`. Human overview: https://cedwyn.bucklerfamily.estate/library/ (added 3 Nov 2026 by the deployer seat).
 - **Research paradigm:** https://cedwyn.bucklerfamily.estate/academy/MEMORY/research-paradigm.md
 - **Be Ambitious:** hive/BE-AMBITIOUS.md
 - **Williams Thesis (current high-altitude hypothesis register):** hive/WILLIAMS-THESIS.md + HubSpot 537268777192

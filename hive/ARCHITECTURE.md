@@ -58,6 +58,7 @@ When interfacing with BucklerFamily.Estate, agents treat the following as the st
 - **Snowball master protocol** — https://cedwyn.bucklerfamily.estate/academy/FLYWHEELS/snowball.md  
 - **This architecture page** — `hive/ARCHITECTURE.md` (and its live mirror when deployed).  
 - **Library / Maintainer handbook** — https://library.bucklerfamily.estate/handbook.html and the site manuals under `/manual/`.  
+- **BucklerFamily.Estate handbook v0.2.0** — https://cedwyn.bucklerfamily.estate/academy/handbook/ (agents; JSON index `webmcp-handbook.json`; one-file edition; WebMCP tool `get_cedwyn_handbook`). Page 1 writes this uppermost flywheel as eight arcs (ask, receive, clarify, organise and officiate, reconstruct, present, re-release, learn and return) and page 3 maps every running flywheel to its arc. Human overview: https://cedwyn.bucklerfamily.estate/library/.  
 - **Research paradigm** — https://cedwyn.bucklerfamily.estate/academy/MEMORY/research-paradigm.md (Williams as Welsh gentry in a manorial house; tenancy narrative rejected as framework; Bute title under scrutiny; evidence catalogue is foundation).  
 - **Be Ambitious skill** — `hive/BE-AMBITIOUS.md` (four questions + rewrite deeper before claiming or executing).  
 - **Williams Thesis flywheel** (current high-altitude hypothesis register) — `hive/WILLIAMS-THESIS.md` + HubSpot master 537268777192.  
