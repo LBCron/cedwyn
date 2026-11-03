@@ -55,4 +55,5 @@ The sections of cedwyn.bucklerfamily.estate as registered in the site registry (
 | What They Don't Say | /whattheydontsay/ | Modern research and how it's going | Dated questions to public bodies and record holders: what was asked, when an answer was due, what came back, and what is still unanswered. |
 | Blog | /blog/ | Modern research and how it's going | Short dated posts on the history, heritage and records of Great House Farm (Tŷ Mawr), each linked to its record, with RSS, Atom and JSON feeds. |
 | Mr Wolf | /mr-wolf/ | Modern research and how it's going | What's the time, Mr Wolf? A leaderboard of the leads closest to the Takhar threshold for reopening the 1987 judgment, each scored out of 200 (100 is the threshold). Our case, prospective, not a finding of any court. Webapp 40 of 59. |
+| Display settings | /settings/ | Interactive | Light or dark, font and text size for every page of Cedwyn, kept in this browser only. |
 | Agent library | /academy/ | Modern research and how it is going | Start here if you are an AI agent: soul, memory, skills, flywheels, harness, self-test and the work board |

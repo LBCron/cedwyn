@@ -1,6 +1,6 @@
 {
- "checked": "2026-11-01T13:22:41Z",
- "checked_uk": "01 Nov 13:22 GMT",
+ "checked": "2026-11-02T13:14:41Z",
+ "checked_uk": "02 Nov 13:14 GMT",
  "uptime_json": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwatch.bucklerfamily.estate%2Fuptime.json",
  "uptime_page": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwatch.bucklerfamily.estate%2Fuptime",
  "archive": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2F",
@@ -98,9 +98,9 @@
    "state_since": "2026-10-29T14:41:43Z",
    "baseline": "2026-10-24T13:20:55Z",
    "baseline_source": "wayback 2026-10-06, compared live 2026-10-29",
-   "last_change": "2026-11-01T13:22:41Z",
-   "changes": 4,
-   "lines": 40,
+   "last_change": "2026-10-29T14:41:43Z",
+   "changes": 1,
+   "lines": 39,
    "archive": {
     "latest": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Farchwilio.org.uk%2Fheneb-her-ggat02038s.html",
     "capture": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2F20261030170917%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%2F_q%2Fwatprn%3DGGAT02038s%2F",
@@ -108,7 +108,7 @@
     "source": "live"
    },
    "state_since_uk": "29 Oct 14:41 GMT",
-   "last_change_uk": "01 Nov 13:22 GMT"
+   "last_change_uk": "29 Oct 14:41 GMT"
   },
   {
    "name": "Archwilio record GGAT02272s",
@@ -140,9 +140,9 @@
    "state_since": "2026-10-29T14:41:43Z",
    "baseline": "2026-10-29T14:41:43Z",
    "baseline_source": "live",
-   "last_change": "2026-11-01T13:22:41Z",
-   "changes": 3,
-   "lines": 47,
+   "last_change": null,
+   "changes": 0,
+   "lines": 46,
    "archive": {
     "latest": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2Flatest%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%2F_q%2Fwatprn%3DGGAT03583s%2F",
     "capture": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2F20261030171048%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%2F_q%2Fwatprn%3DGGAT03583s%2F",
@@ -150,7 +150,7 @@
     "source": "live"
    },
    "state_since_uk": "29 Oct 14:41 GMT",
-   "last_change_uk": "01 Nov 13:22 GMT"
+   "last_change_uk": ""
   },
   {
    "name": "Archwilio record GGAT03584s",
@@ -161,9 +161,9 @@
    "state_since": "2026-10-29T14:41:43Z",
    "baseline": "2026-10-24T14:23:02Z",
    "baseline_source": "internetarchive 2026-10-23 (Internet Archive copy)",
-   "last_change": "2026-11-01T13:22:41Z",
-   "changes": 4,
-   "lines": 52,
+   "last_change": null,
+   "changes": 0,
+   "lines": 51,
    "archive": {
     "latest": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Farchwilio.org.uk%2Fheneb-her-ggat03584s.html",
     "capture": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2F20261030170923%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%2F_q%2Fwatprn%3DGGAT03584s%2F",
@@ -171,7 +171,7 @@
     "source": "live"
    },
    "state_since_uk": "29 Oct 14:41 GMT",
-   "last_change_uk": "01 Nov 13:22 GMT"
+   "last_change_uk": ""
   },
   {
    "name": "Archwilio record GGAT03585s",
@@ -182,9 +182,9 @@
    "state_since": "2026-10-29T14:41:43Z",
    "baseline": "2026-10-24T14:23:02Z",
    "baseline_source": "internetarchive 2026-10-23 (Internet Archive copy)",
-   "last_change": "2026-11-01T13:22:41Z",
-   "changes": 4,
-   "lines": 49,
+   "last_change": null,
+   "changes": 0,
+   "lines": 48,
    "archive": {
     "latest": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Farchwilio.org.uk%2Fheneb-her-ggat03585s.html",
     "capture": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2F20261030170929%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%2F_q%2Fwatprn%3DGGAT03585s%2F",
@@ -192,7 +192,7 @@
     "source": "live"
    },
    "state_since_uk": "29 Oct 14:41 GMT",
-   "last_change_uk": "01 Nov 13:22 GMT"
+   "last_change_uk": ""
   },
   {
    "name": "Archwilio record GGAT03586s",
@@ -203,9 +203,9 @@
    "state_since": "2026-10-29T14:41:43Z",
    "baseline": "2026-10-24T14:23:02Z",
    "baseline_source": "internetarchive 2026-10-23 (Internet Archive copy)",
-   "last_change": "2026-11-01T13:22:41Z",
-   "changes": 4,
-   "lines": 47,
+   "last_change": null,
+   "changes": 0,
+   "lines": 46,
    "archive": {
     "latest": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Farchwilio.org.uk%2Fheneb-her-ggat03586s.html",
     "capture": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2F20261030170935%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%2F_q%2Fwatprn%3DGGAT03586s%2F",
@@ -213,7 +213,7 @@
     "source": "live"
    },
    "state_since_uk": "29 Oct 14:41 GMT",
-   "last_change_uk": "01 Nov 13:22 GMT"
+   "last_change_uk": ""
   },
   {
    "name": "Archwilio record GGATE000771",
@@ -240,9 +240,9 @@
    "state_since": "2026-10-29T14:41:43Z",
    "baseline": "2026-10-25T12:29:43Z",
    "baseline_source": "internetarchive 2026-10-23 (Internet Archive copy)",
-   "last_change": "2026-11-01T13:22:41Z",
-   "changes": 4,
-   "lines": 26,
+   "last_change": null,
+   "changes": 0,
+   "lines": 25,
    "archive": {
     "latest": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2Flatest%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%2F_q%2Fwatprn%3DGGATE000877%2F",
     "capture": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2F20261023112633%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%2F_q%2Fwatprn%3DGGATE000877%2F",
@@ -250,7 +250,7 @@
     "source": "internet-archive"
    },
    "state_since_uk": "29 Oct 14:41 GMT",
-   "last_change_uk": "01 Nov 13:22 GMT"
+   "last_change_uk": ""
   },
   {
    "name": "Archwilio record GGATE001109",
@@ -293,12 +293,12 @@
    "state_since": "2026-10-29T14:41:43Z",
    "baseline": "2026-10-29T14:41:43Z",
    "baseline_source": "live",
-   "last_change": "2026-11-01T13:22:41Z",
-   "changes": 3,
-   "lines": 29,
+   "last_change": null,
+   "changes": 0,
+   "lines": 28,
    "archive": null,
    "state_since_uk": "29 Oct 14:41 GMT",
-   "last_change_uk": "01 Nov 13:22 GMT"
+   "last_change_uk": ""
   },
   {
    "name": "Archwilio record GGATE003872",
@@ -309,12 +309,12 @@
    "state_since": "2026-10-29T14:41:43Z",
    "baseline": "2026-10-29T14:41:43Z",
    "baseline_source": "live",
-   "last_change": "2026-11-01T13:22:41Z",
-   "changes": 3,
-   "lines": 37,
+   "last_change": null,
+   "changes": 0,
+   "lines": 36,
    "archive": null,
    "state_since_uk": "29 Oct 14:41 GMT",
-   "last_change_uk": "01 Nov 13:22 GMT"
+   "last_change_uk": ""
   },
   {
    "name": "Archwilio record GGATE003875",
@@ -325,9 +325,9 @@
    "state_since": "2026-10-29T14:41:43Z",
    "baseline": "2026-10-24T14:23:02Z",
    "baseline_source": "internetarchive 2026-10-23 (Internet Archive copy)",
-   "last_change": "2026-11-01T13:22:41Z",
-   "changes": 4,
-   "lines": 67,
+   "last_change": null,
+   "changes": 0,
+   "lines": 66,
    "archive": {
     "latest": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Farchwilio.org.uk%2Fheneb-her-ggate003875.html",
     "capture": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Finternetarchive.bucklerfamily.estate%2F20261030170941%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%2F_q%2Fwatprn%3DGGATE003875%2F",
@@ -335,7 +335,7 @@
     "source": "live"
    },
    "state_since_uk": "29 Oct 14:41 GMT",
-   "last_change_uk": "01 Nov 13:22 GMT"
+   "last_change_uk": ""
   },
   {
    "name": "Archwilio record GGATE006336",
@@ -639,614 +639,6 @@
   }
  ],
  "changes": [
-  {
-   "at": "2026-11-01T13:22:41Z",
-   "at_uk": "01 Nov 13:22 GMT",
-   "name": "Archwilio record GGATE003875",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003875",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "after": [
-    "November 1, 2026, 2:23 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "dc401713da5a80d4",
-   "hash_new": "e262a82efcdd32c6",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-11-01T13:22:41Z",
-   "at_uk": "01 Nov 13:22 GMT",
-   "name": "Archwilio record GGATE003872",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003872",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "after": [
-    "November 1, 2026, 2:23 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "d1da75bd1d5e9eae",
-   "hash_new": "4fd26fd2a389fc91",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-11-01T13:22:41Z",
-   "at_uk": "01 Nov 13:22 GMT",
-   "name": "Archwilio record GGATE003317",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003317",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "after": [
-    "November 1, 2026, 2:23 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "3e030b4f5ecd2242",
-   "hash_new": "9bab58defc0dfcf2",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-11-01T13:22:41Z",
-   "at_uk": "01 Nov 13:22 GMT",
-   "name": "Archwilio record GGATE000877",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE000877",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "after": [
-    "November 1, 2026, 2:23 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "ebcaeca9d14d840c",
-   "hash_new": "237a01d6ab8dc070",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-11-01T13:22:41Z",
-   "at_uk": "01 Nov 13:22 GMT",
-   "name": "Archwilio record GGAT03586s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03586s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "after": [
-    "November 1, 2026, 2:23 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "167088b6265533cc",
-   "hash_new": "a10233c4725f1a2c",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-11-01T13:22:41Z",
-   "at_uk": "01 Nov 13:22 GMT",
-   "name": "Archwilio record GGAT03585s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03585s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "after": [
-    "November 1, 2026, 2:22 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "78e512aeb5531aae",
-   "hash_new": "970ef2bc79af2243",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-11-01T13:22:41Z",
-   "at_uk": "01 Nov 13:22 GMT",
-   "name": "Archwilio record GGAT03584s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03584s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "after": [
-    "November 1, 2026, 2:22 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "b41b83bfb0a54ebd",
-   "hash_new": "9a32fc39bee2a4ae",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-11-01T13:22:41Z",
-   "at_uk": "01 Nov 13:22 GMT",
-   "name": "Archwilio record GGAT03583s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03583s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 31, 2026, 2:19 pm"
-   ],
-   "after": [
-    "November 1, 2026, 2:22 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "2cbd7c9743a3331f",
-   "hash_new": "884e15f6d083001c",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-11-01T13:22:41Z",
-   "at_uk": "01 Nov 13:22 GMT",
-   "name": "Archwilio record GGAT02038s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT02038s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 31, 2026, 2:19 pm"
-   ],
-   "after": [
-    "November 1, 2026, 2:22 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "5e49471a0f9b9159",
-   "hash_new": "11f52ee9262562d4",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-31T13:19:43Z",
-   "at_uk": "31 Oct 13:19 GMT",
-   "name": "Archwilio record GGATE003875",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003875",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "after": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "e66adb76e258b7f5",
-   "hash_new": "dc401713da5a80d4",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-31T13:19:43Z",
-   "at_uk": "31 Oct 13:19 GMT",
-   "name": "Archwilio record GGATE003872",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003872",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "after": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "3fda7a018a264898",
-   "hash_new": "d1da75bd1d5e9eae",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-31T13:19:43Z",
-   "at_uk": "31 Oct 13:19 GMT",
-   "name": "Archwilio record GGATE003317",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003317",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "after": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "84d5b1989adb4b9e",
-   "hash_new": "3e030b4f5ecd2242",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-31T13:19:43Z",
-   "at_uk": "31 Oct 13:19 GMT",
-   "name": "Archwilio record GGATE000877",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE000877",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "after": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "7898d678fbec9f1d",
-   "hash_new": "ebcaeca9d14d840c",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-31T13:19:43Z",
-   "at_uk": "31 Oct 13:19 GMT",
-   "name": "Archwilio record GGAT03586s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03586s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "after": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "62d1bd9dc411f574",
-   "hash_new": "167088b6265533cc",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-31T13:19:43Z",
-   "at_uk": "31 Oct 13:19 GMT",
-   "name": "Archwilio record GGAT03585s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03585s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "after": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "61c18bd962abcc85",
-   "hash_new": "78e512aeb5531aae",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-31T13:19:43Z",
-   "at_uk": "31 Oct 13:19 GMT",
-   "name": "Archwilio record GGAT03584s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03584s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "after": [
-    "October 31, 2026, 2:20 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "e6d1a67b59b5e622",
-   "hash_new": "b41b83bfb0a54ebd",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-31T13:19:43Z",
-   "at_uk": "31 Oct 13:19 GMT",
-   "name": "Archwilio record GGAT03583s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03583s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "after": [
-    "October 31, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "bbd4d4f500b20f58",
-   "hash_new": "2cbd7c9743a3331f",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-31T13:19:43Z",
-   "at_uk": "31 Oct 13:19 GMT",
-   "name": "Archwilio record GGAT02038s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT02038s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "after": [
-    "October 31, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "ca521d9b8b9235bf",
-   "hash_new": "5e49471a0f9b9159",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-30T13:18:50Z",
-   "at_uk": "30 Oct 13:18 GMT",
-   "name": "Archwilio record GGATE003875",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003875",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "after": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "9e7de64b73b224cc",
-   "hash_new": "e66adb76e258b7f5",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-30T13:18:50Z",
-   "at_uk": "30 Oct 13:18 GMT",
-   "name": "Archwilio record GGATE003872",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003872",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "after": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "def1fb46ed7c9757",
-   "hash_new": "3fda7a018a264898",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-30T13:18:50Z",
-   "at_uk": "30 Oct 13:18 GMT",
-   "name": "Archwilio record GGATE003317",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003317",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "after": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "bed64df14b810323",
-   "hash_new": "84d5b1989adb4b9e",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-30T13:18:50Z",
-   "at_uk": "30 Oct 13:18 GMT",
-   "name": "Archwilio record GGATE000877",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE000877",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "after": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "73bb1b29eb97a8e6",
-   "hash_new": "7898d678fbec9f1d",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-30T13:18:50Z",
-   "at_uk": "30 Oct 13:18 GMT",
-   "name": "Archwilio record GGAT03586s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03586s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "after": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "d615c86b335f65ff",
-   "hash_new": "62d1bd9dc411f574",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-30T13:18:50Z",
-   "at_uk": "30 Oct 13:18 GMT",
-   "name": "Archwilio record GGAT03585s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03585s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "after": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "39959abda35d77d0",
-   "hash_new": "61c18bd962abcc85",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-30T13:18:50Z",
-   "at_uk": "30 Oct 13:18 GMT",
-   "name": "Archwilio record GGAT03584s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03584s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "after": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "086958dcbcb0aca4",
-   "hash_new": "e6d1a67b59b5e622",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-30T13:18:50Z",
-   "at_uk": "30 Oct 13:18 GMT",
-   "name": "Archwilio record GGAT03583s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03583s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "after": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "fa36f51bab304cc2",
-   "hash_new": "bbd4d4f500b20f58",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-30T13:18:50Z",
-   "at_uk": "30 Oct 13:18 GMT",
-   "name": "Archwilio record GGAT02038s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT02038s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 29, 2026, 3:41 pm"
-   ],
-   "after": [
-    "October 30, 2026, 2:19 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "3f685761ba012f1e",
-   "hash_new": "ca521d9b8b9235bf",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-29T14:41:43Z",
-   "at_uk": "29 Oct 14:41 GMT",
-   "name": "Archwilio record GGATE003875",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE003875",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 23, 2026, 1:29 pm"
-   ],
-   "after": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "573b93ddf602b784",
-   "hash_new": "9e7de64b73b224cc",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-29T14:41:43Z",
-   "at_uk": "29 Oct 14:41 GMT",
-   "name": "Archwilio record GGATE000877",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGATE000877",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 23, 2026, 1:26 pm"
-   ],
-   "after": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "b71309c8d34f22d6",
-   "hash_new": "73bb1b29eb97a8e6",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-29T14:41:43Z",
-   "at_uk": "29 Oct 14:41 GMT",
-   "name": "Archwilio record GGAT03586s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03586s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 23, 2026, 1:25 pm"
-   ],
-   "after": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "a47a99d3cc3c02e4",
-   "hash_new": "d615c86b335f65ff",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-29T14:41:43Z",
-   "at_uk": "29 Oct 14:41 GMT",
-   "name": "Archwilio record GGAT03585s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03585s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 23, 2026, 1:25 pm"
-   ],
-   "after": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "8b41f83ed49fc22e",
-   "hash_new": "39959abda35d77d0",
-   "telegram": "not sent: no chat id stored"
-  },
-  {
-   "at": "2026-10-29T14:41:43Z",
-   "at_uk": "29 Oct 14:41 GMT",
-   "name": "Archwilio record GGAT03584s",
-   "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT03584s",
-   "kind": "content changed",
-   "compared_with": "previous live check",
-   "before": [
-    "October 23, 2026, 1:24 pm"
-   ],
-   "after": [
-    "October 29, 2026, 3:42 pm"
-   ],
-   "removed": 1,
-   "added": 1,
-   "hash_old": "ca7b060c0615a816",
-   "hash_new": "086958dcbcb0aca4",
-   "telegram": "not sent: no chat id stored"
-  },
   {
    "at": "2026-10-29T14:41:43Z",
    "at_uk": "29 Oct 14:41 GMT",

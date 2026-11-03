@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn_academy_architecture/v1",
- "version": "1.0.12",
+ "version": "1.0.13",
  "updated": "2026-11-03",
  "refreshed_by": "the agent library cycle (every 6 hours); edit this file, then rebuild the academy",
  "source_documents": [
@@ -890,6 +890,18 @@
    "state": "BUILT, awaiting merge of its menu entry",
    "view_rule": "one card per theory with its evidence ids",
    "migration_wave": "standalone webapp, 3 Nov 2026"
+  },
+  {
+   "id": "settings",
+   "title": "Display settings",
+   "url": "/settings/",
+   "group": "Interactive",
+   "purpose": "Light or dark, font and text size for every page of the site, kept in the reader's own browser only; the shared boot script applies the choice before first paint",
+   "source": "branch theme-settings (public folder), registered in main's section list",
+   "data_sources": "none; the choice lives in the browser",
+   "state": "BUILT, registered on main, awaiting the next site build",
+   "view_rule": "one settings form; the choice follows the reader to every page and every open tab",
+   "migration_wave": "site-wide shell feature, 3 Nov 2026"
   }
  ],
  "other_areas": [
