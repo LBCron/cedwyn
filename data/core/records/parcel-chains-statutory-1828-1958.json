@@ -255,7 +255,7 @@
    "place_text": "Leckwith Common, parish of Leckwith (City of Cardiff order)",
    "description": "Catalogue entries held by the Parliamentary Archives and listed on TNA Discovery: the map certified by the Ministry for the City of Cardiff (Leckwith Common) Compulsory Purchase Order 1957 (YHL/PO/PB/3/plan1958to1959/C1); the Special Procedure Order with the Minister of Housing and Local Government's certificate, 11 Nov 1958 (YHL/PO/JO/10/11/660/89); the order dated 8 Sep 1958 laid before the Commons, 11 Nov 1958 (YHC/CL/JO/10/748/63); and the report of the Chairmen, 25 Nov 1958 (YHC/CL/JO/10/750/106). The map and schedule have not been read.",
    "transcript": null,
-   "transcript_status": "Catalogue entries only; the documents have not been read.",
+   "transcript_status": "Catalogue entries only; the documents have not been read. The printed Commons Journal entries for the 11 and 25 November 1958 papers are catalogued as AR-HCJ-214-1958-LECKWITH-COMMON.",
    "provenance": {
     "holder": "Parliamentary Archives (listed on TNA Discovery)",
     "reference": "YHL/PO/PB/3/plan1958to1959/C1; YHL/PO/JO/10/11/660/89; YHC/CL/JO/10/748/63; YHC/CL/JO/10/750/106",
@@ -284,19 +284,26 @@
      "href": "https://discovery.nationalarchives.gov.uk/results/r?_q=Leckwith%20compulsory%20purchase"
     }
    ],
-   "related": [],
+   "related": [
+    "AR-HCJ-214-1958-LECKWITH-COMMON"
+   ],
    "links": [],
    "origin": "parcel-chains-cycle-1-2026-11-03",
    "reworded": false,
    "public": true,
    "updated": "2026-11-03",
-   "rev": 1,
-   "version": "1.0.0",
+   "rev": 2,
+   "version": "1.0.1",
    "changes": [
     {
      "rev": "1.0.0",
      "date": "2026-11-03",
      "note": "Catalogued from the source named in provenance."
+    },
+    {
+     "rev": "1.0.1",
+     "date": "2026-11-03",
+     "note": "Linked to the printed Commons Journal entries (AR-HCJ-214-1958-LECKWITH-COMMON)."
     }
    ]
   },
@@ -744,6 +751,98 @@
      "rev": "1.0.0",
      "date": "2026-11-03",
      "note": "Catalogued from the source named in provenance."
+    }
+   ]
+  },
+  {
+   "id": "AR-HCJ-214-1958-LECKWITH-COMMON",
+   "kind": "artifact",
+   "slug": "ar-hcj-214-1958-leckwith-common",
+   "title": "Commons Journal vol. 214, 11 and 25 Nov 1958: City of Cardiff (Leckwith Common) Compulsory Purchase Order 1957 laid, and no petition reported",
+   "aliases": [
+    "HCJ vol. 214 pp.22, 40",
+    "Journals of the House of Commons 1958-59, Leckwith Common order"
+   ],
+   "date": {
+    "display": "11 and 25 November 1958",
+    "sort": 1958.9,
+    "precision": "dates of the sittings"
+   },
+   "place_text": "Leckwith Common, parish of Leckwith (City of Cardiff order)",
+   "description": "Two entries in the printed Journals of the House of Commons, volume 214 (session 1958-59), on the City of Cardiff (Leckwith Common) Compulsory Purchase Order, 1957, which came before Parliament under the Statutory Orders (Special Procedure) Act 1945. On Tuesday 11 November 1958 the Minister of Housing and Local Government (Henry Brooke) laid a copy of the order, dated 8 September 1958, with his certificate under section 2 of the Act (p.22). On Tuesday 25 November 1958 the Chairman of Ways and Means laid the report of the Chairmen of both Houses under section 3 that no petition had been presented against it, listed with the Appleton Common Compulsory Purchase Order 1958 (p.40). The volume index repeats both entries (pp.328 and 346). The volume contains no other entry for Leckwith and does not mention Llandough or Cogan.",
+   "transcript": "11 November 1958, p.22 (margin: Acquisition of Land): \"Mr. Brooke presented, pursuant to the directions of an Act of Parliament,—Copy of an Order, dated 8th September 1958, entitled the City of Cardiff (Leckwith Common) Compulsory Purchase Order, 1957, with a Certificate by the Minister of Housing and Local Government under Section 2 of the Statutory Orders (Special Procedure) Act, 1945. Ordered, That the said Paper do lie upon the Table.\"\n\n25 November 1958, p.40 (margin: Statutory Orders (Special Procedure)): \"The Chairman of Ways and Means presented, pursuant to the directions of an Act of Parliament,—Report by the Chairman of Committees of the House of Lords and the Chairman of Ways and Means in the House of Commons under Section 3 of the Statutory Orders (Special Procedure) Act, 1945, That no Petition has been presented against— (1) the City of Cardiff (Leckwith Common) Compulsory Purchase Order, 1957, and (2) the Appleton Common Compulsory Purchase Order, 1958. Ordered, That the said Paper do lie upon the Table.\"\n\nIndex, p.328, ACQUISITION OF LAND: \"Orders (Act): 1957:—City of Cardiff (Leckwith Common) Compulsory Purchase, 22\". Index, p.346, STATUTORY ORDERS (SPECIAL PROCEDURE): \"That no Petitions have been presented against the following Orders: 1957:—City of Cardiff (Leckwith Common) Compulsory Purchase, 40\".",
+   "transcript_status": "Read on 3 November 2026 from the text layer of the scanned volume, with the interleaved columns separated by hand, and checked against the page images of pp.22 and 40.",
+   "interpretation": "With hindsight and wider context: the order was made by Cardiff Corporation in 1957 and confirmed by the Minister of Housing and Local Government on 8 September 1958; the London Gazette of 31 October 1958 (p.6652) gives that confirmation under section 5 of the Physical Training and Recreation Act 1937, which points to land for recreation. Because the land was common land, the confirmed order went through special parliamentary procedure: it was laid before both Houses with the Minister's certificate (11 November 1958), a short period followed in which a petition could be deposited, and on 25 November 1958 the Chairmen of the two Houses reported that none had been. No joint committee hearing followed. What it shows: the two parliamentary steps of the order, their dates, and that the petition route in Parliament was not used. What it does not show: the land taken, its area or boundaries, the owners, occupiers or holders of rights, any compensation, the map, or any objection made at the earlier local inquiry. It names no parish other than Leckwith and no person other than the Minister and the Chairman of Ways and Means. What cuts against a simple reading: no petition does not mean no objection. Objections to a compulsory purchase order were heard at the local inquiry before confirmation, and press reports of a 1958 Leckwith Common inquiry are catalogued separately; a petition to Parliament was a further formal step with a short deadline. Equally, nothing on these pages records a dispute over title to the common. The plotting of the order land against neighbouring parcels is not checked; the certified map is held by the Parliamentary Archives and has not been read.",
+   "provenance": {
+    "holder": "House of Commons (Journals of the House of Commons, printed by HMSO)",
+    "reference": "Journals of the House of Commons, vol. 214, session 1958-59 (28 Oct 1958 to 18 Sep 1959), pp.22, 40, 328, 346 (PDF pages 24, 42, 330, 348 of 386). Parliament's file: assets.parliament.uk/Journals/HCJ_volume_214.pdf",
+    "date": "1958-11-11/1958-11-25",
+    "obtained": "Read on 3 November 2026 from the Internet Archive capture of 3 June 2022 of Parliament's PDF (30,689,842 bytes, 386 pages); a five-page extract is kept in the archive's PDF collection.",
+    "independent_origin_id": "ORIG-HCJ-214"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Parliamentary stage of the statutory acquisition of Leckwith Common, beside Llandough; the printed record behind the Parliamentary Archives catalogue entries already listed.",
+    "tags": [
+     "commons-journal",
+     "special-parliamentary-procedure",
+     "compulsory-purchase",
+     "leckwith-common",
+     "1958"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "11 November 1958: order laid with the Minister's certificate",
+     "text": "Printed page 22 (sitting No. 11). The order is dated 8 September 1958, the date of confirmation given in the London Gazette."
+    },
+    {
+     "heading": "25 November 1958: no petition reported",
+     "text": "Printed page 40 (sitting No. 21). Report of the Chairmen under section 3 of the 1945 Act, covering this order and the Appleton Common Compulsory Purchase Order 1958."
+    },
+    {
+     "heading": "Not in this volume",
+     "text": "No schedule, map, owners, occupiers, rights of common or compensation; no mention of Llandough or Cogan; no other Leckwith entry in the session."
+    }
+   ],
+   "sources": [
+    {
+     "text": "Journals of the House of Commons, vol. 214 (1958-59), pp.22 and 40; index pp.328 and 346",
+     "href": null
+    },
+    {
+     "text": "Wayback archive PDF extract: /pdf/parliament/1958-11-25_hcj-214_leckwith-common-cpo_extract_en_v1-0-0.pdf",
+     "href": null
+    }
+   ],
+   "related": [
+    "AR-PARLARCH-1958-LECKWITH-COMMON-CPO"
+   ],
+   "links": [
+    {
+     "rel": "same-papers-catalogue",
+     "to": "AR-PARLARCH-1958-LECKWITH-COMMON-CPO"
+    },
+    {
+     "rel": "wayback-pdf",
+     "to": "/pdf/parliament/1958-11-25_hcj-214_leckwith-common-cpo_extract_en_v1-0-0.pdf"
+    }
+   ],
+   "origin": "evidence-intake-2026-11-03",
+   "reworded": false,
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1,
+   "version": "1.0.0",
+   "changes": [
+    {
+     "rev": "1.0.0",
+     "date": "2026-11-03",
+     "note": "Catalogued from the printed Journal; passages read and checked against the page images."
     }
    ]
   }
