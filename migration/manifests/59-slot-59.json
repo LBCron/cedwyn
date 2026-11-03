@@ -1,0 +1,143 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "slot-59",
+ "uid": "APP-59",
+ "slot": {
+  "n": 59,
+  "of": 59,
+  "label": "59 of 59"
+ },
+ "status": "vacant",
+ "vacant": {
+  "candidate": "bloculous",
+  "candidate_title": "Bloculous",
+  "basis": "open PR #115 (Online area webapp)",
+  "live_address": null,
+  "pr": 115,
+  "decision": "owner_to_decide"
+ },
+ "section": "Online",
+ "sections_shown": [],
+ "group": "none",
+ "title": {
+  "en": "VACANT (proposed: Bloculous)"
+ },
+ "description": "Slot 59 of 59 holds no webapp. Proposed occupant: Bloculous. Nothing is published here until the owner decides.",
+ "path": "/slot-59/",
+ "aliases": [],
+ "legacy_hosts": [],
+ "branch": {
+  "name": null,
+  "exists": false,
+  "standard_name": "webapp/bloculous",
+  "source_dir": null,
+  "other_branches": [
+   "bloculous-online",
+   "section/bloculous"
+  ]
+ },
+ "front_end": {
+  "kind": "none",
+  "hosting": "none",
+  "worker_on_read": false
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en"
+  ],
+  "status": "n/a"
+ },
+ "data": {
+  "slice": "none",
+  "query": {
+   "kinds": [],
+   "uid_prefixes": [],
+   "public_only": true
+  },
+  "registers": [],
+  "catalogue_status": "n/a"
+ },
+ "local_store": {
+  "static": [],
+  "client_cache": {
+   "enabled": false,
+   "store": "none",
+   "strategy": "none"
+  }
+ },
+ "api": {
+  "base": "/slot-59/api/v1/",
+  "outputs": [
+   {
+    "path": "/slot-59/api/v1/index.json",
+    "format": "json",
+    "description": "list + counts + rev + generated_at"
+   },
+   {
+    "path": "/slot-59/api/v1/items/{uid}.json",
+    "format": "json",
+    "description": "one record in this app's presentation, keyed by catalogue UID"
+   },
+   {
+    "path": "/slot-59/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "JSON Feed 1.1, newest first"
+   },
+   {
+    "path": "/slot-59/api/v1/feed.xml",
+    "format": "atom",
+    "description": "Atom 1.0 feed"
+   },
+   {
+    "path": "/slot-59/api/v1/rss.xml",
+    "format": "rss",
+    "description": "RSS 2.0 feed"
+   },
+   {
+    "path": "/slot-59/api/v1/data.xml",
+    "format": "xml",
+    "description": "the whole slice as XML"
+   }
+  ],
+  "cors": "*",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [],
+ "consumed_by": [],
+ "external_sources": [],
+ "dynamic_endpoints": [],
+ "migration": {
+  "phase": "manifest",
+  "phases_done": [
+   "inventory",
+   "manifest"
+  ],
+  "rag": "grey",
+  "next_action": "owner decides the occupant; then a full manifest replaces this one",
+  "blockers": [
+   "owner decision: fill this slot?"
+  ],
+  "prs": [
+   115
+  ],
+  "pilot": false
+ },
+ "owner": "Cedwyn editors",
+ "version": "0.0.1",
+ "changelog": [
+  {
+   "version": "0.0.1",
+   "date": "2026-11-03",
+   "summary": "Vacant slot recorded with a proposed occupant from existing pages/PRs."
+  }
+ ],
+ "sources": [
+  "/areas.json nav (slot missing)",
+  "open PR list",
+  "pages.dev reachability check 2026-11-03"
+ ]
+}
