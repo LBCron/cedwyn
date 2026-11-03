@@ -1,0 +1,35 @@
+{
+ "url": "https://archive.org/details/glamorganmidglam0000newm",
+ "key": "archive.org/details/glamorganmidglam0000newm",
+ "host": "archive.org",
+ "path": "/websites/archive.org/details-glamorganmidglam0000newm/",
+ "latest": "/websites/archive.org/details-glamorganmidglam0000newm/latest.html",
+ "first_captured": "2026-11-03T02:47:01Z",
+ "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
+ "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
+ "title": "Glamorgan (Newman, 1995) — Internet Archive item page (glamorganmidglam0000newm)",
+ "last_captured": "2026-11-03T02:47:01Z",
+ "current_version": "v1.0.0",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "change": "first",
+   "captured_utc": "2026-11-03T02:47:01Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "d9ba2858b963f26bbe5667556c3006132a4c6c67aa70d29ef5830ea0aac4c97d",
+   "markup_sha256": "8c7183943ef6ae6b6bb147e219b5085f11b563cacd403495528c14cef4d7aa66",
+   "file": "v1.0.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-03T02:49:04Z",
+   "file_sha256": "f86dc3a447f730158112c16d98770cf836353551550a664e3920e0d936f9b804"
+  }
+ ],
+ "raw_sha256": "7cea25963d6ef5f3df6ea59ee0df86c87e0fd4c2c97b505c26cc646a4faa8479",
+ "raw_bytes": 216683,
+ "raw_evidence": "unclehowell/cedwyn@section/peekaboo:evidence/ia-details-glamorganmidglam0000newm-20261103T024701Z.html.gz (gzip of the raw HTML; sha256 is of the uncompressed bytes)",
+ "anchor": "pkb-ia-description",
+ "peekaboo": "OBS-PEEKABOO-NEWMAN-IA",
+ "why_kept": "Peekaboo incident: catalogue description does not match the item",
+ "captured_note": "Fetched live from https://archive.org/details/glamorganmidglam0000newm at 2026-11-03T02:47:01Z; raw HTML sha256 7cea25963d6ef5f3df6ea59ee0df86c87e0fd4c2c97b505c26cc646a4faa8479."
+}
