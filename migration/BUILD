@@ -1,1 +1,1 @@
-build 2 (2026-11-03): pilots verified, tracker refreshed
+build 3 (2026-11-03): footer API links wrap at 390 px
