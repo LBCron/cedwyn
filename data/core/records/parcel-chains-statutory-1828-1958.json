@@ -845,6 +845,153 @@
      "note": "Catalogued from the printed Journal; passages read and checked against the page images."
     }
    ]
+  },
+  {
+   "id": "AR-OS-BOOKREF-1877-LLANDOUGH",
+   "kind": "artifact",
+   "slug": "ar-os-bookref-1877-llandough",
+   "title": "Ordnance Survey Book of Reference to the 1:2500 plan of the parish of Llandough juxta Cardiff (bound volume dated 1877)",
+   "aliases": [],
+   "date": {
+    "display": "1877 (date of the bound volume)",
+    "sort": 1877.0,
+    "precision": "year of the bound volume; survey date of the parish not read"
+   },
+   "place_text": "Parish of Llandough juxta Cardiff (Llandough-juxta-Penarth), Hundred of Dinas Powis; the same volume covers Leckwith",
+   "description": "The Ordnance Survey's printed book of reference (area book) for the first 1:2500 survey of the parish. It lists every numbered parcel on the plan, nos 1 to 166 with 99a, 111a, 142a and 146a, and a detached part, giving each parcel's area in acres and its land use (pasture, arable, wood, houses and gardens, roads). Railway parcels (126, 151), part of the dock (152), two reservoir parcels (23, 122), the church and graveyard and the school and playground are among them. An index to places gives the map sheets for named places, all on 6-inch sheet XLVII: Baptist Chapel, Cardiff Water Works Penarth Reservoir, Cogan-pill, Elm Cottage, Greenway Cottage, Highlands, Lime Works, Llandough juxta Cardiff, Llandough Farm, Llandough House, Oak Cottage, Pen-y-lan, Post Office, Rectory, School, Station, St Dochdwy's Church and Ty-mawr. The same volume holds the book of reference for Leckwith.",
+   "transcript": "Heading: \"PARISH OF LLANDOUGH JUXTA CARDIFF, IN THE COUNTY OF GLAMORGAN. HUNDRED OF DINAS-POWIS\". Columns: \"No. on Plan\", \"Area in Acres\", \"Remarks\". Examples of remarks as printed: \"Reservoir.\" (twice), \"Railway.\" (twice), \"Dock (part of).\", \"Church and grave-yard.\", \"School and play-ground.\", \"Houses, ornamental ground, &c.\". Index heading: \"INDEX TO PLACES IN THE PARISH OF LLANDOUGH JUXTA CARDIFF.\" […]",
+   "transcript_status": "Read on 3 November 2026 from the OCR text layer of the scanned volume. The OCR separates the number, acreage and remarks columns, so the pairing of each parcel number with its acreage and use is not checked against the page images; parcel numbers named above are from the order of the columns and need that check.",
+   "interpretation": "With hindsight and wider context: area books were published by the Ordnance Survey to accompany the first 1:2500 county series plans and record only the parcel number, area and use. What it shows: the parcel numbering and areas of the whole parish as surveyed in the 1870s, the presence of railway, dock and reservoir land by then, and the map sheets for named places. This numbering is the key that later deposited plans and the 1910 valuation used, so it is the bridge between the c.1841 tithe apportionment and later records. What it does not show: owners, lessees or occupiers of any parcel, or any transfer or acquisition. What cuts against reading more into it: a reservoir or railway parcel in the 1870s shows the land was then in that use, not how or from whom it was acquired; which tithe fields each OS parcel matches is not checked.",
+   "provenance": {
+    "holder": "Ordnance Survey (printed by George E. Eyre and William Spottiswoode for HM Stationery Office)",
+    "reference": "Book of Reference to the Plan of the Parish of ... (Ordnance Survey of Wales, Glamorgan volume), Oxford copy digitised by Google; Internet Archive item bookreferenceto56survgoog",
+    "date": "1877",
+    "obtained": "Read on 3 November 2026 from the Internet Archive copy (https://archive.org/details/bookreferenceto56survgoog), full-text layer.",
+    "independent_origin_id": "ORIG-OS-BOOKREF-1877-GLAMORGAN"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Parcel-level survey record for the whole of Llandough-juxta-Penarth and Leckwith in the 1870s; the numbering key for the parcel chains work.",
+    "tags": [
+     "ordnance-survey",
+     "book-of-reference",
+     "area-book",
+     "1-2500",
+     "llandough",
+     "leckwith",
+     "1877"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "What the parcel list holds",
+     "text": "Parcels 1 to 166 with four lettered parcels (99a, 111a, 142a, 146a) and one detached part (a pasture of about 4 acres and a small railway parcel). Each line gives area in acres to three decimals and the use. The recapitulation of the parish total is not legible in the text layer."
+    },
+    {
+     "heading": "Map sheets",
+     "text": "All named places in the index fall on 6-inch sheet XLVII of Glamorgan; on the 25-inch (1:2500) series the index gives sheets 2, 6 and 7 of XLVII (Rectory on 2; Cogan-pill and Station on 7; the rest on 6)."
+    }
+   ]
+  },
+  {
+   "id": "AR-GAZETTE-1859-11-25-CARDIFF-WATERWORKS-LLANDOUGH",
+   "kind": "artifact",
+   "slug": "ar-gazette-1859-11-25-cardiff-waterworks-llandough",
+   "title": "London Gazette, 25 Nov 1859: Cardiff Waterworks Company Bill, the Cogan Pill Reservoir and an intended Llandough Reservoir",
+   "aliases": [],
+   "date": {
+    "display": "25 November 1859",
+    "sort": 1859.9,
+    "precision": "date of publication"
+   },
+   "place_text": "Parish of Llandough (Llandough-juxta-Penarth): Cogan Pill Farm; a field near the road from Leckwith to Dinas Powis, about 600 yards west of Llandough Church; mains through Llandough, Cogan and Leckwith",
+   "description": "Parliamentary notice of the Cardiff Waterworks Company for the 1860 session (construction of new works, purchase of land, extension of district, further money, amendment of the Cardiff Waterworks Act 1853). In Llandough it describes a reservoir lately constructed by the Company at Cogan Pill Farm (called the Cogan Pill Reservoir), an aqueduct from it to an intended reservoir called the Llandough Reservoir, to be made in a field in the occupation of Thomas Rees near the road from Leckwith to Dinas Powis and about 600 yards west of Llandough Church, an aqueduct from the Cogan Pill Reservoir through Llandough, Cogan and Penarth towards Penarth Church, and powers to purchase lands by compulsion and by agreement. The Bill became the Cardiff Waterworks Act 1860.",
+   "transcript": "\"To construct and maintain an aqueduct or aqueducts commencing at a certain reservoir lately constructed by the Company at Cogan Pill Farm, in the parish of Llandough, hereinafter called the Cogan Pill Reservoir, and terminating in a certain reservoir hereinafter described, intended to be constructed near the road leading from Leckwith to Dinas Powis, and hereinafter called the Llandough Reservoir, all in the parish of Llandough, in the county of Glamorgan. To construct and maintain a reservoir (in this notice called the Llandough Reservoir), with works and conveniences connected therewith, in a field in the occupation of Thomas Rees, near the said road leading from Leckwith to Dinas Powis, and about 600 yards westward of Llandough Church, all in the parish of Llandough, in the county of Glamorgan.\" […] \"To purchase by compulsion and by agreement, lands, tenements, houses, messuages, springs, streams, mills, waters, and hereditaments, or to take leases of the same\" […]",
+   "transcript_status": "Read on 3 November 2026 from the OCR text of the Gazette PDF (pp.4375-4376), with the two interleaved columns separated by hand; […] marks text left out; not checked against the page image.",
+   "interpretation": "With hindsight and wider context: a waterworks Bill of this kind was accompanied by deposited plans and a book of reference naming the owners, lessees and occupiers of each plot. The Bill became the Cardiff Waterworks Act 1860 (23 & 24 Vict. c.141); whether the Llandough Reservoir was authorised and built as noticed is not checked here. The Ordnance Survey book of reference for the parish (1877 volume, AR-OS-BOOKREF-1877-LLANDOUGH) lists two reservoir parcels and indexes the Cardiff Water Works Penarth Reservoir, so at least one reservoir existed by the 1870s. What it shows: statutory waterworks in Llandough from the 1850s, earlier than the railway Bills of 1876-1897, and the one occupier the notice names in the parish. What it does not show: owners, the plots, any price or compensation, or which tithe field the intended reservoir field was. What cuts against a wider reading: the only Llandough occupier named is Thomas Rees, so the notice does not tie this work to any other occupier's land.",
+   "provenance": {
+    "holder": "The London Gazette",
+    "reference": "Issue 22329, pp.4375-4376",
+    "date": "1859-11-25",
+    "obtained": "Read on 3 November 2026 from the Gazette PDFs (https://www.thegazette.co.uk/London/issue/22329/page/4376).",
+    "independent_origin_id": "ORIG-GAZETTE-22329"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of statutory powers over land in Llandough-juxta-Penarth; the plots it touched are not identified until the deposited plan and book of reference are read.",
+    "tags": [
+     "london-gazette",
+     "waterworks",
+     "cardiff-waterworks-company",
+     "cogan-pill",
+     "llandough",
+     "1859"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "The Act",
+     "text": "Parliamentary Archives HL/PO/PB/1/1860/23and24V1n141: An Act for enabling the Cardiff Waterworks Company to construct additional Works, and obtain a further Supply of Water for the Town of Cardiff and the surrounding Districts in the County of Glamorgan (catalogue entry read 3 November 2026; the Act text is not read)."
+    },
+    {
+     "heading": "Related record",
+     "text": "A separate Penarth Waterworks Bill of the previous session proposed a reservoir in Llandough by the Merry Harrier Inn (AR-GAZETTE-1858-11-26-PENARTH-WATERWORKS-LLANDOUGH)."
+    }
+   ]
+  },
+  {
+   "id": "AR-GAZETTE-1858-11-26-PENARTH-WATERWORKS-LLANDOUGH",
+   "kind": "artifact",
+   "slug": "ar-gazette-1858-11-26-penarth-waterworks-llandough",
+   "title": "London Gazette, 26 Nov 1858: Penarth Waterworks Bill, a reservoir in Llandough by the Merry Harrier Inn",
+   "aliases": [],
+   "date": {
+    "display": "26 November 1858",
+    "sort": 1858.9,
+    "precision": "date of publication"
+   },
+   "place_text": "Parish of Llandough (Llandough-juxta-Penarth), about five chains south-west of the Merry Harrier Inn, where the Dinas Powis-Cogan Pill road meets the Cogan-Llandough road",
+   "description": "Parliamentary notice for the 1859 session to incorporate a company to supply water to shipping using Penarth harbour and docks and to the parishes of Penarth, Cogan, Llandough, Leckwith and Llandaff. It proposes reservoirs in St Andrews (on Dinas Powis Brook), in Llandough (south-west of and about five chains from the Merry Harrier Inn) and in Penarth (west of Penarth Church), with connecting mains through Llandough, Cogan, Leckwith and Llandaff. Owners and occupiers are not named in the notice.",
+   "transcript": "\"A reservoir in the parish of Llandough, in the said county, to the south-west of and about five chains from an inn there, known as \\\"The Merry Harrier Inn,\\\" and near the point where the road from Dinas Powis to Cogan Pill intersects the road from Cogan to Llandough.\" […]",
+   "transcript_status": "Read on 3 November 2026 from the OCR text of the Gazette PDF; […] marks text left out; not checked against the page image.",
+   "interpretation": "With hindsight and wider context: the deposited plan, section and book of reference for this Bill are catalogued by the Parliamentary Archives as HL/PO/PB/3/plan1859/P5 (its catalogue notes that a published map once listed with it could not be located as of May 2022). Whether the Bill passed or the reservoir was built is not checked. What it shows: a second waterworks scheme over Llandough land in the late 1850s, at the Merry Harrier crossroads, the same crossroads named in later railway notices. What it does not show: owners, occupiers, plots or any acquisition. What cuts against a wider reading: a notice of intended works is not evidence the works were made or that any land changed hands.",
+   "provenance": {
+    "holder": "The London Gazette",
+    "reference": "Issue 22204, p.5159",
+    "date": "1858-11-26",
+    "obtained": "Read on 3 November 2026 from the Gazette PDF (https://www.thegazette.co.uk/London/issue/22204/page/5159).",
+    "independent_origin_id": "ORIG-GAZETTE-22204"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of intended statutory works over land in Llandough-juxta-Penarth; plots not identified.",
+    "tags": [
+     "london-gazette",
+     "waterworks",
+     "penarth-waterworks",
+     "merry-harrier",
+     "llandough",
+     "1858"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "Deposited plan",
+     "text": "Parliamentary Archives HL/PO/PB/3/plan1859/P5: plan, section, book of reference, Gazette notice (catalogue entry read 3 November 2026; not seen)."
+    }
+   ]
   }
  ]
 }
