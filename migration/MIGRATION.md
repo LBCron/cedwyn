@@ -45,7 +45,7 @@ inventory → manifest → branch → static front end → data slice → API �
 ## Tracker
 
 <!-- TRACKER:START -->
-Updated 2026-11-03T22:39Z. Counts by last completed phase: manifest 17, branch 40, header 2. RAG: green 2, amber 40, red 3, grey 14.
+Updated 2026-11-03T22:41Z. Counts by last completed phase: manifest 17, branch 40, header 2. RAG: green 2, amber 40, red 3, grey 14.
 
 | # | webapp | section | status | phase | RAG | next action |
 |---|---|---|---|---|---|---|
