@@ -57,6 +57,11 @@
       "pinned_utc": "2026-11-02T18:46:23Z",
       "sha": "1a8a4f4883934666738f75b8dca27612dddfd605"
     },
+    "peekaboo": {
+      "branch": "section/peekaboo",
+      "pinned_utc": "2026-11-03T01:48:28Z",
+      "sha": "f1f92e8c4104b43a7bfafd7cf402cbd78d235e75"
+    },
     "research": {
       "branch": "section/research",
       "pinned_utc": "2026-11-01T23:08:00Z",
