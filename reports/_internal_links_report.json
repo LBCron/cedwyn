@@ -3,9 +3,9 @@
   "pages_scanned": 9170,
   "references_checked": {
     "resource": 209817,
-    "nav": 469567
+    "nav": 469569
   },
-  "database_backed_paths": 7374,
+  "database_backed_paths": 7378,
   "unique_missing_destinations": 5415,
   "missing_references": 51414,
   "missing_navigation_references": 35813,
