@@ -1,12 +1,12 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.1.0",
- "updated_utc": "2026-11-02T02:56Z",
- "count": 573,
+ "version": "1.2.0",
+ "updated_utc": "2026-11-03T07:16Z",
+ "count": 574,
  "by_category": {
   "heritage": 109,
   "press": 162,
-  "history": 42,
+  "history": 43,
   "legal": 124,
   "social": 4,
   "title": 70,
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 1
+  "spill": 2
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -306,6 +306,20 @@
    "sort": "1875-00-00",
    "id": "CH-0020",
    "date_display": "1875"
+  },
+  {
+   "date": "1875",
+   "event": "The parishes of Penarth, Cogan and Llandough are merged into the Penarth Local Board (population 6,228 by 1881). From then the local board, not the parish, held rates, highways and sanitary matters for Llandough. Primary order not yet read.",
+   "source": "Wikipedia, 'Penarth' (citing S. Williams, South Glamorgan: A County History, 1975), re-read 3 Nov 2026; the 1875 Local Government Board order not read",
+   "url": "https://en.wikipedia.org/wiki/Penarth",
+   "wayback": "http://web.archive.org/web/20260930150341/https://en.wikipedia.org/wiki/Penarth",
+   "evidence": "",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1875-01-01",
+   "id": "CH-0598",
+   "date_display": "1875",
+   "spill": "SP-00044"
   },
   {
    "date": "1876–1912",
@@ -7208,6 +7222,14 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.2.0",
+   "date": "2026-11-03",
+   "change": "Added CH-0598 (1875): The parishes of Penarth, Cogan and Llandough are merged into the Penarth Local Board (population 6,228 by 1881). From then the local board,  [spill SP-00044]",
+   "size": "574 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
   {
    "version": "1.1.0",
    "date": "2026-11-02",
