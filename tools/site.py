@@ -564,6 +564,7 @@ except Exception as _e:
 try:
     import site_links
     site_links.run(DIST)
+    site_links.ebooks_ld(DIST)   # 1.1.0: Book/Product JSON-LD on /ebooks/ (markup only)
 except Exception as _e:
     print('footer e-books link failed:', _e)
 
