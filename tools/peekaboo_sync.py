@@ -106,8 +106,21 @@ def fd(iso):
     try: d = dt.date.fromisoformat(iso[:10]); return f'{d.day} {d.strftime("%B %Y")}'
     except Exception: return iso or ''
 
+def load_links():
+    # v0.2.0 (3 Nov 2026): coloured hashtag cross-links per record (tools/links.json): #wayback #oldchestnut #watchtower #dartboard
+    try: return json.load(open(os.path.join(HERE, 'tools', 'links.json'), encoding='utf-8'))
+    except Exception: return {'legend': [], 'links': {}}
+
+def tags_html(rid, L):
+    out = []
+    for app in ('wayback', 'oldchestnut', 'watchtower', 'dartboard'):
+        for label, url in (L.get('links', {}).get(rid, {}).get(app) or []):
+            out.append(f'<a class="pk-tag pk-tag-{app}" href="{e_(url)}">{e_(label)}</a>')
+    return f'<p class="pk-tags" aria-label="Linked records">{" ".join(out)}</p>' if out else ''
+
 def render(db, notices):
     nmap = {n['id']: n for n in notices.get('notices', [])}
+    L = load_links()
     cards = []
     for e in db['entries']:
         by = 'Found by us' if e['found_by'] == 'us' else 'Found by the holder'
@@ -124,6 +137,8 @@ def render(db, notices):
             + (f'<p class="pk-why">{e_(e["why"])}</p>' if e['why'] else '') +
             f'<p class="pk-src">{e_(e["holder"])}' + (f' · {e_(e["reference"])}' if e['reference'] else '') + f' · catalogue {e_(e["id"])}</p>'
             + (f'<p class="pk-see">{see}{" · " if see and nts else ""}{nts}</p>' if (see or nts) else '') +
+            f'<p class="pk-inc">Incident recorded <time datetime="{e_(e["found_on"])}">{fd(e["found_on"])}</time>: {e_(e["category"].lower())}. Possibly to be corrected.</p>'
+            + tags_html(e['id'], L) +
             '</article>')
     notes = []
     for n in notices.get('notices', []):
@@ -134,7 +149,11 @@ def render(db, notices):
             f'<p class="pk-lab">Draft text</p><pre class="pk-draft">{e_(n["draft"])}</pre></details>')
     c = db['counts']
     stats = (f'<p class="pk-stats"><b>{c["entries"]}</b> records found despite their labels · <b>{c["found_by_us"]}</b> by us · '
-             f'<b>{c["found_by_holder"]}</b> by the holder · <b>{c["notices"]}</b> correction notices drafted · synced {fd(db["synced_at"])}</p>')
+             f'<b>{c["found_by_holder"]}</b> by the holder · <b>{c["notices"]}</b> correction notices held (who to notify will be decided later) · synced {fd(db["synced_at"])}</p>')
+    if L.get('legend'):
+        stats += ('<p class="pk-legend">Each incident is a place where a record about the estate, Tŷ Mawr, the family or the names used for them '
+                  'was described, labelled or placed, or said not to be held, in a way that does not match what was there. Under each card: '
+                  + ' · '.join(f'<span class="pk-tag pk-tag-{e_(a)}">{e_(t)}</span> {e_(w)}' for a, t, w in L['legend']) + '.</p>')
     p = os.path.join(HERE, 'index.html')
     h = open(p, encoding='utf-8').read()
     h = re.sub(r'(<!--PEEKABOO:STATS-->).*?(<!--/PEEKABOO:STATS-->)', lambda m: m.group(1) + stats + m.group(2), h, flags=re.S)

@@ -1,0 +1,145 @@
+{
+ "note": "Cross-links shown as coloured hashtags under each Peekaboo card (peekaboo_sync.py render). wayback = local static copy under /wayback/websites/; oldchestnut = the matching That Old Chestnut entry; watchtower = the matching row in Watchtower's 'Peekaboo sources watched' section; dartboard = the dartboard with the institution preselected (?inst=<id>, no-JS landing #avenue-inst). Added 2026-11-03 — Cedwyn editors",
+ "legend": [
+  [
+   "wayback",
+   "#wayback",
+   "local copy of the page"
+  ],
+  [
+   "oldchestnut",
+   "#oldchestnut",
+   "the reply's wording in That Old Chestnut"
+  ],
+  [
+   "watchtower",
+   "#watchtower",
+   "watched for later changes"
+  ],
+  [
+   "dartboard",
+   "#dartboard",
+   "the institution on the dartboard"
+  ]
+ ],
+ "links": {
+  "OBS-PEEKABOO-NEWMAN-IA": {
+   "wayback": [
+    [
+     "#wayback",
+     "/wayback/websites/archive.org/details-glamorganmidglam0000newm/latest.html#pkb-ia-description"
+    ]
+   ],
+   "watchtower": [
+    [
+     "#watchtower",
+     "/watchtower/#wt-pkb-newman-ia"
+    ]
+   ],
+   "dartboard": [
+    [
+     "#dartboard · Internet Archive",
+     "/dartboard/?inst=internet-archive#avenue-inst"
+    ],
+    [
+     "#dartboard · WorldCat",
+     "/dartboard/?inst=oclc#avenue-inst"
+    ]
+   ]
+  },
+  "OBS-PEEKABOO-DBDT79-CATALOGUE": {
+   "watchtower": [
+    [
+     "#watchtower",
+     "/watchtower/#wt-pkb-dbdt79"
+    ]
+   ],
+   "dartboard": [
+    [
+     "#dartboard · Glamorgan Archives",
+     "/dartboard/?inst=glamorgan#avenue-inst"
+    ]
+   ]
+  },
+  "TOC-F01": {
+   "oldchestnut": [
+    [
+     "#oldchestnut",
+     "/that-old-chestnut/#cn-toc-f01"
+    ]
+   ],
+   "watchtower": [
+    [
+     "#watchtower",
+     "/watchtower/#wt-pkb-toc-f01"
+    ]
+   ],
+   "dartboard": [
+    [
+     "#dartboard · Museum Wales",
+     "/dartboard/?inst=museum#avenue-inst"
+    ]
+   ]
+  },
+  "TOC-F02": {
+   "oldchestnut": [
+    [
+     "#oldchestnut",
+     "/that-old-chestnut/#cn-toc-f02"
+    ]
+   ],
+   "watchtower": [
+    [
+     "#watchtower",
+     "/watchtower/#wt-pkb-toc-f02"
+    ]
+   ],
+   "dartboard": [
+    [
+     "#dartboard · Historic England",
+     "/dartboard/?inst=historic-england#avenue-inst"
+    ]
+   ]
+  },
+  "TOC-F03": {
+   "oldchestnut": [
+    [
+     "#oldchestnut",
+     "/that-old-chestnut/#cn-toc-f03"
+    ]
+   ],
+   "watchtower": [
+    [
+     "#watchtower",
+     "/watchtower/#wt-pkb-toc-f03"
+    ]
+   ],
+   "dartboard": [
+    [
+     "#dartboard · Vale of Glamorgan Council",
+     "/dartboard/?inst=vale#avenue-inst"
+    ]
+   ]
+  },
+  "TOC-F05": {
+   "oldchestnut": [
+    [
+     "#oldchestnut",
+     "/that-old-chestnut/#cn-toc-f05"
+    ]
+   ],
+   "watchtower": [
+    [
+     "#watchtower",
+     "/watchtower/#wt-pkb-toc-f05"
+    ]
+   ],
+   "dartboard": [
+    [
+     "#dartboard · Cadw",
+     "/dartboard/?inst=cadw#avenue-inst"
+    ]
+   ]
+  }
+ }
+}
