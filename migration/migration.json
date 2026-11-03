@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn-migration-tracker/1",
- "updated": "2026-11-03T20:49Z",
+ "updated": "2026-11-03T23:05Z",
  "phases": [
   "inventory",
   "manifest",
@@ -14,9 +14,9 @@
  "summary": {
   "by_phase": {
    "inventory": 0,
-   "manifest": 18,
+   "manifest": 17,
    "branch": 39,
-   "static_front_end": 0,
+   "static_front_end": 1,
    "data_slice": 0,
    "api": 0,
    "header": 2,
@@ -25,8 +25,8 @@
   "reached": {
    "inventory": 59,
    "manifest": 59,
-   "branch": 41,
-   "static_front_end": 2,
+   "branch": 42,
+   "static_front_end": 3,
    "data_slice": 2,
    "api": 2,
    "header": 2,
@@ -34,14 +34,14 @@
   },
   "by_rag": {
    "green": 2,
-   "amber": 39,
+   "amber": 40,
    "red": 3,
-   "grey": 15
+   "grey": 14
   },
   "by_status": {
    "live": 44,
-   "pending_pr": 3,
-   "vacant": 12
+   "pending_pr": 4,
+   "vacant": 11
   },
   "by_section": {
    "Wales": 32,
@@ -54,7 +54,6 @@
    "qa",
    "blog",
    "cloudflare",
-   "spill",
    "analytics"
   ]
  },
@@ -1064,27 +1063,33 @@
   },
   {
    "slot": 41,
-   "id": "slot-41",
+   "id": "negative-finds",
    "uid": "APP-41",
-   "title": "VACANT (proposed: Title chain)",
+   "title": "Negative Finds",
    "section": "Wales",
-   "status": "vacant",
-   "branch": null,
-   "phase": "manifest",
+   "status": "pending_pr",
+   "branch": "webapp/negative-finds",
+   "phase": "branch",
    "phases_done": [
     "inventory",
-    "manifest"
+    "manifest",
+    "branch"
    ],
-   "rag": "grey",
-   "next_action": "owner decides the occupant; then a full manifest replaces this one",
+   "rag": "amber",
+   "next_action": "Implement or run the approved central sync from main to catalogue-db and D1, then build and verify Negative Finds from the updated static catalogue and register it in navigation.",
    "blockers": [
-    "owner decision: fill this slot?"
+    "The five Kissed Frogs screening leads and five bounded missing-record entries are merged to main in commit adefbe8e074332e9d631662047d216e464f2e700.",
+    "The catalogue-db mirror still points to main commit 52fbd319278df76c76fd07d4448ceb507dad8f68 and contains no negative-finds.json; no catalogue-sync.yml workflow is present in main. The app's static slice cannot contain the new rows until the documented central sync is implemented/run.",
+    "Negative Finds is not yet in /areas.json navigation; Back/Next and public slot index remain release checks."
    ],
-   "prs": [],
-   "pilot": false,
+   "prs": [
+    159,
+    161
+   ],
+   "pilot": true,
    "worker_on_read": false,
-   "catalogue_status": "n/a",
-   "candidate": "title-chain"
+   "catalogue_status": "not_yet",
+   "candidate": "negative-finds"
   },
   {
    "slot": 42,
@@ -1145,23 +1150,26 @@
    "title": "Spill",
    "section": "Online",
    "status": "live",
-   "branch": "section/spill",
-   "phase": "branch",
+   "branch": "webapp/spill",
+   "phase": "static_front_end",
    "phases_done": [
     "inventory",
     "manifest",
-    "branch"
+    "branch",
+    "static_front_end"
    ],
    "rag": "amber",
-   "next_action": "write the slice entry in data/core/slices.json and generate /spill/api/v1/",
+   "next_action": "Build and verify static snapshots on migration Pages, test every retained dynamic endpoint, then coordinate path-specific Worker routes and the static-first apex cutover.",
    "blockers": [
-    "a Worker runs on page reads today (route on the cedwyn host); the static-first cutover and this app's static rewrite remove it"
+    "The production cedwyn-spill route currently covers /spill*; narrow it only after the static site and API paths are verified.",
+    "The apex /spill* route still passes through bfe-apex-router; coordinate with the merged static-first hosting route map.",
+    "Build-time stats, guestbook and MCP metadata snapshots must succeed; unavailable snapshots remain visibly marked unavailable."
    ],
    "prs": [
-    154
+    161
    ],
-   "pilot": false,
-   "worker_on_read": true,
+   "pilot": true,
+   "worker_on_read": false,
    "catalogue_status": "n/a",
    "candidate": null
   },

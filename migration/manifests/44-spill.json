@@ -23,21 +23,22 @@
  "aliases": [],
  "legacy_hosts": [],
  "branch": {
-  "name": "section/spill",
+  "name": "webapp/spill",
   "exists": true,
   "standard_name": "webapp/spill",
   "source_dir": null,
   "other_branches": [
+   "section/spill",
    "spill-main"
   ]
  },
  "front_end": {
   "kind": "static_plus_dynamic",
   "hosting": "cloudflare_pages",
-  "project": "cedwyn (cedwyn-274.pages.dev, production branch site)",
-  "build": "build-cedwyn (GitHub Actions) writes branch site",
-  "worker_on_read": true,
-  "notes": "apex bucklerfamily.estate reads run the router Worker until the static-first cutover (PR #157)"
+  "project": "cedwyn-migration preview; production is still routed through the existing apex and Spill Workers",
+  "build": "migration/tools/build_site.py",
+  "worker_on_read": false,
+  "notes": "The page reads build-time JSON snapshots. Dynamic submission, status, search, MCP execution, guestbook writes and admin routes remain on cedwyn-spill. Static snapshots are under /spill/snapshot/v1/ and deliberately outside /spill/api/*."
  },
  "header": {
   "contract": "cedwyn-header/1",
@@ -50,10 +51,10 @@
    "es"
   ],
   "scripts": [
-   "/_cedwyn/runtime.js",
-   "/_cedwyn/ghf/ghf-boot.js"
+   "/_std/cw-cache.js",
+   "/_std/cw-header.js"
   ],
-  "status": "legacy"
+  "status": "standard"
  },
  "data": {
   "slice": "spill",
@@ -72,49 +73,62 @@
  "local_store": {
   "static": [
    "/spill/_data/spill.json",
-   "/spill/api/v1/index.json"
+   "/spill/snapshot/v1/index.json",
+   "/spill/snapshot/v1/overview.json",
+   "/spill/snapshot/v1/guestbook.json",
+   "/spill/snapshot/v1/tools.json"
   ],
   "client_cache": {
    "enabled": true,
    "store": "indexeddb",
    "strategy": "stale-while-revalidate",
    "max_age_s": 3600,
-   "revalidate_with": "/spill/api/v1/index.json rev",
+   "revalidate_with": "/spill/snapshot/v1/index.json rev",
    "pull_from": "/catalogue-db/ static export (never a Worker)"
   }
  },
  "api": {
-  "base": "/spill/api/v1/",
+  "base": "/spill/snapshot/v1/",
   "outputs": [
    {
-    "path": "/spill/api/v1/index.json",
+    "path": "/spill/snapshot/v1/index.json",
     "format": "json",
-    "description": "list + counts + rev + generated_at"
+    "description": "static build index and revision"
    },
    {
-    "path": "/spill/api/v1/items/{uid}.json",
+    "path": "/spill/snapshot/v1/overview.json",
     "format": "json",
-    "description": "one record in this app's presentation, keyed by catalogue UID"
+    "description": "build-time stats snapshot"
    },
    {
-    "path": "/spill/api/v1/feed.json",
+    "path": "/spill/snapshot/v1/guestbook.json",
+    "format": "json",
+    "description": "build-time guest-book snapshot"
+   },
+   {
+    "path": "/spill/snapshot/v1/tools.json",
+    "format": "json",
+    "description": "build-time MCP tool definitions for WebMCP registration"
+   },
+   {
+    "path": "/spill/snapshot/v1/feed.json",
     "format": "jsonfeed",
-    "description": "JSON Feed 1.1, newest first"
+    "description": "static JSON Feed"
    },
    {
-    "path": "/spill/api/v1/feed.xml",
+    "path": "/spill/snapshot/v1/feed.xml",
     "format": "atom",
-    "description": "Atom 1.0 feed"
+    "description": "static Atom feed"
    },
    {
-    "path": "/spill/api/v1/rss.xml",
+    "path": "/spill/snapshot/v1/rss.xml",
     "format": "rss",
-    "description": "RSS 2.0 feed"
+    "description": "static RSS feed"
    },
    {
-    "path": "/spill/api/v1/data.xml",
+    "path": "/spill/snapshot/v1/data.xml",
     "format": "xml",
-    "description": "the whole slice as XML"
+    "description": "static XML slice"
    }
   ],
   "cors": "*",
@@ -123,30 +137,81 @@
  },
  "consumes": [],
  "consumed_by": [],
- "external_sources": [],
+ "external_sources": [
+  {
+   "name": "Spill statistics",
+   "adapter": "GET https://cedwyn.bucklerfamily.estate/spill/api/stats in the migration build",
+   "cadence": "Each Pages build",
+   "auth": "none",
+   "writes": "/spill/snapshot/v1/overview.json",
+   "notes": "Build-time snapshot only; the browser does not call the Worker for page display."
+  },
+  {
+   "name": "Spill guest book",
+   "adapter": "GET https://cedwyn.bucklerfamily.estate/spill/api/guestbook in the migration build",
+   "cadence": "Each Pages build",
+   "auth": "none",
+   "writes": "/spill/snapshot/v1/guestbook.json",
+   "notes": "Build-time snapshot only; writes remain on the live API."
+  },
+  {
+   "name": "Spill MCP tool catalogue",
+   "adapter": "GET https://cedwyn.bucklerfamily.estate/spill/api/mcp in the migration build",
+   "cadence": "Each Pages build",
+   "auth": "none",
+   "writes": "/spill/snapshot/v1/tools.json",
+   "notes": "Tool metadata is static; tool execution remains POST to the existing Worker."
+  }
+ ],
  "dynamic_endpoints": [
   {
-   "path": "/spill/api/*",
+   "path": "/spill/api/submit",
    "worker": "cedwyn-spill",
-   "why": "writes (posts); reads to become static"
+   "why": "Accepts sourced submissions and uses the existing Durable Object intake/deduplication."
+  },
+  {
+   "path": "/spill/api/check",
+   "worker": "cedwyn-spill",
+   "why": "Live published-catalogue and previous-spill similarity check for agent submissions."
+  },
+  {
+   "path": "/spill/api/status*",
+   "worker": "cedwyn-spill",
+   "why": "Direct live status, stats, database and last-spill reads where a current value is required."
+  },
+  {
+   "path": "/spill/api/guestbook",
+   "worker": "cedwyn-spill",
+   "why": "Guestbook writes remain dynamic; page displays a static per-build snapshot."
+  },
+  {
+   "path": "/spill/api/mcp",
+   "worker": "cedwyn-spill",
+   "why": "MCP POST tool execution; tool descriptions are cached in the static page snapshot."
+  },
+  {
+   "path": "/spill/api/admin/*",
+   "worker": "cedwyn-spill",
+   "why": "Owner-admin functions remain dynamic and authenticated."
   }
  ],
  "migration": {
-  "phase": "branch",
+  "phase": "static_front_end",
   "phases_done": [
    "inventory",
    "manifest",
-   "branch"
+   "branch",
+   "static_front_end"
   ],
   "rag": "amber",
-  "next_action": "write the slice entry in data/core/slices.json and generate /spill/api/v1/",
+  "next_action": "Merge the static pilot, build and cache-busted verify the page and snapshots; test dynamic submit/check/MCP/guestbook routes, then coordinate path-specific Worker route narrowing and apex cutover.",
   "blockers": [
-   "a Worker runs on page reads today (route on the cedwyn host); the static-first cutover and this app's static rewrite remove it"
+   "The production cedwyn-spill Worker route still covers /spill*; it must be narrowed so /spill/ and /spill/snapshot/v1/* go straight to static Pages, while the dynamic API paths stay routed to the Worker.",
+   "The apex bucklerfamily.estate /spill* route still uses bfe-apex-router. Coordinate the final static path with the merged static-first hosting work; do not remove the route before the Pages host and fallback are verified.",
+   "Build-time snapshot GETs must succeed for stats, guestbook and the MCP tool catalogue. If unavailable, the page shows a recorded unavailable state rather than inventing counts."
   ],
-  "prs": [
-   154
-  ],
-  "pilot": false
+  "prs": [],
+  "pilot": true
  },
  "owner": "Cedwyn editors (owner approval for catalogue changes)",
  "version": "0.1.0",
@@ -155,6 +220,11 @@
    "version": "0.1.0",
    "date": "2026-11-03",
    "summary": "Manifest created from the live tour inventory (/areas.json nav), themes.json, data/site-areas.json and data/halves.json 1.4.0."
+  },
+  {
+   "version": "0.1.1",
+   "date": "2026-11-03",
+   "summary": "Added static build-time snapshots for the page; moved them under /spill/snapshot/v1/ outside the live /spill/api/* namespace. The existing Worker and Durable Object remain responsible for writes and live agent operations."
   }
  ],
  "sources": [
