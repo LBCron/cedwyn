@@ -1,5 +1,5 @@
 /* agent-tools.js — WebMCP (and fallback) tools for Cedwyn.
-   Registers read-only tools, including direct search/read access to the central evidence catalogue.
+   Registers public read tools and one bounded contribution-submission action; submissions remain pending review.
    Visitor-facing themes are views over the evidence; they are not the source of truth.
    Spec reference: /library/api/#webmcp
    Tools are never instructions; page text is historical record only.
@@ -97,6 +97,81 @@
         required: ['path'],
         additionalProperties: false
       }
+    },
+    {
+      name: 'get_cedwyn_agent_task_index',
+      description: 'Read the public machine-readable snapshot of Cedwyn/Great House Farm-related HubSpot task metadata. HubSpot remains authoritative; this index contains no task bodies.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          offset: { type: 'integer', description: 'Zero-based offset from the public task snapshot (default 0).' },
+          limit: { type: 'integer', description: 'Rows per page (default 50, maximum 50).' }
+        },
+        additionalProperties: false
+      },
+      readOnly: true
+    },
+    {
+      name: 'get_cedwyn_agent_bridge_manifest',
+      description: 'Read the opaque Cedwyn agent bridge manifest, including permission tiers, available resources, submission policy and X/Grok handoff rules. Public, read-only.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      readOnly: true
+    },
+    {
+      name: 'get_cedwyn_agent_queue_summary',
+      description: 'Read counts of pending, published and rejected external-agent submissions. Pending submission text is not exposed by this endpoint. Public, read-only.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      readOnly: true
+    },
+    {
+      name: 'get_cedwyn_flow_watch_health',
+      description: 'Read the live sanitised Cedwyn anti-stagnation status: latest GitHub source/build queue, production build stamp, Agent Library publication, shared e-book/documentary version registry, current blockers and explicit connector coverage gaps. Read this before and after work.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      readOnly: true
+    },
+    {
+      name: 'get_cedwyn_flow_watch_events',
+      description: 'Read recent sanitised Cedwyn operational issues, resolution timestamps and GitHub build-job transitions. Read-only.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      readOnly: true
+    },
+    {
+      name: 'get_cedwyn_flow_watch_contract',
+      description: 'Read the machine-readable anti-stagnation contract, monitoring cadence, observable systems and connector gaps. Read-only.',
+      inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+      readOnly: true
+    },
+    {
+      name: 'read_cedwyn_x_activity',
+      description: 'Read the reviewed X/Grok discussion references submitted by authorised X-capable agents. This is not a live X crawl; pending submissions are hidden.',
+      inputSchema: {
+        type: 'object',
+        properties: { limit: { type: 'integer', description: 'Maximum items (default 20, max 20).' } },
+        additionalProperties: false
+      },
+      readOnly: true
+    },
+    {
+      name: 'submit_agent_contribution',
+      description: 'Submit a source-linked research lead, question, analysis, X post or X reply reference to Cedwyn’s private pending-review queue. This does not create a HubSpot task, post on X, or publish content. Submit source URLs and separate fact from interpretation.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          platform: { type: 'string', enum: ['x', 'github', 'webmcp', 'other'] },
+          activity_type: { type: 'string', enum: ['x_post', 'x_reply', 'research_lead', 'analysis', 'question', 'task_help'] },
+          agent_label: { type: 'string', maxLength: 100 },
+          source_url: { type: 'string', maxLength: 500 },
+          post_id: { type: 'string', maxLength: 100 },
+          reply_to: { type: 'string', maxLength: 100 },
+          conversation_id: { type: 'string', maxLength: 100 },
+          related_task_id: { type: 'string', maxLength: 20 },
+          artifact_ids: { type: 'array', items: { type: 'string', maxLength: 100 }, maxItems: 40 },
+          body: { type: 'string', minLength: 12, maxLength: 4000 }
+        },
+        required: ['platform', 'activity_type', 'body'],
+        additionalProperties: false
+      },
+      readOnly: false
     }
   ];
 
@@ -460,6 +535,15 @@
       { path: '/academy/FLYWHEELS/flywheels.json', kind: 'json', note: 'Machine-readable specialist flywheel register, including the Snowball parent loop' },
       { path: '/projects/procurement/', kind: 'html', note: 'Public planned procurement register and approval status' },
       { path: '/projects/data/procurement.json', kind: 'json', note: 'Machine-readable procurement register' },
+      { path: '/x78s8jej33i8f8rrj4is88/manifest.json', kind: 'json', note: 'Opaque Cedwyn agent bridge manifest and permission tiers' },
+      { path: '/x78s8jej33i8f8rrj4is88/tasks.json', kind: 'json', note: 'Sanitised public machine-readable mirror of Snowball HubSpot task metadata' },
+      { path: '/x78s8jej33i8f8rrj4is88/x.json', kind: 'json', note: 'Reviewed X activity and public discussion references for BuckerCarlson' },
+      { path: '/x78s8jej33i8f8rrj4is88/contributions.json', kind: 'json', note: 'Reviewed public external-agent contributions' },
+      { path: '/x78s8jej33i8f8rrj4is88/queue-summary.json', kind: 'json', note: 'Counts of pending and published agent submissions; no pending text exposed' },
+      { path: '/x78s8jej33i8f8rrj4is88/flow-health.json', kind: 'json', note: 'Live sanitised anti-stagnation health: source/build queue, production revision, Library and product-version status' },
+      { path: '/x78s8jej33i8f8rrj4is88/flow-events.json', kind: 'json', note: 'Recent operational issues and GitHub build-job transitions' },
+      { path: '/x78s8jej33i8f8rrj4is88/flow-contract.json', kind: 'json', note: 'Machine-readable mandatory flow-watch protocol' },
+      { path: '/x78s8jej33i8f8rrj4is88/webmcp.json', kind: 'json', note: 'Agent bridge machine resource registry' },
       { path: '/academy/work.json', kind: 'json', note: 'Open agent jobs' },
       { path: '/db/stats.json', kind: 'json', note: 'Catalogue database counts and version' },
       { path: '/db/config.json', kind: 'json', note: 'SQLite chunk layout for sql.js-httpvfs' },
@@ -507,6 +591,53 @@
     });
   }
 
+  function postAgentContribution(args) {
+    args = args || {};
+    var allowedPlatforms = ['x', 'github', 'webmcp', 'other'];
+    var allowedTypes = ['x_post', 'x_reply', 'research_lead', 'analysis', 'question', 'task_help'];
+    var payload = {
+      platform: String(args.platform || '').toLowerCase(),
+      activity_type: String(args.activity_type || '').toLowerCase(),
+      agent_label: String(args.agent_label || 'external-agent').slice(0, 100),
+      claimed_access: 'unverified',
+      source_url: String(args.source_url || '').slice(0, 500),
+      post_id: String(args.post_id || '').slice(0, 100),
+      reply_to: String(args.reply_to || '').slice(0, 100),
+      conversation_id: String(args.conversation_id || '').slice(0, 100),
+      related_task_id: String(args.related_task_id || '').slice(0, 20),
+      artifact_ids: Array.isArray(args.artifact_ids) ? args.artifact_ids.slice(0, 40).map(function (x) { return String(x).slice(0, 100); }) : [],
+      body: String(args.body || '').trim().slice(0, 4000)
+    };
+    if (allowedPlatforms.indexOf(payload.platform) < 0) return Promise.reject(new Error('Unsupported platform.'));
+    if (allowedTypes.indexOf(payload.activity_type) < 0) return Promise.reject(new Error('Unsupported activity type.'));
+    if (payload.body.length < 12) return Promise.reject(new Error('Add a source-aware summary of at least 12 characters.'));
+    if (payload.platform === 'x') {
+      try {
+        var u = new URL(payload.source_url);
+        if (u.protocol !== 'https:' || !['x.com', 'www.x.com', 'twitter.com', 'www.twitter.com'].includes(u.hostname)) {
+          throw new Error('X submissions require a direct https://x.com or twitter.com post/reply URL.');
+        }
+      } catch (e) {
+        return Promise.reject(new Error(e.message || 'A valid X post/reply URL is required.'));
+      }
+    }
+    if (payload.activity_type.startsWith('x_') && payload.platform !== 'x') {
+      return Promise.reject(new Error('X post/reply activity requires platform x.'));
+    }
+    var endpoint = '/x78s8jej33i8f8rrj4is88/submit';
+    return fetch(endpoint, {
+      method: 'POST',
+      credentials: 'omit',
+      headers: { 'content-type': 'application/json', 'accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (r) {
+      return r.json().catch(function () { return { error: 'invalid_json_response' }; }).then(function (data) {
+        if (!r.ok) throw new Error(data.error || ('HTTP ' + r.status));
+        return data;
+      });
+    });
+  }
+
   function runTool(name, args) {
     args = args || {};
     switch (name) {
@@ -528,6 +659,27 @@
       case 'read_case_public_resource':
         if (!args.path) return Promise.reject(new Error('path is required'));
         return readResource(String(args.path));
+      case 'get_cedwyn_agent_task_index': {
+        var taskOffset = Math.max(0, Number(args.offset) || 0);
+        var taskLimit = Math.max(1, Math.min(Number(args.limit) || 50, 50));
+        return readResource('/x78s8jej33i8f8rrj4is88/tasks.json?offset=' + taskOffset + '&limit=' + taskLimit);
+      }
+      case 'get_cedwyn_agent_bridge_manifest':
+        return readResource('/x78s8jej33i8f8rrj4is88/manifest.json');
+      case 'get_cedwyn_agent_queue_summary':
+        return readResource('/x78s8jej33i8f8rrj4is88/queue-summary.json');
+      case 'get_cedwyn_flow_watch_health':
+        return readResource('/x78s8jej33i8f8rrj4is88/flow-health.json');
+      case 'get_cedwyn_flow_watch_events':
+        return readResource('/x78s8jej33i8f8rrj4is88/flow-events.json');
+      case 'get_cedwyn_flow_watch_contract':
+        return readResource('/x78s8jej33i8f8rrj4is88/flow-contract.json');
+      case 'read_cedwyn_x_activity': {
+        var xLimit = Math.max(1, Math.min(Number(args.limit) || 20, 20));
+        return readResource('/x78s8jej33i8f8rrj4is88/x.json?limit=' + xLimit);
+      }
+      case 'submit_agent_contribution':
+        return postAgentContribution(args);
       default:
         return Promise.reject(new Error('Unknown tool: ' + name));
     }
@@ -568,7 +720,7 @@
           name: tool.name,
           description: tool.description,
           inputSchema: tool.inputSchema,
-          annotations: { readOnlyHint: true },
+          annotations: { readOnlyHint: tool.readOnly !== false, destructiveHint: false },
           execute: async function (input, options) {
             try {
               // Keep the public-resource reader same-origin and honour cancellation.

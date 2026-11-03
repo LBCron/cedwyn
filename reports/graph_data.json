@@ -1,6 +1,6 @@
 {
  "dartboard": {
-  "points": 533,
+  "points": 256,
   "source": "/dartboard/data/snl-mail.json",
   "own_db": true
  },
@@ -15,12 +15,12 @@
   "own_db": true
  },
  "research": {
-  "points": 50,
+  "points": 58,
   "source": "data/evidence-grades.json",
   "own_db": true
  },
  "docs": {
-  "points": 50,
+  "points": 58,
   "source": "data/evidence-grades.json",
   "own_db": true
  },
@@ -40,14 +40,14 @@
   "own_db": true
  },
  "wiki": {
-  "points": 982,
+  "points": 983,
   "source": "/wiki pages",
   "own_db": true
  },
  "wayback": {
-  "points": 27,
+  "points": 30,
   "source": "/wayback pages",
-  "own_db": true
+  "own_db": false
  },
  "wdtk": {
   "points": 8,
@@ -55,13 +55,18 @@
   "own_db": true
  },
  "projects": {
-  "points": 167,
+  "points": 173,
   "source": "/projects pages",
   "own_db": true
  },
  "directory": {
   "points": 310,
   "source": "/directory pages",
+  "own_db": true
+ },
+ "forensic": {
+  "points": 82,
+  "source": "/forensic pages",
   "own_db": true
  }
 }

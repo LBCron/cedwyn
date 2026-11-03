@@ -22,7 +22,7 @@ FIX = '--fix' in sys.argv
 ONLY = [a.split('=', 1)[1] for a in sys.argv if a.startswith('--only=')]
 SELF = 'cedwyn.bucklerfamily.estate'
 ABS = 'https://' + SELF
-BOOT = '/_cedwyn/ghf/ghf-boot.js?v=2.1.17'
+BOOT = '/_cedwyn/ghf/ghf-boot.js?v=2.1.25'   # 2.1.25 (2 Nov 2026, 10:30 GMT): fresh key for the boot that loads garden-banner 2.3.0. 2.1.24 (2 Nov 2026, 06:35 GMT): fresh cache key for the boot that loads garden-banner 2.2.0 (2.1.22 kept the 2.1.0 loader). ?v=2.1.20 was already cached at the edge from #108's boot (no Garden City banner, old cw-graph/basecamp), so most pages kept the old strip; 2.1.22 also carries f05b60d's basecamp ?v=2.1.21 to phones
 TIDS = [t['id'] for t in CFG['themes']]
 HOST = {}
 for t in CFG['themes']:
@@ -33,6 +33,12 @@ for h, tid in CFG.get('extra_hosts', {}).items():
 APEX = sorted(CFG['apex']['paths'].items(), key=lambda kv: -len(kv[0]))
 TILES = CFG.get('allowed_tile_templates', [])
 CHECKOUT = ('buy.stripe.com', 'checkout.stripe.com', 'gumroad.com')   # checkout links stay direct (see classify)
+# 2 Nov 2026 (owner, 03:25 GMT): Garden City Cymru is the one outside shop the site promotes (garden-banner.js on every webapp);
+# its address stays direct, like the checkout hosts, and runtime.js pass() lets the click through. - Sion's Tab agent
+OUT_SITE = ('gardencity.cymru',)
+# 2 Nov 2026 (garden-banner 2.2.0): apex webapps served by their own Worker, not by a cedwyn theme, keep their apex address as
+# written. Without this the apex rule ('/' -> dartboard) turns https://bucklerfamily.estate/garden-store/ into /dartboard/garden-store/. — Sion's Tab agent
+APEX_KEEP = ('/garden-store/',)
 # 31 Oct 2026 (P-114): the WordPress copy's privacy script asks public-api.wordpress.com/geo/ for the visitor's region with an
 # XHR and JSON.parse()s the answer. Sent to /wayback/go/ it got an HTML page and threw "Unexpected token '<' ... is not valid
 # JSON" on every wiki page. It now gets an empty JSON answer as a data: address (region '' = no state privacy rule applies; no
@@ -85,11 +91,13 @@ def classify(m):
         return 'tile', None
     # 25 Oct 2026: any address a theme was served from (every *.bucklerfamily.estate site, and the Legal Wiki's own
     # greathousefarmwiki.wordpress.com) is a theme link: it goes to the internal /<theme>/ route, never to /wayback/go/
+    if host in ('bucklerfamily.estate', 'www.bucklerfamily.estate') and any(path.startswith(p) for p in APEX_KEEP): return 'ns', None   # APEX_KEEP
     if host in HOST or host == 'bucklerfamily.estate' or host.endswith('.bucklerfamily.estate'):
         return 'sub', None
     if host in CDN: return 'cdn', None
     # 27 Oct 2026: e-book Buy buttons go straight to checkout (Sion 13:01: never the interstitial; a payment step is not archived)
     if host in CHECKOUT or host.endswith('.gumroad.com'): return 'ns', None
+    if host in OUT_SITE: return 'ns', None   # 2 Nov 2026: the Garden City banner (see OUT_SITE)
     # 29 Oct 2026 (P-041): Stripe's buy-button script must load from js.stripe.com itself (Stripe requires it); it is part of
     # the checkout, like the Buy links above, so it is neither archived nor vendored. - Sion's Tab agent
     if host == 'js.stripe.com': return 'ns', None
@@ -171,7 +179,11 @@ BLOCK = re.compile(r'(<(script|style)\b[^>]*>)(.*?)(</\2\s*>)', re.S | re.I)
 COMMENT = re.compile(r'<!--.*?-->', re.S)
 DROP_SCRIPT = re.compile(r'<script\b[^>]*\bsrc\s*=\s*["\'][^"\']*followers\.bucklerfamily\.estate/follow\.js[^"\']*["\'][^>]*>\s*</script>', re.I)
 GHF_SRC = re.compile(r'''(?<=["'=])((?:https?:)?//(?:www\.)?bucklerfamily\.estate|/dartboard|[^"'\s>=]*?)/?(?:ghf-lang/(ghf-boot|ghf-lang|basecamp)|(basecamp))\.js(\?[^"'\s>]*)?(?=["'\s>])''', re.I)
-YTBLOCK = re.compile(r'''(?:/wayback/go/\?u=|https?:(?:\\?/){2}|(?<=["'=(])//)[^"'\s<>()]*?(?:sionbuckler5713|UC2sN1VEs1WeLfBH8VmbvLWw|c0UvjM-lwA)[^"'\s<>()]*''')
+# P-136 (31 Oct 2026): inside a JSON string a link ends at an escaped quote (backslash + quote). The old tail class ate the
+# backslash of that escape (or of a backslash-n) and left a bare quote, so story/api/qa.json came out as invalid JSON and the
+# privacy scrub failed build 531e0a8. A backslash is now taken only as a whole JSON escape (backslash-slash or \uXXXX). — Sion's Tab agent
+_YTC = r"""(?:\\/|\\u[0-9A-Fa-f]{4}|[^"'\s<>()\\])"""
+YTBLOCK = re.compile(r'''(?:/wayback/go/\?u=|https?:(?:\\?/){2}|(?<=["'=(])//)'''+_YTC+r'''*?(?:sionbuckler5713|UC2sN1VEs1WeLfBH8VmbvLWw|c0UvjM-lwA)'''+_YTC+r'''*''')
 INLINE_BOOT = re.compile(r'<script\b[^>]*data-ghf-boot-inline[^>]*>.*?</script>\s*', re.I | re.S)
 TOUR_TAG = re.compile(r'<script\b[^>]*(?:estate-tour\.js|data-estate-tour-loader)[^>]*>\s*</script>\s*', re.I)
 TOUR_SHELL = re.compile(r'<header\b[^>]*data-estate-tour-shell[^>]*>.*?</header>\s*', re.I | re.S)
@@ -376,6 +388,11 @@ def fill_missing(dry=False, scan=None):
     for t in CFG['themes']:
         base = t.get('crawl') or t.get('live')
         if base: live[t['id']] = base.rstrip('/') + '/'
+    # P-037 (31 Oct 2026): themes marked "no_fill" in themes.json are never filled from their live address. The email theme's live
+    # Worker no longer serves /api/message/*.json, /mail/*.txt, /text-corpus-N.json or /mail-index.json (the texts are served from
+    # /wayback/mail/), so every build asked it for about 2,000 files that all answered 404: about 47.5k Worker requests a day,
+    # half of the account's free daily limit, for nothing. - Sion's Tab agent
+    NOFILL = {t['id'] for t in CFG['themes'] if t.get('no_fill')}
     want = {}
     for p, rel in files():
         if p.suffix.lower() not in ('.html', '.htm', '.json', '.css', '.js'): continue
@@ -383,14 +400,14 @@ def fill_missing(dry=False, scan=None):
         except Exception: continue
         for m in LOCALREF.finditer(s):
             tid, rest, ext = m.group(1), m.group(2), '.' + m.group(3).lower()
-            if tid not in live or ext not in MEDIA_EXT: continue
+            if tid not in live or tid in NOFILL or ext not in MEDIA_EXT: continue
             relp = urllib.parse.unquote(tid + '/' + rest)
             ok = (relp in exists) if exists is not None else (DIST / relp).exists()
             if not ok: want[relp] = live[tid] + urllib.parse.quote(urllib.parse.unquote(rest))
     # crawled themes (apps the crawler could not follow): files their scripts name by relative or root path
     for p in (scan or []):
         rel = p.relative_to(DIST).as_posix(); tid = rel.split('/')[0]
-        if tid not in CRAWLED or tid not in live or p.suffix.lower() not in ('.js', '.mjs', '.json', '.css', '.html'): continue
+        if tid not in CRAWLED or tid not in live or tid in NOFILL or p.suffix.lower() not in ('.js', '.mjs', '.json', '.css', '.html'): continue
         try: s = p.read_text('utf-8', 'ignore')
         except Exception: continue
         for m in RELREF.finditer(s):
@@ -522,6 +539,11 @@ def main():
             ROOT_RW = ['/assets/fonts/* /_cedwyn/ghf/fonts/:splat 200', '/locations-img/* /dartboard/locations-img/:splat 200',
                        '/dartboard/ghf-lang/* /_cedwyn/ghf/:splat 200']
             out = [l for l in ROOT_RW if l not in out] + out
+            # 2 Nov 2026 (P-122 regression): Cloudflare reads only 100 rules from the first splat/placeholder rule on, so these
+            # three must not open the file (they did, and every rule past line 100 went dead: /ebooks/api/*, /r/:c, /wales/:theme/*).
+            # Keep site.py's order: exact-path rules first, then the pattern rules, each in their original order. - Sion's Tab agent
+            _dyn = [l for l in out if l.split() and ('*' in l.split()[0] or ':' in l.split()[0])]
+            out = [l for l in out if l not in _dyn] + _dyn
             rp.write_text('\n'.join(out) + '\n', 'utf-8'); stats['redirects_to_themes'] = nmap
         for t in CFG['themes']:
             if t.get('redirect_to'):

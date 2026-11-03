@@ -7,6 +7,12 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 CFG = json.load(open(ROOT / 'themes.json'))
 DIST = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else 'dist')
 shutil.copytree(ROOT / 'web', DIST, dirs_exist_ok=True)
+# Publish the canonical book-evidence CSV after theme assembly. Keep it accessible at a stable public URL.
+_book_register = ROOT / 'web' / 'research' / 'book-research-findings.csv'
+if _book_register.is_file():
+    _public_register = DIST / 'research' / 'book-research-findings.csv'
+    _public_register.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(_book_register, _public_register)
 hosts = {}
 for t in CFG['themes']:
     for h in t.get('hosts', []):
@@ -35,11 +41,14 @@ bc = DIST / '_cedwyn' / 'ghf' / 'basecamp.js'
 # chose Wales never steps to /patagonia/, a visitor who chose Patagonia never steps to the Wales tour
 _HV = json.load(open(ROOT / 'data' / 'halves.json')).get('groups', {}) if (ROOT / 'data' / 'halves.json').exists() else {}
 _XH = {'wales': set(_HV.get('wales_exclude', [])), 'patagonia': set(_HV.get('argentina_exclude', []))}
-# Navigation uses the 36 public-facing areas; the underlying 44 source themes retain their routes and databases.
+# Navigation uses the public-facing areas in data/site-areas.json (36 until 31 Oct 2026); the underlying 44 source themes retain their routes and databases.
 _area_doc = json.load(open(ROOT / 'data' / 'site-areas.json'))
 _source_by_id = {t['id']: t for t in CFG['themes']}
 _areas = _area_doc.get('areas', [])
-assert len(_areas) == 36 and len({a['id'] for a in _areas}) == 36, 'site area registry must define 36 unique public areas'
+# 31 Oct 2026: the area count is read from the registry (area_count), no longer fixed at 36; webapps take the next free
+# parcel slot (37 = HubSpot, 38 = That Old Chestnut, 39 = Forensic Assessments) on the way to 59 - Sion's Tab agent
+_n_areas = int(_area_doc.get('area_count') or len(_areas))
+assert len(_areas) == _n_areas and len({a['id'] for a in _areas}) == _n_areas, 'site area registry must define area_count unique public areas'
 chain = []
 for _area in _areas:
     _sources = _area.get('source_themes', [])
@@ -66,9 +75,39 @@ for _c, _area in zip(chain, _areas):
     _al = sorted({'/' + s + '/' for s in _area.get('source_themes', [])} - {_p})
     _built = any((DIST / x.strip('/')).is_dir() for x in [_p] + _al)
     _areas_pub.append({'id': _area['id'], 'path': _p, 'title': _c[1], 'cy': _c[3], 'es': _c[4], 'group': _c[2],
-                       'aliases': _al, 'skip_in': _c[5], 'built': _built})
-json.dump({'schema': 'cedwyn_areas/v1', 'source': 'data/site-areas.json', 'order': 'main menu reading order; previous/next wrap from the last area to the first',
-           'count': len(_areas_pub), 'areas': _areas_pub}, open(DIST / 'areas.json', 'w'), ensure_ascii=False, indent=1)
+                       'aliases': _al, 'skip_in': _c[5], 'built': _built,
+                       'slot': _area.get('serendipity_slot'), 'of': _area_doc.get('parcel_total', 59)})
+# 2 Nov 2026, nav 1.0.0 (owner, 04:13 GMT: "the way the navigation is done is flawed architecturally ... Fix it"): /areas.json
+# also carries "nav", the ONE ordered slot list that every header, menu and no-JS bar steps through: the areas above (slots 1-39,
+# data/site-areas.json, untouched) plus every webapp that declares its slot once, on its own themes.json entry ("slot": N,
+# optional "path"; "served_by": "worker" when a Worker serves it), sorted by slot. "href" is the address a link opens with no
+# redirect hop (/online/<id>/ for data/halves.json online_only apps); "src" is the built folder. "areas" stays as it was for
+# its other readers. tools/nav.py stamps the bar into every slot page and fails the build on a broken slot (docs/NAV.md).
+# - Sion's Tab agent
+_nav = [dict(a, src=a['path']) for a in _areas_pub]
+_nav_seen = {a['id'] for a in _areas_pub} | set(_source_to_area)
+for _t in CFG['themes']:
+    if not _t.get('slot') or _t['id'] in _nav_seen: continue
+    _p = _t.get('path') or '/' + _t['id'] + '/'
+    _nav.append({'id': _t['id'], 'path': _p, 'src': _p, 'title': _t.get('nav_title') or _t.get('title') or _t['id'], 'cy': _t.get('cy', ''), 'es': _t.get('es', ''),
+                 'group': _t.get('group') or CFG.get('default_group') or '', 'aliases': [], 'skip_in': [h for h in ('wales', 'patagonia') if _t['id'] in _XH[h]],
+                 'built': (DIST / _p.strip('/')).is_dir() or _t.get('served_by') == 'worker', 'slot': int(_t['slot']), 'of': _area_doc.get('parcel_total', 59), 'webapp': True,
+                 'worker': _t.get('served_by') == 'worker'})
+_nav_online = set(_HV.get('online_only', []))
+# nav 1.1.0 (owner, 05:07 GMT 2 Nov 2026: every webapp at bucklerfamily.estate/<name>/, the cedwyn subdomain to be phased out):
+# "apex" is each slot's flat address on the apex; a themes.json "apex" names it when it is not the id. The apex router and the
+# apex header read it from here - Sion's Tab agent
+_nav_apex = {_t['id']: str(_t['apex']).strip('/') for _t in CFG['themes'] if _t.get('apex')}
+for _a in _nav:
+    # 1.1.1: a path, not an absolute URL - selfcontain.py rewrites every https://bucklerfamily.estate/... it finds (build 41402080152)
+    _a['apex'] = '/%s/' % (_nav_apex.get(_a['id']) or _a['id'])
+    _a['href'] = '/online/%s/' % _a['id'] if _a['id'] in _nav_online else _a['path']
+    _a['sec'] = not _a.get('webapp') and _a['href'] == _a['path'] and _a['id'] != 'wales'
+_nav.sort(key=lambda a: int(a.get('slot') or 999))
+chain = [[a['id'], a['title'], a['group'], a['cy'], a['es'], a['skip_in'], int(a.get('slot') or 0), a['href'], 1 if a['sec'] else 0, a['apex']] for a in _nav if a['built']]
+json.dump({'schema': 'cedwyn_areas/v1', 'source': 'data/site-areas.json + themes.json slot', 'order': 'main menu reading order; previous/next wrap from the last area to the first',
+           'count': len(_areas_pub), 'parcel_total': _area_doc.get('parcel_total', 59), 'areas': _areas_pub,
+           'nav_version': '1.1.0', 'nav_order': 'slot order; previous/next step through every built slot and wrap from the last to the first', 'nav': _nav}, open(DIST / 'areas.json', 'w'), ensure_ascii=False, indent=1)
 bc.write_text(bc.read_text().replace('/*CEDWYN_CHAIN*/null', json.dumps(chain, ensure_ascii=False)).replace('/*CEDWYN_GROUPS*/null', json.dumps(menu_groups, ensure_ascii=False)).replace('/*CEDWYN_SMAP*/{}', json.dumps(_source_to_area, ensure_ascii=False))
               .replace('HOME = "https://bucklerfamily.estate/cedwyn/"', 'HOME = "/"')
               # DARTBOARD_NAMES: the dartboard theme is the dartboard app now, not the home (header and menu names)
@@ -106,7 +145,7 @@ _home_cfg['home']['layers_note'] = 'Whichever way you come in, browse the same {
 _home_cfg['home']['description'] = 'The Cedwyn Estate archive: {n} visitor-facing page areas for records, research, games and stories.'
 (DIST / 'index.html').write_text(home.render(_home_cfg))
 _g, _stray = home.groups_of(_home_cfg)
-assert sum(len(ts) for _, ts in _g) == len(_areas) == 36, 'home: a visitor area is missing from the groups'
+assert sum(len(ts) for _, ts in _g) == len(_areas) == _n_areas, 'home: a visitor area is missing from the groups'
 
 (DIST / '404.html').write_text('''<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14141c"><title>Page not found · Cedwyn</title>
 <style>
@@ -126,7 +165,7 @@ a.card strong{display:block;color:#fff;margin-bottom:4px}a.card span{display:blo
 <p>The address below did not resolve to a page in this version of Cedwyn. It may have moved during the migration, the link may be outdated, or the page may genuinely be missing.</p>
 <p>Requested address: <code id="requested">Loading…</code></p>
 <nav aria-label="Recovery options">
-<a class="card" href="/"><strong>Browse Cedwyn home →</strong><span>Choose Wales, Argentina, Cyberspace, or a theme from the directory.</span></a>
+<a class="card" href="/"><strong>Browse Cedwyn home →</strong><span>Choose Wales, Argentina, Online, or a theme from the directory.</span></a>
 <a class="card" href="/directory/"><strong>Browse all themes →</strong><span>Open the directory of the migrated sites.</span></a>
 <a class="card" id="search-link" href="/catalogue/"><strong>Search the evidence catalogue →</strong><span>Search for the subject or page name from the missing address.</span></a>
 <a class="card" href="/research/"><strong>Open the Research Library →</strong><span>Find the main research pages and canonical links.</span></a>
@@ -254,7 +293,16 @@ lines += [
     "/accounts/ledger/claimed.beancount /accounts/#dl 302",
     "/argentina/accounts/ledger/claimed.beancount /argentina/accounts/#dl 302",
     "/wales/accounts/ledger/claimed.beancount /wales/accounts/#dl 302",
-    "/wiki/wp-content/uploads/2026/10/2026-05-28_rcahmw_rc26-0205_les08-order-form-2021.docx /wayback/go/?u=https%3A%2F%2Fgithub.com%2Funclehowell%2Fdatro%2Fblob%2Fwayback%2Fwayback%2Fpdf%2Ffoi%2F2026-05-28_rcahmw_rc26-0205_les08-order-form-2021.docx 302"
+    "/wiki/wp-content/uploads/2026/10/2026-05-28_rcahmw_rc26-0205_les08-order-form-2021.docx /wayback/go/?u=https%3A%2F%2Fgithub.com%2Funclehowell%2Fdatro%2Fblob%2Fwayback%2Fwayback%2Fpdf%2Ffoi%2F2026-05-28_rcahmw_rc26-0205_les08-order-form-2021.docx 302",
+    # 31 Oct 2026 (P-122): Cedwyn does not carry the Vault's PDFs; they live on the Vault's media host (R2), which answers
+    # 404 for a missing file (no loop). The Legal Wiki's own uploads stay on the wiki. Exact-path rules above still win.
+    "/wayback/pdf/* https://wayback.bucklerfamily.estate/pdf/:splat 302",
+    "/wiki/wp-content/uploads/* https://greathousefarmwiki.wordpress.com/wp-content/uploads/:splat 302",
+    "/research/wp-content/uploads/* https://greathousefarmwiki.wordpress.com/wp-content/uploads/:splat 302",
+    # 31 Oct 2026 (P-122 cycle 5): /projects/ links "the e-books" to /projects/ebooks/ (no such page); the clerk pack PDF is
+    # built into the meeting theme but missing from the published site, while the meeting's own host serves it (200).
+    "/projects/ebooks/ /ebooks/ 301",
+    "/meeting/meeting-pack.pdf https://2026-10-22.bucklerfamily.estate/meeting-pack.pdf 302"
 ]
 tr = DIST / '_theme_redirects.txt'
 if tr.exists():
@@ -446,8 +494,20 @@ def _shop_strip(dist):
     # sf35 (31 Oct 2026): section front pages with non-US entry traffic and no route to /ebooks/ (CF 3 days to 01:00Z),
     # plus the directory's business pages, the site's only pages Google ranks in the top 10 (local searches).
     for _s in ('directory', 'research', 'research/timeline', 'wiki', 'fb', 'accounts', 'glossary', 'authorities', 'records',
-               'wdtk', 'email', 'review', 'meeting', 'watchtower', 'projects', 'courtdrills', 'csscpsg', 'infographic', 'docs'):
+               'wdtk', 'email', 'review', 'meeting', 'watchtower', 'projects', 'courtdrills', 'csscpsg', 'infographic', 'docs',
+               # sf40 (31 Oct 2026): document pages that real phone visitors (non-US, non-NL) reach with no route to /ebooks/ near
+               # the top (CF 3 days to 16:00Z: fcg 56, oldbill 40, qa 29, cyberspace 21, thousand-cuts 18, emails 18; /wales/ and
+               # /argentina/ serve the same file, so one strip covers all three). Full-screen apps (chess, maps, story) stay out.
+               'fcg', 'oldbill', 'qa', 'cyberspace', 'thousand-cuts', 'emails',
+               # sf48 (1 Nov 2026): /calendar/ is the 2nd most-visited page by non-US readers (CF 24 h to 16:01Z: 52 loads, 5x /ebooks/)
+               # and /fb2/ took 18; neither had any link to /ebooks/. Calendar strip goes under its heading (see below).
+               'calendar', 'fb2'):
         targets.append((_s + '/index.html', _s.replace('/', '-')))
+    # sf41 (31 Oct 2026): the Wales and Patagonia front pages are their own files (wales/index.html, argentina/index.html), not
+    # copies of /, so the sf40 note above did not cover them and neither showed a strip (CF 3 days to 19:00Z, non-US excl. NL:
+    # /wales/ 39, /argentina/ 22; the shop's only link on /argentina/ sat in the footer menu). The strip goes under the hero and
+    # reuses the pages' own w_ebooks phrase, so it shows in Welsh / Spanish / English with the page's language switch.
+    targets += [('wales/index.html', 'wales'), ('argentina/index.html', 'argentina')]
     targets += [(str(p.relative_to(dist)), 'dir') for p in sorted((dist / 'directory' / 'p').glob('*/index.html'))]
     # sf36 (31 Oct 2026): deep record pages (research articles, evidence records, wiki pages, kissed-frogs) took ~1,565 of
     # 6,612 non-US page loads in the 3 days to 04:05Z (9x /ebooks/) and had no route to the shop. Sections already tagged above win.
@@ -465,6 +525,8 @@ def _shop_strip(dist):
         if 'class="ebook-strip"' in h:
             continue
         m = _re.search(r'<main\b[^>]*>', h)
+        if not m and tag in ('fcg', 'oldbill'):  # sf40: these two have no <main>; under the first heading, else the top wrapper
+            m = _re.search(r'</h1>', h) or _re.search(r'<div class="wrap">', h)
         if not m:
             continue
         text = ('Local history: Great House Farm (T&#375; Mawr), Llandough, 1667&ndash;1988, in the e-books. First edition free &rarr;'
@@ -473,13 +535,30 @@ def _shop_strip(dist):
                 if tag in ('art', 'ev', 'kf') else 'Read the farm\'s history in the e-books: first edition free &rarr;')
         line = ('<p class="ebook-strip" style="margin:.5rem 0 .75rem;font-size:16px;line-height:1.4">'
                 '<a href="/r/strip-%s">%s</a></p>' % (tag, text))
-        f.write_text(h[:m.end()] + line + h[m.end():], encoding='utf-8')
+        at = m.end()
+        if tag == 'calendar':  # sf48: under the page heading, above the month grid
+            mh = _re.compile(r'</h1>').search(h, m.end())
+            at = mh.end() if mh else m.end()
+        if tag == 'fb2':  # sf48: the album's <main> has no side padding, so the strip carries its own
+            line = line.replace('margin:.5rem 0 .75rem', 'margin:.5rem 14px .75rem')
+        if tag in ('wales', 'argentina'):  # sf41: under the hero header inside <main>, in the page's default language
+            mh = _re.compile(r'</header>').search(h, m.end())
+            at = mh.end() if mh else m.end()
+            line = ('<p class="ebook-strip" style="margin:.75rem 0;font-size:16px;line-height:1.4">'
+                    '<a href="/r/strip-%s" data-i18n="w_ebooks">%s</a></p>'
+                    % (tag, 'E-lyfrau &middot; argraffiadau cyntaf am ddim' if tag == 'wales'
+                       else 'Libros electr&oacute;nicos &middot; primeras ediciones gratis'))
+        f.write_text(h[:at] + line + h[at:], encoding='utf-8')
         n += 1
     print('shop strip: added to', n, 'pages')
+# 2 Nov 2026 (owner, 00:48 GMT): the e-book strip is retired on every page, with the rest of the cross-promo chrome; _shop_strip is
+# no longer called. purge_promo.py removes the strip, the home e-book button, the outside-records popup and the section ribbon from
+# every built page, including copies kept from earlier builds. The Garden banner (garden-banner.js) replaces them. Never stops a build - Sion's Tab agent
 try:
-    _shop_strip(DIST)
+    import purge_promo
+    purge_promo.run(DIST)
 except Exception as _e:
-    print('shop strip failed:', _e)
+    print('promo purge failed:', _e)
 
 # Holdings wording (owner rule, 22:25 GMT 30 Oct 2026; P-104): public text never states whether the family holds a record; it names
 # which other party should hold the original and what it has disclosed. Exact-phrase rewrites from data/holdings-wording.json over
@@ -495,6 +574,11 @@ _redirect_file = DIST / '_redirects'
 _redirect_lines = _redirect_file.read_text(encoding='utf-8').splitlines() if _redirect_file.exists() else []
 _redirect_dynamic = [x for x in _redirect_lines if x.split() and ('*' in x.split()[0] or ':' in x.split()[0])]
 _redirect_static = [x for x in _redirect_lines if x.strip() and x not in _redirect_dynamic]
+# 31 Oct 2026 (P-122): Cloudflare's parser counts EVERY rule after the first splat/placeholder rule as dynamic and stops
+# reading at the 100th (workers-sdk issue 14694). The file opened with a splat rule, so lines 100+ (about 140 exact-path
+# redirects) were silently dead. Write exact-path rules first, then the pattern rules, each in their original order.
+_redirect_static = [x for x in _redirect_static if not x.lstrip().startswith('#')]
+_redirect_file.write_text('\n'.join(_redirect_static + _redirect_dynamic) + '\n', encoding='utf-8')
 print('redirect quota:', len(_redirect_dynamic), '/100 dynamic;', len(_redirect_static), '/2000 static')
 assert len(_redirect_dynamic) <= 100, 'Cloudflare Pages dynamic redirect quota exceeded after all route additions'
 assert len(_redirect_static) <= 2000, 'Cloudflare Pages static redirect quota exceeded after all route additions'

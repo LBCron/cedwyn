@@ -13,7 +13,7 @@
  */
 (function () {
   if (window.GHFLoc) return;
-  var T = {"en": {"loc": "Location", "wales": "Wales", "patagonia": "Patagonia", "cyberspace": "Cyberspace", "choose": "Choose a location", "estate": "Cedwyn Estate", "title": "Choose your destination", "soon": "Coming soon", "w_kick": "Llandough, Wales", "w_name": "Great House Farm", "w_line": "Virtual-reality guided tour", "p_kick": "Puerto Madryn, Patagonia, Argentina", "p_name": "Great House Farm II", "p_line": "Cedwyn Estate: replica farmhouse, wax museum, weddings, stables, B&B", "c_kick": "Online", "c_name": "Cyberspace", "c_line": "The digital estate: maps, library, shops, app", "note": "Your choice is remembered on this device. Change it any time with the bar at the top."}, "cy": {"loc": "Lleoliad", "wales": "Cymru", "patagonia": "Patagonia", "cyberspace": "Cyberspace", "choose": "Dewiswch leoliad", "estate": "Ystâd Cedwyn", "title": "Dewiswch eich cyrchfan", "soon": "Yn dod cyn hir", "w_kick": "Llandochau, Cymru", "w_name": "Tŷ Mawr", "w_line": "Taith dywys rhith-wirionedd", "p_kick": "Porth Madryn, Patagonia, yr Ariannin", "p_name": "Tŷ Mawr II", "p_line": "Ystâd Cedwyn: ffermdy replica, amgueddfa gwyr, priodasau, stablau, gwely a brecwast", "c_kick": "Ar-lein", "c_name": "Cyberspace", "c_line": "Yr ystâd ddigidol: mapiau, llyfrgell, siopau, ap", "note": "Cofir eich dewis ar y ddyfais hon. Newidiwch ef unrhyw bryd gyda’r bar ar y brig."}, "es": {"loc": "Lugar", "wales": "Gales", "patagonia": "Patagonia", "cyberspace": "Cyberspace", "choose": "Elija un lugar", "estate": "Finca Cedwyn", "title": "Elija su destino", "soon": "Próximamente", "w_kick": "Llandough, Gales", "w_name": "Great House Farm", "w_line": "Visita guiada en realidad virtual", "p_kick": "Puerto Madryn, Patagonia, Argentina", "p_name": "Great House Farm II", "p_line": "Finca Cedwyn: réplica de la casa, museo de cera, bodas, caballerizas, B&B", "c_kick": "En línea", "c_name": "Cyberspace", "c_line": "La finca digital: mapas, biblioteca, tiendas, app", "note": "Su elección se recuerda en este dispositivo. Cámbiela cuando quiera con la barra superior."}};
+  var T = {"en": {"loc": "Location", "wales": "Wales", "patagonia": "Patagonia", "cyberspace": "Online", "choose": "Choose a location", "estate": "Cedwyn Estate", "title": "Choose your destination", "soon": "Coming soon", "w_kick": "Llandough, Wales", "w_name": "Great House Farm", "w_line": "Virtual-reality guided tour", "p_kick": "Puerto Madryn, Patagonia, Argentina", "p_name": "Great House Farm II", "p_line": "Cedwyn Estate: replica farmhouse, wax museum, weddings, stables, B&B", "c_kick": "Anywhere", "c_name": "Online", "c_line": "The digital estate: maps, library, shops, app", "note": "Your choice is remembered on this device. Change it any time with the bar at the top."}, "cy": {"loc": "Lleoliad", "wales": "Cymru", "patagonia": "Patagonia", "cyberspace": "Ar-lein", "choose": "Dewiswch leoliad", "estate": "Ystâd Cedwyn", "title": "Dewiswch eich cyrchfan", "soon": "Yn dod cyn hir", "w_kick": "Llandochau, Cymru", "w_name": "Tŷ Mawr", "w_line": "Taith dywys rhith-wirionedd", "p_kick": "Porth Madryn, Patagonia, yr Ariannin", "p_name": "Tŷ Mawr II", "p_line": "Ystâd Cedwyn: ffermdy replica, amgueddfa gwyr, priodasau, stablau, gwely a brecwast", "c_kick": "Unrhyw le", "c_name": "Ar-lein", "c_line": "Yr ystâd ddigidol: mapiau, llyfrgell, siopau, ap", "note": "Cofir eich dewis ar y ddyfais hon. Newidiwch ef unrhyw bryd gyda’r bar ar y brig."}, "es": {"loc": "Lugar", "wales": "Gales", "patagonia": "Patagonia", "cyberspace": "En línea", "choose": "Elija un lugar", "estate": "Finca Cedwyn", "title": "Elija su destino", "soon": "Próximamente", "w_kick": "Llandough, Gales", "w_name": "Great House Farm", "w_line": "Visita guiada en realidad virtual", "p_kick": "Puerto Madryn, Patagonia, Argentina", "p_name": "Great House Farm II", "p_line": "Finca Cedwyn: réplica de la casa, museo de cera, bodas, caballerizas, B&B", "c_kick": "Desde cualquier lugar", "c_name": "En línea", "c_line": "La finca digital: mapas, biblioteca, tiendas, app", "note": "Su elección se recuerda en este dispositivo. Cámbiela cuando quiera con la barra superior."}};
   var ICO = {"wales": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 36\" width=\"24\" height=\"14.4\" role=\"img\" aria-label=\"Flag of Wales\"><rect width=\"60\" height=\"18\" fill=\"#fff\"/><rect y=\"18\" width=\"60\" height=\"18\" fill=\"#00B140\"/><path fill=\"#D30731\" d=\"M13 24c2-1 4-3 5-6-2 0-4-1-5-3 3 1 5 1 7 0l3-6c1-2 3-3 5-2l-2 2c1 1 3 1 4 0l3 1-3 2c-1 3-1 5 1 7 3-2 6-5 9-9 0 4-2 7-4 10 3 0 6-1 9-3-1 3-4 5-8 6l3 3-3 1-2-3c-3 1-6 1-9 0l-2 4-3-1 2-4c-3-1-5-1-7 1-1 1-2 2-4 2l1-2z\"/></svg>", "uk": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 36\" width=\"24\" height=\"14.4\" role=\"img\" aria-label=\"Union Flag\"><rect width=\"60\" height=\"36\" fill=\"#012169\"/><path d=\"M0 0L60 36M60 0L0 36\" stroke=\"#fff\" stroke-width=\"7\"/><path d=\"M0 0L60 36M60 0L0 36\" stroke=\"#C8102E\" stroke-width=\"2.6\"/><path d=\"M30 0v36M0 18h60\" stroke=\"#fff\" stroke-width=\"11\"/><path d=\"M30 0v36M0 18h60\" stroke=\"#C8102E\" stroke-width=\"6.5\"/></svg>", "argentina": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 36\" width=\"24\" height=\"14.4\" role=\"img\" aria-label=\"Flag of Argentina\"><rect width=\"60\" height=\"36\" fill=\"#74ACDF\"/><rect y=\"12\" width=\"60\" height=\"12\" fill=\"#fff\"/><g fill=\"#F6B40E\"><circle cx=\"30\" cy=\"18\" r=\"3.6\"/><path d=\"M30 12.2l.9 2.4h-1.8zM30 23.8l.9-2.4h-1.8zM24.2 18l2.4.9v-1.8zM35.8 18l-2.4.9v-1.8zM25.9 13.9l2.3 1.1-1.2 1.2zM34.1 22.1l-2.3-1.1 1.2-1.2zM34.1 13.9l-1.1 2.3-1.2-1.2zM25.9 22.1l1.1-2.3 1.2 1.2z\"/></g></svg>", "robot": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" role=\"img\" aria-label=\"AI agent\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2.5v3\"/><circle cx=\"12\" cy=\"2.5\" r=\"1\" fill=\"currentColor\"/><rect x=\"4.5\" y=\"5.5\" width=\"15\" height=\"12\" rx=\"3\"/><circle cx=\"9.2\" cy=\"11\" r=\"1.5\" fill=\"currentColor\"/><circle cx=\"14.8\" cy=\"11\" r=\"1.5\" fill=\"currentColor\"/><path d=\"M9.5 14.6h5M2.5 10v4M21.5 10v4M8 17.5v3h8v-3\"/></svg>"}, LICO = {"wales": ["wales", "uk"], "patagonia": ["wales", "argentina"], "cyberspace": ["robot"]}; // inline SVG flags and the robot icon for the strip (campus/build_locations.py ICONS)
   function ic(k) { var sp = document.createElement("span"); sp.className = "ghf-loc-ic"; sp.setAttribute("aria-hidden", "true"); sp.innerHTML = (LICO[k] || []).map(function (n) { return ICO[n] || ""; }).join(""); return sp; }
   var LOCS = [["wales", "/wales/"], ["patagonia", "/argentina/"], ["cyberspace", "/cyberspace/"]]; // 25 Oct 2026: Patagonia opens the Argentina section (Great House II)
@@ -268,6 +268,10 @@
   var CEDWYN_SMAP = /*CEDWYN_SMAP*/{};
   // 25 Oct 2026: the theme groups (themes.json "groups", filled by tools/site.py) for the side menu's dropdowns - 
   var CEDWYN_GROUPS = /*CEDWYN_GROUPS*/null;
+  // 1 Nov 2026: the header reads "NN of 59": NN = the area's own webapp/parcel slot (/areas.json "slot", from serendipity_slot in
+  // data/site-areas.json; else its place in the registry), 59 = the planned webapp slots (/areas.json "parcel_total" once
+  // published; 59 until then). Only the label changes; the ‹ › still step through the areas that exist. - Sion's Tab agent
+  var CEDWYN_OF = 59;
   // 25 Oct 2026: inside a section (/wales/<theme>/, /argentina/<theme>/, or the two hubs) the ‹ › and menu links stay in that
   // section; on the Argentina side the menu drops "Farm" from the estate's names (themes.json / sections.json) - 
   // 27 Oct 2026: the section (/wales/... or /argentina/...) is read from the address itself as well, so the header still knows it
@@ -281,13 +285,19 @@
   try { if (CHALF) localStorage.setItem("cedwyn-half", CHALF); else CHALF = localStorage.getItem("cedwyn-half") || ""; } catch (e) {}
   if (CHALF !== "wales" && CHALF !== "patagonia") CHALF = "";
   if (!CSECP && CHALF && location.hostname === "cedwyn.bucklerfamily.estate") CSECP = CHALF === "wales" ? "/wales" : "/argentina";   // the chosen half's section, so ‹ › keep the visitor in it
+  // nav 1.0.0: the address a stop opens at. Inside a half, an area that half serves keeps the visitor in it (/wales/x/, /argentina/x/);
+  // everything else opens at its own canonical address, so no stop is ever skipped or sent through a redirect - Sion's Tab agent
+  var CAPEX = /^(www\.)?bucklerfamily\.estate$/.test(location.hostname);   // nav 1.1.0: on the apex every stop opens at its flat /<name>/ (registry "apex")
+  function cedU(id, href, skip, sec, ax) { if (CAPEX && ax) return ax.replace(/^https?:\/\/[^\/]+/, ""); if (id === "wales") return "/wales/"; return sec && CSECP && (skip || []).indexOf(CHALF) < 0 ? CSECP + href : href; }
   if (CEDWYN_CHAIN && CEDWYN_CHAIN.length) {
     var CBY = {}; CHAIN.forEach(function (c) { CBY[c.id] = c; });
     CFULL = CEDWYN_CHAIN.map(function (t) { return t[0]; });
-    CHAIN = CEDWYN_CHAIN.filter(function (t) { return !CHALF || (t[5] || []).indexOf(CHALF) < 0; }).map(function (t) { var o = CBY[t[0]] || {}, r = {}, k; for (k in o) r[k] = o[k];
-      r.id = t[0]; r.t = t[1] || o.t; r.g = t[2] || ""; if (t[3]) r.cy = t[3]; if (t[4]) r.es = t[4]; r.u = CSECP + "/" + t[0] + "/";
-      if (t[0] === "wales") r.u = "/wales/";   // the Wales tour is the Wales section's own home page
-      r.h = []; r.p = ["/" + t[0] + "/"]; return r; });
+    // 2 Nov 2026, nav 1.0.0 (owner: "it keeps getting stuck"): ONE chain for every visitor, in slot order, never filtered by the
+    // half. A stop the visitor's half does not serve, a webapp (slot 40 on) and an /online/ app open at their own address
+    // (tuple field 7) instead of dropping out; r.n is the slot (field 6), never a list position - Sion's Tab agent
+    CHAIN = CEDWYN_CHAIN.map(function (t) { var o = CBY[t[0]] || {}, r = {}, k; for (k in o) r[k] = o[k];
+      r.id = t[0]; r.t = t[1] || o.t; r.g = t[2] || ""; if (t[3]) r.cy = t[3]; if (t[4]) r.es = t[4]; r.u = cedU(t[0], t[7] || "/" + t[0] + "/", t[5], t.length > 8 ? t[8] : 1, t[9]);
+      r.h = []; r.p = ["/" + t[0] + "/"]; if (t[7] && r.p.indexOf(t[7]) < 0) r.p.push(t[7]); r.n = t[6] || CEDWYN_CHAIN.indexOf(t) + 1; return r; });
   }
   // the theme this page belongs to: inside a section its own pages (the hub, vouchers, caso) are that half's stop
   function cedSeg() {
@@ -350,7 +360,7 @@
       var arr = function (st, cls, ch, lab) { var a = mk("a", "ghf-v2-arr " + cls); pinHref(a, st.u); a.setAttribute("aria-label", lab + ": " + nm(st)); a.title = lab + ": " + nm(st); a.appendChild(mk("span", null, ch)); a.setAttribute("data-ghf-chain", st.id); return a; };
       chainBar.appendChild(arr(pv, "ghf-v2-prev", "\u2039", s.prev));
       var mid = mk("div", "ghf-v2-name"), b = mk("b", null, k >= 0 ? nm(CHAIN[k]) : ((document.title || host).split(/\s[·|—–-]\s/)[0]));
-      mid.appendChild(b); if (k >= 0) mid.appendChild(mk("small", null, (k + 1) + " " + s.of + " " + n));
+      mid.appendChild(b); if (k >= 0) mid.appendChild(mk("small", null, ((CEDWYN_CHAIN && CHAIN[k].n) || (k + 1)) + " " + s.of + " " + (CEDWYN_CHAIN && CEDWYN_CHAIN.length ? CEDWYN_OF : n)));
       chainBar.appendChild(mid);
       chainBar.appendChild(arr(nx, "ghf-v2-next", "\u203A", s.next));
       chainBar.appendChild(btn("ghf-v2-btn ghf-v2-bgr", IC_MENU, s.menu, openDrawer));
@@ -363,20 +373,23 @@
     // per tab for 10 minutes. - Sion's Tab agent
     var AREAS = false;
     function useAreas(d) {
-      var list = (d.areas || []).filter(function (a) { return a && a.path && a.built !== false && (!CHALF || (a.skip_in || []).indexOf(CHALF) < 0); });
+      var all = d.nav || d.areas || [], list = all.filter(function (a) { return a && a.path && a.built !== false; });   // nav 1.0.0: every built slot, every half
       if (list.length < 2) return;
+      list.sort(function (a, b) { return (+(a.slot || a.serendipity_slot) || 999) - (+(b.slot || b.serendipity_slot) || 999); });
+      CEDWYN_OF = +(d.parcel_total || d.slots_total) || CEDWYN_OF;
       var by = {}; CHAIN.forEach(function (c) { by[c.id] = c; });
       CHAIN = list.map(function (a) { var o = by[a.id] || {}, r = {}, k; for (k in o) r[k] = o[k];
         r.id = a.id; r.t = a.title || o.t || a.id; if (a.cy) r.cy = a.cy; if (a.es) r.es = a.es; r.g = a.group || o.g || "";
-        r.u = a.id === "wales" ? "/wales/" : CSECP + a.path; r.p = [a.path].concat(a.aliases || []); r.h = []; return r; });
+        r.u = cedU(a.id, a.href || a.path, a.skip_in, d.nav ? a.sec : 1, a.apex); r.p = [a.path].concat(a.aliases || []); if (a.href && r.p.indexOf(a.href) < 0) r.p.push(a.href);
+        r.h = []; r.n = +(a.slot || a.serendipity_slot) || (all.indexOf(a) + 1); return r; });
       AREAS = true; fillChain();
       if (de.classList.contains("ghf-v2-open")) fillDrawer();
     }
     function areasNav() {
       if (location.hostname !== "cedwyn.bucklerfamily.estate" || !window.fetch) return;
-      var KEY = "cdw-areas-v1", c = null;
+      var KEY = "cdw-nav-v3", c = null;   // nav 1.0.0: new key, so a list cached before slot 40 joined is never reused; kept 2 minutes
       try { c = JSON.parse(sessionStorage.getItem(KEY) || "null"); } catch (e) { c = null; }
-      if (c && c.d && c.at > Date.now() - 6e5) { useAreas(c.d); return; }
+      if (c && c.d && c.at > Date.now() - 12e4) { useAreas(c.d); return; }
       fetch("/areas.json", { credentials: "omit" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
         if (!d || !d.areas) return;
         try { sessionStorage.setItem(KEY, JSON.stringify({ at: Date.now(), d: d })); } catch (e) {}
@@ -445,7 +458,7 @@
       inn.appendChild(b); inn.appendChild(list);
     }
     function themeLink(st, i, k) {
-      var li = mk("li"), a = mk("a"); pinHref(a, st.u); a.appendChild(mk("span", "ghf-v2-ddi", (i + 1) + "")); a.appendChild(document.createTextNode(nm(st)));
+      var li = mk("li"), a = mk("a"); pinHref(a, st.u); a.appendChild(mk("span", "ghf-v2-ddi", (st.n || i + 1) + "")); a.appendChild(document.createTextNode(nm(st)));   // nav 1.0.0: the slot, not the list position
       if (i === k) a.setAttribute("aria-current", "page");
       a.onclick = function () { setTimeout(closeDrawer, 10); }; li.appendChild(a); return li;
     }

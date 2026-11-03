@@ -13,8 +13,8 @@ Copy: sections.json (en / cy / es). Called at the end of site.py."""
 import json, html, re, shutil, pathlib, urllib.parse
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 E = html.escape
-BOOT = '/_cedwyn/ghf/ghf-boot.js?v=2.1.17'
-SJS = '/_cedwyn/section.js?v=1.2.0'
+BOOT = '/_cedwyn/ghf/ghf-boot.js?v=2.1.25'   # 2.1.25 (2 Nov 2026): fresh key for garden-banner 2.3.0, same as selfcontain.py. 2.1.24 (2 Nov 2026): fresh key, same as selfcontain.py; ?v=2.1.19 was held at the edge with an older boot
+SJS = '/_cedwyn/section.js?v=1.3.0'   # 1.3.0 (2 Nov 2026): new cache key; section.js draws no ribbon any more (Garden City banner instead)
 ICON_AR = ('<svg class="ar-ic" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">'
            '<path d="M6 34c0-3 2-5 5-5h42c3 0 5 2 5 5v8c0 4-3 7-7 7H43l-5-6H26l-5 6H13c-4 0-7-3-7-7z"/>'
            '<path d="M20 22 32 12l12 10" stroke-dasharray="3 4"/><path d="M23 22v6M29 22v6M35 22v6M41 22v6" stroke-dasharray="2 3"/>'
@@ -85,8 +85,23 @@ ul.plain{margin:6px 0 12px;padding-left:20px}ul.plain li{margin:6px 0}
 .grp summary{cursor:pointer;padding:12px 14px;font:600 14px/1.3 Barlow,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;gap:10px}
 .grp ol{margin:0;padding:0 14px 12px 36px}.grp li{margin:7px 0}.grp li a{text-decoration:none;border-bottom:1px solid var(--line)}
 .cross{display:block;padding:16px;border-radius:12px;text-decoration:none;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--b)}
+img[data-patagonia-pencil]{filter:url(#patagonia-pencil) sepia(.10) contrast(1.05)}
 .cross h2{font-size:20px}.endnote{font-size:12px;color:var(--mut);margin-top:24px}
 """
+
+PENCIL_DEFS = """<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;overflow:hidden;pointer-events:none">
+<filter id="patagonia-pencil" color-interpolation-filters="sRGB" x="-5%" y="-5%" width="110%" height="110%">
+<feColorMatrix in="SourceGraphic" type="saturate" values="0" result="mono"/>
+<feGaussianBlur in="mono" stdDeviation="2.1" result="soft-mono"/>
+<feComponentTransfer in="soft-mono" result="inverted-soft">
+<feFuncR type="table" tableValues="1 0"/><feFuncG type="table" tableValues="1 0"/><feFuncB type="table" tableValues="1 0"/>
+</feComponentTransfer>
+<feBlend in="mono" in2="inverted-soft" mode="color-dodge" result="pencil-lines"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" seed="8" result="paper-grain"/>
+<feColorMatrix in="paper-grain" type="saturate" values="0" result="grain-gray"/>
+<feComponentTransfer in="grain-gray" result="fine-grain"><feFuncA type="table" tableValues="0 0.045"/></feComponentTransfer>
+<feBlend in="pencil-lines" in2="fine-grain" mode="multiply"/>
+</filter></svg>"""
 
 def tx(T, k, l):
     v = T.get(k) or {}
@@ -231,9 +246,10 @@ def argentina(S, cfg):
     lk = ''.join(f'<li><a href="{u}" data-i18n="{k}">{E(tx(T,k,l))}</a></li>' for k, u in links)
     return head('Great House II · Argentina · Cedwyn', 'Argentina: Great House II, former courthouse / coach house, a replica on a Cedwyn II estate in Puerto Madryn, Patagonia (coming soon): B&B, wedding venue, stables and museum, and the story retold.', l, '/patagonia/', 'argentina', T, n).replace('--a:#00843D;--b:#C8102E', '--a:#4E8CC8;--b:#F6B40E') + f"""
 <body data-cedwyn-page="argentina">
+{PENCIL_DEFS}
 <main class="wrap" data-no-translate>
 {langbar(T, l)}
-<div class="hero-photo"><img src="{E(ph['src'])}" width="{ph['w']}" height="{ph['h']}" alt="" decoding="async"></div>
+<div class="hero-photo"><img data-patagonia-pencil src="{E(ph['src'])}" width="{ph['w']}" height="{ph['h']}" alt="" decoding="async"></div>
 <p class="cap" data-i18n="photo_cap">{E(tx(T,'photo_cap',l))}</p>
 <header><p class="eyebrow">{i18n(T,'a_kicker',l)}</p><h1>Great House II</h1><p class="lede" style="margin-top:6px"><b data-i18n="a_sub">{E(tx(T,'a_sub',l))}</b></p>
 <span class="soon" data-i18n="soon">{E(tx(T,'soon',l))}</span><p class="lede">{i18n(T,'a_lede',l)}</p></header>

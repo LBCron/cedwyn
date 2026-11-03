@@ -1,6 +1,11 @@
 {
  "note": "Pinned commits of the section snapshot branches the build reads (tools/assemble.py). sections-ci.yml updates an entry when its branch moves. See work/cedwyn-arch/SCOPE.md \u2014 Sion's Tab agent",
  "sections": {
+  "analytics": {
+   "branch": "section/analytics",
+   "pinned_utc": "2026-11-02T06:58:42Z",
+   "sha": "a1ff8ffe216329b4e977c3ff2aec40fccdf0e6ab"
+  },
   "app": {
    "branch": "section/app",
    "pinned_utc": "2026-10-26T19:41:29Z",
@@ -11,10 +16,15 @@
    "pinned_utc": "2026-10-26T19:41:29Z",
    "sha": "3bf81b91c580f0266e1425bf799377e4120d60a0"
   },
+  "cloudflare": {
+   "branch": "section/cloudflare",
+   "pinned_utc": "2026-11-02T03:56:11Z",
+   "sha": "2379b7033509696a3b8cfe1d00e42dd31f15933b"
+  },
   "cyberspace": {
    "branch": "section/cyberspace",
-   "pinned_utc": "2026-10-26T19:41:29Z",
-   "sha": "8769f4052e9f6cd6dd00c5699189dbad2421ec9c"
+   "pinned_utc": "2026-11-01T00:30:00Z",
+   "sha": "a4713e3dfeb39c5aa7cc319b568ef8144538c23e"
   },
   "estate": {
    "branch": "section/estate",
@@ -23,23 +33,43 @@
   },
   "fcg": {
    "branch": "section/fcg",
-   "pinned_utc": "2026-10-26T19:41:29Z",
-   "sha": "579673b1f2874d991bd6501a6500e4296292951d"
+   "pinned_utc": "2026-11-01T17:40:25Z",
+   "sha": "597d6ae7e407345767e384faca1c3e85fa196315"
+  },
+  "forensic": {
+   "branch": "section/forensic",
+   "pinned_utc": "2026-11-03T04:05:18Z",
+   "sha": "8af21139fe45b6550577f76b972cc356b4aa7451"
+  },
+  "mr-wolf": {
+   "branch": "section/mr-wolf",
+   "pinned_utc": "2026-11-01T04:06:00Z",
+   "sha": "917fd1afee8a5d7865a20082fdf84898cdd80434"
   },
   "patagonia": {
    "branch": "section/patagonia",
-   "pinned_utc": "2026-10-27T08:14:00Z",
-   "sha": "6b55a29a1211a08b958616bd732227ad2ef64ede"
+   "pinned_utc": "2026-11-02T02:53:52Z",
+   "sha": "bf43c90ca21bcb7b25bd2b7340e868b76cd43dad"
   },
   "research": {
    "branch": "section/research",
-   "pinned_utc": "2026-10-31T04:23:19Z",
-   "sha": "b554fad2d9275b6c90017702e5994fa39b356ab0"
+   "pinned_utc": "2026-11-03T04:31:01Z",
+   "sha": "eee415347aca56d8c2f254bd55638f4b821d3675"
+  },
+  "spill": {
+   "branch": "section/spill",
+   "pinned_utc": "2026-11-02T05:03:00Z",
+   "sha": "a94897c67d11889f4cea66a297c013dd13c92038"
+  },
+  "tithe-h3": {
+   "branch": "section/tithe-h3",
+   "pinned_utc": "2026-11-02T18:46:23Z",
+   "sha": "1a8a4f4883934666738f75b8dca27612dddfd605"
   },
   "wiki": {
    "branch": "section/wiki",
-   "pinned_utc": "2026-10-30T17:31:04Z",
-   "sha": "5f46c30cd996d0574b9d1a37a7395b6512948a45"
+   "pinned_utc": "2026-11-02T11:36:06Z",
+   "sha": "e497de2c575b421fc0b2a220d9fbb1643f0a5865"
   }
  }
 }

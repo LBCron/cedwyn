@@ -17,7 +17,14 @@ Copy: data/halves.json (en/cy/es; Welsh and Spanish are first drafts). Images: w
 import json, html, re, pathlib, math
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 E = html.escape
-VERSION = '1.3.0'
+VERSION = '1.5.1'
+# 1.5.1 (2 Nov 2026, 05:04 GMT): an online_only app leaves only the place modals of the halves that exclude it (the FOI/correspondence apps stay in Wales, leave Patagonia). — Sion's Tab agent
+# 1.5.0 (2 Nov 2026, 03:41 GMT request): /online/ section — data/halves.json groups.online_only (hubspot, cloudflare, cyberspace) leave the Wales and Patagonia place modals and open at /online/<id>/ from the Online card, which also lists HubSpot task control; old /wales/<id>/ and /argentina/<id>/ addresses 301 (Worker cedwyn-online, workers/cedwyn-online/index.js). — Sion's Tab agent
+# 1.4.2 (2 Nov 2026, 02:53Z): Patagonia visitor-card imagery aligned (B&B cottage GEN-0001, whole-house NFA-0035, hero NFA-0157); accessible alt text now names venue artwork. — Cedwyn editors
+# 1.4.1 (2 Nov 2026): separate source-language image alt descriptions from visible overlay copy; six interpretive Wales-tour scenes now identify themselves as artist's impressions in EN/CY/ES. — Cedwyn editors
+# 1.4.0 (1 Nov 2026, Sion 22:28 GMT, m:b0d74058): the landing has a third card, Online, after Wales and Patagonia; card labels carry
+# the emojis after the word (Welsh flag + UK / Argentina flag / globe). Online opens a modal with the same apps at their top-level
+# addresses (/<app>/ instead of /wales/<app>/). Three cards side by side on wide screens, stacked on phones. - Sion's Tab agent
 # 1.2.1 (27 Oct 2026, Sion 11:34 GMT): /argentina/ pictures purged of four pieces that are not the farm (NFA-0139, NFA-0049,
 # NFA-0103, NFA-0081); NFA-0015 replaced by REC-0001, a line drawing from the 1974 measured survey (see ARG_REC). - Sion's Tab agent
 # 1.2.0 (27 Oct 2026, Sion 09:45 GMT): the in-content pictures of /wales/ and /argentina/ are thumbnails; a tap opens the shared
@@ -151,13 +158,13 @@ LANDING_CSS = r"""
 body[data-cedwyn-page="landing"]{min-height:100svh;overflow-x:hidden}
 body[data-cedwyn-page="landing"] .wrap{width:100%;max-width:none;margin:0;padding:0}
 body[data-cedwyn-page="landing"] .hv-land{height:100svh;height:100dvh;min-height:0;max-height:none;padding:clamp(8px,1.7vw,20px);gap:0}
-body[data-cedwyn-page="landing"] .hv-tiles{height:100%;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr;gap:clamp(8px,1.5vw,18px)}
+body[data-cedwyn-page="landing"] .hv-tiles{height:100%;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:1fr;gap:clamp(8px,1.5vw,18px)}
 body[data-cedwyn-page="landing"] .land-place{position:relative;display:flex;min-width:0;min-height:0;align-items:flex-end;justify-content:center;overflow:hidden;border:0;border-radius:clamp(10px,1.4vw,20px);padding:0;background:#101820;color:#fff;cursor:pointer;isolation:isolate;box-shadow:0 8px 30px rgba(0,0,0,.28);text-align:center;-webkit-tap-highlight-color:transparent}
 body[data-cedwyn-page="landing"] .land-place:focus-visible{outline:3px solid #fff;outline-offset:-6px}
 body[data-cedwyn-page="landing"] .land-place>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .35s ease}
 body[data-cedwyn-page="landing"] .land-place:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.04) 25%,rgba(0,0,0,.22) 52%,rgba(0,0,0,.78) 100%)}
 body[data-cedwyn-page="landing"] .land-place:hover>img,body[data-cedwyn-page="landing"] .land-place:focus-visible>img{transform:scale(1.025)}
-body[data-cedwyn-page="landing"] .land-place .land-place-label{display:block;max-width:100%;padding:clamp(12px,2.8vw,34px);font:600 clamp(20px,4.2vw,52px)/1.1 Barlow,system-ui,sans-serif;letter-spacing:.025em;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.9)}
+body[data-cedwyn-page="landing"] .land-place .land-place-label{display:block;max-width:100%;padding:clamp(12px,2.8vw,34px);font:600 clamp(20px,3vw,44px)/1.1 Barlow,system-ui,sans-serif;letter-spacing:.025em;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.9)}
 body[data-cedwyn-page="landing"] .ghf-v2,body[data-cedwyn-page="landing"] #ghf-agent-footer,body[data-cedwyn-page="landing"] .ghf-agent-footer{display:none!important}
 .land-modal{width:min(1160px,calc(100vw - 18px));max-width:1160px;max-height:calc(100dvh - 18px);margin:auto;padding:0;overflow:hidden;border:1px solid rgba(219,229,240,.25);border-radius:18px;background:#0c1117;color:#f4f6f8;box-shadow:0 24px 90px rgba(0,0,0,.65)}
 .land-modal::backdrop{background:rgba(2,5,9,.84);backdrop-filter:blur(5px)}
@@ -181,7 +188,7 @@ body[data-cedwyn-page="landing"] .ghf-v2,body[data-cedwyn-page="landing"] #ghf-a
 @media(max-width:780px){.land-app-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:540px){
  body[data-cedwyn-page="landing"] .hv-land{padding:7px}
- body[data-cedwyn-page="landing"] .hv-tiles{grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:7px}
+ body[data-cedwyn-page="landing"] .hv-tiles{grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:7px}
  body[data-cedwyn-page="landing"] .land-place{border-radius:11px}
  body[data-cedwyn-page="landing"] .land-place .land-place-label{font-size:clamp(22px,7.2vw,34px);padding:18px}
  .land-modal{width:calc(100vw - 10px);max-height:calc(100dvh - 10px);border-radius:13px}
@@ -397,15 +404,18 @@ def ra_html(T, l, key, s):
 def stop_html(H, T, l, i, s, n):
     """One tour stop (Sion 02:12 GMT 26 Oct: a warm guided tour; every legal citation lives only in the "court" stop)."""
     sid = s['id']
-    for k in ('name', 'place', 'overlay', 'now', 'open', 'story'):
+    for k in ('name', 'place', 'overlay', 'alt', 'now', 'open', 'story'):
         if k in s: T[f'stop_{sid}_{k}'] = s[k]
+    if s.get('holo') and s.get('holo_overlay'):
+        T[f'stop_{sid}_holo'] = s['holo_overlay']
     T[f'stop_{sid}_short'] = s['place'] if sid in ('driscoll', 'bay', 'lavernock', 'brynwell') else s['name']
     T[f'stop_{sid}_short'] = {k: re.split(r'[,:·]', v)[0] for k, v in T[f'stop_{sid}_short'].items()}
     recs = []
     for j, (txt, ids) in enumerate(s.get('recs', [])):
         T[f'stop_{sid}_r{j}'] = txt
         recs.append(f'<li><span class="rt" data-i18n="stop_{sid}_r{j}">{E(tx(T, f"stop_{sid}_r{j}", l))}</span> {ev_links(H, ids)}</li>')
-    alt = tx(T, f'stop_{sid}_overlay', l)
+    alt_key = f'stop_{sid}_alt' if s.get('alt') else f'stop_{sid}_overlay'
+    alt = tx(T, alt_key, l) or tx(T, f'stop_{sid}_overlay', l)
     extra = ''
     if s.get('timeline'):
         tl = []
@@ -416,8 +426,10 @@ def stop_html(H, T, l, i, s, n):
     if s.get('links'):
         extra += '<div class="hv-btns">' + ''.join(f'<a class="hv-btn" href="{E(u)}" data-i18n="{E(k)}">{E(tx(T, k, l) or u)}</a>' for k, u in s['links']) + '</div>'
     return (f'<article class="hv-stop{" on" if i == 0 else ""}" id="stop-{i+1}" data-stop="{E(sid)}" aria-label="{E(str(i+1))}">'
-            f'<div class="hv-ar cwlb-th" data-lb=""><img src="{img(H, s["img"])}" width="1280" height="853" alt="{E(alt)}" data-i18n-al="stop_{sid}_overlay" loading="{"eager" if i == 0 else "lazy"}" decoding="async"><span class="scan"></span>'
+            f'<div class="hv-ar cwlb-th" data-lb=""><img src="{img(H, s["img"])}" width="1280" height="853" alt="{E(alt)}" data-i18n-al="{E(alt_key)}" loading="{"eager" if i == 0 else "lazy"}" decoding="async"><span class="scan"></span>'
             f'<span class="chip" data-i18n="{E(s.get("chip", "ar_tag"))}">{E(tx(T, s.get("chip", "ar_tag"), l))}</span></div>'
+            + (f'<div class="hv-ar cwlb-th" id="recreations" data-lb="" style="clear:right"><img src="{img(H, s["holo"])}" width="1280" height="853" alt="{E(tx(T, f"stop_{sid}_holo", l))}" data-i18n-al="stop_{sid}_holo" loading="lazy" decoding="async"><span class="scan"></span>'
+               f'<span class="chip" data-i18n="holo_tag">{E(tx(T, "holo_tag", l))}</span></div>' if s.get('holo') else '')
             + ra_html(T, l, f'stop_{sid}', s) +
             f'<p class="hv-sn"><span data-i18n="w_stop">{E(tx(T, "w_stop", l))}</span> {i+1} / {n}</p>'
             f'{sp(T, f"stop_{sid}_name", l, "h3")}{sp(T, f"stop_{sid}_place", l, "p", "pl")}'
@@ -505,7 +517,9 @@ def app_tile(H, section, theme):
         image = 'nfa:' + ARG_TILE_IMAGES[tid]
     else:
         image = APP_IMAGES.get(tid, 'ty-mawr-1974-reconstruction')
-    return (f'<a class="land-app" href="/{E(section)}/{E(tid)}/" aria-label="{E(label)}">'
+    online_only = set(H.get('groups', {}).get('online_only', []))
+    href = (f'/online/{tid}/' if tid in online_only else f'/{tid}/') if section == 'online' else f'/{section}/{tid}/'  # Online: /online/<id>/ for online-only apps (2 Nov 2026), else the apps' own top-level addresses (1 Nov 2026)
+    return (f'<a class="land-app" href="{E(href)}" aria-label="{E(label)}">'
             f'<img src="{E(app_image(H, image))}" alt="" loading="lazy" decoding="async">'
             f'<span class="land-app-label">{E(label)}</span></a>')
 
@@ -521,8 +535,10 @@ def network_tile(H):
 
 def modal_apps(H, cfg, section):
     out = []
+    G_ = H.get('groups', {}); sx = set(G_.get('wales_exclude' if section == 'wales' else 'argentina_exclude', [])) if section in ('wales', 'argentina') else set()
+    skip = set(APP_EXCLUDED) | (set(G_.get('online_only', [])) & sx)   # an /online/ app leaves the place modal of each half that excludes it (2 Nov 2026)
     for group in cfg.get('groups', []):
-        items = [t for t in cfg['themes'] if t.get('group') == group['id'] and t['id'] not in APP_EXCLUDED]
+        items = [t for t in cfg['themes'] if t.get('group') == group['id'] and t['id'] not in skip]
         if not items:
             continue
         out.append('<section class="land-app-section"><h3>' + E(group['title']) + '</h3><div class="land-app-grid">')
@@ -534,9 +550,13 @@ def modal_apps(H, cfg, section):
     return ''.join(out)
 
 def place_modal(H, cfg, section):
+    head = 'For this place'
     if section == 'wales':
         title = 'Wales, Britain'
         specific = specific_tile(H, 'Virtual reconstruction · AR glasses', '/wales/', 'holo-ghf1-098')
+    elif section == 'online':  # third landing card (Sion 22:28 GMT 1 Nov 2026, m:b0d74058); no place-specific tiles - Sion's Tab agent
+        title = 'Online'
+        specific = specific_tile(H, 'HubSpot · task control', '/online/hubspot/', 'network-datacentre') if 'hubspot' in H.get('groups', {}).get('online_only', []) else ''   # 2 Nov 2026: HubSpot moved to /online/ - Sion's Tab agent
     else:
         title = 'Patagonia, Argentina'
         special = [
@@ -553,8 +573,8 @@ def place_modal(H, cfg, section):
             f'<h2 id="modal-{E(section)}-title">{E(title)}</h2>'
             f'<button type="button" class="land-modal-close" data-close-modal aria-label="Close">×</button></div>'
             f'<div class="land-modal-content">'
-            f'<section class="land-app-section land-specific"><h3>For this place</h3>'
-            f'<div class="land-app-grid">{specific}</div></section>'
+            + (f'<section class="land-app-section land-specific"><h3>{E(head)}</h3>'
+               f'<div class="land-app-grid">{specific}</div></section>' if specific else '') +
             f'{modal_apps(H, cfg, section)}'
             f'</div></div></dialog>')
 
@@ -578,18 +598,22 @@ def landing(sections, S, cfg, H):
            "if(!/[?&]lang=/.test(location.search)&&history.replaceState)history.replaceState(null,'',location.pathname+'?lang='+l+location.hash)}catch(e){}})();</script>")
     wales_src = img(H, 'tile-wales')
     patagonia_src = img(H, 'tile-patagonia')
+    online_src = app_image(H, 'network-datacentre')
     body = f"""
 <body data-cedwyn-page="landing">
 <main class="wrap hv" data-no-translate>
-<div class="hv-land"><a class="hv-eb" style="margin-bottom:10px" href="/ebooks/?utm_source=home&amp;utm_medium=button&amp;utm_campaign=sf27"><span>E-books · first editions free</span><span class="ar" aria-hidden="true">→</span></a><div class="hv-tiles" aria-label="Choose a place">
+<div class="hv-land"><div class="hv-tiles" aria-label="Choose a place">
 <button type="button" class="land-place" data-open-modal="modal-wales" aria-haspopup="dialog" aria-controls="modal-wales">
-<img src="{E(wales_src)}" alt="" fetchpriority="high"><span class="land-place-label">Wales, Britain</span></button>
+<img src="{E(wales_src)}" alt="" fetchpriority="high"><span class="land-place-label">Wales 🏴󠁧󠁢󠁷󠁬󠁳󠁿🇬🇧</span></button>
 <button type="button" class="land-place" data-open-modal="modal-argentina" aria-haspopup="dialog" aria-controls="modal-argentina">
-<img src="{E(patagonia_src)}" alt="" fetchpriority="high"><span class="land-place-label">Patagonia, Argentina</span></button>
+<img src="{E(patagonia_src)}" alt="" fetchpriority="high"><span class="land-place-label">Patagonia 🏴󠁧󠁢󠁷󠁬󠁳󠁿🇦🇷</span></button>
+<button type="button" class="land-place" data-open-modal="modal-online" aria-haspopup="dialog" aria-controls="modal-online">
+<img src="{E(online_src)}" alt="" fetchpriority="high"><span class="land-place-label">Online 🏴󠁧󠁢󠁷󠁬󠁳󠁿🌐</span></button>
 </div>
 </div>
 {place_modal(H, cfg, 'wales')}
 {place_modal(H, cfg, 'argentina')}
+{place_modal(H, cfg, 'online')}
 </main>
 <script>
 (function(){{
@@ -617,7 +641,7 @@ openers.forEach(function(button){{
 </body>
 </html>
 """
-    out = page(sections, 'Cedwyn Estate', 'Select Wales, Britain or Patagonia, Argentina.', l, '/cedwyn/home/', None, T, n, body)
+    out = page(sections, 'Tŷ Mawr (Great House Farm), Llandough · Cedwyn Estate', 'Tŷ Mawr (Great House Farm), Llandough, Wales: history, records and BP Properties v Buckler [1987]. Guided tour, e-books, and Great House II planned in Patagonia.', l, '/cedwyn/home/', None, T, n, body)
     out = out.replace('</style>', LANDING_CSS + '</style>', 1)
     return out.replace('<head>\n', '<head>\n' + pre + '\n', 1)
 
@@ -635,13 +659,15 @@ def wales(sections, S, cfg, H):
     mn, gr = menu(H, T, cfg, l, 'wales')
     # gift vouchers (moved here 26 Oct 2026 from the retired /wales/tour/ page, same Stripe links via the archive route) - Sion's Tab agent
     vouchers = ''.join(f'<a class="hv-btn{" pri" if i == 0 else ""}" href="/wayback/go/?u={u}" rel="noopener">{lt(T, d, l, k)}</a>' for i, (k, u, d) in enumerate(VOUCHERS))
+    # 1 Nov 2026 (owner, WhatsApp 02:51 GMT): the top image stays first and the "Start the tour" button row sits directly
+    # under it; everything that stood between them (e-books strip, AR-tour heading, headlines with lede and no-museum note)
+    # now closes the page, above the endnote. Nothing deleted, no wording changed. The strip is written here so site.py's
+    # _shop_strip (which skips a page that already has one) does not put it back under the hero. HubSpot 536941177070. - Sion's Tab agent
     body = f"""
 <body data-cedwyn-page="wales">
 <main class="wrap hv" data-no-translate>{LB_CSS}
 <header class="hv-hero"><img src="{img(H,'wales-hero-house')}" width="1280" height="725" alt="" fetchpriority="high"><span class="hv-tag" data-i18n="ai_tag">{E(tx(T,'ai_tag',l))}</span>
 <div class="hb"><p class="eyebrow" style="color:#ddd" data-i18n="w_kick">{E(tx(T,'w_kick',l))}</p><h1 data-i18n="w_h1">{E(tx(T,'w_h1',l))}</h1></div></header>
-<h2 data-i18n="w_h2">{E(tx(T,'w_h2',l))}</h2>
-{headlines(H, T, l, 'wales', lead=f'<p class="lede" data-i18n="w_lede">{E(tx(T,"w_lede",l))}</p>', tail=f'<div class="hv-hl" id="no-museum"><b data-i18n="w_nomuseum_h">{E(tx(T,"w_nomuseum_h",l))}</b><p data-i18n="w_nomuseum_p">{E(tx(T,"w_nomuseum_p",l))}</p></div>')}
 <div class="hv-btns"><a class="hv-btn pri" href="#tour" data-hv-go="0" data-i18n="w_start">{E(tx(T,'w_start',l))}</a><a class="hv-btn" href="#shop" data-i18n="w_tickets">{E(tx(T,'w_tickets',l))}</a><a class="hv-btn" href="#menu" data-i18n="w_menu">{E(tx(T,'w_menu',l))}</a></div>
 {mn}
 <section id="route"><h2 data-i18n="w_map_h">{E(tx(T,'w_map_h',l))}</h2><p class="mut" data-i18n="w_map_p">{E(tx(T,'w_map_p',l))}</p>{mp}</section>
@@ -652,6 +678,8 @@ def wales(sections, S, cfg, H):
 <div class="hv-btns" id="vouchers">{vouchers}<a class="hv-btn" href="/ebooks/" data-i18n="w_ebooks">{E(tx(T,'w_ebooks',l))}</a></div>
 <p class="mut"><a href="/wales/vouchers/terms/">{lt(T, VOUCHER_TERMS, l, 'w_vterms')}</a></p></section>
 <section><a class="hv-btn" style="width:100%;justify-content:flex-start;min-height:64px;border-radius:12px" href="/argentina/?lang=es" hreflang="es"><span><b data-i18n="w_cross_h">{E(tx(T,'w_cross_h',l))}</b><br><span class="mut" data-i18n="w_cross_p">{E(tx(T,'w_cross_p',l))}</span></span></a></section>
+<h2 data-i18n="w_h2">{E(tx(T,'w_h2',l))}</h2>
+{headlines(H, T, l, 'wales', lead=f'<p class="lede" data-i18n="w_lede">{E(tx(T,"w_lede",l))}</p>', tail=f'<div class="hv-hl" id="no-museum"><b data-i18n="w_nomuseum_h">{E(tx(T,"w_nomuseum_h",l))}</b><p data-i18n="w_nomuseum_p">{E(tx(T,"w_nomuseum_p",l))}</p></div>')}
 <p class="endnote"><a href="/" data-i18n="home">{E(tx(T,'home',l) or 'Home')}</a> · <a href="/explore/" data-i18n="land_more">{E(tx(T,'land_more',l))}</a></p>
 </main>
 <script>{JS}</script>{LB_JS}
@@ -743,6 +771,7 @@ ARG_NFT = {
     'NFA-0147': ('The Cottage Window', '/nft-art/art/nfa-0147-v0.0.2.webp', '/nft-art/art/nfa-0147-v0.0.2-t.webp', 1200, 1200),
     'NFA-0148': ('The White Door', '/nft-art/art/nfa-0148-v0.0.2.webp', '/nft-art/art/nfa-0148-v0.0.2-t.webp', 1200, 1200),
     'NFA-0149': ('The Hall Door', '/nft-art/art/nfa-0149-v0.0.2.webp', '/nft-art/art/nfa-0149-v0.0.2-t.webp', 1200, 1200),
+    'GEN-0001': ('A guest cottage on the steppe, breakfast laid at the open door', '/_cedwyn/halves/img/patagonia-bnb-cottage.webp', '/_cedwyn/halves/img/patagonia-bnb-cottage-t.webp', 1200, 800),
     'REC-0001': ('Tŷ Mawr, reconstruction from the 1974 measured survey', '/_cedwyn/halves/img/ty-mawr-1974-reconstruction.webp', '/_cedwyn/halves/img/ty-mawr-1974-reconstruction-t.webp', 1200, 1200),
 }
 # Survey drawings shown among the pieces (27 Oct 2026, Sion 11:34 GMT: four pieces that are not the farm came out, NFA-0139,
@@ -754,10 +783,10 @@ ARG_REC = {
                  'cy': 'Tŷ Mawr: ail-greu o arolwg mesuredig 1974; uchder y to wedi’i amcangyfrif',
                  'es': 'Tŷ Mawr: reconstrucción a partir del levantamiento medido de 1974; altura del tejado estimada'},
 }
-ARG_NFT_HERO = 'NFA-0094'
-ARG_NFT_VENUE = {'room': 'NFA-0059', 'cottage': 'NFA-0141', 'villa': 'NFA-0107', 'wed': 'NFA-0100'}
+ARG_NFT_HERO = 'NFA-0157'
+ARG_NFT_VENUE = {'room': 'NFA-0059', 'cottage': 'GEN-0001', 'villa': 'NFA-0035', 'wed': 'NFA-0100'}
 ARG_NFT_SLOTS = {
-    'hl0': ['NFA-0157', 'NFA-0035', 'NFA-0026', 'NFA-0076', 'NFA-0032'],
+    'hl0': ['NFA-0094', 'NFA-0035', 'NFA-0026', 'NFA-0076', 'NFA-0032'],
     'hl1': ['NFA-0011', 'NFA-0046', 'NFA-0111', 'NFA-0112', 'NFA-0137', 'NFA-0138'],
     'hl2': ['NFA-0047', 'NFA-0093', 'NFA-0115', 'NFA-0114', 'NFA-0043'],
     'hl3': ['NFA-0050', 'NFA-0090', 'NFA-0106', 'NFA-0121'],
@@ -835,7 +864,7 @@ def argentina(sections, S, cfg, H):
                     + '</li>' for i in range(1, 8) if tx(T, 'a_feat' + str(i), l))
     vimg = ARG_NFT_VENUE
     unit = {'room_night': '/', 'night': '/', 'day': '/'}
-    vo = ''.join(f'<label class="hv-opt"><input type="radio" name="venue" value="{v["id"]}"{" checked" if v["id"] == "room" else ""}><img src="{ARG_NFT[vimg[v["id"]]][2]}" width="88" height="62" alt="" loading="lazy">'
+    vo = ''.join(f'<label class="hv-opt"><input type="radio" name="venue" value="{v["id"]}"{" checked" if v["id"] == "room" else ""}><img src="{ARG_NFT[vimg[v["id"]]][2]}" width="88" height="62" alt="{E(ARG_NFT[vimg[v["id"]]][0])}" loading="lazy">'
                  f'<span><b data-i18n="v_{v["id"]}">{E(tx(T,"v_"+v["id"],l))}</b><small data-i18n="v_{v["id"]}_d">{E(tx(T,"v_"+v["id"]+"_d",l))}</small><span class="pr">£{v["price"]:,}</span></span></label>' for v in H['venues'])
     ap = '<option value="NONE" data-i18n="b_nofly">' + E(tx(T, 'b_nofly', l)) + '</option>' + ''.join(
         f'<option value="{a}"{" selected" if a == "LHR" else ""}>{E(nm)} ({a})' + (f' · £{p:,}' if p else '') + '</option>' if a != 'OTHER' else f'<option value="OTHER">…</option>' for a, nm, p in H['airports'])

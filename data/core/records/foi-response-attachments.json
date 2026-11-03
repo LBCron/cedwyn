@@ -1,7 +1,7 @@
 {
   "schema": "cedwyn-core/0.1.0",
   "note": "Discrete source-attachment occurrences from FOI/EIR and associated information-rights correspondence. Each record preserves the attachment filename, source authority, response date, request reference, declared MIME type and current byte-ingestion state. An entry records metadata only until the unchanged original bytes are imported and hashed.",
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "records": [
     {
       "id": "AR-FOI-0001",
@@ -4316,6 +4316,1270 @@
       ],
       "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0052",
       "origin": "gmail-attachment-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0053",
+      "kind": "artifact",
+      "slug": "ar-foi-0053",
+      "title": "Vale of Glamorgan Council — Information Governance — Great House Farm, Llandough (89/01396/OUT).eml (2026-10-29; EIR 00211483 / 00211484)",
+      "aliases": [],
+      "date": {
+        "display": "29 October 2026",
+        "sort": "2026-10-29",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth",
+      "description": "Email artefact attached by the Vale of Glamorgan Council to its 29 October 2026 correspondence on requests 00211483 and 00211484. The Council described the attachments as copies of the original requests. The original attachment bytes have not been imported or independently checked; this entry records attachment metadata only.",
+      "provenance": {
+        "holder": "Vale of Glamorgan Council — Information Governance",
+        "reference": "EIR 00211483 / 00211484",
+        "date": "2026-10-29",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a186fef75ae76ee.",
+        "independent_origin_id": "ORIG-AR-FOI-0053"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Attached email artefact — original bytes not ingested",
+        "reason": "This attached EML is a copy supplied within the Council's response. Do not count it as a second authority response or independent disclosure.",
+        "tags": [
+          "FOI-EIR",
+          "Vale-of-Glamorgan",
+          "Llandough",
+          "email-attachment",
+          "rfc822"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "Great House Farm, Llandough (89/01396/OUT).eml",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Vale of Glamorgan Council · EIR 00211483 / 00211484",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "29 October 2026",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "message/rfc822",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Copy of an original request supplied by the Council with its 29 October response; preserve as correspondence context, not as a new disclosure or response.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Vale of Glamorgan Council email of 29 October 2026",
+          "href": "https://email.bucklerfamily.estate/reference/1a186fef75ae76ee"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0053",
+      "origin": "gmail-attachment-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0054",
+      "kind": "artifact",
+      "slug": "ar-foi-0054",
+      "title": "Vale of Glamorgan Council — Information Governance — RE: Escalation — Llandough ward member silence: Great House Farm / Church View Close and removal of commemorative tree.eml (2026-10-29; EIR 00211483 / 00211484)",
+      "aliases": [],
+      "date": {
+        "display": "29 October 2026",
+        "sort": "2026-10-29",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth",
+      "description": "Email artefact attached by the Vale of Glamorgan Council to its 29 October 2026 correspondence on requests 00211483 and 00211484. The Council said it was providing copies of the original requests. The attachment is an earlier correspondence item included in the Council's bundle; its original bytes have not been imported or independently checked. This entry is metadata only.",
+      "provenance": {
+        "holder": "Vale of Glamorgan Council — Information Governance",
+        "reference": "EIR 00211483 / 00211484",
+        "date": "2026-10-29",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a186fef75ae76ee.",
+        "independent_origin_id": "ORIG-AR-FOI-0054"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Attached email artefact — original bytes not ingested",
+        "reason": "An attached correspondence copy supplied inside a later Council email. It is not a separate disclosure response.",
+        "tags": [
+          "FOI-EIR",
+          "Vale-of-Glamorgan",
+          "Llandough",
+          "email-attachment",
+          "rfc822"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "RE: Escalation — Llandough ward member silence: Great House Farm / Church View Close and removal of commemorative tree.eml",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Vale of Glamorgan Council · EIR 00211483 / 00211484",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "29 October 2026",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "message/rfc822",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Earlier related correspondence supplied as an attachment in the Council's response; retain as context and do not count as a separate substantive decision.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Vale of Glamorgan Council email of 29 October 2026",
+          "href": "https://email.bucklerfamily.estate/reference/1a186fef75ae76ee"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0054",
+      "origin": "gmail-attachment-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0055",
+      "kind": "artifact",
+      "slug": "ar-foi-0055",
+      "title": "Vale of Glamorgan Council — Information Governance — FAO: Barry Preservation Society / the Civic Trust.eml (2026-10-29; Internal review 00211463)",
+      "aliases": [],
+      "date": {
+        "display": "29 October 2026",
+        "sort": "2026-10-29",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth",
+      "description": "Email artefact attached by the Vale of Glamorgan Council to its 29 October 2026 internal-review correspondence under reference 00211463. The Council says the attachment reproduces the request about the Barry Preservation Society / Civic Trust representation on planning application 89/01396/OUT. The original attachment bytes have not been imported or independently checked; this entry is metadata only.",
+      "provenance": {
+        "holder": "Vale of Glamorgan Council — Information Governance",
+        "reference": "Internal review 00211463",
+        "date": "2026-10-29",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a0c1c87a6f1717d.",
+        "independent_origin_id": "ORIG-AR-FOI-0055"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Attached email artefact — original bytes not ingested",
+        "reason": "The attachment identifies the precise scope that the Council says it is reviewing; it is not itself the requested 1989 representation.",
+        "tags": [
+          "FOI-EIR",
+          "Vale-of-Glamorgan",
+          "Llandough",
+          "email-attachment",
+          "rfc822"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "FAO: Barry Preservation Society / the Civic Trust.eml",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Vale of Glamorgan Council · Internal review 00211463",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "29 October 2026",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "message/rfc822",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Copy of the underlying information request attached by the Council to its internal-review response; preserve as an attached request artefact, not as a disclosure or review outcome.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Vale of Glamorgan Council email of 29 October 2026",
+          "href": "https://email.bucklerfamily.estate/reference/1a0c1c87a6f1717d"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0055",
+      "origin": "gmail-attachment-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0056",
+      "kind": "artifact",
+      "slug": "ar-foi-0056",
+      "title": "Cardiff Council — FOI25766 response document (28 July 2026; original attachment not inspected)",
+      "aliases": [],
+      "date": {
+        "display": "28 July 2026",
+        "sort": "2026-07-28",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth",
+      "description": "Metadata record for the Cardiff Council information-rights portal email of 28 July 2026 stating that its response to FOI25766 was attached as “FOI25766 - FOI Response Document.docx”. The email relates to the request for records about furniture, furnishings, antiques, fixtures, heirlooms and other movable property said to originate from Great House Farm. The DOCX bytes have not been imported or reviewed through the connected mailbox interface. This entry records the existence and filename of the attachment only; no claim is made about the substance or completeness of the Council's response.",
+      "provenance": {
+        "holder": "Cardiff Council — Information Governance Team (House on the Hill portal)",
+        "reference": "FOI25766",
+        "date": "2026-07-28",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 19fa89f636aee4f5.",
+        "independent_origin_id": "ORIG-AR-FOI-0056"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Council response attachment — DOCX not inspected",
+        "reason": "The email confirms that a response document was attached, but the actual document bytes are not exposed by the connected mailbox interface. Do not infer the outcome of the FOI request or treat the email body as a substitute for the attached decision.",
+        "tags": [
+          "Cardiff-Council",
+          "FOI25766",
+          "Llandough",
+          "movable-property",
+          "DOCX"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "FOI25766 - FOI Response Document.docx",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Cardiff Council Information Governance Team · FOI25766",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "28 July 2026",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment said by Cardiff Council to contain the FOI25766 response. The email itself confirms only that a response was attached and gives the internal-review route.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Cardiff Council email of 28 July 2026",
+          "href": "https://email.bucklerfamily.estate/reference/19fa89f636aee4f5"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0056",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0057",
+      "kind": "artifact",
+      "slug": "ar-foi-0057",
+      "title": "Defra — Response_FOI2026_23886.pdf (2026-10-21; FOI2026/23886)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-21",
+        "sort": "2026-10-21",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "Defra’s FOI response attachment, delivered by its eCase system on 21 October 2026. The original PDF bytes have not been made available through the connected mailbox and have not been inspected; this record does not summarise the PDF contents.",
+      "provenance": {
+        "holder": "Defra",
+        "reference": "FOI2026/23886",
+        "date": "2026-10-21",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a15f01d6f789066.",
+        "independent_origin_id": "ORIG-AR-FOI-0057"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "pdf"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "Response_FOI2026_23886.pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Defra · FOI2026/23886",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-21",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Defra correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a15f01d6f789066"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0057",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0058",
+      "kind": "artifact",
+      "slug": "ar-foi-0058",
+      "title": "Historic England — To Send.zip (2026-10-27; 26/04323)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-27",
+        "sort": "2026-10-27",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "ZIP attachment supplied with Historic England’s 27 October follow-up. The email body says it includes the 12 January 2018 transfer letter and the deaccession statement recording the 25 July 2017 decision; the archive itself has not been opened or inventoried. Metadata only; no binary import or hash is claimed.",
+      "provenance": {
+        "holder": "Historic England",
+        "reference": "26/04323",
+        "date": "2026-10-27",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a15e2cfd24eaf4d.",
+        "independent_origin_id": "ORIG-AR-FOI-0058"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "zip"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "To Send.zip",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Historic England · 26/04323",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-27",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/zip",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Historic England correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a15e2cfd24eaf4d"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0058",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0059",
+      "kind": "artifact",
+      "slug": "ar-foi-0059",
+      "title": "Amgueddfa Cymru — 63-24 letter.pdf (2026-10-05; FOI 2026-036)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-05",
+        "sort": "2026-10-05",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "Attachment supplied with the Museum’s FOI 2026-036 response. The email describes accession 63.24 as an archaeological accession relating to Church Farm; the PDF itself has not been inspected. Preserve the site distinction and do not infer that it concerns Great House Farm.",
+      "provenance": {
+        "holder": "Amgueddfa Cymru — Museum Wales",
+        "reference": "FOI 2026-036",
+        "date": "2026-10-05",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a10c2ac609d288e.",
+        "independent_origin_id": "ORIG-AR-FOI-0059"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "pdf"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "63-24 letter.pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Amgueddfa Cymru — Museum Wales · FOI 2026-036",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-05",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Amgueddfa Cymru — Museum Wales correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a10c2ac609d288e"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0059",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0060",
+      "kind": "artifact",
+      "slug": "ar-foi-0060",
+      "title": "Amgueddfa Cymru — 63.24.1.pdf (2026-10-05; FOI 2026-036)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-05",
+        "sort": "2026-10-05",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "Attachment supplied with the Museum’s FOI 2026-036 response concerning the separately listed 63.24 archaeological accession. The original PDF has not been inspected; metadata only.",
+      "provenance": {
+        "holder": "Amgueddfa Cymru — Museum Wales",
+        "reference": "FOI 2026-036",
+        "date": "2026-10-05",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a10c2ac609d288e.",
+        "independent_origin_id": "ORIG-AR-FOI-0060"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "pdf"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "63.24.1.pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Amgueddfa Cymru — Museum Wales · FOI 2026-036",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-05",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Amgueddfa Cymru — Museum Wales correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a10c2ac609d288e"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0060",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0061",
+      "kind": "artifact",
+      "slug": "ar-foi-0061",
+      "title": "Amgueddfa Cymru — 63.24.2.pdf (2026-10-05; FOI 2026-036)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-05",
+        "sort": "2026-10-05",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "Attachment supplied with the Museum’s FOI 2026-036 response concerning the separately listed 63.24 archaeological accession. The original PDF has not been inspected; metadata only.",
+      "provenance": {
+        "holder": "Amgueddfa Cymru — Museum Wales",
+        "reference": "FOI 2026-036",
+        "date": "2026-10-05",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a10c2ac609d288e.",
+        "independent_origin_id": "ORIG-AR-FOI-0061"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "pdf"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "63.24.2.pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Amgueddfa Cymru — Museum Wales · FOI 2026-036",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-05",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Amgueddfa Cymru — Museum Wales correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a10c2ac609d288e"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0061",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0062",
+      "kind": "artifact",
+      "slug": "ar-foi-0062",
+      "title": "Cardiff Central Library — Calendar of Bute Documents I–XLI.pdf (2026-10-23; Bute X.6(12) enquiry)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-23",
+        "sort": "2026-10-23",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "Finding aid supplied with the Central Library reply about Bute X.6(12). The PDF bytes have not been inspected; this catalogue entry records the attachment occurrence, not a search result for Great House Farm.",
+      "provenance": {
+        "holder": "Cardiff Central Library",
+        "reference": "Bute X.6(12) enquiry",
+        "date": "2026-10-23",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a11eb95e6e388ee.",
+        "independent_origin_id": "ORIG-AR-FOI-0062"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "pdf"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "1. Calendar of Bute Documents I-XLI.pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Cardiff Central Library · Bute X.6(12) enquiry",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-23",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Cardiff Central Library correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a11eb95e6e388ee"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0062",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0063",
+      "kind": "artifact",
+      "slug": "ar-foi-0063",
+      "title": "Cardiff Central Library — Bute property accounts guide.pdf (2026-10-23; Bute X.6(12) enquiry)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-23",
+        "sort": "2026-10-23",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "Guide supplied with the Central Library reply about the wider Bute Papers collection. Original PDF not inspected; the source email says X.6(12) itself was checked and no relevant entry found, while detailed searching of other Bute materials may be separately chargeable.",
+      "provenance": {
+        "holder": "Cardiff Central Library",
+        "reference": "Bute X.6(12) enquiry",
+        "date": "2026-10-23",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a11eb95e6e388ee.",
+        "independent_origin_id": "ORIG-AR-FOI-0063"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "pdf"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "Bute 10 - Propery accounts.pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Cardiff Central Library · Bute X.6(12) enquiry",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-23",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Cardiff Central Library correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a11eb95e6e388ee"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0063",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0064",
+      "kind": "artifact",
+      "slug": "ar-foi-0064",
+      "title": "Wales Office — IR 26 16 - Buckler - Response.pdf (2026-10-26; IR/26/16)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-26",
+        "sort": "2026-10-26",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "PDF response to the internal-review request under IR/26/16. The connected mailbox exposed attachment metadata only; the response has not been inspected and no substantive conclusion is recorded.",
+      "provenance": {
+        "holder": "Wales Office",
+        "reference": "IR/26/16",
+        "date": "2026-10-26",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a1793ba43e8d95b.",
+        "independent_origin_id": "ORIG-AR-FOI-0064"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "pdf"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "IR 26 16  - Buckler - Response.pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Wales Office · IR/26/16",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-26",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Wales Office correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a1793ba43e8d95b"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0064",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0065",
+      "kind": "artifact",
+      "slug": "ar-foi-0065",
+      "title": "RCAHMW — LES08 Order Form 2021.docx (2026-10-06; RC26-0375)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-06",
+        "sort": "2026-10-06",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "Order form attached to the Commission’s 6 October substantive response. The document itself has not been independently inspected; its existence is recorded as attachment metadata only.",
+      "provenance": {
+        "holder": "Royal Commission on the Ancient and Historical Monuments of Wales",
+        "reference": "RC26-0375",
+        "date": "2026-10-06",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a11178b91ab138c.",
+        "independent_origin_id": "ORIG-AR-FOI-0065"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "docx"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "LES08 Order Form 2021.docx",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Royal Commission on the Ancient and Historical Monuments of Wales · RC26-0375",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-06",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Royal Commission on the Ancient and Historical Monuments of Wales correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a11178b91ab138c"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0065",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0066",
+      "kind": "artifact",
+      "slug": "ar-foi-0066",
+      "title": "RCAHMW — LES16 Price List 2026.pdf (2026-10-06; RC26-0375)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-06",
+        "sort": "2026-10-06",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "Price list attached to the Commission’s 6 October substantive response. The document itself has not been independently inspected; its existence is recorded as attachment metadata only.",
+      "provenance": {
+        "holder": "Royal Commission on the Ancient and Historical Monuments of Wales",
+        "reference": "RC26-0375",
+        "date": "2026-10-06",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a11178b91ab138c.",
+        "independent_origin_id": "ORIG-AR-FOI-0066"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "pdf"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "LES16 Price List 2026.pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Royal Commission on the Ancient and Historical Monuments of Wales · RC26-0375",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-06",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/pdf",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Royal Commission on the Ancient and Historical Monuments of Wales correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a11178b91ab138c"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0066",
+      "origin": "gmail-archive-review-2026-10-31",
+      "reworded": false,
+      "public": true,
+      "updated": "2026-10-31",
+      "rev": 1
+    },
+    {
+      "id": "AR-FOI-0067",
+      "kind": "artifact",
+      "slug": "ar-foi-0067",
+      "title": "RCAHMW — LES08 Order Form 2021.docx (follow-up) (2026-10-26; RC26-0375)",
+      "aliases": [],
+      "date": {
+        "display": "2026-10-26",
+        "sort": "2026-10-26",
+        "precision": "source email date"
+      },
+      "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth records enquiry",
+      "description": "Order form attached again to the Commission’s 26 October response to three follow-up points. This is a separate attachment occurrence from the 6 October email; original bytes not imported or hashed.",
+      "provenance": {
+        "holder": "Royal Commission on the Ancient and Historical Monuments of Wales",
+        "reference": "RC26-0375",
+        "date": "2026-10-26",
+        "obtained": "Attachment metadata recorded from the connected mailbox on 31 October 2026; source email thread 1a178895fba55836.",
+        "independent_origin_id": "ORIG-AR-FOI-0067"
+      },
+      "grade": null,
+      "scope": {
+        "disposition": "context_only",
+        "label": "Response / finding-aid attachment — original bytes not ingested",
+        "reason": "Source email confirms this attachment occurrence, but the original attachment bytes have not been imported or independently inspected.",
+        "tags": [
+          "FOI-EIR",
+          "Llandough",
+          "email-attachment",
+          "docx"
+        ]
+      },
+      "places": [],
+      "evidence": [
+        "EV-0901"
+      ],
+      "detail": [
+        {
+          "heading": "Original filename",
+          "text": "LES08 Order Form 2021.docx",
+          "form": "term"
+        },
+        {
+          "heading": "Source authority and reference",
+          "text": "Royal Commission on the Ancient and Historical Monuments of Wales · RC26-0375",
+          "form": "term"
+        },
+        {
+          "heading": "Source email date",
+          "text": "2026-10-26",
+          "form": "term"
+        },
+        {
+          "heading": "Mailbox MIME type",
+          "text": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "form": "term"
+        },
+        {
+          "heading": "Source role",
+          "text": "Attachment accompanying authority correspondence; contents not independently reviewed, except where the email body itself describes the attachment.",
+          "form": "term"
+        },
+        {
+          "heading": "Binary and hash status",
+          "text": "Original attachment bytes not imported into the Cedwyn evidence store; contents not independently reviewed; SHA-256 not calculated. No substitute file or download link is supplied.",
+          "form": "term"
+        }
+      ],
+      "sources": [
+        {
+          "text": "Royal Commission on the Ancient and Historical Monuments of Wales correspondence",
+          "href": "https://email.bucklerfamily.estate/reference/1a178895fba55836"
+        }
+      ],
+      "related": [
+        "EV-0901"
+      ],
+      "page": "/research/evidence/ev-0901-foi-response-attachment-catalogue/#AR-FOI-0067",
+      "origin": "gmail-archive-review-2026-10-31",
       "reworded": false,
       "public": true,
       "updated": "2026-10-31",

@@ -34,7 +34,7 @@
   "kicker": "The family estate directory",
   "eyebrow": "A family estate · Wales to Patagonia and beyond",
   "monogram": "CE",
-  "description": "Cedwyn Estate, the Williams-Buckler family directory: one archive of Great House Farm, {n} layers to explore it, by way of Wales, Argentina or Cyberspace.",
+  "description": "Cedwyn Estate, the Williams-Buckler family directory: one archive of Great House Farm, {n} layers to explore it, by way of Wales, Argentina or Online.",
   "layers_note": "Whichever way you come in, the same {n} layers open here, in four groups.",
   "realms": [
    {
@@ -51,8 +51,8 @@
    },
    {
     "id": "cyberspace",
-    "kick": "Online",
-    "title": "Cyberspace — the digital estate",
+    "kick": "Anywhere",
+    "title": "Online — the digital estate",
     "note": "Play, browse, read and build the estate from anywhere."
    }
   ]
@@ -191,6 +191,58 @@
    "group": "artifacts"
   },
   {
+   "id": "tithe-h3",
+   "title": "Tithe H3",
+   "cy": "Tithe H3",
+   "es": "Tithe H3",
+   "live": "https://cedwyn.bucklerfamily.estate/tithe-h3/",
+   "hosts": [],
+   "paths": [],
+   "desc": "The parcels of the David Stewart estate plan of Cedfin alias Ty Mawr, traced through the 1841 tithe map of Landough, Cogan and Leckwith onto today's map, with an OS grid reference and H3 hexagons for each. Webapp 42 of 59.",
+   "group": "artifacts",
+   "snapshot_branch": "section/tithe-h3",
+   "slot": 42
+  },
+  {
+   "id": "cloudflare",
+   "title": "Cloudflare",
+   "cy": "Cloudflare",
+   "es": "Cloudflare",
+   "live": "https://cedwyn.bucklerfamily.estate/cloudflare/",
+   "hosts": [],
+   "paths": [],
+   "desc": "The estate's Cloudflare usage as graphs against the free plan: D1 rows written and read, storage, Workers requests, errors and CPU, KV operations and site traffic, refreshed every 15 minutes. Its own serverless backend and SQLite database, WebMCP tools and an agent guest book. Webapp 43 of 59.",
+   "group": "interactive",
+   "snapshot_branch": "section/cloudflare",
+   "slot": 43
+  },
+  {
+   "id": "analytics",
+   "title": "Analytics",
+   "cy": "Dadansoddeg",
+   "es": "Analítica",
+   "live": "https://cedwyn.bucklerfamily.estate/analytics/",
+   "hosts": [],
+   "paths": [],
+   "desc": "Website analytics for bucklerfamily.estate and its subdomains as graphs: visits, page views, unique visitors, top pages, referrers, hostnames, countries, devices, browsers, status codes, humans and bots, refreshed every 15 minutes. Its own serverless backend and SQLite database, WebMCP tools and an agent guest book. Webapp 45 of 59.",
+   "group": "interactive",
+   "snapshot_branch": "section/analytics",
+   "slot": 45
+  },
+  {
+   "id": "spill",
+   "title": "Spill",
+   "cy": "Spill",
+   "es": "Spill",
+   "live": "https://cedwyn.bucklerfamily.estate/spill/",
+   "hosts": [],
+   "paths": [],
+   "desc": "Spill: the protocol any AI agent follows to submit, from its own conversation with the owner since its last spill, sourced facts about the Williams family, Tŷ Mawr / Great House Farm, the Cedwyn estate and the 1987 case that the evidence catalogue does not hold (llms.txt, protocol.json, submission endpoint with dedupe). Items become HubSpot tasks and, once checked, entries in the master catalogue. Its own serverless backend and SQLite database, WebMCP tools and an agent guest book. Webapp 44 of 59.",
+   "group": "interactive",
+   "snapshot_branch": "section/spill",
+   "slot": 44
+  },
+  {
    "id": "infographic",
    "title": "The Land Changing Hands",
    "cy": "Y Tir yn Newid Dwylo",
@@ -237,7 +289,8 @@
    "root": "static/bpvsbuckler",
    "build": "(npm ci --no-audit --no-fund || npm install --no-audit --no-fund) && npm run build",
    "crawl_fallback": true,
-   "group": "story"
+   "group": "story",
+   "note": "A date-led documentary: year galleries, original photographs and records, scene-by-scene accounts, and the questions the archive leaves open. Parcel and title-chain modelling is explored separately."
   },
   {
    "id": "thousand-cuts",
@@ -536,6 +589,7 @@
    "paths": [],
    "desc": "",
    "crawl": "https://email.bucklerfamily.estate/",
+   "no_fill": true,
    "group": "research"
   },
   {
@@ -713,6 +767,31 @@
    "group": "research"
   },
   {
+   "id": "that-old-chestnut",
+   "title": "That Old Chestnut",
+   "cy": "Yr Hen Dric",
+   "es": "El truco de siempre",
+   "live": "https://cedwyn.bucklerfamily.estate/that-old-chestnut/",
+   "hosts": [],
+   "paths": [],
+   "desc": "FOI and EIR replies about Great House Farm / Tŷ Mawr read line by line: wording that sets up a refusal, and 'not held' answers that later became records found, each with the statute it points at. Webapp 38 of 59.",
+   "branch": "that-old-chestnut",
+   "dir": "public",
+   "group": "research"
+  },
+  {
+   "id": "forensic",
+   "title": "Forensic Assessments",
+   "cy": "Asesiadau Fforensig",
+   "es": "Evaluaciones forenses",
+   "live": "https://cedwyn.bucklerfamily.estate/forensic/",
+   "hosts": [],
+   "paths": [],
+   "desc": "One forensic assessment per institution in the Great House Farm / Tŷ Mawr record: its role, its replies to information requests, and every contact since its last assessment. Webapp 39 of 59.",
+   "group": "research",
+   "snapshot_branch": "section/forensic"
+  },
+  {
    "id": "nft-art",
    "title": "The Garden Gallery",
    "cy": "Oriel yr Ardd",
@@ -750,13 +829,27 @@
    "branch": "blog",
    "dir": "public",
    "group": "research"
+  },
+  {
+   "id": "mr-wolf",
+   "title": "Mr Wolf",
+   "cy": "Mr Wolf",
+   "es": "Mr Wolf",
+   "live": "https://cedwyn.bucklerfamily.estate/mr-wolf/",
+   "hosts": [],
+   "paths": [],
+   "desc": "What's the time, Mr Wolf? A leaderboard of the leads closest to the Takhar threshold for reopening the 1987 judgment, each scored out of 200 (100 is the threshold). Our case, prospective, not a finding of any court. Webapp 40 of 59.",
+   "group": "research",
+   "snapshot_branch": "section/mr-wolf",
+   "slot": 40
   }
  ],
  "allowed_tile_templates": [
   "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/",
-  "https://{s}.tile.openstreetmap.org/"
+  "https://{s}.tile.openstreetmap.org/",
+  "https://mapseries-tilesets.s3.amazonaws.com/os/6inchsecond/"
  ],
- "allowed_tile_note": "Map tiles are fetched by the map library per zoom level and position and cannot be stored as fixed files; these two tile templates (satellite layer on /maps/, street map on /app/) are the only external requests left. — Sion's Tab agent",
+ "allowed_tile_note": "Map tiles are fetched by the map library per zoom level and position and cannot be stored as fixed files; these three tile templates (satellite layer on /maps/, street map on /app/ and /tithe-h3/, the National Library of Scotland OS six-inch c.1900 layer on /tithe-h3/, 2 Nov 2026) are the only external requests left.",
  "vendor_extra": [
   "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js"
  ],

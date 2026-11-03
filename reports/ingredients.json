@@ -3812,12 +3812,6 @@
   {
    "config": "ingredients.json",
    "theme": "research",
-   "file": "evidence/ev-0021-western-mail-1938-cowbridge-farm-sale/index.html",
-   "n": 1
-  },
-  {
-   "config": "ingredients.json",
-   "theme": "research",
    "file": "evidence/ev-0042-llandough-school-conveyance-1965/index.html",
    "n": 1
   },
@@ -5534,12 +5528,6 @@
   {
    "config": "ingredients.json",
    "theme": "research",
-   "file": "evidence/ev-0021-western-mail-1938-cowbridge-farm-sale/index.html",
-   "n": 1
-  },
-  {
-   "config": "ingredients.json",
-   "theme": "research",
    "file": "evidence/ev-0066-hmlr-wa240304-item-10-register-1983/index.html",
    "n": 1
   },
@@ -7191,12 +7179,6 @@
    "config": "ingredients.json",
    "theme": "research",
    "file": "embed/index.html",
-   "n": 1
-  },
-  {
-   "config": "ingredients.json",
-   "theme": "research",
-   "file": "evidence/ev-0021-western-mail-1938-cowbridge-farm-sale/index.html",
    "n": 1
   },
   {
@@ -10904,91 +10886,91 @@
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 1
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 1
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 1
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 20
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 6
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 16
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 8
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 6
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 9
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 10
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 1
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 1
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 1
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 1
   },
   {
    "config": "ingredients.json",
    "theme": "story",
-   "file": "assets/index-Dktr8I9D.js",
+   "file": "assets/index-Yz4I5QJe.js",
    "n": 3
   },
   {
@@ -11625,12 +11607,6 @@
    "config": "ingredients.json",
    "theme": "story",
    "file": "research/her-record-ggat02038s.txt",
-   "n": 1
-  },
-  {
-   "config": "ingredients.json",
-   "theme": "research",
-   "file": "evidence/ev-0629-rcahmw-na-gl-88-49-description-1988/index.html",
    "n": 1
   },
   {
@@ -13592,7 +13568,7 @@
   {
    "config": "spa-basepath.json",
    "theme": "dartboard",
-   "file": "assets/index-BthLk2EV.js",
+   "file": "assets/index-DRhLH7y7.js",
    "n": 1
   },
   {
@@ -13758,6 +13734,15 @@
    "theme": "dartboard",
    "file": "index.html",
    "find": "/wayback/go/?u=https%3A%2F%2Fgithub.com%2Funclehowell%2Fcedw"
+  }
+ ],
+ "kept_verbatim": [
+  {
+   "config": "ingredients.json",
+   "theme": "research",
+   "file": "evidence/ev-0629-rcahmw-na-gl-88-49-description-1988/index.html",
+   "n": 1,
+   "find": "In the early C19 the freehold was acquired by the Bute Estat"
   }
  ]
 }
