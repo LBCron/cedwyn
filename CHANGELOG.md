@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.4.0 (3 Nov 2026)
+H3 resolution picker: 8, 10, 11, 12 (default), 13, 14, 15. Resolution 15 is the finest the H3 grid has (about 0.9 m² a cell); there is no resolution above it. Resolution 8 keeps the cell holding each parcel's centre. From 10 up, cells are generated in the browser with h3-js 4.5.0 (polygonToCells, vendored) for the map area in view only, never stored; a cell is drawn when its centre falls inside a parcel outline (centroid-in-polygon), in that parcel's traffic-light colour. Work is capped at about 20,000 cells; past the cap, and below zoom 17 (res 14) or zoom 19 (res 15), a "Zoom in to see res N" prompt shows with a zoom button. The map zooms to 21 (tiles scaled past their own zoom). Tapping a parcel names the hexagon under the tap at the chosen resolution.
+
 ## v0.3.0 (3 Nov 2026)
 Traffic-light layer, on by default with a switch in the layer bar. Red: every parcel on the c.1824 estate plan of Cedfin alias Ty Mawr. Amber: land with a possible link that is not established: Parcel B (plan 5 and 6, over 1841 tithe 193; match not checked), Leckwith Common and the playing fields (City of Cardiff (Leckwith Common) Compulsory Purchase Order 1957, confirmed 1958; extent not yet located, so a guide pin marks today's Leckwith Moors park), Parcel C (no boundary held; not drawn). Green: Parcel A (plan parcels over 1841 tithe 209, 211, 219, 220: house and yard, orchard, wood strip, field; a working match). Legend wording: family-associated land, a working classification, not a legal finding. Parcel popups and the table carry the light.
 
