@@ -1,0 +1,167 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "spill",
+ "uid": "APP-44",
+ "slot": {
+  "n": 44,
+  "of": 59,
+  "label": "44 of 59"
+ },
+ "status": "live",
+ "section": "Online",
+ "sections_shown": [
+  "Online"
+ ],
+ "group": "interactive",
+ "title": {
+  "en": "Spill",
+  "cy": "Spill",
+  "es": "Spill"
+ },
+ "description": "Spill: the protocol any AI agent follows to submit, from its own conversation with the owner since its last spill, sourced facts about the Williams family, Tŷ Mawr / Great House Farm, the Cedwyn estate and the 1987 case that the evidence catalogue does not hold (llms.txt, protocol.json, submission endpoint with dedupe). Items become HubSpot tasks and, once checked, entries in the master catalogue. Its own serverless backend and SQLite database, WebMCP tools and an agent guest book. Webapp 44 of 59.",
+ "path": "/spill/",
+ "aliases": [],
+ "legacy_hosts": [],
+ "branch": {
+  "name": "section/spill",
+  "exists": true,
+  "standard_name": "webapp/spill",
+  "source_dir": null,
+  "other_branches": [
+   "spill-main"
+  ]
+ },
+ "front_end": {
+  "kind": "static_plus_dynamic",
+  "hosting": "cloudflare_pages",
+  "project": "cedwyn (cedwyn-274.pages.dev, production branch site)",
+  "build": "build-cedwyn (GitHub Actions) writes branch site",
+  "worker_on_read": true,
+  "notes": "apex bucklerfamily.estate reads run the router Worker until the static-first cutover (PR #157)"
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en",
+   "cy",
+   "es"
+  ],
+  "scripts": [
+   "/_cedwyn/runtime.js",
+   "/_cedwyn/ghf/ghf-boot.js"
+  ],
+  "status": "legacy"
+ },
+ "data": {
+  "slice": "spill",
+  "query": {
+   "kinds": [],
+   "uid_prefixes": [],
+   "tags": [],
+   "where": "",
+   "public_only": true
+  },
+  "registers": [
+   "section/spill"
+  ],
+  "catalogue_status": "n/a"
+ },
+ "local_store": {
+  "static": [
+   "/spill/_data/spill.json",
+   "/spill/api/v1/index.json"
+  ],
+  "client_cache": {
+   "enabled": true,
+   "store": "indexeddb",
+   "strategy": "stale-while-revalidate",
+   "max_age_s": 3600,
+   "revalidate_with": "/spill/api/v1/index.json rev",
+   "pull_from": "/catalogue-db/ static export (never a Worker)"
+  }
+ },
+ "api": {
+  "base": "/spill/api/v1/",
+  "outputs": [
+   {
+    "path": "/spill/api/v1/index.json",
+    "format": "json",
+    "description": "list + counts + rev + generated_at"
+   },
+   {
+    "path": "/spill/api/v1/items/{uid}.json",
+    "format": "json",
+    "description": "one record in this app's presentation, keyed by catalogue UID"
+   },
+   {
+    "path": "/spill/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "JSON Feed 1.1, newest first"
+   },
+   {
+    "path": "/spill/api/v1/feed.xml",
+    "format": "atom",
+    "description": "Atom 1.0 feed"
+   },
+   {
+    "path": "/spill/api/v1/rss.xml",
+    "format": "rss",
+    "description": "RSS 2.0 feed"
+   },
+   {
+    "path": "/spill/api/v1/data.xml",
+    "format": "xml",
+    "description": "the whole slice as XML"
+   }
+  ],
+  "cors": "*",
+  "cache_control": "public, max-age=300",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [],
+ "consumed_by": [],
+ "external_sources": [],
+ "dynamic_endpoints": [
+  {
+   "path": "/spill/api/*",
+   "worker": "cedwyn-spill",
+   "why": "writes (posts); reads to become static"
+  }
+ ],
+ "migration": {
+  "phase": "branch",
+  "phases_done": [
+   "inventory",
+   "manifest",
+   "branch"
+  ],
+  "rag": "amber",
+  "next_action": "write the slice entry in data/core/slices.json and generate /spill/api/v1/",
+  "blockers": [
+   "a Worker runs on page reads today (route on the cedwyn host); the static-first cutover and this app's static rewrite remove it"
+  ],
+  "prs": [
+   154
+  ],
+  "pilot": false
+ },
+ "owner": "Cedwyn editors (owner approval for catalogue changes)",
+ "version": "0.1.0",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "summary": "Manifest created from the live tour inventory (/areas.json nav), themes.json, data/site-areas.json and data/halves.json 1.4.0."
+  }
+ ],
+ "sources": [
+  "/areas.json nav (cedwyn-274.pages.dev, read 2026-11-03)",
+  "themes.json@main",
+  "data/site-areas.json@main",
+  "data/halves.json@PR#154 (1.4.0)",
+  "cedwyn branch list (git ls-remote)"
+ ]
+}
