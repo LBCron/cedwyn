@@ -74,7 +74,34 @@ async function main() {
   };
   vm.runInNewContext(source, {
     window, document, navigator: {}, location, URL, console: quietConsole,
-    fetch: async () => ({ ok: true, headers: { get: () => 'text/plain' }, text: async () => '' }),
+    fetch: async (url) => {
+      if (String(url).endsWith('/nomenclature/lexicon.json')) {
+        return {
+          ok: true,
+          headers: { get: () => 'application/json' },
+          json: async () => ({
+            version: '1.2.2',
+            generated: '2026-11-03',
+            concepts: [{
+              id: 'llandough',
+              name: 'Llandough (near Penarth)',
+              kind: 'place',
+              summary: 'Parish and locality beside Penarth and Cardiff.',
+              search_forms: ['Llandough-juxta-Barry', 'Llandough juxta Barry'],
+              variants: [{
+                term: 'Llandough juxta Barry',
+                source: '1831 Census index',
+                date: '1831',
+                status: 'secondary',
+                note: 'Parish-level locator, not proof of the farmhouse name.'
+              }],
+              not_same: [{ term: 'Llandough near Cowbridge', why: 'Separate possible match.' }]
+            }]
+          })
+        };
+      }
+      return { ok: true, headers: { get: () => 'text/plain' }, text: async () => '' };
+    },
     setTimeout, clearTimeout
   }, { filename: 'agent-tools.js' });
   await new Promise(resolve => setTimeout(resolve, 0));
@@ -83,7 +110,7 @@ async function main() {
   assert.equal(status.api, 'document.modelContext');
   assert.equal(status.verified, true);
   assert.equal(status.registered, true);
-  assert.equal(registered.length, 16, 'all sixteen tools must register');
+  assert.equal(registered.length, 17, 'all seventeen tools must register');
   for (const name of [
     'get_cedwyn_flow_watch_health',
     'get_cedwyn_flow_watch_events',
@@ -92,6 +119,15 @@ async function main() {
     assert.ok(registered.some(tool => tool.name === name), name + ' must be registered');
   }
   assert.equal(clientLoads, 0, 'catalogue client must load only when called');
+
+  const nomenclatureTool = registered.find(item => item.name === 'search_cedwyn_nomenclature');
+  assert.ok(nomenclatureTool, 'nomenclature search tool should be registered');
+  const nomenclatureResult = await nomenclatureTool.execute({ q: 'Llandough-juxta-Barry' }, {});
+  assert.equal(nomenclatureResult.results.length, 1);
+  assert.equal(nomenclatureResult.results[0].id, 'llandough');
+  assert.equal(nomenclatureResult.results[0].variant_matches[0].status, 'secondary');
+  assert.match(nomenclatureResult.results[0].caution, /not proof of property identity/i);
+  assert.equal(nomenclatureResult.results[0].not_same[0].term, 'Llandough near Cowbridge');
 
   const tool = registered.find(item => item.name === 'get_central_evidence_record');
   assert.ok(tool, 'central evidence read tool should be registered');
@@ -102,6 +138,6 @@ async function main() {
   assert.equal(result.record.assessment.interpretation, 'Interpretation kept separate.');
   assert.equal(clientLoads, 1, 'registered tool should lazy-load the catalogue client');
   assert.ok(queries.length >= 5, 'registered tool must issue central database queries');
-  console.log('WebMCP smoke test passed: 16 registered and verified, including three flow-watch resources; Level 1 record read through registered tool.');
+  console.log('WebMCP smoke test passed: 17 registered and verified, including nomenclature lookup and three flow-watch resources; Level 1 record read through registered tool.');
 }
 main().catch(err => { console.error(err); process.exitCode = 1; });
