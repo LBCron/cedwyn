@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn-migration-tracker/1",
- "updated": "2026-11-03T22:39Z",
+ "updated": "2026-11-03T22:41Z",
  "phases": [
   "inventory",
   "manifest",
@@ -1085,7 +1085,7 @@
    "prs": [],
    "pilot": true,
    "worker_on_read": false,
-   "catalogue_status": "pending_core_review_and_sync",
+   "catalogue_status": "not_yet",
    "candidate": "negative-finds"
   },
   {
