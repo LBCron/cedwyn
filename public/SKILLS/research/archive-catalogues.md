@@ -16,4 +16,4 @@
 12. Some county archive catalogues render only with JavaScript, so a plain fetch returns no record text: read them in a real browser session, or start from the national catalogue's entries for that archive (1 Nov 2026).
 13. Parliamentary debates (1 Nov 2026): the live debates search answers plain fetches with a bot check; use the printed volumes through full-text search, or the static historic pages by date.
 14. Source lists in journals carry archive references (1 Nov 2026): an identifier-scoped full-text search on a distinctive phrase, then on the next phrase, rebuilds a whole list entry from a loan-only book. For a large directory, read a few page heads to bracket the alphabet before searching page by page.
-
+15. When the national catalogue's record page answers "accepted, try later", its open interface's record-details call usually answers at once; archived PDFs download through the capture's original-file form (the timestamp followed by `id_`) with an ordinary browser identity (3 Nov 2026).
