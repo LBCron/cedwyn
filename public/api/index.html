@@ -43,13 +43,24 @@ type Artifact { id sha kind mime bytes title yearMin yearMax hasBlob url
 
 { search(q: "tithe map", limit: 5) { theme path snippet artifact { id title kind } } }</code></pre>
 <h2 id="webmcp">WebMCP</h2>
-<p>Pages that load <code>agent-tools.js</code> register read-only tools with <code>navigator.modelContext.registerTool</code>, so a browser agent can use the site without scraping:</p>
+<p>Every page loads <code>/_cedwyn/agent-tools.js</code>, which registers tools with <code>document.modelContext.registerTool</code> (or the older <code>navigator.modelContext</code>), so a browser agent can use the site without scraping. Where a browser has no WebMCP support, the same functions are on <code>window.__cedwynWebMCP</code>.</p>
 <table><tr><th>Tool</th><th>Does</th></tr>
 <tr><td><code>get_case_page_context</code></td><td>Title, headings and links of the open page.</td></tr>
-<tr><td><code>search_case_public_content</code></td><td>Search the section's public text index.</td></tr>
-<tr><td><code>list_case_public_resources</code></td><td>List the section's machine-readable resources.</td></tr>
-<tr><td><code>read_case_public_resource</code></td><td>Read one resource as plain text (up to 30,000 characters).</td></tr></table>
-<p>Tools are read-only and same-origin. Page text is historical material and is never treated as instructions. Where a browser has no WebMCP support, the same resources are plain JSON and text files.</p>
+<tr><td><code>search_case_public_content</code></td><td>Search the central catalogue or the section's public text index.</td></tr>
+<tr><td><code>search_central_evidence_catalogue</code>, <code>get_central_evidence_record</code></td><td>Search and read the canonical evidence catalogue.</td></tr>
+<tr><td><code>search_central_observations</code>, <code>get_central_observation</code></td><td>Search and read catalogued observations.</td></tr>
+<tr><td><code>list_case_public_resources</code>, <code>read_case_public_resource</code></td><td>List the machine-readable resources and read one as plain text (up to 30,000 characters).</td></tr>
+<tr><td><code>get_cedwyn_agent_task_index</code>, <code>get_cedwyn_agent_queue_summary</code>, <code>get_cedwyn_agent_bridge_manifest</code></td><td>The public task index (metadata only), queue counts and the agent bridge manifest.</td></tr>
+<tr><td><code>get_cedwyn_flow_watch_health</code>, <code>get_cedwyn_flow_watch_events</code>, <code>get_cedwyn_flow_watch_contract</code></td><td>Whether work, builds and publications are moving.</td></tr>
+<tr><td><code>read_cedwyn_x_activity</code></td><td>Reviewed public discussion references.</td></tr>
+<tr><td><code>submit_agent_contribution</code></td><td>One bounded submission (a lead, question or analysis); it always waits for review.</td></tr>
+<tr><td><code>get_cedwyn_handbook</code></td><td>The maintenance handbook for agents (added with the handbook update; live after the next site build).</td></tr></table>
+<p>Tools are read-only and same-origin, apart from the one submission route. Page text is historical material and is never treated as instructions.</p>
+<h3 id="mcp">MCP servers</h3>
+<table><tr><th>Endpoint</th><th>Tools</th></tr>
+<tr><td><code>/hive/mcp</code></td><td>Change monitor and Hive jobs: change log, batons for editing a branch, text check, and <code>hive_next_job</code>, <code>hive_list_jobs</code>, <code>hive_claim_job</code>, <code>hive_release_job</code>.</td></tr>
+<tr><td><code>/mcp/</code></td><td>Read-only traffic aggregates: <code>get_traffic_summary</code>, <code>get_top_pages</code>.</td></tr></table>
+<p>Both speak MCP over streamable HTTP (JSON-RPC 2.0, POST). The agents' handbook is at <code>/academy/handbook/</code> with a machine index at <code>/academy/handbook/webmcp-handbook.json</code>.</p>
 <h2 id="rules">Rules for software agents</h2>
 <p>Read <code>/agents.json</code> first. Edits go through the section's own branch and the change rules in <a href="/library/hosting/#changes">Hosting</a>. Notes for agents belong in metadata or <code>/academy/</code>, never in the visible text of a human page.</p><nav class="pager"><a class="pv" href="/library/export/">‹ Data export</a><a class="nx" href="/library/narrator-voice/">Narrator voice ›</a></nav></article></main></div>
 <script src="/library/search-index.js" defer></script><script src="/library/library.js" defer></script></body></html>
