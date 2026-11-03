@@ -2,7 +2,7 @@
  "version": "1.0.1",
  "rewrites": {
   "family-archive-noun": 18,
-  "held-privately-content": 6,
+  "held-privately-content": 8,
   "family-held-any": 27,
   "held-privately-paren": 33,
   "retained-archive": 3,
@@ -63,7 +63,7 @@
   "mailbox-received": 2,
   "reported-archive-holds": 1
  },
- "files_changed": 343,
+ "files_changed": 344,
  "json_left": [],
  "left": [
   "guestbook/index.html :: ~50 exact-phrase rules reword family-holdings statements (cuttings/copies &#x27;held by the family&#x27;, &#x27;Family archive / privately held&#x27;, family",
