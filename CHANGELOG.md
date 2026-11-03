@@ -1,3 +1,8 @@
+## [0.13.0] - 2026-11-03
+
+### Added
+- Local static copy of the Internet Archive item page for Newman, *Glamorgan* (1995), identifier glamorganmidglam0000newm: `/wayback/websites/archive.org/details-glamorganmidglam0000newm/latest.html` (v1.0.0, captured 2026-11-03T02:47:01Z from the live page; scripts, forms and images removed; outbound links disabled; one "Live website" link in the banner). The catalogue description block is anchored at `#pkb-ia-description`. Raw HTML sha256 `7cea25963d6ef5f3df6ea59ee0df86c87e0fd4c2c97b505c26cc646a4faa8479`; copy sha256 `f86dc3a447f730158112c16d98770cf836353551550a664e3920e0d936f9b804`. Listed on Peekaboo (OBS-PEEKABOO-NEWMAN-IA). The Wayback Machine does not save archive.org pages, so this copy is our own capture.
+
 ## [0.12.2] - 2026-10-24
 
 ### Fixed
