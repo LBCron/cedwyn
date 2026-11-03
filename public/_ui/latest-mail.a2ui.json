@@ -1,8 +1,8 @@
 {
  "a2ui": "0.9",
  "surface": "that-old-chestnut-latest-mail",
- "version": "0.3.7",
- "note": "That Old Chestnut v0.3.4: replies received after the last full audit (31 Oct 2026), in the same record shape as the chestnuts collection of _db/view.json. toc.js adds a record only when the catalogue does not already carry its id, so the catalogue wins once it holds these rows. Mail read up to 2026-11-02T14:20Z. v0.3.4 adds TOC-E05 (solicitors, reply of 2026-11-02) and TOC-E06 (bp legal team, reply of 2026-10-23): preservation notice, then 'not seen' or no reply, then no preservation undertaking. Staff names and phone numbers withheld. v0.3.7 adds TOC-E07 (Mount Stuart Trust, Bute Collection: automatic reply of 2026-10-15, general external enquiries paused with a review in January 2027).",
+ "version": "0.3.8",
+ "note": "That Old Chestnut v0.3.4: replies received after the last full audit (31 Oct 2026), in the same record shape as the chestnuts collection of _db/view.json. toc.js adds a record only when the catalogue does not already carry its id, so the catalogue wins once it holds these rows. Mail read up to 2026-11-02T14:20Z. v0.3.4 adds TOC-E05 (solicitors, reply of 2026-11-02) and TOC-E06 (bp legal team, reply of 2026-10-23): preservation notice, then 'not seen' or no reply, then no preservation undertaking. Staff names and phone numbers withheld. v0.3.7 adds TOC-E07 (Mount Stuart Trust, Bute Collection: automatic reply of 2026-10-15, general external enquiries paused with a review in January 2027). v0.3.8 adds the enquiry dates to TOC-E07: request sent 2026-10-15 23:01:51 UTC, automatic reply 23:02:03 UTC (12 seconds later), follow-ups 2026-10-19 and 2026-10-29, no reply as of 2026-11-03.",
  "mail_read_to": "2026-11-02",
  "i18n": {
   "en": {
@@ -321,7 +321,7 @@
   },
   {
    "id": "TOC-E07",
-   "title": "Mount Stuart Trust (Bute Collection) · automatic reply of 2026-10-15",
+   "title": "Mount Stuart Trust (Bute Collection) · enquiry and automatic reply of 2026-10-15",
    "date": {
     "display": "2026-10-15",
     "sort": "2026-10-15",
@@ -343,9 +343,9 @@
     "negative_quote": "Please note that we are currently unable to respond to general external enquiries. We anticipate reviewing this position in January 2027. [...] Please note we are not able to respond to family history or genealogical enquiries at this time.",
     "positive_quote": "",
     "positive_nature": "",
-    "trigger": "",
+    "trigger": "Research-visit request from the enquirer, sent on 15 October 2026 at 23:01:51 UTC (00:01 on 16 October, UK time), asking for named Bute Estate (Glamorgan) records on Llandough-juxta-Penarth.",
     "disclosure_type": "",
-    "conduct": "Automatic reply, within a minute, to a request of 15 October 2026 for a research visit and for named Bute Estate (Glamorgan) records on Llandough-juxta-Penarth. It replied that general external enquiries are paused, with the position to be reviewed in January 2027 (a review date, not a date for answers), and that family history enquiries are not answered at this time. Research visits remain open by appointment three weeks ahead. Follow-ups sent on 19 and 29 October 2026 have had no further reply in the mail read to 3 November 2026.",
+    "conduct": "The enquirer sent a research-visit request on 15 October 2026 at 23:01:51 UTC. The automatic reply came at 23:02:03 UTC the same day, 12 seconds later. It replied that general external enquiries are paused, with the position to be reviewed in January 2027 (a review date, not a date for answers), and that family history enquiries are not answered at this time. Research visits remain open by appointment three weeks ahead. Follow-ups sent on 19 October 2026 (22:14 UTC) and 29 October 2026 (19:55 UTC) have had no reply as of 3 November 2026; a further records request of 31 October 2026 has had no reply either. An earlier enquiry of 23 August 2026 went to a different address of the Trust and was returned undelivered (address not found).",
     "interim_disclosure": "",
     "terms": [
      {
