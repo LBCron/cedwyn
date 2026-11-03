@@ -1,5 +1,9 @@
 # Changelog — Forensic Assessments (Cedwyn webapp 39 of 59)
 
+## [1.1.1] - 2026-11-03
+### Fixed
+- Kept the search input label separate from its Clear button so the directory controls use valid, keyboard-friendly HTML.
+
 ## [1.1.0] - 2026-11-03
 ### Changed
 - Reworked the index into a responsive institution directory with full-text search, assessment-status filters, reading-indicator filters and sorting by priority, latest contact, next deadline, name or indicator.

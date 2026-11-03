@@ -20,4 +20,4 @@ The directory supports name/content search, filters for assessed and not-yet-ass
 
 Source branch: `section/forensic`. A push is checked by Sections CI, pinned in `sections.lock`, and triggers the Cedwyn build. Interface strings are in `lang.json`; assessment text remains English pending reviewed translations.
 
-Version: 1.1.0. See `CHANGELOG.md`.
+Version: 1.1.1. See `CHANGELOG.md`.
