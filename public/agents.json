@@ -17,8 +17,20 @@
  "self_test": "/academy/ACADEMY/check.json",
  "purpose": "Everything an AI agent new to the Cedwyn project needs to inherit: soul, memory, skills, flywheels, harness and lessons.",
  "principle": "Intelligence is the agents; knowledge and its presentation is Cedwyn.",
+ "handbook": {
+  "index": "/academy/handbook/",
+  "json": "/academy/handbook/webmcp-handbook.json",
+  "boot_card": "/academy/handbook/AGENT-BOOT-CARD.md",
+  "apex_flywheel": "/academy/handbook/01-purpose-and-apex-flywheel.md",
+  "version": "0.2.0",
+  "one_file": "/academy/handbook/BUCKLERFAMILY-ESTATE-HANDBOOK-v0.2.0-ALL.md",
+  "webmcp_tool": "get_cedwyn_handbook",
+  "what": "Upkeep, architecture and agent guide: the apex flywheel (Cedwyn Snowball, arcs A1-A8), architecture map, flywheel registry, WebMCP/MCP/API, Hive, upkeep, publishing and versioning, truth and labels. Read first."
+ },
  "read_order": [
   "README.md",
+  "handbook/README.md",
+  "handbook/01-purpose-and-apex-flywheel.md",
   "SOUL.md",
   "MEMORY/standing-orders.md",
   "MEMORY/chronology.md",

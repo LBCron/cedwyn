@@ -33,6 +33,7 @@ Before and after every task, read [Cedwyn flow watch](FLYWHEELS/flow-watch.md) a
 ## The files behind the library
 | Section | What it is |
 |---|---|
+| [HANDBOOK](handbook/README.md) | The BucklerFamily.Estate handbook: the apex flywheel (the top of the architecture), architecture map, flywheel registry by arc, WebMCP/MCP/API, the Hive, upkeep and best practice, publishing and versioning, truth and labels. Read it first; one-file edition and JSON index included. |
 | [MEMORY](MEMORY/README.md) | Chronology spine, bodies and references, deadlines, standing orders, open gaps, the site map |
 | [SKILLS](SKILLS/README.md) | Research skills, then the marketing and sales skills library |
 | [FLYWHEELS](FLYWHEELS/README.md) | Every self-running loop: purpose, cadence, inputs, outputs, report rules; plus the template |
