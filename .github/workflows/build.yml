@@ -140,6 +140,8 @@ jobs:
                   except OSError: pass
           print('query-named duplicate assets removed (pre-measure):', n)
           PY
+      - name: Apex root files, verbatim (static-first hosting, 3 Nov 2026 - tools/apex_root.py)
+        run: python3 tools/apex_root.py bff/public dist || echo "::warning::apex root step did not complete"
       - name: Measure
         if: always()
         run: |
