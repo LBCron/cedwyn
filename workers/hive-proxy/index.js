@@ -55,8 +55,8 @@ function responseCacheControl(sub, request, status, responseHeaders) {
   const ceiling = READ_CACHE_TTL.get(sub);
   if (!ceiling) return "no-store";
   const upstream = responseHeaders.get("cache-control") || "";
-  if (/\\bprivate\\b/i.test(upstream)) return "no-store";
-  const stated = /(?:^|,)\\s*max-age=(\\d+)/i.exec(upstream);
+  if (/\bprivate\b/i.test(upstream)) return "no-store";
+  const stated = /(?:^|,)\s*max-age=(\d+)/i.exec(upstream);
   const ttl = stated ? Math.min(ceiling, Number(stated[1])) : ceiling;
   if (!Number.isFinite(ttl) || ttl <= 0) return "no-store";
   return `public, max-age=${ttl}, stale-while-revalidate=${Math.min(30, ttl)}`;
@@ -78,7 +78,7 @@ function privacy(text) {
     .replace(/\bSion\b/g, "the owner");
 }
 function replaceTag(html, tagName, matcher, replacement) {
-  const re = new RegExp("<" + tagName + "\\b[^>]*" + matcher + "[\\s\\S]*?<\/" + tagName + ">", "i");
+  const re = new RegExp("<" + tagName + "\b[^>]*" + matcher + "[\s\\S]*?<\/" + tagName + ">", "i");
   return html.replace(re, replacement);
 }
 function updateHtml(html) {
