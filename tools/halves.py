@@ -18,6 +18,7 @@ import json, html, re, pathlib, math
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 E = html.escape
 VERSION = '1.5.1'
+# 1.7.0 (3 Nov 2026, owner WhatsApp 18:49 GMT): data/halves.json section_labels gives one half its own tile label; Wales 2D map = Tithe H3, Patagonia 2D map = Chubut H3 (Patagonia tile image nfa 0093). - Sion's Tab agent
 # 1.6.0 (3 Nov 2026, owner WhatsApp 17:48 GMT, webapp tour fix): every Wales modal tile is a hologram (wales_holo, no non-hologram fallback); data/halves.json groups.online_home (Analytics, Spill) leave the Wales and Patagonia modals and stay in the Online card at their own addresses; groups.own_address apps (online-only page bodies: Chessboard, 3D map, Gallery, Forensic Assessments, Mr Wolf) open at their own address from the place modals instead of a 'see Online' line. — Sion's Tab agent
 # 1.5.1 (2 Nov 2026, 05:04 GMT): an online_only app leaves only the place modals of the halves that exclude it (the FOI/correspondence apps stay in Wales, leave Patagonia). — Sion's Tab agent
 # 1.5.0 (2 Nov 2026, 03:41 GMT request): /online/ section — data/halves.json groups.online_only (hubspot, cloudflare, cyberspace) leave the Wales and Patagonia place modals and open at /online/<id>/ from the Online card, which also lists HubSpot task control; old /wales/<id>/ and /argentina/<id>/ addresses 301 (Worker cedwyn-online, workers/cedwyn-online/index.js). — Sion's Tab agent
@@ -504,7 +505,7 @@ WALES_HOLO_POOL = sorted(set(v for v in WALES_TILE_IMAGES.values() if v.startswi
 def wales_holo(tid):
     return WALES_TILE_IMAGES.get(tid) or WALES_HOLO_POOL[sum(map(ord, tid)) % len(WALES_HOLO_POOL)]
 
-ARG_TILE_IMAGES = {'infographic': '0021', 'chess': '0094', 'csscpsg': '0078', 'courtdrills': '0082', 'app': '0035', 'chat': '0057', 'dartboard': '0029', 'estate': '0014', 'directory': '0048', 'terrain': '0106', 'cyberspace': '0044', 'nft-art': '0058', 'fcg': '0122', 'accounts': '0131', 'authorities': '0055', 'wdtk': '0072', 'review': '0083', 'research': '0087', 'meeting': '0050', 'projects': '0020', 'watchtower': '0026', 'fb2': '0023', 'email': '0071', 'emails': '0147', 'kissed-frogs': '0067', 'whattheydontsay': '0084', 'blog': '0076', 'wiki': '0088', 'records': '0117', 'docs': '0058', 'wayback': '0141', 'nomenclature': '0123', 'maps': '0093', 'fb': '0038', 'ebooks': '0060', 'story': '0032', 'thousand-cuts': '0130', 'oldbill': '0052', 'qa': '0080', 'shop': '0145', 'documentary': '0133', 'familytree': '0126'}
+ARG_TILE_IMAGES = {'chubut-h3': '0093', 'infographic': '0021', 'chess': '0094', 'csscpsg': '0078', 'courtdrills': '0082', 'app': '0035', 'chat': '0057', 'dartboard': '0029', 'estate': '0014', 'directory': '0048', 'terrain': '0106', 'cyberspace': '0044', 'nft-art': '0058', 'fcg': '0122', 'accounts': '0131', 'authorities': '0055', 'wdtk': '0072', 'review': '0083', 'research': '0087', 'meeting': '0050', 'projects': '0020', 'watchtower': '0026', 'fb2': '0023', 'email': '0071', 'emails': '0147', 'kissed-frogs': '0067', 'whattheydontsay': '0084', 'blog': '0076', 'wiki': '0088', 'records': '0117', 'docs': '0058', 'wayback': '0141', 'nomenclature': '0123', 'maps': '0093', 'fb': '0038', 'ebooks': '0060', 'story': '0032', 'thousand-cuts': '0130', 'oldbill': '0052', 'qa': '0080', 'shop': '0145', 'documentary': '0133', 'familytree': '0126'}
 
 def arg_restored(nfa):
     return f'/nft-art/art/nfa-{nfa}-v0.0.2-t.webp'
@@ -519,6 +520,7 @@ def app_image(H, key):
 def app_tile(H, section, theme):
     tid = theme['id']
     label = APP_LABELS.get(tid, theme.get('title') or tid)
+    label = (H.get('section_labels', {}).get(section) or {}).get(tid) or label   # 1.7.0 (3 Nov 2026): one half's own tile label (Wales 2D map = Tithe H3, Patagonia 2D map = Chubut H3), data/halves.json section_labels - Sion's Tab agent
     if section == 'wales':
         image = wales_holo(tid)   # 3 Nov 2026: always a hologram in the Wales modal
     elif section == 'argentina' and tid in ARG_TILE_IMAGES:
@@ -547,6 +549,7 @@ def modal_apps(H, cfg, section):
     out = []
     G_ = H.get('groups', {}); sx = set(G_.get('wales_exclude' if section == 'wales' else 'argentina_exclude', [])) if section in ('wales', 'argentina') else set()
     skip = set(APP_EXCLUDED) | ((set(G_.get('online_only', [])) | set(G_.get('online_home', []))) & sx)   # 3 Nov 2026: online_home apps (Analytics, Spill) leave the halves too, keeping their own addresses   # an /online/ app leaves the place modal of each half that excludes it (2 Nov 2026)
+    skip |= set((G_.get('modal_exclude') or {}).get(section, []))   # 1.7.0: one half's 2D map slot (data/halves.json groups.modal_exclude) - Sion's Tab agent
     for group in cfg.get('groups', []):
         items = [t for t in cfg['themes'] if t.get('group') == group['id'] and t['id'] not in skip]
         if not items:

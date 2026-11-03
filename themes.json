@@ -202,6 +202,19 @@
    "slot": 42
   },
   {
+   "id": "chubut-h3",
+   "title": "Chubut H3",
+   "cy": "Chubut H3",
+   "es": "Chubut H3",
+   "live": "https://cedwyn.bucklerfamily.estate/chubut-h3/",
+   "hosts": [],
+   "paths": [],
+   "desc": "The outline of the Cedwyn estate fields from the Tithe H3 map, set on the coast of Golfo Nuevo south of Puerto Madryn at the same distance from the sea as at Llandough, true size and north up, in H3 hexagons. The Patagonia half's 2D map. Webapp 46 of 59.",
+   "group": "artifacts",
+   "snapshot_branch": "section/chubut-h3",
+   "slot": 46
+  },
+  {
    "id": "cloudflare",
    "title": "Cloudflare",
    "cy": "Cloudflare",
