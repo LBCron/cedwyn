@@ -1,0 +1,180 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "projects",
+ "uid": "APP-22",
+ "slot": {
+  "n": 22,
+  "of": 59,
+  "label": "22 of 59"
+ },
+ "status": "live",
+ "section": "Online",
+ "sections_shown": [
+  "Online"
+ ],
+ "group": "research",
+ "title": {
+  "en": "Project Office",
+  "cy": "Swyddfa’r Prosiect",
+  "es": "La Oficina de Proyectos"
+ },
+ "description": "Project record and plans.",
+ "path": "/projects/",
+ "aliases": [],
+ "legacy_hosts": [
+  "projects.bucklerfamily.estate"
+ ],
+ "branch": {
+  "name": "projects",
+  "exists": true,
+  "standard_name": "webapp/projects",
+  "source_dir": "projects/public",
+  "other_branches": [
+   "projects-architecture-20261101",
+   "projects-incident-align",
+   "projects-mcp"
+  ]
+ },
+ "front_end": {
+  "kind": "static",
+  "hosting": "cloudflare_pages",
+  "project": "cedwyn (cedwyn-274.pages.dev, production branch site)",
+  "build": "build-cedwyn (GitHub Actions) writes branch site",
+  "worker_on_read": false,
+  "notes": "apex bucklerfamily.estate reads run the router Worker until the static-first cutover (PR #157)"
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en",
+   "cy",
+   "es"
+  ],
+  "scripts": [
+   "/_cedwyn/runtime.js",
+   "/_cedwyn/ghf/ghf-boot.js"
+  ],
+  "status": "legacy"
+ },
+ "data": {
+  "slice": "programme",
+  "query": {
+   "kinds": [],
+   "uid_prefixes": [],
+   "tags": [],
+   "where": "PRINCE2 programme office",
+   "public_only": true
+  },
+  "registers": [
+   "projects branch",
+   "work/programme-office/objectives.json"
+  ],
+  "catalogue_status": "not_yet"
+ },
+ "local_store": {
+  "static": [
+   "/projects/_data/programme.json",
+   "/projects/api/v1/index.json"
+  ],
+  "client_cache": {
+   "enabled": true,
+   "store": "indexeddb",
+   "strategy": "stale-while-revalidate",
+   "max_age_s": 3600,
+   "revalidate_with": "/projects/api/v1/index.json rev",
+   "pull_from": "/catalogue-db/ static export (never a Worker)"
+  }
+ },
+ "api": {
+  "base": "/projects/api/v1/",
+  "outputs": [
+   {
+    "path": "/projects/api/v1/index.json",
+    "format": "json",
+    "description": "list + counts + rev + generated_at"
+   },
+   {
+    "path": "/projects/api/v1/items/{uid}.json",
+    "format": "json",
+    "description": "one record in this app's presentation, keyed by catalogue UID"
+   },
+   {
+    "path": "/projects/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "JSON Feed 1.1, newest first"
+   },
+   {
+    "path": "/projects/api/v1/feed.xml",
+    "format": "atom",
+    "description": "Atom 1.0 feed"
+   },
+   {
+    "path": "/projects/api/v1/rss.xml",
+    "format": "rss",
+    "description": "RSS 2.0 feed"
+   },
+   {
+    "path": "/projects/api/v1/data.xml",
+    "format": "xml",
+    "description": "the whole slice as XML"
+   }
+  ],
+  "cors": "*",
+  "cache_control": "public, max-age=300",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [
+  {
+   "app": "dartboard",
+   "path": "/dartboard/api/v1/roadmap.json",
+   "why": "disclosure roadmap"
+  },
+  {
+   "app": "email",
+   "path": "/email/api/v1/recent.json",
+   "why": "recent mail"
+  },
+  {
+   "app": "forensic",
+   "path": "/forensic/api/v1/index.json",
+   "why": "assessments"
+  }
+ ],
+ "consumed_by": [],
+ "external_sources": [],
+ "dynamic_endpoints": [],
+ "migration": {
+  "phase": "branch",
+  "phases_done": [
+   "inventory",
+   "manifest",
+   "branch"
+  ],
+  "rag": "amber",
+  "next_action": "write the slice entry in data/core/slices.json and generate /projects/api/v1/",
+  "blockers": [
+   "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval"
+  ],
+  "prs": [],
+  "pilot": false
+ },
+ "owner": "Cedwyn editors (owner approval for catalogue changes)",
+ "version": "0.1.0",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "summary": "Manifest created from the live tour inventory (/areas.json nav), themes.json, data/site-areas.json and data/halves.json 1.4.0."
+  }
+ ],
+ "sources": [
+  "/areas.json nav (cedwyn-274.pages.dev, read 2026-11-03)",
+  "themes.json@main",
+  "data/site-areas.json@main",
+  "data/halves.json@PR#154 (1.4.0)",
+  "cedwyn branch list (git ls-remote)"
+ ]
+}

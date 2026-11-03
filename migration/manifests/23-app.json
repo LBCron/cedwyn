@@ -1,0 +1,178 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "app",
+ "uid": "APP-23",
+ "slot": {
+  "n": 23,
+  "of": 59,
+  "label": "23 of 59"
+ },
+ "status": "live",
+ "section": "Wales",
+ "sections_shown": [
+  "Wales",
+  "Argentina"
+ ],
+ "group": "interactive",
+ "title": {
+  "en": "Case Office",
+  "cy": "Swyddfa’r Achos",
+  "es": "La Oficina del Caso"
+ },
+ "description": "Case management front end.",
+ "path": "/app/",
+ "aliases": [],
+ "legacy_hosts": [
+  "app.bucklerfamily.estate",
+  "apps.bucklerfamily.estate"
+ ],
+ "branch": {
+  "name": "section/app",
+  "exists": true,
+  "standard_name": "webapp/app",
+  "source_dir": null,
+  "other_branches": []
+ },
+ "front_end": {
+  "kind": "static",
+  "hosting": "cloudflare_pages",
+  "project": "cedwyn (cedwyn-274.pages.dev, production branch site)",
+  "build": "build-cedwyn (GitHub Actions) writes branch site",
+  "worker_on_read": false,
+  "notes": "apex bucklerfamily.estate reads run the router Worker until the static-first cutover (PR #157)"
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en",
+   "cy",
+   "es"
+  ],
+  "scripts": [
+   "/_cedwyn/runtime.js",
+   "/_cedwyn/ghf/ghf-boot.js"
+  ],
+  "status": "legacy"
+ },
+ "data": {
+  "slice": "case-office",
+  "query": {
+   "kinds": [
+    "evidence",
+    "foi_finding"
+   ],
+   "uid_prefixes": [
+    "EV",
+    "TOC"
+   ],
+   "tags": [],
+   "where": "case summary views",
+   "public_only": true
+  },
+  "registers": [
+   "section/app"
+  ],
+  "catalogue_status": "partly"
+ },
+ "local_store": {
+  "static": [
+   "/app/_data/case-office.json",
+   "/app/api/v1/index.json"
+  ],
+  "client_cache": {
+   "enabled": true,
+   "store": "indexeddb",
+   "strategy": "stale-while-revalidate",
+   "max_age_s": 3600,
+   "revalidate_with": "/app/api/v1/index.json rev",
+   "pull_from": "/catalogue-db/ static export (never a Worker)"
+  }
+ },
+ "api": {
+  "base": "/app/api/v1/",
+  "outputs": [
+   {
+    "path": "/app/api/v1/index.json",
+    "format": "json",
+    "description": "list + counts + rev + generated_at"
+   },
+   {
+    "path": "/app/api/v1/items/{uid}.json",
+    "format": "json",
+    "description": "one record in this app's presentation, keyed by catalogue UID"
+   },
+   {
+    "path": "/app/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "JSON Feed 1.1, newest first"
+   },
+   {
+    "path": "/app/api/v1/feed.xml",
+    "format": "atom",
+    "description": "Atom 1.0 feed"
+   },
+   {
+    "path": "/app/api/v1/rss.xml",
+    "format": "rss",
+    "description": "RSS 2.0 feed"
+   },
+   {
+    "path": "/app/api/v1/data.xml",
+    "format": "xml",
+    "description": "the whole slice as XML"
+   }
+  ],
+  "cors": "*",
+  "cache_control": "public, max-age=300",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [
+  {
+   "app": "dartboard",
+   "path": "/dartboard/api/v1/roadmap.json",
+   "why": "roadmap"
+  },
+  {
+   "app": "email",
+   "path": "/email/api/v1/recent.json",
+   "why": "recent mail"
+  }
+ ],
+ "consumed_by": [],
+ "external_sources": [],
+ "dynamic_endpoints": [],
+ "migration": {
+  "phase": "branch",
+  "phases_done": [
+   "inventory",
+   "manifest",
+   "branch"
+  ],
+  "rag": "amber",
+  "next_action": "write the slice entry in data/core/slices.json and generate /app/api/v1/",
+  "blockers": [
+   "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval"
+  ],
+  "prs": [],
+  "pilot": false
+ },
+ "owner": "Cedwyn editors (owner approval for catalogue changes)",
+ "version": "0.1.0",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "summary": "Manifest created from the live tour inventory (/areas.json nav), themes.json, data/site-areas.json and data/halves.json 1.4.0."
+  }
+ ],
+ "sources": [
+  "/areas.json nav (cedwyn-274.pages.dev, read 2026-11-03)",
+  "themes.json@main",
+  "data/site-areas.json@main",
+  "data/halves.json@PR#154 (1.4.0)",
+  "cedwyn branch list (git ls-remote)"
+ ]
+}
