@@ -1,8 +1,8 @@
 {
  "a2ui": "0.9",
  "surface": "that-old-chestnut-latest-mail",
- "version": "0.3.4",
- "note": "That Old Chestnut v0.3.4: replies received after the last full audit (31 Oct 2026), in the same record shape as the chestnuts collection of _db/view.json. toc.js adds a record only when the catalogue does not already carry its id, so the catalogue wins once it holds these rows. Mail read up to 2026-11-02T14:20Z. v0.3.4 adds TOC-E05 (solicitors, reply of 2026-11-02) and TOC-E06 (bp legal team, reply of 2026-10-23): preservation notice, then 'not seen' or no reply, then no preservation undertaking. Staff names and phone numbers withheld.",
+ "version": "0.3.7",
+ "note": "That Old Chestnut v0.3.4: replies received after the last full audit (31 Oct 2026), in the same record shape as the chestnuts collection of _db/view.json. toc.js adds a record only when the catalogue does not already carry its id, so the catalogue wins once it holds these rows. Mail read up to 2026-11-02T14:20Z. v0.3.4 adds TOC-E05 (solicitors, reply of 2026-11-02) and TOC-E06 (bp legal team, reply of 2026-10-23): preservation notice, then 'not seen' or no reply, then no preservation undertaking. Staff names and phone numbers withheld. v0.3.7 adds TOC-E07 (Mount Stuart Trust, Bute Collection: automatic reply of 2026-10-15, general external enquiries paused with a review in January 2027).",
  "mail_read_to": "2026-11-02",
  "i18n": {
   "en": {
@@ -316,6 +316,60 @@
    },
    "updated": "2026-11-02",
    "date_display": "2026-10-23",
+   "source_text": "Correspondence held on file (not published)",
+   "evidence_links": []
+  },
+  {
+   "id": "TOC-E07",
+   "title": "Mount Stuart Trust (Bute Collection) · automatic reply of 2026-10-15",
+   "date": {
+    "display": "2026-10-15",
+    "sort": "2026-10-15",
+    "precision": "day"
+   },
+   "provenance": {
+    "holder": "Mount Stuart Trust (Bute Collection)",
+    "reference": "Correspondence held on file (not published)",
+    "date": "2026-10-15"
+   },
+   "evidence": [],
+   "finding": {
+    "class": "language",
+    "institution": "Mount Stuart Trust (Bute Collection)",
+    "negative_date": "2026-10-15",
+    "positive_date": "",
+    "months_elapsed": null,
+    "email_volume": "",
+    "negative_quote": "Please note that we are currently unable to respond to general external enquiries. We anticipate reviewing this position in January 2027. [...] Please note we are not able to respond to family history or genealogical enquiries at this time.",
+    "positive_quote": "",
+    "positive_nature": "",
+    "trigger": "",
+    "disclosure_type": "",
+    "conduct": "Automatic reply, within a minute, to a request of 15 October 2026 for a research visit and for named Bute Estate (Glamorgan) records on Llandough-juxta-Penarth. It replied that general external enquiries are paused, with the position to be reviewed in January 2027 (a review date, not a date for answers), and that family history enquiries are not answered at this time. Research visits remain open by appointment three weeks ahead. Follow-ups sent on 19 and 29 October 2026 have had no further reply in the mail read to 3 November 2026.",
+    "interim_disclosure": "",
+    "terms": [
+     {
+      "term": "unable to respond to general external enquiries",
+      "statute": "A private trust: FOIA and the EIR do not apply, so no statutory deadline runs; the pause covers every general enquiry, whatever records it names",
+      "note": ""
+     },
+     {
+      "term": "reviewing this position in January 2027",
+      "statute": "No end date given: January 2027 is when the pause is to be reviewed, not when replies resume",
+      "note": ""
+     },
+     {
+      "term": "not able to respond to family history or genealogical enquiries",
+      "statute": "No statute applies to a private collection; a request about estate and title records is answered with the family history line",
+      "note": ""
+     }
+    ],
+    "chestnut": "currently unable to respond to general external enquiries",
+    "open": true,
+    "held_back": []
+   },
+   "updated": "2026-11-03",
+   "date_display": "2026-10-15",
    "source_text": "Correspondence held on file (not published)",
    "evidence_links": []
   }
