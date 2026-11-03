@@ -371,6 +371,12 @@
   ],
   "/projects/": [
    {
+    "v": "2.4.0",
+    "date": "2026-11-03",
+    "agent": "Cedwyn editors",
+    "note": "Published a dated digital release-integrity highlight-report addendum and recorded programme delivery risks R6–R9. The report separates confirmed configuration and deployment observations from unresolved causation; the Cedwyn Projects source is used, not the Datro-backed standalone Pages project."
+   },
+   {
     "v": "2.1.0",
     "date": "2026-10-31",
     "agent": "ChatGPT GPT-6",
