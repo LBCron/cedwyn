@@ -1,1 +1,1 @@
-build 4 (2026-11-03): design restore — pilots serve their original front ends, data from api/v1
+build 5 (2026-11-03): Negative Finds slot 41 + static-first Spill pilot slot 44
