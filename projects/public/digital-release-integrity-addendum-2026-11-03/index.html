@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Highlight Report Addendum — Digital release integrity — 3 November 2026</title>
+<meta name="description" content="PRINCE2 7 highlight report addendum on Cedwyn's production release integrity, application isolation, shared Workers and corrective actions."/>
+<link rel="stylesheet" href="/assets/p2.css?v=1"/>
+<script src="https://bucklerfamily.estate/ghf-lang/ghf-lang.js?v=2.1.2" defer></script>
+<script src="https://bucklerfamily.estate/ghf-lang/ghf-boot.js?v=2.1.2"></script>
+</head>
+<body>
+<main class="p2">
+<h1 class="vh">Digital release integrity — Highlight Report Addendum</h1>
+<p class="crumb"><a href="/">The Project Office</a> › <a href="/programme-highlight-report/">Master Highlight Report</a> › Digital release integrity</p>
+<h2>Highlight Report Addendum — Digital release integrity</h2>
+<ul class="facts">
+<li>Date <b>3 November 2026</b></li>
+<li>Reporting period <b>2–3 November 2026</b></li>
+<li>Overall programme <b><span class="chip c-warn">AMBER</span></b></li>
+<li>Decision <b>Containment and release redesign required</b></li>
+<li>Source review <b>Cloudflare audit, Worker telemetry, Pages configuration and Git history</b></li>
+</ul>
+<p class="lead">This addendum records a production-delivery incident affecting the independence and currency of Cedwyn webapp releases. It does not describe a confirmed Cloudflare platform outage. The Cloudflare zone remains active, and the application-specific source branches and Pages projects remain present. The weakness is that some production requests and releases converge through shared components.</p>
+
+<details class="sec" open>
+<summary><h2>1. Recap</h2><span class="pv">Incident and service position</span></summary>
+<div class="body">
+<ol type="i">
+<li>On 2–3 November, the production release path was reviewed after concern that one agent's update could replace or obscure another webapp's work. The review covered the active zone, Pages projects, Worker scripts and routes, audit events, telemetry, Git branches, pinned section revisions and the live production build history.</li>
+<li>Cloudflare returned an active zone state. The account contains 91 Pages project records, with separately configured production branches. This confirms that the source and Pages project separation has not simply been deleted.</li>
+<li>That separation is not complete at the public delivery layer. The Worker <code>bfe-apex-router</code> owns catch-all routes for <code>bucklerfamily.estate/*</code> and <code>www.bucklerfamily.estate/*</code>; its source proxies most application paths to the central Cedwyn Pages project. The central project publishes from the shared <code>site</code> branch.</li>
+<li>No Git branch overwrite between the Research and Forensic section branches was identified. Their newer source commits remained available. The incident was a stale assembled release, not proof that either branch's work had been erased.</li>
+</ol>
+</div>
+</details>
+
+<details class="sec" open>
+<summary><h2>2. Performance</h2><span class="pv">Confirmed production and release findings</span></summary>
+<div class="body">
+<ol type="i">
+<li><b>Stale release confirmed.</b> The production build published at approximately 04:39 UTC on 3 November was assembled from main commit <code>4a3c448</code>. At that checkout, <code>sections.lock</code> still pinned Research to <code>3cd867a</code> and Forensic to <code>9480ff3</code>. Newer section commits had arrived at approximately 04:05 and 04:28 UTC respectively; those newer pins were committed to main at 04:31 UTC. The older release therefore omitted those newer revisions while leaving their source commits intact.</li>
+<li><b>Follow-on build in progress at last verification.</b> Build run <code>41578577096</code> (run 502), using main commit <code>aca84bd</code>, contains the updated Research and Forensic pins. Its job was still in progress at the last GitHub status check (3 November, 04:40:45 UTC). Its successful completion and public deployment are not recorded here as confirmed.</li>
+<li><b>Separate Worker storage, shared releases.</b> Worker <code>bfe-analytics</code> serves both the Cloudflare usage dashboard and the Analytics application. Their Durable Object data identities are separate, but the executable Worker and its assets are shared. A deployment intended for either application can change both.</li>
+<li><b>Additional shared route surface.</b> Worker <code>cedwyn-online</code> serves multiple Wales and Argentina application paths. This is another shared deployment boundary that needs explicit ownership and release controls.</li>
+<li><b>Malformed API requests.</b> Telemetry recorded 80 requests to duplicated paths including <code>/cloudflare/cloudflare/api/</code> and <code>/analytics/analytics/api/</code>; these returned HTTP 404. Some sampled requests used internal workboard and burndown-check user-agent labels. The dashboard's current frontend code has the correct single-prefix API base, so the originating caller remains to be traced.</li>
+<li><b>Operational activity.</b> The 2–3 November Cloudflare audit window recorded 89 Worker deployments, 36 route creations, 22 route updates and 30 DNS record changes. Audit entries generally resolve to the account owner identity; this evidence does not identify which agent initiated each action.</li>
+<li><b>Projects publication boundary.</b> The old standalone Pages project <code>bucklerfamily-projects</code> still points to the Datro repository and its <code>projects</code> branch; its last successful production deployment was 27 October. The Cedwyn repository also has a current <code>projects</code> branch, which is the source used for the central Cedwyn build's <code>/projects/</code> output. This report update is being released through the Cedwyn source path, not by restoring the old Datro branch or publishing to that standalone project.</li>
+</ol>
+</div>
+</details>
+
+<details class="sec" open>
+<summary><h2>3. Issues, risks and concerns</h2><span class="pv">New control findings; no unsupported outage claim</span></summary>
+<div class="body">
+<ol type="i">
+<li><b>R6 — Production isolation and release integrity (AMBER, open).</b> A catch-all apex router and shared central Pages build mean independently maintained source branches do not guarantee independently released application versions. A stale build can publish after newer section work is committed.</li>
+<li><b>R7 — Shared Worker blast radius (AMBER, open).</b> Multi-application Workers can replace the code and assets serving more than one app. Separate database namespaces reduce data collision risk but do not provide code-release isolation.</li>
+<li><b>R8 — Snapshot reproducibility (AMBER, open).</b> The inspected build report shows some sections assembled through live-site crawl or fallback crawl rather than a pinned source revision. The same source commit can therefore produce different output at different times. Missing pinned source must fail closed or produce an explicit, reviewed exception.</li>
+<li><b>R9 — Release attribution (AMBER, open).</b> The Cloudflare account audit history does not provide enough agent-level attribution to determine which automation initiated every route, DNS or Worker action. Deployment records need to include the responsible agent, source commit, target application, reason and previous version.</li>
+<li><b>Service impact boundary.</b> The evidence supports a production consistency and routing risk. It does not establish a platform-wide outage, widespread human visitor failure, data loss, or that one named agent deliberately overwrote another's work.</li>
+<li><b>Governance baseline.</b> The programme's overall RAG remains AMBER pending an approved tolerance baseline and Executive decision. This addendum does not invent a time, cost or quality tolerance, nor infer an exception decision.</li>
+</ol>
+</div>
+</details>
+
+<details class="sec" open>
+<summary><h2>4. Moving forward</h2><span class="pv">Corrective actions and approvals required</span></summary>
+<div class="body">
+<ol type="i">
+<li><b>Release verification.</b> Confirm run 502 completes, deploys to the central <code>cedwyn</code> Pages project and serves the updated Research and Forensic revisions. Record the deployed commit and cache-busted page checks before closing the stale-release incident.</li>
+<li><b>Restore application-level delivery boundaries.</b> Each application should publish from its own controlled source and deployment target. The apex router should resolve the application's assigned production target rather than proxying every path to one shared central build. Preserve the root homepage as a separately controlled product.</li>
+<li><b>Split multi-app Workers.</b> Give the Cloudflare usage dashboard and Analytics their own deployable Workers. Review <code>cedwyn-online</code> and other shared route handlers for the same cross-application risk. Keep each app's own database and secrets scoped to its Worker.</li>
+<li><b>Enforce source freshness.</b> A build must verify the current main commit and all pinned section SHAs immediately before publication. A pin that is missing, rejected or stale must block release; live crawl fallbacks must not silently replace a pinned source.</li>
+<li><b>Agent release contract.</b> Every write and deployment must carry a target app, source branch and commit, agent identity, reason, expected routes/resources and previous version. Agents should not modify another app's Worker, route or binding unless the change is explicitly authorised as shared infrastructure.</li>
+<li><b>Monitoring repair.</b> Trace the callers producing duplicated API prefixes, fix the common URL construction, and add tests that assert each webapp API base is prefixed exactly once. Separate application 4xx responses from Worker exceptions and Cloudflare platform errors in the dashboard.</li>
+<li><b>Projects release.</b> Publish this addendum from the Cedwyn <code>projects</code> branch through the central Cedwyn build. Do not push it to the Datro-backed standalone Pages project or change domains, DNS or Worker routes as part of this release.</li>
+</ol>
+<p><b>Decisions requested:</b> approve the target architecture for independent app delivery; approve separate Worker ownership where code is currently shared; confirm which agent or service may authorise shared routing changes; and approve a fail-closed release rule for missing or stale section pins.</p>
+<p class="note">No DNS records, Pages custom domains, Worker routes, Worker bindings or production routing rules were changed in preparing this report. Source publication is being handled through the Cedwyn Projects branch and central build workflow.</p>
+</div>
+</details>
+
+<p class="note"><a href="/programme-highlight-report/">Return to the master highlight report</a> · <a href="/programme-plan/">Programme plan</a> · <a href="/programme/">Programme structure and risks</a></p>
+</main>
+</body>
+</html>
