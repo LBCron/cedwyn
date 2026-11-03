@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn-migration-tracker/1",
- "updated": "2026-11-03T22:50Z",
+ "updated": "2026-11-03T23:05Z",
  "phases": [
   "inventory",
   "manifest",
@@ -1076,10 +1076,11 @@
     "branch"
    ],
    "rag": "amber",
-   "next_action": "Review the central-record proposal, sync catalogue-db, then build and verify the dedicated static view and register it in the navigation.",
+   "next_action": "Implement or run the approved central sync from main to catalogue-db and D1, then build and verify Negative Finds from the updated static catalogue and register it in navigation.",
    "blockers": [
-    "The additive core records are in a separate catalogue-change PR and are not yet merged or synced to catalogue-db.",
-    "The app is not yet registered in /areas.json navigation; Back/Next and public slot list remain pending release."
+    "The five Kissed Frogs screening leads and five bounded missing-record entries are merged to main in commit adefbe8e074332e9d631662047d216e464f2e700.",
+    "The catalogue-db mirror still points to main commit 52fbd319278df76c76fd07d4448ceb507dad8f68 and contains no negative-finds.json; no catalogue-sync.yml workflow is present in main. The app's static slice cannot contain the new rows until the documented central sync is implemented/run.",
+    "Negative Finds is not yet in /areas.json navigation; Back/Next and public slot index remain release checks."
    ],
    "prs": [
     159,
