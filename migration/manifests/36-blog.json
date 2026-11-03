@@ -1,0 +1,173 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "blog",
+ "uid": "APP-36",
+ "slot": {
+  "n": 36,
+  "of": 59,
+  "label": "36 of 59"
+ },
+ "status": "live",
+ "section": "Wales",
+ "sections_shown": [
+  "Wales"
+ ],
+ "group": "research",
+ "title": {
+  "en": "Blog",
+  "cy": "Blog",
+  "es": "Blog"
+ },
+ "description": "Dated research posts.",
+ "path": "/blog/",
+ "aliases": [],
+ "legacy_hosts": [],
+ "branch": {
+  "name": "blog",
+  "exists": true,
+  "standard_name": "webapp/blog",
+  "source_dir": "public",
+  "other_branches": []
+ },
+ "front_end": {
+  "kind": "static",
+  "hosting": "cloudflare_pages",
+  "project": "cedwyn (cedwyn-274.pages.dev, production branch site)",
+  "build": "build-cedwyn (GitHub Actions) writes branch site",
+  "worker_on_read": true,
+  "notes": "apex bucklerfamily.estate reads run the router Worker until the static-first cutover (PR #157)"
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en",
+   "cy",
+   "es"
+  ],
+  "scripts": [
+   "/_cedwyn/runtime.js",
+   "/_cedwyn/ghf/ghf-boot.js"
+  ],
+  "status": "legacy"
+ },
+ "data": {
+  "slice": "posts",
+  "query": {
+   "kinds": [],
+   "uid_prefixes": [],
+   "tags": [],
+   "where": "blog posts",
+   "public_only": true
+  },
+  "registers": [
+   "blog branch",
+   "/blog/feed.json"
+  ],
+  "catalogue_status": "not_yet"
+ },
+ "local_store": {
+  "static": [
+   "/blog/_data/posts.json",
+   "/blog/api/v1/index.json"
+  ],
+  "client_cache": {
+   "enabled": true,
+   "store": "indexeddb",
+   "strategy": "stale-while-revalidate",
+   "max_age_s": 3600,
+   "revalidate_with": "/blog/api/v1/index.json rev",
+   "pull_from": "/catalogue-db/ static export (never a Worker)"
+  }
+ },
+ "api": {
+  "base": "/blog/api/v1/",
+  "outputs": [
+   {
+    "path": "/blog/api/v1/index.json",
+    "format": "json",
+    "description": "list + counts + rev + generated_at"
+   },
+   {
+    "path": "/blog/api/v1/items/{uid}.json",
+    "format": "json",
+    "description": "one record in this app's presentation, keyed by catalogue UID"
+   },
+   {
+    "path": "/blog/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "JSON Feed 1.1, newest first"
+   },
+   {
+    "path": "/blog/api/v1/feed.xml",
+    "format": "atom",
+    "description": "Atom 1.0 feed"
+   },
+   {
+    "path": "/blog/api/v1/rss.xml",
+    "format": "rss",
+    "description": "RSS 2.0 feed"
+   },
+   {
+    "path": "/blog/api/v1/data.xml",
+    "format": "xml",
+    "description": "the whole slice as XML"
+   }
+  ],
+  "cors": "*",
+  "cache_control": "public, max-age=300",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [],
+ "consumed_by": [],
+ "external_sources": [
+  {
+   "name": "cedwyn-blog daily post",
+   "adapter": "cedwyn-blog Worker cron (writes static feed)",
+   "cadence": "daily",
+   "auth": "ci_secret",
+   "writes": "/blog/feed.json"
+  }
+ ],
+ "dynamic_endpoints": [
+  {
+   "path": "/blog*",
+   "worker": "cedwyn-blog",
+   "why": "currently serves every blog read (to narrow to the cron only)"
+  }
+ ],
+ "migration": {
+  "phase": "branch",
+  "phases_done": [
+   "inventory",
+   "manifest",
+   "branch"
+  ],
+  "rag": "amber",
+  "next_action": "write the slice entry in data/core/slices.json and generate /blog/api/v1/",
+  "blockers": [
+   "a Worker runs on page reads today (route on the cedwyn host); the static-first cutover and this app's static rewrite remove it",
+   "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval"
+  ],
+  "prs": [],
+  "pilot": false
+ },
+ "owner": "Cedwyn editors (owner approval for catalogue changes)",
+ "version": "0.1.0",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "summary": "Manifest created from the live tour inventory (/areas.json nav), themes.json, data/site-areas.json and data/halves.json 1.4.0."
+  }
+ ],
+ "sources": [
+  "/areas.json nav (cedwyn-274.pages.dev, read 2026-11-03)",
+  "themes.json@main",
+  "data/site-areas.json@main",
+  "data/halves.json@PR#154 (1.4.0)",
+  "cedwyn branch list (git ls-remote)"
+ ]
+}
