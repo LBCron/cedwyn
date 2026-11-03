@@ -1,0 +1,208 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "spill",
+ "uid": "APP-44",
+ "slot": {
+  "n": 44,
+  "of": 59,
+  "label": "44 of 59"
+ },
+ "status": "live",
+ "section": "Online",
+ "sections_shown": [
+  "Online"
+ ],
+ "group": "interactive",
+ "title": {
+  "en": "Spill",
+  "cy": "Spill",
+  "es": "Spill"
+ },
+ "description": "A sourced handoff for novel facts; static snapshots for page reads and the existing API for submissions and agent execution.",
+ "path": "/spill/",
+ "aliases": [],
+ "legacy_hosts": [
+  "https://bucklerfamily.estate/spill/"
+ ],
+ "branch": {
+  "name": "webapp/spill",
+  "exists": true,
+  "standard_name": "webapp/spill",
+  "source_dir": null,
+  "other_branches": [
+   "section/spill",
+   "spill-main"
+  ]
+ },
+ "front_end": {
+  "kind": "static_plus_dynamic",
+  "hosting": "cloudflare_pages",
+  "project": "cedwyn-migration preview; production remains on cedwyn until verified cutover",
+  "build": "migration/tools/build_site.py",
+  "worker_on_read": false,
+  "notes": "Page reads are static snapshots. Spill API remains dynamic for submissions, direct status/search, tool execution and guest-book writes. The current production Worker routes are not changed by this branch."
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en",
+   "cy",
+   "es"
+  ],
+  "scripts": [
+   "/_std/cw-cache.js",
+   "/_std/cw-header.js"
+  ],
+  "status": "standard"
+ },
+ "data": {
+  "slice": "spill",
+  "query": {
+   "kinds": [],
+   "uid_prefixes": [],
+   "tags": [],
+   "where": "Build-time snapshots of the existing Spill API; no evidence records are copied into this app.",
+   "public_only": true
+  },
+  "registers": [
+   "section/spill/protocol.json"
+  ],
+  "catalogue_status": "n/a"
+ },
+ "local_store": {
+  "static": [
+   "/spill/_data/spill.json",
+   "/spill/api/v1/index.json",
+   "/spill/api/v1/overview.json",
+   "/spill/api/v1/guestbook.json",
+   "/spill/api/v1/tools.json"
+  ],
+  "client_cache": {
+   "enabled": true,
+   "store": "indexeddb",
+   "strategy": "stale-while-revalidate",
+   "max_age_s": 3600,
+   "revalidate_with": "/spill/api/v1/index.json rev",
+   "pull_from": "Migration build's static output from three read-only Spill API snapshots; never a Worker on page load."
+  }
+ },
+ "api": {
+  "base": "/spill/api/v1/",
+  "outputs": [
+   {
+    "path": "/spill/api/v1/index.json",
+    "format": "json",
+    "description": "static build index and revision"
+   },
+   {
+    "path": "/spill/api/v1/overview.json",
+    "format": "json",
+    "description": "build-time stats snapshot"
+   },
+   {
+    "path": "/spill/api/v1/guestbook.json",
+    "format": "json",
+    "description": "build-time guest-book snapshot"
+   },
+   {
+    "path": "/spill/api/v1/tools.json",
+    "format": "json",
+    "description": "build-time MCP tool definitions for WebMCP registration"
+   },
+   {
+    "path": "/spill/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "static JSON Feed"
+   },
+   {
+    "path": "/spill/api/v1/feed.xml",
+    "format": "atom",
+    "description": "static Atom feed"
+   },
+   {
+    "path": "/spill/api/v1/rss.xml",
+    "format": "rss",
+    "description": "static RSS feed"
+   },
+   {
+    "path": "/spill/api/v1/data.xml",
+    "format": "xml",
+    "description": "static XML slice"
+   }
+  ],
+  "cors": "*",
+  "cache_control": "public, max-age=300",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [],
+ "consumed_by": [],
+ "external_sources": [
+  {
+   "name": "Spill statistics",
+   "adapter": "GET https://cedwyn.bucklerfamily.estate/spill/api/stats in the migration build",
+   "cadence": "Each Pages build",
+   "auth": "none",
+   "writes": "/spill/api/v1/overview.json",
+   "notes": "Build-time snapshot only; the browser does not call the Worker for page display."
+  },
+  {
+   "name": "Spill guest book",
+   "adapter": "GET https://cedwyn.bucklerfamily.estate/spill/api/guestbook in the migration build",
+   "cadence": "Each Pages build",
+   "auth": "none",
+   "writes": "/spill/api/v1/guestbook.json",
+   "notes": "Build-time snapshot only; writes remain on the live API."
+  },
+  {
+   "name": "Spill MCP tool catalogue",
+   "adapter": "GET https://cedwyn.bucklerfamily.estate/spill/api/mcp in the migration build",
+   "cadence": "Each Pages build",
+   "auth": "none",
+   "writes": "/spill/api/v1/tools.json",
+   "notes": "Tool metadata is static; tool execution remains POST to the existing Worker."
+  }
+ ],
+ "dynamic_endpoints": [
+  {
+   "path": "/spill/api/*",
+   "worker": "cedwyn-spill",
+   "why": "Submissions, direct agent status/search, MCP tool execution, guest-book writes and owner-only admin routes; not used for browser page rendering."
+  }
+ ],
+ "migration": {
+  "phase": "static_front_end",
+  "phases_done": [
+   "inventory",
+   "manifest",
+   "branch",
+   "static_front_end"
+  ],
+  "rag": "amber",
+  "next_action": "Merge to migration as a pilot, verify the static snapshots and all dynamic API paths, then plan a separate production route cutover.",
+  "blockers": [
+   "The production routes still send /spill page views through bfe-apex-router and cedwyn-spill; this PR does not change Cloudflare routes.",
+   "The new migration site uses a separate Pages project; verify the static page on its target host before moving the production alias.",
+   "The automated Codex PR review service was rate-limited on the separate Negative Finds migration PR; this pilot needs ordinary code and live-path review."
+  ],
+  "prs": [],
+  "pilot": true
+ },
+ "owner": "Cedwyn editors",
+ "version": "0.1.0",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "summary": "Added a static build-time snapshot for page reads; retained the existing Worker and Durable Object for dynamic API operations."
+  }
+ ],
+ "sources": [
+  "section/spill/index.html@main source branch",
+  "section/spill/worker/index.js@current source branch",
+  "Cloudflare live route inventory checked 2026-11-03",
+  "migration/tools/build_site.py@migration"
+ ]
+}
