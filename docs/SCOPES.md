@@ -47,6 +47,7 @@ Content generated after load is handled too (a MutationObserver re-applies the r
 - Changing scope.js: bump its `?v=` in ghf-boot.js and bump ghf-boot's `?v=` (tools/selfcontain.py, tools/sections.py, tools/home.py BOOT) - /_cedwyn/* is edge-cached for 4 h.
 
 ## A whole webapp never becomes a note (scope.js 1.1.0, 3 Nov 2026)
+Source: owner request of 3 Nov 2026, 17:48 GMT (webapp tour with no dead pages); live 390 px audit of 3 Nov 2026, 17:52–18:03 UTC (all 44 slots, 130 menu tiles).
 - The section (Wales / Patagonia) comes from the address only. runtime.js no longer carries the last half into later pages of the tab;
   the stored value applies only to the page it was stored for (a section single-page app that rewrote its own address).
 - When a page's own body (`<main data-scope=...>`, or a whole-app `home` in scope-map.json) belongs to another scope, scope.js takes the
