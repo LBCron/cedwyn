@@ -1,5 +1,12 @@
 # Changelog — Forensic Assessments (Cedwyn webapp 39 of 59)
 
+## [1.2.0] - 2026-11-03
+### Added
+- Activity journal at /forensic/journal/ with one page per institution (/forensic/journal/<slug>/, 50 institutions, 994 entries): every reply, request and website change on file, newest first, each with a plain reading and a link to the full email (/email/reference/…) or to the before and after copies of the page (/wayback/…).
+- Journal entries with a fuller objective reading (what was done, what was not done, fair note, open questions). First entry: RCAHMW, 3 November 2026 (RC26-0375, cost limit and search terms).
+- Each institution page now shows its journal in an "Activity journal" block above "Since last assessment"; the index links to the journal.
+- Kept current by a recurring journal run (new mail and watchtower changes since the last run).
+
 ## [1.1.1] - 2026-11-03
 ### Fixed
 - Kept the search input label separate from its Clear button so the directory controls use valid, keyboard-friendly HTML.
