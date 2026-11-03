@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Negative Finds · Cedwyn</title>
+<meta name="description" content="A register of bounded searches, negative results, retrieval stages, limits and next actions.">
+<link rel="alternate" type="application/atom+xml" title="Negative Finds" href="api/v1/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Negative Finds (RSS)" href="api/v1/rss.xml">
+<link rel="alternate" type="application/feed+json" title="Negative Finds (JSON Feed)" href="api/v1/feed.json">
+<link rel="stylesheet" href="/_std/cw-std.css">
+<script src="/_std/cw-cache.js" defer></script>
+<script src="/_std/cw-header.js" defer></script>
+</head>
+<body>
+<header data-cw-app="negative-finds">Cedwyn</header>
+<main>
+<h1>Negative Finds</h1>
+<p class="lede">A record of bounded searches that did not identify a matching record or relationship. Each entry states what was checked, the retrieval stage, what the result does and does not establish, and the next action.</p>
+<p class="card">A negative search is not proof of absence. A catalogue description, OCR transcript, full text and inspected page image are different retrieval stages; each entry keeps that distinction visible.</p>
+<input type="search" id="q" placeholder="Search question, place, source or result" aria-label="Search negative-find records">
+<div class="chips" id="labels" role="group" aria-label="Search category"></div>
+<p class="meta" id="count">Loading catalogue…</p>
+<ul class="res" id="results"></ul>
+<noscript><p><a href="api/v1/index.json">Open the index as JSON</a></p></noscript>
+</main>
+<footer>
+<span class="apis">
+API:
+<a href="api/v1/index.json">index.json</a>
+<a href="api/v1/feed.json">JSON Feed</a>
+<a href="api/v1/feed.xml">Atom</a>
+<a href="api/v1/rss.xml">RSS</a>
+<a href="api/v1/data.xml">XML</a>
+<a href="manifest.json">manifest</a>
+</span>
+<br>Standard webapp · 41 of 59 · Data revision <span id="rev">…</span>. <a href="/">Migration status</a>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var state = {q:"", label:"All", items:[]};
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g, function(c) {
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];
+    });
+  }
+  function filtered() {
+    var q = state.q.toLowerCase();
+    return state.items.filter(function(it) {
+      if (state.label !== "All" && it.label !== state.label) return false;
+      var hay = [it.title,it.place,it.label,it.summary,it.source,it.question,it.searched].join(" ").toLowerCase();
+      return !q || hay.indexOf(q) >= 0;
+    });
+  }
+  function draw() {
+    var rows = filtered();
+    document.getElementById("count").textContent = rows.length + " of " + state.items.length + " bounded searches";
+    document.getElementById("results").innerHTML = rows.map(function(it) {
+      var meta = [it.date, it.place, it.source_holder, it.retrieval_stage].filter(Boolean).join(" · ");
+      return '<li><a href="' + esc("api/v1/items/" + encodeURIComponent(it.key) + ".json") + '">' +
+        esc(it.title) + '</a><div class="meta">' + esc(it.label || "Bounded search") +
+        (meta ? " · " + esc(meta) : "") + '</div><p>' + esc(it.summary || "") + '</p></li>';
+    }).join("");
+  }
+  function facets() {
+    var counts = {"All":state.items.length};
+    state.items.forEach(function(it) {
+      var key = it.label || "Bounded search";
+      counts[key] = (counts[key] || 0) + 1;
+    });
+    var el = document.getElementById("labels");
+    el.innerHTML = Object.keys(counts).map(function(k) {
+      return '<button type="button" data-label="' + esc(k) + '" aria-pressed="' +
+        (state.label === k) + '">' + esc(k) + ' (' + counts[k] + ')</button>';
+    }).join("");
+    el.onclick = function(e) {
+      var b = e.target.closest("button[data-label]");
+      if (!b) return;
+      state.label = b.getAttribute("data-label");
+      facets(); draw();
+    };
+  }
+  document.getElementById("q").addEventListener("input", function(e) {
+    state.q = e.target.value; draw();
+  });
+  CW.cache.get("api/v1/index.json", {maxAge:3600}, function(d) {
+    state.items = d.items || [];
+    document.getElementById("rev").textContent = d.rev || "—";
+    facets(); draw();
+  }).catch(function() {
+    document.getElementById("count").textContent = "The static catalogue is not available.";
+  });
+});
+</script>
+</body>
+</html>
