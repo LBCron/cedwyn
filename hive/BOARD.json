@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T17:41:16Z",
+ "updated": "2026-11-03T17:44:39Z",
  "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
  "drafts": [
   {
@@ -5662,8 +5662,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5673,7 +5673,9 @@
     "body": "Government Legal Department (Bona Vacantia)",
     "as_of": "2026-11-03T17:41:16Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-03T17:44:39Z"
   },
   {
    "id": "the-london-archives-072399",
@@ -5691,8 +5693,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5702,7 +5704,9 @@
     "body": "The London Archives",
     "as_of": "2026-11-03T17:41:16Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-03T17:44:39Z"
   }
  ],
  "synced_at": "2026-11-03T17:41:16Z",
