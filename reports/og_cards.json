@@ -4,8 +4,8 @@
   "Hive": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-hive.jpg",
   "Home": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-home.jpg"
  },
- "pages_changed": 8634,
- "tags_added": 140450,
+ "pages_changed": 8635,
+ "tags_added": 140466,
  "pages_already_complete": 0,
  "pillow": true,
  "font": true,
@@ -65,6 +65,7 @@
   "Research": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-research-dbf0bf41.jpg",
   "Independent Review": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-independent-review-a41e819c.jpg",
   "Self-Assessment": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-self-assessment-cb0f1152.jpg",
+  "Display settings": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-display-settings-ddc1d9c5.jpg",
   "Gift Shop": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-gift-shop-9a64b8c9.jpg",
   "Spill": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-spill-26f9b0f7.jpg",
   "The Story": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-the-story-b7887fea.jpg",
@@ -303,6 +304,10 @@
   "self-assessment": [
    "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Self-Assessment",
    "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-self-assessment-cb0f1152.jpg"
+  ],
+  "settings": [
+   "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Display settings",
+   "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-display-settings-ddc1d9c5.jpg"
   ],
   "shop": [
    "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Gift Shop",
