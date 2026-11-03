@@ -38,3 +38,9 @@
 .th3-ctable{border-collapse:collapse;width:100%;font-size:.85rem}
 .th3-ctable th,.th3-ctable td{border-bottom:1px solid #e3dccb;padding:5px 6px;text-align:left;vertical-align:top}
 .th3-ctable td:first-child,.th3-ctable td:nth-child(2){white-space:nowrap}
+
+/* v0.3.0: traffic-light layer */
+.th3-bar label.tl{font-weight:600}
+.th3-legend .tl-head{flex-basis:100%;display:block}
+.th3-sw{display:inline-block;width:11px;height:11px;border-radius:2px;border:1px solid #0003;margin-right:4px;vertical-align:-1px}
+@media (max-width:420px){.th3-legend span{align-items:flex-start}.th3-legend i{flex:0 0 14px;margin-top:2px}}
