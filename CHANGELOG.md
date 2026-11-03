@@ -2,5 +2,6 @@
 
 | Version | Date (UTC) | What changed |
 |---|---|---|
+| v0.2.0 | 2026-11-03 | Incident cards: each card gives the date the incident was recorded and, under it, coloured hashtag links, one colour per webapp, with a legend under the counts: #wayback (the local copy of the page, anchored at the description), #oldchestnut (the matching That Old Chestnut entry, where one corresponds), #watchtower (the matching row in Watchtower's "Peekaboo sources watched" section) and #dartboard (the dartboard with the institution preselected). The three correction notices are held: who to notify will be decided later. Links live in `tools/links.json`; `peekaboo_sync.py` renders them. |
 | v0.1.1 | 2026-11-03 | The links to That Old Chestnut open the matching reply's card (lower-case `#cn-toc-…` anchors). |
 | v0.1.0 | 2026-11-03 | First version. Six records found despite their labels: the Internet Archive copy of Newman, Glamorgan (1995), whose catalogue description is a children's story blurb (found by us); Glamorgan Archives DBDT/79/1, whose catalogue entry was corrected after the original was examined; and four replies that said records were not held or out of scope before they were found (Cadw, Museum Wales, Historic England, Vale of Glamorgan Council). Three correction notices as drafts. Own database synced from the central catalogue, filters, WebMCP tools. |
