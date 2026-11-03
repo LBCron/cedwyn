@@ -1,0 +1,123 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>BucklerFamily.Estate handbook: upkeep, architecture and agent guide · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: BucklerFamily.Estate handbook: upkeep, architecture and agent guide"><link rel="alternate" type="text/markdown" href="README.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../index.html"><b>Agent library</b></a><a href="../SOUL.html">Soul</a><a href="../ONBOARDING.html">Onboarding</a><a href="../ACADEMY/CHECK.html">Check</a><a href="../ACADEMY/WORK.html">Work</a><a href="../MEMORY/index.html">Memory</a><a href="../SKILLS/index.html">Skills</a><a href="../FLYWHEELS/index.html">Flywheels</a><a href="../architecture/index.html">Architecture</a><a href="../HARNESS/index.html">Harness</a><a href="../LESSONS.html">Lessons</a></nav><main><h1>BucklerFamily.Estate handbook: upkeep, architecture and agent guide</h1>
+<p>Handbook version 0.2.0 · 3 Nov 2026 · status: PUBLISHED (agent route /academy/handbook/; human overview /library/) · improve it by a signed changelog line.</p>
+<h2>What this handbook is</h2>
+<p>The maintenance and upkeep guide for BucklerFamily.Estate and its Cedwyn site (cedwyn.bucklerfamily.estate), for every agent and maintainer who keeps the system running. BucklerFamily.Estate is two things at once:</p>
+<ol>
+<li><strong>The brain.</strong> An LLM wiki and evidence catalogue: every record transcribed, described, interpreted and labelled, so any reader or agent can reason from the originals; and the place where ongoing research is reported in the public interest.</li>
+<li><strong>One giant snowballing flywheel.</strong> The apex loop (page 1) turns research and records requests into questions, questions into clarifications, clarifications into an organised and officiated knowledge base, and that knowledge base into one central chronological record from which every public output is made and re-made.</li>
+</ol>
+<p>The apex goal: one central, chronologically accurate record of the Cedwyn estate, its former manorial house (the Great House, Tŷ Mawr) and the true history and heritage of the Williams families. From it come a better museum in Argentina, a guided tour in Wales, the online dimension (maps, games, webapps), documentary scenes made in real time, and e-books, all re-released under new semantic versions as the information improves.</p>
+<h2>Reading order</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Page</th>
+<th>Read it when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>01-purpose-and-apex-flywheel.md</code></td>
+<td>First. The top loop everything else serves.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>02-architecture-map.md</code></td>
+<td>You will touch a system: repository, branches, build, Cloudflare, HubSpot, Gmail.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>03-flywheel-registry.md</code></td>
+<td>You will start, run or add a flywheel; shows which arc of the apex loop each serves.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>04-webmcp-and-api.md</code></td>
+<td>You are an agent arriving through WebMCP, MCP or the static API.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>05-hive-collaboration.md</code></td>
+<td>You will claim jobs or review work.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>06-upkeep-and-best-practices.md</code></td>
+<td>You will change, build, deploy, clean up or verify anything.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>07-publishing-and-versioning.md</code></td>
+<td>You will release a page, e-book, scene, tour stop or webapp.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>08-truth-and-labels.md</code></td>
+<td>Always, before writing any sentence that will be public.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>09-webmcp-front-door-design.md</code></td>
+<td>Design note (PROPOSED) for the read-only WebMCP resources.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>AGENT-BOOT-CARD.md</code></td>
+<td>The short card carried by llms.txt, agents.json and the WebMCP tool.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>webmcp-handbook.json</code></td>
+<td>Machine-readable index of all of the above.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>BUCKLERFAMILY-ESTATE-HANDBOOK-v0.2.0-ALL.md</code></td>
+<td>Every page in one file, for a single read.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Where it lives</h2>
+<ul>
+<li>Agent route: /academy/handbook/ (each page as .md and .html; <code>webmcp-handbook.json</code>; <code>BUCKLERFAMILY-ESTATE-HANDBOOK-v0.2.0-ALL.md</code>).</li>
+<li>Source branch: <code>handbook</code> in the project repository (one folder per version); the Agent Library build copies it into /academy/handbook/.</li>
+<li>Discovery: /llms.txt, /agents.json (key <code>handbook</code>), the WebMCP tool <code>get_cedwyn_handbook</code> in /_cedwyn/agent-tools.js, and the Hive join file.</li>
+<li>Human explanation: the Docs Library overview at /library/ (how the site works, its webapps, the flywheel of flywheels, WebMCP/API and the Hive).</li>
+</ul>
+<h2>Precedence</h2>
+<p>The live Hive protocol (/hive/join.json, hive/JOIN.md on branch <code>hive</code>) and the Cedwyn Snowball master protocol (/academy/FLYWHEELS/snowball.md) win where this handbook differs; correct the handbook by a signed changelog line. The owner's latest direction wins over both.</p>
+<h2>Status words</h2>
+<p><strong>LIVE</strong> = observed with a cache-busted fetch on the date given. <strong>PENDING BUILD</strong> = committed, live after the next site build or merge. <strong>PROPOSED</strong> = a target, not yet built.</p>
+<h2>Changelog (append only)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Who</th>
+<th>What changed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1.0</td>
+<td>3 Nov 2026</td>
+<td>Claude (Hive seat 4)</td>
+<td>First draft: ten pages and a JSON index, written without access to the repository (layout items marked VERIFY).</td>
+</tr>
+<tr>
+<td>0.2.0</td>
+<td>3 Nov 2026</td>
+<td>Deployer seat</td>
+<td>Every VERIFY item checked against the repository and the live site and corrected (see <code>CORRECTIONS-0.2.0.md</code>); the apex flywheel rewritten as the top of the architecture with eight named arcs and unified with the Cedwyn Snowball; the flywheel registry rebuilt from the loops that actually run, each mapped to its arc; the WebMCP page rewritten from the real tool list; design note added as page 9; boot card and JSON index versioned; published at /academy/handbook/ with a one-file edition.</td>
+</tr>
+</tbody>
+</table></div><p class="raw">Raw Markdown: <a href="README.md">README.md</a> · version and changes: <a href="../CHANGELOG.html">changelog</a> · machine index: <a href="../agents.json">agents.json</a></p></main></body></html>

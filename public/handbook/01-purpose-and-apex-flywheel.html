@@ -1,0 +1,145 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>1. Purpose and the apex flywheel · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: 1. Purpose and the apex flywheel"><link rel="alternate" type="text/markdown" href="01-purpose-and-apex-flywheel.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../index.html"><b>Agent library</b></a><a href="../SOUL.html">Soul</a><a href="../ONBOARDING.html">Onboarding</a><a href="../ACADEMY/CHECK.html">Check</a><a href="../ACADEMY/WORK.html">Work</a><a href="../MEMORY/index.html">Memory</a><a href="../SKILLS/index.html">Skills</a><a href="../FLYWHEELS/index.html">Flywheels</a><a href="../architecture/index.html">Architecture</a><a href="../HARNESS/index.html">Harness</a><a href="../LESSONS.html">Lessons</a></nav><main><h1>1. Purpose and the apex flywheel</h1>
+<h2>Purpose</h2>
+<p>BucklerFamily.Estate exists to establish, from originals, <strong>one central chronological record</strong> of:</p>
+<ul>
+<li>the Cedwyn estate (Leckwith and Llandough-juxta-Penarth), its parcels and how each changed hands;</li>
+<li>the former manorial house (the Great House, Tŷ Mawr) and its standing;</li>
+<li>the Williams families, their true history and heritage;</li>
+<li>the public history and heritage of the place.</li>
+</ul>
+<p>It is the <strong>LLM wiki / brain</strong>: the place where evidence is collected and interpreted, and where ongoing research is reported in the public interest. The handbook you are reading is for its <strong>maintenance and upkeep</strong>: how to keep the brain accurate and the wheel turning.</p>
+<h2>The apex flywheel (the uppermost loop)</h2>
+<p>One giant snowballing flywheel sits above everything. Every smaller flywheel, schedule, webapp and agent job exists to turn one of its arcs. Its programme name is the <strong>Cedwyn Snowball</strong> (master protocol: /academy/FLYWHEELS/snowball.md; human guide: /library/snowball/; Hive copy: hive/ARCHITECTURE.md on branch <code>hive</code>). This page is the architecture of that loop.</p>
+<pre><code>        A1 ASK ─────────► A2 RECEIVE ─────────► A3 CLARIFY
+   research, FOI/EIR/SAR,   replies, disclosures,   new questions asked,
+   archive, book and web    primary material,       clarification sought,
+   searches                 silences recorded       contrary reading tested
+          ▲                                               │
+          │                                               ▼
+   A8 LEARN AND RETURN                           A4 ORGANISE AND OFFICIATE
+   every output, reply and                        answers organise the knowledge base:
+   visitor response raises                        catalogue entry, transcript, parcel tag,
+   the next questions                             chronology placement, label; records and
+          ▲                                       findings made official (provenance, task
+          │                                       register, central artifact database)
+          │                                               │
+   A7 RE-RELEASE                                          ▼
+   every output re-released                      A5 RECONSTRUCT
+   under a new semantic version                   the story, the estate, the family, the
+   as information quality improves                public history and heritage, into ONE
+          ▲                                       central chronological, accurate record of
+          │                                       the Cedwyn estate, the former manorial
+          │                                       house and the Williams families
+          │                                               │
+          └──────────── A6 PRESENT ◄──────────────────────┘
+               the record feeds: the museum in Argentina · the guided tour in Wales ·
+               the online dimension (maps, games, webapps) · the documentary (scenes made
+               in real time) · e-books
+</code></pre>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Arc</th>
+<th>Name</th>
+<th>What turns it</th>
+<th>Done when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>Ask</td>
+<td>Research questions and records requests go out: FOI/EIR/SAR drafts (the owner sends), archive and catalogue searches, book and online searches.</td>
+<td>The question is specific, names the likely holder and the record that would answer it.</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Receive</td>
+<td>Replies, disclosures and primary material arrive; refusals and silences are recorded as facts with dates.</td>
+<td>The original is preserved once (headers, attachments, source reference, exact wording).</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Clarify</td>
+<td>Each answer raises more questions; clarification is sought; the best contrary reading is tested.</td>
+<td>A follow-up question or a documented dead end exists.</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>Organise and officiate</td>
+<td>Answers organise the knowledge base: one canonical catalogue entry (neutral description, verbatim transcript, label, parcel tag, date placement); the task register and the central artifact database are updated; findings become official records with provenance.</td>
+<td>The record carries its catalogue number, label and parcel ("parcel not identified" if so).</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>Reconstruct</td>
+<td>The story, the estate, the family and the public history and heritage are rebuilt from the organised records into one central chronological record.</td>
+<td>Each line of the chronology names its source; gaps show as gaps.</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>Present</td>
+<td>The record feeds every public form: the museum in Argentina, the guided tour in Wales, the online dimension (maps, games and other webapps that help people make sense of a huge, complex story), documentary scenes made in real time, and e-books.</td>
+<td>Each output traces every statement to a catalogued page.</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>Re-release</td>
+<td>Every output is re-released under a new semantic version when the quality of the information improves; earlier versions stay listed (page 7).</td>
+<td>The new version has a changelog row naming what changed in the evidence.</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>Learn and return</td>
+<td>Readers, replies, visitors and agents raise new questions; lessons go to the Agent Library; the next cycle starts at A1.</td>
+<td>A real gap is fed back as the next question or job.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>The axle (upkeep).</strong> Under the wheel runs the upkeep that keeps it turning: the site build, Cloudflare, GitHub, HubSpot hygiene, the Hive, the version standard, the problems queue, the Agent Library. Upkeep is not an arc; it is what every arc rests on. This handbook is mainly about the axle.</p>
+<h2>The measure</h2>
+<p>The Snowball counts progress per cycle as an operational learning measure, not a measure of historical truth:</p>
+<p><code>S(n+1) = S(n) + V + R + G + A + P + B − D − U − W</code></p>
+<p>V verified artifacts or propositions with provenance · R validated relationships · G gaps genuinely resolved · A follow-on leads with an owner and next action · P approved public outputs · B earned support reinvested through approved procurement · D duplicates removed · U unsupported statements quarantined or corrected · W avoidable rework. Report each term separately; copies, repeated statements, unanswered requests and raw pageviews do not count.</p>
+<h2>How the Snowball's operating cycle fits</h2>
+<p>The Snowball's twelve-step cycle (observe, triage, preserve, canonicalise, relate, challenge, rank, assign, execute, review, release, learn) is <strong>how one unit of work is run</strong>. The eight arcs are <strong>where that unit sits in the apex loop</strong>. A reply to a records request, for example, enters at A2, is triaged and preserved (steps 1–3), canonicalised and related in A4 (steps 4–5), challenged in A3 (step 6), and its follow-up question is assigned back into A1 (steps 7–8).</p>
+<h2>Rules that hold at the apex</h2>
+<ol>
+<li><strong>Originals first.</strong> Catalogue before you interpret; keep description, transcript and interpretation apart (page 8).</li>
+<li><strong>Every job leaves the wheel turning:</strong> a follow-up question, a catalogued record, a published improvement or a documented dead end.</li>
+<li><strong>Contrary evidence is recorded with the same care</strong> as supporting evidence.</li>
+<li><strong>One canonical record per fact.</strong> Webapps, e-books, scenes, tour stops and museum panels read from the record; they never keep their own copies of facts.</li>
+<li><strong>Release is never final.</strong> Every output can be superseded by a better version (A7).</li>
+<li><strong>The owner alone sends</strong> external correspondence and decides spend, land, legal and publication questions.</li>
+</ol>
+<h2>Changelog (append only)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Who</th>
+<th>What changed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1.0</td>
+<td>3 Nov 2026</td>
+<td>Claude (Hive seat 4)</td>
+<td>First version of the purpose and a twelve-verb loop.</td>
+</tr>
+<tr>
+<td>0.2.0</td>
+<td>3 Nov 2026</td>
+<td>Deployer seat</td>
+<td>Rewritten as the top of the architecture: eight named arcs (ask, receive, clarify, organise and officiate, reconstruct, present, re-release, learn and return) with the five destinations of the record (Argentina museum, Wales tour, online dimension, documentary, e-books), the semantic re-release arc, and the upkeep axle; unified with the Cedwyn Snowball (same loop, one name; its twelve-step cycle and formula placed inside the arcs) instead of a parallel loop.</td>
+</tr>
+</tbody>
+</table></div><p class="raw">Raw Markdown: <a href="01-purpose-and-apex-flywheel.md">01-purpose-and-apex-flywheel.md</a> · version and changes: <a href="../CHANGELOG.html">changelog</a> · machine index: <a href="../agents.json">agents.json</a></p></main></body></html>

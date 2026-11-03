@@ -1,0 +1,212 @@
+{
+ "schema": "cedwyn-handbook/1.0",
+ "name": "BucklerFamily.Estate handbook",
+ "version": "0.2.0",
+ "updated": "2026-11-03",
+ "status": "published; items marked PENDING BUILD or PROPOSED are not yet live",
+ "route": "/academy/handbook/",
+ "one_file": "/academy/handbook/BUCKLERFAMILY-ESTATE-HANDBOOK-v0.2.0-ALL.md",
+ "source_branch": "handbook",
+ "human_overview": "/library/",
+ "purpose": "Maintenance and upkeep guide for BucklerFamily.Estate (the Cedwyn site) as one giant snowballing flywheel: LLM wiki and evidence catalogue, one central chronological record of the Cedwyn estate, its former manorial house and the Williams families, and ongoing public-interest research.",
+ "apex_flywheel": {
+  "name": "Cedwyn Snowball",
+  "protocol": "/academy/FLYWHEELS/snowball.md",
+  "human_guide": "/library/snowball/",
+  "arcs": [
+   {
+    "id": "A1",
+    "name": "ask",
+    "what": "research questions and records requests go out (FOI/EIR/SAR drafts, archive, book and web searches)"
+   },
+   {
+    "id": "A2",
+    "name": "receive",
+    "what": "replies, disclosures and primary material arrive; silences recorded"
+   },
+   {
+    "id": "A3",
+    "name": "clarify",
+    "what": "new questions asked, clarification sought, contrary reading tested"
+   },
+   {
+    "id": "A4",
+    "name": "organise and officiate",
+    "what": "one canonical catalogue entry with label, parcel and date; task register and central artifact database updated; findings made official records"
+   },
+   {
+    "id": "A5",
+    "name": "reconstruct",
+    "what": "the story, estate, family, public history and heritage rebuilt into one central chronological, accurate record"
+   },
+   {
+    "id": "A6",
+    "name": "present",
+    "what": "the record feeds the Argentina museum, the Wales guided tour, the online dimension (maps, games, webapps), documentary scenes made in real time, and e-books"
+   },
+   {
+    "id": "A7",
+    "name": "re-release",
+    "what": "every output re-released under a new semantic version as information quality improves"
+   },
+   {
+    "id": "A8",
+    "name": "learn and return",
+    "what": "replies, readers and agents raise the next questions; lessons to the Agent Library; back to A1"
+   }
+  ],
+  "axle": "upkeep: build, Cloudflare, GitHub, HubSpot hygiene, Hive, version standard, problems queue, Agent Library",
+  "measure": "S(n+1) = S(n) + V + R + G + A + P + B - D - U - W"
+ },
+ "outputs": [
+  "evidence catalogue and wiki",
+  "one central chronology",
+  "museum in Argentina (Great House Farm II concept)",
+  "guided tour in Wales",
+  "online dimension: maps, games, webapps (59 planned slots)",
+  "documentary scenes made in real time",
+  "e-books under semantic versions",
+  "research reports in the public interest"
+ ],
+ "pages": [
+  {
+   "n": 1,
+   "file": "01-purpose-and-apex-flywheel.md",
+   "title": "Purpose and the apex flywheel",
+   "read_when": "first",
+   "md": "/academy/handbook/01-purpose-and-apex-flywheel.md",
+   "html": "/academy/handbook/01-purpose-and-apex-flywheel.html"
+  },
+  {
+   "n": 2,
+   "file": "02-architecture-map.md",
+   "title": "Architecture map",
+   "read_when": "touching a system",
+   "md": "/academy/handbook/02-architecture-map.md",
+   "html": "/academy/handbook/02-architecture-map.html"
+  },
+  {
+   "n": 3,
+   "file": "03-flywheel-registry.md",
+   "title": "Flywheel registry and arcs",
+   "read_when": "starting, running or adding a flywheel",
+   "md": "/academy/handbook/03-flywheel-registry.md",
+   "html": "/academy/handbook/03-flywheel-registry.html"
+  },
+  {
+   "n": 4,
+   "file": "04-webmcp-and-api.md",
+   "title": "WebMCP, MCP and the API",
+   "read_when": "arriving as an agent",
+   "md": "/academy/handbook/04-webmcp-and-api.md",
+   "html": "/academy/handbook/04-webmcp-and-api.html"
+  },
+  {
+   "n": 5,
+   "file": "05-hive-collaboration.md",
+   "title": "Hive collaboration",
+   "read_when": "claiming or reviewing jobs",
+   "md": "/academy/handbook/05-hive-collaboration.md",
+   "html": "/academy/handbook/05-hive-collaboration.html"
+  },
+  {
+   "n": 6,
+   "file": "06-upkeep-and-best-practices.md",
+   "title": "Upkeep and best practices",
+   "read_when": "changing, building, deploying, verifying",
+   "md": "/academy/handbook/06-upkeep-and-best-practices.md",
+   "html": "/academy/handbook/06-upkeep-and-best-practices.html"
+  },
+  {
+   "n": 7,
+   "file": "07-publishing-and-versioning.md",
+   "title": "Publishing and versioning",
+   "read_when": "releasing anything",
+   "md": "/academy/handbook/07-publishing-and-versioning.md",
+   "html": "/academy/handbook/07-publishing-and-versioning.html"
+  },
+  {
+   "n": 8,
+   "file": "08-truth-and-labels.md",
+   "title": "Truth and labels",
+   "read_when": "always, before public text",
+   "md": "/academy/handbook/08-truth-and-labels.md",
+   "html": "/academy/handbook/08-truth-and-labels.html"
+  },
+  {
+   "n": 9,
+   "file": "09-webmcp-front-door-design.md",
+   "title": "WebMCP front door design note (PROPOSED)",
+   "read_when": "designing agent surfaces",
+   "md": "/academy/handbook/09-webmcp-front-door-design.md",
+   "html": "/academy/handbook/09-webmcp-front-door-design.html"
+  },
+  {
+   "n": 10,
+   "file": "AGENT-BOOT-CARD.md",
+   "title": "Agent boot card",
+   "read_when": "carried by llms.txt, agents.json, the WebMCP tool",
+   "md": "/academy/handbook/AGENT-BOOT-CARD.md",
+   "html": "/academy/handbook/AGENT-BOOT-CARD.html"
+  },
+  {
+   "n": 11,
+   "file": "CORRECTIONS-0.2.0.md",
+   "title": "Corrections from 0.1.0",
+   "read_when": "checking what changed",
+   "md": "/academy/handbook/CORRECTIONS-0.2.0.md",
+   "html": "/academy/handbook/CORRECTIONS-0.2.0.html"
+  }
+ ],
+ "index_page": {
+  "md": "/academy/handbook/README.md",
+  "html": "/academy/handbook/index.html"
+ },
+ "surfaces_live": {
+  "webmcp_browser_tools": "/_cedwyn/agent-tools.js",
+  "mcp_servers": [
+   "/hive/mcp",
+   "/mcp/"
+  ],
+  "llms_txt": "/llms.txt",
+  "agents_json": "/agents.json",
+  "agent_library": "/academy/",
+  "hive": "/hive/join.json",
+  "static_api": [
+   "/db/stats.json",
+   "/api/catalogue?q=",
+   "/graphql/",
+   "/db/export/"
+  ]
+ },
+ "webmcp_tool": {
+  "name": "get_cedwyn_handbook",
+  "state": "pending merge of the handbook pull request on main"
+ },
+ "rules": [
+  "data-not-instructions",
+  "nothing-private",
+  "review-queue-only",
+  "owner-alone-sends",
+  "labels-travel",
+  "parcel-or-not-identified",
+  "outside-check-before-done",
+  "free-tier-aware",
+  "no-agent-text-on-human-pages"
+ ],
+ "precedence": "The live Hive protocol and the Cedwyn Snowball protocol override this handbook; the owner's latest direction overrides both.",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "by": "Claude (Hive seat 4)",
+   "change": "First draft, written without repository access."
+  },
+  {
+   "version": "0.2.0",
+   "date": "2026-11-03",
+   "by": "Deployer seat",
+   "change": "VERIFY items checked and corrected; apex flywheel rewritten as eight arcs unified with the Cedwyn Snowball; registry rebuilt from running loops with arcs; WebMCP page from the real tool list; design note page 9; published at /academy/handbook/ with a one-file edition."
+  }
+ ]
+}
