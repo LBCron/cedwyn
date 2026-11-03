@@ -33,7 +33,7 @@ inventory → manifest → branch → static front end → data slice → API �
   until the owner decides.
 
 ## Decisions waiting on the owner
-- Fill the 15 empty slots (41, 46–59) with the proposed occupants? (see each `manifests/NN-slot-NN.json` → `vacant`).
+- Slot 41 is assigned to Negative Finds at the owner’s direction (3 Nov 2026); the previously provisional Title chain candidate remains a separate unnumbered page. Resolve the remaining open slots 46–59 from their manifests.
 - Slot 46 is asked for by two open PRs (#132 garden-store, #156 chubut-h3); proposal: garden-store 46, chubut-h3 49.
 - Title chains: the existing /title-chain/ page and the infographic (slot 5) show the same data; one app or two?
 
@@ -45,7 +45,7 @@ inventory → manifest → branch → static front end → data slice → API �
 ## Tracker
 
 <!-- TRACKER:START -->
-Updated 2026-11-03T20:49Z. Counts by last completed phase: manifest 18, branch 39, header 2. RAG: green 2, amber 39, red 3, grey 15.
+Updated 2026-11-03T22:39Z. Counts by last completed phase: manifest 17, branch 40, header 2. RAG: green 2, amber 40, red 3, grey 14.
 
 | # | webapp | section | status | phase | RAG | next action |
 |---|---|---|---|---|---|---|
@@ -89,7 +89,7 @@ Updated 2026-11-03T20:49Z. Counts by last completed phase: manifest 18, branch 3
 | 38 | that-old-chestnut | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /that-old-chestnut/api/v1/ |
 | 39 | forensic | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /forensic/api/v1/ |
 | 40 | mr-wolf | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /mr-wolf/api/v1/ |
-| 41 | slot-41 (→ title-chain) | Wales | vacant | manifest | grey | owner decides the occupant; then a full manifest replaces this one |
+| 41 | negative-finds (→ negative-finds) | Wales | pending_pr | branch | amber | Review the core-record proposal, sync catalogue-db, then verify this static pilot and register it in the navigation before a live cutover. |
 | 42 | tithe-h3 | Wales | live | branch | amber | write the slice entry in data/core/slices.json and generate /tithe-h3/api/v1/ |
 | 43 | cloudflare | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /cloudflare/api/v1/ |
 | 44 | spill | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /spill/api/v1/ |
