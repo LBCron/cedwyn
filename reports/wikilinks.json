@@ -1,7 +1,7 @@
 {
- "pages": 5242,
+ "pages": 5241,
  "glossary_links": 12833,
- "name_links": 16721,
+ "name_links": 16718,
  "themes": {
   "accounts": 1,
   "argentina": 2,
@@ -9,7 +9,7 @@
   "blog": 1,
   "caso": 1,
   "csscpsg": 1,
-  "dartboard": 18,
+  "dartboard": 17,
   "directory": 274,
   "disproven": 1,
   "docs": 1830,
@@ -52,6 +52,6 @@
  "variants": 98,
  "public_variants": 82,
  "agents_link": "/academy/",
- "agent_blocks_hidden": 12928,
- "agent_pages": 5952
+ "agent_blocks_hidden": 12924,
+ "agent_pages": 5950
 }
