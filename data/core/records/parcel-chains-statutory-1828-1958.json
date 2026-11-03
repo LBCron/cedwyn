@@ -683,6 +683,69 @@
      "note": "Catalogued from the source named in provenance."
     }
    ]
+  },
+  {
+   "id": "AR-GAZETTE-1884-11-18-CPBJR-LLANDOUGH",
+   "kind": "artifact",
+   "slug": "ar-gazette-1884-11-18-cpbjr-llandough",
+   "title": "London Gazette, 18 Nov 1884: Cardiff, Penarth and Barry Junction Railways Bill, Railway No.1 commencing in Llandough",
+   "aliases": [],
+   "date": {
+    "display": "18 November 1884",
+    "sort": 1884.88,
+    "precision": "date of publication"
+   },
+   "place_text": "Llandough (Llandough-juxta-Penarth), by the Penarth Harbour dock branch near Penarth Dock passenger station",
+   "description": "Parliamentary notice for the 1885 session to incorporate the Cardiff, Penarth and Barry Junction Railways company. Railway No.1 was to begin in the parish of Llandough, otherwise Llandough-juxta-Penarth, by a junction with the dock branch of the Penarth Harbour Dock and Railway Company about 315 yards towards Cardiff from opposite the northern end of Penarth Dock passenger station, and run to Cadoxton-juxta-Barry. The parishes listed include Llandough and Cogan, and the notice seeks power to acquire lands, houses, buildings and easements in them by compulsion or agreement. No owner, lessee or occupier is named. Deposited plans are catalogued at Glamorgan Archives (Q/D/P/485; Q/D/P/488, amended plan) and the Parliamentary Archives (HL/PO/PB/3/plan1885/C4; HC/CL/PB/6/plan1885/11). Whether Railway No.1 was authorised and built as noticed is not checked here.",
+   "transcript": "Railway No. 1, commencing in the parish of Llandough, otherwise Llandough-juxta-Penarth, by a junction with the dock branch of the Penarth Harbour Dock and Railway Company at a point 315 yards or thereabouts measured along the railway in the direction of Cardiff from opposite the northern end of the Penarth Dock passenger station, and terminating in the parish of Cadoxton-juxta-Barry […] Power to acquire by compulsion or agreement lands, houses, and buildings and easements therein in the parishes and places hereinbefore […]",
+   "transcript_status": "Read from the OCR text of the Gazette PDF, with the interleaved columns separated by hand; […] marks text left out; not checked against the page image.",
+   "provenance": {
+    "holder": "The London Gazette",
+    "reference": "Issue 25415, p.4986",
+    "date": "1884-11-18",
+    "obtained": "Read on 3 November 2026 from the Gazette PDF.",
+    "independent_origin_id": "ORIG-GAZETTE-25415"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of statutory powers or civic action over land in Llandough-juxta-Penarth (Llandough-juxta-Cardiff) or Leckwith; which tithe parcels it touched is not identified until the deposited plan and book of reference are read.",
+    "tags": [
+     "london-gazette",
+     "cardiff-penarth-barry-junction-railway",
+     "llandough-juxta-penarth",
+     "statutory-powers",
+     "book-of-reference-not-held"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "sources": [
+    {
+     "text": "The London Gazette, 18 November 1884, issue 25415, p.4986",
+     "href": "https://www.thegazette.co.uk/London/issue/25415/page/4986"
+    },
+    {
+     "text": "Parliamentary Archives catalogue, HL/PO/PB/3/plan1885/C4, via The National Archives Discovery",
+     "href": "https://discovery.nationalarchives.gov.uk/details/r/68da37ee-b8b0-4357-aabf-e0fd8b17859a"
+    }
+   ],
+   "related": [],
+   "links": [],
+   "origin": "parcel-chains-cycle-2-2026-11-03",
+   "reworded": false,
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1,
+   "version": "1.0.0",
+   "changes": [
+    {
+     "rev": "1.0.0",
+     "date": "2026-11-03",
+     "note": "Catalogued from the source named in provenance."
+    }
+   ]
   }
  ]
 }
