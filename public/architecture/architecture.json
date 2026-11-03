@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn_academy_architecture/v1",
- "version": "1.0.9",
- "updated": "2026-11-02",
+ "version": "1.0.10",
+ "updated": "2026-11-03",
  "refreshed_by": "the agent library cycle (every 6 hours); edit this file, then rebuild the academy",
  "source_documents": [
   "/projects/data-architecture/ (programme page: plan, work packages, milestones)",
@@ -1396,7 +1396,7 @@
   {
    "id": "documentary",
    "name": "Documentary scenes",
-   "cadence": "every 6 hours",
+   "cadence": "every 6 hours; one new scene goes live every day (from 2 Nov 2026)",
    "does": "Takes the next item in the re-render queue or the next unfilled frame of the chronology and produces one short scene: one dated moment, who was there, what was most likely said, with Welsh spoken where the period calls for it and subtitles.",
    "inputs": [
     "the scene and shot packages in the public film-studio repository",
@@ -1700,6 +1700,80 @@
     "a pending hosting preview record is not a deploy; check the build run, the production deploys and the served stamp",
     "release notes are public: same wording rules as the site"
    ]
+  },
+  {
+   "id": "burndown",
+   "name": "Task backlog burndown",
+   "cadence": "every 2 hours",
+   "does": "Counts the open project-board tasks and closes those whose work is done, each with a dated evidence line; creates nothing.",
+   "inputs": [
+    "open project-board tasks",
+    "the mail record",
+    "a live crawl of the site"
+   ],
+   "outputs": [
+    "closed tasks with evidence",
+    "a ledger row per run (open count before and after)"
+   ],
+   "touches": [
+    "the project board (task status and one evidence line)"
+   ],
+   "guardrails": [
+    "re-read each task live and match its subject before closing",
+    "never closes unsent recipient-facing drafts or tasks another worker edited in the last hour",
+    "evidence or no close"
+   ],
+   "flywheel_page": "/academy/FLYWHEELS/burndown.md"
+  },
+  {
+   "id": "social-follows",
+   "name": "Social follows",
+   "cadence": "three short runs a day",
+   "does": "Follows relevant heritage, Welsh, local-area and genealogy accounts from a curated list on the project's Instagram account, and tops the list up from heritage seed accounts.",
+   "inputs": [
+    "the target list",
+    "seed accounts' follower lists"
+   ],
+   "outputs": [
+    "confirmed follows",
+    "a log row per attempt"
+   ],
+   "touches": [
+    "the project's Instagram account (follows only)"
+   ],
+   "guardrails": [
+    "no likes, comments, messages or unfollows",
+    "daily cap ramped slowly, at most 10 an hour",
+    "any restriction stops follows for 24 hours and halves the cap",
+    "never private individuals' private accounts, minors, schools or the do-not-contact list"
+   ],
+   "flywheel_page": "/academy/FLYWHEELS/social-follows.md"
+  },
+  {
+   "id": "disclosure-results",
+   "name": "Disclosure results flywheel",
+   "cadence": "proposed: every 6 hours after email ingest",
+   "does": "Reads the dartboard outcomes as performance data, learns which request features draw answers, audits unsent drafts for a preservation-first opener and adds new ideas each cycle.",
+   "inputs": [
+    "the dartboard record",
+    "new replies",
+    "unsent hive drafts"
+   ],
+   "outputs": [
+    "feature tables and lessons with counts",
+    "a preservation-first audit",
+    "new ideas, each marked with its state"
+   ],
+   "touches": [
+    "the dartboard record (rebuilt)",
+    "the drafts queue branch (drafts only)"
+   ],
+   "guardrails": [
+    "never sends or drafts mail itself",
+    "recipient text changes only on the agent's own hive turns",
+    "zero spend"
+   ],
+   "flywheel_page": "/academy/FLYWHEELS/disclosure-results.md"
   }
  ]
 }

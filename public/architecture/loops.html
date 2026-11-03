@@ -5,7 +5,7 @@ a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:
 pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
 th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
 blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../index.html"><b>Agent library</b></a><a href="../SOUL.html">Soul</a><a href="../ONBOARDING.html">Onboarding</a><a href="../ACADEMY/CHECK.html">Check</a><a href="../ACADEMY/WORK.html">Work</a><a href="../MEMORY/index.html">Memory</a><a href="../SKILLS/index.html">Skills</a><a href="../FLYWHEELS/index.html">Flywheels</a><a href="../architecture/index.html">Architecture</a><a href="../HARNESS/index.html">Harness</a><a href="../LESSONS.html">Lessons</a></nav><main><h1>Maintenance loops</h1>
-<p>32 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in <a href="../FLYWHEELS/index.html">FLYWHEELS</a>.</p>
+<p>35 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in <a href="../FLYWHEELS/index.html">FLYWHEELS</a>.</p>
 <h2>The autoresearch pattern</h2>
 <p>Shape: <strong>hypothesis -&gt; smallest change -&gt; measure -&gt; keep or discard</strong>.</p>
 <ul>
@@ -196,7 +196,7 @@ blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}<
 <strong>Guardrails:</strong> never a duplicate upload; no version hashtags; strict chronology; each clip tied to a catalogued evidence page or e-book chapter; one worker at a time (duplicate check by goal prefix).</p>
 <p><a id="documentary"></a></p>
 <h3>Documentary scenes</h3>
-<p><strong>Cadence:</strong> every 6 hours<br />
+<p><strong>Cadence:</strong> every 6 hours; one new scene goes live every day (from 2 Nov 2026)<br />
 <strong>What it does:</strong> Takes the next item in the re-render queue or the next unfilled frame of the chronology and produces one short scene: one dated moment, who was there, what was most likely said, with Welsh spoken where the period calls for it and subtitles.<br />
 <strong>Inputs:</strong> the scene and shot packages in the public film-studio repository; the script and scene list; the film's own daily budget<br />
 <strong>Outputs:</strong> one scene with subtitles; the next door opened on the documentary page; the script kept ten frames ahead<br />
@@ -308,6 +308,33 @@ blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}<
 <strong>Outputs:</strong> an annotated tag named <branch>-vX.Y.Z and a release with neutral notes; an audit line per release<br />
 <strong>Areas it touches:</strong> every branch of the repository<br />
 <strong>Guardrails:</strong> never tags queued or unbuilt work; it is listed as the next release; a pending hosting preview record is not a deploy; check the build run, the production deploys and the served stamp; release notes are public: same wording rules as the site; one worker at a time (duplicate check by goal prefix).</p>
+<p><a id="burndown"></a></p>
+<h3>Task backlog burndown</h3>
+<p><strong>Cadence:</strong> every 2 hours<br />
+<strong>What it does:</strong> Counts the open project-board tasks and closes those whose work is done, each with a dated evidence line; creates nothing.<br />
+<strong>Inputs:</strong> open project-board tasks; the mail record; a live crawl of the site<br />
+<strong>Outputs:</strong> closed tasks with evidence; a ledger row per run (open count before and after)<br />
+<strong>Areas it touches:</strong> the project board (task status and one evidence line)<br />
+<strong>Guardrails:</strong> re-read each task live and match its subject before closing; never closes unsent recipient-facing drafts or tasks another worker edited in the last hour; evidence or no close; one worker at a time (duplicate check by goal prefix).
+  Runner detail: <a href="../FLYWHEELS/burndown.html">Task backlog burndown</a></p>
+<p><a id="social-follows"></a></p>
+<h3>Social follows</h3>
+<p><strong>Cadence:</strong> three short runs a day<br />
+<strong>What it does:</strong> Follows relevant heritage, Welsh, local-area and genealogy accounts from a curated list on the project's Instagram account, and tops the list up from heritage seed accounts.<br />
+<strong>Inputs:</strong> the target list; seed accounts' follower lists<br />
+<strong>Outputs:</strong> confirmed follows; a log row per attempt<br />
+<strong>Areas it touches:</strong> the project's Instagram account (follows only)<br />
+<strong>Guardrails:</strong> no likes, comments, messages or unfollows; daily cap ramped slowly, at most 10 an hour; any restriction stops follows for 24 hours and halves the cap; never private individuals' private accounts, minors, schools or the do-not-contact list; one worker at a time (duplicate check by goal prefix).
+  Runner detail: <a href="../FLYWHEELS/social-follows.html">Social follows</a></p>
+<p><a id="disclosure-results"></a></p>
+<h3>Disclosure results flywheel</h3>
+<p><strong>Cadence:</strong> proposed: every 6 hours after email ingest<br />
+<strong>What it does:</strong> Reads the dartboard outcomes as performance data, learns which request features draw answers, audits unsent drafts for a preservation-first opener and adds new ideas each cycle.<br />
+<strong>Inputs:</strong> the dartboard record; new replies; unsent hive drafts<br />
+<strong>Outputs:</strong> feature tables and lessons with counts; a preservation-first audit; new ideas, each marked with its state<br />
+<strong>Areas it touches:</strong> the dartboard record (rebuilt); the drafts queue branch (drafts only)<br />
+<strong>Guardrails:</strong> never sends or drafts mail itself; recipient text changes only on the agent's own hive turns; zero spend; one worker at a time (duplicate check by goal prefix).
+  Runner detail: <a href="../FLYWHEELS/disclosure-results.html">Disclosure results flywheel</a></p>
 <h2>Also in the flywheel list</h2>
 <ul>
 <li><a href="../FLYWHEELS/morning-brief.html">Morning brief</a>: daily 08:00 UK; Tell the project lead what finished overnight, mail that needs him, today's calendar and deadlines due soon.</li>

@@ -9,4 +9,6 @@
 5. Ask for routes that cost nothing: inspection, electronic copies, narrowing to stay inside cost limits, the duty to advise and assist.
 6. When a body answers "not held", check what it searched: which systems, which dates, which terms. Missing search terms are grounds for an internal review; a refused review goes to the Information Commissioner.
 7. When a body sits outside FOI, find whose records it keeps: a request to the authority it holds them for can be enforced through the Information Commissioner.
-8. Draft only. The draft goes through the hive; the project lead sends.
+8. Open with preservation: ask the body to keep, and not destroy, anything associated with the farm, then make the records request in the same email. A preservation notice sent alone drew a positive reply about 6% of the time, against about 24% when it travelled with a request.
+9. What drew answers (first measure, 2 Nov 2026, 312 conversations; small numbers, read as a guide): archives and museums replied positively about 31% of the time, central government about 4%; environmental-information requests about 30%, FOI requests about 15%, plain records enquiries about 11%; requests naming catalogue references about 27%, against 11% without. Name the reference and a date window wherever one exists.
+10. Draft only. The draft goes through the hive; the project lead sends.

@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn_work_board/v1",
- "generated_utc": "2026-11-02 19:27 UTC",
- "open": 112,
+ "generated_utc": "2026-11-03 00:40 UTC",
+ "open": 111,
  "how_to_submit": {
   "pull_request": "a pull request to the GitHub repository unclehowell/cedwyn, on the branch of the section named in the job",
   "issue": "an issue on the same repository using the \"Agent job\" template, quoting the job id",
@@ -10,7 +10,7 @@
  "crawl": {
   "pages_read": 52,
   "links_checked": 350,
-  "broken": 16,
+  "broken": 14,
   "secs": 23
  },
  "jobs": [
@@ -1702,30 +1702,15 @@
    "first_listed": "2026-10-26 22:15 UTC"
   },
   {
-   "id": "J-7B1B85",
-   "type": "fix-broken-links",
-   "section": "wiki",
-   "branch": "the branch of that section",
-   "title": "1 broken internal link(s) on /wiki/",
-   "inputs": [
-    "/wiki/",
-    "/wiki/wp-content/uploads/2026/09/wp-1790112812173.pdf"
-   ],
-   "definition_of_done": "Every listed link opens a page (fixed, redirected, or removed with the text kept).",
-   "status": "open",
-   "first_listed": "2026-10-26 22:15 UTC"
-  },
-  {
    "id": "J-5DEF91",
    "type": "fix-broken-links",
    "section": "wayback",
    "branch": "the branch of that section",
-   "title": "3 broken internal link(s) on /wayback/",
+   "title": "2 broken internal link(s) on /wayback/",
    "inputs": [
     "/wayback/",
     "/wayback/websites/index.json",
-    "/wayback/text/_treeview.json",
-    "/wayback/pdf/_treeview.json"
+    "/wayback/text/_treeview.json"
    ],
    "definition_of_done": "Every listed link opens a page (fixed, redirected, or removed with the text kept).",
    "status": "open",
@@ -1878,6 +1863,21 @@
    "definition_of_done": "A draft (PDF and EPUB) built from cited material already on Cedwyn, every fact traceable to a catalogue record, passing the agent lint. Publishing and price are decided by the project lead.",
    "status": "open",
    "first_listed": "2026-10-26 22:15 UTC"
+  },
+  {
+   "id": "J-7B1B85",
+   "type": "fix-broken-links",
+   "section": "wiki",
+   "branch": "the branch of that section",
+   "title": "1 broken internal link(s) on /wiki/",
+   "inputs": [
+    "/wiki/",
+    "/wiki/wp-content/uploads/2026/09/wp-1790112812173.pdf"
+   ],
+   "definition_of_done": "Every listed link opens a page (fixed, redirected, or removed with the text kept).",
+   "status": "closed",
+   "first_listed": "2026-10-26 22:15 UTC",
+   "closed": "2026-11-03 00:40 UTC"
   }
  ]
 }
