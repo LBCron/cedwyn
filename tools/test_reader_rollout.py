@@ -61,7 +61,7 @@ def main():
     require("a[href]" in level_code and "control && !control.classList.contains('cwl-card')" in level_code,
             "links/controls would be intercepted by card-level navigation")
     loader = (ROOT / "web" / "_cedwyn" / "clamp.js").read_text(encoding="utf-8")
-    require("cw-graph.js?v=1.3.1" in loader and "window.__cwClamp = 4" in loader,
+    require("cw-graph.js?v=1.3.2" in loader and "window.__cwClamp = 4" in loader,
             "loader cache version does not match the new reader")
     print("test_reader_rollout: PASS (%d human-facing paths, %d protected paths; runtime guards verified)" % (len(human), len(machine)))
 
