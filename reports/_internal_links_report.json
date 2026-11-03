@@ -1,17 +1,17 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9173,
+  "pages_scanned": 9188,
   "references_checked": {
-    "resource": 209838,
-    "nav": 469682
+    "resource": 210297,
+    "nav": 470222
   },
-  "database_backed_paths": 7382,
-  "unique_missing_destinations": 5415,
-  "missing_references": 51420,
-  "missing_navigation_references": 35819,
-  "missing_resource_references": 15601,
+  "database_backed_paths": 7381,
+  "unique_missing_destinations": 5418,
+  "missing_references": 51468,
+  "missing_navigation_references": 35863,
+  "missing_resource_references": 15605,
   "unique_broken_fragments": 1832,
-  "broken_fragment_references": 3390,
+  "broken_fragment_references": 3394,
   "form_or_endpoint_actions_not_checked": {
     "form[action]": 2550
   },
@@ -19,7 +19,7 @@
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9143,
+      "references": 9159,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9140,
+      "references": 9155,
       "examples": [
         {
           "from": "/",
@@ -73,7 +73,7 @@
     {
       "kind": "resource",
       "path": "/blog/rss.xml",
-      "references": 6541,
+      "references": 6543,
       "examples": [
         {
           "from": "/review/",
@@ -100,7 +100,7 @@
     {
       "kind": "resource",
       "path": "/blog/atom.xml",
-      "references": 6541,
+      "references": 6543,
       "examples": [
         {
           "from": "/review/",
@@ -4071,7 +4071,7 @@
     {
       "path": "/wayback/",
       "fragment": "websites",
-      "references": 1074,
+      "references": 1078,
       "examples": [
         {
           "from": "/wayback/websites/",
