@@ -110,7 +110,7 @@ def ebooks_ld(dist):
     ld = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'Great House Farm (Tŷ Mawr) e-books',
           'url': SITE + '/ebooks/', 'numberOfItems': len(items), 'itemListElement': items}
     tag = '<script type="application/ld+json" data-cw-ld="ebooks">%s</script>' % json.dumps(ld, ensure_ascii=False).replace('</', '<\\/')
-    for pre in ('', 'wales/', 'argentina/'):
+    for pre in ('', 'wales/'):   # not argentina/: no prices in the Argentina scope (docs/VERSION-GATE.md, version standard run 3 Nov)
         f = dist / pre / 'ebooks' / 'index.html'
         if not f.is_file(): continue
         s = f.read_text('utf-8')
