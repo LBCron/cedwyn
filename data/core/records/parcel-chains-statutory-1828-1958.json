@@ -362,6 +362,327 @@
      "note": "Catalogued from the source named in provenance."
     }
    ]
+  },
+  {
+   "id": "AR-GAZETTE-1887-11-22-BARRY-LLANDOUGH-STATION",
+   "kind": "artifact",
+   "slug": "ar-gazette-1887-11-22-barry-llandough-station",
+   "title": "London Gazette, 22 Nov 1887: Barry Dock and Railways Bill, use of land in Llandough-juxta-Cardiff acquired under the 1885 Act",
+   "aliases": [],
+   "date": {
+    "display": "22 November 1887",
+    "sort": 1887.89,
+    "precision": "date of publication"
+   },
+   "place_text": "Llandough-juxta-Cardiff (Llandough-juxta-Penarth), near Penarth Dock Station",
+   "description": "Parliamentary notice of the Barry Dock and Railways Company for the 1888 session. Among its purposes: to use land in the parish of Llandough-juxta-Cardiff, which the company was authorised to acquire under the Barry Dock and Railways Act 1885, for a means of communication between the platform of Penarth Dock Station and a new station to be built in that parish at or near the end of the railway authorised by that Act. The notice names no owner, lessee or occupier of that land.",
+   "transcript": "To enable the Company to use certain land in the parish of Llandough-juxta-Cardiff (which they were authorised to acquire under the Barry Dock and Railways Act, 1885), for the purpose of for[m]ing a means of communication between the platform of the Penarth Dock Station and the new station to be constructed by the Company in the said parish, at or near the termination of the railway authorised by that Act.",
+   "transcript_status": "Read from the OCR text of the Gazette PDF, with the interleaved columns separated by hand; [m] marks an OCR error corrected; not checked against the page image.",
+   "provenance": {
+    "holder": "The London Gazette",
+    "reference": "Issue 25760, p.6309",
+    "date": "1887-11-22",
+    "obtained": "Read on 3 November 2026 from the Gazette PDF.",
+    "independent_origin_id": "ORIG-GAZETTE-25760"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of statutory powers or civic action over land in Llandough-juxta-Penarth (Llandough-juxta-Cardiff) or Leckwith; which tithe parcels it touched is not identified until the deposited plan and book of reference are read.",
+    "tags": [
+     "london-gazette",
+     "barry-railway",
+     "llandough-juxta-penarth",
+     "statutory-powers",
+     "book-of-reference-not-held"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "sources": [
+    {
+     "text": "The London Gazette, 22 November 1887, issue 25760, p.6309",
+     "href": "https://www.thegazette.co.uk/London/issue/25760/page/6309"
+    }
+   ],
+   "related": [],
+   "links": [],
+   "origin": "parcel-chains-cycle-2-2026-11-03",
+   "reworded": false,
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1,
+   "version": "1.0.0",
+   "changes": [
+    {
+     "rev": "1.0.0",
+     "date": "2026-11-03",
+     "note": "Catalogued from the source named in provenance."
+    }
+   ]
+  },
+  {
+   "id": "AR-GAZETTE-1887-11-25-GWR-RAILWAY-4-LLANDOUGH",
+   "kind": "artifact",
+   "slug": "ar-gazette-1887-11-25-gwr-railway-4-llandough",
+   "title": "London Gazette, 25 Nov 1887: Great Western Railway Bill, Railway No.4 from Cardiff terminating in Llandough-juxta-Cardiff",
+   "aliases": [],
+   "date": {
+    "display": "25 November 1887",
+    "sort": 1887.9,
+    "precision": "date of publication"
+   },
+   "place_text": "Llandough-juxta-Cardiff (Llandough-juxta-Penarth); route through Leckwith and Cogan",
+   "description": "Parliamentary notice of the Great Western Railway Company for the 1888 session. Railway No.4 was to run from a junction with the Penarth South Curve in St Mary-the-Virgin, Cardiff, to a junction in Llandough-juxta-Cardiff with the railway then being built under the Barry Dock and Railways Act 1885, at a point measured on the plan of that railway deposited with the Clerk of the Peace for Glamorgan in November 1884, about 8 chains south-east of the Merry Harriers public house on the road between Llandough and Dinas Powis. Parishes listed: St Mary-the-Virgin Cardiff, Llandaff, Canton, Grangetown, Leckwith, Llandough-juxta-Cardiff, Penarth, Dinas Powis, St Andrews Major and Cogan. The notice names no owner, lessee or occupier. The deposited plan and book of reference are catalogued at the Parliamentary Archives (HL/PO/PB/3/plan1888/G10); whether this railway was built is not checked here.",
+   "transcript": "4. A railway (No. 4), commencing in the parish of St. Mary-the-Virgin, Cardiff, by a junction with the branch railway of the Company, known as the Penarth South Curve […] and terminating in the parish of Llandough-juxta Cardiff by a junction with the railway now in course of construction, authorised by the Barry Dock and Railways Act, 1885, at a point thereon marked and measured on the plan of the said railway deposited with the Clerk of the Peace for the county of Glamorgan in November, 1884, 3 miles 1 furlong 6[½] chains from the commencement thereof, and about 8 chains, measured in a straight line south-eastwards of \"The Merry Harriers\" public-house, situate on the road between Llandough and Dinas Powis […] St. Mary-the-Virgin, Cardiff, Llandaff, Canton, Grangetown, Leckwith, Llandough-juxta-Cardiff, Penarth, Dinas Powis, St. Andrews Major, and Cogan, all in the county of Glamorgan.",
+   "transcript_status": "Read from the OCR text of the Gazette PDF, with the interleaved columns separated by hand; […] marks text left out; [½] is an OCR fraction read as such; not checked against the page image.",
+   "provenance": {
+    "holder": "The London Gazette",
+    "reference": "Issue 25761, p.6446",
+    "date": "1887-11-25",
+    "obtained": "Read on 3 November 2026 from the Gazette PDF.",
+    "independent_origin_id": "ORIG-GAZETTE-25761"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of statutory powers or civic action over land in Llandough-juxta-Penarth (Llandough-juxta-Cardiff) or Leckwith; which tithe parcels it touched is not identified until the deposited plan and book of reference are read.",
+    "tags": [
+     "london-gazette",
+     "great-western-railway",
+     "llandough-juxta-penarth",
+     "leckwith",
+     "statutory-powers",
+     "book-of-reference-not-held"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "sources": [
+    {
+     "text": "The London Gazette, 25 November 1887, issue 25761, p.6446",
+     "href": "https://www.thegazette.co.uk/London/issue/25761/page/6446"
+    },
+    {
+     "text": "Parliamentary Archives catalogue, HL/PO/PB/3/plan1888/G10 (plan, section, book of reference, map, Gazette notice), via The National Archives Discovery",
+     "href": "https://discovery.nationalarchives.gov.uk/details/r/ea54fca6-bf97-41b8-bb33-1663f5133887"
+    }
+   ],
+   "related": [],
+   "links": [],
+   "origin": "parcel-chains-cycle-2-2026-11-03",
+   "reworded": false,
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1,
+   "version": "1.0.0",
+   "changes": [
+    {
+     "rev": "1.0.0",
+     "date": "2026-11-03",
+     "note": "Catalogued from the source named in provenance."
+    }
+   ]
+  },
+  {
+   "id": "AR-GLAMARCH-QDP-602-TVR-1896",
+   "kind": "artifact",
+   "slug": "ar-glamarch-qdp-602-tvr-1896",
+   "title": "Glamorgan Archives Q/D/P/602: Taff Vale Railway deposited plan, 1896 (sealed)",
+   "aliases": [],
+   "date": {
+    "display": "1896",
+    "sort": 1896.9,
+    "precision": "year (catalogue)"
+   },
+   "place_text": "Glamorgan; the 1896 notice for this Bill lists compulsory lands in Llandough-juxta-Cardiff",
+   "description": "Quarter Sessions deposited plan for the Taff Vale Railway, dated 1896 and described as sealed. The Glamorgan Archives series note for Q/D/P states that most deposited plans are accompanied by a book of reference giving details of ownership and occupation of parcels of land next to the scheme. By date this is the deposit for the Bill noticed in the London Gazette on 24 November 1896 (the 1897 session); that match is by date only and is not checked against the item. The Parliamentary Archives hold the House of Lords copy for the 1897 session (HL/PO/PB/3/plan1897/T1: plan, section, book of reference, list of owners, lessees and occupiers). Related at Glamorgan Archives: G/C/PR/8/3 (Glamorgan County Council, Taff Vale Railway Bill 1897: petitions, plan) and DABP/11/1/2/4 (In Parliament Session 1897, Taff Vale Railway plans and sections, Nov 1896). The Board of Trade file MT 6/927/5 (1899-1900, Llandough Lower Junction) is at The National Archives.",
+   "transcript": "",
+   "transcript_status": "Catalogue entries read on 3 November 2026; none of the items has been seen.",
+   "provenance": {
+    "holder": "Glamorgan Archives",
+    "reference": "Q/D/P/602",
+    "date": "1896",
+    "obtained": "Catalogue entry read on 3 November 2026; the item itself has not been seen.",
+    "independent_origin_id": "ORIG-GLAMARCH-QDP-602"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of statutory powers or civic action over land in Llandough-juxta-Penarth (Llandough-juxta-Cardiff) or Leckwith; which tithe parcels it touched is not identified until the deposited plan and book of reference are read.",
+    "tags": [
+     "glamorgan-archives",
+     "deposited-plan",
+     "taff-vale-railway",
+     "llandough-juxta-penarth",
+     "book-of-reference-not-read"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "sources": [
+    {
+     "text": "Glamorgan Archives catalogue, Q/D/P/602",
+     "href": "https://canfod.glamarchives.gov.uk/en/records/Q/D/P/602"
+    },
+    {
+     "text": "Parliamentary Archives catalogue, HL/PO/PB/3/plan1897/T1, via The National Archives Discovery",
+     "href": "https://discovery.nationalarchives.gov.uk/details/r/9c34c68a-ec58-4b25-aab4-856677a82981"
+    },
+    {
+     "text": "The National Archives, MT 6/927/5",
+     "href": "https://discovery.nationalarchives.gov.uk/details/r/C1041037"
+    }
+   ],
+   "related": [],
+   "links": [],
+   "origin": "parcel-chains-cycle-2-2026-11-03",
+   "reworded": false,
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1,
+   "version": "1.0.0",
+   "changes": [
+    {
+     "rev": "1.0.0",
+     "date": "2026-11-03",
+     "note": "Catalogued from the source named in provenance."
+    }
+   ]
+  },
+  {
+   "id": "AR-GLAMARCH-QDP-467-BARRY-1884",
+   "kind": "artifact",
+   "slug": "ar-glamarch-qdp-467-barry-1884",
+   "title": "Glamorgan Archives Q/D/P/467: Barry Dock and Railways deposited plan, 1884 (sealed)",
+   "aliases": [],
+   "date": {
+    "display": "1884",
+    "sort": 1884.9,
+    "precision": "year (catalogue)"
+   },
+   "place_text": "Glamorgan; the November 1884 deposit for this company includes Railway No.1 terminating in Llandough-juxta-Cardiff",
+   "description": "Quarter Sessions deposited plan for the Barry Dock and Railways Company, dated 1884 and described as sealed; the Q/D/P series note states that most deposited plans are accompanied by a book of reference giving ownership and occupation by parcel. A Great Western Railway notice of 25 November 1887 refers to the plan of this railway deposited with the Clerk of the Peace for Glamorgan in November 1884, which fits this item by date (not checked against the item). The resulting Act is 48 & 49 Vict. c.cxli (1885). Related copies: Parliamentary Archives HL/PO/PB/3/plan1885/B4 (plan, section, book of reference, list of owners, lessees and occupiers); Glamorgan Archives DABP/1/4/3/2 (plans and sections, Nov 1884, session 1885); opposed Bill evidence for 1885 at HC/CL/PB/2/53/2.",
+   "transcript": "",
+   "transcript_status": "Catalogue entries read on 3 November 2026; none of the items has been seen.",
+   "provenance": {
+    "holder": "Glamorgan Archives",
+    "reference": "Q/D/P/467",
+    "date": "1884",
+    "obtained": "Catalogue entry read on 3 November 2026; the item itself has not been seen.",
+    "independent_origin_id": "ORIG-GLAMARCH-QDP-467"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of statutory powers or civic action over land in Llandough-juxta-Penarth (Llandough-juxta-Cardiff) or Leckwith; which tithe parcels it touched is not identified until the deposited plan and book of reference are read.",
+    "tags": [
+     "glamorgan-archives",
+     "deposited-plan",
+     "barry-railway",
+     "llandough-juxta-penarth",
+     "book-of-reference-not-read"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "sources": [
+    {
+     "text": "Glamorgan Archives catalogue, Q/D/P/467",
+     "href": "https://canfod.glamarchives.gov.uk/en/records/Q/D/P/467"
+    },
+    {
+     "text": "Parliamentary Archives catalogue, HL/PO/PB/3/plan1885/B4, via The National Archives Discovery",
+     "href": "https://discovery.nationalarchives.gov.uk/details/r/1e022060-445e-4980-b76f-0b553a01c37a"
+    },
+    {
+     "text": "Parliamentary Archives catalogue, Local Act 48 & 49 Vict. c.cxli, via The National Archives Discovery",
+     "href": "https://discovery.nationalarchives.gov.uk/details/r/14adc0ef-5026-4e25-a421-51ec693608ff"
+    }
+   ],
+   "related": [],
+   "links": [],
+   "origin": "parcel-chains-cycle-2-2026-11-03",
+   "reworded": false,
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1,
+   "version": "1.0.0",
+   "changes": [
+    {
+     "rev": "1.0.0",
+     "date": "2026-11-03",
+     "note": "Catalogued from the source named in provenance."
+    }
+   ]
+  },
+  {
+   "id": "AR-GLAMARCH-QDP-584-CARDIFF-1894",
+   "kind": "artifact",
+   "slug": "ar-glamarch-qdp-584-cardiff-1894",
+   "title": "Glamorgan Archives Q/D/P/584: Cardiff Corporation deposited plan (waterworks, improvements, sewers), 1894",
+   "aliases": [],
+   "date": {
+    "display": "1894",
+    "sort": 1894.0,
+    "precision": "year (catalogue)"
+   },
+   "place_text": "Glamorgan; the November 1893 notice for this Bill includes a conduit terminating in Llandough at the Cogan reservoir",
+   "description": "Quarter Sessions deposited plan for Cardiff Corporation (waterworks, improvements, sewers and other works), dated 1894; by date it fits the Bill noticed in the London Gazette on 21 November 1893 (not checked against the item). The House of Lords copy, Parliamentary Archives HL/PO/PB/3/plan1894/C3, is catalogued as plan, section, map, estimate, list of owners and occupiers and working-class statement; its catalogue adds that a book of reference and Gazette notice, listed in an earlier description, could not be located as of July 2023. The Glamorgan copy is therefore the place where a book of reference for this scheme may survive.",
+   "transcript": "",
+   "transcript_status": "Catalogue entries read on 3 November 2026; none of the items has been seen.",
+   "provenance": {
+    "holder": "Glamorgan Archives",
+    "reference": "Q/D/P/584",
+    "date": "1894",
+    "obtained": "Catalogue entry read on 3 November 2026; the item itself has not been seen.",
+    "independent_origin_id": "ORIG-GLAMARCH-QDP-584"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of statutory powers or civic action over land in Llandough-juxta-Penarth (Llandough-juxta-Cardiff) or Leckwith; which tithe parcels it touched is not identified until the deposited plan and book of reference are read.",
+    "tags": [
+     "glamorgan-archives",
+     "deposited-plan",
+     "cardiff-corporation",
+     "waterworks",
+     "llandough-juxta-penarth",
+     "book-of-reference-not-located"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "sources": [
+    {
+     "text": "Glamorgan Archives catalogue, Q/D/P/584",
+     "href": "https://canfod.glamarchives.gov.uk/en/records/Q/D/P/584"
+    },
+    {
+     "text": "Parliamentary Archives catalogue, HL/PO/PB/3/plan1894/C3, via The National Archives Discovery",
+     "href": "https://discovery.nationalarchives.gov.uk/details/r/837c90cf-bca6-4b44-8d26-d69bdd06903c"
+    }
+   ],
+   "related": [],
+   "links": [],
+   "origin": "parcel-chains-cycle-2-2026-11-03",
+   "reworded": false,
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1,
+   "version": "1.0.0",
+   "changes": [
+    {
+     "rev": "1.0.0",
+     "date": "2026-11-03",
+     "note": "Catalogued from the source named in provenance."
+    }
+   ]
   }
  ]
 }
