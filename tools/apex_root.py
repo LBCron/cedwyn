@@ -18,7 +18,23 @@ def put(p):
     if dst.exists(): kept.append(str(rel)); return
     dst.parent.mkdir(parents=True, exist_ok=True); shutil.copyfile(p, dst); copied.append(str(rel))
 if not src.is_dir():
-    print('apex root: source folder missing, nothing copied'); sys.exit(0)
+    # the 'Apex site source' step removes its bff/ clone when it finishes (disk), so fetch public/ again here (sparse, blobs
+    # on demand: a few MB). Fix 3 Nov 2026: the first run found no folder and copied nothing.
+    import subprocess, tempfile
+    tmp = pathlib.Path(tempfile.mkdtemp(prefix='bff-root-'))
+    try:
+        subprocess.run(['git', 'clone', '-q', '--depth', '1', '--filter=blob:none', '--sparse',
+                        'https://github.com/unclehowell/BucklerFamilyFarm.git', str(tmp / 'bff')], check=True, timeout=600)
+        subprocess.run(['git', '-C', str(tmp / 'bff'), 'sparse-checkout', 'set'] + ['public/' + d for d in DIRS] + ['public/ebook/api'],
+                       check=True, timeout=600)
+        subprocess.run(['git', '-C', str(tmp / 'bff'), 'checkout', '-q', '--', '.'], timeout=600)
+        root = tmp / 'bff' / 'public'
+        for f in FILES + ['_headers']:   # single root files: read straight from the tree (no checkout of all of public/)
+            b = subprocess.run(['git', '-C', str(tmp / 'bff'), 'show', 'HEAD:public/' + f], capture_output=True, timeout=120)
+            if b.returncode == 0: (root / f).parent.mkdir(parents=True, exist_ok=True); (root / f).write_bytes(b.stdout)
+        src = root
+    except Exception as e:
+        print('apex root: could not fetch the old apex project (%s), nothing copied' % str(e)[:200]); sys.exit(0)
 for d in DIRS:
     for p in sorted((src / d).rglob('*')) if (src / d).is_dir() else []:
         if p.is_file() and p.stat().st_size < 24 * 1024 * 1024: put(p)
