@@ -1,4 +1,5 @@
-/* cw-graph.js v1.3.1 (2 Nov 2026: shared animated reading levels across all human-facing Cedwyn themes and webapps;
+/* cw-graph.js v1.3.2 (3 Nov 2026: the reader also runs on text pages whose only button is the site's own Glossary button.
+   1.3.1, 2 Nov 2026: shared animated reading levels across all human-facing Cedwyn themes and webapps;
    text-only sections expand into nested previews with animated forward/back transitions; interactive controls and live app panels remain intact.
    1.3.0: graph promo strip removed; the graph modal and card-level reader remain. - Cedwyn editors
    The older 1.2.4 parcel-story panel note is retained below for history:
@@ -11,7 +12,7 @@
 (function () {
   'use strict';
   if (window.__cwGraph) return;
-  var d = document, de = d.documentElement, VER = '1.3.1';
+  var d = document, de = d.documentElement, VER = '1.3.2';
   window.__cwGraph = { v: VER };
   var RM = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
   var T = {
@@ -655,7 +656,11 @@
       if (!x || !x.p || x.p.hasAttribute('data-cw-nolevels')) return false;
       /* Never rearrange a live app/control surface. A separate text-only wrapper can still
          qualify even when a sibling part of the page contains a widget. */
-      return !x.p.querySelector('form,input,select,textarea,button,canvas,video,audio,iframe,object,embed,[contenteditable="true"],[role="application"],[role="grid"],[role="button"],[data-cw-nolevels],.ghf-ui');
+      /* 1.3.2: the site's own Glossary button (glossary-modal.js puts it in the .cw-legend word key) is page chrome,
+         not an app control, so it no longer keeps a text page out of the animated reader. */
+      var q = x.p.querySelectorAll('form,input,select,textarea,button,canvas,video,audio,iframe,object,embed,[contenteditable="true"],[role="application"],[role="grid"],[role="button"],[data-cw-nolevels],.ghf-ui');
+      for (var i = 0; i < q.length; i++) if (!q[i].matches('.cw-gl-open') && !q[i].closest('.cw-legend')) return false;
+      return true;
     }
     if (ok(bp) && (!ok(fp) || bp.n > fp.n || bp.p.contains(fp.p) && bp.n >= 3)) { P = bp.p; root = buildBlocks(P); }
     if (!root && ok(fp)) { P = fp.p; root = buildFlow(P); }
