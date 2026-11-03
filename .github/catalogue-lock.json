@@ -1,6 +1,6 @@
 {
- "_about": "Catalogue lock. Existing evidence/artifact records may not be edited or deleted without the owner's approval of that specific change. New records may be added; they are listed in the check summary. Approval = the label 'sion-approved' on the pull request, applied by an approver account, or a commit trailer 'Catalogue-approved-by: <approver> (<reference>)' written only after the owner approved that change. Agents propose changes as pull requests labelled 'catalogue-change'. Agents never apply 'sion-approved' themselves and never write the trailer. \u2014 Sion's Tab agent",
- "approval_label": "sion-approved",
+ "_about": "Catalogue lock. Existing evidence/artifact records may not be edited or deleted without the owner's approval of that specific change. New records may be added; they are listed in the check summary. Approval = the label 'owner-approved' on the pull request, applied by an approver account, or a commit trailer 'Catalogue-approved-by: <approver> (<reference>)' written only after the owner approved that change. Agents propose changes as pull requests labelled 'catalogue-change'. Agents never apply 'owner-approved' themselves and never write the trailer.",
+ "approval_label": "owner-approved",
  "change_label": "catalogue-change",
  "approvers": [
   "unclehowell"

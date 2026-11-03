@@ -1,5 +1,5 @@
 # catalogue-lock: existing evidence/artifact records cannot be edited or deleted without the owner's approval.
-# New records are allowed and listed in the run summary. Approval: the 'sion-approved' label on the pull request.
+# New records are allowed and listed in the run summary. Approval: the 'owner-approved' label on the pull request.
 # Agents propose changes as pull requests labelled 'catalogue-change'. Read-only: this workflow writes nothing.
 # Config: .github/catalogue-lock.json. Logic: tools/catalogue_lock.py. — Sion's Tab agent
 name: catalogue-lock

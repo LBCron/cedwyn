@@ -4,7 +4,7 @@
 Rules (config: .github/catalogue-lock.json):
   * A new record (new file, new keyed JSON item, new CSV row) is allowed and listed in the summary.
   * Editing, deleting or moving an existing record fails the check unless that change is approved:
-      - pull request: label 'sion-approved', most recently applied by an approver account;
+      - pull request: label 'owner-approved', most recently applied by an approver account;
       - direct push / audited commit: the commit belongs to such a pull request, or carries the trailer
         'Catalogue-approved-by: <approver> (<reference>)'.
   * JSON registers are compared record by record (items keyed by id/ev/slug...; unkeyed items by exact value).
@@ -13,7 +13,7 @@ Rules (config: .github/catalogue-lock.json):
   * Any other file (HTML page, image, PDF) under a locked path: modified/deleted/renamed = change to an existing record.
 
 Modes: pull_request, push, schedule (audits audit_branches for recent commits). Standard library only.
-Agents propose changes as pull requests labelled 'catalogue-change' and never apply 'sion-approved'. — Sion's Tab agent
+Agents propose changes as pull requests labelled 'catalogue-change' and never apply 'owner-approved'. — Sion's Tab agent
 """
 import fnmatch, json, os, subprocess, sys, time, urllib.request
 
