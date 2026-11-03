@@ -1,0 +1,697 @@
+{
+ "schema": "cedwyn-core/0.1.0",
+ "note": "Additive screening and missing-record entries arising from the 3 November 2026 book-evidence flywheel. Existing records are not rewritten. Screening leads feed the Kissed Frogs view when their scope disposition is not in_scope. missing_record entries feed the dedicated Negative Finds view. Negative screens describe only bounded searches; they are not proof that a record or relationship never existed. Retrieval stage is stated separately from what the underlying item establishes.",
+ "updated": "2026-11-03",
+ "records": [
+  {
+   "id": "KF-51",
+   "kind": "screening_lead",
+   "slug": "kf-51-thomas-vaughan-of-hergest-journal",
+   "title": "“Thomas Vaughan of Hergest” — Woolhope Naturalists’ Field Club, 1924–1926 volume, published 1928",
+   "date": {
+    "display": "1924–1926 volume; published 1928",
+    "sort": 1928
+   },
+   "place_text": "Hergest, Herefordshire",
+   "description": "A Vaughan genealogy lead was screened because of the surname. Its subject is Hergest in Herefordshire, not the Penarth-side Llandough property.",
+   "provenance": {
+    "holder": "Woolhope Naturalists’ Field Club",
+    "reference": "Woolhope Naturalists’ Field Club Transactions, 1924–1926 volume (published 1928), paper “Thomas Vaughan of Hergest”, pp. 1–2",
+    "date": "2026-11-03",
+    "obtained": "Digitised full-text OCR read; page images not inspected; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "This is a locality false positive. It must not be used as a surname-only bridge to the Llandough Vaughan family or Williams succession.",
+   "scope": {
+    "disposition": "not_this_property",
+    "label": "Different locality",
+    "reason": "The journal paper concerns the Hergest family in Herefordshire. The paper does not document the Llandough Vaughan family, Great House Farm, Tŷ Mawr or a Vaughan-to-Williams succession.",
+    "distinct_from": [],
+    "tags": [
+     "Vaughan",
+     "Hergest",
+     "Herefordshire",
+     "locality-false-positive"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Record screened",
+     "text": "The paper “Thomas Vaughan of Hergest” in the Woolhope Naturalists’ Field Club volume covering 1924–1926, published in 1928, pp. 1–2.",
+     "form": "term"
+    },
+    {
+     "heading": "Retrieval stage",
+     "text": "Digitised full-text OCR was read. The underlying printed page images were not visually inspected in this run.",
+     "form": "term"
+    },
+    {
+     "heading": "Screening result",
+     "text": "The paper concerns Hergest in Herefordshire. It does not identify a Llandough person, Great House Farm parcel or Vaughan-to-Williams descent.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit and next action",
+     "text": "This excludes the paper as evidence of the Llandough succession; it does not disprove a separate local Vaughan line. Continue with locality-specific pedigrees and primary records.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "Woolhope Naturalists’ Field Club Transactions, 1924–1926 volume (published 1928), “Thomas Vaughan of Hergest”, pp. 1–2; OCR stage.",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/kissed-frogs/kf-51-thomas-vaughan-of-hergest-journal/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  },
+  {
+   "id": "KF-52",
+   "kind": "screening_lead",
+   "slug": "kf-52-peoples-collection-great-house-farm-near-cowbridge",
+   "title": "People’s Collection Wales item 1229976 — “Great House Farm, Llandough, nr Cowbridge”",
+   "date": {
+    "display": "1891 (catalogue date)",
+    "sort": 1891
+   },
+   "place_text": "Llandough near Cowbridge",
+   "description": "A same-name Great House Farm catalogue result was screened. The catalogue title includes the locality qualifier “nr Cowbridge”.",
+   "provenance": {
+    "holder": "People’s Collection Wales",
+    "reference": "People’s Collection Wales item 1229976; catalogue title “Great House Farm, Llandough, nr Cowbridge”; catalogue date 1891",
+    "date": "2026-11-03",
+    "obtained": "Catalogue metadata only; photograph not inspected; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "This is a Cowbridge-side locality false positive. The record is excluded by catalogue locality metadata only; no claim is made about the unseen photograph.",
+   "scope": {
+    "disposition": "not_this_property",
+    "label": "Cowbridge-side locality",
+    "reason": "The catalogue title explicitly locates this Great House Farm near Cowbridge. It is not a match for Llandough-juxta-Penarth. The photograph itself was not retrieved or inspected.",
+    "distinct_from": [],
+    "tags": [
+     "Llandough-juxta-Cowbridge",
+     "Cowbridge",
+     "locality-false-positive",
+     "catalogue-only"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Record screened",
+     "text": "People’s Collection Wales item 1229976, catalogue title “Great House Farm, Llandough, nr Cowbridge”, dated 1891.",
+     "form": "term"
+    },
+    {
+     "heading": "Retrieval stage",
+     "text": "Catalogue metadata only. The item page/photo was not retrieved; no image inspection was completed.",
+     "form": "term"
+    },
+    {
+     "heading": "Screening result",
+     "text": "The catalogue title places the farm near Cowbridge. Keep it separate from Llandough-juxta-Penarth and Great House Farm / Tŷ Mawr.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit and next action",
+     "text": "Do not infer anything about the unseen image or use the item as evidence about the Penarth-side property. Reopen only if an independently inspected image or record changes the locality identification.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "People’s Collection Wales item 1229976, https://www.peoplescollection.wales/items/1229976 (catalogue metadata only).",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/kissed-frogs/kf-52-peoples-collection-great-house-farm-near-cowbridge/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  },
+  {
+   "id": "KF-53",
+   "kind": "screening_lead",
+   "slug": "kf-53-cardiff-times-john-williams-of-llandough-farm-1904",
+   "title": "Cardiff Times, 16 July 1904, p. 1 — John Williams “of Llandough Farm”",
+   "date": {
+    "display": "16 Jul 1904",
+    "sort": 1904
+   },
+   "place_text": "Llandough Farm; exact parcel identity unresolved",
+   "description": "The newspaper report names John Williams of Llandough Farm and describes his tenancy history.",
+   "provenance": {
+    "holder": "Welsh Newspapers Online",
+    "reference": "Cardiff Times, 16 July 1904, p. 1; Welsh Newspapers Online",
+    "date": "2026-11-03",
+    "obtained": "Full-text OCR read; newspaper page image not visually inspected; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "This is a relevant but unjoined holding reference. Keep Llandough Farm distinct from Great House Farm until a plan, deed or parcel-level record connects them.",
+   "scope": {
+    "disposition": "lead_only",
+    "label": "Not joined to Great House Farm",
+    "reason": "The report identifies John Williams as “of Llandough Farm” and describes a tenancy beginning in 1855. It does not identify that holding as Great House Farm / Tŷ Mawr. No parcel join is established.",
+    "distinct_from": [],
+    "tags": [
+     "Llandough-Farm",
+     "John-Williams",
+     "1904",
+     "parcel-identity-unresolved"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Record screened",
+     "text": "Cardiff Times, 16 July 1904, p. 1. The OCR identifies John Williams as “of Llandough Farm” and reports a tenancy beginning in 1855.",
+     "form": "term"
+    },
+    {
+     "heading": "Retrieval stage",
+     "text": "Full-text OCR was read. The underlying newspaper page image was not visually inspected.",
+     "form": "term"
+    },
+    {
+     "heading": "Screening result",
+     "text": "The report does not name Great House Farm, Tŷ Mawr or Cydfin. It cannot be attributed to the target house-and-garden parcel.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit and next action",
+     "text": "Do not call this a confirmed separate parcel or a Great House tenancy. Resolve with parcel evidence, plans or a primary tenancy instrument.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "Cardiff Times, 16 July 1904, p. 1, Welsh Newspapers Online (OCR read; image not inspected).",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/kissed-frogs/kf-53-cardiff-times-john-williams-of-llandough-farm-1904/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  },
+  {
+   "id": "KF-54",
+   "kind": "screening_lead",
+   "slug": "kf-54-dwnn-arglwydd-llandoch-armorial-entry",
+   "title": "“Arglwydd Llandoch” — Heraldic Visitations of Wales, volume II (1846), OCR page marker 22",
+   "date": {
+    "display": "1846 publication; armorial entry undated",
+    "sort": 1846
+   },
+   "place_text": "Llandough locality unresolved",
+   "description": "A Welsh armorial entry was located in the Dwnn material printed in volume II of Heraldic Visitations of Wales.",
+   "provenance": {
+    "holder": "Digitised printed volume",
+    "reference": "Samuel Rush Meyrick (ed.), Heraldic Visitations of Wales and Part of the Marches, vol. II (1846), OCR lines 2739–2771; page marker 22",
+    "date": "2026-11-03",
+    "obtained": "Full-text OCR read; page image not inspected; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "This is an ambiguous lead, not proof of a named lord, appointment, hereditary title, Bute proclamation or parcel ownership.",
+   "scope": {
+    "disposition": "lead_only",
+    "label": "Ambiguous armorial reference",
+    "reason": "The undated armorial list contains “Arglwydd Llandoch”, but the OCR does not identify a named person, the date of any lordship, a particular manor or a parcel. A prior note cited p. 20; OCR marker 22 is provisional.",
+    "distinct_from": [],
+    "tags": [
+     "Dwnn",
+     "Arglwydd-Llandoch",
+     "heraldry",
+     "page-number-conflict",
+     "locality-unresolved"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Record screened",
+     "text": "The entry “Arglwydd Llandoch” appears in an undated Welsh armorial list in volume II, OCR lines 2739–2771.",
+     "form": "term"
+    },
+    {
+     "heading": "Retrieval stage",
+     "text": "Full-text OCR read. The page image was not inspected; page marker 22 is provisional, and an earlier project note cited p. 20.",
+     "form": "term"
+    },
+    {
+     "heading": "Screening result",
+     "text": "No named individual, date, appointment, succession or target parcel is established. The following BrecHinog section includes Vaughan arms but no stated connection to this entry.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit and next action",
+     "text": "Inspect the printed page image and compare the locality in context. Do not infer manorial lordship or parcel title from this armorial phrase.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "Heraldic Visitations of Wales and Part of the Marches, vol. II (1846), OCR page marker 22; image inspection outstanding.",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/kissed-frogs/kf-54-dwnn-arglwydd-llandoch-armorial-entry/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  },
+  {
+   "id": "KF-55",
+   "kind": "screening_lead",
+   "slug": "kf-55-nlw-lockwood-l11-cydwin-lease-assignment",
+   "title": "NLW Lockwood estate records L11 — 1547 Cydwin lease and 1739/40 assignment",
+   "date": {
+    "display": "1547; 1739/40",
+    "sort": 1739
+   },
+   "place_text": "Cydwin, manor of Llandough; target parcel relationship unresolved",
+   "description": "The catalogue describes a 1,000-year lease of a farm called Cydwin from George Herbert to Edmund Vaughan in 1547 and an assignment by Edmond Vaughan to Thomas Mathews in 1739/40.",
+   "provenance": {
+    "holder": "National Library of Wales",
+    "reference": "National Library of Wales, Lockwood estate records L11, finding-aid p. 146; lease 20 Jun 1547; assignment 13 Feb 1739/40",
+    "date": "2026-11-03",
+    "obtained": "Official finding-aid description read; underlying lease and assignment not inspected; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "The catalogue description is a useful Vaughan leasehold lead, but the underlying deeds and the relationship between the named Vaughan individuals have not been established. No Williams succession or Great House parcel identity follows from the description.",
+   "scope": {
+    "disposition": "catalogue_only",
+    "label": "Catalogue description only",
+    "reason": "The finding aid describes a Cydwin farm lease and a later assignment between named Vaughan parties. It does not mention Williams, Great House Farm or Tŷ Mawr, and does not establish that Cydwin is the same parcel as Cydfin / Tŷ Mawr.",
+    "distinct_from": [],
+    "tags": [
+     "Cydwin",
+     "Vaughan",
+     "Lockwood-L11",
+     "catalogue-only",
+     "parcel-link-unresolved"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Record screened",
+     "text": "NLW Lockwood estate records L11, finding-aid p. 146. The description records a 20 June 1547 lease of a farm called Cydwin from George Herbert of Swansea to Edmund Vaughan of Llandough, followed by an assignment dated 13 February 1739/40 from Edmond Vaughan of Llandough to Thomas Mathews of Llandaff.",
+     "form": "term"
+    },
+    {
+     "heading": "Retrieval stage",
+     "text": "Official finding-aid description only. Neither the 1547 lease nor the 1739/40 assignment was inspected.",
+     "form": "term"
+    },
+    {
+     "heading": "Screening result",
+     "text": "The description does not name Williams, Great House Farm or Tŷ Mawr. It records a Cydwin farm, not an established match to Cydfin / Tŷ Mawr.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit and next action",
+     "text": "Do not infer kinship between the two Vaughans, a Vaughan-to-Williams succession or title to the target parcel. Inspect the instruments and field names, then seek a parcel-level link.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "NLW Lockwood estate records L11, finding-aid p. 146 (catalogue description only).",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/kissed-frogs/kf-55-nlw-lockwood-l11-cydwin-lease-assignment/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  },
+  {
+   "id": "MR-NEG-001",
+   "kind": "missing_record",
+   "slug": "mr-neg-001-no-williams-to-bute-grant-found-in-bounded-book-search",
+   "title": "No Williams-to-Bute proprietary grant identified in the bounded book-evidence search",
+   "date": {
+    "display": "3 Nov 2026",
+    "sort": 2026
+   },
+   "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth",
+   "description": "A bounded search tested whether Williams held a proprietary interest and granted occupation or a lease to Bute for the target property.",
+   "provenance": {
+    "holder": "Cedwyn research register",
+    "reference": "Cedwyn book-evidence register, web/research/book-research-findings.csv; search notes observed 3 Nov 2026",
+    "date": "2026-11-03",
+    "obtained": "Search log and source-stage register checked; original title instruments not inspected; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "No direct instrument was identified in this source batch. No conclusion about the existence or non-existence of such an instrument follows.",
+   "scope": {
+    "disposition": "lead_only",
+    "label": "Bounded negative screen",
+    "reason": "The checked printed histories, journal leads and catalogue descriptions did not identify an instrument by which Williams held a proprietary interest and granted occupation or a lease to Bute. This is a search-boundary statement, not evidence that no such instrument exists.",
+    "distinct_from": [],
+    "tags": [
+     "negative-screen",
+     "Williams-to-Bute",
+     "proprietary-interest",
+     "lease-direction",
+     "Great-House-Farm"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Question screened",
+     "text": "Did a Williams person hold a proprietary interest in Great House Farm / Tŷ Mawr and grant occupation or a lease to Bute?",
+     "form": "term"
+    },
+    {
+     "heading": "Search boundary",
+     "text": "The run checked Cardiff Records, the NLW Lockwood L11 finding aid, the printed-history and journal leads in the book register, and the contemporary Cardiff Times and Court Leet reports described in the register.",
+     "form": "term"
+    },
+    {
+     "heading": "Result",
+     "text": "No direct Williams-to-Bute grant, conveyance or lease instrument was identified in this bounded set. L11 concerns a catalogue-described Cydwin lease between Herbert and Vaughan parties, not a Williams grant.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit",
+     "text": "Several references remain catalogue or OCR stage; underlying title instruments and page images were not all inspected. A negative search is not proof of absence.",
+     "form": "term"
+    },
+    {
+     "heading": "Next action",
+     "text": "Locate and inspect primary instruments and plans, then test the parties, dates, wording and parcel boundaries. Keep the house-and-garden parcel separate from the eastern fields unless mapped evidence joins them.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "Book-evidence register, web/research/book-research-findings.csv; Cardiff Records; NLW Lockwood L11 finding-aid; Cardiff Times 16 July 1904.",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/negative-finds/mr-neg-001-no-williams-to-bute-grant-found-in-bounded-book-search/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  },
+  {
+   "id": "MR-NEG-002",
+   "kind": "missing_record",
+   "slug": "mr-neg-002-no-bute-to-williams-house-parcel-lease-identified",
+   "title": "No Bute-to-Williams lease of the Great House house parcel identified in the bounded book-evidence search",
+   "date": {
+    "display": "3 Nov 2026",
+    "sort": 2026
+   },
+   "place_text": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth",
+   "description": "A separate search tested the reverse direction: Bute granting occupation or a lease to Williams for the house-and-garden parcel.",
+   "provenance": {
+    "holder": "Cedwyn research register",
+    "reference": "Cedwyn book-evidence register, web/research/book-research-findings.csv; search notes observed 3 Nov 2026",
+    "date": "2026-11-03",
+    "obtained": "Search log and source-stage register checked; original title instruments not inspected; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "No parcel-specific Bute-to-Williams lease was established in this source batch. The question remains open.",
+   "scope": {
+    "disposition": "lead_only",
+    "label": "Bounded negative screen",
+    "reason": "The checked source batch did not establish a Bute-to-Williams lease of the house-and-garden parcel. The Bute lordship and separate Llandough Farm references are not parcel-specific instruments.",
+    "distinct_from": [],
+    "tags": [
+     "negative-screen",
+     "Bute-to-Williams",
+     "lease-direction",
+     "house-parcel",
+     "Great-House-Farm"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Question screened",
+     "text": "Did Bute grant Williams occupation or a lease of the Great House house-and-garden parcel?",
+     "form": "term"
+    },
+    {
+     "heading": "Search boundary",
+     "text": "The run checked manorial histories, Court Leet reports, newspaper references and catalogue descriptions in the book-evidence register.",
+     "form": "term"
+    },
+    {
+     "heading": "Result",
+     "text": "No parcel-specific Bute-to-Williams lease instrument was identified. The 1908 report of a Bute Estate prosecution and the 1904 Llandough Farm tenancy report do not supply the house-parcel terms.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit",
+     "text": "The report of Bute manorial activity is not parcel title. Llandough Farm is not identified as Great House Farm in the 1904 report. The source images and primary conveyances remain uninspected.",
+     "form": "term"
+    },
+    {
+     "heading": "Next action",
+     "text": "Search and inspect the underlying Bute conveyances, rent books, leases and plans; test the house/garden parcel independently of Parcel B or the eastern fields.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "Book-evidence register, web/research/book-research-findings.csv; Barry Dock News 23 October 1908; Cardiff Times 16 July 1904.",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/negative-finds/mr-neg-002-no-bute-to-williams-house-parcel-lease-identified/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  },
+  {
+   "id": "MR-NEG-003",
+   "kind": "missing_record",
+   "slug": "mr-neg-003-no-vaughan-to-williams-succession-documented",
+   "title": "No Vaughan-to-Williams succession documented in the screened pedigree and journal leads",
+   "date": {
+    "display": "3 Nov 2026",
+    "sort": 2026
+   },
+   "place_text": "Llandough-juxta-Penarth and Cedwyn estate",
+   "description": "The search tested for a named, documented Vaughan-to-Williams succession relevant to the Penarth-side Great House Farm.",
+   "provenance": {
+    "holder": "Cedwyn research register",
+    "reference": "Cedwyn book-evidence register, web/research/book-research-findings.csv; NLW catalogue leads observed 3 Nov 2026",
+    "date": "2026-11-03",
+    "obtained": "Catalogue metadata and full-text OCR checked; manuscript pages and underlying deeds not inspected; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "No documented succession was established in the sources checked. This does not demonstrate that no such relationship or transfer existed.",
+   "scope": {
+    "disposition": "lead_only",
+    "label": "Bounded negative screen",
+    "reason": "The screened genealogy and catalogue materials do not document a succession from the relevant Vaughan family to Williams at Great House Farm. Surname similarity and a catalogue-described lease are insufficient.",
+    "distinct_from": [],
+    "tags": [
+     "negative-screen",
+     "Vaughan",
+     "Williams",
+     "genealogy",
+     "succession"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Question screened",
+     "text": "Is there a documented Vaughan-to-Williams succession connected to Great House Farm / Tŷ Mawr?",
+     "form": "term"
+    },
+    {
+     "heading": "Search boundary",
+     "text": "Checked NLW Lockwood L11 finding-aid, NLW MS 7A catalogue metadata, Castell Gorfod A10 catalogue metadata, the 1845 Glamorganshire Pedigrees lead, and the Hergest Vaughan journal article.",
+     "form": "term"
+    },
+    {
+     "heading": "Result",
+     "text": "No named descent or transfer to Williams was identified. L11 describes Cydwin and two Vaughan individuals but supplies no intervening pedigree. The Hergest paper concerns Herefordshire.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit",
+     "text": "The manuscript pages, annotated pedigree sheets, printed p. 39 of the 1845 pedigree and underlying L11 deeds were not inspected. Catalogue descriptions and OCR are not equivalent to inspected originals.",
+     "form": "term"
+    },
+    {
+     "heading": "Next action",
+     "text": "Inspect the 1845 pedigree page and relevant manuscript pages if accessible without spending, then trace each named generation through parish, probate and property instruments.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "NLW Lockwood estate records L11 finding-aid p. 146; NLW MS 7A catalogue; Castell Gorfod A10 catalogue; Glamorganshire Pedigrees (1845), p. 39 lead.",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/negative-finds/mr-neg-003-no-vaughan-to-williams-succession-documented/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  },
+  {
+   "id": "MR-NEG-004",
+   "kind": "missing_record",
+   "slug": "mr-neg-004-no-independent-williams-rank-proof-in-this-source-batch",
+   "title": "No independent Williams social-rank proof established in the new printed-source batch",
+   "date": {
+    "display": "3 Nov 2026",
+    "sort": 2026
+   },
+   "place_text": "Llandough-juxta-Penarth",
+   "description": "A bounded screen tested whether the newly checked printed sources supplied independent evidence of Williams family social status.",
+   "provenance": {
+    "holder": "Cedwyn research register",
+    "reference": "Cedwyn book-evidence register, web/research/book-research-findings.csv; newspapers and journal sources observed 3 Nov 2026",
+    "date": "2026-11-03",
+    "obtained": "Full-text OCR read for cited newspaper pages; page images not visually inspected; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "The 1908 juror reference supports a documented local manorial role, but it is not a freehold, gentry or hereditary-rank record.",
+   "scope": {
+    "disposition": "lead_only",
+    "label": "Bounded negative screen",
+    "reason": "The 1908 Court Leet report places the late John Williams of Great House in a long-serving juror role. The screened material does not independently establish freehold ownership, gentry status or a hereditary title.",
+    "distinct_from": [],
+    "tags": [
+     "negative-screen",
+     "Williams",
+     "social-status",
+     "Court-Leet"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Question screened",
+     "text": "Do the checked printed works independently establish Williams family social status beyond their named local roles?",
+     "form": "term"
+    },
+    {
+     "heading": "Search boundary",
+     "text": "Checked the 1904–1917 Court Leet reports and the newspaper and journal materials described in the 3 November book register.",
+     "form": "term"
+    },
+    {
+     "heading": "Result",
+     "text": "The Barry Dock News, 23 October 1908, p. 3, remembers the late John Williams of Great House as a long-serving Court Leet juror. No independent proof of freehold, gentry or hereditary status was established in this batch.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit",
+     "text": "The juror role is a contemporary social and manorial fact; it cannot be converted into parcel title or a rank determination. Newspaper page images were not visually inspected.",
+     "form": "term"
+    },
+    {
+     "heading": "Next action",
+     "text": "Continue with probate, directories, independent pedigrees, offices and contemporary notices that name the person and establish the relevant family connection.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "Barry Dock News, 23 October 1908, p. 3; Court Leet reports 1904–1917.",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/negative-finds/mr-neg-004-no-independent-williams-rank-proof-in-this-source-batch/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  },
+  {
+   "id": "MR-NEG-005",
+   "kind": "missing_record",
+   "slug": "mr-neg-005-no-new-buckler-specific-contemporary-print-reference",
+   "title": "No new Buckler-specific contemporary printed reference to Great House Farm identified in this source batch",
+   "date": {
+    "display": "3 Nov 2026",
+    "sort": 2026
+   },
+   "place_text": "Great House Farm, Llandough-juxta-Penarth",
+   "description": "A bounded check asked whether this run's new books, journals and printed sources contained contemporary evidence placing Buckler people at Great House Farm.",
+   "provenance": {
+    "holder": "Cedwyn research register",
+    "reference": "Cedwyn book-evidence register, web/research/book-research-findings.csv; source-stage notes observed 3 Nov 2026",
+    "date": "2026-11-03",
+    "obtained": "Search log and cited newspaper/journal source stages checked; observed 3 Nov 2026"
+   },
+   "transcript_status": "",
+   "interpretation": "No new Buckler-specific contemporary printed reference was established in this batch. The result does not displace other family records or testimony.",
+   "scope": {
+    "disposition": "lead_only",
+    "label": "Bounded negative screen",
+    "reason": "The sources checked in this run did not add a contemporary printed item naming a Buckler person at Great House Farm. This is limited to the current book/journal batch and is not a claim that no such source exists.",
+    "distinct_from": [],
+    "tags": [
+     "negative-screen",
+     "Buckler",
+     "contemporary-print",
+     "Great-House-Farm"
+    ]
+   },
+   "places": [],
+   "detail": [
+    {
+     "heading": "Question screened",
+     "text": "Did the newly checked books, printed histories, journals or contemporary newspapers place a named Buckler person at Great House Farm?",
+     "form": "term"
+    },
+    {
+     "heading": "Search boundary",
+     "text": "The 3 November book-evidence batch, including the digitised Cardiff Times, Barry Dock News and Evening Express reports, journal and catalogue leads.",
+     "form": "term"
+    },
+    {
+     "heading": "Result",
+     "text": "No new contemporary printed item naming a Buckler person at Great House Farm was established in this source batch.",
+     "form": "term"
+    },
+    {
+     "heading": "Limit",
+     "text": "This is not a comprehensive search of every newspaper, directory, parish record or archive. It is not evidence of absence and does not address private correspondence.",
+     "form": "term"
+    },
+    {
+     "heading": "Next action",
+     "text": "Search further public printed directories and contemporary local press using identified family names and locality variants; keep private correspondence and children outside this search.",
+     "form": "term"
+    }
+   ],
+   "sources": [
+    {
+     "text": "Book-evidence register, web/research/book-research-findings.csv; Welsh Newspapers Online pages checked 3 Nov 2026.",
+     "href": "/research/book-research-findings.csv"
+    }
+   ],
+   "related": [],
+   "page": "/negative-finds/mr-neg-005-no-new-buckler-specific-contemporary-print-reference/",
+   "public": true,
+   "updated": "2026-11-03",
+   "rev": 1
+  }
+ ]
+}
