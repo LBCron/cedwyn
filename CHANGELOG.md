@@ -1,5 +1,10 @@
 # Changelog
 
+## [3.2.1] - 2026-11-03
+
+### Fixed
+- Peekaboo links in the "Peekaboo sources watched" rows open the matching Peekaboo card (`/peekaboo/#pk-…`).
+
 ## [3.2.0] - 2026-11-03
 
 ### Added
