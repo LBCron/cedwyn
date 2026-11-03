@@ -1,15 +1,15 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9188,
+  "pages_scanned": 9192,
   "references_checked": {
-    "resource": 210297,
-    "nav": 470222
+    "resource": 210345,
+    "nav": 470383
   },
-  "database_backed_paths": 7381,
-  "unique_missing_destinations": 5418,
-  "missing_references": 51468,
-  "missing_navigation_references": 35863,
-  "missing_resource_references": 15605,
+  "database_backed_paths": 7386,
+  "unique_missing_destinations": 5422,
+  "missing_references": 51491,
+  "missing_navigation_references": 35878,
+  "missing_resource_references": 15613,
   "unique_broken_fragments": 1832,
   "broken_fragment_references": 3394,
   "form_or_endpoint_actions_not_checked": {
@@ -19,7 +19,7 @@
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9159,
+      "references": 9163,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9155,
+      "references": 9159,
       "examples": [
         {
           "from": "/",
@@ -73,7 +73,7 @@
     {
       "kind": "resource",
       "path": "/blog/rss.xml",
-      "references": 6543,
+      "references": 6547,
       "examples": [
         {
           "from": "/review/",
@@ -100,7 +100,7 @@
     {
       "kind": "resource",
       "path": "/blog/atom.xml",
-      "references": 6543,
+      "references": 6547,
       "examples": [
         {
           "from": "/review/",
@@ -775,7 +775,7 @@
     {
       "kind": "nav",
       "path": "/research/>*.html",
-      "references": 35,
+      "references": 36,
       "examples": [
         {
           "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
@@ -793,7 +793,7 @@
           "url": "/research/%3E%2A.html"
         },
         {
-          "from": "/research/evidence/ev-0044-vg41-village-green-registration-1970/",
+          "from": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/",
           "attribute": "a[href]",
           "url": "/research/%3E%2A.html"
         }
