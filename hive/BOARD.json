@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T17:44:39Z",
+ "updated": "2026-11-03T21:40:05Z",
  "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
  "drafts": [
   {
@@ -82,7 +82,7 @@
    "status": "SENT",
    "turn": "none (sent)",
    "open_issues": 8,
-   "last_change": "2026-11-03T16:27:22Z",
+   "last_change": "2026-11-03T21:12:37Z",
    "last_agent": "ChatGPT",
    "rounds": 9,
    "context": {
@@ -5113,10 +5113,10 @@
    "id": "cabinet-office-711809",
    "record": "HubSpot task 536905711809",
    "version": "v0.4.0",
-   "status": "TURN: ChatGPT",
-   "turn": "ChatGPT (per HubSpot subject, read 2026-11-01T01:40:23Z)",
+   "status": "TURN: Claude",
+   "turn": "Claude (per HubSpot subject, read 2026-11-03T21:40Z)",
    "open_issues": null,
-   "last_change": "2026-11-02T07:30:02Z",
+   "last_change": "2026-11-03T21:10:09Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-31T21:30:24Z",
@@ -5139,7 +5139,8 @@
    },
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
-   "last_action_at": "2026-11-01T01:40:23Z"
+   "last_action_at": "2026-11-03T21:10:09Z",
+   "last_action_by": "ChatGPT"
   },
   {
    "id": "hugh-james-168527",
@@ -5465,7 +5466,7 @@
    "status": "TURN: review",
    "turn": "review (per HubSpot subject, read 2026-11-03T13:40Z)",
    "open_issues": null,
-   "last_change": "2026-11-03T16:22:21Z",
+   "last_change": "2026-11-03T18:09:15Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-31T21:30:24Z",
@@ -5653,7 +5654,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-11-03T17:41Z)",
    "open_issues": null,
-   "last_change": "2026-11-03T16:23:18Z",
+   "last_change": "2026-11-03T19:04:52Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-03T17:41:16Z",
@@ -5684,7 +5685,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-11-03T17:41Z)",
    "open_issues": null,
-   "last_change": "2026-11-03T16:20:12Z",
+   "last_change": "2026-11-03T18:05:34Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-03T17:41:16Z",
@@ -5707,13 +5708,42 @@
    },
    "pct": 0,
    "pct_at": "2026-11-03T17:44:39Z"
+  },
+  {
+   "id": "cambridge-university-collection-of-aerial-photog-292241",
+   "record": "HubSpot task 537813292241",
+   "version": "v0.1.0",
+   "status": "OTHER AGENT'S TURN",
+   "turn": "any other agent (per HubSpot subject, read 2026-11-03T21:40Z)",
+   "open_issues": null,
+   "last_change": "2026-11-03T20:18:26Z",
+   "last_agent": null,
+   "rounds": null,
+   "tier_since": "2026-11-03T21:40:05Z",
+   "tier": "working",
+   "tier_label": "IN REVIEW",
+   "gmail_draft_id": null,
+   "sent_at": null,
+   "archive_url": null,
+   "version_reviews": null,
+   "version_distinct_agents": null,
+   "version_agents": [],
+   "seat_agreements_version": null,
+   "final_three_hat_version": null,
+   "attachments_verified_version": null,
+   "sent_version": null,
+   "context": {
+    "body": "Cambridge University Collection of Aerial Photography (CUCAP)",
+    "as_of": "2026-11-03T21:40:05Z",
+    "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
+   }
   }
  ],
- "synced_at": "2026-11-03T17:41:16Z",
+ "synced_at": "2026-11-03T21:40:05Z",
  "sync": {
   "by": "Sion's Tab agent (board_sync.py, 4-hourly schedule; replaces the Actions run)",
   "source": "HubSpot task subjects and hs_lastmodifieddate (metadata); changelog review counts for % complete (no body text stored)",
-  "last_changes": 4
+  "last_changes": 3
  },
  "events": [
   {
@@ -6429,6 +6459,13 @@
    "version": null,
    "agent": "Tab",
    "event": "Board sync from HubSpot subjects: prc-te11-back-tag-evidence-catalogue-items-by-pa-348451: SKIPPED ChatGPT — IDLE; QUEUED BEHIND GROK v0.1.0 -> TURN: Claude v0.1.1; added government-legal-department-bona-vacantia-761060; added the-london-archives-072399; seats last_seen refreshed. Metadata only."
+  },
+  {
+   "at": "2026-11-03T21:40:05Z",
+   "draft": null,
+   "version": null,
+   "agent": "Tab",
+   "event": "Board sync from HubSpot subjects: cabinet-office-711809: TURN: ChatGPT v0.4.0 -> TURN: Claude v0.4.0; added cambridge-university-collection-of-aerial-photog-292241; seats last_seen refreshed. Metadata only."
   }
  ],
  "pct_rule": "% complete = progress through the review gate on the exact current frozen version: pct = round(100 x (0.7 x min(version_reviews,10)/10 + 0.3 x min(version_distinct_agents,4)/4)). version_reviews / version_distinct_agents / version_agents are counted from each HubSpot task's signed changelog (material reviews of the current version only; creation, skips, routes and restores are not reviews; a signed version_reviews=N tally in the changelog is honoured when higher). Capped at 95 until the task is READY TO SEND or later AND its Gmail draft exists (gmail_draft_id); then 100 = in the owner's Gmail, ready to send or schedule. SENT rows show Sent. Historical reviews/distinct_agents/agents are informational only. Promotion gates beyond IN REVIEW (open_issues=0, seat_agreements_version, final_three_hat_version, attachments_verified_version equal to version) still fail closed.",
@@ -6444,7 +6481,7 @@
    "seat": 2,
    "agent": "ChatGPT",
    "status": "active",
-   "last_seen": "2026-11-03T16:27:22Z",
+   "last_seen": "2026-11-03T21:12:37Z",
    "last_seen_source": "row cardiff-central-library-bute-x6-12-reply"
   },
   {
@@ -6463,7 +6500,7 @@
   }
  ],
  "seats_rule": "last_seen = newest board activity per seat agent: draft rows whose last_agent/last_action_by is the agent, board events signed by the agent, and turn handoffs (a row leaving 'TURN: <agent>' or changing version while held by the agent, dated at the sync that saw it). Recomputed by board_sync.py every run (protocol v3.11.0 roll call). Metadata only; derived from BOARD.json itself.",
- "seats_as_of": "2026-11-03T17:44:33Z",
+ "seats_as_of": "2026-11-03T21:43:05Z",
  "standing_directions": [
   {
    "id": "SD-2026-11-01-paradigm",
