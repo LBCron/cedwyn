@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T01:49:03Z",
+ "updated": "2026-11-03T05:40:19Z",
  "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
  "drafts": [
   {
@@ -766,7 +766,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T22:11Z)",
    "open_issues": 2,
-   "last_change": "2026-10-27T22:10:17Z",
+   "last_change": "2026-11-03T05:35:42Z",
    "last_agent": "Tab",
    "rounds": 3,
    "context": {
@@ -3957,12 +3957,12 @@
   {
    "id": "prc-tf15-back-tag-research-findings-by-parcel-ba-805339",
    "record": "HubSpot task 535708805339",
-   "version": "v0.1.0",
-   "status": "TURN: Grok",
-   "turn": "Grok (per HubSpot subject, read 2026-10-29T22:47Z)",
+   "version": "v0.1.1",
+   "status": "TURN: Claude",
+   "turn": "Claude (per HubSpot subject, read 2026-11-03T05:40Z)",
    "open_issues": null,
-   "last_change": "2026-10-29T22:40:00Z",
-   "last_agent": null,
+   "last_change": "2026-11-03T02:11:30Z",
+   "last_agent": "Grok",
    "rounds": null,
    "tier_since": "2026-10-29T22:47:13Z",
    "tier": "working",
@@ -4051,10 +4051,10 @@
    "id": "prc-tf12-back-tag-research-findings-by-parcel-ba-140444",
    "record": "HubSpot task 535705140444",
    "version": "v0.1.0",
-   "status": "TURN: Grok",
-   "turn": "Grok (per HubSpot subject, read 2026-10-29T22:47Z)",
+   "status": "TURN: Claude",
+   "turn": "Claude (per HubSpot subject, read 2026-11-03T05:40Z)",
    "open_issues": null,
-   "last_change": "2026-10-29T22:39:44Z",
+   "last_change": "2026-11-03T03:09:22Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-29T22:47:13Z",
@@ -4076,7 +4076,9 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "last_action_by": "Grok",
+   "last_action_at": "2026-11-03T03:09:22Z"
   },
   {
    "id": "prc-tf11-back-tag-research-findings-by-parcel-ba-616495",
@@ -4144,10 +4146,10 @@
    "id": "prc-tf09-back-tag-research-findings-by-parcel-ba-245670",
    "record": "HubSpot task 536493245670",
    "version": "v0.1.0",
-   "status": "TURN: Grok",
-   "turn": "Grok (per HubSpot subject, read 2026-10-29T22:47Z)",
+   "status": "TURN: Claude",
+   "turn": "Claude (per HubSpot subject, read 2026-11-03T05:40Z)",
    "open_issues": null,
-   "last_change": "2026-10-29T22:39:29Z",
+   "last_change": "2026-11-03T04:11:00Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-29T22:47:13Z",
@@ -4169,7 +4171,9 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "last_action_by": "Grok",
+   "last_action_at": "2026-11-03T04:11:00Z"
   },
   {
    "id": "prc-tf08-back-tag-research-findings-by-parcel-ba-327570",
@@ -4237,10 +4241,10 @@
    "id": "prc-tf06-back-tag-research-findings-by-parcel-ba-880382",
    "record": "HubSpot task 535663880382",
    "version": "v0.1.0",
-   "status": "TURN: Grok",
-   "turn": "Grok (per HubSpot subject, read 2026-10-29T22:47Z)",
+   "status": "TURN: Claude",
+   "turn": "Claude (per HubSpot subject, read 2026-11-03T05:40Z)",
    "open_issues": null,
-   "last_change": "2026-10-29T22:39:15Z",
+   "last_change": "2026-11-03T05:10:02Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-29T22:47:13Z",
@@ -4262,7 +4266,9 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "last_action_by": "Grok",
+   "last_action_at": "2026-11-03T05:10:02Z"
   },
   {
    "id": "prc-tf05-back-tag-research-findings-by-parcel-ba-181576",
@@ -5610,11 +5616,11 @@
    "pct_at": "2026-11-02T22:03:24Z"
   }
  ],
- "synced_at": "2026-11-03T01:42:52Z",
+ "synced_at": "2026-11-03T05:40:19Z",
  "sync": {
   "by": "Sion's Tab agent (board_sync.py, 4-hourly schedule; replaces the Actions run)",
   "source": "HubSpot task subjects and hs_lastmodifieddate (metadata); changelog review counts for % complete (no body text stored)",
-  "last_changes": 16
+  "last_changes": 5
  },
  "events": [
   {
@@ -6295,6 +6301,13 @@
    "version": null,
    "agent": "Tab",
    "event": "Board sync from HubSpot subjects: vale-of-glamorgan-council-democratic-scrutiny-se-159627: TURN: ChatGPT v0.1.6 -> SENT v0.1.6; historic-environment-scotland-126242: TURN: Claude v0.1.6 -> SENT v0.1.6; british-geological-survey-national-geoscience-da-481454: TURN: ChatGPT v0.1.6 -> SENT v0.1.6; south-east-wales-biodiversity-records-centre-sew-441007: TURN: Claude v0.1.5 -> SENT v0.1.5; cambridge-university-collection-of-aerial-photog-863283: TURN: ChatGPT v0.1.6 -> SENT v0.1.6; network-rail-freedom-of-information-287313: TURN: Claude v0.1.5 -> SENT v0.1.5; open-spaces-society-910661: TURN: Claude v0.1.5 -> SENT v0.1.5; hm-land-registry-information-rights-535830: TURN: ChatGPT v0.2.5 -> SUPERSEDED: ID sent 2 Nov 21:07Z, msg 1a19e167290c76ac v0.2.5; fsb-wales-169349: OTHER AGENT'S TURN v0.1.5 -> SENT v0.1.5; chambers-wales-south-east-south-west-and-mid-361930: OTHER AGENT'S TURN v0.1.5 -> SENT v0.1.5; prc-te03-back-tag-evi. Metadata only."
+  },
+  {
+   "at": "2026-11-03T05:40:19Z",
+   "draft": null,
+   "version": null,
+   "agent": "Tab",
+   "event": "Board sync from HubSpot subjects: prc-tf15-back-tag-research-findings-by-parcel-ba-805339: TURN: Grok v0.1.0 -> TURN: Claude v0.1.1; prc-tf12-back-tag-research-findings-by-parcel-ba-140444: TURN: Grok v0.1.0 -> TURN: Claude v0.1.0; prc-tf09-back-tag-research-findings-by-parcel-ba-245670: TURN: Grok v0.1.0 -> TURN: Claude v0.1.0; prc-tf06-back-tag-research-findings-by-parcel-ba-880382: TURN: Grok v0.1.0 -> TURN: Claude v0.1.0; seats last_seen refreshed. Metadata only."
   }
  ],
  "pct_rule": "% complete = progress through the review gate on the exact current frozen version: pct = round(100 x (0.7 x min(version_reviews,10)/10 + 0.3 x min(version_distinct_agents,4)/4)). version_reviews / version_distinct_agents / version_agents are counted from each HubSpot task's signed changelog (material reviews of the current version only; creation, skips, routes and restores are not reviews; a signed version_reviews=N tally in the changelog is honoured when higher). Capped at 95 until the task is READY TO SEND or later AND its Gmail draft exists (gmail_draft_id); then 100 = in the owner's Gmail, ready to send or schedule. SENT rows show Sent. Historical reviews/distinct_agents/agents are informational only. Promotion gates beyond IN REVIEW (open_issues=0, seat_agreements_version, final_three_hat_version, attachments_verified_version equal to version) still fail closed.",
@@ -6303,33 +6316,33 @@
    "seat": 1,
    "agent": "Tab",
    "status": "active",
-   "last_seen": "2026-11-02T09:02:57Z",
-   "last_seen_source": "row hmlr-eir-1961-deed"
+   "last_seen": "2026-11-03T05:35:42Z",
+   "last_seen_source": "row hmcts-cardiff-1955-1962-records"
   },
   {
    "seat": 2,
    "agent": "ChatGPT",
    "status": "active",
-   "last_seen": "2026-11-02T23:42:59Z",
-   "last_seen_source": "row companies-house-637087"
+   "last_seen": "2026-11-03T01:42:52Z",
+   "last_seen_source": "turn handoff on vale-of-glamorgan-council-democratic-scrutiny-se-159627 (seen by board sync)"
   },
   {
    "seat": 3,
    "agent": "Grok",
    "status": "active",
-   "last_seen": "2026-11-03T01:12:38Z",
-   "last_seen_source": "row prc-b4-parcel-b-lead-868535"
+   "last_seen": "2026-11-03T05:10:02Z",
+   "last_seen_source": "row prc-tf06-back-tag-research-findings-by-parcel-ba-880382"
   },
   {
    "seat": 4,
    "agent": "Claude",
    "status": "active",
-   "last_seen": "2026-11-02T23:42:28Z",
-   "last_seen_source": "row museum-of-english-rural-life-university-of-readi-946828"
+   "last_seen": "2026-11-03T01:42:52Z",
+   "last_seen_source": "turn handoff on historic-environment-scotland-126242 (seen by board sync)"
   }
  ],
  "seats_rule": "last_seen = newest board activity per seat agent: draft rows whose last_agent/last_action_by is the agent, board events signed by the agent, and turn handoffs (a row leaving 'TURN: <agent>' or changing version while held by the agent, dated at the sync that saw it). Recomputed by board_sync.py every run (protocol v3.11.0 roll call). Metadata only; derived from BOARD.json itself.",
- "seats_as_of": "2026-11-03T01:46:19Z",
+ "seats_as_of": "2026-11-03T05:44:10Z",
  "standing_directions": [
   {
    "id": "SD-2026-11-01-paradigm",
