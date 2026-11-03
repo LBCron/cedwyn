@@ -21,8 +21,9 @@ Prices, checkout links and utm parameters are copied from the page as they are; 
 import json, html, pathlib, re, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 E = html.escape
-VERSION = '1.3.2'
-VERSIONS = [('1.3.2', '2 Nov 2026', 'Each version option shows its size, as in the reader: "v0.0.1 — free (20 pages)", "v0.0.2 — £4.99 (221 pages)"'),
+VERSION = '1.3.3'
+VERSIONS = [('1.3.3', '3 Nov 2026', 'Argentina scope (/argentina/ebooks/): only the free v0.0.1 is offered; no prices, offer lines or checkout links'),
+            ('1.3.2', '2 Nov 2026', 'Each version option shows its size, as in the reader: "v0.0.1 — free (20 pages)", "v0.0.2 — £4.99 (221 pages)"'),
             ('1.3.1', '1 Nov 2026', 'The offer line (what the paid version buys against the free one) moves from under the drop-down to the card text under the hook; words unchanged'),
             ('1.3.0', '1 Nov 2026', 'One plain drop-down: "Select a version" placeholder, no label above, nothing preselected, nothing under it; choosing acts at once; (i) version table'),
             ('1.2.1', '30 Oct 2026', 'Select a version label; price in each option'),
@@ -304,7 +305,19 @@ def tidy(t, D):
     if 'id="wi-js"' not in t:
         at = t.rfind('</body>')
         if at > 0: t = t[:at] + WI_JS + t[at:]
+    if 'id="sh-arg-css"' not in t:   # 1.3.3: Argentina scope shows no prices (docs/VERSION-GATE.md); head, so no flash
+        m = re.search(r'</head\s*>', t, re.I)
+        if m: t = t[:m.start()] + ARG_CSS + ARG_JS + t[m.start():]
     return t
+
+# 1.3.3 (3 Nov 2026, problems run P-ARG-EBOOKS-PRICES): /argentina/ebooks/ is the same file as /ebooks/ (Pages rewrite
+# /argentina/:theme/* /:theme/:splat 200), so the Argentina rule (docs/VERSION-GATE.md: "no prices and no bar") is applied in the
+# browser from html[data-cedwyn-scope=argentina] (set by scope.js before first paint): priced options are removed (the free
+# v0.0.1 stays), offer lines, the bundle card, the Academy price block and checkout links are hidden, any other visible text
+# with a non-zero £ amount hides its own block, and "£0.00" reads "free". Wales and Online are unchanged; no link or price is
+# edited. — Sion's Tab agent
+ARG_CSS = '<style id="sh-arg-css">html[data-cedwyn-scope=argentina] .sh-cmp,html[data-cedwyn-scope=argentina] .sh-bundle,html[data-cedwyn-scope=argentina] #academy-upsell,html[data-cedwyn-scope=argentina] a[href*="buy.stripe.com"],html[data-cedwyn-scope=argentina] [data-sh-noprice]{display:none!important}</style>'
+ARG_JS = '<script id="sh-arg-js">(function(){var d=document.documentElement,Z=/£\\s*0(?:\\.00)?(?![\\d.,])/g,P=/£\\s*\\d/;function arg(){var s=d.getAttribute("data-cedwyn-scope");return s?s==="argentina":/^\\/(argentina|patagonia)\\//.test(location.pathname);}function fr(){var l=(d.getAttribute("lang")||"en").slice(0,2);return({cy:"am ddim",es:"gratis"})[l]||"free";}function sweep(r){if(!arg()||!r||!r.querySelectorAll)return;var o=r.querySelectorAll("select option"),i;for(i=o.length-1;i>=0;i--){if(P.test(o[i].textContent.replace(Z,"")))o[i].parentNode.removeChild(o[i]);}var w=document.createTreeWalker(r,4,null),n,a=[];while((n=w.nextNode()))a.push(n);a.forEach(function(n){var p=n.parentNode,v=n.nodeValue;if(!p||v.indexOf("£")<0||/^(SCRIPT|STYLE|TEMPLATE|NOSCRIPT|OPTION)$/.test(p.nodeName))return;var z=v.replace(Z,fr());if(!P.test(z)){n.nodeValue=z;return;}(p.closest("details,li,p,h2,h3,a,dialog,td,tr")||p).setAttribute("data-sh-noprice","");});}document.addEventListener("DOMContentLoaded",function(){sweep(document.body);});if(window.MutationObserver)new MutationObserver(function(m){if(!arg())return;m.forEach(function(x){x.addedNodes.forEach(function(e){if(e.nodeType===1)sweep(e.parentNode||e);});});}).observe(d,{childList:true,subtree:true});})();</script>'
 
 def run(dist):
     dist = pathlib.Path(dist); p = dist / 'ebooks' / 'index.html'
