@@ -1,76 +1,75 @@
 {
-  "note": "Pinned commits of the section snapshot branches the build reads (tools/assemble.py). sections-ci.yml updates an entry when its branch moves. See work/cedwyn-arch/SCOPE.md — Sion's Tab agent",
-  "sections": {
-    "app": {
-      "branch": "section/app",
-      "pinned_utc": "2026-10-26T19:41:29Z",
-      "sha": "00c880d2e4dfae68915b344a0f053c89866e679a"
-    },
-    "chat": {
-      "branch": "section/chat",
-      "pinned_utc": "2026-10-26T19:41:29Z",
-      "sha": "3bf81b91c580f0266e1425bf799377e4120d60a0"
-    },
-    "cyberspace": {
-      "branch": "section/cyberspace",
-      "pinned_utc": "2026-11-01T00:30:00Z",
-      "sha": "a4713e3dfeb39c5aa7cc319b568ef8144538c23e"
-    },
-    "estate": {
-      "branch": "section/estate",
-      "pinned_utc": "2026-10-26T19:41:29Z",
-      "sha": "fd2c87a41b5cbed72ab5a85dd04485dead7532e1"
-    },
-    "fcg": {
-      "branch": "section/fcg",
-      "pinned_utc": "2026-11-01T17:40:25Z",
-      "sha": "597d6ae7e407345767e384faca1c3e85fa196315"
-    },
-    "forensic": {
-      "branch": "section/forensic",
-      "pinned_utc": "2026-11-01T04:09:35Z",
-      "sha": "9480ff3b51007d29cbcd119d915d59da285ea895"
-    },
-    "patagonia": {
-      "branch": "section/patagonia",
-      "sha": "bf43c90ca21bcb7b25bd2b7340e868b76cd43dad",
-      "pinned_utc": "2026-11-02T02:53:52Z"
-    },
-    "analytics": {
-      "branch": "section/analytics",
-      "pinned_utc": "2026-11-02T06:58:42Z",
-      "sha": "a1ff8ffe216329b4e977c3ff2aec40fccdf0e6ab"
-    },
-
-    "cloudflare": {
-      "branch": "section/cloudflare",
-      "pinned_utc": "2026-11-02T03:56:11Z",
-      "sha": "2379b7033509696a3b8cfe1d00e42dd31f15933b"
-    },
-    "spill": {
-      "branch": "section/spill",
-      "pinned_utc": "2026-11-02T05:03:00Z",
-      "sha": "a94897c67d11889f4cea66a297c013dd13c92038"
-    },
-    "tithe-h3": {
-      "branch": "section/tithe-h3",
-      "pinned_utc": "2026-11-02T18:46:23Z",
-      "sha": "1a8a4f4883934666738f75b8dca27612dddfd605"
-    },
-    "research": {
-      "branch": "section/research",
-      "pinned_utc": "2026-11-01T23:08:00Z",
-      "sha": "3cd867a3192c9ee5268bc46502d377495b5287ab"
-    },
-    "mr-wolf": {
-      "branch": "section/mr-wolf",
-      "pinned_utc": "2026-11-01T04:06:00Z",
-      "sha": "917fd1afee8a5d7865a20082fdf84898cdd80434"
-    },
-    "wiki": {
-      "branch": "section/wiki",
-      "pinned_utc": "2026-11-02T11:36:06Z",
-      "sha": "e497de2c575b421fc0b2a220d9fbb1643f0a5865"
-    }
+ "note": "Pinned commits of the section snapshot branches the build reads (tools/assemble.py). sections-ci.yml updates an entry when its branch moves. See work/cedwyn-arch/SCOPE.md — Sion's Tab agent",
+ "sections": {
+  "app": {
+   "branch": "section/app",
+   "pinned_utc": "2026-10-26T19:41:29Z",
+   "sha": "00c880d2e4dfae68915b344a0f053c89866e679a"
+  },
+  "chat": {
+   "branch": "section/chat",
+   "pinned_utc": "2026-10-26T19:41:29Z",
+   "sha": "3bf81b91c580f0266e1425bf799377e4120d60a0"
+  },
+  "cyberspace": {
+   "branch": "section/cyberspace",
+   "pinned_utc": "2026-11-01T00:30:00Z",
+   "sha": "a4713e3dfeb39c5aa7cc319b568ef8144538c23e"
+  },
+  "estate": {
+   "branch": "section/estate",
+   "pinned_utc": "2026-10-26T19:41:29Z",
+   "sha": "fd2c87a41b5cbed72ab5a85dd04485dead7532e1"
+  },
+  "fcg": {
+   "branch": "section/fcg",
+   "pinned_utc": "2026-11-01T17:40:25Z",
+   "sha": "597d6ae7e407345767e384faca1c3e85fa196315"
+  },
+  "forensic": {
+   "branch": "section/forensic",
+   "sha": "91bd4aad76af3c168124da37c6f3983dbb9fd161",
+   "pinned_utc": "2026-11-03T04:04:06Z"
+  },
+  "patagonia": {
+   "branch": "section/patagonia",
+   "sha": "bf43c90ca21bcb7b25bd2b7340e868b76cd43dad",
+   "pinned_utc": "2026-11-02T02:53:52Z"
+  },
+  "analytics": {
+   "branch": "section/analytics",
+   "pinned_utc": "2026-11-02T06:58:42Z",
+   "sha": "a1ff8ffe216329b4e977c3ff2aec40fccdf0e6ab"
+  },
+  "cloudflare": {
+   "branch": "section/cloudflare",
+   "pinned_utc": "2026-11-02T03:56:11Z",
+   "sha": "2379b7033509696a3b8cfe1d00e42dd31f15933b"
+  },
+  "spill": {
+   "branch": "section/spill",
+   "pinned_utc": "2026-11-02T05:03:00Z",
+   "sha": "a94897c67d11889f4cea66a297c013dd13c92038"
+  },
+  "tithe-h3": {
+   "branch": "section/tithe-h3",
+   "pinned_utc": "2026-11-02T18:46:23Z",
+   "sha": "1a8a4f4883934666738f75b8dca27612dddfd605"
+  },
+  "research": {
+   "branch": "section/research",
+   "pinned_utc": "2026-11-01T23:08:00Z",
+   "sha": "3cd867a3192c9ee5268bc46502d377495b5287ab"
+  },
+  "mr-wolf": {
+   "branch": "section/mr-wolf",
+   "pinned_utc": "2026-11-01T04:06:00Z",
+   "sha": "917fd1afee8a5d7865a20082fdf84898cdd80434"
+  },
+  "wiki": {
+   "branch": "section/wiki",
+   "pinned_utc": "2026-11-02T11:36:06Z",
+   "sha": "e497de2c575b421fc0b2a220d9fbb1643f0a5865"
   }
+ }
 }
