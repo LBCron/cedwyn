@@ -188,7 +188,7 @@ Read-only status, rebuilt with every change. Updated %s.</p>
 <div class="card"><strong>Phases</strong> (last completed): %s<br><strong>Status</strong>: %s</div>
 <div class="card"><strong>Pilots</strong>: %s · <a href="/api/index.json">API index</a> · <a href="/catalogue-db/index.json">central catalogue export</a> ·
 <a href="/schema/webapp.schema.json">manifest schema</a> · <a href="/migration.json">tracker JSON</a></div>
-<table><thead><tr><th>#</th><th>Webapp</th><th>Phase</th><th>Next action</th></tr></thead><tbody>%s</tbody></table></main>
+<div class="tw"><table><thead><tr><th>#</th><th>Webapp</th><th>Phase</th><th>Next action</th></tr></thead><tbody>%s</tbody></table></div></main>
 <footer>Phases: %s. Catalogue changes need the owner's approval; this site only reads.</footer></body></html>""" % (
     e(ISO[:16].replace('T', ' ') + ' UTC'), e(', '.join('%s %d' % (p.replace('_', ' '), cnt[p]) for p in ph if cnt[p])),
     e(', '.join('%s %d' % (k, v) for k, v in rag.items() if v)),

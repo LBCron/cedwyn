@@ -39,7 +39,7 @@
   "project": "cedwyn (cedwyn-274.pages.dev, production branch site)",
   "build": "build-cedwyn (GitHub Actions) writes branch site",
   "worker_on_read": false,
-  "notes": "apex bucklerfamily.estate reads run the router Worker until the static-first cutover (PR #157)"
+  "notes": "standard build: branch webapp/dartboard (slice.py + index.html) built by branch migration into Pages project cedwyn-migration (cedwyn-migration.pages.dev/dartboard/); the live app still builds from branch dartboard until its switch"
  },
  "header": {
   "contract": "cedwyn-header/1",
@@ -52,10 +52,10 @@
    "es"
   ],
   "scripts": [
-   "/_cedwyn/runtime.js",
-   "/_cedwyn/ghf/ghf-boot.js"
+   "/_std/cw-header.js",
+   "/_std/cw-cache.js"
   ],
-  "status": "legacy"
+  "status": "standard"
  },
  "data": {
   "slice": "roadmap",
@@ -141,6 +141,11 @@
    "app": "forensic",
    "path": "/forensic/api/v1/index.json",
    "why": "assessment per institution"
+  },
+  {
+   "app": "wayback",
+   "path": "/wayback/api/v1/index.json",
+   "why": "reply counts per institution (AR-FOI- items)"
   }
  ],
  "consumed_by": [
@@ -160,27 +165,42 @@
   }
  ],
  "migration": {
-  "phase": "branch",
+  "phase": "header",
   "phases_done": [
    "inventory",
    "manifest",
-   "branch"
+   "branch",
+   "static_front_end",
+   "data_slice",
+   "api",
+   "header"
   ],
-  "rag": "amber",
-  "next_action": "pilot: standard build on the migration pages.dev project",
+  "rag": "green",
+  "next_action": "switch the live /dartboard/ to the standard build, then verify live (phase live_verified)",
   "blockers": [
-   "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval"
+   "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval",
+   "live address still serves the legacy build: switch /dartboard/ to the standard build after the static-first apex cutover (PR #157)"
   ],
   "prs": [],
-  "pilot": true
+  "pilot": true,
+  "verified": {
+   "url": "https://cedwyn-migration.pages.dev/dartboard/",
+   "at": "2026-11-03T20:49Z",
+   "result": "200; header 27 of 59 with Back/Next; list rendered from its own API; IndexedDB cache hit on reload; 390 px; JSON/Atom/RSS/XML parse; CORS *; no Worker"
+  }
  },
  "owner": "Cedwyn editors (owner approval for catalogue changes)",
- "version": "0.1.0",
+ "version": "0.2.0",
  "changelog": [
   {
    "version": "0.1.0",
    "date": "2026-11-03",
    "summary": "Manifest created from the live tour inventory (/areas.json nav), themes.json, data/site-areas.json and data/halves.json 1.4.0."
+  },
+  {
+   "version": "0.2.0",
+   "date": "2026-11-03",
+   "summary": "Pilot: standard static build with common header, catalogue slice by UID, client cache and JSON/Atom/RSS/XML API, verified on cedwyn-migration.pages.dev."
   }
  ],
  "sources": [
