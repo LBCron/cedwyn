@@ -1,6 +1,11 @@
 {
- "note": "Pinned commits of the section snapshot branches the build reads (tools/assemble.py). sections-ci.yml updates an entry when its branch moves. See work/cedwyn-arch/SCOPE.md — Sion's Tab agent",
+ "note": "Pinned commits of the section snapshot branches the build reads (tools/assemble.py). sections-ci.yml updates an entry when its branch moves. See work/cedwyn-arch/SCOPE.md \u2014 Sion's Tab agent",
  "sections": {
+  "analytics": {
+   "branch": "section/analytics",
+   "pinned_utc": "2026-11-02T06:58:42Z",
+   "sha": "a1ff8ffe216329b4e977c3ff2aec40fccdf0e6ab"
+  },
   "app": {
    "branch": "section/app",
    "pinned_utc": "2026-10-26T19:41:29Z",
@@ -10,6 +15,11 @@
    "branch": "section/chat",
    "pinned_utc": "2026-10-26T19:41:29Z",
    "sha": "3bf81b91c580f0266e1425bf799377e4120d60a0"
+  },
+  "cloudflare": {
+   "branch": "section/cloudflare",
+   "pinned_utc": "2026-11-02T03:56:11Z",
+   "sha": "2379b7033509696a3b8cfe1d00e42dd31f15933b"
   },
   "cyberspace": {
    "branch": "section/cyberspace",
@@ -28,23 +38,23 @@
   },
   "forensic": {
    "branch": "section/forensic",
-   "sha": "8af21139fe45b6550577f76b972cc356b4aa7451",
-   "pinned_utc": "2026-11-03T04:05:18Z"
+   "pinned_utc": "2026-11-03T04:05:18Z",
+   "sha": "8af21139fe45b6550577f76b972cc356b4aa7451"
+  },
+  "mr-wolf": {
+   "branch": "section/mr-wolf",
+   "pinned_utc": "2026-11-01T04:06:00Z",
+   "sha": "917fd1afee8a5d7865a20082fdf84898cdd80434"
   },
   "patagonia": {
    "branch": "section/patagonia",
-   "sha": "bf43c90ca21bcb7b25bd2b7340e868b76cd43dad",
-   "pinned_utc": "2026-11-02T02:53:52Z"
+   "pinned_utc": "2026-11-02T02:53:52Z",
+   "sha": "bf43c90ca21bcb7b25bd2b7340e868b76cd43dad"
   },
-  "analytics": {
-   "branch": "section/analytics",
-   "pinned_utc": "2026-11-02T06:58:42Z",
-   "sha": "a1ff8ffe216329b4e977c3ff2aec40fccdf0e6ab"
-  },
-  "cloudflare": {
-   "branch": "section/cloudflare",
-   "pinned_utc": "2026-11-02T03:56:11Z",
-   "sha": "2379b7033509696a3b8cfe1d00e42dd31f15933b"
+  "research": {
+   "branch": "section/research",
+   "pinned_utc": "2026-11-03T04:31:01Z",
+   "sha": "eee415347aca56d8c2f254bd55638f4b821d3675"
   },
   "spill": {
    "branch": "section/spill",
@@ -55,16 +65,6 @@
    "branch": "section/tithe-h3",
    "pinned_utc": "2026-11-02T18:46:23Z",
    "sha": "1a8a4f4883934666738f75b8dca27612dddfd605"
-  },
-  "research": {
-   "branch": "section/research",
-   "pinned_utc": "2026-11-01T23:08:00Z",
-   "sha": "3cd867a3192c9ee5268bc46502d377495b5287ab"
-  },
-  "mr-wolf": {
-   "branch": "section/mr-wolf",
-   "pinned_utc": "2026-11-01T04:06:00Z",
-   "sha": "917fd1afee8a5d7865a20082fdf84898cdd80434"
   },
   "wiki": {
    "branch": "section/wiki",
