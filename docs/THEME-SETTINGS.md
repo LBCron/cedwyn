@@ -33,3 +33,5 @@ text on a dark tinted page (unreadable, e.g. /wiki/great-house-farm/name-variati
 
 ## Checks
 `work/theme-settings/AUDIT.md` (worker notes) lists every webapp checked at 390 px, live and with the change applied.
+
+Source: web/_cedwyn/ghf/ghf-boot.js, web/_cedwyn/ghf/basecamp.js and web/_cedwyn/ghf/ghf-theme.css in this repository; the /settings/ page is public/ on branch theme-settings.
