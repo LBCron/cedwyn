@@ -1,0 +1,42 @@
+<!doctype html><html lang="en" data-cw-noclip><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cedwyn outline on the Chubut coast · H3 · Cedwyn</title><meta name="description" content="The outline of the Cedwyn estate fields from the Tithe H3 map, set on the coast of Golfo Nuevo south of Puerto Madryn at the same distance from the sea as at Llandough, true size and north up, in H3 hexagons."><meta name="color-scheme" content="light"><meta name="theme-color" content="#1f4f7a"><link rel="stylesheet" href="vendor/leaflet.css?v=1.9.4"><link rel="stylesheet" href="chubut-h3.css?v=0.1.0"><script src="/_cedwyn/ghf/ghf-boot.js?v=2.1.8"></script></head><body class="ch3"><main class="ch3w" data-scope="argentina online">
+<header class="ch3-hero"><h1>Cedwyn outline · Chubut coast</h1><p>The outline of the Cedwyn estate fields, as drawn on the Tithe H3 map of Llandough, set on the shore of Golfo Nuevo south of Puerto Madryn at the same distance from the sea: true size, north up.</p>
+</header>
+
+<div class="ch3-bar" role="group" aria-label="H3 resolution">
+<label class="lab" for="l-res">Hexagons</label>
+<select id="l-res" aria-describedby="h3stat"><option value="0">off</option><option value="8">res 8 · about 0.74 km²</option><option value="10">res 10 · about 1.5 ha</option><option value="11">res 11 · about 2,150 m²</option><option value="12" selected>res 12 · about 307 m²</option><option value="13">res 13 · about 44 m²</option></select>
+<label><input type="checkbox" id="l-out" checked> Field outlines</label>
+<span class="ch3-stat" id="h3stat" aria-live="polite"></span>
+</div>
+<div id="map" class="ch3-map" aria-label="Map of the outline on the Chubut coast"></div>
+<p class="ch3-capt">For comparison only: the estate’s outline transposed to the Chubut coast at the same distance from the sea. It does not mark any land in Argentina.</p>
+<div class="ch3-facts" role="group" aria-label="Distance from the sea">
+<div><b id="f-d">2.65 km</b><span>centre to the sea, both places</span></div>
+<div><b id="f-e">2.00 / 2.05 km</b><span>nearest field edge to the sea, Llandough / Chubut</span></div>
+<div><b id="f-a">54.4 ha</b><span>area, unchanged</span></div>
+</div>
+
+<p class="ch3-cap" lang="es">El contorno de los campos de la finca Cedwyn, trasladado a la costa del Golfo Nuevo al sur de Puerto Madryn a la misma distancia del mar que en Llandough, a tamaño real y con el norte arriba. Solo para comparar.</p>
+<section class="ch3-panel" id="panel" aria-live="polite"><p class="hint">Tap a field for its plan number and hexagon.</p></section>
+
+<h2>Llandough, for comparison</h2>
+<div id="mapw" class="ch3-map ch3-mapw" aria-label="Map of the same outline at Llandough"></div>
+<p class="ch3-capt">The same outline where it is drawn on the Tithe H3 map, with the line to the nearest point of the sea.</p>
+
+<h2>How it was made</h2>
+<ol class="ch3-how">
+<li><b>The outline.</b> The 43 parcels of the Tithe H3 map (version 0.4.0): the David Stewart estate plan traced through the 1841 tithe map of Landough, Cogan and Leckwith onto today’s map.</li>
+<li><b>Distance from the sea at Llandough.</b> Measured from the outline’s centre (its area-weighted centroid) to the nearest point of the coastline as mapped in OpenStreetMap. That coastline follows the Cardiff Bay barrage, so the impounded bay counts as inland water. The nearest sea is at the barrage by Penarth Head, 2.65 km from the centre; the nearest field edge is 2.00 km from it.</li>
+<li><b>Where on the Chubut coast.</b> The shore of Golfo Nuevo about 9.7 km south-east of the centre of Puerto Madryn, between Punta Cuevas and Punta Loma: the first stretch of open coast past the southern edge of the town. From that point of the shore the centre was set 2.65 km inland at right angles to the coast (towards the south-west, bearing about 216°). Checked afterwards: the nearest coast to the new centre is 2.65 km away, and the nearest field edge 2.05 km.</li>
+<li><b>Same shape and size.</b> Every corner of every parcel was written as metres east and north of the centre, then rebuilt from those metres around the new centre. The outline keeps its size (54.4 ha in both places) and north stays north; it is not turned or mirrored. The southern hemisphere does not flip it.</li>
+<li><b>H3.</b> The same resolutions as the Llandough map: 8 (the cell holding each parcel’s centre) and 10 to 13, worked out in your browser with h3-js; a cell is drawn when its centre falls inside a parcel. The counts differ between the two places because H3 cells are not all the same size across the globe: at resolution 12 a cell is about 234 m² here and about 285 m² at Llandough.</li>
+</ol>
+<p class="ch3-dl">Data: <a href="data/outline.json" download>both outlines with the measurements (JSON)</a></p>
+
+<footer class="ch3-foot"><p>Cedwyn outline · Chubut coast · v0.1.0 <button type="button" class="ch3-info" data-ch3-info aria-haspopup="dialog" aria-controls="changelog" title="Changelog">ⓘ</button> · <a href="#changelog" data-ch3-info>Changelog</a></p>
+<dialog id="changelog" class="ch3-modal" aria-label="Changelog"><div class="ch3-mhead"><b>Changelog</b><button type="button" class="ch3-x" data-ch3-close aria-label="Close">×</button></div><div class="ch3-mbody"><table class="ch3-ctable"><thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead><tbody><tr><td>v0.1.0</td><td>3 Nov 2026</td><td>First version. The outline of the 43 parcels on the Tithe H3 map (v0.4.0) set on the shore of Golfo Nuevo south of Puerto Madryn, 2.65 km from the sea as at Llandough, true size and north up, with H3 hexagons at resolutions 8, 10, 11, 12 and 13 and a Llandough map for comparison.</td></tr></tbody></table></div></dialog></footer>
+</main>
+<script src="vendor/leaflet.js?v=1.9.4"></script>
+<script src="vendor/h3-js.umd.js?v=4.5.0" defer></script>
+<script src="chubut-h3.js?v=0.1.0" defer></script>
+</body></html>
