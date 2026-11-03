@@ -81,7 +81,7 @@ shared chrome, not by replacing them.
 ## Tracker
 
 <!-- TRACKER:START -->
-Updated 2026-11-03T20:49Z. Counts by last completed phase: manifest 18, branch 39, header 2. RAG: green 2, amber 39, red 3, grey 15.
+Updated 2026-11-03T22:50Z. Counts by last completed phase: manifest 17, branch 39, static_front_end 1, header 2. RAG: green 2, amber 40, red 3, grey 14.
 
 | # | webapp | section | status | phase | RAG | next action |
 |---|---|---|---|---|---|---|
@@ -125,10 +125,10 @@ Updated 2026-11-03T20:49Z. Counts by last completed phase: manifest 18, branch 3
 | 38 | that-old-chestnut | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /that-old-chestnut/api/v1/ |
 | 39 | forensic | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /forensic/api/v1/ |
 | 40 | mr-wolf | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /mr-wolf/api/v1/ |
-| 41 | slot-41 (→ title-chain) | Wales | vacant | manifest | grey | owner decides the occupant; then a full manifest replaces this one |
+| 41 | negative-finds (→ negative-finds) | Wales | pending_pr | branch | amber | Review the central-record proposal, sync catalogue-db, then build and verify the dedicated static view and register it in the navigation. |
 | 42 | tithe-h3 | Wales | live | branch | amber | write the slice entry in data/core/slices.json and generate /tithe-h3/api/v1/ |
 | 43 | cloudflare | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /cloudflare/api/v1/ |
-| 44 | spill | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /spill/api/v1/ |
+| 44 | spill | Online | live | static_front_end | amber | Build and verify static snapshots on migration Pages, test every retained dynamic endpoint, then coordinate path-specific Worker routes and the static-first apex cutover. |
 | 45 | analytics | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /analytics/api/v1/ |
 | 46 | slot-46 (→ garden-store) | Wales | pending_pr | manifest | grey | owner decides the occupant; then a full manifest replaces this one |
 | 47 | slot-47 (→ peekaboo) | Wales | pending_pr | manifest | grey | owner decides the occupant; then a full manifest replaces this one |
