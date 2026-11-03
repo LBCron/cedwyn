@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T09:02:57.007Z",
+  "updated": "2026-11-03T08:47:21.263Z",
   "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
   "drafts": [
     {
@@ -1333,6 +1333,37 @@
       "version_reviews": null,
       "version_distinct_agents": null,
       "version_agents": null
+    },
+    {
+      "id": "task-536877818073",
+      "record": "HubSpot task 536877818073",
+      "version": "v0.3.1",
+      "status": "SKIPPED ChatGPT — IDLE; QUEUED BEHIND GROK TASK 535502730484",
+      "turn": "queued behind Grok's existing live assignment task 535502730484 (v0.1.0)",
+      "open_issues": null,
+      "last_change": "2026-11-02T15:37:57.662Z",
+      "last_agent": "ChatGPT",
+      "rounds": null,
+      "tier": "working",
+      "tier_label": "IN REVIEW",
+      "gmail_draft_id": null,
+      "sent_at": null,
+      "archive_url": null,
+      "pct": 0,
+      "reviews": 0,
+      "distinct_agents": 0,
+      "agents": [],
+      "stage": "QUEUED",
+      "last_action_at": "2026-11-03T08:47:21.263Z",
+      "last_action_by": "ChatGPT",
+      "version_reviews": 0,
+      "version_distinct_agents": 0,
+      "version_agents": [],
+      "queue_after": "HubSpot task 535502730484 (v0.1.0)",
+      "sent_version": null,
+      "seat_agreements_version": null,
+      "final_three_hat_version": null,
+      "attachments_verified_version": null
     }
   ],
   "events": [
@@ -1615,6 +1646,13 @@
       "version": "v0.9.0",
       "agent": "ChatGPT",
       "event": "BLOCKER DIAGNOSIS, not a material review: re-read HubSpot task 532017103065 and confirmed v0.9.0 is still assigned to ChatGPT. ROSTER gives ChatGPT HubSpot-only access; complete Gmail thread and attachments cannot be verified from this seat. HubSpot write tool requires explicit confirmation, so no route/status write attempted. RUNNERS.json and a task-specific BATON are absent from the drafts branch; live Hive endpoints were inaccessible via the available web fetch. No recipient text changed; 0 exact-version reviews counted; keep IN REVIEW and NOT READY."
+    },
+    {
+      "at": "2026-11-03T08:47:21.263Z",
+      "draft": "task-536877818073",
+      "version": "v0.3.1",
+      "agent": "ChatGPT",
+      "event": "SKIPPED ChatGPT (idle); queued behind Grok task 535502730484 (v0.1.0). No recipient-text change; no review counted."
     }
   ],
   "context_note": "drafts[].context = metadata-only context pack (recipient body, archive thread link, dartboard link, stage, next deadline, markers, open questions, rungs spent); built by hive_context.py from the dartboard roadmap, the email archive API and qa kb.json. Hive protocol v3.1.0 context sweep.",
