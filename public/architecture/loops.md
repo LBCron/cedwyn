@@ -1,6 +1,6 @@
 # Maintenance loops
 
-35 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
+38 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
 
 ## The autoresearch pattern
 
@@ -404,6 +404,39 @@ Details: [Data architecture](data.md).
 **Areas it touches:** the dartboard record (rebuilt); the drafts queue branch (drafts only)  
 **Guardrails:** never sends or drafts mail itself; recipient text changes only on the agent's own hive turns; zero spend; one worker at a time (duplicate check by goal prefix).
   Runner detail: [Disclosure results flywheel](../FLYWHEELS/disclosure-results.md)
+
+<a id="task-mirror"></a>
+### Task mirror refresh
+
+**Cadence:** hourly  
+**What it does:** Re-reads project-board tasks changed since the newest row and publishes the sanitised mirror file with its generated time.  
+**Inputs:** changed task metadata  
+**Outputs:** the mirror file; a log line  
+**Areas it touches:** the projects branch (one data file)  
+**Guardrails:** read-only on the board, never bodies; subjects sanitised; names, addresses and numbers withheld; fast-forward commits only; one worker at a time (duplicate check by goal prefix).
+  Runner detail: [Task mirror refresh](../FLYWHEELS/task-mirror.md)
+
+<a id="parcel-history"></a>
+### Parcel history
+
+**Cadence:** twice daily  
+**What it does:** Traces each parcel through gazette notices, plans, books of reference and catalogues, one record read at a time, and records what cuts against the working reading.  
+**Inputs:** the parcel register; gazette notices and plans; archive catalogues  
+**Outputs:** register rows; proposed catalogue records; dated board lines  
+**Areas it touches:** the central catalogue (pull request only, never merged by the loop); the project board (append only)  
+**Guardrails:** interpretation never published as assertion; read-only: no requests, orders or contact; zero spend; one worker at a time (duplicate check by goal prefix).
+  Runner detail: [Parcel history flywheel](../FLYWHEELS/parcel-history.md)
+
+<a id="social-engagement"></a>
+### Social engagement
+
+**Cadence:** three runs a day  
+**What it does:** Comments on relevant local heritage posts with a verbatim passage from the estate's heritage pages and follows related channels.  
+**Inputs:** recent local heritage posts; the quote bank  
+**Outputs:** at most one comment per platform per run; follows; a log row per action  
+**Areas it touches:** the project's own social accounts  
+**Guardrails:** code safety gate on every comment; three comments per platform per day, 45 minutes apart; a block stops the platform for 24 hours and halves its caps; no direct messages, like-spam or unfollows; one worker at a time (duplicate check by goal prefix).
+  Runner detail: [Social engagement](../FLYWHEELS/social-engagement.md)
 
 ## Also in the flywheel list
 

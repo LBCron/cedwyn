@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn_work_board/v1",
- "generated_utc": "2026-11-03 00:40 UTC",
- "open": 111,
+ "generated_utc": "2026-11-03 06:42 UTC",
+ "open": 113,
  "how_to_submit": {
   "pull_request": "a pull request to the GitHub repository unclehowell/cedwyn, on the branch of the section named in the job",
   "issue": "an issue on the same repository using the \"Agent job\" template, quoting the job id",
@@ -11,7 +11,7 @@
   "pages_read": 52,
   "links_checked": 350,
   "broken": 14,
-  "secs": 23
+  "secs": 18
  },
  "jobs": [
   {
@@ -1123,6 +1123,48 @@
    "first_listed": "2026-11-02 12:45 UTC"
   },
   {
+   "id": "J-941472",
+   "type": "find-missing-record",
+   "section": "research",
+   "branch": "section/research",
+   "title": "MR-0064: Deposited plans and books of reference for the railway and waterworks schemes over Llandough, 1876-1901: owner, lessee and occupier of each plot",
+   "inputs": [
+    "/research/missing-records/mr-0064/",
+    "why: Every private Bill seeking compulsory powers over land had to deposit, before the session, a plan of the lands and a book of reference naming the owner, lessee and occupier of every numbered plot, with Parliament and with the clerk of the peace of the county; the Gazette notice and a list of owners, lessees and occupiers (showing who assented, dissented or stayed neutral) followed. Notices in the London Gazette show at least four schemes with powers over land in Llandough-juxta-Cardiff: the Penarth Extension Railway (1876); the Barry Dock and Railways Company's Railway No.1, ending in Llandough by a junction with the Penarth Extension, with the Lands Clauses Acts incorporated (notice of 25 November 1884); Cardiff Corporation's waterworks conduit from the Cogan reservoir, ending in Llandough (notice of 21 November 1893); and the Taff Vale Railway's Bill of 1896 for compulsory purchase of lands in Llandough east of the Penarth branch near Llandough Lower Junction, whose 1897 Act authorised compulsory purchase of plots numbered 13-18, 21 and 22 on the deposited plans in that parish, with time extended in 1900 and again sought in 1901. The books of reference for these schemes should therefore name, plot by plot, who was treated as owner and who as occupier of every piece of land the schemes touched in the parish, from a source outside the estate's own papers. Against: a book of reference records the owner of record and the occupier as the promoters found them, so for land of the Bute estate it would be expected to show the estate as owner and any farmer as occupier; deposited-plan numbers are not tithe numbers, and whether any listed plot lies within the holding is not checked; a scheme deposited is not a scheme built, and land named in a book of reference was not always taken. Parcel not identified (the holding's c.1841 plots lie within tithe 196-267 and 275-281; the deposited plan for each scheme would show whether any of its plots fall within them).",
+    "likely holder: Parliamentary Archives deposited plans, catalogued in The National Archives' Discovery: YHL/PO/PB/3/plan1876/P4 (Penarth Extension Railway), YHL/PO/PB/3/plan1885/B4 and plan1884/B5 (Barry Dock and Railways; which file carries Railway No.1 not checked), YHL/PO/PB/3/plan1897/T1, plan1900/T5 and plan1901/T2 (Taff Vale Railway); House of Commons copies under YHC/CL/PB/6. No catalogue entry located for the 1893 Cardiff Corporation waterworks deposit. The county deposits with the clerk of the peace (Glamorgan Quarter Sessions): whether held at Glamorgan Archives not checked.",
+    "record London Gazette 25 November 1884, issue 25417, p.5380 (Barry Dock and Railways, Railway No.1, Llandough)",
+    "record London Gazette 21 November 1893, issue 26460, p.6693 (Cardiff Corporation waterworks conduit, Llandough)",
+    "record London Gazette 24 November 1896, issue 26797, p.6654 (Taff Vale Railway Bill, lands in Llandough-juxta-Cardiff)",
+    "record London Gazette 26 November 1901, issue 27380, p.8304 (Taff Vale Railway, Llandough plots 13-18, 21, 22)",
+    "record Parliamentary Archives YHL/PO/PB/3/plan1876/P4, plan1884/B5, plan1885/B4, plan1897/T1, plan1900/T5, plan1901/T2 (catalogue entries read 3 November 2026; items not seen)",
+    "record Lands Clauses Consolidation Act 1845"
+   ],
+   "definition_of_done": "The record is located (repository, reference, date, what it shows) and cited on its MR page, OR a dated answer from the holder confirming absence (with what was searched) is added to the page. No conclusions drawn.",
+   "note": "Research public catalogues and published sources only; never contact the holder (requests go through the hive).",
+   "status": "open",
+   "first_listed": "2026-11-03 06:42 UTC"
+  },
+  {
+   "id": "J-049DF2",
+   "type": "find-missing-record",
+   "section": "research",
+   "branch": "section/research",
+   "title": "MR-0065: Superfluous-land records for land taken in Llandough under the Lands Clauses Acts: to whom any surplus was offered back, and when",
+   "inputs": [
+    "/research/missing-records/mr-0065/",
+    "why: Where a company took land under the Lands Clauses Consolidation Act 1845 and did not need all of it for its works, the Act required it to sell the superfluous land within a fixed period after the time for completing the works, and first to offer it to the person then entitled to the land from which it was taken, or failing that to the owners of adjoining land (ss.127-128). The railway and waterworks schemes with powers over Llandough-juxta-Cardiff incorporated the Lands Clauses Acts. A company that sold or offered back surplus land in the parish should therefore have left a record of the offer, the person it was made to and the answer: the offer-back rule is the nineteenth-century forerunner of the arrangements later named after Crichel Down. Against: the offer went to the person entitled to the land, that is the owner of record, or to adjoining owners, not to an occupier or tenant, so for land of the Bute estate an offer would be expected to go to the estate; the rule did not apply to land kept for the works, and whether any Llandough land was ever treated as superfluous is not checked; the company records may survive only in part. Parcel not identified (the conveyances and land plans would name the plots).",
+    "likely holder: The railway companies' land and estate papers: Barry Railway Company (The National Archives RAIL 23) and Taff Vale Railway Company (RAIL 684), with any later successor estate files; Cardiff Corporation waterworks land papers (Cardiff Council / Glamorgan Archives, not checked). Not yet searched item by item.",
+    "record Lands Clauses Consolidation Act 1845, ss.127-128",
+    "record The National Archives RAIL 23 (Barry Railway Company, 1882-1923; series entry read 3 November 2026)",
+    "record The National Archives RAIL 684 (Taff Vale Railway Company, 1823-1962; series entry read 3 November 2026)",
+    "record London Gazette 25 November 1884, 21 November 1893, 24 November 1896, 26 November 1901 (statutory notices, Llandough)"
+   ],
+   "definition_of_done": "The record is located (repository, reference, date, what it shows) and cited on its MR page, OR a dated answer from the holder confirming absence (with what was searched) is added to the page. No conclusions drawn.",
+   "note": "Research public catalogues and published sources only; never contact the holder (requests go through the hive).",
+   "status": "open",
+   "first_listed": "2026-11-03 06:42 UTC"
+  },
+  {
    "id": "J-D91D74",
    "type": "chronology-gap",
    "section": "research",
@@ -1863,21 +1905,6 @@
    "definition_of_done": "A draft (PDF and EPUB) built from cited material already on Cedwyn, every fact traceable to a catalogue record, passing the agent lint. Publishing and price are decided by the project lead.",
    "status": "open",
    "first_listed": "2026-10-26 22:15 UTC"
-  },
-  {
-   "id": "J-7B1B85",
-   "type": "fix-broken-links",
-   "section": "wiki",
-   "branch": "the branch of that section",
-   "title": "1 broken internal link(s) on /wiki/",
-   "inputs": [
-    "/wiki/",
-    "/wiki/wp-content/uploads/2026/09/wp-1790112812173.pdf"
-   ],
-   "definition_of_done": "Every listed link opens a page (fixed, redirected, or removed with the text kept).",
-   "status": "closed",
-   "first_listed": "2026-10-26 22:15 UTC",
-   "closed": "2026-11-03 00:40 UTC"
   }
  ]
 }
