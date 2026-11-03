@@ -1,0 +1,83 @@
+{
+ "version": "3.2.0",
+ "generated": "2026-11-03T02:51:20Z",
+ "about": "Sources behind the Peekaboo incidents (/peekaboo/), each with a stable anchor on this page (#<id>). Watched pages are re-read every 5 days; a change in wording becomes a new version of the local copy under /wayback/websites/.",
+ "rows": [
+  {
+   "id": "wt-pkb-newman-ia",
+   "peekaboo": "OBS-PEEKABOO-NEWMAN-IA",
+   "institution": "Internet Archive",
+   "u": "https://archive.org/details/glamorganmidglam0000newm",
+   "host": "archive.org",
+   "title": "Internet Archive item page: Newman, Glamorgan (1995), identifier glamorganmidglam0000newm",
+   "watched": true,
+   "how": "Re-fetched every 5 days with the farm-page recapture. A change in its readable text becomes a new version of the local copy, so the before and after sit side by side.",
+   "first_seen": "2026-11-03T02:47:01Z",
+   "local_copy": "/wayback/websites/archive.org/details-glamorganmidglam0000newm/latest.html#pkb-ia-description",
+   "local_version": "v1.0.0",
+   "local_sha256": "f86dc3a447f730158112c16d98770cf836353551550a664e3920e0d936f9b804",
+   "raw_sha256": "7cea25963d6ef5f3df6ea59ee0df86c87e0fd4c2c97b505c26cc646a4faa8479",
+   "state": "Description on 3 Nov 2026 02:47 UTC: a children's story blurb on a 1995 architectural guide."
+  },
+  {
+   "id": "wt-pkb-dbdt79",
+   "peekaboo": "OBS-PEEKABOO-DBDT79-CATALOGUE",
+   "institution": "Glamorgan Archives",
+   "u": "",
+   "host": "canfod.glamarchives.gov.uk",
+   "title": "Glamorgan Archives catalogue entry DBDT/79/1",
+   "watched": false,
+   "how": "No public record page answered on 3 Nov 2026 (the record address returned 404 and the DBDT collection page 500). Added to the 5-day recapture once a page answers.",
+   "first_seen": "2026-09-14",
+   "state": "Catalogue description corrected by the archive on 14 Sep 2026 after the original was examined."
+  },
+  {
+   "id": "wt-pkb-toc-f05",
+   "peekaboo": "TOC-F05",
+   "institution": "Welsh Government / Cadw",
+   "u": "",
+   "host": "",
+   "title": "Welsh Government / Cadw: reply on file",
+   "watched": false,
+   "how": "A written reply held on file; there is no public page to re-read. Later replies are logged in the case mail record.",
+   "first_seen": "",
+   "state": ""
+  },
+  {
+   "id": "wt-pkb-toc-f01",
+   "peekaboo": "TOC-F01",
+   "institution": "Amgueddfa Cymru – Museum Wales",
+   "u": "",
+   "host": "",
+   "title": "Amgueddfa Cymru – Museum Wales: reply on file",
+   "watched": false,
+   "how": "A written reply held on file; there is no public page to re-read. Later replies are logged in the case mail record.",
+   "first_seen": "",
+   "state": ""
+  },
+  {
+   "id": "wt-pkb-toc-f02",
+   "peekaboo": "TOC-F02",
+   "institution": "Historic England",
+   "u": "",
+   "host": "",
+   "title": "Historic England: reply on file",
+   "watched": false,
+   "how": "A written reply held on file; there is no public page to re-read. Later replies are logged in the case mail record.",
+   "first_seen": "",
+   "state": ""
+  },
+  {
+   "id": "wt-pkb-toc-f03",
+   "peekaboo": "TOC-F03",
+   "institution": "Vale of Glamorgan Council",
+   "u": "",
+   "host": "",
+   "title": "Vale of Glamorgan Council: reply on file",
+   "watched": false,
+   "how": "A written reply held on file; there is no public page to re-read. Later replies are logged in the case mail record.",
+   "first_seen": "",
+   "state": ""
+  }
+ ]
+}
