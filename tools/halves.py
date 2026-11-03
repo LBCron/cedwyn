@@ -17,7 +17,8 @@ Copy: data/halves.json (en/cy/es; Welsh and Spanish are first drafts). Images: w
 import json, html, re, pathlib, math
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 E = html.escape
-VERSION = '1.5.1'
+VERSION = '1.8.0'
+# 1.8.0 (3 Nov 2026, owner WhatsApp 18:52 GMT): place-modal tiles open at the webapp's own address with target=_top (a tile always leaves the modal); the 2D/3D map is drawn inside the Wales and Patagonia modals by /_cedwyn/landing-map-views.js 2.0.0, framed bare (runtime.js 17). - Sion's Tab agent
 # 1.7.0 (3 Nov 2026, owner WhatsApp 18:49 GMT): data/halves.json section_labels gives one half its own tile label; Wales 2D map = Tithe H3, Patagonia 2D map = Chubut H3 (Patagonia tile image nfa 0093). - Sion's Tab agent
 # 1.6.0 (3 Nov 2026, owner WhatsApp 17:48 GMT, webapp tour fix): every Wales modal tile is a hologram (wales_holo, no non-hologram fallback); data/halves.json groups.online_home (Analytics, Spill) leave the Wales and Patagonia modals and stay in the Online card at their own addresses; groups.own_address apps (online-only page bodies: Chessboard, 3D map, Gallery, Forensic Assessments, Mr Wolf) open at their own address from the place modals instead of a 'see Online' line. — Sion's Tab agent
 # 1.5.1 (2 Nov 2026, 05:04 GMT): an online_only app leaves only the place modals of the halves that exclude it (the FOI/correspondence apps stay in Wales, leave Patagonia). — Sion's Tab agent
@@ -528,15 +529,15 @@ def app_tile(H, section, theme):
     else:
         image = APP_IMAGES.get(tid, 'ty-mawr-1974-reconstruction')
     online_only = set(H.get('groups', {}).get('online_only', []))
-    href = (f'/online/{tid}/' if tid in online_only else f'/{tid}/') if section == 'online' else f'/{section}/{tid}/'
+    href = f'/online/{tid}/' if tid in online_only else f'/{tid}/'   # 1.8.0 (3 Nov 2026, owner WhatsApp 18:52 GMT): every modal tile opens the webapp at its own address (/<webapp>/; /online/<id>/ for online-only apps) in the top window, from Wales and Patagonia too (was /wales/<id>/ and /argentina/<id>/) - Sion's Tab agent
     if section in ('wales', 'argentina') and tid in set(H.get('groups', {}).get('own_address', [])):
         href = f'/{tid}/'   # 3 Nov 2026 (webapp tour fix): apps whose page body is online-only open at their own address from the place menus too, never as a 'see Online' line under /wales/ or /argentina/ - Sion's Tab agent  # Online: /online/<id>/ for online-only apps (2 Nov 2026), else the apps' own top-level addresses (1 Nov 2026)
-    return (f'<a class="land-app" href="{E(href)}" aria-label="{E(label)}">'
+    return (f'<a class="land-app" href="{E(href)}" target="_top" aria-label="{E(label)}">'
             f'<img src="{E(app_image(H, image))}" alt="" loading="lazy" decoding="async">'
             f'<span class="land-app-label">{E(label)}</span></a>')
 
 def specific_tile(H, title, href, image):
-    return (f'<a class="land-app" href="{E(href)}" aria-label="{E(title)}">'
+    return (f'<a class="land-app" href="{E(href)}" target="_top" aria-label="{E(title)}">'
             f'<img src="{E(app_image(H, image))}" alt="" loading="lazy" decoding="async">'
             f'<span class="land-app-label">{E(title)}</span></a>')
 
