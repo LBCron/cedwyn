@@ -1,6 +1,6 @@
 # Maintenance loops
 
-32 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
+35 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
 
 ## The autoresearch pattern
 
@@ -235,7 +235,7 @@ Details: [Data architecture](data.md).
 <a id="documentary"></a>
 ### Documentary scenes
 
-**Cadence:** every 6 hours  
+**Cadence:** every 6 hours; one new scene goes live every day (from 2 Nov 2026)  
 **What it does:** Takes the next item in the re-render queue or the next unfilled frame of the chronology and produces one short scene: one dated moment, who was there, what was most likely said, with Welsh spoken where the period calls for it and subtitles.  
 **Inputs:** the scene and shot packages in the public film-studio repository; the script and scene list; the film's own daily budget  
 **Outputs:** one scene with subtitles; the next door opened on the documentary page; the script kept ten frames ahead  
@@ -371,6 +371,39 @@ Details: [Data architecture](data.md).
 **Outputs:** an annotated tag named <branch>-vX.Y.Z and a release with neutral notes; an audit line per release  
 **Areas it touches:** every branch of the repository  
 **Guardrails:** never tags queued or unbuilt work; it is listed as the next release; a pending hosting preview record is not a deploy; check the build run, the production deploys and the served stamp; release notes are public: same wording rules as the site; one worker at a time (duplicate check by goal prefix).
+
+<a id="burndown"></a>
+### Task backlog burndown
+
+**Cadence:** every 2 hours  
+**What it does:** Counts the open project-board tasks and closes those whose work is done, each with a dated evidence line; creates nothing.  
+**Inputs:** open project-board tasks; the mail record; a live crawl of the site  
+**Outputs:** closed tasks with evidence; a ledger row per run (open count before and after)  
+**Areas it touches:** the project board (task status and one evidence line)  
+**Guardrails:** re-read each task live and match its subject before closing; never closes unsent recipient-facing drafts or tasks another worker edited in the last hour; evidence or no close; one worker at a time (duplicate check by goal prefix).
+  Runner detail: [Task backlog burndown](../FLYWHEELS/burndown.md)
+
+<a id="social-follows"></a>
+### Social follows
+
+**Cadence:** three short runs a day  
+**What it does:** Follows relevant heritage, Welsh, local-area and genealogy accounts from a curated list on the project's Instagram account, and tops the list up from heritage seed accounts.  
+**Inputs:** the target list; seed accounts' follower lists  
+**Outputs:** confirmed follows; a log row per attempt  
+**Areas it touches:** the project's Instagram account (follows only)  
+**Guardrails:** no likes, comments, messages or unfollows; daily cap ramped slowly, at most 10 an hour; any restriction stops follows for 24 hours and halves the cap; never private individuals' private accounts, minors, schools or the do-not-contact list; one worker at a time (duplicate check by goal prefix).
+  Runner detail: [Social follows](../FLYWHEELS/social-follows.md)
+
+<a id="disclosure-results"></a>
+### Disclosure results flywheel
+
+**Cadence:** proposed: every 6 hours after email ingest  
+**What it does:** Reads the dartboard outcomes as performance data, learns which request features draw answers, audits unsent drafts for a preservation-first opener and adds new ideas each cycle.  
+**Inputs:** the dartboard record; new replies; unsent hive drafts  
+**Outputs:** feature tables and lessons with counts; a preservation-first audit; new ideas, each marked with its state  
+**Areas it touches:** the dartboard record (rebuilt); the drafts queue branch (drafts only)  
+**Guardrails:** never sends or drafts mail itself; recipient text changes only on the agent's own hive turns; zero spend; one worker at a time (duplicate check by goal prefix).
+  Runner detail: [Disclosure results flywheel](../FLYWHEELS/disclosure-results.md)
 
 ## Also in the flywheel list
 

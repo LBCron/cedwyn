@@ -4,7 +4,7 @@ Live tracking is on /dartboard/ (one lane per body). This list is refreshed each
 
 | Due | What |
 |---|---|
-| paused | HM Land Registry: response to an information request. On 27 Oct the body asked for identity verification; the one-month period restarts when it is received |
+| early Dec 2026 | HM Land Registry: response to an information request. On 27 Oct the body asked for identity verification; the evidence was sent on 2 Nov and the one-month period runs from its receipt |
 | 29 Oct 2026 | South Wales Police: response to an information request |
 | about 5 Nov 2026 | Arts Council England: its FOI mailbox is no longer monitored; resend if its information team has not replied within five working days of 29 Oct |
 | 6 Nov 2026 | HM Land Registry copies: if not received, a PRINCE2 exception report is raised |

@@ -1,6 +1,6 @@
 # Work board
 
-Step 3 of 3. **112 open jobs**, regenerated every academy cycle from real gaps (last: 2026-11-02 19:27 UTC). Each job has an id, its inputs and a definition of done. Claim one, do it, submit it as [Contributing](CONTRIBUTING.md) describes. Machine-readable: [work.json](../work.json).
+Step 3 of 3. **111 open jobs**, regenerated every academy cycle from real gaps (last: 2026-11-03 00:40 UTC). Each job has an id, its inputs and a definition of done. Claim one, do it, submit it as [Contributing](CONTRIBUTING.md) describes. Machine-readable: [work.json](../work.json).
 
 ## Find a missing record (63)
 
@@ -299,14 +299,11 @@ Step 3 of 3. **112 open jobs**, regenerated every academy cycle from real gaps (
   *Section:* wales · *Done when:* Each passage is either cited to a catalogue record (EV-####) and restyled as normal text, or left in the small italic style with neutral wording. Nothing is deleted.
   *Inputs:* /wales/; passages shown in the small italic style (class unsub)
 
-## Fix broken internal links (6)
+## Fix broken internal links (5)
 
-- **J-7B1B85** · 1 broken internal link(s) on /wiki/  
-  *Section:* wiki · *Done when:* Every listed link opens a page (fixed, redirected, or removed with the text kept).
-  *Inputs:* /wiki/; /wiki/wp-content/uploads/2026/09/wp-1790112812173.pdf
-- **J-5DEF91** · 3 broken internal link(s) on /wayback/  
+- **J-5DEF91** · 2 broken internal link(s) on /wayback/  
   *Section:* wayback · *Done when:* Every listed link opens a page (fixed, redirected, or removed with the text kept).
-  *Inputs:* /wayback/; /wayback/websites/index.json; /wayback/text/_treeview.json; /wayback/pdf/_treeview.json
+  *Inputs:* /wayback/; /wayback/websites/index.json; /wayback/text/_treeview.json
 - **J-6974FC** · 3 broken internal link(s) on /cloudflare/  
   *Section:* cloudflare · *Done when:* Every listed link opens a page (fixed, redirected, or removed with the text kept).
   *Inputs:* /cloudflare/; /cloudflare/cloudflare/api/snapshot; /cloudflare/cloudflare/api/llms.txt; /cloudflare/cloudflare/api/mcp
@@ -452,3 +449,6 @@ Step 3 of 3. **112 open jobs**, regenerated every academy cycle from real gaps (
   *Inputs:* evidence catalogue items EV-0221-EV-0645; each item's own record; /academy/MEMORY/parcels.json
   *Note:* Parcel rule: name the parcel(s) each result concerns (tithe no. T###, OS 1:2500 field no., title no. or deed schedule item, from /academy/MEMORY/parcels.json), or state 'parcel not identified' and what would identify it. Public catalogues and published sources only; never contact a holder. Hypotheses are labelled as hypotheses.
 
+## Recently closed (1)
+
+- J-7B1B85 · 1 broken internal link(s) on /wiki/ (closed 2026-11-03)
