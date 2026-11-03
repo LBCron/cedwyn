@@ -1,0 +1,193 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "dartboard",
+ "uid": "APP-27",
+ "slot": {
+  "n": 27,
+  "of": 59,
+  "label": "27 of 59"
+ },
+ "status": "live",
+ "section": "Online",
+ "sections_shown": [
+  "Online"
+ ],
+ "group": "interactive",
+ "title": {
+  "en": "Disclosure Dartboard",
+  "cy": "Bwrdd Dartiau Datgelu",
+  "es": "La Diana de la Divulgación"
+ },
+ "description": "Disclosure and escalation routes.",
+ "path": "/dartboard/",
+ "aliases": [],
+ "legacy_hosts": [
+  "dartboard.bucklerfamily.estate"
+ ],
+ "branch": {
+  "name": "dartboard",
+  "exists": true,
+  "standard_name": "webapp/dartboard",
+  "source_dir": null,
+  "other_branches": [
+   "dartboard-family-testimony"
+  ]
+ },
+ "front_end": {
+  "kind": "static",
+  "hosting": "cloudflare_pages",
+  "project": "cedwyn (cedwyn-274.pages.dev, production branch site)",
+  "build": "build-cedwyn (GitHub Actions) writes branch site",
+  "worker_on_read": false,
+  "notes": "apex bucklerfamily.estate reads run the router Worker until the static-first cutover (PR #157)"
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en",
+   "cy",
+   "es"
+  ],
+  "scripts": [
+   "/_cedwyn/runtime.js",
+   "/_cedwyn/ghf/ghf-boot.js"
+  ],
+  "status": "legacy"
+ },
+ "data": {
+  "slice": "roadmap",
+  "query": {
+   "kinds": [
+    "foi_finding",
+    "screening_lead"
+   ],
+   "uid_prefixes": [
+    "TOC",
+    "KF",
+    "RET"
+   ],
+   "tags": [],
+   "where": "every institution in the disclosure roadmap",
+   "public_only": true
+  },
+  "registers": [
+   "data/dartboard-updates/",
+   "work/roadmap/refresh.py"
+  ],
+  "catalogue_status": "partly"
+ },
+ "local_store": {
+  "static": [
+   "/dartboard/_data/roadmap.json",
+   "/dartboard/api/v1/index.json"
+  ],
+  "client_cache": {
+   "enabled": true,
+   "store": "indexeddb",
+   "strategy": "stale-while-revalidate",
+   "max_age_s": 3600,
+   "revalidate_with": "/dartboard/api/v1/index.json rev",
+   "pull_from": "/catalogue-db/ static export (never a Worker)"
+  }
+ },
+ "api": {
+  "base": "/dartboard/api/v1/",
+  "outputs": [
+   {
+    "path": "/dartboard/api/v1/index.json",
+    "format": "json",
+    "description": "list + counts + rev + generated_at"
+   },
+   {
+    "path": "/dartboard/api/v1/items/{uid}.json",
+    "format": "json",
+    "description": "one record in this app's presentation, keyed by catalogue UID"
+   },
+   {
+    "path": "/dartboard/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "JSON Feed 1.1, newest first"
+   },
+   {
+    "path": "/dartboard/api/v1/feed.xml",
+    "format": "atom",
+    "description": "Atom 1.0 feed"
+   },
+   {
+    "path": "/dartboard/api/v1/rss.xml",
+    "format": "rss",
+    "description": "RSS 2.0 feed"
+   },
+   {
+    "path": "/dartboard/api/v1/data.xml",
+    "format": "xml",
+    "description": "the whole slice as XML"
+   }
+  ],
+  "cors": "*",
+  "cache_control": "public, max-age=300",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [
+  {
+   "app": "email",
+   "path": "/email/api/v1/by-institution/",
+   "why": "threads per institution"
+  },
+  {
+   "app": "forensic",
+   "path": "/forensic/api/v1/index.json",
+   "why": "assessment per institution"
+  }
+ ],
+ "consumed_by": [
+  "fcg",
+  "authorities",
+  "projects",
+  "app",
+  "whattheydontsay",
+  "forensic"
+ ],
+ "external_sources": [],
+ "dynamic_endpoints": [
+  {
+   "path": "dartboard-datro.bucklerfamily.estate/*",
+   "worker": "dartboard",
+   "why": "legacy roadmap host (build-time fetch; to retire)"
+  }
+ ],
+ "migration": {
+  "phase": "branch",
+  "phases_done": [
+   "inventory",
+   "manifest",
+   "branch"
+  ],
+  "rag": "amber",
+  "next_action": "pilot: standard build on the migration pages.dev project",
+  "blockers": [
+   "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval"
+  ],
+  "prs": [],
+  "pilot": true
+ },
+ "owner": "Cedwyn editors (owner approval for catalogue changes)",
+ "version": "0.1.0",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "summary": "Manifest created from the live tour inventory (/areas.json nav), themes.json, data/site-areas.json and data/halves.json 1.4.0."
+  }
+ ],
+ "sources": [
+  "/areas.json nav (cedwyn-274.pages.dev, read 2026-11-03)",
+  "themes.json@main",
+  "data/site-areas.json@main",
+  "data/halves.json@PR#154 (1.4.0)",
+  "cedwyn branch list (git ls-remote)"
+ ]
+}

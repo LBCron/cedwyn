@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Disclosure Dartboard · Cedwyn (standard pilot)</title>
+<meta name="description" content="The disclosure roadmap: every institution involved, with its catalogued findings and replies.">
+<link rel="alternate" type="application/atom+xml" title="Disclosure Dartboard" href="api/v1/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Disclosure Dartboard (RSS)" href="api/v1/rss.xml">
+<link rel="stylesheet" href="/_std/cw-std.css">
+<script src="/_std/cw-cache.js" defer></script><script src="/_std/cw-header.js" defer></script>
+</head><body>
+<header data-cw-app="dartboard">Cedwyn</header>
+<main>
+<h1>Disclosure Dartboard</h1>
+<p class="lede">One row per institution, built from the central catalogue: FOI findings (TOC-) and catalogued replies (AR-FOI-). The reply counts are read from the Wayback Vault's own API.</p>
+<p class="meta" id="count">Loading…</p>
+<div id="rows"></div>
+<noscript><p><a href="api/v1/roadmap.json">Open the roadmap as JSON</a></p></noscript>
+</main>
+<footer><span class="apis">API: <a href="api/v1/index.json">index.json</a><a href="api/v1/roadmap.json">roadmap.json</a><a href="api/v1/institutions.json">institutions.json</a><a href="api/v1/feed.xml">Atom</a><a href="api/v1/rss.xml">RSS</a><a href="api/v1/data.xml">XML</a><a href="manifest.json">manifest</a></span><br>
+Reads <a href="/wayback/api/v1/index.json">/wayback/api/v1/index.json</a>. Standard webapp pilot (cedwyn-webapp/1.0.0). Data rev <span id="rev">…</span>. <a href="/">Migration status</a></footer>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  var road = null, wb = null, idx = null;
+  function draw(){
+    if(!road || !idx) return;
+    var byUid = {}; (idx.items||[]).forEach(function(it){ byUid[it.uid] = it; });
+    var wbCount = {};
+    if(wb) (wb.items||[]).forEach(function(it){ if(it.uid && it.uid.indexOf('AR-FOI') === 0 && it.holder){ wbCount[it.holder] = (wbCount[it.holder]||0) + 1; } });
+    function wbFor(name){ var n = 0, low = name.toLowerCase().split(/[ (\/-]+/)[0]; for(var h in wbCount){ if(h.toLowerCase().indexOf(low) >= 0) n += wbCount[h]; } return n; }
+    var list = road.institutions || [];
+    document.getElementById('count').textContent = list.length + ' institutions · ' + (idx.count||0) + ' findings';
+    document.getElementById('rows').innerHTML = list.map(function(r){
+      var f = r.findings.map(function(u){ var it = byUid[u] || {}; return '<div><span class="badge b-' + esc(it['class']) + '">' + esc(it['class']||'') + '</span> <a class="uid" href="api/v1/items/' + esc(u) + '.json">' + esc(u) + '</a> ' + esc(it.date||'') + '</div>'; }).join('');
+      return '<div class="card"><strong>' + esc(r.institution) + '</strong><div class="meta">' + esc(r.stage) +
+        (r.first ? ' · ' + esc(r.first) + (r.last && r.last !== r.first ? ' to ' + esc(r.last) : '') : '') +
+        ' · replies catalogued: ' + r.attachments + (wb ? ' (Wayback API: ' + wbFor(r.institution) + ')' : '') + '</div>' + f + '</div>';
+    }).join('');
+  }
+  CW.cache.get('api/v1/roadmap.json', {maxAge:3600}, function(d){ road = d; draw(); });
+  CW.cache.get('api/v1/index.json', {maxAge:3600}, function(d){ idx = d; document.getElementById('rev').textContent = d.rev; draw(); });
+  CW.cache.get('/wayback/api/v1/index.json', {maxAge:3600}, function(d){ wb = d; draw(); }).catch(function(){});
+});
+</script>
+</body></html>
