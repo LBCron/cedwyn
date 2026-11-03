@@ -1,1 +1,1 @@
-build 3 (2026-11-03): footer API links wrap at 390 px
+build 4 (2026-11-03): add Negative Finds static pilot at slot 41
