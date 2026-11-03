@@ -1,6 +1,3 @@
-/assets/fonts/* /_cedwyn/ghf/fonts/:splat 200
-/locations-img/* /dartboard/locations-img/:splat 200
-/dartboard/ghf-lang/* /_cedwyn/ghf/:splat 200
 /wales/tour /wales/#stop-1 301
 /wales/tour/ /wales/#stop-1 301
 /wales/emails /emails/ 301
@@ -196,6 +193,9 @@
 /fb2/u/mr-instagram-family-page.html /fb2/u/sion-buckler-project-manager.html 301
 /shop/thank-you /shop/ 301
 /shop/thank-you/ /shop/ 301
+/assets/fonts/* /_cedwyn/ghf/fonts/:splat 200
+/locations-img/* /dartboard/locations-img/:splat 200
+/dartboard/ghf-lang/* /_cedwyn/ghf/:splat 200
 /ebooks/api/* https://ebooks.bucklerfamily.estate/api/:splat 302
 /wales/ebooks/api/* https://ebooks.bucklerfamily.estate/api/:splat 302
 /argentina/ebooks/api/* https://ebooks.bucklerfamily.estate/api/:splat 302
