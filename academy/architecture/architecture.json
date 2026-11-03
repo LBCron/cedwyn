@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn_academy_architecture/v1",
- "version": "1.0.13",
+ "version": "1.0.14",
  "updated": "2026-11-03",
  "refreshed_by": "the agent library cycle (every 6 hours); edit this file, then rebuild the academy",
  "source_documents": [
@@ -1038,7 +1038,7 @@
   {
    "id": "correspondence",
    "name": "Correspondence flywheel",
-   "cadence": "every 2 hours at :30, 07:30–23:30 UK",
+   "cadence": "hourly reply drafts pass, re-review of the oldest open drafts at least every 6 hours, housekeeping daily",
    "does": "Works out who needs a reply, a chaser, an escalation, a forward or a first contact, and writes one hive draft task per item on the project board; between items it does housekeeping on existing tasks.",
    "inputs": [
     "archived mail (after email ingest)",
@@ -1048,7 +1048,8 @@
    "outputs": [
     "new hive draft tasks",
     "triage notes on unsent tasks when a new fact exists",
-    "housekeeping (duplicates, stale fields)"
+    "housekeeping (duplicates, stale fields)",
+    "supplements and corrections to sent emails"
    ],
    "touches": [
     "the project board",
@@ -1899,6 +1900,58 @@
     "no direct messages, like-spam or unfollows"
    ],
    "flywheel_page": "/academy/FLYWHEELS/social-engagement.md"
+  },
+  {
+   "id": "forensic-journal",
+   "name": "Forensic journal",
+   "cadence": "every 6 hours",
+   "does": "Adds one objective dated entry per substantive institution reply or page change to the forensic journal, with links to the archived email and page copies, and refreshes each institution's assessment.",
+   "inputs": [
+    "the mail manifest",
+    "watchtower page changes",
+    "hand-written objective entries"
+   ],
+   "outputs": [
+    "journal entries per institution",
+    "refreshed assessments",
+    "a metadata-only catalogue page"
+   ],
+   "touches": [
+    "/forensic/journal/",
+    "/forensic/ (activity journal block on each institution page)"
+   ],
+   "guardrails": [
+    "objective wording, good conduct credited as plainly as gaps",
+    "catalogue lock: derived pages only, never a record edit",
+    "banned-word scan must be empty before commit"
+   ],
+   "flywheel_page": "/academy/FLYWHEELS/forensic-journal.md"
+  },
+  {
+   "id": "traffic",
+   "name": "Traffic flywheel",
+   "cadence": "daily",
+   "does": "Measures visitors per channel, runs A/B decisions and adds new no-human-in-the-loop traffic channels within platform terms.",
+   "inputs": [
+    "site analytics",
+    "tagged links",
+    "the other growth loops' logs"
+   ],
+   "outputs": [
+    "posts within caps",
+    "blog syndication",
+    "A/B decisions",
+    "a log row per action"
+   ],
+   "touches": [
+    "the project's own social accounts and blog"
+   ],
+   "guardrails": [
+    "one account per platform, no spam or bought engagement",
+    "case material is never promotion material",
+    "zero spend"
+   ],
+   "flywheel_page": "/academy/FLYWHEELS/traffic.md"
   }
  ]
 }

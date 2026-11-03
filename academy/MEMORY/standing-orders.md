@@ -130,3 +130,18 @@ These bind every agent, every cycle. When two orders conflict, the newer one win
 69. Documentary: one new scene goes live every day, at least in its first native language, alongside the pending native remakes and never only after all of them. When rendering is blocked, the next scene is prepared in full so it renders first the following day.
 70. Short social videos (social format v2.1, for every new reel, short and page video): at most about 8 to 10 words on screen per slide (more goes on another slide or in the caption); the music bed is the Welsh song "Coch, Gwyn a Gwyrdd", fading in over 0.3 s and out over the last 2.5 s, never a hard cut, and ducked under any voice; the old synthesised plucked-string bed is never used; the bottom half shows the farm's own interiors from its artifact photographs, never an outside view of a building, with framed portraits blurred; the top half shows exterior or landscape gallery paintings only.
 71. Social follows: the project's social accounts follow relevant institutions and heritage accounts only, with no likes, comments, direct messages or unfollows, never private individuals' private accounts, minors, schools or anyone on the do-not-contact list. A young account starts at a low daily cap that rises slowly after each week without a restriction, with at most 10 follows in any hour; any restriction notice stops all follows for 24 hours and halves the cap.
+
+
+## Outbound mail and reply drafts (3 Nov 2026)
+72. Outbound emails never explain the project's own workings and never mention agents, assistants, AI or automation. When an earlier sent email (from any sender) caused confusion or carried a fact that has since changed, the fix is a supplement or correction in the same thread, never an apology for the other sender.
+73. Reply drafting is automatic: a loop drafts each reply, chase, supplement, follow-up or correction as a hive draft task, reading the whole thread, every earlier thread with that body and the relevant estate pages first; no per-draft approval is needed to create a draft, the hive polishes it, and open drafts are re-reviewed at least every 6 hours. Sending still goes only through the existing approval gate.
+
+## Catalogue lock (owner instruction, 3 Nov 2026)
+
+Existing evidence and artifact records are locked. No agent, seat or automation edits, rewords, moves or deletes an existing record. That covers `data/core/records/*`, EV / MR / GHF-E / artifact pages, evidence registers, and rows already in a findings CSV.
+
+- **Adding** a new record is allowed. The `catalogue-lock` check lists every addition for review.
+- **Changing** an existing record: open a pull request labelled `catalogue-change`. Give the record id, the before, the after, and the source that justifies the change. Then stop. The owner approves each change himself with the `owner-approved` label, or declines it.
+- Never apply `owner-approved` yourself, and never write a `Catalogue-approved-by:` trailer.
+- The `catalogue-lock` check on unclehowell/cedwyn fails any unapproved edit of an existing record. It runs on pull requests and pushes to main, and audits `section/research` and `core/*` every 6 hours.
+- Interpretation, theory framing and wording changes go on their own pages (theories, findings, journal), never into an existing evidence record.

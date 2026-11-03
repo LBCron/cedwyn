@@ -1,9 +1,9 @@
 
-@font-face{font-family:"Barlow";font-weight:400;font-display:swap;src:url(/csscpsg/assets/fonts/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:400;font-display:swap;src:url(/_blob/b0a8ad37ac45f5fb.woff2) format("woff2")}
 @font-face{font-family:"Barlow";font-weight:500;font-display:swap;src:url(/_blob/cd759df8ef9efc98.woff2) format("woff2")}
-@font-face{font-family:"Barlow";font-weight:300 500;font-display:swap;src:url(/csscpsg/assets/fonts/barlow-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
-@font-face{font-family:"Barlow";font-weight:600 800;font-display:swap;src:url(/csscpsg/assets/fonts/barlow-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
-@font-face{font-family:"Barlow";font-weight:700;font-display:swap;src:url(/csscpsg/assets/fonts/barlow-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:300 500;font-display:swap;src:url(/_blob/122b24bc2a90b0ab.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:"Barlow";font-weight:600 800;font-display:swap;src:url(/_blob/88c786d5fa8700a2.woff2) format("woff2");unicode-range:U+0100-02AF,U+1E00-1EFF}
+@font-face{font-family:"Barlow";font-weight:700;font-display:swap;src:url(/_blob/2d797dd8b35dcb34.woff2) format("woff2")}
 :root{--bg:#000;--ink:#fff;--body:#d6d6d6;--muted:#9a9a9a;--line:rgba(255,255,255,.14);--panel:#0d0d0d;--red:#ff5b4f;--font:"Barlow","Helvetica Neue",Arial,system-ui,sans-serif}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}

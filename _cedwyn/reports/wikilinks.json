@@ -1,7 +1,7 @@
 {
- "pages": 5241,
- "glossary_links": 12834,
- "name_links": 16720,
+ "pages": 5242,
+ "glossary_links": 12833,
+ "name_links": 16721,
  "themes": {
   "accounts": 1,
   "argentina": 2,
@@ -9,7 +9,7 @@
   "blog": 1,
   "caso": 1,
   "csscpsg": 1,
-  "dartboard": 16,
+  "dartboard": 18,
   "directory": 274,
   "disproven": 1,
   "docs": 1830,
@@ -38,7 +38,6 @@
   "settings": 1,
   "spill": 1,
   "story": 3,
-  "terrain": 1,
   "thousand-cuts": 1,
   "tithe-h3": 1,
   "title-chain": 1,
@@ -54,5 +53,5 @@
  "public_variants": 82,
  "agents_link": "/academy/",
  "agent_blocks_hidden": 12928,
- "agent_pages": 5951
+ "agent_pages": 5952
 }

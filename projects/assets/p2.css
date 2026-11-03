@@ -1,7 +1,7 @@
 /* The Project Office — PRINCE2 7 product pages. Light and dark follow the header v2 toggle (html[data-ghf-mode]) or the device. */
-@font-face{font-family:Barlow;font-weight:400;font-display:swap;src:url(/projects/assets/fonts/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Barlow;font-weight:400;font-display:swap;src:url(/_blob/b0a8ad37ac45f5fb.woff2) format("woff2")}
 @font-face{font-family:Barlow;font-weight:500;font-display:swap;src:url(/_blob/cd759df8ef9efc98.woff2) format("woff2")}
-@font-face{font-family:Barlow;font-weight:700;font-display:swap;src:url(/projects/assets/fonts/barlow-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Barlow;font-weight:700;font-display:swap;src:url(/_blob/2d797dd8b35dcb34.woff2) format("woff2")}
 :root{--bg:#fff;--fg:#16181b;--mut:#5b636d;--line:#d9dde2;--card:#f5f6f8;--acc:#0b5cad;--ok:#1d7a3a;--warn:#9a5b00;--bad:#b3261e;color-scheme:light}
 @media (prefers-color-scheme:dark){:root{--bg:#0d0f11;--fg:#e9ecef;--mut:#a3acb6;--line:#2c3238;--card:#161a1e;--acc:#7cb7ff;--ok:#6fd18c;--warn:#f0b35a;--bad:#ff8a80;color-scheme:dark}}
 html[data-ghf-mode=day]{--bg:#fff;--fg:#16181b;--mut:#5b636d;--line:#d9dde2;--card:#f5f6f8;--acc:#0b5cad;--ok:#1d7a3a;--warn:#9a5b00;--bad:#b3261e;color-scheme:light}

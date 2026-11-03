@@ -1,15 +1,15 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9250,
+  "pages_scanned": 9254,
   "references_checked": {
-    "resource": 211198,
-    "nav": 473217
+    "resource": 211229,
+    "nav": 474579
   },
-  "database_backed_paths": 7105,
+  "database_backed_paths": 7089,
   "unique_missing_destinations": 6432,
-  "missing_references": 59837,
-  "missing_navigation_references": 37108,
-  "missing_resource_references": 22729,
+  "missing_references": 59879,
+  "missing_navigation_references": 37142,
+  "missing_resource_references": 22737,
   "unique_broken_fragments": 1832,
   "broken_fragment_references": 3394,
   "form_or_endpoint_actions_not_checked": {
@@ -19,7 +19,7 @@
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9221,
+      "references": 9225,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9217,
+      "references": 9221,
       "examples": [
         {
           "from": "/",
@@ -73,7 +73,7 @@
     {
       "kind": "resource",
       "path": "/blog/rss.xml",
-      "references": 6600,
+      "references": 6602,
       "examples": [
         {
           "from": "/review/",
@@ -100,7 +100,7 @@
     {
       "kind": "resource",
       "path": "/blog/atom.xml",
-      "references": 6600,
+      "references": 6602,
       "examples": [
         {
           "from": "/review/",
@@ -127,7 +127,7 @@
     {
       "kind": "resource",
       "path": "/blog/feed.json",
-      "references": 6600,
+      "references": 6602,
       "examples": [
         {
           "from": "/review/",
@@ -3879,6 +3879,33 @@
     },
     {
       "kind": "nav",
+      "path": "/kissed-frogs/kf-51-cowbridge-llandough-juxta-cowbridge/",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/ebooks/catalogue/",
+          "attribute": "a[href]",
+          "url": "/kissed-frogs/kf-51-cowbridge-llandough-juxta-cowbridge/"
+        },
+        {
+          "from": "/research/evidence/",
+          "attribute": "a[href]",
+          "url": "/kissed-frogs/kf-51-cowbridge-llandough-juxta-cowbridge/"
+        },
+        {
+          "from": "/research/evidence/ev-0021-western-mail-1938-cowbridge-farm-sale/",
+          "attribute": "a[href]",
+          "url": "/kissed-frogs/kf-51-cowbridge-llandough-juxta-cowbridge/"
+        },
+        {
+          "from": "/research/evidence/excluded-not-our-farm/",
+          "attribute": "a[href]",
+          "url": "/kissed-frogs/kf-51-cowbridge-llandough-juxta-cowbridge/"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
       "path": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/",
       "references": 8,
       "examples": [
@@ -4036,33 +4063,6 @@
           "from": "/docs/ghf_wiki/ir_institutionalinvolvementroadmap18772026/latest/html/en/",
           "attribute": "a[href]",
           "url": "1-record.html#human-actors-and-how-to-attribute-responsibility"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/docs/ghf_wiki/ot_developerguide/latest/html/en/1-record.html",
-      "references": 8,
-      "examples": [
-        {
-          "from": "/docs/ghf_wiki/ot_developerguide/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html"
-        },
-        {
-          "from": "/docs/ghf_wiki/ot_developerguide/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html"
-        },
-        {
-          "from": "/docs/ghf_wiki/ot_developerguide/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html#current-expandable-triangle-behaviour"
-        },
-        {
-          "from": "/docs/ghf_wiki/ot_developerguide/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html#preferred-information-density-convention"
         }
       ]
     }
