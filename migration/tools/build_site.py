@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-"""build_site.py 1.0.0 — Cedwyn webapp migration programme: builds the static status site, /api/index.json, the
+"""build_site.py 1.1.0 — Cedwyn webapp migration programme: builds the static status site, /api/index.json, the
 catalogue-db static export and every pilot webapp that follows the standard (schema cedwyn-webapp/1.0.0).
 Runs as the Pages build of project cedwyn-migration (branch `migration`, output dist/), stdlib only.
 Reads (all static, no Worker): this branch's manifests; the central catalogue mirror (branch catalogue-db, raw GitHub);
-each pilot's source from its own branch webapp/<id> (slice.py + index.html); the tour order /areas.json from the static
+each pilot's source from its own branch webapp/<id> (slice.py + index.html, and since 1.1.0 frontend.py); the tour order /areas.json from the static
 cedwyn Pages project. It never writes a catalogue record.
+1.1.0 (3 Nov 2026) DESIGN RESTORE: a pilot with frontend.py keeps its ORIGINAL front end (HTML/CSS/assets as the Cedwyn
+build serves them, plus the shared site chrome listed in migration/chrome.json, mirrored from ORIGIN_URL) and only its data
+reads point at api/v1; the 1.0 standard page moves to <app>/api/v1/index.html as the API browser. Non-pilot app paths and
+media folders redirect (302) to the live site so the original navigation keeps working on the pilot host.
 Local test: LOCAL_APPS=<dir with <id>/slice.py> LOCAL_CATALOGUE=<dir with index.json> python3 migration/tools/build_site.py"""
 import json, os, sys, glob, hashlib, shutil, time, datetime, urllib.request, html
 from xml.sax.saxutils import escape as xesc
@@ -66,6 +70,18 @@ uid_index = {r['id']: {'kind': r.get('kind'), 'title': r.get('title'), 'public':
 w('/catalogue-db/uids.json', {'schema': 'cedwyn-uid-index/1', 'count': len(uid_index), 'rev': rev_of(uid_index), 'generated_at': ISO, 'uids': uid_index})
 # ---------- standard kit, nav, schema, manifests
 for f in glob.glob(os.path.join(MIG, 'std', '*')): w('/_std/' + os.path.basename(f), open(f).read())
+ORIGIN = os.environ.get('ORIGIN_URL', 'https://cedwyn-274.pages.dev'); LIVE = 'https://cedwyn.bucklerfamily.estate'
+mirror_log = {'ok': 0, 'miss': []}
+def mirror(path):
+    """Copy one static file of the original site (same path) into the pilot build; None when it is not there."""
+    try: data = fetch(ORIGIN + path, tries=2)
+    except Exception as e:
+        mirror_log['miss'].append(path); return None
+    if data[:200].lstrip()[:15].lower().startswith((b'<!doctype html', b'<html')) and not path.endswith(('.html', '/')):
+        mirror_log['miss'].append(path + ' (html)'); return None
+    w(path, data); mirror_log['ok'] += 1; return data
+for p in json.load(open(os.path.join(MIG, 'chrome.json')))['paths']: mirror(p)
+redirects = []
 try: w('/areas.json', fetch(NAV_URL))
 except Exception as e: print('nav fetch failed', e)
 w('/schema/webapp.schema.json', schema)
@@ -118,7 +134,7 @@ for m in manifests:
     app = m['id']; base = m['api']['base']
     ns = {'__name__': 'slice_' + app.replace('-', '_')}
     exec(compile(app_src(m, 'slice.py'), app + '/slice.py', 'exec'), ns)
-    res = ns['build']({'catalogue': catalogue, 'fetch_json': fetch_json, 'manifest': m})
+    res = ns['build']({'catalogue': catalogue, 'fetch_json': fetch_json, 'fetch': fetch, 'manifest': m})
     items = scrub(res['items']); res['views'] = scrub(res.get('views', {})); rev = rev_of(items)
     items.sort(key=lambda it: str(it.get('date') or ''), reverse=True) if app != 'dartboard' else None
     lite = [{k: it.get(k) for k in ('key', 'uid', 'kind', 'title', 'date', 'holder', 'institution', 'class', 'summary', 'url') if it.get(k) is not None} for it in items]
@@ -132,7 +148,19 @@ for m in manifests:
     w(base + 'feed.xml', atom(app, title, items, base)); w(base + 'rss.xml', rss(app, title, items, base))
     w(base + 'feed.json', jfeed(app, title, items, base)); w(base + 'data.xml', xml_slice(app, rev, items))
     w('/%s/_data/%s.json' % (app, m['data']['slice']), {'app': app, 'slice': m['data']['slice'], 'rev': rev, 'generated_at': ISO, 'items': items})
-    w('/%s/index.html' % app, app_src(m, 'index.html')); w('/%s/manifest.json' % app, m)
+    try: fe_src = app_src(m, 'frontend.py')
+    except Exception: fe_src = None
+    if fe_src:   # design restore: the original front end, data from api/v1
+        ns2 = {'__name__': 'frontend_' + app.replace('-', '_')}
+        exec(compile(fe_src, app + '/frontend.py', 'exec'), ns2)
+        fo = ns2['build_front']({'fetch': fetch, 'fetch_json': fetch_json, 'origin': ORIGIN, 'live': LIVE, 'app': app, 'manifest': m,
+                                 'res': res, 'items': items, 'base': base, 'rev': rev, 'mirror': mirror})
+        for p, data in fo.get('files', {}).items(): w(p, data)
+        redirects += fo.get('redirects', []); print('front end', app, fo.get('log'))
+        w(base + 'index.html', app_src(m, 'index.html').replace('"api/v1/', '"').replace("'api/v1/", "'").replace('href="manifest.json"', 'href="../../manifest.json"'))  # 1.0 standard page = API browser
+    else:
+        w('/%s/index.html' % app, app_src(m, 'index.html'))
+    w('/%s/manifest.json' % app, m)
     built[app] = {'rev': rev, 'count': len(items)}
     print('built', app, len(items), rev)
 # ---------- /api/index.json : every webapp API (live when built here, planned otherwise)
@@ -169,6 +197,14 @@ w('/_headers', """/*
   Access-Control-Allow-Origin: *
 """)
 w('/robots.txt', 'User-agent: *\nDisallow: /\n')
+# ---------- redirects: original navigation keeps working on the pilot host (non-pilot apps and media go to the live site)
+KEEP = ('/api/', '/catalogue-db/', '/_std/', '/_cedwyn/', '/manifests/', '/guestbook/', '/areas.json')
+for m in manifests:
+    pth = m.get('path') or ''
+    if m['id'] in built or not pth.startswith('/') or pth == '/' or pth.startswith(KEEP): continue
+    redirects.append('%s* %s%s:splat 302' % (pth if pth.endswith('/') else pth + '/', LIVE, pth if pth.endswith('/') else pth + '/'))
+w('/_redirects', '\n'.join(dict.fromkeys(redirects)) + '\n')
+print('mirror', mirror_log['ok'], 'ok; missing', mirror_log['miss'][:20])
 # ---------- status page
 rows = tracker['rows']; ph = tracker['phases']
 cnt = {p: sum(1 for r in rows if r['phase'] == p) for p in ph}; rag = {k: sum(1 for r in rows if r['rag'] == k) for k in ('green', 'amber', 'red', 'grey')}

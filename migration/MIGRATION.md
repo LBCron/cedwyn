@@ -7,7 +7,9 @@ onto one standard. Read-only status page: https://cedwyn-migration.pages.dev/ (r
 Every webapp has:
 1. **A static front end** — plain files on a Pages project; a page view runs no Worker (`front_end.worker_on_read = false`).
 2. **The common header** (contract `cedwyn-header/1`) — the same header everywhere: site name, the app's title, "N of 59",
-   Back / Next in the one tour order read from `/areas.json` `nav`. Pilot kit: `std/cw-header.js`.
+   Back / Next in the one tour order read from `/areas.json` `nav`. This is the header the shared site chrome already
+   draws (`/_cedwyn/ghf/ghf-boot.js`, e.g. "WAYBACK VAULT · 3 OF 59" with ‹ ›); a migrated app keeps that chrome as it is.
+   `std/cw-header.js` is only for the API browser pages, never for a visitor-facing page.
 3. **Its own branch** — `webapp/<id>` (today many apps still build from older theme branches; `branch.name` records that).
 4. **Its own small database** — only the data it cares about: a *slice* of the central catalogue chosen by catalogue
    UID kind/prefix (`data.query`), published as static JSON (`/<id>/_data/<slice>.json`), plus an optional client-side
@@ -19,9 +21,40 @@ Every webapp has:
    third parties through a named adapter on a cadence, writing static files (`external_sources`).
 7. **Dynamic endpoints listed** — the only paths allowed to run code (payments, hive job sign-ups, chat, posting): `dynamic_endpoints`.
 8. **Version + changelog** — semver per manifest.
+9. **The original design, unchanged** — see the Design preservation rule below. A migration changes where an app's data
+   comes from, never how the app looks or behaves.
+
+## DESIGN PRESERVATION RULE (owner, 3 Nov 2026; overrides anything above that would change a page's look)
+The user experience and design of every webapp stay exactly as they are. Making the front end data-driven (content read
+from the app's JSON / API v1 instead of hardcoded text) is the goal; re-skinning it is not.
+1. **Start from the original front end.** The page visitors get today (its HTML structure, CSS, layout, fonts, colours,
+   navigation, interactions and the shared site chrome) is the template. Find it in the app's own branch / source, git
+   history before any migration commit, the static Pages project (cedwyn-274.pages.dev) or Wayback Machine captures.
+   Never write a new page, a new stylesheet or a "standard" layout for a visitor-facing path.
+2. **Change data reads only.** Point the original page's data loads at `api/v1/` (or publish the API in the exact shape the
+   original already reads). Edits are exact, minimal text replacements recorded in the app's `frontend.py` (anchors that
+   fail are logged, and the original line is kept). Hardcoded text becomes data by filling the same element from JSON,
+   with the same markup and classes.
+3. **Shared chrome stays shared.** The "N of 59" header, menu, Garden banner and language switch come from the site chrome
+   (`chrome.json` lists what the pilot build mirrors). An app never adds its own header strip on top.
+4. **Prove it before calling it done.** Side-by-side screenshots, original vs migrated, at 390 px and 1280 px, saved with the
+   app's migration notes, plus a written list of every visible difference that remains (with why). Any difference not
+   caused by data timing (an animation frame, a newer record) blocks the switch until fixed or approved by the owner.
+5. **Same check on every later change.** A migration commit that touches a visitor-facing file carries the before/after
+   pair in its PR or notes.
+How the pilots do it: `webapp/<id>/frontend.py` (`build_front(ctx)`) takes the original page and assets from the static
+Pages project at build time, applies the data-read patches and serves media/other apps by redirect; the 1.0 standard page
+lives on as the API browser at `/<id>/api/v1/index.html`. Before/after shots: `design-restore/` in the programme notes.
 
 ## Phases (tracked per webapp)
 inventory → manifest → branch → static front end → data slice → API → header → live verified.
+
+## Phase 2 plan (the other 57 apps), with the design gate
+For each app, in slot order: (a) branch `webapp/<id>` with `slice.py` (its data) and `frontend.py` (the ORIGINAL front end
+plus data-read patches, per the Design preservation rule); (b) build on the pilot project and take the 390 px / 1280 px
+before/after pair; (c) list remaining differences; (d) only an app whose pair shows no unexplained difference moves to
+"live verified" and may be switched. The "static front end" and "header" phases are met by keeping the original page and the
+shared chrome, not by replacing them.
 `migration.json` and the table below are generated from the manifests by `tools/tracker.py`; `tools/validate.py` checks all 59.
 
 ## Rules that hold throughout
@@ -37,10 +70,13 @@ inventory → manifest → branch → static front end → data slice → API �
 - Slot 46 is asked for by two open PRs (#132 garden-store, #156 chubut-h3); proposal: garden-store 46, chubut-h3 49.
 - Title chains: the existing /title-chain/ page and the infographic (slot 5) show the same data; one app or two?
 
-## Pilots
-- Wayback Vault (slot 3) — search-results view of every source copy (images, videos, books and documents, web pages).
-- Disclosure Dartboard (slot 27) — every institution in the disclosure roadmap, built from TOC- and AR-FOI- records, and
-  reading the Wayback Vault's API for its reply counts (cross-app read).
+## Pilots (design restored 3 Nov 2026, cedwyn-webapp/1.1.0)
+- Wayback Vault (slot 3) — the original Vault page (tabs, gallery, filter tags, Websites tab, shared chrome), its gallery and
+  Websites tab now read `api/v1/category/<cat>.json` and `api/v1/websites.json`, built from the app's own branch data plus
+  catalogue UIDs. https://cedwyn-migration.pages.dev/wayback/ (API browser: /wayback/api/v1/index.html).
+- Disclosure Dartboard (slot 27) — the original Disclosure Rings app, unchanged; its data files are published by the slice
+  in `api/v1/data/` and served where the original reads them; the catalogue-built roadmap stays in `api/v1/roadmap.json`.
+  https://cedwyn-migration.pages.dev/dartboard/
 
 ## Tracker
 
