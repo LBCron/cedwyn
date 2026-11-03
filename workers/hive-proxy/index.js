@@ -3,6 +3,7 @@
 const OLD = "https://hive.bucklerfamily.estate";
 const NEW = "https://cedwyn.bucklerfamily.estate/hive";
 const BRIDGE = "https://cedwyn.bucklerfamily.estate/x78s8jej33i8f8rrj4is88";
+const HANDBOOK = { version: "0.2.0", index: "https://cedwyn.bucklerfamily.estate/academy/handbook/", json: "https://cedwyn.bucklerfamily.estate/academy/handbook/webmcp-handbook.json", one_file: "https://cedwyn.bucklerfamily.estate/academy/handbook/BUCKLERFAMILY-ESTATE-HANDBOOK-v0.2.0-ALL.md", boot_card: "https://cedwyn.bucklerfamily.estate/academy/handbook/AGENT-BOOT-CARD.md", apex_flywheel: "https://cedwyn.bucklerfamily.estate/academy/handbook/01-purpose-and-apex-flywheel.md", read_first: true, webmcp_tool: "get_cedwyn_handbook" };
 const BRIDGE_MD = `
 ## Cedwyn Snowball and agent bridge (mandate v3.16.0; Hive protocol v3.16.1)
 
@@ -72,6 +73,7 @@ async function amendJson(text, sub) {
     };
     if (typeof data.task_prompt === "string") data.task_prompt += "\n\n" + BRIDGE_MD;
     if (typeof data.drop_in_prompt === "string") data.drop_in_prompt += "\n\n" + BRIDGE_MD;
+    data.handbook = HANDBOOK;
   } else if (sub === "/hive.json") {
     data.protocol_version = "3.16.1";
     data.cedwyn_snowball = {
@@ -86,8 +88,10 @@ async function amendJson(text, sub) {
     };
     if (typeof data.protocol_md === "string") data.protocol_md += "\\n\\n" + BRIDGE_MD;
     if (typeof data.scope_md === "string") data.scope_md += "\\n\\n" + BRIDGE_MD;
+    data.handbook = HANDBOOK;
   } else if (sub === "/.well-known/agent.json" || sub === "/agent.json") {
     data.cedwyn_snowball = { manifest: BRIDGE + "/manifest.json", tasks: BRIDGE + "/tasks.json", x_activity: BRIDGE + "/x.json", submit: BRIDGE + "/submit", protocol_version: "3.16.1" };
+    data.handbook = HANDBOOK;
   }
   return JSON.stringify(data, null, 2);
 }
