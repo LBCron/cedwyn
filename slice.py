@@ -1,9 +1,14 @@
-"""dartboard slice builder 1.0.0 (cedwyn-webapp/1.0.0 standard). Read by migration/tools/build_site.py.
+"""dartboard slice builder 1.1.0 (cedwyn-webapp/1.1.0 standard).
+1.1.0 (3 Nov 2026, design restore): also publishes the ORIGINAL app's own data files (unclehowell/datro@dartboard,
+public/data/*) unchanged as res['raw_files'] -> api/v1/data/<file>, which the restored original front end reads. Read by migration/tools/build_site.py.
 Slice "roadmap": the disclosure roadmap, one row per institution, built only from central-catalogue records
 (TOC- FOI findings and AR-FOI response attachments, public fields only; no correspondence bodies, no quotes).
 Every row and item carries the catalogue UIDs it was built from. This builder never writes a record."""
 import re
 LIVE = 'https://cedwyn.bucklerfamily.estate'
+RAWD = 'https://raw.githubusercontent.com/unclehowell/datro/dartboard/public/data/'
+DATA_FILES = ['roadmap.json', 'roadmap-part-1.json', 'roadmap-part-2.json', 'forecast.json', 'ladders.json', 'ladders-part-1.json',
+              'ladders-part-2.json', 'request-status.json', 'snakes-ladders.json', 'snl-board.json', 'snl-mail.json', 'snl-play.json', 'foi-tracker.csv']
 ALIAS = [  # display name -> match words (lower case); first match wins
     ('Heneb (Historic Environment Record)', ['heneb']),
     ('Welsh Government / Cadw', ['cadw', 'welsh government']),
@@ -54,5 +59,9 @@ def build(ctx):
     for x in roadmap:
         x['stage'] = 'finding recorded' if x['findings'] else 'replies catalogued'
     items.sort(key=lambda x: (order.get(x['class'], 9), x['date'] or ''))
-    return {'items': items, 'views': {'roadmap': {'institutions': roadmap, 'count': len(roadmap)},
+    raw = {}
+    for f in DATA_FILES:
+        try: raw[f] = ctx['fetch'](RAWD + f)
+        except Exception: pass
+    return {'items': items, 'raw_files': raw, 'views': {'roadmap': {'institutions': roadmap, 'count': len(roadmap)},
                                        'institutions': [{'id': x['institution_id'], 'name': x['institution'], 'findings': len(x['findings']), 'attachments': x['attachments']} for x in roadmap]}}
