@@ -1,0 +1,167 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "negative-finds",
+ "uid": "APP-41",
+ "slot": {
+  "n": 41,
+  "of": 59,
+  "label": "41 of 59"
+ },
+ "status": "pending_pr",
+ "vacant": {
+  "candidate": "negative-finds",
+  "candidate_title": "Negative Finds",
+  "basis": "Owner instruction 3 Nov 2026 to create a dedicated bounded-negative-search app. Slot 41 was vacant and carried a provisional, unaccepted Title chain candidate; the existing /title-chain/ page is retained separately.",
+  "live_address": null,
+  "pr": null,
+  "decision": "accepted"
+ },
+ "section": "Wales",
+ "sections_shown": [
+  "Wales"
+ ],
+ "group": "research",
+ "title": {
+  "en": "Negative Finds"
+ },
+ "description": "Bounded searches, negative results, retrieval stages, limitations and next actions.",
+ "path": "/negative-finds/",
+ "aliases": [],
+ "legacy_hosts": [],
+ "branch": {
+  "name": "webapp/negative-finds",
+  "exists": true,
+  "standard_name": "webapp/negative-finds",
+  "source_dir": null,
+  "other_branches": []
+ },
+ "front_end": {
+  "kind": "static",
+  "hosting": "cloudflare_pages",
+  "project": "cedwyn-migration (cedwyn-migration.pages.dev, production branch migration)",
+  "build": "migration/tools/build_site.py",
+  "worker_on_read": false,
+  "notes": "Static page and static API only. Reads the catalogue-db static export; no Worker on page reads. The first build will have an empty slice until the additive core-record proposal is reviewed and synced."
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en"
+  ],
+  "scripts": [
+   "/_std/cw-header.js",
+   "/_std/cw-cache.js"
+  ],
+  "status": "standard"
+ },
+ "data": {
+  "slice": "negative-finds",
+  "query": {
+   "kinds": [
+    "missing_record"
+   ],
+   "uid_prefixes": [
+    "MR"
+   ],
+   "tags": [
+    "negative-screen"
+   ],
+   "where": "public bounded-search records only; no inference from absence",
+   "public_only": true
+  },
+  "registers": [
+   "data/core/records/negative-finds.json"
+  ],
+  "catalogue_status": "not_yet"
+ },
+ "local_store": {
+  "static": [
+   "/negative-finds/_data/negative-finds.json",
+   "/negative-finds/api/v1/index.json"
+  ],
+  "client_cache": {
+   "enabled": true,
+   "store": "indexeddb",
+   "strategy": "stale-while-revalidate",
+   "max_age_s": 3600,
+   "revalidate_with": "/negative-finds/api/v1/index.json rev",
+   "pull_from": "/catalogue-db/ static export (never a Worker)"
+  }
+ },
+ "api": {
+  "base": "/negative-finds/api/v1/",
+  "outputs": [
+   {
+    "path": "/negative-finds/api/v1/index.json",
+    "format": "json",
+    "description": "list, counts, revision and generation time"
+   },
+   {
+    "path": "/negative-finds/api/v1/items/{uid}.json",
+    "format": "json",
+    "description": "one bounded search record by catalogue UID"
+   },
+   {
+    "path": "/negative-finds/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "JSON Feed 1.1"
+   },
+   {
+    "path": "/negative-finds/api/v1/feed.xml",
+    "format": "atom",
+    "description": "Atom 1.0"
+   },
+   {
+    "path": "/negative-finds/api/v1/rss.xml",
+    "format": "rss",
+    "description": "RSS 2.0"
+   },
+   {
+    "path": "/negative-finds/api/v1/data.xml",
+    "format": "xml",
+    "description": "complete public slice"
+   }
+  ],
+  "cors": "*",
+  "cache_control": "public, max-age=300",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [],
+ "consumed_by": [],
+ "external_sources": [],
+ "dynamic_endpoints": [],
+ "migration": {
+  "phase": "branch",
+  "phases_done": [
+   "inventory",
+   "manifest",
+   "branch"
+  ],
+  "rag": "amber",
+  "next_action": "Review the core-record proposal, sync catalogue-db, then verify this static pilot and register it in the navigation before a live cutover.",
+  "blockers": [
+   "The additive core-record proposal is pending owner review; the static slice will be empty until the records reach catalogue-db.",
+   "The app is not yet registered in /areas.json nav; Back/Next and the public slot index must be updated as part of release."
+  ],
+  "prs": [],
+  "pilot": true
+ },
+ "owner": "Cedwyn editors (owner approval for catalogue changes)",
+ "version": "0.1.0",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "summary": "Created a dedicated static app for bounded missing-record searches. Wrong-locality and out-of-scope matches remain in Kissed Frogs."
+  }
+ ],
+ "sources": [
+  "Owner instruction 2026-11-03",
+  "data/core/schema/core-record.schema.json@main",
+  "data/core/records/negative-finds.json@core/negative-finds-20261103",
+  "existing /areas.json navigation and migration slot register"
+ ]
+}
