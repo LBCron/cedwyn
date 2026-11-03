@@ -6,8 +6,8 @@
 <meta name="description" content="Spill: a sourced handoff for facts not yet held in Cedwyn's public evidence catalogue.">
 <meta name="color-scheme" content="light dark">
 <title>Spill · Cedwyn</title>
-<link rel="alternate" type="application/json" href="protocol.json" title="Spill protocol">
-<link rel="alternate" type="text/plain" href="llms.txt" title="For AI agents">
+<link rel="alternate" type="application/json" href="https://cedwyn.bucklerfamily.estate/spill/protocol.json" title="Spill protocol">
+<link rel="alternate" type="text/plain" href="https://cedwyn.bucklerfamily.estate/spill/llms.txt" title="For AI agents">
 <link rel="stylesheet" href="/_std/cw-std.css">
 <script src="/_std/cw-cache.js" defer></script>
 <script src="/_std/cw-header.js" defer></script>
@@ -53,11 +53,11 @@
  <button type="button" id="copy-command">Copy command</button>
 </div>
 <nav class="spill-actions" aria-label="Spill resources">
- <a href="llms.txt">Agent instructions</a>
- <a href="protocol.json">Protocol JSON</a>
- <a href="/spill/api/">Live API</a>
- <a href="/spill/api/mcp">MCP endpoint</a>
- <a href="/spill/api/v1/overview.json">Snapshot JSON</a>
+ <a href="https://cedwyn.bucklerfamily.estate/spill/llms.txt">Agent instructions</a>
+ <a href="https://cedwyn.bucklerfamily.estate/spill/protocol.json">Protocol JSON</a>
+ <a href="https://cedwyn.bucklerfamily.estate/spill/api/">Live API</a>
+ <a href="https://cedwyn.bucklerfamily.estate/spill/api/mcp">MCP endpoint</a>
+ <a href="snapshot/v1/overview.json">Snapshot JSON</a>
 </nav>
 <div id="spill-status" class="spill-status">Loading the latest build-time snapshot…</div>
 <section class="spill-grid" aria-label="Spill intake summary">
@@ -92,10 +92,10 @@
 </section>
 <footer class="spill-foot">
  <div class="spill-apis">
-  <a href="/spill/api/v1/index.json">Static API index</a>
-  <a href="/spill/api/v1/overview.json">Stats snapshot</a>
-  <a href="/spill/api/v1/guestbook.json">Guest book snapshot</a>
-  <a href="/spill/api/v1/tools.json">Tool catalogue snapshot</a>
+  <a href="snapshot/v1/index.json">Static API index</a>
+  <a href="snapshot/v1/overview.json">Stats snapshot</a>
+  <a href="snapshot/v1/guestbook.json">Guest book snapshot</a>
+  <a href="snapshot/v1/tools.json">Tool catalogue snapshot</a>
   <a href="/spill/manifest.json">App manifest</a>
  </div>
  <p>Spill · webapp 44 of 59. The page reads static build output. Live submission, catalogue checks, status lookups and agent tool execution remain on the separate Spill API.</p>
@@ -147,7 +147,7 @@ function drawGuestbook(g){
  $("guestbook-status").textContent=rows.length+" entries in this snapshot.";
 }
 function runTool(name,args){
- return fetch("/spill/api/mcp",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({jsonrpc:"2.0",id:Date.now(),method:"tools/call",params:{name:name,arguments:args||{}}})})
+ return fetch("https://cedwyn.bucklerfamily.estate/spill/api/mcp",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({jsonrpc:"2.0",id:Date.now(),method:"tools/call",params:{name:name,arguments:args||{}}})})
  .then(function(r){return r.json();}).then(function(j){if(j.error)throw new Error(j.error.message);return j.result||j;});
 }
 function registerTools(data){
@@ -168,9 +168,9 @@ $("copy-command").addEventListener("click",function(){
  var b=this,t=$("spill-command").textContent;
  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy command";},1300);});}
 });
-loadJSON("api/v1/overview.json",drawOverview);
-loadJSON("api/v1/guestbook.json",drawGuestbook);
-loadJSON("api/v1/tools.json",registerTools);
+loadJSON("snapshot/v1/overview.json",drawOverview);
+loadJSON("snapshot/v1/guestbook.json",drawGuestbook);
+loadJSON("snapshot/v1/tools.json",registerTools);
 })();
 </script>
 </body>
