@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn-migration-tracker/1",
- "updated": "2026-11-03T20:49Z",
+ "updated": "2026-11-03T22:39Z",
  "phases": [
   "inventory",
   "manifest",
@@ -14,8 +14,8 @@
  "summary": {
   "by_phase": {
    "inventory": 0,
-   "manifest": 18,
-   "branch": 39,
+   "manifest": 17,
+   "branch": 40,
    "static_front_end": 0,
    "data_slice": 0,
    "api": 0,
@@ -25,7 +25,7 @@
   "reached": {
    "inventory": 59,
    "manifest": 59,
-   "branch": 41,
+   "branch": 42,
    "static_front_end": 2,
    "data_slice": 2,
    "api": 2,
@@ -34,14 +34,14 @@
   },
   "by_rag": {
    "green": 2,
-   "amber": 39,
+   "amber": 40,
    "red": 3,
-   "grey": 15
+   "grey": 14
   },
   "by_status": {
    "live": 44,
-   "pending_pr": 3,
-   "vacant": 12
+   "pending_pr": 4,
+   "vacant": 11
   },
   "by_section": {
    "Wales": 32,
@@ -1064,27 +1064,29 @@
   },
   {
    "slot": 41,
-   "id": "slot-41",
+   "id": "negative-finds",
    "uid": "APP-41",
-   "title": "VACANT (proposed: Title chain)",
+   "title": "Negative Finds",
    "section": "Wales",
-   "status": "vacant",
-   "branch": null,
-   "phase": "manifest",
+   "status": "pending_pr",
+   "branch": "webapp/negative-finds",
+   "phase": "branch",
    "phases_done": [
     "inventory",
-    "manifest"
+    "manifest",
+    "branch"
    ],
-   "rag": "grey",
-   "next_action": "owner decides the occupant; then a full manifest replaces this one",
+   "rag": "amber",
+   "next_action": "Review the core-record proposal, sync catalogue-db, then verify this static pilot and register it in the navigation before a live cutover.",
    "blockers": [
-    "owner decision: fill this slot?"
+    "The additive core-record proposal is pending owner review; the static slice will be empty until the records reach catalogue-db.",
+    "The app is not yet registered in /areas.json nav; Back/Next and the public slot index must be updated as part of release."
    ],
    "prs": [],
-   "pilot": false,
+   "pilot": true,
    "worker_on_read": false,
-   "catalogue_status": "n/a",
-   "candidate": "title-chain"
+   "catalogue_status": "pending_core_review_and_sync",
+   "candidate": "negative-finds"
   },
   {
    "slot": 42,
