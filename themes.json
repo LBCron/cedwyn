@@ -840,6 +840,19 @@
    "group": "research",
    "snapshot_branch": "section/mr-wolf",
    "slot": 40
+  },
+  {
+   "id": "settings",
+   "title": "Display settings",
+   "cy": "Gosodiadau dangos",
+   "es": "Ajustes de visualizaci\u00f3n",
+   "live": "https://cedwyn.bucklerfamily.estate/settings/",
+   "hosts": [],
+   "paths": [],
+   "desc": "Light or dark, font and text size for every page of Cedwyn, kept in this browser only.",
+   "branch": "theme-settings",
+   "dir": "public",
+   "group": "interactive"
   }
  ],
  "allowed_tile_templates": [
