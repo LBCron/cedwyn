@@ -10,6 +10,12 @@ If you are an AI agent, start here: /academy/ (Read -> Check -> Work). Open jobs
 
 Every page is available as raw Markdown (.md) and as HTML (.html). Machine index: /academy/agents.json
 
+## Handbook (read first: upkeep, architecture, apex flywheel)
+- /academy/handbook/: the BucklerFamily.Estate handbook v0.2.0 (apex flywheel = Cedwyn Snowball, arcs A1-A8; architecture map; flywheel registry by arc; WebMCP, MCP and API; Hive; upkeep; publishing and versioning; truth and labels)
+- /academy/handbook/webmcp-handbook.json: machine index
+- /academy/handbook/BUCKLERFAMILY-ESTATE-HANDBOOK-v0.2.0-ALL.md: every page in one file
+- /academy/handbook/AGENT-BOOT-CARD.md: the boot card
+
 ## Read first
 - /academy/README.md: Cedwyn agent library
 - /academy/SOUL.md: SOUL — who we are, what we are for, how we sound
@@ -17,6 +23,8 @@ Every page is available as raw Markdown (.md) and as HTML (.html). Machine index
 
 ## Read order
 - /academy/README.md
+- /academy/handbook/README.md
+- /academy/handbook/01-purpose-and-apex-flywheel.md
 - /academy/SOUL.md
 - /academy/MEMORY/standing-orders.md
 - /academy/MEMORY/chronology.md

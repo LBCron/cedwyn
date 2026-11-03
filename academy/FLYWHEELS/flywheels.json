@@ -1,6 +1,7 @@
 [
  {
   "id": "flow-watch",
+  "apex_arc": "axle",
   "name": "Cedwyn anti-stagnation flow watch",
   "cadence": "GitHub push/workflow_run lifecycle events plus five-minute reconciliation",
   "prefix": "CEDWYN FLOW WATCH",
@@ -25,6 +26,7 @@
  },
  {
   "id": "snowball-control-audit",
+  "apex_arc": "axle",
   "name": "Daily Snowball control and continuity audit",
   "cadence": "daily, flexible morning target",
   "prefix": "CEDWYN SNOWBALL CONTROL",
@@ -49,6 +51,7 @@
  },
  {
   "id": "agent-bridge",
+  "apex_arc": "A2 + A1",
   "name": "Opaque public agent handoff and X discussion bridge",
   "cadence": "event-driven submissions; privileged queue review during Hive check-ins",
   "prefix": "CEDWYN AGENT BRIDGE",
@@ -80,6 +83,9 @@
  },
  {
   "id": "snowball",
+  "apex_arcs": ["A1 ask", "A2 receive", "A3 clarify", "A4 organise and officiate", "A5 reconstruct", "A6 present (Argentina museum, Wales tour, maps/games/webapps, documentary, e-books)", "A7 re-release under new semantic versions", "A8 learn and return"],
+  "apex_handbook": "/academy/handbook/01-purpose-and-apex-flywheel.md",
+  "apex_arc": "apex (the parent loop, arcs A1-A8)",
   "name": "Cedwyn Snowball — master programme flywheel",
   "cadence": "event-driven per specialist loop; daily Hive and weekly programme review",
   "prefix": "CEDWYN SNOWBALL",
@@ -105,6 +111,7 @@
  },
  {
   "id": "research-cycle",
+  "apex_arc": "A5 + A3",
   "name": "Great House Farm research cycle",
   "cadence": "every 6 hours",
   "prefix": "GHF FLYWHEEL CYCLE",
@@ -127,6 +134,7 @@
  },
  {
   "id": "reopen-loop",
+  "apex_arc": "A3",
   "name": "Reopen-the-case autoresearch loop",
   "cadence": "every 4 hours",
   "prefix": "REOPEN-LOOP RUN",
@@ -147,6 +155,7 @@
  },
  {
   "id": "drafts-engine",
+  "apex_arc": "A1",
   "name": "Nightly drafts engine",
   "cadence": "daily 05:30 UK",
   "prefix": "NIGHTLY DRAFTS ENGINE RUN",
@@ -168,6 +177,7 @@
  },
  {
   "id": "contacts",
+  "apex_arc": "A1",
   "name": "Contacts flywheel",
   "cadence": "daily 03:30 UK",
   "prefix": "CONTACTS FLYWHEEL RUN",
@@ -186,6 +196,7 @@
  },
  {
   "id": "hive",
+  "apex_arc": "A1 + A3",
   "name": "Hive check-in",
   "cadence": "every 5 minutes",
   "prefix": "HIVE TURN",
@@ -206,6 +217,7 @@
  },
  {
   "id": "site-daily",
+  "apex_arc": "axle",
   "name": "Daily site flywheel",
   "cadence": "daily 12:00 UK",
   "prefix": "DAILY SITE FLYWHEEL RUN",
@@ -225,6 +237,7 @@
  },
  {
   "id": "first-seen",
+  "apex_arc": "A2",
   "name": "First-seen detector",
   "cadence": "every 6 hours",
   "prefix": "FIRST-SEEN DETECTOR RUN",
@@ -242,6 +255,7 @@
  },
  {
   "id": "recapture",
+  "apex_arc": "A2",
   "name": "Farm page recapture",
   "cadence": "every 5 days",
   "prefix": "FARM PAGE RECAPTURE",
@@ -258,6 +272,7 @@
  },
  {
   "id": "bizdev",
+  "apex_arc": "A6",
   "name": "Business development (plan + execute)",
   "cadence": "plan daily 09:00 UK; execute every 2 hours 10:00–22:00",
   "prefix": "BIZDEV",
@@ -278,6 +293,7 @@
  },
  {
   "id": "skills-harvest",
+  "apex_arc": "A8",
   "name": "Skills harvest",
   "cadence": "every 15 minutes",
   "prefix": "SKILLS HARVEST RUN",
@@ -294,6 +310,7 @@
  },
  {
   "id": "sales-fix",
+  "apex_arc": "A6 + A8",
   "name": "Sales fix",
   "cadence": "every 3 hours",
   "prefix": "SALES FIX RUN",
@@ -311,6 +328,7 @@
  },
  {
   "id": "growth",
+  "apex_arc": "A6 + A8",
   "name": "Growth flywheels (on-page, quote pack, visibility, weekly report)",
   "cadence": "weekly (Mon 07:30 visibility, Tue 19:00 quote pack, Wed 13:30 on-page, Sun 18:00 report)",
   "prefix": "CEDWYN ONPAGE RUN / QUOTE PACK RUN / VISIBILITY CHECK RUN / GROWTH REPORT RUN",
@@ -331,6 +349,7 @@
  },
  {
   "id": "movie",
+  "apex_arc": "A6 + A7",
   "name": "Cedwyn documentary — evidence-led sequential scene production",
   "cadence": "one scene at a time in master-script order; no automatic daily scene without approved source and QA gates",
   "prefix": "CEDWYN MOVIE RUN",
@@ -368,6 +387,7 @@
  },
  {
   "id": "morning-brief",
+  "apex_arc": "axle",
   "name": "Morning brief",
   "cadence": "daily 08:00 UK",
   "prefix": "(inline)",
@@ -387,6 +407,7 @@
  },
  {
   "id": "intelligence",
+  "apex_arc": "A4 + A3",
   "name": "Intelligence flywheel",
   "cadence": "daily 04:15 Europe/London",
   "prefix": "INTEL",
@@ -408,6 +429,7 @@
  },
  {
   "id": "email-ingest",
+  "apex_arc": "A2 + A4",
   "name": "Email ingest",
   "cadence": "every 2 hours, 07:00-23:00 Europe/London",
   "prefix": "EMAIL INGEST",
@@ -428,6 +450,7 @@
  },
  {
   "id": "programme-office",
+  "apex_arc": "A6 + A8",
   "name": "Programme office",
   "cadence": "weekly, Monday 06:00 Europe/London",
   "prefix": "PROGRAMME",
@@ -448,6 +471,7 @@
  },
  {
   "id": "agent-library",
+  "apex_arc": "A8",
   "name": "Agent library (this section)",
   "cadence": "every 6 hours (proposed)",
   "prefix": "AGENT LIBRARY CYCLE",
@@ -470,6 +494,7 @@
  },
  {
   "id": "problems-flywheel",
+  "apex_arc": "axle",
   "name": "Problems flywheel",
   "cadence": "every 30 minutes",
   "prefix": "PROBLEMS FLYWHEEL RUN",
@@ -489,6 +514,7 @@
  },
  {
   "id": "online-gap-finder",
+  "apex_arc": "A1 + A4",
   "name": "Online gap finder",
   "cadence": "every 6 hours",
   "prefix": "ONLINE GAP FINDER RUN",
@@ -507,6 +533,7 @@
  },
  {
   "id": "book-flywheel",
+  "apex_arc": "A1",
   "name": "Book search flywheel",
   "cadence": "search every 59 minutes; findings table refreshed every 3 hours",
   "prefix": "BOOK FLYWHEEL RUN",
@@ -526,6 +553,7 @@
  },
  {
   "id": "correspondence",
+  "apex_arc": "A1 + A3",
   "name": "Correspondence flywheel",
   "cadence": "every 2 hours at :30, 07:30–23:30 Europe/London",
   "prefix": "CORRESPONDENCE FLYWHEEL RUN",
@@ -544,6 +572,7 @@
  },
  {
   "id": "repo-sync",
+  "apex_arc": "A4",
   "name": "Repository and project-board sync",
   "cadence": "every 6 hours",
   "prefix": "REPO-HUBSPOT SYNC RUN",
@@ -564,6 +593,7 @@
  },
  {
   "id": "webapp-migration",
+  "apex_arc": "A5 + A6",
   "name": "Data-driven webapp migration",
   "cadence": "one webapp at a time, per the programme plan",
   "prefix": "CEDWYN ARCH",
