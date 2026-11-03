@@ -1,0 +1,349 @@
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>03852cam a2200973Ia 4500</leader>
+  <controlfield tag="001">ocm33858574 </controlfield>
+  <controlfield tag="003">OCoLC</controlfield>
+  <controlfield tag="005">20220608130827.0</controlfield>
+  <controlfield tag="008">951206s1995    enkabef       001 0 eng d</controlfield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">EYU</subfield>
+    <subfield code="b">eng</subfield>
+    <subfield code="c">EYU</subfield>
+    <subfield code="d">UKM</subfield>
+    <subfield code="d">BAKER</subfield>
+    <subfield code="d">LVB</subfield>
+    <subfield code="d">YDXCP</subfield>
+    <subfield code="d">DRB</subfield>
+    <subfield code="d">DEBSZ</subfield>
+    <subfield code="d">DEBBG</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">BDX</subfield>
+    <subfield code="d">OCLCF</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">NOC</subfield>
+    <subfield code="d">OCLCQ</subfield>
+    <subfield code="d">OCLCO</subfield>
+    <subfield code="d">OCLCA</subfield>
+    <subfield code="d">UNITY</subfield>
+    <subfield code="d">OCLCO</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">GBA258108</subfield>
+    <subfield code="2">bnb</subfield>
+  </datafield>
+  <datafield tag="019" ind1=" " ind2=" ">
+    <subfield code="a">877230636</subfield>
+    <subfield code="a">1008518258</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0140710566</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780140710564</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">0300096291</subfield>
+    <subfield code="q">(YALE UNIVERSITY PRESS)</subfield>
+  </datafield>
+  <datafield tag="020" ind1=" " ind2=" ">
+    <subfield code="a">9780300096293</subfield>
+    <subfield code="q">(YALE UNIVERSITY PRESS)</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(OCoLC)33858574</subfield>
+    <subfield code="z">(OCoLC)877230636</subfield>
+    <subfield code="z">(OCoLC)1008518258</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-uk-wl</subfield>
+  </datafield>
+  <datafield tag="050" ind1=" " ind2="4">
+    <subfield code="a">NA993.G52</subfield>
+    <subfield code="b">N48 1995</subfield>
+  </datafield>
+  <datafield tag="082" ind1="0" ind2="4">
+    <subfield code="a">720.94297</subfield>
+  </datafield>
+  <datafield tag="084" ind1=" " ind2=" ">
+    <subfield code="a">LO 50150</subfield>
+    <subfield code="2">rvk</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Newman, John,</subfield>
+    <subfield code="d">1936-</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Glamorgan :</subfield>
+    <subfield code="b">(Mid Glamorgan, South Glamorgan and West Glamorgan) /</subfield>
+    <subfield code="c">by Stephen Hughes and Anthony Ward.</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="a">London :</subfield>
+    <subfield code="b">Penguin Books ;</subfield>
+    <subfield code="a">University of Wales Press,</subfield>
+    <subfield code="c">1995.</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">717 pages, 64 unnumbered pages of plates :</subfield>
+    <subfield code="b">illustrations, maps, plans ;</subfield>
+    <subfield code="c">23 cm.</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">unmediated</subfield>
+    <subfield code="b">n</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">volume</subfield>
+    <subfield code="b">nc</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">The buildings of Wales.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">&quot;Architectural glossary&quot;: pages [653]-678.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">&quot;Language glossary&quot;: pages [679]-683.</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Includes indexes.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">A very hairy but not-too-scary monster story. One dark, stormy night, Owl, Mouse and Rabbit are afraid. Could it be the Monster of the Woods knocking at the door? This warm, funny tale about friendship has a wonderfully unexpected twist.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Architecture</subfield>
+    <subfield code="z">Wales</subfield>
+    <subfield code="z">Glamorgan.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="0">
+    <subfield code="a">Historic buildings</subfield>
+    <subfield code="z">Wales</subfield>
+    <subfield code="z">Glamorgan.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">Mid Glamorgan (Wales)</subfield>
+    <subfield code="v">Guidebooks.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">South Glamorgan (Wales)</subfield>
+    <subfield code="v">Guidebooks.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="0">
+    <subfield code="a">West Glamorgan (Wales)</subfield>
+    <subfield code="v">Guidebooks.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="6">
+    <subfield code="a">Architecture</subfield>
+    <subfield code="z">Pays de Galles</subfield>
+    <subfield code="z">West Glamorgan</subfield>
+    <subfield code="v">Guides.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="6">
+    <subfield code="a">Architecture</subfield>
+    <subfield code="z">Pays de Galles</subfield>
+    <subfield code="z">South Glamorgan</subfield>
+    <subfield code="v">Guides.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="6">
+    <subfield code="a">Architecture</subfield>
+    <subfield code="z">Pays de Galles</subfield>
+    <subfield code="z">Mid Glamorgan</subfield>
+    <subfield code="v">Guides.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="6">
+    <subfield code="a">Mid Glamorgan (Pays de Galles)</subfield>
+    <subfield code="v">Guides.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="6">
+    <subfield code="a">South Glamorgan (Pays de Galles)</subfield>
+    <subfield code="v">Guides.</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="6">
+    <subfield code="a">West Glamorgan (Pays de Galles)</subfield>
+    <subfield code="v">Guides.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="6">
+    <subfield code="a">Architecture</subfield>
+    <subfield code="z">Pays de Galles</subfield>
+    <subfield code="z">Glamorgan.</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Architecture.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00813346</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Historic buildings.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst00957723</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Wales</subfield>
+    <subfield code="z">Glamorgan.</subfield>
+    <subfield code="2">fast</subfield>
+    <subfield code="0">(OCoLC)fst01206860</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Baudenkmal</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="651" ind1=" " ind2="7">
+    <subfield code="a">Glamorgan</subfield>
+    <subfield code="g">County</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="7">
+    <subfield code="a">Inventar</subfield>
+    <subfield code="2">gnd</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="4">
+    <subfield code="a">Inventar.</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2="7">
+    <subfield code="a">Children&apos;s stories</subfield>
+    <subfield code="v">Pictorial works.</subfield>
+    <subfield code="2">gsafd</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Hughes, Stephen</subfield>
+    <subfield code="q">(Stephen R.)</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ward, Anthony,</subfield>
+    <subfield code="d">1953-</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">Buildings of Wales.</subfield>
+  </datafield>
+  <datafield tag="938" ind1=" " ind2=" ">
+    <subfield code="a">Baker &amp; Taylor</subfield>
+    <subfield code="b">BKTY</subfield>
+    <subfield code="c">65.00</subfield>
+    <subfield code="d">69.95</subfield>
+    <subfield code="i">0140710566</subfield>
+    <subfield code="n">0003366486</subfield>
+    <subfield code="s">active</subfield>
+  </datafield>
+  <datafield tag="938" ind1=" " ind2=" ">
+    <subfield code="a">Baker &amp; Taylor</subfield>
+    <subfield code="b">BKTY</subfield>
+    <subfield code="c">55.00</subfield>
+    <subfield code="d">55.00</subfield>
+    <subfield code="i">0300096291</subfield>
+    <subfield code="n">0006333982</subfield>
+    <subfield code="s">active</subfield>
+  </datafield>
+  <datafield tag="938" ind1=" " ind2=" ">
+    <subfield code="a">Brodart</subfield>
+    <subfield code="b">BROD</subfield>
+    <subfield code="n">05147522</subfield>
+    <subfield code="c">$50.00</subfield>
+  </datafield>
+  <datafield tag="938" ind1=" " ind2=" ">
+    <subfield code="a">YBP Library Services</subfield>
+    <subfield code="b">YANK</subfield>
+    <subfield code="n">100032713</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">AU@</subfield>
+    <subfield code="b">000012005520</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">DEBBG</subfield>
+    <subfield code="b">BV012867436</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">NOK</subfield>
+    <subfield code="b">1407105663</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">NZ1</subfield>
+    <subfield code="b">4613729</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKBCI</subfield>
+    <subfield code="b">051517019</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKBCI</subfield>
+    <subfield code="b">129099457</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKBNS</subfield>
+    <subfield code="b">024670138</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKBNS</subfield>
+    <subfield code="b">051517019</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKBNS</subfield>
+    <subfield code="b">129099457</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKBOR</subfield>
+    <subfield code="b">024670138</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKDON</subfield>
+    <subfield code="b">1407105655</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKDOR</subfield>
+    <subfield code="b">024670138</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKPMH</subfield>
+    <subfield code="b">1407105663</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKSCO</subfield>
+    <subfield code="b">024670138</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKSCO</subfield>
+    <subfield code="b">129099457</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKSGC</subfield>
+    <subfield code="b">024670138</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKSGC</subfield>
+    <subfield code="b">129099457</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKSOM</subfield>
+    <subfield code="b">024670138</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UKSOM</subfield>
+    <subfield code="b">129099457</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UNITY</subfield>
+    <subfield code="b">024670138</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UNITY</subfield>
+    <subfield code="b">051517019</subfield>
+  </datafield>
+  <datafield tag="029" ind1="1" ind2=" ">
+    <subfield code="a">UNITY</subfield>
+    <subfield code="b">129099457</subfield>
+  </datafield>
+  <datafield tag="994" ind1=" " ind2=" ">
+    <subfield code="a">Z0</subfield>
+    <subfield code="b">IME</subfield>
+  </datafield>
+  <datafield tag="948" ind1=" " ind2=" ">
+    <subfield code="h">NO HOLDINGS IN IME - 150 OTHER HOLDINGS</subfield>
+  </datafield>
+</record>
