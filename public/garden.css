@@ -44,4 +44,15 @@
 .gg-arr{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(20,16,10,.55);color:#fff;font-size:38px;line-height:1;text-decoration:none;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.35)}
 .gg-arr:hover,.gg-arr:focus-visible{background:rgba(20,16,10,.8);outline:2px solid #fff;outline-offset:2px}
 .gg-prev{left:8px}.gg-next{right:8px}
-
+/* Version standard 1.3.4: (i) beside the drop-down opens the version table (docs/VERSION-STANDARD.md §3) - Sion's Tab agent */
+.gg-svr{display:flex;gap:8px;align-items:center}.gg-svr .gg-sel{flex:1;min-width:0}
+.gg-sv .gg-vi{flex:none;padding:0;width:44px;height:44px;border-radius:50% !important;border:1px solid rgba(47,58,44,.35);background:#fff;color:#2f3a2c;font:italic 700 18px/1 Georgia,serif;cursor:pointer}
+.gg-vi:focus-visible,.gg-vx:focus-visible{outline:2px solid #2f3a2c;outline-offset:2px}
+.gg-vt{max-width:min(560px,94vw);width:94vw;border:0;border-radius:14px;padding:18px 14px 14px;background:#fffdf7;color:#2f3a2c;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.gg-vt::backdrop{background:rgba(20,16,10,.55)}
+.gg-vt h3{margin:0 40px 10px 0;font:600 17px/1.3 -apple-system,Segoe UI,Roboto,sans-serif}
+.gg-vx{position:absolute;top:8px;right:8px;width:44px;height:44px;border:0;background:none;font-size:28px;line-height:1;color:#2f3a2c;cursor:pointer}
+.gg-vt table{width:100%;border-collapse:collapse;font:13px/1.35 -apple-system,Segoe UI,Roboto,sans-serif}
+.gg-vt th,.gg-vt td{text-align:left;padding:6px 4px;border-bottom:1px solid rgba(47,58,44,.18);vertical-align:top}
+.gg-vt td:first-child,.gg-vt td:last-child{white-space:nowrap}
+.gg-vt th{font-weight:600;color:#61685a}

@@ -13,3 +13,8 @@ build copies public/ to /nft-art/ and the shared header's ‹ › selector and m
 
 To add or change a piece: edit the database (sqlite3 public/_db/section.sqlite), refresh db/section.sql, commit to this branch,
 then run the build (workflow build.yml, workflow_dispatch).
+
+## Versions (version standard)
+Each piece's "Select a version" drop-down follows docs/VERSION-STANDARD.md on main: labels `v0.0.1 — free`, later versions at the
+computed price (latest = the record's price_pence, £4.99 less per step back, floor £0; no stored price = free), and the (i) beside it
+opens the version table (Version · Date · What changed · Size · Price). garden.js/css 1.3.4, 3 Nov 2026. — Sion's Tab agent
