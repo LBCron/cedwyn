@@ -1,27 +1,27 @@
 {
- "db_version": "93f7a36fb7ef",
- "paths_served_from_db": 7067,
- "blobs": 4500,
+ "db_version": "9b211327fd00",
+ "paths_served_from_db": 7329,
+ "blobs": 4780,
  "files_dropped": {
-  "document": 3226,
-  "image": 1336,
-  "data": 1387,
+  "document": 3266,
+  "image": 1604,
+  "data": 1382,
   "audio": 84
  },
  "bytes_dropped": {
-  "document": 1233493865,
-  "image": 121740347,
-  "data": 38218543,
+  "document": 1253593601,
+  "image": 151083370,
+  "data": 38219261,
   "audio": 14922925
  },
- "bytes_dropped_total": 1408375680,
+ "bytes_dropped_total": 1457819157,
  "files_kept_as_well": {
-  "image": 833,
+  "image": 846,
   "data": 104,
-  "document": 4
+  "document": 12
  },
  "kept_why": {
-  "named in page markup": 708,
+  "named in page markup": 729,
   "link/meta tag": 43,
   "css url()": 27,
   "download file (.csv opened by a plain link, outside the service worker)": 24,
@@ -113,7 +113,10 @@
    "named in page markup"
   ]
  ],
- "changed_after_db_build_served_as_files": 0,
- "changed_examples": [],
- "indexed_without_file": 93
+ "changed_after_db_build_served_as_files": 2,
+ "changed_examples": [
+  "/app/_db/config.json",
+  "/dartboard/_db/config.json"
+ ],
+ "indexed_without_file": 31
 }
