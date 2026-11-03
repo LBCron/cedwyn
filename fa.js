@@ -69,10 +69,10 @@
 /* Forensic Assessments v1.2.0 - activity journal: each institution page shows its journal section from /forensic/journal/. - Sion's Tab agent */
 (function(){"use strict";
   var m=location.pathname.match(/^\/forensic\/([a-z0-9-]+)\/?$/),main=document.querySelector("main.faw");if(!main)return;
-  if(!m){if(/^\/forensic\/?$/.test(location.pathname)&&!document.getElementById("fj-link")){var p=document.createElement("p");p.id="fj-link";p.className="fa-reading";p.innerHTML='<strong>New:</strong> <a href="/forensic/journal/">Activity journal</a>: every reply, request and website change for each institution, dated, with a plain reading and links to the full emails and page copies.';var h=main.querySelector("h1");if(h&&h.nextSibling)main.insertBefore(p,h.nextSibling);else main.insertBefore(p,main.firstChild);}return;}
+  if(!m){if(/^\/forensic\/?$/.test(location.pathname)&&!document.getElementById("fj-link")){var p=document.createElement("p");p.id="fj-link";p.className="fa-reading";p.innerHTML='<strong>New:</strong> <a href="/forensic/journal/">Activity journal</a>: every reply, request and website change for each institution, dated, with a plain reading and links to the full emails and page copies.';var h=main.querySelector("h1");if(h&&h.parentNode)h.parentNode.insertBefore(p,h.nextSibling);else main.insertBefore(p,main.firstChild);}return;}
   var slug=m[1];if(slug==="journal")return;
   var box=document.createElement("section");box.id="journal";box.innerHTML='<h2>Activity journal</h2><p class="fa-kicker"><a href="/forensic/journal/#j-'+slug+'">Open the journal for this institution</a></p>';
-  var since=document.getElementById("since");if(since)main.insertBefore(box,since);else main.appendChild(box);
+  var since=document.getElementById("since");if(since&&since.parentNode)since.parentNode.insertBefore(box,since);else main.appendChild(box);
   if(!window.fetch||!window.DOMParser)return;
   fetch("/forensic/journal/"+slug+"/",{credentials:"same-origin"}).then(function(r){return r.ok?r.text():"";}).then(function(t){
     if(!t)return;var d=new DOMParser().parseFromString(t,"text/html"),s=d.getElementById("j-"+slug);if(!s)return;
