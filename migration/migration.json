@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn-migration-tracker/1",
- "updated": "2026-11-03T20:38Z",
+ "updated": "2026-11-03T20:49Z",
  "phases": [
   "inventory",
   "manifest",
@@ -15,26 +15,26 @@
   "by_phase": {
    "inventory": 0,
    "manifest": 18,
-   "branch": 41,
+   "branch": 39,
    "static_front_end": 0,
    "data_slice": 0,
    "api": 0,
-   "header": 0,
+   "header": 2,
    "live_verified": 0
   },
   "reached": {
    "inventory": 59,
    "manifest": 59,
    "branch": 41,
-   "static_front_end": 0,
-   "data_slice": 0,
-   "api": 0,
-   "header": 0,
+   "static_front_end": 2,
+   "data_slice": 2,
+   "api": 2,
+   "header": 2,
    "live_verified": 0
   },
   "by_rag": {
-   "green": 0,
-   "amber": 41,
+   "green": 2,
+   "amber": 39,
    "red": 3,
    "grey": 15
   },
@@ -117,16 +117,21 @@
    "section": "Wales",
    "status": "live",
    "branch": "wayback",
-   "phase": "branch",
+   "phase": "header",
    "phases_done": [
     "inventory",
     "manifest",
-    "branch"
+    "branch",
+    "static_front_end",
+    "data_slice",
+    "api",
+    "header"
    ],
-   "rag": "amber",
-   "next_action": "pilot: standard build on the migration pages.dev project",
+   "rag": "green",
+   "next_action": "switch the live /wayback/ to the standard build, then verify live (phase live_verified)",
    "blockers": [
-    "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval"
+    "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval",
+    "live address still serves the legacy build: switch /wayback/ to the standard build after the static-first apex cutover (PR #157)"
    ],
    "prs": [],
    "pilot": true,
@@ -715,16 +720,21 @@
    "section": "Online",
    "status": "live",
    "branch": "dartboard",
-   "phase": "branch",
+   "phase": "header",
    "phases_done": [
     "inventory",
     "manifest",
-    "branch"
+    "branch",
+    "static_front_end",
+    "data_slice",
+    "api",
+    "header"
    ],
-   "rag": "amber",
-   "next_action": "pilot: standard build on the migration pages.dev project",
+   "rag": "green",
+   "next_action": "switch the live /dartboard/ to the standard build, then verify live (phase live_verified)",
    "blockers": [
-    "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval"
+    "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval",
+    "live address still serves the legacy build: switch /dartboard/ to the standard build after the static-first apex cutover (PR #157)"
    ],
    "prs": [],
    "pilot": true,

@@ -45,13 +45,13 @@ inventory → manifest → branch → static front end → data slice → API �
 ## Tracker
 
 <!-- TRACKER:START -->
-Updated 2026-11-03T20:38Z. Counts by last completed phase: manifest 18, branch 41. RAG: amber 41, red 3, grey 15.
+Updated 2026-11-03T20:49Z. Counts by last completed phase: manifest 18, branch 39, header 2. RAG: green 2, amber 39, red 3, grey 15.
 
 | # | webapp | section | status | phase | RAG | next action |
 |---|---|---|---|---|---|---|
 | 1 | wiki | Wales | live | branch | amber | write the slice entry in data/core/slices.json and generate /wiki/api/v1/ |
 | 2 | docs | Wales | live | branch | amber | write the slice entry in data/core/slices.json and generate /docs/api/v1/ |
-| 3 | wayback | Wales | live | branch | amber | pilot: standard build on the migration pages.dev project |
+| 3 | wayback | Wales | live | header | green | switch the live /wayback/ to the standard build, then verify live (phase live_verified) |
 | 4 | maps | Wales | live | branch | amber | write the slice entry in data/core/slices.json and generate /maps/api/v1/ |
 | 5 | infographic | Wales | live | branch | amber | write the slice entry in data/core/slices.json and generate /infographic/api/v1/ |
 | 6 | ebooks | Wales | live | branch | amber | write the slice entry in data/core/slices.json and generate /ebooks/api/v1/ |
@@ -75,7 +75,7 @@ Updated 2026-11-03T20:38Z. Counts by last completed phase: manifest 18, branch 4
 | 24 | chat | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /chat/api/v1/ |
 | 25 | watchtower | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /watchtower/api/v1/ |
 | 26 | email | Online | live | branch | amber | write the slice entry in data/core/slices.json and generate /email/api/v1/ |
-| 27 | dartboard | Online | live | branch | amber | pilot: standard build on the migration pages.dev project |
+| 27 | dartboard | Online | live | header | green | switch the live /dartboard/ to the standard build, then verify live (phase live_verified) |
 | 28 | estate | Wales | live | branch | amber | write the slice entry in data/core/slices.json and generate /estate/api/v1/ |
 | 29 | directory | Wales | live | branch | amber | write the slice entry in data/core/slices.json and generate /directory/api/v1/ |
 | 30 | patagonia | Argentina | live | branch | amber | write the slice entry in data/core/slices.json and generate /patagonia/api/v1/ |
