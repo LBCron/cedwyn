@@ -44,3 +44,11 @@
 .th3-legend .tl-head{flex-basis:100%;display:block}
 .th3-sw{display:inline-block;width:11px;height:11px;border-radius:2px;border:1px solid #0003;margin-right:4px;vertical-align:-1px}
 @media (max-width:420px){.th3-legend span{align-items:flex-start}.th3-legend i{flex:0 0 14px;margin-top:2px}}
+
+/* v0.4.0: H3 resolution picker and the zoom-in prompt */
+.th3-bar select{font:inherit;padding:4px 8px;border:1px solid #1e4d45;border-radius:14px;background:#fff;color:#1e4d45;max-width:100%}
+.th3-stat{font-size:.82rem;color:#555}
+.th3-zhint{background:#fff;border:1px solid #1e4d45;border-radius:8px;padding:5px 8px;font-size:.85rem;color:#1e4d45;box-shadow:0 1px 4px #0003;max-width:200px}
+.th3-zhint[hidden]{display:none}
+.th3-zhint button{font:inherit;margin-left:4px;padding:2px 8px;border:1px solid #1e4d45;border-radius:12px;background:#1e4d45;color:#fff;cursor:pointer}
+@media (max-width:420px){.th3-stat{flex-basis:100%}}

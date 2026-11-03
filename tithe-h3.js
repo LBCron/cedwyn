@@ -47,25 +47,26 @@ function tl(p){var n=String(p.no);
  return "red";}
 function col(p){return tlOn?TLC[tl(p)]:occCol(p);}
 var LECK={lat:51.45887,lon:-3.20240};
-var map=L.map("map",{zoomControl:true,attributionControl:true}).setView([51.4545,-3.2015],15);
-var osm=L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{subdomains:"abc",maxZoom:19,attribution:"© OpenStreetMap contributors"}).addTo(map);
-var os6=L.tileLayer("https://mapseries-tilesets.s3.amazonaws.com/os/6inchsecond/{z}/{x}/{y}.png",{maxZoom:18,attribution:"OS six-inch c.1900, National Library of Scotland"});
-var D,tithe,stew,outl=L.layerGroup().addTo(map),hexL=L.layerGroup().addTo(map),res=12,sel=null;
-fetch("data/parcels.json?v=0.3.0").then(function(r){return r.json();}).then(function(d){D=d;init();});
+var map=L.map("map",{zoomControl:true,attributionControl:true,maxZoom:21}).setView([51.4545,-3.2015],15);
+var osm=L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{subdomains:"abc",maxNativeZoom:19,maxZoom:21,attribution:"© OpenStreetMap contributors"}).addTo(map);
+var os6=L.tileLayer("https://mapseries-tilesets.s3.amazonaws.com/os/6inchsecond/{z}/{x}/{y}.png",{maxNativeZoom:18,maxZoom:21,attribution:"OS six-inch c.1900, National Library of Scotland"});
+var D,tithe,stew,outl=L.layerGroup().addTo(map),hexL=L.layerGroup().addTo(map),hexR=L.canvas({padding:0.2}),res=12,sel=null;
+fetch("data/parcels.json?v=0.4.0").then(function(r){return r.json();}).then(function(d){D=d;init();});
 function hexPoly(c,r){var ce=D.c[c],t=D.tmpl[String(r)];return t.map(function(o){return [ce[0]+o[0],ce[1]+o[1]];});}
 function init(){
  tlOn=document.getElementById("l-tl").checked;
  var op=document.getElementById("l-op").value/100;
- tithe=L.imageOverlay("img/tithe-1841-overlay.webp?v=0.3.0",D.bounds,{opacity:op,attribution:"Tithe map 1841, National Library of Wales"}).addTo(map);
- stew=L.imageOverlay("img/stewart-plan-overlay.webp?v=0.3.0",D.bounds,{opacity:op});
+ tithe=L.imageOverlay("img/tithe-1841-overlay.webp?v=0.4.0",D.bounds,{opacity:op,attribution:"Tithe map 1841, National Library of Wales"}).addTo(map);
+ stew=L.imageOverlay("img/stewart-plan-overlay.webp?v=0.4.0",D.bounds,{opacity:op});
  var all=drawOutl();
  map.fitBounds(L.featureGroup(all).getBounds(),{padding:[10,10]});
- drawHex();legend();table();
+ prep();drawHex();legend();table();
+ map.on("moveend",function(){if(res>8){clearTimeout(mvT);mvT=setTimeout(drawHex,120);}});
 }
 function drawOutl(){outl.clearLayers();sel=null;var all=[];
  D.parcels.forEach(function(p,i){
   var pg=L.polygon(p.poly,{color:"#111",weight:1.4,fill:true,fillOpacity:tlOn?0.38:0.04,fillColor:col(p),dashArray:p.read==="not read"?"4 3":null});
-  pg.on("click",function(){show(i);});pg.addTo(outl);all.push(pg);
+  pg.on("click",function(e){show(i,cellAt(e.latlng));});pg.addTo(outl);all.push(pg);
   L.tooltip({permanent:true,direction:"center",className:"th3-lbl"}).setLatLng([p.lat,p.lon]).setContent(p.read==="not read"?"?":p.no).addTo(outl);
  });
  if(tlOn){var pin=L.circleMarker([LECK.lat,LECK.lon],{radius:11,color:"#7a5200",weight:2,dashArray:"3 3",fillColor:TLC.amber,fillOpacity:0.75});
@@ -79,11 +80,49 @@ function showLeck(){document.getElementById("panel").innerHTML="<h3>Leckwith Com
  "<dt>1841 tithe plot</dt><dd>none identified</dd><dt>Title number</dt><dd>none held</dd></dl>"+
  "<p class=\"hint\">Whether the pin sits on the land in the 1957–58 order, and where the playing fields lay, is not checked: the order’s map has not been read.</p>";
  if(sel){outl.removeLayer(sel);sel=null;}}
-function drawHex(){hexL.clearLayers();if(!res)return;var seen={};
- D.parcels.forEach(function(p,i){var cells=res===12?p.h12:res===11?p.h11:[p.h8];
-  cells.forEach(function(c){if(res===8&&seen[c])return;seen[c]=1;
-   var h=L.polygon(hexPoly(c,res),{color:res===8?"#1e4d45":col(p),weight:res===8?2:0.6,fillColor:col(p),fillOpacity:res===8?0.06:0.55});
-   h.on("click",function(){show(i,c);});h.addTo(hexL);});});}
+/* v0.4.0: H3 resolution picker (8, 10, 11, 12, 13, 14, 15; 15 is the finest the H3 grid has). Resolution 8 keeps the cell
+   holding each parcel's centre. Resolutions 10 to 15 are made in the browser (h3-js polygonToCells) for the part of the map in
+   view only, never stored: each cell whose centre falls inside a parcel outline is drawn in that parcel's colour (centroid-in-
+   polygon; where outlines overlap, the first parcel in the list). Work is capped at about 20,000 cells; past the cap, or below
+   zoom 17 for res 14 and zoom 19 for res 15, the map shows "Zoom in to see res N". - Cedwyn editors */
+var CAP=20000,MINZ={14:17,15:19},mvT=null,UB=null,lastN=0;
+var AREA={8:"about 0.74 km²",10:"about 1.5 ha",11:"about 2,150 m²",12:"about 307 m²",13:"about 44 m²",14:"about 6.3 m²",15:"about 0.9 m²"};
+var hintC=L.control({position:"topright"});hintC.onAdd=function(){var e=L.DomUtil.create("div","th3-zhint");e.hidden=true;L.DomEvent.disableClickPropagation(e);return e;};hintC.addTo(map);
+function prep(){D.parcels.forEach(function(p){var a=90,b=180,c=-90,e=-180;p.poly.forEach(function(r){r.forEach(function(q){if(q[0]<a)a=q[0];if(q[0]>c)c=q[0];if(q[1]<b)b=q[1];if(q[1]>e)e=q[1];});});p._bb=[a,b,c,e];
+ if(!UB)UB=[a,b,c,e];else{UB=[Math.min(UB[0],a),Math.min(UB[1],b),Math.max(UB[2],c),Math.max(UB[3],e)];}});}
+function inPoly(lat,lon,p){var bb=p._bb;if(lat<bb[0]||lat>bb[2]||lon<bb[1]||lon>bb[3])return false;var ins=false;
+ p.poly.forEach(function(r){for(var i=0,j=r.length-1;i<r.length;j=i++){var yi=r[i][0],xi=r[i][1],yj=r[j][0],xj=r[j][1];
+  if(((yi>lat)!==(yj>lat))&&(lon<(xj-xi)*(lat-yi)/(yj-yi)+xi))ins=!ins;}});return ins;}
+function whichParcel(lat,lon){for(var i=0;i<D.parcels.length;i++)if(inPoly(lat,lon,D.parcels[i]))return i;return -1;}
+function cellAt(ll){if(!ll||!window.h3||res<10)return null;try{return h3.latLngToCell(ll.lat,ll.lng,res);}catch(e){return null;}}
+function stat(t){var s=document.getElementById("h3stat");if(s)s.textContent=t;}
+function zhint(z){var e=hintC.getContainer();if(!e)return;if(!z){e.hidden=true;e.innerHTML="";return;}
+ e.innerHTML="<span>Zoom in to see res "+res+"</span> <button type=\"button\">Zoom in</button>";e.hidden=false;
+ e.querySelector("button").onclick=function(){map.setZoom(Math.min(z,map.getMaxZoom()));};}
+function m2(s,w,n,e){var k=111320,la=(s+n)/2*Math.PI/180;return Math.max(0,(n-s)*k)*Math.max(0,(e-w)*k*Math.cos(la));}
+function drawHex(){hexL.clearLayers();zhint(0);lastN=0;if(!res){stat("");return;}
+ if(res===8){var seen={};D.parcels.forEach(function(p,i){var c=p.h8;if(seen[c])return;seen[c]=1;
+   var h=L.polygon(hexPoly(c,8),{color:"#1e4d45",weight:2,fillColor:col(p),fillOpacity:0.06});
+   h.on("click",function(){show(i,c);});h.addTo(hexL);});stat("res 8 · "+AREA[8]+" a cell");return;}
+ if(!window.h3||!UB){stat("Hexagons are still loading.");return;}
+ var z=map.getZoom(),need=MINZ[res]||0;
+ if(z<need){zhint(need);stat("res "+res+" · "+AREA[res]+" a cell · zoom in to draw");return;}
+ var area=h3.getHexagonAreaAvg(res,"m2"),edge=h3.getHexagonEdgeLengthAvg(res,"m"),B=map.getBounds();
+ var pl=edge/111320,pw=pl/Math.cos(B.getCenter().lat*Math.PI/180);
+ var s=B.getSouth()-pl,w=B.getWest()-pw,n=B.getNorth()+pl,e=B.getEast()+pw,boxes=[],est=0;
+ D.parcels.forEach(function(p){var bb=p._bb,a=Math.max(s,bb[0]),b=Math.max(w,bb[1]),c=Math.min(n,bb[2]),f=Math.min(e,bb[3]);
+  if(a<c&&b<f){boxes.push([a,b,c,f]);est+=m2(a,b,c,f)/area;}});
+ if(!boxes.length){stat("res "+res+" · no parcels in view");return;}
+ if(est>CAP){var zz=z+Math.ceil(Math.log(est/CAP)/Math.log(4));zhint(Math.max(zz,need,z+1));stat("res "+res+" · "+AREA[res]+" a cell · about "+Math.round(est).toLocaleString("en-GB")+" in view, over the "+CAP.toLocaleString("en-GB")+" cap");return;}
+ var seen={},cand=0,out=[];
+ boxes.forEach(function(q){var cs;try{cs=h3.polygonToCells([[q[0],q[1]],[q[0],q[3]],[q[2],q[3]],[q[2],q[1]]],res);}catch(x){cs=[];}
+  for(var k=0;k<cs.length;k++){var c=cs[k];if(seen[c])continue;seen[c]=1;cand++;if(cand>CAP*2)break;
+   var ce=h3.cellToLatLng(c),i=whichParcel(ce[0],ce[1]);if(i>=0)out.push([c,i]);}});
+ if(out.length>CAP){zhint(z+1);stat("res "+res+" · over the "+CAP.toLocaleString("en-GB")+" cap");return;}
+ var fine=res>=13;
+ out.forEach(function(o){var p=D.parcels[o[1]],cl=col(p);
+  L.polygon(h3.cellToBoundary(o[0]),{renderer:hexR,interactive:false,color:fine?"#ffffff":cl,opacity:fine?0.55:1,weight:fine?0.4:0.6,fillColor:cl,fillOpacity:0.55}).addTo(hexL);});
+ lastN=out.length;stat("res "+res+" · "+AREA[res]+" a cell · "+out.length.toLocaleString("en-GB")+" in view");}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m];});}
 function show(i,cell){var p=D.parcels[i];
  var h="<h3>Plan parcel "+esc(p.no)+"</h3><dl>"+
@@ -95,7 +134,7 @@ function show(i,cell){var p=D.parcels[i];
  "<dt>Outline from</dt><dd>"+esc(p.src)+"</dd><dt>Traced area</dt><dd>"+esc(p.traced)+" acres (rough)</dd>"+
  "<dt>Centre</dt><dd>"+p.lat.toFixed(5)+", "+p.lon.toFixed(5)+"</dd><dt>OS grid ref</dt><dd>"+esc(p.gr)+"</dd>"+
  "<dt>H3 res 8</dt><dd><code>"+esc(p.h8)+"</code></dd><dt>H3 res 11</dt><dd>"+p.n11+" cells</dd><dt>H3 res 12</dt><dd>"+p.n12+" cells</dd>"+
- (cell?"<dt>This hexagon</dt><dd><code>"+esc(cell)+"</code></dd>":"")+"</dl><p class=\"hint\">The plan-to-tithe match is our reading.</p>";
+ (cell?"<dt>This hexagon (res "+(res||"")+")</dt><dd><code>"+esc(cell)+"</code></dd>":"")+"</dl><p class=\"hint\">The plan-to-tithe match is our reading.</p>";
  document.getElementById("panel").innerHTML=h;
  if(sel)outl.removeLayer(sel);sel=L.polygon(p.poly,{color:"#e00",weight:3,fill:false}).addTo(outl);}
 function legend(){if(tlOn){document.getElementById("legend").innerHTML="<span class=\"tl-head\"><b>Traffic light</b> · Family-associated land: a working classification, not a legal finding.</span>"+
@@ -111,7 +150,7 @@ document.getElementById("l-tithe").addEventListener("change",function(e){e.targe
 document.getElementById("l-stew").addEventListener("change",function(e){e.target.checked?stew.addTo(map):map.removeLayer(stew);});
 document.getElementById("l-os").addEventListener("change",function(e){e.target.checked?os6.addTo(map):map.removeLayer(os6);});
 document.getElementById("l-op").addEventListener("input",function(e){var v=e.target.value/100;tithe&&tithe.setOpacity(v);stew&&stew.setOpacity(v);});
-Array.prototype.forEach.call(document.querySelectorAll("[data-r]"),function(b){b.addEventListener("click",function(){res=+b.getAttribute("data-r");Array.prototype.forEach.call(document.querySelectorAll("[data-r]"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});drawHex();});});
+(function(){var r=document.getElementById("l-res");if(!r)return;res=+r.value;r.addEventListener("change",function(){res=+r.value;if(D)drawHex();});})();
 })();
 /* v0.2.0: the (i) button and the Changelog link open the changelog table; Esc, the close button or a tap outside close it. - Cedwyn editors */
 (function(){var d=document,m=d.getElementById("changelog");if(!m)return;
