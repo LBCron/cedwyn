@@ -23,6 +23,25 @@
     var SJ = document.createElement('script'); SJ.src = '/_cedwyn/section.js?v=1.3.0';   // 1.3.0 (2 Nov 2026): fresh key; ?v=1.2.0 was held at the edge with the old section.js that still drew the retired ribbon SJ.async = true; (document.head || DE0).appendChild(SJ);
   }
   window.__cedwynSec = SEC; window.__cedwynLP = LP;
+  // 3 Nov 2026 (owner WhatsApp 18:52 GMT: the 3D view was "a webapp in a webapp"): a webapp shown inside another page's frame (the
+  // landing modal's 2D/3D map) draws no site chrome of its own. ghf-boot.js already skips the shared header in frames, but the
+  // build-stamped webapp bar (nav.py .cw-slotnav "< NN of 59 > All webapps", hidden only once that header draws), the area shortcut
+  // ("Open Arcade"), the agent footer, the guest book and the small-print legend stayed visible, so the frame showed a second header.
+  // In a frame they are hidden, and a link to another page opens in the top window, never inside the frame. ?ghfbars keeps them. - Sion's Tab agent
+  var FRAMED = false; try { FRAMED = window.self !== window.top; } catch (e) { FRAMED = true; }
+  if (FRAMED && !/[?&]ghfbars\b/.test(location.search)) {
+    DE0.classList.add('cw-framed');
+    var FCSS = document.createElement('style'); FCSS.id = 'cw-framed-css';
+    FCSS.textContent = 'html.cw-framed .cw-slotnav,html.cw-framed .cedwyn-area-shortcut,html.cw-framed #ghf-agent-footer,html.cw-framed #cedwyn-guestbook,html.cw-framed [data-cw-legend],html.cw-framed .ghf-ui{display:none!important}';
+    (document.head || DE0).appendChild(FCSS);
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null, u;
+      if (!a || a.target || a.hasAttribute('download')) return;
+      try { u = new URL(a.href, location.href); } catch (x) { return; }
+      if (u.origin === location.origin && u.pathname === location.pathname) return;   // in-page anchors stay in the frame
+      a.target = '_top';
+    }, true);
+  }
   // the shared header (basecamp.js) reads the theme's former address from <html data-ghf-host / data-ghf-path>
   (function () { var v = VHOST[T]; if (!v) return; var de = document.documentElement, rest = LP.slice(P.length).replace(/^\/+/, '');
     if (!de.getAttribute('data-ghf-host')) de.setAttribute('data-ghf-host', v[0]);
