@@ -1,0 +1,110 @@
+{
+ "note": "Peekaboo picks: which central-catalogue records the webapp shows and the few words it adds to each. Records tagged 'peekaboo' (scope.tags) are picked up automatically; ids listed under 'ids' are added by hand. 'said' is what the label, catalogue or reply stated; 'found' is what was there. Facts and dates only. — Cedwyn editors",
+ "tag": "peekaboo",
+ "ids": {
+  "OBS-PEEKABOO-NEWMAN-IA": {
+   "category": "Catalogue description does not match the item",
+   "found_by": "us",
+   "found_on": "2026-11-03",
+   "said": "The catalogue description of the Internet Archive copy: “A very hairy but not-too-scary monster story. One dark, stormy night, Owl, Mouse and Rabbit are afraid. Could it be the Monster of the Woods knocking at the door?”",
+   "found": "The item is John Newman’s Glamorgan (The Buildings of Wales, 1995), a 717-page architectural guide with entries for Llandough-juxta-Penarth (pp.378–379), Leckwith (pp.370–371) and Cogan.",
+   "why": "The summary note belongs to a children’s picture book. Searched by its description, the guide would not be found.",
+   "see": [
+    [
+     "Research Library (catalogue AR-NEWMAN-1995)",
+     "/research/"
+    ],
+    [
+     "FCG register: first seen",
+     "/fcg/first-seen/"
+    ]
+   ],
+   "notices": [
+    "N1",
+    "N2"
+   ],
+   "fcg": true
+  },
+  "OBS-PEEKABOO-DBDT79-CATALOGUE": {
+   "category": "Catalogue corrected by the holder",
+   "found_by": "holder",
+   "found_on": "2026-09-14",
+   "said": "Catalogue entry: “Lease (counterpart) of land and premises situate in Pembroke Terrace, Cardiff, from the Marquess of Bute to Mr John Williams, May 1877.”",
+   "found": "Examined at our request, the original is a counterpart lease of 2 May 1877 from the Trustees of the Will of the late Marquess of Bute to Mr John Williams of Newport. Glamorgan Archives: “The catalogue description for DBDT/79/1 had a few small errors which have now been corrected.”",
+   "why": "A physical check of the original, asked for on 26 August 2026, found the catalogue wording wrong. The deed concerns Pembroke Terrace, Cardiff; the archive found no mention of Llandough in it.",
+   "see": [
+    [
+     "EV-0336",
+     "/wiki/evidence/ev-0336-glamorgan-archives-dbdt79-1-physical-examination-of-the-original/"
+    ],
+    [
+     "Kissed Frogs (KF-02: not our farm)",
+     "/kissed-frogs/"
+    ]
+   ],
+   "notices": [
+    "N3"
+   ]
+  },
+  "TOC-F05": {
+   "category": "Outside scope, then found",
+   "found_by": "holder",
+   "found_on": "2026-05-21",
+   "said": "Cadw, 25 February 2026: “much of the content in your correspondence falls outside the scope of Cadw’s work.”",
+   "found": "Cadw, 21 May 2026: its electronic records held the 1988 listing assessment of Great House Farm and Barn, and two photographs dated 29 July 1988.",
+   "why": "The records were in Cadw’s own system; they came out once a request named the property and the 1988 survey.",
+   "see": [
+    [
+     "That Old Chestnut",
+     "/that-old-chestnut/#cn-TOC-F05"
+    ]
+   ],
+   "notices": []
+  },
+  "TOC-F01": {
+   "category": "Not held, then found",
+   "found_by": "holder",
+   "found_on": "2026-09-22",
+   "said": "Amgueddfa Cymru – Museum Wales, 25 August 2026: “Amgueddfa Cymru does not hold the requested information.”",
+   "found": "Museum Wales, 22 September 2026: records of archaeological discoveries recorded at Great House Farm and Church Farm, Llandough, identified in the searches for the first request.",
+   "why": "The records were found in the first search and set aside as outside its scope; they were released four weeks later on a fresh request.",
+   "see": [
+    [
+     "That Old Chestnut",
+     "/that-old-chestnut/#cn-TOC-F01"
+    ]
+   ],
+   "notices": []
+  },
+  "TOC-F02": {
+   "category": "Not held, then found",
+   "found_by": "holder",
+   "found_on": "2026-10-27",
+   "said": "Historic England, 21 October 2026: “we do not hold any information that falls within the scope of your request.”",
+   "found": "Historic England, 27 October 2026: a letter of transfer to RCAHMW dated 12 January 2018.",
+   "why": "The first reply itself recorded the 12 January 2018 transfer; the covering letter followed six days after a challenge.",
+   "see": [
+    [
+     "That Old Chestnut",
+     "/that-old-chestnut/#cn-TOC-F02"
+    ]
+   ],
+   "notices": []
+  },
+  "TOC-F03": {
+   "category": "Not held, then found",
+   "found_by": "holder",
+   "found_on": "2026-09-11",
+   "said": "Vale of Glamorgan Council, 2 June 2026: “the Vale of Glamorgan Council does not hold records relating to this historic legal matter.”",
+   "found": "Vale of Glamorgan Council, 11 September 2026: “further historical documentation has been found.” Not yet disclosed.",
+   "why": "Found once service areas were asked again; the council is still sifting it.",
+   "see": [
+    [
+     "That Old Chestnut",
+     "/that-old-chestnut/#cn-TOC-F03"
+    ]
+   ],
+   "notices": []
+  }
+ }
+}
