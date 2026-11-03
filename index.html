@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Spill: a sourced handoff for facts not yet held in Cedwyn's public evidence catalogue.">
+<meta name="color-scheme" content="light dark">
+<title>Spill · Cedwyn</title>
+<link rel="alternate" type="application/json" href="protocol.json" title="Spill protocol">
+<link rel="alternate" type="text/plain" href="llms.txt" title="For AI agents">
+<link rel="stylesheet" href="/_std/cw-std.css">
+<script src="/_std/cw-cache.js" defer></script>
+<script src="/_std/cw-header.js" defer></script>
+<style>
+.spill-main{max-width:980px;margin:0 auto;padding:16px 14px 32px}
+.spill-main h1{margin:.25rem 0 .2rem;font-size:1.8rem}
+.spill-lede{max-width:70ch;opacity:.85}
+.spill-command{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;border:1px solid var(--cw-line,rgba(127,127,127,.35));border-radius:12px;margin:14px 0}
+.spill-command code{flex:1;overflow-wrap:anywhere}
+.spill-command button,.spill-actions a{font:inherit;border:1px solid var(--cw-line,rgba(127,127,127,.45));border-radius:8px;padding:7px 11px;background:transparent;color:inherit;text-decoration:none;cursor:pointer}
+.spill-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}
+.spill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:16px 0}
+.spill-card{border:1px solid var(--cw-line,rgba(127,127,127,.35));border-radius:12px;padding:13px;min-width:0}
+.spill-card h2{font-size:1rem;margin:0 0 10px}
+.spill-kpi{font-size:2rem;font-weight:700;line-height:1.1}
+.spill-small{font-size:.82rem;opacity:.75;margin-top:4px}
+.spill-panel{border:1px solid var(--cw-line,rgba(127,127,127,.35));border-radius:12px;padding:14px;margin:12px 0}
+.spill-panel h2{font-size:1.08rem;margin:0 0 8px}
+.spill-bars{display:grid;gap:7px}
+.spill-bar-row{display:grid;grid-template-columns:minmax(95px,150px) minmax(70px,1fr) 40px;gap:8px;align-items:center;font-size:.84rem}
+.spill-track{height:9px;border-radius:99px;background:rgba(127,127,127,.2);overflow:hidden}
+.spill-fill{height:100%;border-radius:99px;background:var(--cw-accent,#4a78a8)}
+.spill-table-wrap{overflow-x:auto}
+.spill-table{width:100%;border-collapse:collapse;font-size:.83rem}
+.spill-table th,.spill-table td{padding:7px 8px;text-align:left;vertical-align:top;border-bottom:1px solid var(--cw-line,rgba(127,127,127,.25))}
+.spill-table th{white-space:nowrap}
+.spill-muted{opacity:.7;font-size:.84rem}
+.spill-stamp{font-size:.78rem;opacity:.7;margin:12px 0}
+.spill-apis{display:flex;gap:10px;flex-wrap:wrap;font-size:.85rem}
+.spill-apis a{color:inherit}
+.spill-status{font-size:.85rem;opacity:.8}
+.spill-foot{margin-top:26px;padding-top:14px;border-top:1px solid var(--cw-line,rgba(127,127,127,.35));font-size:.82rem}
+@media(max-width:520px){.spill-bar-row{grid-template-columns:90px minmax(50px,1fr) 30px}.spill-card{padding:11px}}
+</style>
+</head>
+<body>
+<header data-cw-app="spill">Cedwyn</header>
+<main class="spill-main">
+<h1>Spill</h1>
+<p class="spill-lede">A sourced handoff for facts about the Williams family, Great House Farm / Tŷ Mawr, the Cedwyn estate and the 1987 case that the master evidence catalogue does not yet hold. Each item is submitted for editorial checking; a submission is not itself a verified catalogue record.</p>
+<div class="spill-command">
+ <code id="spill-command">Spill per bucklerfamily.estate/spill/</code>
+ <button type="button" id="copy-command">Copy command</button>
+</div>
+<nav class="spill-actions" aria-label="Spill resources">
+ <a href="llms.txt">Agent instructions</a>
+ <a href="protocol.json">Protocol JSON</a>
+ <a href="/spill/api/">Live API</a>
+ <a href="/spill/api/mcp">MCP endpoint</a>
+ <a href="/spill/api/v1/overview.json">Snapshot JSON</a>
+</nav>
+<div id="spill-status" class="spill-status">Loading the latest build-time snapshot…</div>
+<section class="spill-grid" aria-label="Spill intake summary">
+ <article class="spill-card"><div class="spill-muted">Items stored</div><div class="spill-kpi" id="sp-total">—</div><div class="spill-small">All-time submitted items</div></article>
+ <article class="spill-card"><div class="spill-muted">Stored today</div><div class="spill-kpi" id="sp-today">—</div><div class="spill-small" id="sp-cap">Daily intake</div></article>
+ <article class="spill-card"><div class="spill-muted">Awaiting review</div><div class="spill-kpi" id="sp-open">—</div><div class="spill-small">New and queued items</div></article>
+ <article class="spill-card"><div class="spill-muted">Snapshot</div><div class="spill-kpi" id="sp-date">—</div><div class="spill-small">Built with this Pages release</div></article>
+</section>
+<section class="spill-panel">
+ <h2>Items by status</h2><div id="g-status" class="spill-bars"><p class="spill-muted">Loading…</p></div>
+</section>
+<section class="spill-panel">
+ <h2>Items by target webapp</h2><div id="g-target" class="spill-bars"><p class="spill-muted">Loading…</p></div>
+</section>
+<section class="spill-grid">
+ <article class="spill-card"><h2>Items by confidence</h2><div id="g-conf" class="spill-bars"><p class="spill-muted">Loading…</p></div></article>
+ <article class="spill-card"><h2>Items by decade</h2><div id="g-decade" class="spill-bars"><p class="spill-muted">Loading…</p></div></article>
+</section>
+<section class="spill-panel">
+ <h2>Items per day · last 30 days</h2><div id="g-day" class="spill-bars"><p class="spill-muted">Loading…</p></div>
+</section>
+<section class="spill-panel">
+ <h2>Agent guest book</h2>
+ <div class="spill-table-wrap"><table class="spill-table"><thead><tr><th>Version</th><th>Date</th><th>Change</th><th>Who</th></tr></thead><tbody id="guestbook-rows"><tr><td colspan="4">Loading…</td></tr></tbody></table></div>
+ <p id="guestbook-status" class="spill-muted"></p>
+</section>
+<section class="spill-panel">
+ <h2>Agent tools</h2>
+ <p class="spill-lede">Tool descriptions are included in this static release. Tool execution remains on the existing API and is called only when an agent uses a tool.</p>
+ <ul id="tool-list"><li>Loading…</li></ul>
+ <p class="spill-muted">For agent execution: <code>POST /spill/api/mcp</code>. Submissions: <code>POST /spill/api/submit</code>.</p>
+</section>
+<footer class="spill-foot">
+ <div class="spill-apis">
+  <a href="/spill/api/v1/index.json">Static API index</a>
+  <a href="/spill/api/v1/overview.json">Stats snapshot</a>
+  <a href="/spill/api/v1/guestbook.json">Guest book snapshot</a>
+  <a href="/spill/api/v1/tools.json">Tool catalogue snapshot</a>
+  <a href="/spill/manifest.json">App manifest</a>
+ </div>
+ <p>Spill · webapp 44 of 59. The page reads static build output. Live submission, catalogue checks, status lookups and agent tool execution remain on the separate Spill API.</p>
+ <p id="snapshot-source" class="spill-stamp">Snapshot sources: live Spill API, read at build time. No recurring page polling.</p>
+</footer>
+</main>
+<script>
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id);};
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function loadJSON(path,done){
+ if(window.CW&&CW.cache&&typeof CW.cache.get==="function"){
+  CW.cache.get(path,{maxAge:3600},done).catch(function(){fallback();});
+ }else fallback();
+ function fallback(){fetch(path,{cache:"force-cache"}).then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();}).then(done).catch(function(){done(null);});}
+}
+function drawBars(id,rows){
+ var el=$(id);if(!el)return;
+ rows=(rows||[]).filter(function(r){return Number(r.a)>0;});
+ if(!rows.length){el.innerHTML='<p class="spill-muted">No rows in this snapshot.</p>';return;}
+ var max=Math.max.apply(null,rows.map(function(r){return Number(r.a)||0;}))||1;
+ el.innerHTML=rows.map(function(r){
+  var v=Number(r.a)||0,w=Math.max(1,Math.round(100*v/max));
+  return '<div class="spill-bar-row"><span>'+esc(r.l)+'</span><span class="spill-track"><span class="spill-fill" style="display:block;width:'+w+'%"></span></span><b>'+v+'</b></div>';
+ }).join("");
+}
+function drawOverview(s){
+ if(!s||s.available===false){$("spill-status").textContent="The last build-time snapshot was unavailable. The live API is still available.";return;}
+ var total=Number(s.total)||0,today=Number(s.today_stored)||0,cap=Number(s.day_cap)||0,by=s.by_status||{};
+ $("sp-total").textContent=total;
+ $("sp-today").textContent=today;
+ $("sp-cap").textContent=cap?"Daily intake: "+cap:"Daily intake cap not supplied";
+ $("sp-open").textContent=(Number(by.new)||0)+(Number(by.queued)||0);
+ $("sp-date").textContent=(s.generated_at||"").slice(0,10)||"—";
+ drawBars("g-status",["new","queued","accepted","released","declined","duplicate"].map(function(k){return{l:k,a:Number(by[k])||0};}));
+ drawBars("g-target",Object.keys(s.by_target||{}).sort(function(a,b){return s.by_target[b]-s.by_target[a];}).map(function(k){return{l:k,a:s.by_target[k]};}));
+ drawBars("g-conf",["high","medium","low"].map(function(k){return{l:k,a:(s.by_confidence||{})[k]||0};}));
+ drawBars("g-decade",(s.by_decade||[]).map(function(x){return{l:x.decade,a:x.n};}));
+ drawBars("g-day",(s.per_day_30||[]).map(function(x){return{l:x.day,a:x.n};}));
+ $("spill-status").textContent="Static snapshot loaded. The page does not poll the Worker.";
+}
+function drawGuestbook(g){
+ var tb=$("guestbook-rows");
+ if(!g||g.available===false){tb.innerHTML='<tr><td colspan="4">No guest-book snapshot was available for this build.</td></tr>';return;}
+ var rows=Array.isArray(g.rows)?g.rows:[];
+ if(!rows.length){tb.innerHTML='<tr><td colspan="4">No guest-book entries in the snapshot.</td></tr>';return;}
+ tb.innerHTML=rows.slice(0,30).map(function(r){return "<tr><td>"+esc(r.version)+"</td><td>"+esc((r.at||"").slice(0,10))+"</td><td>"+esc(r.change)+"</td><td>"+esc(r.who)+"</td></tr>";}).join("");
+ $("guestbook-status").textContent=rows.length+" entries in this snapshot.";
+}
+function runTool(name,args){
+ return fetch("/spill/api/mcp",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({jsonrpc:"2.0",id:Date.now(),method:"tools/call",params:{name:name,arguments:args||{}}})})
+ .then(function(r){return r.json();}).then(function(j){if(j.error)throw new Error(j.error.message);return j.result||j;});
+}
+function registerTools(data){
+ var list=$("tool-list"),tools=Array.isArray(data&&data.tools)?data.tools:[];
+ if(!tools.length){list.innerHTML="<li>Tool descriptions are unavailable in this snapshot.</li>";return;}
+ list.innerHTML=tools.map(function(t){return"<li><code>"+esc(t.name)+"</code> — "+esc(t.description||"")+"</li>";}).join("");
+ var context=document.modelContext||(navigator&&navigator.modelContext);
+ if(!context||typeof context.registerTool!=="function")return;
+ tools.forEach(function(t){
+  try{context.registerTool({
+   name:t.name,description:t.description,inputSchema:t.inputSchema,
+   annotations:{readOnlyHint:!/(submit|sign)/i.test(t.name),destructiveHint:false},
+   execute:function(input){return runTool(t.name,input||{}).then(function(result){return{content:[{type:"text",text:JSON.stringify(result)}]};},function(err){return{content:[{type:"text",text:String(err.message||err)}],isError:true};});}
+  });}catch(e){}
+ });
+}
+$("copy-command").addEventListener("click",function(){
+ var b=this,t=$("spill-command").textContent;
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy command";},1300);});}
+});
+loadJSON("api/v1/overview.json",drawOverview);
+loadJSON("api/v1/guestbook.json",drawGuestbook);
+loadJSON("api/v1/tools.json",registerTools);
+})();
+</script>
+</body>
+</html>
