@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <identifier>glamorganmidglam0000newm</identifier>
+  <associated-names>Hughes, Stephen (Stephen R.); Ward, Anthony, 1953-</associated-names>
+  <boxid>IA40558117</boxid>
+  <camera>USB PTP Class Camera</camera>
+  <collection_set>printdisabled</collection_set>
+  <contributor>Internet Archive</contributor>
+  <creator>Newman, John, 1936-</creator>
+  <date>1995</date>
+  <description>717 pages, 64 unnumbered pages of plates : 23 cm</description>
+  <description>A very hairy but not-too-scary monster story. One dark, stormy night, Owl, Mouse and Rabbit are afraid. Could it be the Monster of the Woods knocking at the door? This warm, funny tale about friendship has a wonderfully unexpected twist</description>
+  <description>"Architectural glossary": pages [653]-678</description>
+  <description>"Language glossary": pages [679]-683</description>
+  <description>Includes indexes</description>
+  <isbn>0140710566</isbn>
+  <isbn>9780140710564</isbn>
+  <isbn>0300096291</isbn>
+  <isbn>9780300096293</isbn>
+  <language>eng</language>
+  <mediatype>texts</mediatype>
+  <oclc-id>33858574</oclc-id>
+  <oclc-id>877230636</oclc-id>
+  <oclc-id>1008518258</oclc-id>
+  <old_pallet>IA-WL-2000089</old_pallet>
+  <openlibrary_edition>OL10097849M</openlibrary_edition>
+  <openlibrary_work>OL71940W</openlibrary_work>
+  <operator>associate-jullyann-guisadio@archive.org</operator>
+  <publisher>London : Penguin Books ; University of Wales Press</publisher>
+  <rcs_key>24143</rcs_key>
+  <repub_state>19</repub_state>
+  <scanner>station53.cebu.archive.org</scanner>
+  <scanningcenter>cebu</scanningcenter>
+  <scribe3_search_catalog>isbn</scribe3_search_catalog>
+  <scribe3_search_id>9780140710564</scribe3_search_id>
+  <subject>Architecture -- Wales -- Glamorgan</subject>
+  <subject>Historic buildings -- Wales -- Glamorgan</subject>
+  <subject>Architecture -- Pays de Galles -- West Glamorgan -- Guides</subject>
+  <subject>Architecture -- Pays de Galles -- South Glamorgan -- Guides</subject>
+  <subject>Architecture -- Pays de Galles -- Mid Glamorgan -- Guides</subject>
+  <subject>Architecture -- Pays de Galles -- Glamorgan</subject>
+  <subject>Architecture</subject>
+  <subject>Historic buildings</subject>
+  <subject>Baudenkmal</subject>
+  <subject>Inventar</subject>
+  <subject>Mid Glamorgan (Wales) -- Guidebooks</subject>
+  <subject>South Glamorgan (Wales) -- Guidebooks</subject>
+  <subject>West Glamorgan (Wales) -- Guidebooks</subject>
+  <subject>Mid Glamorgan (Pays de Galles) -- Guides</subject>
+  <subject>South Glamorgan (Pays de Galles) -- Guides</subject>
+  <subject>West Glamorgan (Pays de Galles) -- Guides</subject>
+  <subject>Wales -- Glamorgan</subject>
+  <subject>Glamorgan County</subject>
+  <title>Glamorgan : (Mid Glamorgan, South Glamorgan and West Glamorgan) </title>
+  <tts_version>5.1-refactored-15-g1773b315</tts_version>
+  <uploader>station53.cebu@archive.org</uploader>
+  <publicdate>2022-06-08 17:40:49</publicdate>
+  <access-restricted-item>true</access-restricted-item>
+  <identifier-access>http://archive.org/details/glamorganmidglam0000newm</identifier-access>
+  <identifier-ark>ark:/13960/s21b9fm1qxz</identifier-ark>
+  <scandate>20220609012538</scandate>
+  <imagecount>794</imagecount>
+  <autocrop_version>0.0.13_books-20220331-0.2</autocrop_version>
+  <ppi>360</ppi>
+  <republisher_operator>associate-meriam-bapilar@archive.org</republisher_operator>
+  <republisher_date>20220610153057</republisher_date>
+  <republisher_time>643</republisher_time>
+  <foldoutcount>0</foldoutcount>
+  <bookplateleaf>0004</bookplateleaf>
+  <ocr>tesseract 5.0.0-1-g862e</ocr>
+  <ocr_parameters>-l eng</ocr_parameters>
+  <ocr_module_version>0.0.15</ocr_module_version>
+  <ocr_detected_script>Latin</ocr_detected_script>
+  <ocr_detected_script_conf>0.9872</ocr_detected_script_conf>
+  <ocr_detected_lang>en</ocr_detected_lang>
+  <ocr_detected_lang_conf>1.0000</ocr_detected_lang_conf>
+  <page_number_confidence>100</page_number_confidence>
+  <pdf_module_version>0.0.18</pdf_module_version>
+  <external-identifier>urn:acs6:glamorganmidglam0000newm:pdf:d3f812b0-5f59-4cdd-bc26-afabd22f79b7</external-identifier>
+  <external-identifier>urn:oclc:record:1330341374</external-identifier>
+  <external-identifier>urn:lcp:glamorganmidglam0000newm:lcpdf:a2c5b01c-09d7-49c7-bb59-65b975709e8b</external-identifier>
+  <external-identifier>urn:lcp:glamorganmidglam0000newm:epub:614239c6-33c2-47b9-932f-806cdfaaf68f</external-identifier>
+  <addeddate>2022-06-10 18:09:51</addeddate>
+  <scanfee>0;1.00;200</scanfee>
+  <invoice>1652</invoice>
+  <sponsordate>20220630</sponsordate>
+  <collection>internetarchivebooks</collection>
+  <collection>inlibrary</collection>
+  <collection>printdisabled</collection>
+  <page_number_module_version>1.0.5</page_number_module_version>
+</metadata>
