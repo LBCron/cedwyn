@@ -17,7 +17,7 @@
   },
   "chat": {
    "files_now": 5,
-   "files_previous_build": 6,
+   "files_previous_build": 7,
    "home": true
   },
   "email": {
@@ -32,35 +32,37 @@
   },
   "estate": {
    "files_now": 2,
-   "files_previous_build": 3,
+   "files_previous_build": 4,
    "home": true
   },
   "patagonia": {
    "files_now": 2,
-   "files_previous_build": 3,
+   "files_previous_build": 4,
    "home": true
   },
   "terrain": {
    "files_now": 0,
-   "files_previous_build": 9,
+   "files_previous_build": 10,
    "home": false
   },
   "cyberspace": {
    "files_now": 2,
-   "files_previous_build": 3,
+   "files_previous_build": 4,
    "home": true
   }
  },
  "restored": {
   "app": 8,
+  "chat": 2,
   "dartboard": 18,
-  "estate": 1,
-  "patagonia": 1,
-  "terrain": 9,
-  "cyberspace": 1
+  "estate": 2,
+  "patagonia": 2,
+  "terrain": 10,
+  "cyberspace": 2
  },
  "refused": [
   "app",
+  "chat",
   "dartboard",
   "estate",
   "patagonia",

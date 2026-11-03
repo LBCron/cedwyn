@@ -29,6 +29,19 @@
       }
     },
     {
+      name: 'search_cedwyn_nomenclature',
+      description: 'Search the published Cedwyn Nomenclature register by a name, spelling, locality, administrative area, postcode, grid reference or candidate cross-reference. Returns the matched concept, recorded wording, source/date/status and caution. Search matches are retrieval aids, not proof that two properties or places are identical. In particular, Llandough juxta Barry is a parish/locality locator, not proof that Great House Farm was called that; Llandough near Cowbridge is a separate possible match; Llandough Farm, Cydfin and related labels remain candidates unless the underlying record connects them.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          q: { type: 'string', description: 'Name, spelling, locality, postcode, grid reference or candidate term to search' },
+          limit: { type: 'integer', description: 'Maximum concepts to return (default 10, max 20)' }
+        },
+        required: ['q'],
+        additionalProperties: false
+      }
+    },
+    {
       name: 'search_central_evidence_catalogue',
       description: 'Search the canonical evidence catalogue in the central Cedwyn database. Returns evidence IDs, titles, paths, evidence grades, independent-origin IDs and text excerpts. Use this to find a catalogue record, not to infer that repeated copies are independent evidence.',
       inputSchema: {
@@ -258,6 +271,79 @@
           return { theme: h.theme, path: h.path, snippet: h.snippet, artifact: h.artifact };
         });
       });
+    });
+  }
+
+  function normalizeNomTerm(value) {
+    return String(value || '').toLowerCase()
+      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[’']/g, '')
+      .replace(/[‐‑‒–—-]/g, ' ')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim().replace(/\s+/g, ' ');
+  }
+
+  function searchCedwynNomenclature(query, limit) {
+    query = String(query || '').trim();
+    if (!query) return Promise.reject(new Error('q is required'));
+    limit = Math.min(Math.max(+(limit || 10), 1), 20);
+    var wanted = normalizeNomTerm(query);
+    if (!wanted) return Promise.reject(new Error('q must contain searchable characters'));
+    var path = '/nomenclature/lexicon.json';
+    if (!sameOrigin(path)) return Promise.reject(new Error('Nomenclature lookup must use a same-origin path.'));
+    return fetch(location.origin + path, { credentials: 'same-origin', cache: 'no-cache' }).then(function (response) {
+      if (!response.ok) throw new Error('HTTP ' + response.status + ' for ' + path);
+      return response.json();
+    }).then(function (lexicon) {
+      if (!lexicon || !Array.isArray(lexicon.concepts)) throw new Error('The published nomenclature register has an unexpected format.');
+      var results = [];
+      lexicon.concepts.forEach(function (concept) {
+        var terms = []
+          .concat(Array.isArray(concept.search_forms) ? concept.search_forms : [])
+          .concat(Array.isArray(concept.link_terms) ? concept.link_terms : [])
+          .concat((concept.variants || []).map(function (variant) { return variant.term || ''; }))
+          .concat([concept.name || '', concept.id || '']);
+        var matches = [];
+        (concept.variants || []).forEach(function (variant) {
+          var term = normalizeNomTerm(variant.term);
+          if (term && (term === wanted || term.indexOf(wanted) >= 0 || wanted.indexOf(term) >= 0)) {
+            matches.push({
+              term: variant.term,
+              source: variant.source || null,
+              date: variant.date || null,
+              status: variant.status || null,
+              note: variant.note || null,
+              url: variant.url || null,
+              ev: variant.ev || null
+            });
+          }
+        });
+        var searchFormMatches = terms.filter(function (term, index, all) {
+          var normalized = normalizeNomTerm(term);
+          return normalized && (normalized === wanted || normalized.indexOf(wanted) >= 0 || wanted.indexOf(normalized) >= 0) &&
+            all.findIndex(function (other) { return normalizeNomTerm(other) === normalized; }) === index;
+        }).slice(0, 12);
+        if (matches.length || searchFormMatches.length) {
+          results.push({
+            id: concept.id,
+            name: concept.name,
+            kind: concept.kind || null,
+            summary: concept.summary || null,
+            variant_matches: matches.slice(0, 20),
+            search_form_matches: searchFormMatches,
+            not_same: (concept.not_same || []).map(function (item) {
+              return { term: item.term, why: item.why, url: item.url || null };
+            }),
+            caution: 'A name or search-form match is a retrieval clue, not proof of property identity. Check the source, date, parcel and stated limitation before treating labels as equivalent.'
+          });
+        }
+      });
+      return {
+        version: lexicon.version || null,
+        generated: lexicon.generated || null,
+        query: query,
+        results: results.slice(0, limit)
+      };
     });
   }
 
@@ -646,6 +732,8 @@
       case 'search_case_public_content':
         if (!args.q) return Promise.reject(new Error('q is required'));
         return searchCatalogue(String(args.q), args.theme, args.limit);
+      case 'search_cedwyn_nomenclature':
+        return searchCedwynNomenclature(args.q, args.limit);
       case 'search_central_evidence_catalogue':
         return searchCentralEvidence(args.q, args.limit);
       case 'get_central_evidence_record':

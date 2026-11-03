@@ -3,9 +3,9 @@
 # Usage: sh fetch-full.sh [site]   -> ./cedwyn.sqlite3, then open it with any SQLite tool.
 set -e
 B="${1:-https://cedwyn.bucklerfamily.estate}"
-N=3156
+N=3164
 i=0
 : > cedwyn.sqlite3
 while [ "$i" -lt "$N" ]; do curl -sfL "$B/db/cedwyn.sqlite3.$(printf %03d "$i")" >> cedwyn.sqlite3; i=$((i+1)); done
-echo "expected sha256 9b211327fd00db13fc5af373237cf7443677e43c8967971c9bc7a8aec6c453e2"
+echo "expected sha256 c286892cec1f80076f8d5fa68a37989522d9406378eac05e14edc7477f3026c3"
 (sha256sum cedwyn.sqlite3 2>/dev/null || shasum -a 256 cedwyn.sqlite3)
