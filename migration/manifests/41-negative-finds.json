@@ -75,7 +75,7 @@
   "registers": [
    "data/core/records/negative-finds.json"
   ],
-  "catalogue_status": "pending_core_review_and_sync"
+  "catalogue_status": "not_yet"
  },
  "local_store": {
   "static": [
