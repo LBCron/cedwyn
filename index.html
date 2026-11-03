@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Negative Finds · Cedwyn</title>
-<meta name="description" content="A register of bounded searches, negative results, retrieval stages, limits and next actions.">
+<meta name="description" content="A register of bounded searches, retrieval stages, results, limitations and next actions.">
 <link rel="alternate" type="application/atom+xml" title="Negative Finds" href="api/v1/feed.xml">
 <link rel="alternate" type="application/rss+xml" title="Negative Finds (RSS)" href="api/v1/rss.xml">
 <link rel="alternate" type="application/feed+json" title="Negative Finds (JSON Feed)" href="api/v1/feed.json">
@@ -16,10 +16,10 @@
 <header data-cw-app="negative-finds">Cedwyn</header>
 <main>
 <h1>Negative Finds</h1>
-<p class="lede">A record of bounded searches that did not identify a matching record or relationship. Each entry states what was checked, the retrieval stage, what the result does and does not establish, and the next action.</p>
+<p class="lede">A record of bounded searches that did not identify a matching record or relationship. Each entry states the question, what was checked, the retrieval stage, the result, its limits and the next action.</p>
 <p class="card">A negative search is not proof of absence. A catalogue description, OCR transcript, full text and inspected page image are different retrieval stages; each entry keeps that distinction visible.</p>
 <input type="search" id="q" placeholder="Search question, place, source or result" aria-label="Search negative-find records">
-<div class="chips" id="labels" role="group" aria-label="Search category"></div>
+<div class="chips" id="classes" role="group" aria-label="Search category"></div>
 <p class="meta" id="count">Loading catalogue…</p>
 <ul class="res" id="results"></ul>
 <noscript><p><a href="api/v1/index.json">Open the index as JSON</a></p></noscript>
@@ -47,28 +47,34 @@ document.addEventListener("DOMContentLoaded", function () {
   function filtered() {
     var q = state.q.toLowerCase();
     return state.items.filter(function(it) {
-      if (state.label !== "All" && it.label !== state.label) return false;
-      var hay = [it.title,it.place,it.label,it.summary,it.source,it.question,it.searched].join(" ").toLowerCase();
+      if (state.label !== "All" && (it["class"] || "Bounded search") !== state.label) return false;
+      var hay = [it.title,it.holder,it["class"],it.summary,it.date].join(" ").toLowerCase();
       return !q || hay.indexOf(q) >= 0;
     });
   }
   function draw() {
     var rows = filtered();
+    var list = document.getElementById("results");
     document.getElementById("count").textContent = rows.length + " of " + state.items.length + " bounded searches";
-    document.getElementById("results").innerHTML = rows.map(function(it) {
-      var meta = [it.date, it.place, it.source_holder, it.retrieval_stage].filter(Boolean).join(" · ");
-      return '<li><a href="' + esc("api/v1/items/" + encodeURIComponent(it.key) + ".json") + '">' +
-        esc(it.title) + '</a><div class="meta">' + esc(it.label || "Bounded search") +
-        (meta ? " · " + esc(meta) : "") + '</div><p>' + esc(it.summary || "") + '</p></li>';
+    if (!rows.length) {
+      list.innerHTML = '<li><strong>No records in this catalogue snapshot.</strong><p>The static central-catalogue slice has not yet supplied a bounded-search record to this build. This empty state is not a finding that no record or relationship exists.</p></li>';
+      return;
+    }
+    list.innerHTML = rows.map(function(it) {
+      var meta = [it.date, it.holder, it["class"]].filter(Boolean).join(" · ");
+      var summary = esc(it.summary || "").replace(/\n/g, "<br>");
+      return '<li><strong>' + esc(it.title) + '</strong><div class="meta">' + esc(meta) +
+        '</div><p>' + summary + '</p><div class="meta"><a href="api/v1/items/' +
+        encodeURIComponent(it.key) + '.json">Open catalogue record</a></div></li>';
     }).join("");
   }
   function facets() {
     var counts = {"All":state.items.length};
     state.items.forEach(function(it) {
-      var key = it.label || "Bounded search";
+      var key = it["class"] || "Bounded search";
       counts[key] = (counts[key] || 0) + 1;
     });
-    var el = document.getElementById("labels");
+    var el = document.getElementById("classes");
     el.innerHTML = Object.keys(counts).map(function(k) {
       return '<button type="button" data-label="' + esc(k) + '" aria-pressed="' +
         (state.label === k) + '">' + esc(k) + ' (' + counts[k] + ')</button>';
