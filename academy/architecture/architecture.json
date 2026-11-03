@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn_academy_architecture/v1",
- "version": "1.0.10",
+ "version": "1.0.12",
  "updated": "2026-11-03",
  "refreshed_by": "the agent library cycle (every 6 hours); edit this file, then rebuild the academy",
  "source_documents": [
@@ -854,12 +854,52 @@
    "state": "LIVE",
    "view_rule": "graphs only, with a legend for the traffic-class colours",
    "migration_wave": "standalone webapp, 2 Nov 2026"
+  },
+  {
+   "id": "garden-store",
+   "title": "Garden Store",
+   "url": "/garden-store/",
+   "group": "Interactive",
+   "purpose": "Flowers and plants from a Welsh garden centre; each Buy button opens the grower's own shop, never a checkout here (webapp 46 of 59)",
+   "source": "branch section/garden-store, with its own worker and database",
+   "data_sources": "its own product database",
+   "state": "LIVE",
+   "view_rule": "product cards with the grower's own buy link",
+   "migration_wave": "standalone webapp, 2 Nov 2026"
+  },
+  {
+   "id": "peekaboo",
+   "title": "Peekaboo",
+   "url": "/peekaboo/",
+   "group": "Interactive",
+   "purpose": "Records that appeared, changed or were relabelled in outside catalogues and collections, each with its dated evidence (webapp 47 of 59)",
+   "source": "branch section/peekaboo (static snapshot)",
+   "data_sources": "its own data file synced from the central catalogue by tag",
+   "state": "BUILT, awaiting merge of its menu entry",
+   "view_rule": "one card per record observation with its catalogue ids",
+   "migration_wave": "standalone webapp, 3 Nov 2026"
+  },
+  {
+   "id": "theories",
+   "title": "Theories",
+   "url": "/theories/",
+   "group": "Interactive",
+   "purpose": "The project's working theories, each linked to its evidence ids in the central catalogue, with what supports and what cuts against it (webapp 48 of 59)",
+   "source": "branch section/theories (static snapshot)",
+   "data_sources": "its own data file synced from main",
+   "state": "BUILT, awaiting merge of its menu entry",
+   "view_rule": "one card per theory with its evidence ids",
+   "migration_wave": "standalone webapp, 3 Nov 2026"
   }
  ],
  "other_areas": [
   {
    "url": "/academy/",
    "what": "Agent library, machine-facing, branch agents (titled Cedwyn Academy until 31 Oct 2026)"
+  },
+  {
+   "url": "/academy/handbook/",
+   "what": "The BucklerFamily.Estate handbook for agents (upkeep, architecture, the apex flywheel and its arcs, flywheel registry by arc, WebMCP/MCP/API, Hive, versioning, truth and labels); source branch handbook; machine index webmcp-handbook.json"
   },
   {
    "url": "/hive/",
@@ -1774,6 +1814,79 @@
     "zero spend"
    ],
    "flywheel_page": "/academy/FLYWHEELS/disclosure-results.md"
+  },
+  {
+   "id": "task-mirror",
+   "name": "Task mirror refresh",
+   "cadence": "hourly",
+   "does": "Re-reads project-board tasks changed since the newest row and publishes the sanitised mirror file with its generated time.",
+   "inputs": [
+    "changed task metadata"
+   ],
+   "outputs": [
+    "the mirror file",
+    "a log line"
+   ],
+   "touches": [
+    "the projects branch (one data file)"
+   ],
+   "guardrails": [
+    "read-only on the board, never bodies",
+    "subjects sanitised; names, addresses and numbers withheld",
+    "fast-forward commits only"
+   ],
+   "flywheel_page": "/academy/FLYWHEELS/task-mirror.md"
+  },
+  {
+   "id": "parcel-history",
+   "name": "Parcel history",
+   "cadence": "twice daily",
+   "does": "Traces each parcel through gazette notices, plans, books of reference and catalogues, one record read at a time, and records what cuts against the working reading.",
+   "inputs": [
+    "the parcel register",
+    "gazette notices and plans",
+    "archive catalogues"
+   ],
+   "outputs": [
+    "register rows",
+    "proposed catalogue records",
+    "dated board lines"
+   ],
+   "touches": [
+    "the central catalogue (pull request only, never merged by the loop)",
+    "the project board (append only)"
+   ],
+   "guardrails": [
+    "interpretation never published as assertion",
+    "read-only: no requests, orders or contact",
+    "zero spend"
+   ],
+   "flywheel_page": "/academy/FLYWHEELS/parcel-history.md"
+  },
+  {
+   "id": "social-engagement",
+   "name": "Social engagement",
+   "cadence": "three runs a day",
+   "does": "Comments on relevant local heritage posts with a verbatim passage from the estate's heritage pages and follows related channels.",
+   "inputs": [
+    "recent local heritage posts",
+    "the quote bank"
+   ],
+   "outputs": [
+    "at most one comment per platform per run",
+    "follows",
+    "a log row per action"
+   ],
+   "touches": [
+    "the project's own social accounts"
+   ],
+   "guardrails": [
+    "code safety gate on every comment",
+    "three comments per platform per day, 45 minutes apart",
+    "a block stops the platform for 24 hours and halves its caps",
+    "no direct messages, like-spam or unfollows"
+   ],
+   "flywheel_page": "/academy/FLYWHEELS/social-engagement.md"
   }
  ]
 }

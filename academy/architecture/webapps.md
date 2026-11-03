@@ -1,8 +1,8 @@
 # Webapps
 
-Every webapp on the site (formerly called themes): 53 in the registry, each served at its own path, each on its own branch or snapshot. The state column is how hard-coded its content is today; the view rule is the selection that will feed its own view database; the wave is its work package. Machine-readable: [architecture.json](architecture.json).
+Every webapp on the site (formerly called themes): 56 in the registry, each served at its own path, each on its own branch or snapshot. The state column is how hard-coded its content is today; the view rule is the selection that will feed its own view database; the wave is its work package. Machine-readable: [architecture.json](architecture.json).
 
-States: BUILT 2 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 4 · MIXED 13 · SNAPSHOT 15.
+States: BUILT 2 · BUILT, 2 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 5 · MIXED 13 · SNAPSHOT 15.
 
 - **DATA-DRIVEN**: pages rendered from the webapp's view of the central catalogue.
 - **GENERATED**: generated on main from repository data files.
@@ -45,6 +45,9 @@ States: BUILT 2 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 4 · MI
 | Cloudflare usage | `/cloudflare/` | The estate's hosting usage as graphs against the free plan (database rows written and read, storage, worker requests, errors and CPU, key-value operations, site traffic), refreshed every 15 minutes; graphs only, no prose (webapp 43 of 59) | branch section/cloudflare, with a same-origin worker route for its live data | its own serverless backend and SQLite database parsed from the hosting account's analytics; WebMCP tools; agent guest book | LIVE | usage series per product against the free-plan limit | standalone webapp, 2 Nov 2026 |
 | Spill | `/spill/` | The protocol an agent follows to submit sourced, in-scope facts from its own conversation with the project lead since its previous spill that the evidence catalogue does not hold; checked items enter the master catalogue first, then the dependent webapps are re-released (webapp 44 of 59) | branch section/spill, with a same-origin worker route for intake and its database | its own SQLite database of submitted items, per-agent spill marks and a guest book; protocol files llms.txt and protocol.json; WebMCP tools | LIVE | items by status: new, queued, accepted, released, declined, duplicate | standalone webapp, 2 Nov 2026 |
 | Analytics | `/analytics/` | Website analytics for the estate's sites as graphs (visits, page views, unique visitors, top pages, referrers, countries, devices, status codes, humans and bots), refreshed every 15 minutes; traffic classes keep fixed colours on every graph (webapp 45 of 59) | branch section/analytics, backed by a module inside the analytics worker | its own serverless backend and SQLite database parsed from the hosting account's traffic analytics; WebMCP tools; agent guest book | LIVE | graphs only, with a legend for the traffic-class colours | standalone webapp, 2 Nov 2026 |
+| Garden Store | `/garden-store/` | Flowers and plants from a Welsh garden centre; each Buy button opens the grower's own shop, never a checkout here (webapp 46 of 59) | branch section/garden-store, with its own worker and database | its own product database | LIVE | product cards with the grower's own buy link | standalone webapp, 2 Nov 2026 |
+| Peekaboo | `/peekaboo/` | Records that appeared, changed or were relabelled in outside catalogues and collections, each with its dated evidence (webapp 47 of 59) | branch section/peekaboo (static snapshot) | its own data file synced from the central catalogue by tag | BUILT, awaiting merge of its menu entry | one card per record observation with its catalogue ids | standalone webapp, 3 Nov 2026 |
+| Theories | `/theories/` | The project's working theories, each linked to its evidence ids in the central catalogue, with what supports and what cuts against it (webapp 48 of 59) | branch section/theories (static snapshot) | its own data file synced from main | BUILT, awaiting merge of its menu entry | one card per theory with its evidence ids | standalone webapp, 3 Nov 2026 |
 
 ## A story to be retold
 
@@ -87,6 +90,7 @@ States: BUILT 2 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 4 · MI
 ## Other areas (not webapps)
 
 - `/academy/`: Agent library, machine-facing, branch agents (titled Cedwyn Academy until 31 Oct 2026)
+- `/academy/handbook/`: The BucklerFamily.Estate handbook for agents (upkeep, architecture, the apex flywheel and its arcs, flywheel registry by arc, WebMCP/MCP/API, Hive, versioning, truth and labels); source branch handbook; machine index webmcp-handbook.json
 - `/hive/`: multi-agent draft review room, branch hive
 - `/learn/`: the old human learning area; its pages now redirect (301) to the Cedwyn Academy webapp on its own subdomain
 - `/_cedwyn/`: shared runtime, header files, versions file, A2UI catalog; scope.js and scope-map.json (Wales / Argentina / Online scope switching, standing orders section 'Scopes')
