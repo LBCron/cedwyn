@@ -5,7 +5,7 @@ a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:
 pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
 th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
 blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../index.html"><b>Agent library</b></a><a href="../SOUL.html">Soul</a><a href="../ONBOARDING.html">Onboarding</a><a href="../ACADEMY/CHECK.html">Check</a><a href="../ACADEMY/WORK.html">Work</a><a href="../MEMORY/index.html">Memory</a><a href="../SKILLS/index.html">Skills</a><a href="../FLYWHEELS/index.html">Flywheels</a><a href="../architecture/index.html">Architecture</a><a href="../HARNESS/index.html">Harness</a><a href="../LESSONS.html">Lessons</a></nav><main><h1>Maintenance loops</h1>
-<p>38 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in <a href="../FLYWHEELS/index.html">FLYWHEELS</a>.</p>
+<p>40 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in <a href="../FLYWHEELS/index.html">FLYWHEELS</a>.</p>
 <h2>The autoresearch pattern</h2>
 <p>Shape: <strong>hypothesis -&gt; smallest change -&gt; measure -&gt; keep or discard</strong>.</p>
 <ul>
@@ -46,10 +46,10 @@ blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}<
   Runner detail: <a href="../FLYWHEELS/email-ingest.html">Email ingest</a></p>
 <p><a id="correspondence"></a></p>
 <h3>Correspondence flywheel</h3>
-<p><strong>Cadence:</strong> every 2 hours at :30, 07:30–23:30 UK<br />
+<p><strong>Cadence:</strong> hourly reply drafts pass, re-review of the oldest open drafts at least every 6 hours, housekeeping daily<br />
 <strong>What it does:</strong> Works out who needs a reply, a chaser, an escalation, a forward or a first contact, and writes one hive draft task per item on the project board; between items it does housekeeping on existing tasks.<br />
 <strong>Inputs:</strong> archived mail (after email ingest); open draft tasks; the drafts engine queue<br />
-<strong>Outputs:</strong> new hive draft tasks; triage notes on unsent tasks when a new fact exists; housekeeping (duplicates, stale fields)<br />
+<strong>Outputs:</strong> new hive draft tasks; triage notes on unsent tasks when a new fact exists; housekeeping (duplicates, stale fields); supplements and corrections to sent emails<br />
 <strong>Areas it touches:</strong> the project board; /hive/ (drafts enter the review queue)<br />
 <strong>Guardrails:</strong> drafts only: never sent, never marked sent by an agent; research and disclosure mail only, never marketing; status values only not-started or completed; one worker at a time (duplicate check by goal prefix).
   Runner detail: <a href="../FLYWHEELS/correspondence.html">Correspondence flywheel</a></p>
@@ -362,6 +362,24 @@ blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}<
 <strong>Areas it touches:</strong> the project's own social accounts<br />
 <strong>Guardrails:</strong> code safety gate on every comment; three comments per platform per day, 45 minutes apart; a block stops the platform for 24 hours and halves its caps; no direct messages, like-spam or unfollows; one worker at a time (duplicate check by goal prefix).
   Runner detail: <a href="../FLYWHEELS/social-engagement.html">Social engagement</a></p>
+<p><a id="forensic-journal"></a></p>
+<h3>Forensic journal</h3>
+<p><strong>Cadence:</strong> every 6 hours<br />
+<strong>What it does:</strong> Adds one objective dated entry per substantive institution reply or page change to the forensic journal, with links to the archived email and page copies, and refreshes each institution's assessment.<br />
+<strong>Inputs:</strong> the mail manifest; watchtower page changes; hand-written objective entries<br />
+<strong>Outputs:</strong> journal entries per institution; refreshed assessments; a metadata-only catalogue page<br />
+<strong>Areas it touches:</strong> /forensic/journal/; /forensic/ (activity journal block on each institution page)<br />
+<strong>Guardrails:</strong> objective wording, good conduct credited as plainly as gaps; catalogue lock: derived pages only, never a record edit; banned-word scan must be empty before commit; one worker at a time (duplicate check by goal prefix).
+  Runner detail: <a href="../FLYWHEELS/forensic-journal.html">Forensic journal</a></p>
+<p><a id="traffic"></a></p>
+<h3>Traffic flywheel</h3>
+<p><strong>Cadence:</strong> daily<br />
+<strong>What it does:</strong> Measures visitors per channel, runs A/B decisions and adds new no-human-in-the-loop traffic channels within platform terms.<br />
+<strong>Inputs:</strong> site analytics; tagged links; the other growth loops' logs<br />
+<strong>Outputs:</strong> posts within caps; blog syndication; A/B decisions; a log row per action<br />
+<strong>Areas it touches:</strong> the project's own social accounts and blog<br />
+<strong>Guardrails:</strong> one account per platform, no spam or bought engagement; case material is never promotion material; zero spend; one worker at a time (duplicate check by goal prefix).
+  Runner detail: <a href="../FLYWHEELS/traffic.html">Traffic flywheel</a></p>
 <h2>Also in the flywheel list</h2>
 <ul>
 <li><a href="../FLYWHEELS/morning-brief.html">Morning brief</a>: daily 08:00 UK; Tell the project lead what finished overnight, mail that needs him, today's calendar and deadlines due soon.</li>

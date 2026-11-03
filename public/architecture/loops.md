@@ -1,6 +1,6 @@
 # Maintenance loops
 
-38 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
+40 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
 
 ## The autoresearch pattern
 
@@ -51,10 +51,10 @@ Details: [Data architecture](data.md).
 <a id="correspondence"></a>
 ### Correspondence flywheel
 
-**Cadence:** every 2 hours at :30, 07:30–23:30 UK  
+**Cadence:** hourly reply drafts pass, re-review of the oldest open drafts at least every 6 hours, housekeeping daily  
 **What it does:** Works out who needs a reply, a chaser, an escalation, a forward or a first contact, and writes one hive draft task per item on the project board; between items it does housekeeping on existing tasks.  
 **Inputs:** archived mail (after email ingest); open draft tasks; the drafts engine queue  
-**Outputs:** new hive draft tasks; triage notes on unsent tasks when a new fact exists; housekeeping (duplicates, stale fields)  
+**Outputs:** new hive draft tasks; triage notes on unsent tasks when a new fact exists; housekeeping (duplicates, stale fields); supplements and corrections to sent emails  
 **Areas it touches:** the project board; /hive/ (drafts enter the review queue)  
 **Guardrails:** drafts only: never sent, never marked sent by an agent; research and disclosure mail only, never marketing; status values only not-started or completed; one worker at a time (duplicate check by goal prefix).
   Runner detail: [Correspondence flywheel](../FLYWHEELS/correspondence.md)
@@ -437,6 +437,28 @@ Details: [Data architecture](data.md).
 **Areas it touches:** the project's own social accounts  
 **Guardrails:** code safety gate on every comment; three comments per platform per day, 45 minutes apart; a block stops the platform for 24 hours and halves its caps; no direct messages, like-spam or unfollows; one worker at a time (duplicate check by goal prefix).
   Runner detail: [Social engagement](../FLYWHEELS/social-engagement.md)
+
+<a id="forensic-journal"></a>
+### Forensic journal
+
+**Cadence:** every 6 hours  
+**What it does:** Adds one objective dated entry per substantive institution reply or page change to the forensic journal, with links to the archived email and page copies, and refreshes each institution's assessment.  
+**Inputs:** the mail manifest; watchtower page changes; hand-written objective entries  
+**Outputs:** journal entries per institution; refreshed assessments; a metadata-only catalogue page  
+**Areas it touches:** /forensic/journal/; /forensic/ (activity journal block on each institution page)  
+**Guardrails:** objective wording, good conduct credited as plainly as gaps; catalogue lock: derived pages only, never a record edit; banned-word scan must be empty before commit; one worker at a time (duplicate check by goal prefix).
+  Runner detail: [Forensic journal](../FLYWHEELS/forensic-journal.md)
+
+<a id="traffic"></a>
+### Traffic flywheel
+
+**Cadence:** daily  
+**What it does:** Measures visitors per channel, runs A/B decisions and adds new no-human-in-the-loop traffic channels within platform terms.  
+**Inputs:** site analytics; tagged links; the other growth loops' logs  
+**Outputs:** posts within caps; blog syndication; A/B decisions; a log row per action  
+**Areas it touches:** the project's own social accounts and blog  
+**Guardrails:** one account per platform, no spam or bought engagement; case material is never promotion material; zero spend; one worker at a time (duplicate check by goal prefix).
+  Runner detail: [Traffic flywheel](../FLYWHEELS/traffic.md)
 
 ## Also in the flywheel list
 
