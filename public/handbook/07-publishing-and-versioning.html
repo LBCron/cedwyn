@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>7. Publishing and versioning · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: 7. Publishing and versioning"><link rel="alternate" type="text/markdown" href="07-publishing-and-versioning.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../index.html"><b>Agent library</b></a><a href="../SOUL.html">Soul</a><a href="../ONBOARDING.html">Onboarding</a><a href="../ACADEMY/CHECK.html">Check</a><a href="../ACADEMY/WORK.html">Work</a><a href="../MEMORY/index.html">Memory</a><a href="../SKILLS/index.html">Skills</a><a href="../FLYWHEELS/index.html">Flywheels</a><a href="../architecture/index.html">Architecture</a><a href="../HARNESS/index.html">Harness</a><a href="../LESSONS.html">Lessons</a></nav><main><h1>7. Publishing and versioning</h1>
+<p>Arcs A6 (present) and A7 (re-release) of the apex loop.</p>
+<p>Publishing is a step in the flywheel, never the end of it. Every release can be superseded by a better one when the evidence improves.</p>
+<h2>The content ladder</h2>
+<p>evidence page → blog post → e-book section → documentary scene brief → merchandise concept (draft only) → guided-tour stop → museum interpretation panel → map, game or webapp feature.</p>
+<p>The <strong>story engine</strong> target: one confirmed finding yields all five of the first assets within 24 hours, each traceable to a catalogued evidence page.</p>
+<h2>Semantic versions for e-books and reports</h2>
+<ul>
+<li><strong>MAJOR</strong>: a structural change or a reinterpretation that changes a conclusion (for example a title chain re-ordered because a new instrument was found).</li>
+<li><strong>MINOR</strong>: new chapters, new evidence, new parcels covered.</li>
+<li><strong>PATCH</strong>: corrections, transcription fixes, wording, links.</li>
+<li>Every release carries a <strong>"What changed in the evidence"</strong> note and a link to the correction log.</li>
+<li>Earlier versions stay available and are marked superseded, never deleted.</li>
+<li>Quality gates before any release: every sentence traces to a catalogued page; labels intact; public-text rules (page 8) satisfied; the privacy scrub passes; a second agent reads the diff.</li>
+</ul>
+<h2>The site's version standard (LIVE)</h2>
+<p>Every versioned item on the site (e-books, documentary cuts, courses, any piece that gains versions) follows <code>docs/VERSION-STANDARD.md</code> on <code>main</code> (version 1.1.0, 2 Nov 2026):</p>
+<ul>
+<li>Versions are semantic and listed oldest first; the first is always <code>v0.0.1</code> and it is always free.</li>
+<li>Only the latest version's price is stored; each earlier version is £4.99 less per step back, never below £0.</li>
+<li>An (i) button beside every version drop-down opens a table of the changelog: version, date, what changed, pages or length, price.</li>
+<li>Data in <code>web/_cedwyn/version-gate.json</code>; behaviour in <code>web/_cedwyn/version-gate.js</code>; the audit <code>tools/version_audit.py</code> runs every six hours and corrects minor drift.</li>
+<li>Edition labels come from these data files, never typed by hand into pages.</li>
+</ul>
+<h2>Documentary scenes (real time)</h2>
+<ul>
+<li>Made scene by scene as each scene's evidence anchors are complete: one row per scene (anchors, languages with status per make, gate state, next no-spend step).</li>
+<li><strong>Period action only</strong>: no narrator, no fourth wall; native Welsh, English and Spanish makes (not machine-translated overlays).</li>
+<li><strong>Gate before spend:</strong> a render gate must pass before any paid render. The no-spend steps (script review, recut without captions, frame audit, dry run) are done first and count as progress.</li>
+<li>A scene never presents interpretation or a contested assertion as established fact; the scene brief names the evidence page behind each action.</li>
+<li>Scenes are re-cut and re-released when a source improves; the scene bible records which version each release used.</li>
+</ul>
+<h2>E-books</h2>
+<p>A series, one chapter section per finding where it fits the story. Original art, own text or public-domain material only. Re-released under new semantic versions; the front matter lists the evidence cut-off date of that version.</p>
+<h2>Guided tour in Wales</h2>
+<p>Each stop is tied to a parcel (parcel number and tithe or OS reference), a set of catalogued records, and a plain-language panel text. Stops are drafted from the reconstructed parcel chain, so they improve when the chain does. Public access, safety and landowner permissions are separate workstreams and need the owner's decisions.</p>
+<h2>Museum in Argentina</h2>
+<p>A separate project from the evidence work: the proposed Great House Farm II replica and museum concept in Patagonia. It draws on the same central record for its interpretation panels and on shared artefacts where any can lawfully move. Keep it conceptually and legally separate from the historical Great House Farm in Wales. No land purchase, deposit, contract or funding representation without the owner's explicit approval and independent professional advice.</p>
+<h2>Maps, games and webapps (the online dimension)</h2>
+<p>Each webapp holds one of the 59 planned slots ("NN of 59", page 2). Its primary purpose may be a game, a gallery, a map or a film; its secondary duty is to show its parcel's reconstructed title chain and activity from the central record. Build them so they improve automatically when the record improves (read through the API; never copy evidence in).</p>
+<h2>Merchandise and partner shops</h2>
+<p>Original artwork, redrawn maps and own text, Welsh phrases and public-domain material only. Never reproduce newspaper cuttings, photographs or third-party works on products. Nothing is listed or sold until the owner agrees. Interpretation and contested assertion never appear as fact on a product. Partner plant links: link out only; no payments taken, no baskets held, on a partner's behalf.</p>
+<h2>Transparency reporting</h2>
+<p>A weekly digest (draft for the owner to send, opt-in recipients only, an unsubscribe route in every email) and a public progress page built from the same figures: sent this week, replies received, replies overdue, new evidence pages, rung changes, next 14 days of deadlines, dead ends logged (honest misses), plant of the week, e-book and documentary updates.</p>
+<h2>Corrections</h2>
+<p>A public correction log exists for every release. A correction is added, never silently edited in. Where a finding is withdrawn, the page states what was withdrawn, when, and why.</p>
+<h2>Changelog (append only)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Who</th>
+<th>What changed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1.0</td>
+<td>3 Nov 2026</td>
+<td>Claude (Hive seat 4)</td>
+<td>First publishing page.</td>
+</tr>
+<tr>
+<td>0.2.0</td>
+<td>3 Nov 2026</td>
+<td>Deployer seat</td>
+<td>Added the site's live version standard (v0.0.1 free, latest paid, £4.99 less per step back, (i) changelog table, data files, six-hourly audit); museum wording aligned with the Patagonia concept; webapp slots as "NN of 59"; arcs A6–A7 named.</td>
+</tr>
+</tbody>
+</table></div><p class="raw">Raw Markdown: <a href="07-publishing-and-versioning.md">07-publishing-and-versioning.md</a> · version and changes: <a href="../CHANGELOG.html">changelog</a> · machine index: <a href="../agents.json">agents.json</a></p></main></body></html>
