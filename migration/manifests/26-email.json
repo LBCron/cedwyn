@@ -1,0 +1,188 @@
+{
+ "schema": "cedwyn-webapp/1.0.0",
+ "id": "email",
+ "uid": "APP-26",
+ "slot": {
+  "n": 26,
+  "of": 59,
+  "label": "26 of 59"
+ },
+ "status": "live",
+ "section": "Online",
+ "sections_shown": [
+  "Online"
+ ],
+ "group": "research",
+ "title": {
+  "en": "Post Office & Calendar",
+  "cy": "Swyddfa’r Post",
+  "es": "La Oficina de Correos"
+ },
+ "description": "Correspondence and calendar.",
+ "path": "/email/",
+ "aliases": [
+  "/emails/"
+ ],
+ "legacy_hosts": [
+  "email.bucklerfamily.estate"
+ ],
+ "branch": {
+  "name": "emails",
+  "exists": true,
+  "standard_name": "webapp/email",
+  "source_dir": null,
+  "other_branches": [
+   "email-archive"
+  ]
+ },
+ "front_end": {
+  "kind": "static",
+  "hosting": "cloudflare_pages",
+  "project": "cedwyn (cedwyn-274.pages.dev, production branch site)",
+  "build": "build-cedwyn (GitHub Actions) writes branch site",
+  "worker_on_read": false,
+  "notes": "apex bucklerfamily.estate reads run the router Worker until the static-first cutover (PR #157)"
+ },
+ "header": {
+  "contract": "cedwyn-header/1",
+  "nav_source": "/areas.json#nav",
+  "prev_next": true,
+  "label_format": "{n} of 59",
+  "languages": [
+   "en",
+   "cy",
+   "es"
+  ],
+  "scripts": [
+   "/_cedwyn/runtime.js",
+   "/_cedwyn/ghf/ghf-boot.js"
+  ],
+  "status": "legacy"
+ },
+ "data": {
+  "slice": "correspondence",
+  "query": {
+   "kinds": [
+    "correspondence",
+    "artifact"
+   ],
+   "uid_prefixes": [
+    "C",
+    "AR"
+   ],
+   "tags": [],
+   "where": "public threads only: org, subject, dates, direction; never bodies of private mail",
+   "public_only": true
+  },
+  "registers": [
+   "work/disclosure/gmail-manifest.json (public fields only)",
+   "data/core/records/foi-response-attachments.json"
+  ],
+  "catalogue_status": "partly"
+ },
+ "local_store": {
+  "static": [
+   "/email/_data/correspondence.json",
+   "/email/api/v1/index.json"
+  ],
+  "client_cache": {
+   "enabled": true,
+   "store": "indexeddb",
+   "strategy": "stale-while-revalidate",
+   "max_age_s": 3600,
+   "revalidate_with": "/email/api/v1/index.json rev",
+   "pull_from": "/catalogue-db/ static export (never a Worker)"
+  }
+ },
+ "api": {
+  "base": "/email/api/v1/",
+  "outputs": [
+   {
+    "path": "/email/api/v1/index.json",
+    "format": "json",
+    "description": "list + counts + rev + generated_at"
+   },
+   {
+    "path": "/email/api/v1/items/{uid}.json",
+    "format": "json",
+    "description": "one record in this app's presentation, keyed by catalogue UID"
+   },
+   {
+    "path": "/email/api/v1/feed.json",
+    "format": "jsonfeed",
+    "description": "JSON Feed 1.1, newest first"
+   },
+   {
+    "path": "/email/api/v1/feed.xml",
+    "format": "atom",
+    "description": "Atom 1.0 feed"
+   },
+   {
+    "path": "/email/api/v1/rss.xml",
+    "format": "rss",
+    "description": "RSS 2.0 feed"
+   },
+   {
+    "path": "/email/api/v1/data.xml",
+    "format": "xml",
+    "description": "the whole slice as XML"
+   }
+  ],
+  "cors": "*",
+  "cache_control": "public, max-age=300",
+  "listed_in": "/api/index.json"
+ },
+ "consumes": [],
+ "consumed_by": [
+  "wiki",
+  "authorities",
+  "wdtk",
+  "projects",
+  "app",
+  "dartboard",
+  "whattheydontsay",
+  "that-old-chestnut",
+  "forensic"
+ ],
+ "external_sources": [
+  {
+   "name": "Gmail",
+   "adapter": "work/email-ingest/tools/ingest.py (read-only)",
+   "cadence": "2-hourly 07-23 London",
+   "auth": "box_connected_app",
+   "writes": "/email/_data/threads.json"
+  }
+ ],
+ "dynamic_endpoints": [],
+ "migration": {
+  "phase": "branch",
+  "phases_done": [
+   "inventory",
+   "manifest",
+   "branch"
+  ],
+  "rag": "amber",
+  "next_action": "write the slice entry in data/core/slices.json and generate /email/api/v1/",
+  "blockers": [
+   "data not (fully) in the central catalogue: registers listed under data.registers fold in with the owner's approval"
+  ],
+  "prs": [],
+  "pilot": false
+ },
+ "owner": "Cedwyn editors (owner approval for catalogue changes)",
+ "version": "0.1.0",
+ "changelog": [
+  {
+   "version": "0.1.0",
+   "date": "2026-11-03",
+   "summary": "Manifest created from the live tour inventory (/areas.json nav), themes.json, data/site-areas.json and data/halves.json 1.4.0."
+  }
+ ],
+ "sources": [
+  "/areas.json nav (cedwyn-274.pages.dev, read 2026-11-03)",
+  "themes.json@main",
+  "data/site-areas.json@main",
+  "data/halves.json@PR#154 (1.4.0)",
+  "cedwyn branch list (git ls-remote)"
+ ]
+}
