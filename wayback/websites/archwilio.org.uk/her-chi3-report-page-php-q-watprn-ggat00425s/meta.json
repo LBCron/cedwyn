@@ -8,8 +8,8 @@
  "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
  "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
  "title": "Heneb Historic Environment Record: GGAT00425s",
- "last_captured": "2026-10-30T17:10:17Z",
- "current_version": "v1.1.0",
+ "last_captured": "2026-11-04T06:51:39Z",
+ "current_version": "v1.2.0",
  "versions": [
   {
    "version": "v1.0.0",
@@ -34,6 +34,18 @@
    "file": "v1.1.0.html",
    "screenshot": null,
    "published_utc": "2026-10-30T17:13:26Z"
+  },
+  {
+   "version": "v1.2.0",
+   "change": "text",
+   "captured_utc": "2026-11-04T06:51:39Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "9eda70754a4def175dff6f767502f814ef3120a1142a2181f64feea88768316a",
+   "markup_sha256": "05716e974ec74dd69395108e599647dec524a780492e5b4ed19d940c6473c571",
+   "file": "v1.2.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:02:29Z"
   }
  ],
  "archive_status": "ok: captured from Tab's machine"
