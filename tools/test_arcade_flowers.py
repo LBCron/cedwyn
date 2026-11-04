@@ -38,3 +38,19 @@ with tempfile.TemporaryDirectory() as td:
  except FileNotFoundError:pass
  else:raise AssertionError('Missing flower image must fail build')
  print('Post-dedupe asset rewrite and missing-asset guard PASS')
+
+# Real final serving pass: catalogue images must remain files on a first visit.
+import dbserve, hashlib
+for prefix in ('/nft-art/art/', '/_blob/'):
+ with tempfile.TemporaryDirectory() as td:
+  d=pathlib.Path(td);m=d/'_cedwyn/flower-gallery/artworks.json';m.parent.mkdir(parents=True)
+  paths=[prefix+'a.webp',prefix+'a-t.webp']
+  m.write_text(json.dumps({'artworks':[dict(zip(('image','thumb'),paths))]}))
+  (d/'db').mkdir();b=[];indexes={}
+  for path in paths:
+   f=d/path.lstrip('/');f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(b'test')
+   indexes[path]=len(b);b.append([4,0,0,[],'image/webp',hashlib.sha256(b'test').hexdigest()[:16]])
+  (d/'db/blobmap.json').write_text(json.dumps({'paths':indexes,'blobs':b,'v':'test'}))
+  dbserve.DIST=d;dbserve.main()
+  assert all((d/p.lstrip('/')).is_file() for p in paths)
+ print('Real dbserve keeps first-visit '+prefix+' artwork PASS')

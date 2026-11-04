@@ -11,3 +11,5 @@ Arcade waits for iframe load and offers a direct-opening fallback after 15 secon
 Run `python3 tools/test_arcade_flowers.py` and `node --check web/_cedwyn/flower-gallery/gallery.js`. Full central build and deployed route checks remain required for release.
 
 Source: existing Garden Gallery catalogue at nft-art commit 34a068d; curated records in `web/_cedwyn/flower-gallery/artworks.json`.
+
+The final catalogue serving pass keeps all curated image/thumb targets as static files for first visits and PNG downloads, and fails if any target is missing after serving preparation.

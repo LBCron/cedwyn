@@ -40,6 +40,19 @@ def sha16(f):
     with open(f, 'rb') as fh:
         for c in iter(lambda: fh.read(1 << 20), b''): h.update(c)
     return h.hexdigest()[:16]
+def keep_flower_gallery(dist, keep):
+    """The data-driven flower galleries load without a service worker on first visit."""
+    manifest = dist / '_cedwyn' / 'flower-gallery' / 'artworks.json'
+    if not manifest.is_file():
+        return []
+    artwork = json.loads(manifest.read_text(encoding='utf-8'))['artworks']
+    paths = sorted({a[field] for a in artwork for field in ('image', 'thumb')})
+    for path in paths:
+        if not path.startswith(('/nft-art/art/', '/_blob/')) or not (dist / path.lstrip('/')).is_file():
+            raise FileNotFoundError('Missing final flower gallery asset: ' + path)
+        keep[path] = 'flower gallery first-visit image/download'
+    return paths
+
 def main():
     bmf = DIST / 'db' / 'blobmap.json'
     if not bmf.exists(): print('dbserve: no blobmap, nothing to do'); return 0
@@ -92,6 +105,7 @@ def main():
                     r = resolve(rel, ic.get('src', ''))
                     if r: keep.setdefault(r, 'web manifest icon')
             except Exception: pass
+    flower_paths = keep_flower_gallery(DIST, keep)
     rep = collections.Counter(); kept_why = collections.Counter(); changed = []; dropped_bytes = collections.Counter(); kept_examples = []
     for path in sorted(paths):
         f = DIST / path.lstrip('/')
@@ -112,6 +126,9 @@ def main():
             if len(kept_examples) < 20: kept_examples.append([path, why])
             continue
         n = f.stat().st_size; f.unlink(); rep['dropped_' + kind(path)] += 1; dropped_bytes[kind(path)] += n
+    for path in flower_paths:
+        if not (DIST / path.lstrip('/')).is_file():
+            raise FileNotFoundError('Flower gallery asset removed during final serving pass: ' + path)
     for d in sorted((p for p in DIST.rglob('*') if p.is_dir()), key=lambda x: -len(x.parts)):
         try:
             if not any(d.iterdir()): d.rmdir()
