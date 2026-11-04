@@ -4,8 +4,8 @@
   "Hive": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-hive.jpg",
   "Home": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-home.jpg"
  },
- "pages_changed": 8697,
- "tags_added": 141463,
+ "pages_changed": 8698,
+ "tags_added": 141479,
  "pages_already_complete": 0,
  "pillow": true,
  "font": true,
@@ -24,6 +24,7 @@
   "Catalogue": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-catalogue-da33f5c2.jpg",
   "Ask the Archive": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-ask-the-archive-ffea3efe.jpg",
   "Chessboard": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-chessboard-4115feac.jpg",
+  "Chubut H3": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-chubut-h3-bd4d5f41.jpg",
   "Cloudflare": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-cloudflare-46ba6e89.jpg",
   "Court Drills": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-court-drills-0fb49f84.jpg",
   "Grammar House": "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-grammar-house-ea9bddc7.jpg",
@@ -136,6 +137,10 @@
   "chess": [
    "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Chessboard",
    "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-chessboard-4115feac.jpg"
+  ],
+  "chubut-h3": [
+   "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Chubut H3",
+   "https://cedwyn.bucklerfamily.estate/_cedwyn/og/share-chubut-h3-bd4d5f41.jpg"
   ],
   "cloudflare": [
    "Williams-Bucklers, Ty Mawr, Cedwyn \u2013 Cloudflare",

@@ -55,7 +55,9 @@
    "es": "La Sala de Mapas",
    "group": "artifacts",
    "aliases": [],
-   "skip_in": [],
+   "skip_in": [
+    "wales"
+   ],
    "built": true,
    "slot": 4,
    "of": 59
@@ -629,7 +631,9 @@
    "es": "La Sala de Mapas",
    "group": "artifacts",
    "aliases": [],
-   "skip_in": [],
+   "skip_in": [
+    "wales"
+   ],
    "built": true,
    "slot": 4,
    "of": 59,
@@ -1309,7 +1313,9 @@
    "es": "Tithe H3",
    "group": "artifacts",
    "aliases": [],
-   "skip_in": [],
+   "skip_in": [
+    "patagonia"
+   ],
    "built": true,
    "slot": 42,
    "of": 59,
@@ -1350,7 +1356,10 @@
    "es": "Spill",
    "group": "interactive",
    "aliases": [],
-   "skip_in": [],
+   "skip_in": [
+    "wales",
+    "patagonia"
+   ],
    "built": true,
    "slot": 44,
    "of": 59,
@@ -1369,7 +1378,10 @@
    "es": "Analítica",
    "group": "interactive",
    "aliases": [],
-   "skip_in": [],
+   "skip_in": [
+    "wales",
+    "patagonia"
+   ],
    "built": true,
    "slot": 45,
    "of": 59,
@@ -1377,6 +1389,27 @@
    "worker": false,
    "apex": "/analytics/",
    "href": "/analytics/",
+   "sec": false
+  },
+  {
+   "id": "chubut-h3",
+   "path": "/chubut-h3/",
+   "src": "/chubut-h3/",
+   "title": "Chubut H3",
+   "cy": "Chubut H3",
+   "es": "Chubut H3",
+   "group": "artifacts",
+   "aliases": [],
+   "skip_in": [
+    "wales"
+   ],
+   "built": true,
+   "slot": 46,
+   "of": 59,
+   "webapp": true,
+   "worker": false,
+   "apex": "/chubut-h3/",
+   "href": "/chubut-h3/",
    "sec": false
   }
  ]
