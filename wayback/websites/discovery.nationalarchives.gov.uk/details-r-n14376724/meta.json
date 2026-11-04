@@ -6,8 +6,8 @@
  "path": "/websites/discovery.nationalarchives.gov.uk/details-r-n14376724/",
  "latest": "/websites/discovery.nationalarchives.gov.uk/details-r-n14376724/latest.html",
  "first_captured": "2026-10-24T14:45:12Z",
- "last_captured": "2026-10-30T06:37:41Z",
- "current_version": "v1.0.2",
+ "last_captured": "2026-11-04T06:56:44Z",
+ "current_version": "v1.0.3",
  "versions": [
   {
    "version": "v1.0.0",
@@ -44,6 +44,18 @@
    "file": "v1.0.2.html",
    "screenshot": "screenshot-v1.0.2.jpg",
    "published_utc": "2026-10-30T06:42:53Z"
+  },
+  {
+   "version": "v1.0.3",
+   "change": "markup",
+   "captured_utc": "2026-11-04T06:56:44Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "67fdd6fb23976aedef54d81c1796c411d29d4e928a156676658417b60e435c04",
+   "markup_sha256": "e1784cde446a817a6c61291556f4f3fcf404cc4479c53def870ca7499c57e2b1",
+   "file": "v1.0.3.html",
+   "screenshot": "screenshot-v1.0.3.jpg",
+   "published_utc": "2026-11-04T07:02:51Z"
   }
  ],
  "versioning": "first capture v1.0.0; readable-text change = minor; markup/layout-only change = patch; identical capture = no new version",
