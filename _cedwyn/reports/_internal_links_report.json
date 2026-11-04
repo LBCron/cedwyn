@@ -1,15 +1,15 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9254,
+  "pages_scanned": 9259,
   "references_checked": {
-    "resource": 211229,
-    "nav": 474591
+    "resource": 211305,
+    "nav": 474760
   },
-  "database_backed_paths": 7309,
-  "unique_missing_destinations": 6428,
-  "missing_references": 59847,
-  "missing_navigation_references": 37138,
-  "missing_resource_references": 22709,
+  "database_backed_paths": 7383,
+  "unique_missing_destinations": 6422,
+  "missing_references": 52882,
+  "missing_navigation_references": 37146,
+  "missing_resource_references": 15736,
   "unique_broken_fragments": 1832,
   "broken_fragment_references": 3394,
   "form_or_endpoint_actions_not_checked": {
@@ -19,7 +19,7 @@
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9225,
+      "references": 9230,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9221,
+      "references": 9226,
       "examples": [
         {
           "from": "/",
@@ -73,7 +73,7 @@
     {
       "kind": "resource",
       "path": "/blog/rss.xml",
-      "references": 6602,
+      "references": 6607,
       "examples": [
         {
           "from": "/review/",
@@ -100,7 +100,7 @@
     {
       "kind": "resource",
       "path": "/blog/atom.xml",
-      "references": 6602,
+      "references": 6607,
       "examples": [
         {
           "from": "/review/",
@@ -121,33 +121,6 @@
           "from": "/cyberspace/",
           "attribute": "link[href]",
           "url": "/blog/atom.xml"
-        }
-      ]
-    },
-    {
-      "kind": "resource",
-      "path": "/blog/feed.json",
-      "references": 6602,
-      "examples": [
-        {
-          "from": "/review/",
-          "attribute": "link[href]",
-          "url": "/blog/feed.json"
-        },
-        {
-          "from": "/directory/",
-          "attribute": "link[href]",
-          "url": "/blog/feed.json"
-        },
-        {
-          "from": "/app/",
-          "attribute": "link[href]",
-          "url": "/blog/feed.json"
-        },
-        {
-          "from": "/cyberspace/",
-          "attribute": "link[href]",
-          "url": "/blog/feed.json"
         }
       ]
     },
@@ -260,60 +233,6 @@
       ]
     },
     {
-      "kind": "resource",
-      "path": "/fcg/assets/theme.css",
-      "references": 141,
-      "examples": [
-        {
-          "from": "/fcg/first-seen.html",
-          "attribute": "link[href]",
-          "url": "/fcg/assets/theme.css?v=20261020a"
-        },
-        {
-          "from": "/fcg/mandate.html",
-          "attribute": "link[href]",
-          "url": "/fcg/assets/theme.css?v=20261020a"
-        },
-        {
-          "from": "/fcg/case.html",
-          "attribute": "link[href]",
-          "url": "/fcg/assets/theme.css?v=20261020a"
-        },
-        {
-          "from": "/fcg/",
-          "attribute": "link[href]",
-          "url": "/fcg/assets/theme.css?v=20261020a"
-        }
-      ]
-    },
-    {
-      "kind": "resource",
-      "path": "/fcg/assets/theme.js",
-      "references": 141,
-      "examples": [
-        {
-          "from": "/fcg/first-seen.html",
-          "attribute": "script[src]",
-          "url": "/fcg/assets/theme.js?v=20261020a"
-        },
-        {
-          "from": "/fcg/mandate.html",
-          "attribute": "script[src]",
-          "url": "/fcg/assets/theme.js?v=20261020a"
-        },
-        {
-          "from": "/fcg/case.html",
-          "attribute": "script[src]",
-          "url": "/fcg/assets/theme.js?v=20261020a"
-        },
-        {
-          "from": "/fcg/",
-          "attribute": "script[src]",
-          "url": "/fcg/assets/theme.js?v=20261020a"
-        }
-      ]
-    },
-    {
       "kind": "nav",
       "path": "/forensic/wiki/records-access-chronology/foi-reply-register/",
       "references": 133,
@@ -364,33 +283,6 @@
           "from": "/forensic/parliamentary-archives/",
           "attribute": "a[href]",
           "url": "/forensic/wiki/editing-protocol/"
-        }
-      ]
-    },
-    {
-      "kind": "resource",
-      "path": "/fb/m/social.js",
-      "references": 99,
-      "examples": [
-        {
-          "from": "/fb/timeline.html",
-          "attribute": "script[src]",
-          "url": "/fb/m/social.js"
-        },
-        {
-          "from": "/fb/photos.html",
-          "attribute": "script[src]",
-          "url": "/fb/m/social.js"
-        },
-        {
-          "from": "/fb/about.html",
-          "attribute": "script[src]",
-          "url": "/fb/m/social.js"
-        },
-        {
-          "from": "/fb/api/",
-          "attribute": "script[src]",
-          "url": "/fb/m/social.js"
         }
       ]
     },
@@ -908,33 +800,6 @@
       ]
     },
     {
-      "kind": "nav",
-      "path": "/research/>*.html",
-      "references": 36,
-      "examples": [
-        {
-          "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
-          "attribute": "a[href]",
-          "url": "/research/%3E%2A.html"
-        },
-        {
-          "from": "/research/evidence/ev-0049-mary-williams-plea-ownership-pleadings/",
-          "attribute": "a[href]",
-          "url": "/research/%3E%2A.html"
-        },
-        {
-          "from": "/research/evidence/ev-0108-south-wales-echo-bp-demolition-anger/",
-          "attribute": "a[href]",
-          "url": "/research/%3E%2A.html"
-        },
-        {
-          "from": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/",
-          "attribute": "a[href]",
-          "url": "/research/%3E%2A.html"
-        }
-      ]
-    },
-    {
       "kind": "resource",
       "path": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/assets/img/user1-128x128.jpg",
       "references": 33,
@@ -958,6 +823,33 @@
           "from": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/deletable_index2.html",
           "attribute": "img[src]",
           "url": "./assets/img/user1-128x128.jpg"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/research/>*.html",
+      "references": 33,
+      "examples": [
+        {
+          "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
+          "attribute": "a[href]",
+          "url": "/research/%3E%2A.html"
+        },
+        {
+          "from": "/research/evidence/ev-0049-mary-williams-plea-ownership-pleadings/",
+          "attribute": "a[href]",
+          "url": "/research/%3E%2A.html"
+        },
+        {
+          "from": "/research/evidence/ev-0108-south-wales-echo-bp-demolition-anger/",
+          "attribute": "a[href]",
+          "url": "/research/%3E%2A.html"
+        },
+        {
+          "from": "/research/evidence/ev-0044-vg41-village-green-registration-1970/",
+          "attribute": "a[href]",
+          "url": "/research/%3E%2A.html"
         }
       ]
     },
@@ -4063,6 +3955,114 @@
           "from": "/docs/ghf_wiki/ot_developerguide/latest/html/en/",
           "attribute": "a[href]",
           "url": "1-record.html#preferred-information-density-convention"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#name-and-status-timeline"
+        },
+        {
+          "from": "/docs/ghf_wiki/tl_twomarybucklersnameidentitytimeline/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#when-two-women-could-each-be-mary-buckler"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#what-the-reported-judgment-identifies"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#lead-register"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#thread-index"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#thread-6-internal-review-1188-26-of-foi-719-26"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#before-after-record"
+        },
+        {
+          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#change-log-addendum-21-october-2026"
         }
       ]
     }

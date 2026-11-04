@@ -3,10 +3,10 @@
  "rewrites": {
   "line-of-title": 10,
   "the-phrase": 3,
+  "generic-1547-lease": 31,
   "ev3-title": 12,
   "a-1547-1000": 8,
   "ig-label": 2,
-  "generic-1547-lease": 23,
   "written-record-1552": 13,
   "tl-1547-title": 3,
   "tl-1552-title": 6,
@@ -21,7 +21,7 @@
   "cydfin-deeds": 1,
   "b-1547-deeds": 1,
   "deeds-leases-span": 1,
-  "generic-1547-lease-art": 14,
+  "generic-1547-lease-art": 17,
   "ebook-heading": 3,
   "one-farm": 1,
   "d219-row-date": 1,
@@ -36,7 +36,7 @@
   "d219-describes": 2,
   "major-lead": 2
  },
- "files_changed": 88,
+ "files_changed": 92,
  "notices": 0,
  "notice_pages": []
 }
