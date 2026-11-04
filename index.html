@@ -6,9 +6,10 @@
 <title>Wales in 3D · Llandough, Leckwith and the Cedwyn estate</title>
 <meta name="description" content="A 3D model of Llandough and Leckwith built from Welsh Government LiDAR terrain, OpenStreetMap and the 1841 tithe parcels, with contour lines, real sun and sky.">
 <meta name="theme-color" content="#1b2330">
-<link rel="stylesheet" href="wales-3d.css?v=0.1.0">
+<link rel="stylesheet" href="wales-3d.css?v=0.1.0"><script src="/_cedwyn/ghf/ghf-boot.js?v=2.1.8"></script>
 </head>
-<body>
+<body class="w3d">
+<main class="w3dw" data-scope="wales online">
 <div id="w3d" data-version="0.1.0">
   <canvas id="w3dc" aria-label="3D view of Llandough and Leckwith"></canvas>
   <div id="w3dtop">
@@ -40,6 +41,7 @@
     Contours are drawn from the LiDAR terrain every 2 m, bold every 10 m. Heights are metres above Ordnance Datum (Newlyn).
   </details></footer>
 </div>
+</main>
 <script type="module" src="wales-3d.js?v=0.1.0"></script>
 </body>
 </html>
