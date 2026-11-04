@@ -2,13 +2,13 @@
   "audit": "Cedwyn internal HTML/CSS links and fragments",
   "pages_scanned": 9344,
   "references_checked": {
-    "resource": 216893,
-    "nav": 478042
+    "resource": 216895,
+    "nav": 478143
   },
-  "database_backed_paths": 7441,
-  "unique_missing_destinations": 6423,
-  "missing_references": 53156,
-  "missing_navigation_references": 37226,
+  "database_backed_paths": 7437,
+  "unique_missing_destinations": 6402,
+  "missing_references": 53137,
+  "missing_navigation_references": 37207,
   "missing_resource_references": 15930,
   "unique_broken_fragments": 1834,
   "broken_fragment_references": 3562,
@@ -396,33 +396,6 @@
     },
     {
       "kind": "nav",
-      "path": "/forensic/wayback/go/",
-      "references": 78,
-      "examples": [
-        {
-          "from": "/forensic/journal/national-archives/",
-          "attribute": "a[href]",
-          "url": "/forensic/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Fdiscovery.nationalarchives.gov.uk%2Fllandough-cogan-and-leckwith-p-7152445.v1.0.1.html"
-        },
-        {
-          "from": "/forensic/journal/national-archives/",
-          "attribute": "a[href]",
-          "url": "/forensic/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Fdiscovery.nationalarchives.gov.uk%2Fllandough-cogan-and-leckwith-p-7152445.v1.1.0.html"
-        },
-        {
-          "from": "/forensic/journal/rcahmw/",
-          "attribute": "a[href]",
-          "url": "/forensic/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Fcoflein.gov.uk%2Fty-mawr-great-house-farm-6048944.v1.1.0.html"
-        },
-        {
-          "from": "/forensic/journal/rcahmw/",
-          "attribute": "a[href]",
-          "url": "/forensic/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Fcoflein.gov.uk%2Fty-mawr-great-house-farm-6048944.v1.2.0.html"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
       "path": "/catalogue/",
       "references": 73,
       "examples": [
@@ -472,6 +445,33 @@
           "from": "/research/artifacts/ghf-e106-r24-a1/",
           "attribute": "a[href]",
           "url": "/research/whattheydontsay/"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/forensic/wayback/go/",
+      "references": 54,
+      "examples": [
+        {
+          "from": "/forensic/journal/national-archives/",
+          "attribute": "a[href]",
+          "url": "/forensic/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Fdiscovery.nationalarchives.gov.uk%2Fllandough-cogan-and-leckwith-p-7152445.v1.0.1.html"
+        },
+        {
+          "from": "/forensic/journal/national-archives/",
+          "attribute": "a[href]",
+          "url": "/forensic/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Fdiscovery.nationalarchives.gov.uk%2Fllandough-cogan-and-leckwith-p-7152445.v1.1.0.html"
+        },
+        {
+          "from": "/forensic/journal/rcahmw/",
+          "attribute": "a[href]",
+          "url": "/forensic/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Fcoflein.gov.uk%2Fty-mawr-great-house-farm-6048944.v1.1.0.html"
+        },
+        {
+          "from": "/forensic/journal/rcahmw/",
+          "attribute": "a[href]",
+          "url": "/forensic/wayback/go/?u=https%3A%2F%2Fwayback-html.bucklerfamily.estate%2Fcoflein.gov.uk%2Fty-mawr-great-house-farm-6048944.v1.2.0.html"
         }
       ]
     },
