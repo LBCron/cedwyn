@@ -38,7 +38,7 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:normal;line-hei
 .card{border:1px solid var(--wiki-soft-border);background:var(--wiki-paper);padding:.85rem;min-width:0}.meta{font-size:.82rem;color:var(--wiki-muted)}.card p{margin:.4rem 0;overflow-wrap:anywhere}
 button{font:inherit;border:1px solid var(--wiki-border);padding:.45rem .7rem;background:var(--wiki-paper);color:inherit;cursor:pointer}button[aria-pressed="true"]{border-bottom:3px solid var(--wiki-link);font-weight:bold}
 .tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0}
-.frame{display:block;width:100%;height:min(76vh,900px);min-height:480px;border:1px solid var(--wiki-soft-border);background:var(--wiki-paper)}
+[hidden]{display:none!important}.arcade-loading{padding:16px;color:var(--wiki-muted)}.arcade-loading::before{content:"";display:inline-block;width:16px;height:16px;border:2px solid var(--wiki-soft-border);border-top-color:var(--wiki-link);border-radius:50%;margin-right:10px;animation:arcade-spin 1s linear infinite}@keyframes arcade-spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.arcade-loading::before{animation:none}}.frame{display:block;width:100%;height:min(76vh,900px);min-height:480px;border:1px solid var(--wiki-soft-border);background:var(--wiki-paper)}
 code{overflow-wrap:anywhere}
 </style>
 </head><body><main>''' + body + '''</main></body></html>'''
@@ -70,7 +70,7 @@ def render_area_index(doc):
         '<p class="lede">The website currently has %d source themes. This index groups them into %d visitor-facing areas,' % (ns, n) + ' keeping legacy routes available so old links continue to work. Each slot is an editorial prompt for serendipitous browsing, not a historical plot number or a claim that the website area occupies that land.</p>' +
         '<div class="note"><strong>Parcel matching is not yet established.</strong> The c.1841 tithe apportionment identifies 36 plots occupied by John Williams, but the original schedule and map have not yet been checked row-by-row against the proposed website-area pairings. No slot below should be read as a verified tithe number. Start with ' +
         a(EV_LINK, "EV-0215, the tithe artifact") + ' and replace an editorial slot with an actual plot number only after checking the source image and area row.</div>' +
-        '<div class="nav">' + a("/wiki/reference/", "Wiki references: names and dictionary") + a("/arcade/", "Arcade: gallery, games and 3D world") + '</div>' +
+        '<div class="nav">' + a("/wiki/reference/", "Wiki references: names and dictionary") + a("/arcade/", "Arcade: NFT gallery and games") + '</div>' +
         '<section class="grid">' + ''.join(cards) + '</section>'
     )
     return shell("%d page areas" % n, "A transparent index that groups %d source themes into %d visitor-facing areas and records parcel matching as pending source review." % (ns, n), body)
@@ -81,7 +81,7 @@ def render_tabs(title, intro, tabs):
     script = '''<script>
 (function(){var root=document.querySelector('[data-tabs]');if(!root)return;var frame=root.querySelector('iframe');root.querySelectorAll('button[data-src]').forEach(function(b){b.addEventListener('click',function(){var src=b.getAttribute('data-src');if(frame.getAttribute('src')!==src)frame.setAttribute('src',src);root.querySelectorAll('button[data-src]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});frame.title=''' + json.dumps(title) + '''+' — '+b.getAttribute('data-label');});});})();
 </script>'''
-    body = '<nav class="nav">' + a("/parcels/site-areas/", "All page areas") + a("/wiki/evidence/", "Evidence register") + '</nav><h1>' + esc(title) + '</h1><p class="lede">' + esc(intro) + '</p><div data-tabs><div class="tabs" role="group" aria-label="' + esc(title + " views") + '">' + tab_html + '</div>' + iframe + '</div>' + script
+    body = '<nav class="nav">' + a("/parcels/site-areas/", "All page areas") + a("/wiki/evidence/", "Evidence register") + '</nav><h1>' + esc(title) + '</h1>' + ('<p class="lede">' + esc(intro) + '</p>' if intro else '') + '<div data-tabs><div class="tabs" role="group" aria-label="' + esc(title + " views") + '">' + tab_html + '</div>' + iframe + '</div>' + script
     return shell(title, intro, body)
 
 def insert_link(page_path, marker, label, href):
@@ -99,8 +99,26 @@ def insert_link(page_path, marker, label, href):
     page_path.write_text(page, encoding="utf-8")
     return True
 
+def resolve_flower_artwork(dist):
+    """Resolve post-rewrite catalogue paths using this build's content-addressed map."""
+    manifest = dist / '_cedwyn' / 'flower-gallery' / 'artworks.json'
+    if not manifest.exists():
+        return
+    doc = json.loads(manifest.read_text(encoding='utf-8'))
+    map_path = dist / '_blob_map.json'
+    blobs = json.loads(map_path.read_text(encoding='utf-8')) if map_path.exists() else {}
+    for artwork in doc['artworks']:
+        for field in ('image', 'thumb'):
+            source = artwork[field]
+            target = source if (dist / source.lstrip('/')).is_file() else blobs.get(source)
+            if not target or not (dist / target.lstrip('/')).is_file():
+                raise FileNotFoundError('Missing curated flower asset: ' + source)
+            artwork[field] = target
+    manifest.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+
 def run(dist):
     dist = pathlib.Path(dist)
+    resolve_flower_artwork(dist)
     doc = json.loads(AREA_DATA.read_text(encoding="utf-8"))
     areas = dist / "parcels" / "site-areas" / "index.html"
     areas.parent.mkdir(parents=True, exist_ok=True)
@@ -110,9 +128,9 @@ def run(dist):
     arcade.parent.mkdir(parents=True, exist_ok=True)
     arcade.write_text(render_tabs(
         "Arcade",
-        "Three interactive experiences share one page area: digital artwork, cyber games and the 3D estate. Existing source routes remain available, and each experience loads only when selected.",
-        [("NFT gallery / digital garden", "/nft-art/"), ("Cyber games", "/cyberspace/"), ("3D estate", "/terrain/")]
-    ), encoding="utf-8")
+        "",
+        [("NFT flower gallery", "/nft-art/"), ("Cyber games", "/cyberspace/")]
+    ).replace('<div data-tabs>', '<p class="arcade-garden-link">' + a('/garden/', 'Open the Flower Garden') + '</p><div data-tabs>').replace('<iframe class="frame"', '<div class="arcade-loading" role="status">Loading the experience…</div><iframe class="frame"').replace('</body>', '''<script>(function(){var f=document.querySelector('iframe'),s=document.querySelector('.arcade-loading'),timer;function loading(){s.hidden=false;s.textContent='Loading the experience…';f.setAttribute('aria-busy','true');clearTimeout(timer);timer=setTimeout(function(){s.innerHTML='Still loading. <a target="_blank" rel="noopener">Open this experience directly</a>';s.querySelector('a').href=f.src;},15000);}f.addEventListener('load',function(){clearTimeout(timer);s.hidden=true;f.setAttribute('aria-busy','false');});new MutationObserver(function(ms){if(ms.some(function(m){return m.attributeName==='src'}))loading();}).observe(f,{attributes:true,attributeFilter:['src']});loading();})();</script></body>'''), encoding="utf-8")
 
     reference = dist / "wiki" / "reference" / "index.html"
     reference.parent.mkdir(parents=True, exist_ok=True)
