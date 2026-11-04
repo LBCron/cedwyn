@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.4] - 2026-11-04
+
+### Added
+- **Autonomy Roadmap — Human-out-of-loop (Phase 1 enabling)** documented as HubSpot Deal 535973332212 (associated to Programme Umbrella).
+  - Full vision locked: Argentina replica/museum (O2), Wales AR tour (O1), multi-purpose truth-seeking + revenue website, central evidence DB, PRINCE2 discipline.
+  - Standing operating procedures, escalation matrix (agent vs Executive), success metrics for removing the Executive from day-to-day instruction loop.
+  - First-cycle tasks created: AUTONOMY-01 (vision-to-webapp disconnect audit), AUTONOMY-02 (current-period Highlight Report), AUTONOMY-03 (O3 evidence chronology gaps), AUTONOMY-04 (Argentina research & model readiness), AUTONOMY-05 (correspondence triage + high-stakes queue only).
+  - Progress note recorded after live-site scan (objectives register, Dartboard, Chessboard, Wayback, missing-records, catalogue metrics).
+- Master Plan Note attached to the Deal. Flywheels now run against the documented plan; Executive receives only tolerance breaches, land/money/legal steps, or items requiring written authority.
+
+### Notes
+- No change to existing project percentages, RAG states, or O5 gate conditions.
+- Existing Tab / BIZDEV flywheels continue; this Deal formalises the Human-out-of-loop target.
+
 ## [0.1.3] - 2026-10-30
 
 ### Changed
