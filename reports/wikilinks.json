@@ -1,7 +1,7 @@
 {
- "pages": 5246,
- "glossary_links": 12827,
- "name_links": 16744,
+ "pages": 5249,
+ "glossary_links": 12854,
+ "name_links": 16773,
  "themes": {
   "accounts": 1,
   "argentina": 2,
@@ -38,6 +38,7 @@
   "self-assessment": 1,
   "settings": 1,
   "spill": 1,
+  "story": 3,
   "terrain": 1,
   "thousand-cuts": 1,
   "tithe-h3": 1,
@@ -53,6 +54,6 @@
  "variants": 98,
  "public_variants": 82,
  "agents_link": "/academy/",
- "agent_blocks_hidden": 13022,
- "agent_pages": 5997
+ "agent_blocks_hidden": 12948,
+ "agent_pages": 5960
 }
