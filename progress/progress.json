@@ -1,23 +1,23 @@
 {
  "title": "Research progress — the Great House (Tŷ Mawr) records programme",
- "generated": "2026-11-04T10:12Z",
+ "generated": "2026-11-04T12:20Z",
  "about": "Counts from the project correspondence register: every records question sent to an institution and every reply. Organisations only; no message text and no personal names.",
  "totals": {
-  "institutions": 74,
+  "institutions": 75,
   "questions_sent": 529,
-  "replies": 259,
-  "automatic_acknowledgements": 299,
+  "replies": 261,
+  "automatic_acknowledgements": 300,
   "records_disclosed": 48,
   "not_held": 62,
-  "refused": 6,
+  "refused": 8,
   "pointed_elsewhere": 49
  },
  "last_30_days": {
   "questions_sent": 221,
-  "replies": 97,
-  "automatic_acknowledgements": 97
+  "replies": 99,
+  "automatic_acknowledgements": 98
  },
- "waiting_on_institutions": 30,
+ "waiting_on_institutions": 29,
  "by_month": [
   {
    "month": "2026-01",
@@ -82,7 +82,7 @@
   {
    "month": "2026-11",
    "asked": 10,
-   "replies": 19,
+   "replies": 21,
    "records": 1
   }
  ],
@@ -138,7 +138,7 @@
     "pointed elsewhere": 3,
     "answered, no records": 2
    },
-   "last_activity": "2026-10-31",
+   "last_activity": "2026-11-04",
    "waiting_on": "us"
   },
   {
@@ -469,6 +469,16 @@
    "waiting_on": "them"
   },
   {
+   "institution": "Persimmon Homes",
+   "questions_sent": 4,
+   "replies": 1,
+   "outcomes": {
+    "refused": 1
+   },
+   "last_activity": "2026-11-04",
+   "waiting_on": "us"
+  },
+  {
    "institution": "Audit Wales",
    "questions_sent": 4,
    "replies": 0,
@@ -496,14 +506,6 @@
   },
   {
    "institution": "Mount Stuart (Bute archive)",
-   "questions_sent": 4,
-   "replies": 0,
-   "outcomes": {},
-   "last_activity": "2026-10-31",
-   "waiting_on": "them"
-  },
-  {
-   "institution": "Persimmon Homes",
    "questions_sent": 4,
    "replies": 0,
    "outcomes": {},
@@ -738,6 +740,16 @@
    "replies": 0,
    "outcomes": {},
    "last_activity": "2026-10-20",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "FSB Wales (Federation of Small Businesses)",
+   "questions_sent": 0,
+   "replies": 1,
+   "outcomes": {
+    "refused": 1
+   },
+   "last_activity": "2026-11-04",
    "waiting_on": "us"
   },
   {
