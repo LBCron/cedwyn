@@ -1,20 +1,20 @@
 {
- "db_version": "cc44d3181b88",
- "paths_served_from_db": 7441,
- "blobs": 4848,
+ "db_version": "28866e99fd99",
+ "paths_served_from_db": 7437,
+ "blobs": 4844,
  "files_dropped": {
   "document": 3267,
   "image": 1665,
-  "data": 1402,
+  "data": 1398,
   "audio": 84
  },
  "bytes_dropped": {
   "document": 1254035789,
   "image": 165260575,
-  "data": 38607941,
+  "data": 38608098,
   "audio": 14922925
  },
- "bytes_dropped_total": 1472827230,
+ "bytes_dropped_total": 1472827387,
  "files_kept_as_well": {
   "image": 876,
   "data": 106,

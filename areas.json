@@ -2,7 +2,7 @@
  "schema": "cedwyn_areas/v1",
  "source": "data/site-areas.json + themes.json slot",
  "order": "main menu reading order; previous/next wrap from the last area to the first",
- "count": 39,
+ "count": 40,
  "parcel_total": 59,
  "areas": [
   {
@@ -140,8 +140,7 @@
    "group": "interactive",
    "aliases": [
     "/cyberspace/",
-    "/nft-art/",
-    "/terrain/"
+    "/nft-art/"
    ],
    "skip_in": [],
    "built": true,
@@ -564,6 +563,19 @@
    "built": true,
    "slot": 39,
    "of": 59
+  },
+  {
+   "id": "garden",
+   "path": "/garden/",
+   "title": "Flower Garden",
+   "cy": "Gardd Flodau",
+   "es": "Jardín de Flores",
+   "group": "interactive",
+   "aliases": [],
+   "skip_in": [],
+   "built": true,
+   "slot": 47,
+   "of": 59
   }
  ],
  "nav_version": "1.1.0",
@@ -740,8 +752,7 @@
    "group": "interactive",
    "aliases": [
     "/cyberspace/",
-    "/nft-art/",
-    "/terrain/"
+    "/nft-art/"
    ],
    "skip_in": [],
    "built": true,
@@ -1411,6 +1422,23 @@
    "apex": "/chubut-h3/",
    "href": "/chubut-h3/",
    "sec": false
+  },
+  {
+   "id": "garden",
+   "path": "/garden/",
+   "title": "Flower Garden",
+   "cy": "Gardd Flodau",
+   "es": "Jardín de Flores",
+   "group": "interactive",
+   "aliases": [],
+   "skip_in": [],
+   "built": true,
+   "slot": 47,
+   "of": 59,
+   "src": "/garden/",
+   "apex": "/garden/",
+   "href": "/garden/",
+   "sec": true
   }
  ]
 }
