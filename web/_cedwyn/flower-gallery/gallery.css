@@ -63,3 +63,8 @@ html.gg-framed .ghf-ui,html.gg-framed .ghf-lf,html.gg-framed .ghf-glow,html.gg-f
 
 /* Readable neutral text when the shared engine inverts this light-native frame. */
 html.gg-framed.ghf-inv :is(.gg-k,.gg-h h1,.gg-ct b,.gg-ct small,.gg-back,.gg-meta dt,.gg-meta dd,.gg-cap,.gg-appnav,.gg-provenance){color:#333}
+
+/* Modal dialogs paint in the top layer, outside the root's inversion. */
+html[data-ghf-mode="night"] body[data-gallery-mode="nft"] .gg-vt{background:#111;color:#eee;color-scheme:dark;filter:none!important}
+html[data-ghf-mode="night"] body[data-gallery-mode="nft"] .gg-vt :is(h3,th,td,.gg-vx){color:#eee}
+html[data-ghf-mode="night"] body[data-gallery-mode="nft"] .gg-vt :is(th,td){border-bottom-color:#555}
