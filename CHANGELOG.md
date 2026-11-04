@@ -1,0 +1,2 @@
+# Changelog
+- v0.1.0 (4 Nov 2026): first version. Separate Patagonia world: flat steppe with tussock grass and low shrubs, real sun and sky for Puerto Madryn at the chosen hour, haze; Tŷ Mawr (footprint from the 1974 survey; walls, roof, chimneys, porch and front windows from album 096/098), north wing, east additions, walled front garden, stable range and cart shed, threshing barn, stable row, entrance gate. Sources dialog marks evidence vs best guess. — Sion's Tab agent
