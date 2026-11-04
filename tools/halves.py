@@ -203,6 +203,26 @@ body[data-cedwyn-page="landing"] .ghf-v2,body[data-cedwyn-page="landing"] #ghf-a
  .land-app-label{padding:8px;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){body[data-cedwyn-page="landing"] .land-place>img,.land-app{transition:none}}
+
+/* Motion layer (home page, 4 Nov 2026): slow image settle + pointer parallax on the three place cards, label rise,
+   modal tiles fade up and drift (parallax) as the list scrolls, lazy images fade in once loaded. Uses the individual
+   translate/scale properties so the existing hover transforms still apply. html.cw-motion is set in <head> only when
+   the visitor has not asked for reduced motion; without it (or without JS) the page is exactly as before. - Sion's Tab agent */
+@keyframes cwSettle{from{scale:1.16}to{scale:1.06}}
+@keyframes cwRise{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:no-preference){
+ html.cw-motion body[data-cedwyn-page="landing"] .land-place>img{scale:1.06;translate:var(--px,0px) var(--py,0px);animation:cwSettle 2.2s cubic-bezier(.16,.8,.24,1) both;transition:transform .35s ease,translate 1.1s cubic-bezier(.16,.8,.24,1);will-change:transform}
+ html.cw-motion body[data-cedwyn-page="landing"] .land-place .land-place-label{animation:cwRise 1s cubic-bezier(.16,.8,.24,1) .25s both}
+ html.cw-motion body[data-cedwyn-page="landing"] .land-place:nth-child(2)>img{animation-delay:.12s}
+ html.cw-motion body[data-cedwyn-page="landing"] .land-place:nth-child(2) .land-place-label{animation-delay:.4s}
+ html.cw-motion body[data-cedwyn-page="landing"] .land-place:nth-child(3)>img{animation-delay:.24s}
+ html.cw-motion body[data-cedwyn-page="landing"] .land-place:nth-child(3) .land-place-label{animation-delay:.55s}
+ html.cw-motion .land-modal .land-app>img{scale:1.18;translate:0 var(--pyi,0px);will-change:translate}
+ html.cw-motion .land-modal .land-app.cw-rv{opacity:0;translate:0 22px;transition:opacity .7s ease,translate .8s cubic-bezier(.16,.8,.24,1),transform .15s ease,border-color .15s ease,background .15s ease}
+ html.cw-motion .land-modal .land-app.cw-rv.cw-in{opacity:1;translate:0 0}
+ html.cw-motion .land-modal .land-app>img.cw-lz{opacity:0;transition:opacity .6s ease}
+ html.cw-motion .land-modal .land-app>img.cw-lz.cw-ld{opacity:1}
+}
 """
 
 # ---------- shared bits
@@ -651,13 +671,40 @@ openers.forEach(function(button){{
 }});
 }})();
 </script>
+<script>{LANDING_MOTION_JS}</script>
 <script>{JS}</script>
 </body>
 </html>
 """
     out = page(sections, 'Tŷ Mawr (Great House Farm), Llandough · Cedwyn Estate', 'Tŷ Mawr (Great House Farm), Llandough, Wales: history, records and BP Properties v Buckler [1987]. Guided tour, e-books, and Great House II planned in Patagonia.', l, '/cedwyn/home/', None, T, n, body)
     out = out.replace('</style>', LANDING_CSS + '</style>', 1)
-    return out.replace('<head>\n', '<head>\n' + pre + '\n', 1)
+    return out.replace('<head>\n', '<head>\n' + pre + '\n' + LANDING_MOTION_HEAD + '\n', 1)
+
+LANDING_MOTION_HEAD = "<script>try{if(window.matchMedia&&matchMedia('(prefers-reduced-motion: no-preference)').matches)document.documentElement.classList.add('cw-motion')}catch(e){}</script>"
+LANDING_MOTION_JS = r'''(function(){
+var R=document.documentElement;if(!R.classList.contains('cw-motion'))return;
+var raf=window.requestAnimationFrame||function(f){return setTimeout(f,16)};
+/* 1. place cards: pointer parallax on fine pointers (desktop); each card moves at its own depth */
+var cards=[].slice.call(document.querySelectorAll('.land-place>img'));
+if(cards.length&&window.matchMedia&&matchMedia('(hover: hover) and (pointer: fine)').matches){
+ var mx=0,my=0,pend=false,depth=[1,1.35,.8];
+ window.addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;if(pend)return;pend=true;raf(function(){pend=false;
+  cards.forEach(function(im,i){var k=depth[i%3];im.style.setProperty('--px',(-mx*18*k).toFixed(1)+'px');im.style.setProperty('--py',(-my*14*k).toFixed(1)+'px')})})},{passive:true});
+ document.addEventListener('pointerleave',function(){cards.forEach(function(im){im.style.setProperty('--px','0px');im.style.setProperty('--py','0px')})});
+}
+/* 2. modal tiles: lazy images fade in once decoded; tiles rise into view; images drift as the list scrolls */
+var tiles=[].slice.call(document.querySelectorAll('.land-modal .land-app'));
+tiles.forEach(function(a){var im=a.querySelector('img');if(im&&!im.complete){im.classList.add('cw-lz');var d=function(){im.classList.add('cw-ld')};im.addEventListener('load',d);im.addEventListener('error',d)}});
+if(!('IntersectionObserver' in window))return;
+var seen=new Set(),n=0;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){var a=e.target;if(e.isIntersecting){seen.add(a);if(!a.classList.contains('cw-in')){a.style.transitionDelay=((n++%4)*70)+'ms';a.classList.add('cw-in');setTimeout(function(){a.style.transitionDelay=''},900)}}else seen.delete(a)});n=0;drift()},{threshold:.06});
+tiles.forEach(function(a){a.classList.add('cw-rv');io.observe(a)});
+var dp=false;
+function drift(){if(dp)return;dp=true;raf(function(){dp=false;seen.forEach(function(a){var sc=a.closest('.land-modal-content');var im=a.querySelector('img');if(!sc||!im)return;
+ var r=sc.getBoundingClientRect(),b=a.getBoundingClientRect();var d=((b.top+b.height/2)-(r.top+r.height/2))/(r.height||1);d=Math.max(-1,Math.min(1,d));im.style.setProperty('--pyi',(-d*9).toFixed(1)+'px')})})}
+[].forEach.call(document.querySelectorAll('.land-modal-content'),function(sc){sc.addEventListener('scroll',drift,{passive:true})});
+window.addEventListener('resize',drift,{passive:true});
+})();'''   # home page motion layer, 4 Nov 2026 - Sion's Tab agent
 
 VOUCHERS = [  # the Stripe voucher links of the retired /wales/tour/ page (Sion 08:08 GMT 26 Oct 2026: purge /wales/tour/, keep /wales/#stop-1)
     ('w_v1', 'https%3A%2F%2Fbuy.stripe.com%2FbJecN60ht4U74a88sD6Zy0j', {'en': 'Gift voucher · one guest £25', 'cy': 'Taleb rodd · un gwestai £25', 'es': 'Vale regalo · una persona £25'}),
