@@ -1,23 +1,23 @@
 {
  "title": "Research progress — the Great House (Tŷ Mawr) records programme",
- "generated": "2026-11-04T08:14Z",
+ "generated": "2026-11-04T10:12Z",
  "about": "Counts from the project correspondence register: every records question sent to an institution and every reply. Organisations only; no message text and no personal names.",
  "totals": {
   "institutions": 74,
-  "questions_sent": 527,
-  "replies": 257,
+  "questions_sent": 529,
+  "replies": 259,
   "automatic_acknowledgements": 299,
   "records_disclosed": 48,
-  "not_held": 61,
+  "not_held": 62,
   "refused": 6,
   "pointed_elsewhere": 49
  },
  "last_30_days": {
-  "questions_sent": 219,
-  "replies": 95,
+  "questions_sent": 221,
+  "replies": 97,
   "automatic_acknowledgements": 97
  },
- "waiting_on_institutions": 31,
+ "waiting_on_institutions": 30,
  "by_month": [
   {
    "month": "2026-01",
@@ -81,8 +81,8 @@
   },
   {
    "month": "2026-11",
-   "asked": 8,
-   "replies": 17,
+   "asked": 10,
+   "replies": 19,
    "records": 1
   }
  ],
@@ -198,6 +198,20 @@
    "waiting_on": "them"
   },
   {
+   "institution": "Heneb (formerly GGAT) / Historic Environment Record",
+   "questions_sent": 18,
+   "replies": 12,
+   "outcomes": {
+    "pointed elsewhere": 2,
+    "not held": 4,
+    "records disclosed": 2,
+    "refused": 3,
+    "answered, no records": 1
+   },
+   "last_activity": "2026-11-04",
+   "waiting_on": "us"
+  },
+  {
    "institution": "RCAHMW (Royal Commission)",
    "questions_sent": 20,
    "replies": 10,
@@ -220,19 +234,6 @@
     "refused": 1
    },
    "last_activity": "2026-10-29",
-   "waiting_on": "them"
-  },
-  {
-   "institution": "Heneb (formerly GGAT) / Historic Environment Record",
-   "questions_sent": 18,
-   "replies": 10,
-   "outcomes": {
-    "pointed elsewhere": 2,
-    "not held": 3,
-    "records disclosed": 2,
-    "refused": 3
-   },
-   "last_activity": "2026-11-02",
    "waiting_on": "them"
   },
   {
@@ -620,6 +621,16 @@
    "waiting_on": "them"
   },
   {
+   "institution": "Cambridge University Collection of Aerial Photography (CUCAP)",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {
+    "pointed elsewhere": 1
+   },
+   "last_activity": "2026-11-03",
+   "waiting_on": "us"
+  },
+  {
    "institution": "Capital Law",
    "questions_sent": 1,
    "replies": 1,
@@ -704,21 +715,21 @@
    "waiting_on": "us"
   },
   {
-   "institution": "Arts Council England",
+   "institution": "Victorian Society",
    "questions_sent": 1,
-   "replies": 0,
-   "outcomes": {},
-   "last_activity": "2026-11-02",
-   "waiting_on": "us"
-  },
-  {
-   "institution": "Cambridge University Collection of Aerial Photography (CUCAP)",
-   "questions_sent": 0,
    "replies": 1,
    "outcomes": {
     "pointed elsewhere": 1
    },
    "last_activity": "2026-11-03",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Arts Council England",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
    "waiting_on": "us"
   },
   {
@@ -784,16 +795,6 @@
    "outcomes": {},
    "last_activity": "2026-10-31",
    "waiting_on": "them"
-  },
-  {
-   "institution": "Victorian Society",
-   "questions_sent": 0,
-   "replies": 1,
-   "outcomes": {
-    "pointed elsewhere": 1
-   },
-   "last_activity": "2026-11-03",
-   "waiting_on": "us"
   },
   {
    "institution": "British Geological Survey",
