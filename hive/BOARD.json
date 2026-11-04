@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T06:07:17Z",
+ "updated": "2026-11-04T06:10:09Z",
  "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
  "drafts": [
   {
@@ -5756,8 +5756,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5767,7 +5767,9 @@
     "body": "National Highways (Historical Railways Estate)",
     "as_of": "2026-11-04T06:07:17Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-04T06:10:09Z"
   },
   {
    "id": "department-for-transport-758702",
@@ -5785,8 +5787,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5796,7 +5798,9 @@
     "body": "Department for Transport",
     "as_of": "2026-11-04T06:07:17Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-04T06:10:09Z"
   },
   {
    "id": "hansard-hl-18-feb-1982-298599",
@@ -5814,8 +5818,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5825,7 +5829,9 @@
     "body": "Hansard HL 18 Feb 1982",
     "as_of": "2026-11-04T06:07:17Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-04T06:10:09Z"
   },
   {
    "id": "the-history-press-283532",
@@ -5843,8 +5849,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5854,7 +5860,9 @@
     "body": "The History Press",
     "as_of": "2026-11-04T06:07:17Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-04T06:10:09Z"
   },
   {
    "id": "amberley-publishing-737942",
@@ -5872,8 +5880,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5883,7 +5891,9 @@
     "body": "Amberley Publishing",
     "as_of": "2026-11-04T06:07:17Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-04T06:10:09Z"
   },
   {
    "id": "capital-law-757019",
@@ -5901,8 +5911,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5912,7 +5922,9 @@
     "body": "Capital Law",
     "as_of": "2026-11-04T06:07:17Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-04T06:10:09Z"
   }
  ],
  "synced_at": "2026-11-04T06:07:17Z",
