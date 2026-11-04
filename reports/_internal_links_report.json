@@ -2,14 +2,14 @@
   "audit": "Cedwyn internal HTML/CSS links and fragments",
   "pages_scanned": 9259,
   "references_checked": {
-    "resource": 211305,
-    "nav": 474760
+    "resource": 211307,
+    "nav": 474651
   },
-  "database_backed_paths": 7383,
-  "unique_missing_destinations": 6422,
-  "missing_references": 52882,
-  "missing_navigation_references": 37146,
-  "missing_resource_references": 15736,
+  "database_backed_paths": 7349,
+  "unique_missing_destinations": 6428,
+  "missing_references": 52884,
+  "missing_navigation_references": 37128,
+  "missing_resource_references": 15756,
   "unique_broken_fragments": 1832,
   "broken_fragment_references": 3394,
   "form_or_endpoint_actions_not_checked": {
@@ -800,6 +800,33 @@
       ]
     },
     {
+      "kind": "nav",
+      "path": "/research/>*.html",
+      "references": 34,
+      "examples": [
+        {
+          "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
+          "attribute": "a[href]",
+          "url": "/research/%3E%2A.html"
+        },
+        {
+          "from": "/research/evidence/ev-0049-mary-williams-plea-ownership-pleadings/",
+          "attribute": "a[href]",
+          "url": "/research/%3E%2A.html"
+        },
+        {
+          "from": "/research/evidence/ev-0108-south-wales-echo-bp-demolition-anger/",
+          "attribute": "a[href]",
+          "url": "/research/%3E%2A.html"
+        },
+        {
+          "from": "/research/evidence/ev-0044-vg41-village-green-registration-1970/",
+          "attribute": "a[href]",
+          "url": "/research/%3E%2A.html"
+        }
+      ]
+    },
+    {
       "kind": "resource",
       "path": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/assets/img/user1-128x128.jpg",
       "references": 33,
@@ -823,33 +850,6 @@
           "from": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/deletable_index2.html",
           "attribute": "img[src]",
           "url": "./assets/img/user1-128x128.jpg"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/research/>*.html",
-      "references": 33,
-      "examples": [
-        {
-          "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
-          "attribute": "a[href]",
-          "url": "/research/%3E%2A.html"
-        },
-        {
-          "from": "/research/evidence/ev-0049-mary-williams-plea-ownership-pleadings/",
-          "attribute": "a[href]",
-          "url": "/research/%3E%2A.html"
-        },
-        {
-          "from": "/research/evidence/ev-0108-south-wales-echo-bp-demolition-anger/",
-          "attribute": "a[href]",
-          "url": "/research/%3E%2A.html"
-        },
-        {
-          "from": "/research/evidence/ev-0044-vg41-village-green-registration-1970/",
-          "attribute": "a[href]",
-          "url": "/research/%3E%2A.html"
         }
       ]
     },
@@ -3311,6 +3311,33 @@
       ]
     },
     {
+      "kind": "resource",
+      "path": "/dartboard/fonts/barlow-latin-300-normal.woff2",
+      "references": 9,
+      "examples": [
+        {
+          "from": "/cyberspace/",
+          "attribute": "link[href]",
+          "url": "/dartboard/fonts/barlow-latin-300-normal.woff2"
+        },
+        {
+          "from": "/cyberspace/",
+          "attribute": "style-block[url()]",
+          "url": "/dartboard/fonts/barlow-latin-300-normal.woff2"
+        },
+        {
+          "from": "/estate/",
+          "attribute": "style-block[url()]",
+          "url": "/dartboard/fonts/barlow-latin-300-normal.woff2"
+        },
+        {
+          "from": "/patagonia/",
+          "attribute": "link[href]",
+          "url": "/dartboard/fonts/barlow-latin-300-normal.woff2"
+        }
+      ]
+    },
+    {
       "kind": "nav",
       "path": "/forensic/wiki/records-access-chronology/source-conflicts-register/",
       "references": 9,
@@ -4036,33 +4063,6 @@
           "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
           "attribute": "a[href]",
           "url": "1-record.html#thread-6-internal-review-1188-26-of-foi-719-26"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/1-record.html",
-      "references": 8,
-      "examples": [
-        {
-          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html"
-        },
-        {
-          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html"
-        },
-        {
-          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html#before-after-record"
-        },
-        {
-          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html#change-log-addendum-21-october-2026"
         }
       ]
     }

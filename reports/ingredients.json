@@ -13564,6 +13564,24 @@
    "theme": "app",
    "file": "demo/index.html",
    "n": 1
+  },
+  {
+   "config": "spa-basepath.json",
+   "theme": "dartboard",
+   "file": "assets/index-DRhLH7y7.js",
+   "n": 1
+  },
+  {
+   "config": "spa-basepath.json",
+   "theme": "dartboard",
+   "file": "index.html",
+   "n": 1
+  },
+  {
+   "config": "spa-basepath.json",
+   "theme": "dartboard",
+   "file": "index.html",
+   "n": 1
   }
  ],
  "missing": [
@@ -13696,44 +13714,26 @@
   {
    "config": "spa-basepath.json",
    "theme": "dartboard",
-   "file": "assets/index-*.js",
-   "why": "file not found"
+   "file": "assets/routes-*.js",
+   "find": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2"
   },
   {
    "config": "spa-basepath.json",
    "theme": "dartboard",
    "file": "assets/routes-*.js",
-   "why": "file not found"
-  },
-  {
-   "config": "spa-basepath.json",
-   "theme": "dartboard",
-   "file": "assets/routes-*.js",
-   "why": "file not found"
+   "find": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2"
   },
   {
    "config": "spa-basepath.json",
    "theme": "dartboard",
    "file": "index.html",
-   "why": "file not found"
+   "find": "/wayback/go/?u=https%3A%2F%2Fgithub.com%2Funclehowell%2Fcedw"
   },
   {
    "config": "spa-basepath.json",
    "theme": "dartboard",
    "file": "index.html",
-   "why": "file not found"
-  },
-  {
-   "config": "spa-basepath.json",
-   "theme": "dartboard",
-   "file": "index.html",
-   "why": "file not found"
-  },
-  {
-   "config": "spa-basepath.json",
-   "theme": "dartboard",
-   "file": "index.html",
-   "why": "file not found"
+   "find": "/wayback/go/?u=https%3A%2F%2Fgithub.com%2Funclehowell%2Fcedw"
   }
  ],
  "kept_verbatim": [
