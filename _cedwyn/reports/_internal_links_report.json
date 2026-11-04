@@ -3,13 +3,13 @@
   "pages_scanned": 9394,
   "references_checked": {
     "resource": 217238,
-    "nav": 479897
+    "nav": 479899
   },
-  "database_backed_paths": 7441,
-  "unique_missing_destinations": 6403,
-  "missing_references": 53235,
-  "missing_navigation_references": 37306,
-  "missing_resource_references": 15929,
+  "database_backed_paths": 7437,
+  "unique_missing_destinations": 6402,
+  "missing_references": 53232,
+  "missing_navigation_references": 37304,
+  "missing_resource_references": 15928,
   "unique_broken_fragments": 1834,
   "broken_fragment_references": 3562,
   "form_or_endpoint_actions_not_checked": {
@@ -802,7 +802,7 @@
     {
       "kind": "nav",
       "path": "/research/>*.html",
-      "references": 36,
+      "references": 34,
       "examples": [
         {
           "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
@@ -820,7 +820,7 @@
           "url": "/research/%3E%2A.html"
         },
         {
-          "from": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/",
+          "from": "/research/evidence/ev-0044-vg41-village-green-registration-1970/",
           "attribute": "a[href]",
           "url": "/research/%3E%2A.html"
         }
