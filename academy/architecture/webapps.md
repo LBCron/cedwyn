@@ -1,8 +1,8 @@
 # Webapps
 
-Every webapp on the site (formerly called themes): 57 in the registry, each served at its own path, each on its own branch or snapshot. The state column is how hard-coded its content is today; the view rule is the selection that will feed its own view database; the wave is its work package. Machine-readable: [architecture.json](architecture.json).
+Every webapp on the site (formerly called themes): 58 in the registry, each served at its own path, each on its own branch or snapshot. The state column is how hard-coded its content is today; the view rule is the selection that will feed its own view database; the wave is its work package. Machine-readable: [architecture.json](architecture.json).
 
-States: BUILT 2 · BUILT, 3 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 5 · MIXED 13 · SNAPSHOT 15.
+States: BUILT 2 · BUILT, 3 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · LIVE 5 · MIXED 13 · NEW 1 · SNAPSHOT 15.
 
 - **DATA-DRIVEN**: pages rendered from the webapp's view of the central catalogue.
 - **GENERATED**: generated on main from repository data files.
@@ -24,6 +24,7 @@ States: BUILT 2 · BUILT, 3 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · 
 | The Farm Album | `/fb/` | The Farm Album: photographs and posts from the farm years | branch fb, folder site | 336 hand-written or pre-generated HTML pages; no data file | HARD-CODED | to be written in its work package | WP7 (wave 3) |
 | Great House Farm II · Patagonia Museum | `/patagonia/` | Great House Farm II: the Patagonia museum area | branch section/patagonia (snapshot pinned in sections.lock) | content baked into the crawled or pinned HTML/JS; must be extracted to core first | SNAPSHOT | content layer only (texts, stops, questions) from core or an app register; game and engine code stays code | WP7 (wave 3) |
 | Tithe H3 | `/tithe-h3/` | The parcels of the David Stewart estate plan of Cedfin alias Ty Mawr, traced through the 1841 tithe map onto today's map, each with an OS grid reference and H3 hexagons (webapp 42 of 59) | branch section/tithe-h3 (snapshot pinned in sections.lock) | its own parcel table drawn from the estate plan and tithe records in the central catalogue | SNAPSHOT | one row per traced parcel with grid reference, hexagons and its catalogue ids | standalone webapp, 2 Nov 2026 |
+| Chubut H3 | `/chubut-h3/` | The outline of the Cedwyn estate fields from the Tithe H3 map, set on the coast of Golfo Nuevo south of Puerto Madryn at the same distance from the sea as at Llandough, true size and north up, in H3 hexagons. The Patagonia half's 2D map. Webapp 46 of 59. | branch section/chubut-h3 | new in the registry; not yet audited | NEW (not yet audited) | to be written | to be assigned |
 
 ## Interactive
 

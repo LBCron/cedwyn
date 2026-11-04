@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn_academy_architecture/v1",
- "version": "1.0.15",
+ "version": "1.0.16",
  "updated": "2026-11-04",
  "refreshed_by": "the agent library cycle (every 6 hours); edit this file, then rebuild the academy",
  "source_documents": [
@@ -41,7 +41,8 @@
    "a section snapshot moves only through sections-ci",
    "builds regenerate everything: fix sources, never the built output",
    "each webapp's header graph plots only that webapp's own view database (<app>/_db/view.json), never the central catalogue; a build check fails any graph whose points do not trace to its own app's view",
-   "files served only through the service worker (view.json, _ui templates, programme data) must be on the build's keep-list, or a plain fetch answers 404"
+   "files served only through the service worker (view.json, _ui templates, programme data) must be on the build's keep-list, or a plain fetch answers 404",
+   "the apex domain is served by the static host directly; a request router runs only on a narrow list of dynamic paths, so static pages cost no router requests (from 4 Nov 2026; router calls per apex request fell from about 0.74 to 0.12)"
   ],
   "other_workflows": [
    "sections-ci",
