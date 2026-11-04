@@ -1,6 +1,6 @@
 {
- "version": "3.4.1",
- "updated": "2026-10-27",
+ "version": "3.6.0",
+ "updated": "2026-11-04",
  "parties": [
   {
    "id": "family",
@@ -154,7 +154,7 @@
   {
    "id": "R",
    "name": "Root title · the whole farm before 1877",
-   "desc": "Great House (Cydfin / Tŷ Mawr): the farmhouse with Parcels A and B together, before the 1877 split. NLW Bute D219 lists “Cydfin Farm or Ty Mawr Farm (107 a.)”, leases 1552–1824.",
+   "desc": "Great House (Cydfin / Tŷ Mawr): the farmhouse with Parcels A and B together, before the proposed 1877 split; a site-matched instrument has not yet been verified. NLW Bute D219 lists “Cydfin Farm or Ty Mawr Farm (107 a.)”, leases 1552–1824.",
    "color": "#e7c6ff",
    "chip": "Root title"
   },
@@ -182,6 +182,12 @@
    "name": "Parcel A2 · house & yard",
    "desc": "South part of Parcel A: farmhouse, yard and buildings (OS 1900 field 70), whose boundary ends before the green. Title WA240304 (1983), merged into WA231076 (1987).",
    "color": "#c4a484"
+  },
+  {
+   "id": "A3go",
+   "name": "Parcel A3 · garden & orchard (title not traced)",
+   "desc": "North part of OS 1900 field 70 on the family’s boundary plan: the garden and orchard ground north of the farmhouse, with the narrow strip west to the road as its access. The 1959 offer and the 1962 possession order name the garden together with the farmhouse and buildings. No separate title for it has been traced.",
+   "color": "#a3c97a"
   },
   {
    "id": "A3",
@@ -1130,7 +1136,7 @@
     "why": "THE GREEN (outside Parcel A) · 1958/59 attempt → VG41 registration (1970)"
    }
   ],
-  "not": "These links are not conveyances. A1: the 29 Mar 1961 deed is recited in the woodland title strand; WA735527 lists Forest of Cardiff as proprietor from 1994. A2: BP Properties applied to register WA240304 on 23 Feb 1983 while Mary lived there; no conveyance from the occupiers is on record. A3: VG41 was registered on 16 Jun 1970; Glamorgan County Council was the registration authority, but the entry alone does not establish freehold ownership or vesting in that council.",
+  "not": "These links are not conveyances. A1: the 29 Mar 1961 deed is recited in the woodland title strand; WA735527 lists Forest of Cardiff as proprietor from 1994. A2: BP Properties applied to register WA240304 on 23 Feb 1983 while Mary lived there; no conveyance from the occupiers is on record. A3: the garden and orchard; no separate record traced. The green: VG41 was registered on 16 Jun 1970; Glamorgan County Council was the registration authority, but the entry alone does not establish freehold ownership or vesting in that council.",
   "intro": "The 💩 sits at the centre of the ring. A dotted “?” line joins it to the family. Each part of Parcel A has its own path through the 💩 (permissive-occupancy steps) and the 💩💩 (seizure or possession steps) to the parties that registered it.",
   "branches": [
    {
@@ -1164,7 +1170,7 @@
     "year": 1970,
     "transferId": "t1970",
     "caption": "THE GREEN (outside Parcel A) · 1958/59 attempt → VG41 registration (1970)",
-    "label": "A3 · VG41 registration endpoint (separate from Parcel A)",
+    "label": "The green · VG41 registration endpoint (separate from Parcel A)",
     "interval": "VG41 was registered on 16 Jun 1970, about 11–12 years after the recorded 1958/59 attempt.",
     "note": "Destination is Glamorgan County Council as the 1970 registration authority. The register entry and underlying application/map/ownership file remain outstanding; registration alone does not establish that the council took the green’s freehold.",
     "color": "#f2d64b"
@@ -1501,7 +1507,7 @@
   },
   {
    "id": "C",
-   "name": "A3 · green, outside Parcel A | 1958/59 attempt → VG41 (1970)",
+   "name": "The green, outside Parcel A | 1958/59 attempt → VG41 (1970)",
    "short": "1970 green VG41",
    "parcels": [
     "A3",
@@ -1689,7 +1695,7 @@
     "br": "A",
     "kind": "forkA",
     "t": "t1877",
-    "label": "1877 split · Parcel A to Daniel Thomas & Son",
+    "label": "Proposed 1877 split · Parcel A",
     "text": "The working title-chain hypothesis is that the Bute Estate parted with the farmhouse, buildings and about 10 acres (Parcel A) to Daniel Thomas & Son in 1877, while retaining about 9 acres (Parcel B). The agreement is not in hand, so the precise legal instrument and whether it was a freehold sale or quarry arrangement remain unresolved. The cited family statement and NLW catalogue are supporting sources, not a substitute for the deed.",
     "src": [
      {
@@ -1726,7 +1732,7 @@
     "br": "B",
     "kind": "forkB",
     "t": "t1926",
-    "label": "1877 split · Parcel B kept by the Bute Estate, then Mountjoy Ltd (1926)",
+    "label": "Proposed 1877 split · Parcel B",
     "text": "In 1877 the Bute Estate keeps about 9 acres “up on the top” (Parcel B; Timeline page 33). The Bute Estate still holds it in 1916 (EV-0014). In 1926 the remaining Bute property is incorporated as Mountjoy Ltd (Glamorgan Archives DA catalogue). The records place Mountjoy in 1926, not 1877.",
     "src": [
      {
@@ -1861,7 +1867,7 @@
     "kind": "gap",
     "todo": true,
     "label": "Parcel A · no later freehold conveyance located",
-    "text": "On the documents presently identified, the freehold chain for Parcel A stops with the Williams family after 1928. No later deed has been located conveying Parcel A, or its parts A1 or A2 (the green, A3, lies outside Parcel A), from Williams to WGR, BP or a current possessor. The later possession orders, licence letters, deeds and registrations are separately displayed below as record chronologies; they are not shown as conveyances from Williams.",
+    "text": "On the documents presently identified, the freehold chain for Parcel A stops with the Williams family after 1928. No later deed has been located conveying Parcel A, or its parts A1, A2 or A3 (the green lies outside Parcel A), from Williams to WGR, BP or a current possessor. The later possession orders, licence letters, deeds and registrations are separately displayed below as record chronologies; they are not shown as conveyances from Williams.",
     "src": [
      {
       "t": "The Two Parcels",
@@ -1886,7 +1892,7 @@
   ]
  },
  "paths": {
-  "version": "3.3.1",
+  "version": "3.3.3",
   "R": 320,
   "colors": {
    "AB": "#e7c6ff",
@@ -3600,7 +3606,7 @@
   ],
   "ploys": "Permissive occupancy ploys",
   "narr": {
-   "v": "3.3.1",
+   "v": "3.3.3",
    "steps": {
     "tAB": {
      "segs": [],

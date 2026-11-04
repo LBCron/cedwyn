@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.6.0] - 2026-11-04
+
+### Added
+- A parcel dropdown, numbered 1-59, replacing the line-picker chips. Numbers are the parcel figures read on the 1824 Stewart plan of Cedfin (Tŷ Mawr). Each number opens a record sheet: the figure reading, the matching 1841 tithe plot with its entries as transcribed in the site's Tithe H3 index (land use, area, landowner, occupier), OS grid reference and traced area. Numbers 1-4 and 18 note the unread figures and the homestead group.
+- The 30-39 / 50-59 readings are presented as unsettled: several southern figures can be read either way (old-style 3 or 5), so both readings are listed and numbers 46-59 stay in the dropdown with the ambiguity stated rather than a categorical exclusion. Parcel 33 carries the open unnumbered-8a-row conflict from the research register.
+- Each sheet links the farm's documented chain (Bute -> Mountjoy -> Western Ground Rents -> BP Pension Trust -> BP Properties -> 1982/83 first registrations -> 1986/87 judgment) with a link to /title-chain/, scoped as farm-level, not parcel-tied.
+- Record sheets now trap keyboard focus and make the background inert while open; the dropdown keeps the picked parcel selected; ?parcel=N deep links open the sheet directly.
+- `public/data/stewart-parcels.json`: the per-parcel data, from the site's own Tithe H3 parcel table (`/tithe-h3/data/stewart-parcels.csv`); which plan parcel matches which tithe plot remains our reading, and the tithe records occupation, not ownership.
+- `?parcel=N` opens a parcel's record directly.
+
+### Changed
+- The ring now draws every line on load; narration starts from the replay button. The line-filter chips are removed in favour of the parcel dropdown. Audio and animation paths unchanged (3.3.3).
+
 ## [3.5.0] - 2026-10-27
 
 ### Changed

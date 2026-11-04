@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Land Changing Hands · Great House Farm</title>
-<meta name="description" content="Tŷ Mawr, Llandough: one farm, A + B, comes into the circle on the root title chain; out comes A + B again as synthetic A3 and B, plus synthetic A1 and A2. Pick a line to watch it grow.">
+<meta name="description" content="Tŷ Mawr, Llandough: one farm, A + B, comes into the circle on the root title chain; out comes A + B again as synthetic A3 and B, plus synthetic A1 and A2. Pick any parcel of the 1824 Stewart plan, 1 to 59, for its record.">
 <meta property="og:title" content="Great House Farm · the land changing hands">
-<meta property="og:description" content="In: A + B on the root title chain. Out: synthetic A3 and B, plus SA1 and SA2, each born from a permissive occupancy ploy.">
+<meta property="og:description" content="In: A + B on the root title chain. Out: synthetic A3 and B, plus SA1 and SA2. Every parcel of the 1824 Stewart plan, 1 to 59, with its record.">
 <meta name="theme-color" content="#151229">
 <style>
 :root{--bg:#151229;--panel:#1d1938;--line:#ffffff1f;--ink:#f3f1ff;--muted:#b9b4d6;--accent:#ffd166}
@@ -17,6 +17,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-off
 .wrap{max-width:860px;margin:0 auto;padding:14px 12px 24px}
 .intro{font-size:15px;color:var(--muted);margin:6px 2px 10px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.parcelpick{display:flex;align-items:center;gap:10px;margin:2px 2px 8px;flex-wrap:wrap}
+.parcelpick label{font-size:15px;font-weight:600}
+.parcelpick select{font:inherit;font-size:16px;font-weight:700;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-height:44px;min-width:110px;cursor:pointer}
+.prow{display:grid;grid-template-columns:150px 1fr;gap:8px;margin:4px 0;font-size:15px}
+.prow span{color:var(--muted)}
 .chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#ffffff0a;color:var(--ink);border-radius:999px;padding:5px 12px 5px 8px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;min-height:40px}
 .chip[aria-pressed=true]{background:#ffffff2b;border-color:#ffffffaa}
 .chip i{display:inline-block;width:14px;height:14px;border-radius:7px;flex:none}
@@ -53,6 +58,7 @@ g.pill.off{opacity:0}
 #hits path{pointer-events:none}
 #hits path.on{pointer-events:stroke}
 /* sheet */
+.chain{margin:.3rem 0 .6rem;padding-left:1.1rem}.chain li{margin:.15rem 0}.chain i{opacity:.65;font-size:.86em}
 .sheet-bg{position:fixed;inset:0;background:#0009;display:none;align-items:flex-end;justify-content:center;z-index:2147483620}
 .sheet-bg.open{display:flex}
 .sheet{background:#201b40;border:1px solid var(--line);border-radius:18px 18px 0 0;max-width:640px;width:100%;max-height:66vh;overflow:auto;padding:16px 16px 22px}
@@ -66,11 +72,14 @@ footer{margin-top:22px;text-align:center;color:var(--muted);font-size:14px}
 </style>
 <script type="text/plain" data-ghf-hold src="https://bucklerfamily.estate/ghf-lang/basecamp.js?hold"></script>
 <script src="https://bucklerfamily.estate/ghf-lang/ghf-boot.js?v=2.1.2"></script>
+<script src="https://research.bucklerfamily.estate/estate-tour.js?v=20261024" defer data-estate-tour-loader></script>
 </head>
 <body>
 <div class="wrap">
-<p class="intro">Tŷ Mawr, Llandough. Into the circle comes one farm, A + B, on the root title chain. Out comes A + B again, but as synthetic A3 and B, plus two more simple lines, SA1 and SA2, each born from a permissive occupancy ploy 💩. Pick a line to watch it grow and hear it told; tap anything for its record.</p>
-<div class="chips" id="chips" role="group" aria-label="Show a line"></div>
+<p class="intro">Tŷ Mawr, Llandough. Into the circle comes one farm, A + B, on the root title chain. Out comes A + B again, but as synthetic A3 and B, plus two more simple lines, SA1 and SA2, each born from a permissive occupancy ploy 💩. Press ↻ to watch every line grow and hear it told; tap anything for its record.</p>
+<div class="parcelpick"><label for="parcelPick">Parcel of the 1824 Stewart plan</label>
+<select id="parcelPick" aria-label="Choose a parcel, 1 to 59"><option value="" selected>Pick a parcel, 1–59</option></select></div>
+<p class="intro" style="margin:.2rem 0 .8rem">Numbers are the parcel figures on the 1824 Stewart plan of Cedfin (Tŷ Mawr). The clearest figures run 1 to 45. Several figures towards the bottom of the plan read two ways — 30 to 39, or 50 to 59 if the leading digit is a 5 rather than an old-style 3; the hand cannot be settled from the photograph we hold, so both readings are listed and no number is dropped. The alternate readings cover 50, 52 and 53; no figure clearly reads 46 to 49 or 51, and that too stays open until the original is re-read at higher resolution. Pick a number for everything the records tie to it.</p>
 <p class="intro" style="margin:.4rem 0 .8rem"><a href="title-chain/">▶ Watch the title chain step by step</a> — an animated chronology, 1841–1987: who held the paper, who held the land, the twelve-year pairs and the parcels taken, each step tied to its catalogue ID.</p>
 <main>
 <div class="stage" data-ghf-keep>
@@ -89,7 +98,7 @@ footer{margin-top:22px;text-align:center;color:var(--muted);font-size:14px}
 <div class="lrow"><span class="ic" style="color:#b9b4d6">◯</span><span>On the ring: title holders and official actors. Inside it: no title</span></div>
 <div class="lrow"><span class="ic"><svg width="40" height="10" aria-hidden="true"><line x1="2" y1="5" x2="38" y2="5" stroke="#e7c6ff" stroke-width="4" stroke-dasharray="6 5"/></svg></span><span>Dashed: the deed or record is not published here</span></div>
 <div class="lrow"><span class="ic" style="font-weight:800;font-size:14px">1938</span><span>Each year sits where the line arrives</span></div>
-<p class="ver">v3.4.1 · 27 Oct 2026</p>
+<p class="ver">v3.6.0 · 4 Nov 2026</p>
 </section>
 </main>
 <footer data-ghf-keep>© the Williams-Buckler family of Tŷ Mawr · <a href="https://bucklerfamily.estate/licence/">Licence</a></footer>
@@ -169,7 +178,7 @@ function ringLab(g,id,x,y,rr){const n=N[id],a=n.ang*Math.PI/180,lx=rr*Math.sin(a
 // ---- filter + snake animation (v3.3: each step is drawn while its narration line plays)
 let cur='ALL',raf=0,run=null;const chips=$('#chips');const NR=V.narr;
 const LSg=k=>{try{return localStorage.getItem(k)}catch(e){return null}},LSs=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
-const PROMPT={en:'▶ Tap a line to watch it drawn and hear it told.',cy:'▶ Tapiwch linell i’w gwylio’n tyfu a’i chlywed.',es:'▶ Toca una línea para verla crecer y escucharla.'};
+const PROMPT={en:'▶ Press ↻ to watch the lines drawn and hear them told.',cy:'▶ Pwyswch ↻ i’w gwylio’n tyfu a’u clywed.',es:'▶ Pulsa ↻ para verlas crecer y escucharlas.'};
 function LG(){let l=null;try{l=window.GHFLang&&window.GHFLang.get&&window.GHFLang.get()}catch(e){}l=(l||document.documentElement.getAttribute('lang')||'en').slice(0,2).toLowerCase();return l==='cy'||l==='es'?l:'en'}
 let muted=LSg('ig-mute')==='1';const au=new Audio();au.preload='auto';au.setAttribute('playsinline','');
 const sndB=$('#snd'),capE=$('#cap');
@@ -177,7 +186,7 @@ function paintSnd(){sndB.textContent=muted?'🔇':'🔊';sndB.setAttribute('aria
 function setCap(t,lang){if(capE.textContent!==t)capE.textContent=t;capE.setAttribute('lang',lang==='en'?'en-GB':lang)}
 au.addEventListener('playing',()=>{if(run)run.waiting=false});
 au.addEventListener('error',()=>{if(run){run.audioOn=false;run.waiting=false}});
-V.filters.forEach(F=>{const b=document.createElement('button');b.className='chip';b.dataset.k=F.k;b.setAttribute('aria-pressed','false');
+if(chips)V.filters.forEach(F=>{const b=document.createElement('button');b.className='chip';b.dataset.k=F.k;b.setAttribute('aria-pressed','false');
  const cols=[...new Set(F.tracks.flatMap(t=>t.s.map(id=>S[id].g)))].filter(g=>g!=='AB'||F.k==='AB').slice(0,3);
  b.innerHTML=(F.k==='ALL'?'':cols.map(c=>`<i style="background:${C[c]}"></i>`).join(''))+esc(F.lab);b.onclick=()=>select(F.k,true,true);chips.appendChild(b)});
 // silent first draw (no tap yet): the tracks grow side by side, about 2.75x slower than v3.2
@@ -197,12 +206,12 @@ function clock(){if(!run)return 0;const p=performance.now();
   if(run.waiting&&p-run.req<4000){run.t0=p-run.hold;return run.hold}
   if(run.waiting){run.waiting=false;run.audioOn=false}}
  return p-run.t0}
-function startAudio(at){const src=`audio/${run.lang}/${run.k}.mp3?v=3.4.1`;
+function startAudio(at){const src=`audio/${run.lang}/${run.k}.mp3?v=3.3.3`;
  if(!au.src||!au.src.endsWith(src.replace(/^audio/,'/audio')))au.src=src;
  try{au.currentTime=at/1000}catch(e){}run.audioOn=true;run.waiting=true;run.req=performance.now();run.hold=at;
  const p=au.play();if(p&&p.catch)p.catch(()=>{if(run){run.audioOn=false;run.waiting=false}})}
 function select(k,user,narr){cur=k;const F=V.filters.find(x=>x.k===k),lang=LG();
- chips.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===k)));
+ if(chips)chips.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.k===k)));
  const ids=[...new Set(F.tracks.flatMap(t=>t.s))];
  if(user){const u=new URL(location);if(k==='ALL')u.searchParams.delete('p');else u.searchParams.set('p',k);history.replaceState(null,'',u)}
  Object.entries(G.segs).forEach(([id,o])=>{o.g.classList.toggle('on',false);o.mp.setAttribute('stroke-dashoffset',o.L);G.hits[id].classList.toggle('on',false)});
@@ -243,14 +252,74 @@ $('#replay').onclick=()=>select(cur,false,true);
 // ---- sheet
 function srcList(src){return src&&src.length?'<h3>Sources</h3><ul>'+src.map(x=>`<li><a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a></li>`).join('')+'</ul>':''}
 let lastFocus=null;
-function sheet(h){lastFocus=document.activeElement;$('#sheet').innerHTML='<button class="x" id="shX" aria-label="Close">✕</button>'+h;$('#sheetBg').classList.add('open');$('#shX').onclick=closeSheet;$('#shX').focus()}
-function closeSheet(){$('#sheetBg').classList.remove('open');if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+const sheetSibs=()=>Array.from(document.querySelectorAll('body > *')).filter(el=>el.id!=='sheetBg');
+function sheet(h){lastFocus=document.activeElement;$('#sheet').innerHTML='<button class="x" id="shX" aria-label="Close">✕</button>'+h;$('#sheetBg').classList.add('open');sheetSibs().forEach(el=>{el.inert=true});$('#shX').onclick=closeSheet;$('#shX').focus()}
+function closeSheet(){const bg=$('#sheetBg');if(!bg.classList.contains('open'))return;bg.classList.remove('open');sheetSibs().forEach(el=>{el.inert=false});if(lastFocus&&lastFocus.focus)lastFocus.focus()}
 $('#sheetBg').addEventListener('click',e=>{if(e.target.id==='sheetBg')closeSheet()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+document.addEventListener('keydown',e=>{
+ if(!$('#sheetBg').classList.contains('open'))return;
+ if(e.key==='Escape'){closeSheet();return}
+ if(e.key==='Tab'){const f=Array.from($('#sheet').querySelectorAll('button,a[href]')).filter(el=>!el.disabled);if(!f.length)return;const first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault()}else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault()}}
+});
 function openSeg(id){const s=S[id];sheet(`<h2 id="shT">${esc(s.title)}</h2><div class="date">${esc(s.date||'')}${s.dash?' · record not held':''}</div><p>${esc(s.text)}</p>${srcList(s.src)}`)}
 function openNode(id){const n=N[id];sheet(`<h2 id="shT">${esc(n.title)}</h2>${n.kind==='named'?`<div class="date">${esc(n.over.join(' '))} · ${esc(n.under.join(' '))}</div>`:''}${n.text?`<p>${esc(n.text)}</p>`:''}${srcList(n.src)}`)}
+// ---- parcels of the 1824 Stewart plan, 1-59 (v3.6)
+const PARCELS59=/*__PARCELS59__*/null;
+const psel=$('#parcelPick');
+for(let n=1;n<=59;n++){const o=document.createElement('option');o.value=n;o.textContent=n;psel.appendChild(o)}
+psel.addEventListener('change',()=>{const v=psel.value;if(v)openParcel(+v)});
+function prow(k,v){return `<div class="prow"><span>${esc(k)}</span><b>${esc(v)}</b></div>`}
+const P_SRCS=[
+ {t:'Tithe H3 - the plan parcels on today\u2019s map',u:'https://cedwyn.bucklerfamily.estate/tithe-h3/'},
+ {t:'EV-0215 - the c.1841 tithe apportionment',u:'https://cedwyn.bucklerfamily.estate/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/'},
+ {t:'EV-0211 - the 1824 Stewart plan of Cedfin (Tŷ Mawr)',u:'https://cedwyn.bucklerfamily.estate/research/evidence/ev-0211-db-e-1-plan-19-cedfin-ty-mawr-1824/'},
+ {t:'The 36 parcels of the c.1841 apportionment',u:'https://cedwyn.bucklerfamily.estate/parcels/'},
+ {t:'The title chain, step by step',u:'https://cedwyn.bucklerfamily.estate/title-chain/'}];
+const FARMCHAIN='<p><b>Farm-level chain research</b> (related ground; no step is tied to this parcel number; each step tagged with the record behind it):</p><ul class="chain">'
+ +'<li>the Marquess of Bute, lord of the manor <i>[manorial title]</i></li>'
+ +'<li>1877: agreement with Daniel Thomas &amp; Son <i>[reported; instrument not found]</i></li>'
+ +'<li>23 Feb 1905: rights over a woodland strip to Cardiff Corporation <i>[register entry; deed not copied]</i></li>'
+ +'<li>Feb 1916: yearly tenancy of the whole farm to John Williams <i>[court record]</i></li>'
+ +'<li>1922: Mountjoy Ltd, the Bute estate company, takes the life interest <i>[press and catalogue]</i></li>'
+ +'<li>1 Jan 1926: the 1925 property Acts in force; whether this land was copyhold before then is not shown <i>[law]</i></li>'
+ +'<li>25 Dec 1938: Mountjoy Ltd to Western Ground Rents Ltd <i>[court record and recitals; deed not read]</i></li>'
+ +'<li>15 Feb 1969: BP buys Western Ground Rents (company sale) <i>[press]</i></li>'
+ +'<li>31 Dec 1969: Western Ground Rents to BP Pension Trust <i>[court record; deed not held]</i></li>'
+ +'<li>23 May 1975: BP Pension Trust to BP Properties Ltd <i>[register entry]</i></li>'
+ +'<li>19/30 Nov 1982: conveyance of 19 Nov; first registration of the woodland title WA231076 applied for 30 Nov <i>[HM Land Registry letter]</i></li>'
+ +'<li>23 Feb 1983: first registration of the farmhouse title WA240304 applied for <i>[HM Land Registry letter]</i></li>'
+ +'<li>1986/87: judgment for BP Properties; appeal dismissed <i>[court record]</i></li>'
+ +'</ul><p>Each step with its catalogue entry: <a href="https://cedwyn.bucklerfamily.estate/title-chain/" target="_blank" rel="noopener">the title chain chronology</a>.</p>';
+function openParcel(n){
+ const P=PARCELS59[n-1];if(!P)return;
+ psel.value=String(n);
+ const ALIAS_HI={30:50,32:52,33:53,34:54,35:55,36:56,37:57,38:58,39:59};
+ let base=P,lo=n,hi=null;
+ if(P.aliasOf){lo=P.aliasOf;hi=n;base=PARCELS59[lo-1]}
+ else if(ALIAS_HI[n]){hi=ALIAS_HI[n]}
+ if(!base||!base.placed)hi=null;
+ let h;
+ if(hi)h=`<h2 id="shT">Parcel ${lo} / ${hi}</h2><div class="date">one figure, two readings: ${lo}, or ${hi} if the leading digit is a 5 rather than an old-style 3 — unsettled. The same ground either way; both numbers open this record.</div>`;
+ else{h=`<h2 id="shT">Parcel ${n}</h2>`;if(P.reading)h+=`<div class="date">${esc(P.reading)}</div>`}
+ if(!base.placed){
+  h+=`<p>Not placed: ${esc(base.status)}.</p>`;
+ }else{
+  (base.rows||[]).forEach(r=>{h+=prow(r[0],r[1])});
+  h+='<p>Rows transcribed from the site\u2019s Tithe H3 index; where that index and the original document image conflict, the conflict is left open in the research register rather than resolved here. Which plan parcel matches which tithe plot is our reading.</p>';
+  if(base.conflict)h+=`<p><b>Open source conflict:</b> ${esc(base.conflict)}</p>`;
+  if(base.traced)h+=`<p>Traced area about ${esc(base.traced)} acres. Across all placed parcels the traced outlines average about 70% of the acreages entered in 1841 — individual parcels differ widely — and the reason is not yet known, so treat areas as rough.</p>`;
+ }
+ if(base.extra)h+=`<p>${esc(base.extra)}</p>`;
+ h+='<h3>Title chain</h3>';
+ if(base.jw)h+='<p>The c.1841 apportionment lists this ground under occupier John Williams — one of the 36 parcels in the family\u2019s question (EV-0215). The tithe records occupation, not ownership: the landowner column stays the Marquess of Bute, or the Glebe, as entered. No crosswalk from this parcel number to a later deed or registration has been established in this dataset; how ground like this passed from Williams occupation to company titles is the question the circle above follows. The circle traces the farm\u2019s title lines, not this parcel\u2019s own path.</p>';
+ else if(base.placed)h+='<p>No crosswalk from this parcel number to a later deed or registration has been established in this dataset — that linkage gap is open research, not a settled negative. The circle above traces the farm\u2019s title lines, not this parcel\u2019s own path.</p>';
+ else h+='<p>No ground is matched to this number in this dataset. If a figure re-reads as this number when the original is examined at higher resolution, its records will land on this sheet.</p>';
+ h+=FARMCHAIN;
+ h+=srcList(P_SRCS);
+ sheet(h)}
 draw();
 const q=new URLSearchParams(location.search).get('p');select(V.filters.some(x=>x.k===q)?q:'ALL',false);
+const qp=+(new URLSearchParams(location.search).get('parcel')||0);if(qp>=1&&qp<=59)openParcel(qp);
 RM.addEventListener&&RM.addEventListener('change',()=>select(cur,false,run&&run.narr));
 // the shared header (basecamp.js) loads after this page's own script has run; ghf-boot.js already reserved its band
 (function(){if(window.GHFBasecamp||document.querySelector('script[data-ghf-basecamp-late]'))return;var s=document.createElement('script');s.src='https://bucklerfamily.estate/ghf-lang/basecamp.js?v='+(window.GHFBoot||'2.1.2');s.setAttribute('data-ghf-basecamp-late','');document.head.appendChild(s)})();
