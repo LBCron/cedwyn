@@ -6,8 +6,8 @@
  "path": "/websites/discovery.nationalarchives.gov.uk/details-r-c5503584/",
  "latest": "/websites/discovery.nationalarchives.gov.uk/details-r-c5503584/latest.html",
  "first_captured": "2026-10-24T14:42:51Z",
- "last_captured": "2026-10-30T06:34:55Z",
- "current_version": "v1.0.2",
+ "last_captured": "2026-11-04T06:54:56Z",
+ "current_version": "v1.0.3",
  "versions": [
   {
    "version": "v1.0.0",
@@ -44,6 +44,18 @@
    "file": "v1.0.2.html",
    "screenshot": "screenshot-v1.0.2.jpg",
    "published_utc": "2026-10-30T06:42:36Z"
+  },
+  {
+   "version": "v1.0.3",
+   "change": "markup",
+   "captured_utc": "2026-11-04T06:54:56Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "30859ee89e6801ba818dc2a9be4289b45750cd21c0776e8ef14d3bbed2dd2476",
+   "markup_sha256": "f358d1a4cb07ec51c4af68f9f771346c615936c48389eb22d849772970e290f0",
+   "file": "v1.0.3.html",
+   "screenshot": "screenshot-v1.0.3.jpg",
+   "published_utc": "2026-11-04T07:02:07Z"
   }
  ],
  "versioning": "first capture v1.0.0; readable-text change = minor; markup/layout-only change = patch; identical capture = no new version",

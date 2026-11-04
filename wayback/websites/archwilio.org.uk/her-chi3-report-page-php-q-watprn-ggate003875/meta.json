@@ -6,8 +6,8 @@
  "path": "/websites/archwilio.org.uk/her-chi3-report-page-php-q-watprn-ggate003875/",
  "latest": "/websites/archwilio.org.uk/her-chi3-report-page-php-q-watprn-ggate003875/latest.html",
  "first_captured": "2026-10-23T11:29:39Z",
- "last_captured": "2026-10-30T17:09:41Z",
- "current_version": "v1.2.0",
+ "last_captured": "2026-11-04T06:53:06Z",
+ "current_version": "v1.3.0",
  "versions": [
   {
    "version": "v1.0.0",
@@ -44,6 +44,18 @@
    "file": "v1.2.0.html",
    "screenshot": null,
    "published_utc": "2026-10-30T17:12:21Z"
+  },
+  {
+   "version": "v1.3.0",
+   "change": "text",
+   "captured_utc": "2026-11-04T06:53:06Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "0ce423df654e857e46aeaa8977ffb9bd13d346c99a6ef47866c78e39e74e51a4",
+   "markup_sha256": "683c7d78a4f705d1ad383b1fce08eedd40e502337697056993ccbeea555084f4",
+   "file": "v1.3.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:05:23Z"
   }
  ],
  "versioning": "first capture v1.0.0; readable-text change = minor; markup/layout-only change = patch; identical capture = no new version",
