@@ -1,7 +1,7 @@
 {
- "pages": 5247,
- "glossary_links": 12836,
- "name_links": 16758,
+ "pages": 5248,
+ "glossary_links": 12839,
+ "name_links": 16760,
  "themes": {
   "accounts": 1,
   "argentina": 2,
@@ -33,7 +33,7 @@
   "projects": 155,
   "qa": 11,
   "records": 1,
-  "research": 1332,
+  "research": 1333,
   "review": 1,
   "self-assessment": 1,
   "settings": 1,
@@ -54,6 +54,6 @@
  "variants": 98,
  "public_variants": 82,
  "agents_link": "/academy/",
- "agent_blocks_hidden": 12943,
- "agent_pages": 5958
+ "agent_blocks_hidden": 12945,
+ "agent_pages": 5959
 }
