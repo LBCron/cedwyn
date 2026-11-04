@@ -1,0 +1,28 @@
+{
+ "url": "https://en.wikipedia.org/wiki/University_Hospital_Llandough",
+ "key": "en.wikipedia.org/wiki/University_Hospital_Llandough",
+ "host": "en.wikipedia.org",
+ "path": "/websites/en.wikipedia.org/wiki-university-hospital-llandough/",
+ "latest": "/websites/en.wikipedia.org/wiki-university-hospital-llandough/latest.html",
+ "first_captured": "2026-11-04T06:51:43Z",
+ "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
+ "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
+ "title": "University Hospital Llandough - Wikipedia",
+ "last_captured": "2026-11-04T06:51:43Z",
+ "current_version": "v1.0.0",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "change": "first",
+   "captured_utc": "2026-11-04T06:51:43Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "6cef8ebe382c636f9d20d52cc00e48d2488e088370fe724519410d49c2e68e20",
+   "markup_sha256": "e537e37b8ebccdb3d365aadecf096df6a8eaa1477e81d4062c7efe2d74698ce6",
+   "file": "v1.0.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:02:34Z"
+  }
+ ],
+ "archive_status": "ok: captured from Tab's machine"
+}

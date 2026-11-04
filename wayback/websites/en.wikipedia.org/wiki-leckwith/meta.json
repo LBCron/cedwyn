@@ -1,0 +1,28 @@
+{
+ "url": "https://en.wikipedia.org/wiki/Leckwith",
+ "key": "en.wikipedia.org/wiki/Leckwith",
+ "host": "en.wikipedia.org",
+ "path": "/websites/en.wikipedia.org/wiki-leckwith/",
+ "latest": "/websites/en.wikipedia.org/wiki-leckwith/latest.html",
+ "first_captured": "2026-11-04T06:51:37Z",
+ "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
+ "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
+ "title": "Leckwith - Wikipedia",
+ "last_captured": "2026-11-04T06:51:37Z",
+ "current_version": "v1.0.0",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "change": "first",
+   "captured_utc": "2026-11-04T06:51:37Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "d5b5d1f904d132d65a3b670b3f6e2900060243d6c4a9374da3de74c4e6dd8084",
+   "markup_sha256": "d1de9bf1dc72d747c0a231a647cb540128505644a4aed23706dba746e851147d",
+   "file": "v1.0.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:02:18Z"
+  }
+ ],
+ "archive_status": "ok: captured from Tab's machine"
+}

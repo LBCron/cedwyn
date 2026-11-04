@@ -1,0 +1,28 @@
+{
+ "url": "https://en.wikipedia.org/wiki/Penarth_Dock_railway_station",
+ "key": "en.wikipedia.org/wiki/Penarth_Dock_railway_station",
+ "host": "en.wikipedia.org",
+ "path": "/websites/en.wikipedia.org/wiki-penarth-dock-railway-station/",
+ "latest": "/websites/en.wikipedia.org/wiki-penarth-dock-railway-station/latest.html",
+ "first_captured": "2026-11-04T06:51:50Z",
+ "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
+ "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
+ "title": "Penarth Dock railway station - Wikipedia",
+ "last_captured": "2026-11-04T06:51:50Z",
+ "current_version": "v1.0.0",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "change": "first",
+   "captured_utc": "2026-11-04T06:51:50Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "11ad150014beb569974415ce34f134f2846cecfa5d5d66ed0f2f3d316423fa3a",
+   "markup_sha256": "7987461babc925125f4d9fb8361f6ccd2932cc4ca77ebc4a6891597348223e5d",
+   "file": "v1.0.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:03:00Z"
+  }
+ ],
+ "archive_status": "ok: captured from Tab's machine"
+}
