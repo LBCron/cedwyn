@@ -21,7 +21,7 @@ for a in manifest['artworks']:
  assert not any(k in a for k in ['src','buy','v001_image'])
 for name in ['garden','nft-art']:
  s=(R/'web'/name/'index.html').read_text()
- assert 'target="_top"' in s and 'role="status"' in s
+ assert 'target="_top"' in s and 'role="status"' in s and 'data-cw-nolevels' in s
 registry=json.loads((R/'data/site-areas.json').read_text());assert len(registry['areas'])==registry['area_count']
 assert len({x['serendipity_slot'] for x in registry['areas']})==len(registry['areas'])
 print('Arcade flower split regression checks PASS')
