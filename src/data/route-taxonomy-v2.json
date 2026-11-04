@@ -31,68 +31,16 @@
   ],
   "case_status": [
     {
-      "value": "UNTRIED",
-      "description": "No application or step has been evidenced."
-    },
-    {
-      "value": "IN_PROGRESS",
-      "description": "A documented application or activity is underway."
-    },
-    {
       "value": "AWAITING_ACKNOWLEDGEMENT",
       "description": "Sent, with no acknowledgement yet evidenced."
-    },
-    {
-      "value": "AWAITING_RESPONSE",
-      "description": "Acknowledged or accepted for processing; substantive response outstanding."
     },
     {
       "value": "AWAITING_PREREQUISITE",
       "description": "A form, ID check, map, proof of entitlement or other prerequisite is outstanding."
     },
     {
-      "value": "REFERRED_TO_ANOTHER_ROUTE_OR_HOLDER",
-      "description": "The reply points to another route, archive or holder."
-    },
-    {
-      "value": "SEARCH_COMPLETED_NO_MATCH",
-      "description": "A bounded search was completed and no matching records were identified within its stated scope."
-    },
-    {
-      "value": "NOT_HELD_ASSERTED",
-      "description": "The body states that the information is not held; scope and search basis remain separately recorded."
-    },
-    {
-      "value": "FORMAL_REFUSAL_RECEIVED",
-      "description": "A formal refusal/decision notice has been received and its stated basis is recorded."
-    },
-    {
-      "value": "INTERNAL_REVIEW_REQUESTED",
-      "description": "A review/representations request has been sent."
-    },
-    {
-      "value": "INTERNAL_REVIEW_PENDING",
-      "description": "The review is accepted or acknowledged; outcome outstanding."
-    },
-    {
-      "value": "INTERNAL_REVIEW_DECIDED",
-      "description": "A review decision has been received."
-    },
-    {
-      "value": "REGULATOR_COMPLAINT_PENDING",
-      "description": "A complaint to an external regulator or ombudsman is in progress."
-    },
-    {
-      "value": "TRIBUNAL_OR_COURT_STEP_PENDING",
-      "description": "A tribunal or court application/appeal is in progress."
-    },
-    {
-      "value": "FEE_QUOTED",
-      "description": "A specific fee or charge has been quoted; amount and basis are recorded separately."
-    },
-    {
-      "value": "TEMPORARILY_UNAVAILABLE",
-      "description": "A service, collection or access route is temporarily unavailable."
+      "value": "AWAITING_RESPONSE",
+      "description": "Acknowledged or accepted for processing; substantive response outstanding."
     },
     {
       "value": "COMPLETED_WITH_OUTPUT",
@@ -107,16 +55,72 @@
       "description": "A relevant deadline appears to have expired; solicitor verification is mandatory before asserting legal effect."
     },
     {
-      "value": "WITHDRAWN",
-      "description": "The applicant withdrew the defined request or step."
+      "value": "FEE_QUOTED",
+      "description": "A specific fee or charge has been quoted; amount and basis are recorded separately."
+    },
+    {
+      "value": "FORMAL_REFUSAL_RECEIVED",
+      "description": "A formal refusal/decision notice has been received and its stated basis is recorded."
+    },
+    {
+      "value": "HELD_PENDING_OWNER_DECISION",
+      "description": "The route remains available or conditional, but is deliberately not pursued until an owner decision, authority or spend approval is recorded. This does not mean the route is unavailable or exhausted."
+    },
+    {
+      "value": "IN_PROGRESS",
+      "description": "A documented application or activity is underway."
+    },
+    {
+      "value": "INTERNAL_REVIEW_DECIDED",
+      "description": "A review decision has been received."
+    },
+    {
+      "value": "INTERNAL_REVIEW_PENDING",
+      "description": "The review is accepted or acknowledged; outcome outstanding."
+    },
+    {
+      "value": "INTERNAL_REVIEW_REQUESTED",
+      "description": "A review/representations request has been sent."
     },
     {
       "value": "NOT_APPLICABLE",
       "description": "A documented legal or factual reason establishes that the defined route does not apply."
     },
     {
+      "value": "NOT_HELD_ASSERTED",
+      "description": "The body states that the information is not held; scope and search basis remain separately recorded."
+    },
+    {
+      "value": "REFERRED_TO_ANOTHER_ROUTE_OR_HOLDER",
+      "description": "The reply points to another route, archive or holder."
+    },
+    {
+      "value": "REGULATOR_COMPLAINT_PENDING",
+      "description": "A complaint to an external regulator or ombudsman is in progress."
+    },
+    {
+      "value": "SEARCH_COMPLETED_NO_MATCH",
+      "description": "A bounded search was completed and no matching records were identified within its stated scope."
+    },
+    {
+      "value": "TEMPORARILY_UNAVAILABLE",
+      "description": "A service, collection or access route is temporarily unavailable."
+    },
+    {
+      "value": "TRIBUNAL_OR_COURT_STEP_PENDING",
+      "description": "A tribunal or court application/appeal is in progress."
+    },
+    {
       "value": "UNCLEAR_REQUIRES_REVIEW",
       "description": "The available sources do not support a reliable classification."
+    },
+    {
+      "value": "UNTRIED",
+      "description": "No application or step has been evidenced."
+    },
+    {
+      "value": "WITHDRAWN",
+      "description": "The applicant withdrew the defined request or step."
     }
   ],
   "deadline_state": [
@@ -281,5 +285,8 @@
     "unverified_law_label": "VERIFY_WITH_A_SOLICITOR",
     "no_automatic_publication_of_allegations": true,
     "no_auto_close_sibling_routes": true
-  }
+  },
+  "implementation_notes": [
+    "Use HELD_PENDING_OWNER_DECISION with separate cost/authority fields for a route not pursued because a fee or owner approval is outstanding; never map that route to NOT_APPLICABLE or UNAVAILABLE."
+  ]
 }
