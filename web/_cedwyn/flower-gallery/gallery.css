@@ -59,4 +59,7 @@
 
 [hidden]{display:none!important}.gg-wait{position:relative!important;inset:auto!important;min-height:160px;display:flex;align-items:center;justify-content:center;gap:14px}.gg-loading-ring{width:26px;height:26px;border:3px solid #b9c9ab;border-top-color:#45623e;border-radius:50%;animation:gg-spin 1s linear infinite}@keyframes gg-spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.gg-loading-ring{animation:none}}.gg-appnav{display:flex;flex-wrap:wrap;gap:16px;margin:12px 0 24px}.gg-appnav a{color:inherit}.gg-c img{aspect-ratio:1;object-fit:cover}.gg-h{padding-top:12px!important}
 
-html.gg-framed .cw-slotnav,html.gg-framed #ghf-agent-footer,html.gg-framed #cedwyn-journal{display:none!important}
+html.gg-framed .ghf-ui,html.gg-framed .ghf-lf,html.gg-framed .ghf-glow,html.gg-framed .cw-slotnav,html.gg-framed #ghf-agent-footer,html.gg-framed #cedwyn-journal{display:none!important}
+
+/* Readable neutral text when the shared engine inverts this light-native frame. */
+html.gg-framed.ghf-inv :is(.gg-k,.gg-h h1,.gg-ct b,.gg-ct small,.gg-back,.gg-meta dt,.gg-meta dd,.gg-cap,.gg-appnav,.gg-provenance){color:#333}
