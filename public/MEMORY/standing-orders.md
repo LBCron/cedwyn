@@ -139,6 +139,8 @@ These bind every agent, every cycle. When two orders conflict, the newer one win
 ## Design preservation (owner instruction, 3 Nov 2026)
 74. Every migration or refactor keeps the original look, layout and user experience pixel-faithful; only the plumbing changes (data-driven JSON instead of hard-coded text, static hosting). Making the front end data-driven remains the goal. Prove each change with side-by-side before/after screenshots at 390 px and at desktop width before calling it done.
 
+75. A recurring loop the owner set is never silently skipped for drain mode, overload, a slow lane, a queue backlog or a stale occurrence. A stale occurrence runs anyway; a loop that has to wait (a spend budget at zero, a blocked dependency) logs the wait to the problems queue and rebooks itself for the next reset. Only the owner retires or pauses a loop. (owner instruction, 4 Nov 2026)
+
 ## Catalogue lock (owner instruction, 3 Nov 2026)
 
 Existing evidence and artifact records are locked. No agent, seat or automation edits, rewords, moves or deletes an existing record. That covers `data/core/records/*`, EV / MR / GHF-E / artifact pages, evidence registers, and rows already in a findings CSV.
