@@ -1,20 +1,20 @@
 {
  "title": "Research progress — the Great House (Tŷ Mawr) records programme",
- "generated": "2026-11-03T14:31Z",
+ "generated": "2026-11-04T08:14Z",
  "about": "Counts from the project correspondence register: every records question sent to an institution and every reply. Organisations only; no message text and no personal names.",
  "totals": {
-  "institutions": 72,
+  "institutions": 74,
   "questions_sent": 527,
-  "replies": 255,
-  "automatic_acknowledgements": 298,
+  "replies": 257,
+  "automatic_acknowledgements": 299,
   "records_disclosed": 48,
   "not_held": 61,
   "refused": 6,
-  "pointed_elsewhere": 47
+  "pointed_elsewhere": 49
  },
  "last_30_days": {
   "questions_sent": 219,
-  "replies": 93,
+  "replies": 95,
   "automatic_acknowledgements": 97
  },
  "waiting_on_institutions": 31,
@@ -82,7 +82,7 @@
   {
    "month": "2026-11",
    "asked": 8,
-   "replies": 15,
+   "replies": 17,
    "records": 1
   }
  ],
@@ -644,7 +644,7 @@
    "outcomes": {
     "not held": 1
    },
-   "last_activity": "2026-11-02",
+   "last_activity": "2026-11-03",
    "waiting_on": "us"
   },
   {
@@ -712,6 +712,16 @@
    "waiting_on": "us"
   },
   {
+   "institution": "Cambridge University Collection of Aerial Photography (CUCAP)",
+   "questions_sent": 0,
+   "replies": 1,
+   "outcomes": {
+    "pointed elsewhere": 1
+   },
+   "last_activity": "2026-11-03",
+   "waiting_on": "us"
+  },
+  {
    "institution": "Church of England archives (Lambeth Palace Library)",
    "questions_sent": 1,
    "replies": 0,
@@ -774,6 +784,16 @@
    "outcomes": {},
    "last_activity": "2026-10-31",
    "waiting_on": "them"
+  },
+  {
+   "institution": "Victorian Society",
+   "questions_sent": 0,
+   "replies": 1,
+   "outcomes": {
+    "pointed elsewhere": 1
+   },
+   "last_activity": "2026-11-03",
+   "waiting_on": "us"
   },
   {
    "institution": "British Geological Survey",
