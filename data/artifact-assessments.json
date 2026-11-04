@@ -252,6 +252,53 @@
       "interpretation_status": "working",
       "source_verification_status": "photograph read; original object not inspected; authorship and date unverified",
       "limitations": "Family-stated provenance only. A photograph of an inscription is not a signature exemplar; no handwriting conclusion is drawn. The original photograph has not been independently inspected."
+    },
+    {
+      "ev": "EV-0629",
+      "description": "One-page HM Land Registry Wales Office letter dated 4 November 2026, HMLR reference Z084NQV, concerning title WA231076. The recipient-supplied PDF was visually inspected. The public evidence copy is a transcription; the recipient email address and one-time secure-document URL are omitted.",
+      "description_status": "reviewed — source PDF visually inspected",
+      "transcript": "HM LAND REGISTRY — WALES OFFICE\nLetter dated 4 November 2026\nHMLR reference: Z084NQV\nYour reference: 260927-6756312\nTitle number: WA231076\nProperty: Land on the north side of Leckwith Road, Llandough\nProprietor/applicant: Persimmon Homes (Wales) Limited\n\nPUBLIC TRANSCRIPTION\nThe recipient email address and the one-time secure-document URL are omitted from this public copy. The wording below follows the one-page PDF supplied by the recipient. The line “Regarding you letter” is retained as it appears in the source.\n\nDear Customer\n\nRegarding you letter of 12 August 2026 and using the same numbering for ease of reference\n\n1. We have provided you with a list of documents retained by HM Land Registry which are available for inspection.\n2. The statement is contained in the application for first registration (1E)\n3.-7. Please see reply to 1 above.\n\nRegarding your further correspondence of 15 October 2026, we have already explained to you that no application for alteration or indemnity may be considered and our reasons for this; please see letters of 19 April and 25 May 2026. These letters together with the letter of 23 March 2026 set out relevant history of the title and first registration of the land. As per the above, we have provided a list of documents available for inspection relating to the Property. It is important to understand that the Registrar cannot provide an interpretation / explanation of the deeds or any legal advice. There is nothing further that we can usefully add to what has already been said. The appropriate forum for any further action is the Court and not HM Land Registry.\n\nYours faithfully,\n\nCharlotte Takeuchi\nAssistant Land Registrar\n\nPROVENANCE AND LIMITS\nOne-page PDF received by the addressee through HM Land Registry’s electronic notification on 4 November 2026. This public text is a transcription, not a facsimile of the PDF. The individual secure document URL and recipient email address are not reproduced. The PDF itself is not embedded in this public transcription page.",
+      "transcript_status": "transcribed from recipient-supplied one-page PDF; public copy redacted",
+      "interpretation": "The letter expressly responds to the seven numbered questions sent on 12 August and identifies the Form 1E as the location of the statement referred to in question 2. For the other August points it refers back to the retained-document list. It acknowledges the 15 October correspondence but does not identify a notice or disclose its date, addressee, address, dispatch method or proof of service for WA240304. The absence of those details in this letter does not establish that no notice was issued.",
+      "interpretation_status": "working assessment",
+      "source_verification_status": "recipient-supplied one-page PDF visually inspected; matching HM Land Registry electronic notification dated 4 November 2026 at 12:59:41 UTC identified; public transcript omits recipient email and secure URL",
+      "limitations": "The source PDF is not embedded in the public page; only a redacted transcript is published. Older referenced HMLR letters are separately indexed. No conclusion is drawn about whether a notice was sent or whether a service record survives.",
+      "csscpsg": {
+        "schema": "csscpsg/1",
+        "method": "CSSCPSG structural reading (Grammar House): each sentence's actor, act, object and scope, marked against rules S1-S6 (scope, party, agency, term shift, text gap, inconsistency).",
+        "source": "One-page HMLR letter dated 4 November 2026; WA231076 / Z084NQV; compared with the 12 August and 15 October requests.",
+        "scores": {
+          "S1": 1,
+          "S2": 0,
+          "S3": 0,
+          "S4": 1,
+          "S5": 2,
+          "S6": 1
+        },
+        "why": {
+          "S1": "The letter is headed for WA231076 and answers the August enquiry, while the separate 15 October notice/service request identifies WA240304.",
+          "S2": "Sender and addressee are identified on the source document.",
+          "S3": "The Assistant Land Registrar writes in an identified Registry capacity.",
+          "S4": "The 15 October factual records request is summarised as an application for alteration or indemnity and directed to the Court.",
+          "S5": "The letter contains no notice date, addressee, address, service method or proof of delivery for WA240304.",
+          "S6": "The letter identifies Form 1E; the 15 October request separately identifies Form 1C for WA240304."
+        },
+        "S": 5,
+        "T": 0,
+        "D": 5,
+        "caveat": "A mark is an observation about the record, not a finding of wrongdoing. Scores: 0 = not present on the record; 1 = present but contested or SOURCE PENDING; 2 = present on the face of a held record. T counts dated events within 45 days of a decisive moment (record-explained events score 0); D = S x (1+T)."
+      }
+    },
+    {
+      "ev": "EV-0630",
+      "description": "Working forensic review of 73 Land Registry-related mail records in the Wayback index generated 2026-10-30T02:04:45Z, supplemented by the 4 November 2026 HMLR letter, the 31 October–3 November D260928 identity-check exchange and the 9 October 2026 ICR decision letter. The index contains 61 HMLR-only records, 10 ICR-only records and 2 mixed-agency records.",
+      "description_status": "working review updated through 4 November 2026",
+      "transcript": "",
+      "transcript_status": "not applicable — correspondence synthesis, not a source transcript",
+      "interpretation": "The 4 November reply partially answers the 12 August seven-point enquiry: it locates the statement in Form 1E and directs the other points to the retained-document list. It does not answer the separate 15 October section 3.6 request for notice and service details relating to WA240304. The 25 May Stage 2 position, as quoted by the ICR, records HMLR's stated lack of awareness of a family interest or dispute and the absence of a caution application; it does not establish whether any notice was sent or served. D260928 remains a separate SAR process.",
+      "interpretation_status": "working forensic assessment; open points and source limits stated",
+      "source_verification_status": "Wayback index metadata checked through 29 October 2026; 4 November recipient-supplied HMLR PDF visually inspected; Gmail identity-check thread dated 27 October–3 November reviewed; 9 October ICR letter read. Older HMLR attached PDFs are linked but not all independently re-read page by page in this assessment.",
+      "limitations": "This is not a completed page-by-page audit of all attached PDFs or of material outside the indexed mail snapshot. The archive snapshot stops at 29 October 2026. A date discrepancy between the ICR letter's reference to 19 April 2025 and the HMLR delivery email dated 19 April 2026 requires verification against the original Stage 1 PDF. No inference is made that no 1983 notice was issued."
     }
   ]
 }
