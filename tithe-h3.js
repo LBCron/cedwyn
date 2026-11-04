@@ -87,6 +87,9 @@ function showLeck(){document.getElementById("panel").innerHTML="<h3>Leckwith Com
    zoom 17 for res 14 and zoom 19 for res 15, the map shows "Zoom in to see res N". - Cedwyn editors */
 var CAP=20000,MINZ={14:17,15:19},mvT=null,UB=null,lastN=0;
 var AREA={8:"about 0.74 km²",10:"about 1.5 ha",11:"about 2,150 m²",12:"about 307 m²",13:"about 44 m²",14:"about 6.3 m²",15:"about 0.9 m²"};
+/* v0.5.0: the layer and hexagon controls live in a "Layers" button on the map (closed by default) and the cell count in its corner. - Cedwyn editors */
+var ctlC=L.control({position:"topright"});ctlC.onAdd=function(){var e=document.getElementById("th3ctl")||L.DomUtil.create("div");L.DomEvent.disableClickPropagation(e);L.DomEvent.disableScrollPropagation(e);return e;};ctlC.addTo(map);
+var statC=L.control({position:"bottomleft"});statC.onAdd=function(){var e=document.getElementById("h3stat")||L.DomUtil.create("span");L.DomEvent.disableClickPropagation(e);return e;};statC.addTo(map);
 var hintC=L.control({position:"topright"});hintC.onAdd=function(){var e=L.DomUtil.create("div","th3-zhint");e.hidden=true;L.DomEvent.disableClickPropagation(e);return e;};hintC.addTo(map);
 function prep(){D.parcels.forEach(function(p){var a=90,b=180,c=-90,e=-180;p.poly.forEach(function(r){r.forEach(function(q){if(q[0]<a)a=q[0];if(q[0]>c)c=q[0];if(q[1]<b)b=q[1];if(q[1]>e)e=q[1];});});p._bb=[a,b,c,e];
  if(!UB)UB=[a,b,c,e];else{UB=[Math.min(UB[0],a),Math.min(UB[1],b),Math.max(UB[2],c),Math.max(UB[3],e)];}});}
@@ -103,26 +106,26 @@ function m2(s,w,n,e){var k=111320,la=(s+n)/2*Math.PI/180;return Math.max(0,(n-s)
 function drawHex(){hexL.clearLayers();zhint(0);lastN=0;if(!res){stat("");return;}
  if(res===8){var seen={};D.parcels.forEach(function(p,i){var c=p.h8;if(seen[c])return;seen[c]=1;
    var h=L.polygon(hexPoly(c,8),{color:"#1e4d45",weight:2,fillColor:col(p),fillOpacity:0.06});
-   h.on("click",function(){show(i,c);});h.addTo(hexL);});stat("res 8 · "+AREA[8]+" a cell");return;}
+   h.on("click",function(){show(i,c);});h.addTo(hexL);});stat("");return;}
  if(!window.h3||!UB){stat("Hexagons are still loading.");return;}
  var z=map.getZoom(),need=MINZ[res]||0;
- if(z<need){zhint(need);stat("res "+res+" · "+AREA[res]+" a cell · zoom in to draw");return;}
+ if(z<need){zhint(need);stat("Zoom in to draw");return;}
  var area=h3.getHexagonAreaAvg(res,"m2"),edge=h3.getHexagonEdgeLengthAvg(res,"m"),B=map.getBounds();
  var pl=edge/111320,pw=pl/Math.cos(B.getCenter().lat*Math.PI/180);
  var s=B.getSouth()-pl,w=B.getWest()-pw,n=B.getNorth()+pl,e=B.getEast()+pw,boxes=[],est=0;
  D.parcels.forEach(function(p){var bb=p._bb,a=Math.max(s,bb[0]),b=Math.max(w,bb[1]),c=Math.min(n,bb[2]),f=Math.min(e,bb[3]);
   if(a<c&&b<f){boxes.push([a,b,c,f]);est+=m2(a,b,c,f)/area;}});
- if(!boxes.length){stat("res "+res+" · no parcels in view");return;}
- if(est>CAP){var zz=z+Math.ceil(Math.log(est/CAP)/Math.log(4));zhint(Math.max(zz,need,z+1));stat("res "+res+" · "+AREA[res]+" a cell · about "+Math.round(est).toLocaleString("en-GB")+" in view, over the "+CAP.toLocaleString("en-GB")+" cap");return;}
+ if(!boxes.length){stat("No parcels in view");return;}
+ if(est>CAP){var zz=z+Math.ceil(Math.log(est/CAP)/Math.log(4));zhint(Math.max(zz,need,z+1));stat("About "+Math.round(est).toLocaleString("en-GB")+" cells in view, over the "+CAP.toLocaleString("en-GB")+" cap");return;}
  var seen={},cand=0,out=[];
  boxes.forEach(function(q){var cs;try{cs=h3.polygonToCells([[q[0],q[1]],[q[0],q[3]],[q[2],q[3]],[q[2],q[1]]],res);}catch(x){cs=[];}
   for(var k=0;k<cs.length;k++){var c=cs[k];if(seen[c])continue;seen[c]=1;cand++;if(cand>CAP*2)break;
    var ce=h3.cellToLatLng(c),i=whichParcel(ce[0],ce[1]);if(i>=0)out.push([c,i]);}});
- if(out.length>CAP){zhint(z+1);stat("res "+res+" · over the "+CAP.toLocaleString("en-GB")+" cap");return;}
+ if(out.length>CAP){zhint(z+1);stat("Over the "+CAP.toLocaleString("en-GB")+" cap");return;}
  var fine=res>=13;
  out.forEach(function(o){var p=D.parcels[o[1]],cl=col(p);
   L.polygon(h3.cellToBoundary(o[0]),{renderer:hexR,interactive:false,color:fine?"#ffffff":cl,opacity:fine?0.55:1,weight:fine?0.4:0.6,fillColor:cl,fillOpacity:0.55}).addTo(hexL);});
- lastN=out.length;stat("res "+res+" · "+AREA[res]+" a cell · "+out.length.toLocaleString("en-GB")+" in view");}
+ lastN=out.length;stat(out.length.toLocaleString("en-GB")+" cells in view");}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m];});}
 function show(i,cell){var p=D.parcels[i];
  var h="<h3>Plan parcel "+esc(p.no)+"</h3><dl>"+

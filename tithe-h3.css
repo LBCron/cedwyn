@@ -52,3 +52,21 @@
 .th3-zhint[hidden]{display:none}
 .th3-zhint button{font:inherit;margin-left:4px;padding:2px 8px;border:1px solid #1e4d45;border-radius:12px;background:#1e4d45;color:#fff;cursor:pointer}
 @media (max-width:420px){.th3-stat{flex-basis:100%}}
+
+/* v0.5.0: map first on a phone. Title is one line (the site header already names the page), the introduction sits under the map,
+   the controls fold into a "Layers" button on the map, closed by default, and the cell count sits in the map's corner. */
+.th3-hero{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.th3w{padding-top:6px}
+.th3-mapwrap{position:relative}
+.th3-ctl{background:#fff;border:1px solid #1e4d45;border-radius:8px;box-shadow:0 1px 4px #0003;font-size:.85rem;max-width:min(300px,78vw)}
+.th3-ctl>summary{cursor:pointer;list-style:none;padding:5px 10px;font-weight:600;color:#1e4d45;user-select:none}
+.th3-ctl>summary::-webkit-details-marker{display:none}
+.th3-ctl>summary:after{content:" ▾"}.th3-ctl[open]>summary:after{content:" ▴"}
+.th3-ctl .th3-bar{margin:0;padding:4px 10px 8px;flex-direction:column;align-items:flex-start;gap:6px}
+.th3-ctl .th3-bar+.th3-bar{border-top:1px solid #e3dccb;padding-top:8px}
+.th3-ctl .th3-bar .op input{width:120px}
+.leaflet-control .th3-stat{display:block;background:rgba(255,255,255,.85);border-radius:4px;padding:1px 6px;font-size:.75rem;color:#333;margin:0 0 4px 4px}
+.th3-stat:empty{display:none!important}
+.th3-intro{font-size:.9rem;color:#444;margin:0 0 .6em}.th3-intro p{margin:0}
+#map{height:72vh}
+@media (max-width:420px){#map{height:70vh}.th3-stat{flex-basis:auto}}
