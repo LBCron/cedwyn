@@ -288,7 +288,7 @@ function windMat(base) { base.onBeforeCompile = sh => { sh.uniforms.uT = windU; 
 }
 
 // ---------- views ----------
-const VIEWS = { heli: [[85, 66, 110], [4, 2, -4]], ground: [[-9, 1.7, 80], [-27, 4, 16]], front: [[3, 2.2, 32], [-1, 3.6, 0]], above: [[8, 150, 60], [-8, 0, 4]] }; VIEWS.quarter = VIEWS.heli; VIEWS.yard = VIEWS.ground;
+const VIEWS = { heli: [[52, 44, 74], [-10, 1, 6]], ground: [[-9, 1.7, 80], [-27, 4, 16]], front: [[3, 2.2, 32], [-1, 3.6, 0]], above: [[8, 150, 60], [-8, 0, 4]] }; VIEWS.quarter = VIEWS.heli; VIEWS.yard = VIEWS.ground;
 function go(v) { const [p, t] = VIEWS[v]; camera.position.set(...p); controls.target.set(...t); controls.update(); }
 go(Q.get("view") || "heli");
 
