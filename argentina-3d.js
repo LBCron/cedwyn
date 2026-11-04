@@ -4,7 +4,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { Sky } from "./vendor/Sky.js?v=0.160.0";
-import { ThreeBackend } from "./world-backend.js?v=0.1.0";
+import { ThreeBackend } from "./world-backend.js?v=0.2.0";
 
 const $ = id => document.getElementById(id);
 const Q = new URLSearchParams(location.search);
@@ -44,7 +44,7 @@ const sky = new Sky(); sky.scale.setScalar(5000); scene.add(sky);
 const su = sky.material.uniforms; su.turbidity.value = 3.2; su.rayleigh.value = 1.1; su.mieCoefficient.value = 0.004; su.mieDirectionalG.value = 0.82;
 const sunL = new THREE.DirectionalLight(0xfff3e0, 3.2); sunL.castShadow = true;
 sunL.shadow.mapSize.set(LOW ? 1024 : 2048, LOW ? 1024 : 2048); sunL.shadow.bias = -0.0004; sunL.shadow.normalBias = 0.03;
-Object.assign(sunL.shadow.camera, { left: -48, right: 48, top: 48, bottom: -48, near: 1, far: 260 });
+Object.assign(sunL.shadow.camera, { left: -80, right: 80, top: 80, bottom: -80, near: 1, far: 420 });
 scene.add(sunL, sunL.target);
 const hemi = new THREE.HemisphereLight(0xbcd3ec, 0x8a7656, 0.55); scene.add(hemi);
 scene.fog = new THREE.FogExp2(0xc9d6e2, 0.0016);
@@ -147,73 +147,82 @@ function pick(name, basis, x, y, z, w, h, d, ry = 0) { const b = new THREE.Mesh(
 // ================= THE FARM =================
 // House footprint from the 1974 measured survey (ground plan, scale bar 5 m): main range 15.2 x 6.0 m, long axis east-west,
 // north wing 8.6 x 6.5 m behind the west/centre, later additions on the east gable. Local +z = the survey's south front.
+// ---------- Tŷ Mawr group, rebuilt v0.2.0 from three reference photographs (aerial from the south-east, the house front, the stables seen from the yard) ----------
+// layout in metres, x east, z south, front of the house to the south as in the photographs; geometry also in tymawr-geometry.json
+const pantTex = canvasTex(256, (g, s) => { const cols = 8, rows = 7, cw = s / cols, rh = s / rows; g.fillStyle = "#8e4630"; g.fillRect(0, 0, s, s);
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { const x = c * cw, y = r * rh, h = 14 + rnd() * 10, l = 30 + rnd() * 9;
+    const gr = g.createLinearGradient(x, 0, x + cw, 0); gr.addColorStop(0, `hsl(${h},55%,${l - 13}%)`); gr.addColorStop(0.35, `hsl(${h},52%,${l + 6}%)`); gr.addColorStop(0.62, `hsl(${h},55%,${l - 3}%)`); gr.addColorStop(0.8, `hsl(${h},58%,${l - 16}%)`); gr.addColorStop(1, `hsl(${h},55%,${l - 8}%)`);
+    g.fillStyle = gr; g.fillRect(x, y, cw, rh); g.fillStyle = "rgba(20,8,4,.45)"; g.fillRect(x, y + rh - 3, cw, 3);
+    for (let i = 0; i < 26; i++) { g.fillStyle = `rgba(${60 + rnd() * 60},${70 + rnd() * 50},${40 + rnd() * 30},${0.08 + rnd() * 0.18})`; g.fillRect(x + rnd() * cw, y + rnd() * rh, 1 + rnd() * 3, 1 + rnd() * 2); } } });
+const pantN = canvasTex(256, (g, s) => { const cols = 8, rows = 7, cw = s / cols, rh = s / rows; for (let c = 0; c < cols; c++) { const gr = g.createLinearGradient(c * cw, 0, c * cw + cw, 0); gr.addColorStop(0, "rgb(70,128,255)"); gr.addColorStop(0.35, "rgb(128,128,255)"); gr.addColorStop(0.7, "rgb(190,128,255)"); gr.addColorStop(1, "rgb(100,128,255)"); g.fillStyle = gr; g.fillRect(c * cw, 0, cw, s); }
+  for (let r = 0; r < rows; r++) { g.fillStyle = "rgb(128,60,240)"; g.fillRect(0, r * rh + rh - 3, s, 3); } }, false);
+const brickTex = canvasTex(256, (g, s) => { g.fillStyle = "#c9bfae"; g.fillRect(0, 0, s, s); const rows = 16, rh = s / rows, bw = s / 4;
+  for (let r = 0; r < rows; r++) for (let c = -1; c < 5; c++) { const x = c * bw + (r % 2) * bw / 2; g.fillStyle = `hsl(${8 + rnd() * 10},${48 + rnd() * 16}%,${30 + rnd() * 12}%)`; g.fillRect(x + 2, r * rh + 2, bw - 4, rh - 4); } });
+M.pantile = new THREE.MeshStandardMaterial({ map: pantTex, normalMap: pantN, normalScale: new THREE.Vector2(1.4, 1.4), roughness: 0.78 }); UV_SCALE.pantile = 2.4;
+M.brick = new THREE.MeshStandardMaterial({ map: brickTex, roughness: 0.9 }); UV_SCALE.brick = 1.0;
+M.green = new THREE.MeshStandardMaterial({ color: 0x35603a, roughness: 0.5 });
+M.dressed = new THREE.MeshStandardMaterial({ map: tex("tex/stone.jpg?v=1"), normalMap: tex("tex/stone_n.jpg?v=1", false), normalScale: new THREE.Vector2(0.8, 0.8), color: 0xd9cdb8, roughness: 0.9 }); UV_SCALE.dressed = 1.6;
+M.leaf = new THREE.MeshStandardMaterial({ color: 0x4f6a2e, roughness: 0.95 }); M.bark = new THREE.MeshStandardMaterial({ color: 0x5a4c3e, roughness: 1 });
+function chim(m, x, y0, top, w, d, mat = "stone") { put(new THREE.BoxGeometry(w, top - y0, d), mat, m.clone().multiply(mtx(x, (top + y0) / 2, 0))); put(new THREE.BoxGeometry(w + 0.14, 0.12, d + 0.14), mat === "brick" ? "brick" : "sill", m.clone().multiply(mtx(x, top + 0.03, 0))); for (const px of (w > 0.9 ? [-0.2, 0.2] : [0])) put(new THREE.CylinderGeometry(0.11, 0.13, 0.42, 10), "pot", m.clone().multiply(mtx(x + px, top + 0.3, 0))); }
+function gabledPorch(m, w, d, eave, pitch, wall, doorW, doorH, doorMat) { // projecting gabled porch on a wall face; local z out of the wall
+  const rise = w / 2 * Math.tan(pitch * Math.PI / 180), ry = eave + rise; const sh = new THREE.Shape(); sh.moveTo(-w / 2, 0); sh.lineTo(w / 2, 0); sh.lineTo(w / 2, eave); sh.lineTo(0, ry); sh.lineTo(-w / 2, eave); sh.closePath();
+  put(new THREE.ExtrudeGeometry(sh, { depth: d, bevelEnabled: false }), wall, m.clone());
+  const L = Math.hypot(w / 2, rise) + 0.25, a = Math.atan2(rise, w / 2);
+  for (const s of [1, -1]) put(new THREE.BoxGeometry(L, 0.1, d + 0.3), "slate", m.clone().multiply(mtx(s * (L / 2) * Math.cos(a), ry - (L / 2) * Math.sin(a) + 0.07, d / 2 + 0.1, 0, 0, s * -a)));
+  put(new THREE.CylinderGeometry(0.1, 0.1, d + 0.3, 8), "ridge", m.clone().multiply(mtx(0, ry + 0.07, d / 2 + 0.1, 0, Math.PI / 2)));
+  doorAt(m.clone().multiply(mtx(0, 0, d + 0.01)), doorW, doorH, doorMat);
+}
+function dsWall(x1, z1, x2, z2, h = 1.25, t = 0.62, gaps = []) { // dry-stone wall: rubble body, battered, with an upright-stone coping
+  const L = Math.hypot(x2 - x1, z2 - z1), ry = -Math.atan2(z2 - z1, x2 - x1), base = mtx((x1 + x2) / 2, 0, (z1 + z2) / 2, ry);
+  let segs = [[-L / 2, L / 2]]; for (const [a, b] of gaps) segs = segs.flatMap(([s, e]) => (b <= s || a >= e) ? [[s, e]] : [[s, a], [b, e]].filter(([p, q]) => q - p > 0.3));
+  for (const [s, e] of segs) { const l = e - s, cx = (s + e) / 2; const g = new THREE.BoxGeometry(l, h, t, 1, 1, 1); const p = g.attributes.position; for (let i = 0; i < p.count; i++) if (p.getY(i) > 0) p.setZ(i, p.getZ(i) * 0.72); put(g, "stone", base.clone().multiply(mtx(cx, h / 2, 0)));
+    for (let u = s + 0.12; u < e - 0.1; u += 0.2 + rnd() * 0.06) put(new THREE.BoxGeometry(0.1 + rnd() * 0.06, 0.26 + rnd() * 0.1, t * 0.62), "stone", base.clone().multiply(mtx(cx - l / 2 + (u - s), h + 0.1, 0, 0, 0, (rnd() - 0.5) * 0.25))); }
+}
+function gravel(x1, x2, z1, z2) { const g = new THREE.PlaneGeometry(x2 - x1, z2 - z1); g.rotateX(-Math.PI / 2); put(g, "gravel", mtx((x1 + x2) / 2, 0.035, (z1 + z2) / 2)); }
+function fieldGate(x, z, w = 3.4, ry = 0) { const m = mtx(x, 0, z, ry); for (const y of [0.35, 0.65, 0.95, 1.2]) put(new THREE.BoxGeometry(w, 0.08, 0.06), "sill", m.clone().multiply(mtx(0, y, 0))); for (const px of [-w / 2, w / 2]) put(new THREE.BoxGeometry(0.14, 1.35, 0.12), "sill", m.clone().multiply(mtx(px, 0.67, 0))); put(new THREE.BoxGeometry(0.06, 1.0, 0.05), "sill", m.clone().multiply(mtx(0, 0.75, 0, 0, 0, 0.62))); }
 function farm() {
-  const H = range({ x: 0, z: 0, len: 15.2, dep: 6.0, eave: 5.2, pitch: 40, over: 0.3, verge: 0.12 });
-  const F = mtx(0, 0, 3.0);            // south front face
-  // ground floor: hall window (west), porch/passage door, kitchen windows (east); first floor: three windows (album 098, 101)
-  windowAt(F.clone().multiply(mtx(-4.6, 1.55, 0)), 1.25, 1.3, 3);
-  windowAt(F.clone().multiply(mtx(2.4, 1.55, 0)), 1.35, 1.3, 3);
-  windowAt(F.clone().multiply(mtx(5.6, 1.55, 0)), 1.1, 1.2, 2);
-  windowAt(F.clone().multiply(mtx(-4.6, 4.0, 0)), 0.85, 1.0, 2);
-  windowAt(F.clone().multiply(mtx(-0.9, 4.0, 0)), 0.85, 1.0, 2);
-  windowAt(F.clone().multiply(mtx(3.9, 4.0, 0)), 1.0, 1.05, 2);
-  doorAt(F.clone().multiply(mtx(-1.2, 0, 0)), 0.95, 2.05);
-  // gabled timber porch over the passage door (album 098; porch close-up, pencil 019)
-  porch(F.clone().multiply(mtx(-1.2, 0, 0)));
-  // gable-end chimney stacks on the ridge line, both ends (album 096, 098)
-  chimney(H.base, -7.15, 6.0, H.ridgeY + 1.35); chimney(H.base, 7.15, 6.0, H.ridgeY + 1.35);
-  // rear: small windows (GUESS: no photograph of the back)
-  const B = mtx(0, 0, -3.0, Math.PI); windowAt(B.clone().multiply(mtx(-5.5, 4.0, 0)), 0.7, 0.9, 2); windowAt(B.clone().multiply(mtx(-3.8, 1.6, 0)), 0.8, 1.0, 2);
-  // north wing (survey: 'North wing' + 'Dairy'); heights GUESS
-  const NW = range({ x: -1.5, z: -6.25, ry: Math.PI / 2, len: 6.5, dep: 8.6, eave: 4.3, pitch: 34, over: 0.25 });
-  chimney(NW.base, -3.1, 5.0, 8.3, 0.8, 0.6);
-  windowAt(mtx(-1.5, 0, -9.5, Math.PI).multiply(mtx(1.6, 1.5, 0)), 0.8, 1.0, 2); doorAt(mtx(-1.5, 0, -9.5, Math.PI).multiply(mtx(-1.4, 0, 0)), 0.9, 2.0);
-  windowAt(mtx(2.8, 0, -6.2, Math.PI / 2).multiply(mtx(0.6, 1.5, 0)), 0.75, 0.95, 2);
-  // east additions (survey: dashed 'later additions (east)'); single storey, red tile roof as in painting nfa-0157 (GUESS)
-  range({ x: 9.4, z: 0, len: 3.6, dep: 6.0, eave: 2.6, pitch: 32, roof: "pantile", over: 0.25 });
-  doorAt(mtx(9.4, 0, 3.0).multiply(mtx(0.6, 0, 0)), 0.85, 1.95); windowAt(mtx(9.4, 0, 3.0).multiply(mtx(-0.9, 1.5, 0)), 0.7, 0.8, 2);
-  pick("Tŷ Mawr farmhouse", "Footprint and rooms: 1974 measured survey (ground plan). Walls, roof, chimneys, porch and front windows: family album photographs 096 and 098. Rear and wing heights: best guess.", 0, 4, 0, 16, 9, 7);
-  pick("North wing and dairy", "Position and size: 1974 measured survey. Height and roof: best guess (no photograph of the back).", -1.5, 3, -6.3, 8.6, 7, 6.5);
-  pick("Later additions (east)", "Position: dashed outline on the 1974 survey. Red tile roof: painting 'The Farmhouse Over the Wall'. Height: best guess.", 9.4, 2, 0, 3.6, 4, 6);
-
-  // walled front garden: rubble wall with flat coping, lawn (album 098: wall and lawn in front of the house); size GUESS
-  const gz0 = 3.0, gz1 = 11.5, gx = 9.0, wh = 1.15;
-  const wallRun = (x1, z1, x2, z2) => { const L = Math.hypot(x2 - x1, z2 - z1), a = Math.atan2(z2 - z1, x2 - x1); put(new THREE.BoxGeometry(L, wh, 0.5), "stone", mtx((x1 + x2) / 2, wh / 2, (z1 + z2) / 2, -a)); put(new THREE.BoxGeometry(L + 0.1, 0.1, 0.62), "sill", mtx((x1 + x2) / 2, wh + 0.05, (z1 + z2) / 2, -a)); };
-  wallRun(-gx, gz0, -gx, gz1); wallRun(gx, gz0, gx, gz1); wallRun(-gx, gz1, -2.0, gz1); wallRun(-0.4, gz1, gx, gz1);
-  for (const px of [-2.0, -0.4]) { put(new THREE.BoxGeometry(0.5, 1.5, 0.6), "stone", mtx(px, 0.75, gz1)); }
-  put(new THREE.PlaneGeometry(2 * gx - 0.6, gz1 - gz0 - 0.3), "lawn", mtx(0, 0.03, (gz0 + gz1) / 2, 0, -Math.PI / 2));
-  put(new THREE.PlaneGeometry(1.4, gz1 - gz0), "gravel", mtx(-1.2, 0.04, (gz0 + gz1) / 2, 0, -Math.PI / 2));
-  pick("Front garden wall", "Rubble stone wall with flat coping in front of the house: album photograph 098. Length and line: best guess.", 0, 0.6, 11.5, 18, 1.4, 1);
-
-  // cart shed / stable range with round-arched openings, west of the house and set back (album 098 shows it to the left; album 128 'stable range')
-  const S = range({ x: -24, z: -7, len: 18, dep: 5.5, eave: 3.1, pitch: 36 });
-  const SF = mtx(-24, 0, -4.25);
-  for (let i = 0; i < 4; i++) archAt(SF.clone().multiply(mtx(-6.3 + i * 3.0, 0, 0)), 2.2, 2.6);
-  doorAt(SF.clone().multiply(mtx(5.6, 0, 0)), 1.1, 2.1, "timber"); windowAt(SF.clone().multiply(mtx(7.6, 1.7, 0)), 0.8, 0.7, 2);
-  pick("Stable range and cart shed", "Lime-washed walls, slate roof and round-arched openings: album photographs 098 and 128 (stable range). Place, west of the house and set back: album 098. Size: best guess.", -24, 2.5, -7, 18, 5, 5.5);
-
-  // threshing barn: rubble stone, slate roof, gabled cart porch (painting 'Two Barns Beyond the Meadow', pencil of album 092, album 020)
-  const BR = range({ x: 18, z: -20, len: 16, dep: 7, eave: 4.6, pitch: 40, wall: "stone" });
-  const P = range({ x: 18, z: -14.9, ry: Math.PI / 2, len: 3.2, dep: 5.0, eave: 4.0, pitch: 40, wall: "stone", over: 0.2 });
-  doorAt(mtx(18, 0, -13.3), 3.4, 3.4, "timber");
-  for (const sx of [-5.5, 5.5]) put(new THREE.BoxGeometry(0.18, 0.9, 0.1), "dark", mtx(18 + sx, 2.6, -16.45));
-  pick("Threshing barn", "Rubble stone, slate roof and a gabled cart porch: album 092 and 020 and the painting 'Two Barns Beyond the Meadow'. Position, north-east across the yard: best guess.", 18, 4, -18, 16, 8, 10);
-
-  // stable row, lime-washed, closing the yard on the east (painting 'Stable Row at Noon'); place and size GUESS
-  range({ x: 27, z: -2, ry: Math.PI / 2, len: 16, dep: 5.2, eave: 2.9, pitch: 36 });
-  const SR = mtx(24.4, 0, -2, -Math.PI / 2);
-  for (let i = 0; i < 4; i++) { doorAt(SR.clone().multiply(mtx(-6 + i * 3.6, 0, 0)), 1.05, 2.0, i % 2 ? "door" : "timber"); windowAt(SR.clone().multiply(mtx(-4.4 + i * 3.6, 1.7, 0)), 0.7, 0.6, 2); }
-  pick("Stable row", "Lime-washed single-storey row with slate roof and stable doors: painting 'Stable Row at Noon'. Position and size: best guess.", 27, 2, -2, 5.2, 4.5, 16);
-
-  // farmyard and track (gravel); entrance gate with stone piers and ball finials (album 096)
-  put(new THREE.PlaneGeometry(22, 24), "gravel", mtx(15, 0.02, -7, 0, -Math.PI / 2));
-  put(new THREE.PlaneGeometry(4.2, 34), "gravel", mtx(13, 0.025, 24, 0, -Math.PI / 2));
-  for (const px of [10.6, 15.4]) { put(new THREE.BoxGeometry(0.7, 1.9, 0.7), "stoneLime", mtx(px, 0.95, 40)); put(new THREE.BoxGeometry(0.85, 0.12, 0.85), "sill", mtx(px, 1.96, 40)); put(new THREE.SphereGeometry(0.28, 14, 10), "sill", mtx(px, 2.3, 40)); }
-  for (let i = 0; i < 5; i++) put(new THREE.BoxGeometry(3.9, 0.08, 0.06), "gate", mtx(13, 0.35 + i * 0.27, 40));
-  for (const gx2 of [11.2, 13, 14.8]) put(new THREE.BoxGeometry(0.08, 1.2, 0.06), "gate", mtx(gx2, 0.85, 40));
-  const fw = (x1, x2) => { put(new THREE.BoxGeometry(x2 - x1, 1.1, 0.45), "stone", mtx((x1 + x2) / 2, 0.55, 40)); put(new THREE.BoxGeometry(x2 - x1, 0.1, 0.55), "sill", mtx((x1 + x2) / 2, 1.13, 40)); };
-  fw(-6, 10.25); fw(15.75, 30);
-  pick("Entrance gate", "Stone gate piers with ball finials and a field gate on the track: album photograph 096. Distance from the house: best guess.", 13, 1.2, 40, 6, 2.5, 1);
+  // the house: whitewashed two-storey range, ridge east-west, slate about 40 degrees (photograph 2)
+  const H = range({ x: 0, z: 0, len: 11.0, dep: 6.2, eave: 5.0, pitch: 40, over: 0.3, verge: 0.12 });
+  const F = mtx(0, 0, 3.1);
+  for (const x of [-3.3, 0.6, 3.9]) windowAt(F.clone().multiply(mtx(x, 3.95, 0)), 0.95, 1.05, 2);
+  windowAt(F.clone().multiply(mtx(-2.9, 1.55, 0)), 1.3, 1.25, 3); windowAt(F.clone().multiply(mtx(4.0, 1.55, 0)), 1.2, 1.2, 2);
+  gabledPorch(F.clone().multiply(mtx(1.0, 0, 0)), 2.1, 1.8, 2.4, 50, "lime", 0.95, 2.05, "green");
+  const B = mtx(0, 0, -3.1, Math.PI); for (const x of [-2.5, 2.8]) { windowAt(B.clone().multiply(mtx(x, 1.6, 0)), 0.9, 1.0, 2); windowAt(B.clone().multiply(mtx(x, 3.95, 0)), 0.8, 0.9, 2); }
+  chim(H.base, 0.2, 6.0, H.ridgeY + 1.0, 1.0, 0.7, "stone");            // middle stack (stone)
+  chim(H.base, 5.15, 6.0, H.ridgeY + 1.1, 0.75, 0.65, "brick");         // east gable stack, red brick
+  // stone gable-end bay at the west end: a cross-wing with its gable to the front, rubble stone (photographs 1 and 2)
+  const S = range({ x: -7.4, z: 0.6, ry: Math.PI / 2, len: 8.2, dep: 5.4, eave: 5.0, pitch: 44, wall: "stone", over: 0.3, verge: 0.15 });
+  const SF = mtx(-7.4, 0, 4.7); windowAt(SF.clone().multiply(mtx(0, 1.5, 0)), 1.1, 1.2, 2); windowAt(SF.clone().multiply(mtx(0, 4.0, 0)), 0.75, 0.9, 2);
+  put(new THREE.BoxGeometry(1.4, 0.16, 0.25), "sill", SF.clone().multiply(mtx(0, 0.84, 0.1)));
+  chim(S.base, -3.2, 6.5, S.ridgeY + 1.0, 1.0, 0.75, "stone");          // stack on the front gable of the stone bay
+  pick("Tŷ Mawr, the house", "Photographs 1 and 2: two storeys, lime-washed front, stone gable-end bay to the west, slate roof, three chimneys (one red brick), small gabled porch. Sizes are scaled from the photographs; the back is a best guess.", -1.5, 4, 0.5, 17, 9, 9);
+  // attached single-storey range to the east, red pantiles (photograph 2)
+  const R = range({ x: 13.5, z: -0.2, len: 16.0, dep: 5.6, eave: 2.8, pitch: 33, roof: "pantile", over: 0.3, verge: 0.12 });
+  const RF = mtx(13.5, 0, 2.6); for (const x of [-5.5, 0.5, 5.5]) windowAt(RF.clone().multiply(mtx(x, 1.4, 0)), 0.9, 0.85, 2); for (const x of [-2.6, 3.2]) doorAt(RF.clone().multiply(mtx(x, 0, 0)), 0.95, 1.95, "green");
+  pick("Attached range", "Photograph 2: long single-storey range on the east end of the house, red pantile roof. Length scaled from the photograph.", 13.5, 2, 0, 16.5, 4.5, 6);
+  // stable range west of the house: lime-washed, slate, a row of green stable doors (photograph 3)
+  const SR = range({ x: -20.5, z: 16.5, len: 14.0, dep: 5.6, eave: 2.9, pitch: 36, over: 0.3 });
+  const SRF = mtx(-20.5, 0, 19.3); for (let i = 0; i < 5; i++) { const x = -5.6 + i * 2.8; doorAt(SRF.clone().multiply(mtx(x, 0, 0)), 1.05, 2.05, "green"); put(new THREE.BoxGeometry(1.05, 0.05, 0.08), "frame", SRF.clone().multiply(mtx(x, 1.12, 0.08))); if (i < 4) windowAt(SRF.clone().multiply(mtx(x + 1.4, 1.75, 0)), 0.55, 0.5, 1); }
+  pick("Stable range", "Photograph 3: lower lime-washed range with a slate roof and a row of green stable doors, between the barn and the house. Sizes scaled from the photograph.", -20.5, 2, 16.5, 14.5, 4.5, 6);
+  // dressed-stone barn with a big green cart door under a gabled porch (photograph 3)
+  const BN = range({ x: -36.5, z: 18.5, len: 16.0, dep: 7.4, eave: 4.9, pitch: 40, wall: "dressed", over: 0.3 });
+  gabledPorch(mtx(-34.5, 0, 22.2), 4.6, 2.2, 4.0, 42, "dressed", 3.3, 3.5, "green");
+  const BF = mtx(-36.5, 0, 22.2); for (const x of [-6.0, -3.4, 3.4, 6.2]) put(new THREE.BoxGeometry(0.16, 0.9, 0.05), "dark", BF.clone().multiply(mtx(x, 2.9, 0.01)));
+  doorAt(BF.clone().multiply(mtx(5.0, 0, 0)), 1.0, 2.0, "green");
+  pick("Stone barn", "Photograph 3: dressed-stone barn with a large green cart door under a gabled porch, west of the stables. Sizes scaled from the photograph.", -36.5, 3, 19.5, 16.5, 7.5, 10);
+  // church to the north-east, as the aerial photograph shows it (form simplified)
+  const CH = range({ x: 56, z: -34, len: 18, dep: 7.6, eave: 5.2, pitch: 45, wall: "stone", over: 0.35 });
+  const T = mtx(44.2, 0, -34); put(new THREE.BoxGeometry(5.6, 15, 5.6), "stone", T.clone().multiply(mtx(0, 7.5, 0)));
+  for (let i = 0; i < 4; i++) for (const s of [-1, 1]) { put(new THREE.BoxGeometry(0.9, 0.8, 0.55), "stone", T.clone().multiply(mtx(-2.1 + i * 1.4, 15.4, s * 2.5))); put(new THREE.BoxGeometry(0.55, 0.8, 0.9), "stone", T.clone().multiply(mtx(s * 2.5, 15.4, -2.1 + i * 1.4))); }
+  for (const x of [-4, 0, 4]) archAt(mtx(56 + x, 0, -30.2), 0.9, 2.6);
+  pick("Church", "Photograph 1 (aerial): the church stands north-east of the house. Its position comes from the aerial view; its form is simplified.", 52, 6, -34, 26, 15, 9);
+  // dry-stone walls and gravel yards (photographs 2 and 3)
+  dsWall(-11, 13.5, 26, 13.5, 1.2, 0.62, [[1.0, 4.6]]); dsWall(-11, 4.8, -11, 13.5); dsWall(26, 3.2, 26, 13.5);
+  dsWall(-46, 33, -6, 33, 1.25, 0.65, [[-2.3, 1.3]]); dsWall(-46, 22.6, -46, 33); dsWall(-6, 20, -6, 33, 1.2, 0.62, [[1.6, 5.0]]);
+  gravel(-10.6, 25.6, 3.4, 13.1); gravel(-45.6, -6.4, 20.0, 32.6); gravel(8.6, 12.0, 13.5, 60); gravel(-6.4, 8.6, 14.5, 18.0);
+  fieldGate(-26.5, 33, 3.4); fieldGate(10.25, 13.5, 3.3);
+  // a windbreak of poplars to the north, as estancias in the Chubut valley plant them (setting, best guess)
+  for (let i = 0; i < 16; i++) { const x = -56 + i * 6.2 + rnd() * 1.5, z = -22 - rnd() * 3, h = 13 + rnd() * 5; put(new THREE.CylinderGeometry(0.16, 0.26, 3, 6), "bark", mtx(x, 1.5, z)); const c = new THREE.ConeGeometry(1.7 + rnd() * 0.5, h, 7, 1); put(c, "leaf", mtx(x, 2 + h / 2, z)); }
 }
 function porch(m) {
   const w = 2.2, d = 1.9, eave = 2.35, pitch = 50, rise = w / 2 * Math.tan(pitch * Math.PI / 180);
@@ -238,8 +247,7 @@ M.lawn = new THREE.MeshStandardMaterial({ map: lawnTex, roughness: 1 }); lawnTex
 M.gravel = new THREE.MeshStandardMaterial({ map: gravelTex, roughness: 1 }); UV_SCALE.gravel = 2.0;
 const farmGroup = new THREE.Group(); scene.add(farmGroup);
 farm();
-// Patagonia: the sun stands in the north, so the replica's front (the survey's south front) is turned to face north (GUESS of siting)
-farmGroup.rotation.y = Math.PI;
+// v0.2.0: laid out as the photographs show it, front to the south, outbuildings to the west, church to the north-east
 for (const [k, list] of Object.entries(buckets)) { const mesh = new THREE.Mesh(merge(list), M[k]); mesh.castShadow = !["lawn", "gravel", "glass"].includes(k); mesh.receiveShadow = true; farmGroup.add(mesh); }
 picks.forEach(p => farmGroup.add(p));
 { const sk = new THREE.Mesh(merge(skirts.map(g => g.index ? g.toNonIndexed() : g)), new THREE.MeshBasicMaterial({ map: aoTex, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2 })); sk.renderOrder = 1; farmGroup.add(sk); }
@@ -264,7 +272,7 @@ function tussockGeo() { const P = [], C = [], blades = 22;
 function windMat(base) { base.onBeforeCompile = sh => { sh.uniforms.uT = windU; sh.vertexShader = "uniform float uT;\n" + sh.vertexShader.replace("#include <begin_vertex>", "#include <begin_vertex>\n#ifdef USE_INSTANCING\nvec4 ip = instanceMatrix[3];\n#else\nvec4 ip = vec4(0.);\n#endif\nfloat ph = uT*1.6 + ip.x*0.21 + ip.z*0.17; transformed.x += (sin(ph)*0.06 + sin(ph*2.3)*0.02) * position.y * 2.0; transformed.z += cos(ph*0.8)*0.035*position.y*2.0;"); }; return base; }
 {
   const n = LOW ? 7000 : 18000, R = LOW ? 140 : 220;
-  const CLEAR = [[-13, 13, -13, 10], [-33, -0.5, -7, 25], [14, 34, 3, 11], [-16, -10, -42, -6], [-31, 7, -41, -39]];
+  const CLEAR = [[-12, 27, -5, 14.5], [-47, -5, 12, 34], [8, 13, 13, 62], [-7, 9, 14, 18.5], [40, 67, -40, -28], [-60, 45, -27, -19]];
   const tm = new THREE.InstancedMesh(tussockGeo(), windMat(new THREE.MeshStandardMaterial({ vertexColors: true, side: THREE.DoubleSide, roughness: 0.95 })), n);
   const m = new THREE.Matrix4(), q = new THREE.Quaternion(), s = new THREE.Vector3(), p = new THREE.Vector3(); let k = 0;
   while (k < n) { const r = Math.pow(rnd(), 0.62) * R, a = rnd() * 6.283, x = Math.cos(a) * r, z = Math.sin(a) * r;
@@ -280,9 +288,9 @@ function windMat(base) { base.onBeforeCompile = sh => { sh.uniforms.uT = windU; 
 }
 
 // ---------- views ----------
-const VIEWS = { front: [[-8, 2.2, -34], [0, 3.6, 0]], quarter: [[-26, 10, -36], [2, 3, 2]], yard: [[-6, 2.0, -12], [-18, 3, 12]], above: [[-70, 62, -78], [-4, 0, 6]] };
+const VIEWS = { heli: [[85, 66, 110], [4, 2, -4]], ground: [[-9, 1.7, 80], [-27, 4, 16]], front: [[3, 2.2, 32], [-1, 3.6, 0]], above: [[8, 150, 60], [-8, 0, 4]] }; VIEWS.quarter = VIEWS.heli; VIEWS.yard = VIEWS.ground;
 function go(v) { const [p, t] = VIEWS[v]; camera.position.set(...p); controls.target.set(...t); controls.update(); }
-go(Q.get("view") || "quarter");
+go(Q.get("view") || "heli");
 
 // ---------- UI ----------
 const ray = new THREE.Raycaster(), ptr = new THREE.Vector2(); let downAt = null;

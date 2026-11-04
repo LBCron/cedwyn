@@ -1,7 +1,7 @@
 <!doctype html><html lang="en" data-cw-noclip><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Great House II in 3D · Patagonia · Cedwyn</title>
 <meta name="description" content="A 3D world of the Patagonian steppe near Puerto Madryn with Tŷ Mawr, the Great House, reconstructed from the 1974 measured survey and the family album photographs. Real sun for the place and the hour.">
 <meta name="color-scheme" content="light dark"><meta name="theme-color" content="#2b3a4a">
-<link rel="stylesheet" href="argentina-3d.css?v=0.1.0">
+<link rel="stylesheet" href="argentina-3d.css?v=0.2.0">
 <script type="importmap">{"imports":{"three":"https://cedwyn.bucklerfamily.estate/_ext/cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js","three/addons/":"https://cedwyn.bucklerfamily.estate/_ext/cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script src="/_cedwyn/ghf/ghf-boot.js?v=2.1.26"></script></head>
 <body class="a3d"><main id="stage" class="a3d-stage" data-scope="argentina online" aria-label="3D world: Great House II, Patagonia">
@@ -10,7 +10,7 @@
 <div class="a3d-tl"><span class="chip"><b>Great House II</b> · 3D</span><span id="st" class="chip st">Loading…</span></div>
 <div class="a3d-tr"><button type="button" class="tb" data-open="srcd" aria-haspopup="dialog" title="What each building is based on">ⓘ Sources</button></div>
 <div class="a3d-bar" role="group" aria-label="Views and sun">
- <div class="views"><button type="button" class="tb" data-view="quarter">Farm</button><button type="button" class="tb" data-view="front">Front</button><button type="button" class="tb" data-view="yard">Yard</button><button type="button" class="tb" data-view="above">Above</button></div>
+ <div class="views"><button type="button" class="tb" data-view="heli">Helicopter</button><button type="button" class="tb" data-view="ground">Ground</button><button type="button" class="tb" data-view="front">Front</button><button type="button" class="tb" data-view="above">Above</button></div>
  <label class="sun">☀ <input id="hr" type="range" min="5" max="21.5" step="0.25" value="12" aria-label="Hour of day in Puerto Madryn"> <output id="hrv">12:00</output> <button type="button" id="nowb" class="tb sm" title="The sun as it stands now in Puerto Madryn">now</button></label>
 </div>
 <p id="night" class="a3d-night" hidden>It is night in Puerto Madryn now, so the view shows 4 pm. Move the sun to change it.</p>
@@ -20,21 +20,19 @@
 <section class="a3d-about">
 <p><b>Tŷ Mawr, rebuilt on the steppe.</b> The farmhouse is drawn to the ground plan of the 1974 measured survey and shaped from the family album photographs; the stable range, cart shed, barn and gate follow the album and the restored paintings on this site. Tap a building to see what it rests on. Anything no photograph shows (the back of the house, heights of the wing, where the outbuildings stood) is a best guess and is marked as one.</p>
 <p lang="es">Tŷ Mawr, reconstruida sobre la estepa cerca de Puerto Madryn a partir del relevamiento de 1974 y del álbum familiar. Toque un edificio para ver en qué se basa; lo que ninguna foto muestra es una estimación y así se indica.</p>
-<p class="cr">Reconstruction, not a survey of land in Argentina · Sun and sky computed for Puerto Madryn (42.8° S) at the chosen hour · Three.js · Wall and stone textures taken from album photograph 098 · v0.1.0 <button type="button" class="tb sm" data-open="chg" aria-haspopup="dialog" title="Changelog">ⓘ</button></p>
+<p class="cr">Reconstruction, not a survey of land in Argentina · Sun and sky computed for Puerto Madryn (42.8° S) at the chosen hour · Three.js · Wall and stone textures taken from album photograph 098 · v0.2.0 <button type="button" class="tb sm" data-open="chg" aria-haspopup="dialog" title="Changelog">ⓘ</button></p>
 </section>
 <dialog id="srcd" class="a3d-modal" aria-label="Sources"><div class="mh"><b>What each part is based on</b><button type="button" class="x" data-close aria-label="Close">×</button></div><div class="mb">
 <table><thead><tr><th>Part</th><th>Evidence</th><th>Best guess</th></tr></thead><tbody>
-<tr><td>Farmhouse footprint, rooms, north wing, east additions</td><td>1974 measured survey, ground plan with 5 m scale bar (main range about 15.2 × 6.0 m; hall 15′11″ × 15′3″, kitchen 16′1″ × 15′6″)</td><td>Wall heights of the wing and additions</td></tr>
-<tr><td>Two storeys, lime-washed walls, slate roof about 40°, gable chimney stacks, casement windows, gabled timber porch</td><td>Album photographs 096 and 098; porch drawing from album 019</td><td>Exact window sizes; colour of the door (from the paintings)</td></tr>
-<tr><td>Back of the house</td><td>none</td><td>All of it: no photograph of the back or the north side</td></tr>
-<tr><td>Rubble front wall and lawn</td><td>Album photograph 098</td><td>Length and line of the wall</td></tr>
-<tr><td>Stable range and cart shed with round arches, west of the house</td><td>Album photographs 098 and 128</td><td>Length, number of arches</td></tr>
-<tr><td>Threshing barn with gabled cart porch</td><td>Album 092 and 020; painting “Two Barns Beyond the Meadow”</td><td>Position north-east of the yard, size</td></tr>
-<tr><td>Stable row closing the yard</td><td>Painting “Stable Row at Noon”</td><td>Position, size</td></tr>
-<tr><td>Entrance gate, stone piers with ball finials</td><td>Album photograph 096</td><td>Distance from the house</td></tr>
-<tr><td>Facing north</td><td>—</td><td>In the south the sun stands in the north, so the replica's front is turned to it, as the original front faced the sun in Wales</td></tr>
-<tr><td>Steppe, tussock grass, shrubs</td><td>Patagonian steppe near Puerto Madryn</td><td>Plant placement is generated</td></tr>
+<tr><td>Layout: house in the middle, stables and stone barn to the west, church to the north-east, front to the south</td><td>Aerial photograph taken from the south-east looking north-west; ground photograph looking north-north-west at the stables</td><td>Distances between buildings, scaled from the photographs</td></tr>
+<tr><td>House: two storeys, lime-washed front, stone gable-end bay at the west end, slate roof about 40°, three chimneys (the east one red brick), small gabled porch</td><td>Photograph of the house front; aerial photograph; 1974 survey for the main range</td><td>Window sizes; the back of the house (no photograph)</td></tr>
+<tr><td>Long single-storey range on the east end, red pantile roof</td><td>Photograph of the house front</td><td>Length, doors and windows</td></tr>
+<tr><td>Stable range: lime-washed, slate roof, a row of green stable doors</td><td>Ground photograph of the stables</td><td>Number of doors, length</td></tr>
+<tr><td>Dressed-stone barn with a large green cart door under a gabled porch</td><td>Ground photograph of the stables</td><td>Length, height</td></tr>
+<tr><td>Dry-stone walls, gravel yards, white field gate</td><td>Photographs of the house and the stables</td><td>Line of each wall</td></tr>
+<tr><td>Church</td><td>Aerial photograph (position)</td><td>Its form is simplified</td></tr>
+<tr><td>Poplar windbreak, steppe, tussock grass, shrubs</td><td>Patagonian steppe near Puerto Madryn</td><td>Placement is generated</td></tr>
 </tbody></table></div></dialog>
-<dialog id="chg" class="a3d-modal" aria-label="Changelog"><div class="mh"><b>Changelog</b><button type="button" class="x" data-close aria-label="Close">×</button></div><div class="mb"><table><thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead><tbody><tr><td>v0.1.0</td><td>4 Nov 2026</td><td>First version: a separate Patagonia world, flat steppe with real sun, sky and haze for Puerto Madryn, and Tŷ Mawr with its outbuildings reconstructed from the 1974 survey and the album photographs.</td></tr></tbody></table></div></dialog>
-<script type="module" src="argentina-3d.js?v=0.1.0"></script>
+<dialog id="chg" class="a3d-modal" aria-label="Changelog"><div class="mh"><b>Changelog</b><button type="button" class="x" data-close aria-label="Close">×</button></div><div class="mb"><table><thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead><tbody><tr><td>v0.2.0</td><td>4 Nov 2026</td><td>Tŷ Mawr rebuilt from three photographs: the house with its stone gable-end bay, three chimneys and gabled porch, the attached pantile range, the stable range with green doors and the stone barn with its cart porch to the west, dry-stone walls, gravel yards and the church to the north-east, laid out as the aerial view shows. New views: Helicopter (from the south-east) and Ground (looking at the stables).</td></tr><tr><td>v0.1.0</td><td>4 Nov 2026</td><td>First version: a separate Patagonia world, flat steppe with real sun, sky and haze for Puerto Madryn, and Tŷ Mawr with its outbuildings reconstructed from the 1974 survey and the album photographs.</td></tr></tbody></table></div></dialog>
+<script type="module" src="argentina-3d.js?v=0.2.0"></script>
 </body></html>
