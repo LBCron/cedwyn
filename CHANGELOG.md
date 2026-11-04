@@ -3,6 +3,7 @@
 ## [1.2.3] - 2026-11-04
 
 ### Added
+- Clarified that the 1831 “Llandough juxta Barry” attribution is a Vision of Britain administrative-gazetteer association; the exact original printed census wording and page/row remain unverified. Linked to the project's published methodology on deriving alternative names from census reports.
 - Recorded the 1440 E-CIPM “Llandough-juxta-Barry or Llandough-juxta-Cowbridge (Landogh)” holding as a separate searchable historical occurrence. Explicitly marked it as a secondary transcription, with TNA membrane references and no established connection to the Penarth parish or Great House Farm.
 
 
