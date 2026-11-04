@@ -1,0 +1,17 @@
+{
+ "copied": 48,
+ "kept": [],
+ "dirs": [
+  "ghf-lang",
+  "brand",
+  "fonts"
+ ],
+ "files": [
+  "ebook/api/return.html",
+  "favicon.ico",
+  "favicon-32.png",
+  "apple-touch-icon.png",
+  "site.webmanifest",
+  "basecamp.json"
+ ]
+}

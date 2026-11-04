@@ -1,18 +1,18 @@
 {
- "pages": 7011,
+ "pages": 7016,
  "css": 134,
  "cross": 150887,
- "prefixed": 60066,
+ "prefixed": 60071,
  "outbound": 18541,
  "blobbed_refs": 1162,
  "banned": 0,
- "injected": 7011,
+ "injected": 7016,
  "listform": 12,
  "errors": 0,
  "checkout": 128,
  "dedupe_files_moved": 2508,
  "dedupe_bytes_saved": 12687826,
- "blob_store_bytes": 424471585,
+ "blob_store_bytes": 424168915,
  "kept_for_scripts": 2303,
  "theme_redirects": 151
 }
