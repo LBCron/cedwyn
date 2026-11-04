@@ -6,8 +6,8 @@
  "path": "/websites/heirsandsuccesses.com/2025-04-07-possession-permission-and-prevarication-a-cautionary-case-on-adverse-3dbd3410/",
  "latest": "/websites/heirsandsuccesses.com/2025-04-07-possession-permission-and-prevarication-a-cautionary-case-on-adverse-3dbd3410/latest.html",
  "first_captured": "2026-10-24T13:51:06Z",
- "last_captured": "2026-10-30T17:09:14Z",
- "current_version": "v1.2.0",
+ "last_captured": "2026-11-04T06:54:00Z",
+ "current_version": "v1.3.0",
  "versions": [
   {
    "version": "v1.0.0",
@@ -44,6 +44,18 @@
    "file": "v1.2.0.html",
    "screenshot": null,
    "published_utc": "2026-10-30T17:11:37Z"
+  },
+  {
+   "version": "v1.3.0",
+   "change": "text",
+   "captured_utc": "2026-11-04T06:54:00Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "b45c932fb5fd7df5ad85633b14a1e163c3fcc97b9bf39827d66d9d6f6a6b2547",
+   "markup_sha256": "966d72f2fde67837a3a1579f091055c09b3da90bcb5c30547b9e54ab31de247e",
+   "file": "v1.3.0.html",
+   "screenshot": "screenshot-v1.3.0.jpg",
+   "published_utc": "2026-11-04T07:01:47Z"
   }
  ],
  "versioning": "first capture v1.0.0; readable-text change = minor; markup/layout-only change = patch; identical capture = no new version",

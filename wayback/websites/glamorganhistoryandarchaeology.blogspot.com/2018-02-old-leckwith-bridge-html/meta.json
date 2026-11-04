@@ -1,0 +1,28 @@
+{
+ "url": "http://glamorganhistoryandarchaeology.blogspot.com/2018/02/old-leckwith-bridge.html",
+ "key": "glamorganhistoryandarchaeology.blogspot.com/2018/02/old-leckwith-bridge.html",
+ "host": "glamorganhistoryandarchaeology.blogspot.com",
+ "path": "/websites/glamorganhistoryandarchaeology.blogspot.com/2018-02-old-leckwith-bridge-html/",
+ "latest": "/websites/glamorganhistoryandarchaeology.blogspot.com/2018-02-old-leckwith-bridge-html/latest.html",
+ "first_captured": "2026-11-04T06:51:50Z",
+ "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
+ "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
+ "title": "Old Leckwith Bridge  | Hidden Glamorgan",
+ "last_captured": "2026-11-04T06:51:50Z",
+ "current_version": "v1.0.0",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "change": "first",
+   "captured_utc": "2026-11-04T06:51:50Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "0d0ec8d6482d8bdfb6316f415b5fc0e0b9f1645467a9bb7a37a5e969695e7fe2",
+   "markup_sha256": "5aa0c41d2341e2358e04eab7130413c92d50281221aecb25c1bcdb3be8fc077b",
+   "file": "v1.0.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:03:04Z"
+  }
+ ],
+ "archive_status": "ok: captured from Tab's machine"
+}

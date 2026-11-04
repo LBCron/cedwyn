@@ -6,8 +6,8 @@
  "path": "/websites/ipsaloquitur.com/land-law-cases-bp-properties-v-buckler/",
  "latest": "/websites/ipsaloquitur.com/land-law-cases-bp-properties-v-buckler/latest.html",
  "first_captured": "2026-10-24T14:46:46Z",
- "last_captured": "2026-10-30T06:33:51Z",
- "current_version": "v1.0.2",
+ "last_captured": "2026-11-04T06:53:23Z",
+ "current_version": "v1.1.0",
  "versions": [
   {
    "version": "v1.0.0",
@@ -44,6 +44,18 @@
    "file": "v1.0.2.html",
    "screenshot": "screenshot-v1.0.2.jpg",
    "published_utc": "2026-10-30T06:42:22Z"
+  },
+  {
+   "version": "v1.1.0",
+   "change": "text",
+   "captured_utc": "2026-11-04T06:53:23Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "f8bf45d0269506a3994916bd1b6347491ed802abb18458657b0384c7d2e875c4",
+   "markup_sha256": "f96cb2563a02422ed47bb01556324de7d9c638c3fa90f0679d668b9ce602f7f8",
+   "file": "v1.1.0.html",
+   "screenshot": "screenshot-v1.1.0.jpg",
+   "published_utc": "2026-11-04T07:01:45Z"
   }
  ],
  "versioning": "first capture v1.0.0; readable-text change = minor; markup/layout-only change = patch; identical capture = no new version",
