@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.5.0 (4 Nov 2026)
+Map first on a phone. The page title is one visually hidden line (the site header already reads "Tithe H3 · 42 of 59"), the introduction moves under the map, and the layer switches (traffic light, 1841 tithe map, Stewart plan, OS c.1900, opacity) and the hexagon picker fold into a "Layers" button on the map, closed by default. The cell count sits in the map's bottom-left corner as "N cells in view"; the hexagon size shows once, in the picker. At 390 px the map now starts about 177 px from the top (was about 415 px). No change to data, layers or behaviour.
+
 ## v0.4.0 (3 Nov 2026)
 H3 resolution picker: 8, 10, 11, 12 (default), 13, 14, 15. Resolution 15 is the finest the H3 grid has (about 0.9 m² a cell); there is no resolution above it. Resolution 8 keeps the cell holding each parcel's centre. From 10 up, cells are generated in the browser with h3-js 4.5.0 (polygonToCells, vendored) for the map area in view only, never stored; a cell is drawn when its centre falls inside a parcel outline (centroid-in-polygon), in that parcel's traffic-light colour. Work is capped at about 20,000 cells; past the cap, and below zoom 17 (res 14) or zoom 19 (res 15), a "Zoom in to see res N" prompt shows with a zoom button. The map zooms to 21 (tiles scaled past their own zoom). Tapping a parcel names the hexagon under the tap at the chosen resolution.
 
