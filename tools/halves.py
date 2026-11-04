@@ -204,23 +204,15 @@ body[data-cedwyn-page="landing"] .ghf-v2,body[data-cedwyn-page="landing"] #ghf-a
 }
 @media(prefers-reduced-motion:reduce){body[data-cedwyn-page="landing"] .land-place>img,.land-app{transition:none}}
 
-/* Motion layer (home page, 4 Nov 2026): slow image settle + pointer parallax on the three place cards, label rise,
-   modal tiles fade up and drift (parallax) as the list scrolls, lazy images fade in once loaded. Uses the individual
-   translate/scale properties so the existing hover transforms still apply. html.cw-motion is set in <head> only when
-   the visitor has not asked for reduced motion; without it (or without JS) the page is exactly as before. - Sion's Tab agent */
-@keyframes cwSettle{from{scale:1.16}to{scale:1.06}}
-@keyframes cwRise{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+/* Pop-up motion (4 Nov 2026): inside the Wales, Patagonia and Online pop-ups only, each block fades in and rises as it
+   scrolls into view (slightly staggered, slow settle) and the tile pictures drift slower than the scroll (parallax);
+   lazy pictures fade in once loaded. The three home cards have no motion. html.cw-motion is set in <head> only when the
+   visitor has not asked for reduced motion; without it (or without JS) the pop-ups are exactly as before. - Sion's Tab agent */
 @media(prefers-reduced-motion:no-preference){
- html.cw-motion body[data-cedwyn-page="landing"] .land-place>img{scale:1.06;translate:var(--px,0px) var(--py,0px);animation:cwSettle 2.2s cubic-bezier(.16,.8,.24,1) both;transition:transform .35s ease,translate 1.1s cubic-bezier(.16,.8,.24,1);will-change:transform}
- html.cw-motion body[data-cedwyn-page="landing"] .land-place .land-place-label{animation:cwRise 1s cubic-bezier(.16,.8,.24,1) .25s both}
- html.cw-motion body[data-cedwyn-page="landing"] .land-place:nth-child(2)>img{animation-delay:.12s}
- html.cw-motion body[data-cedwyn-page="landing"] .land-place:nth-child(2) .land-place-label{animation-delay:.4s}
- html.cw-motion body[data-cedwyn-page="landing"] .land-place:nth-child(3)>img{animation-delay:.24s}
- html.cw-motion body[data-cedwyn-page="landing"] .land-place:nth-child(3) .land-place-label{animation-delay:.55s}
- html.cw-motion .land-modal .land-app>img{scale:1.18;translate:0 var(--pyi,0px);will-change:translate}
- html.cw-motion .land-modal .land-app.cw-rv{opacity:0;translate:0 22px;transition:opacity .7s ease,translate .8s cubic-bezier(.16,.8,.24,1),transform .15s ease,border-color .15s ease,background .15s ease}
- html.cw-motion .land-modal .land-app.cw-rv.cw-in{opacity:1;translate:0 0}
- html.cw-motion .land-modal .land-app>img.cw-lz{opacity:0;transition:opacity .6s ease}
+ html.cw-motion .land-modal .land-app.cw-px>img{transform:translate3d(0,0,0) scale(1.24);will-change:transform;backface-visibility:hidden}
+ html.cw-motion .land-modal .cw-rv{opacity:0;transform:translate3d(0,26px,0);transition:opacity .85s ease,transform 1s cubic-bezier(.16,.8,.24,1)}
+ html.cw-motion .land-modal .cw-rv.cw-in{opacity:1;transform:translate3d(0,0,0)}
+ html.cw-motion .land-modal .land-app>img.cw-lz{opacity:0;transition:opacity .7s ease}
  html.cw-motion .land-modal .land-app>img.cw-lz.cw-ld{opacity:1}
 }
 """
@@ -684,27 +676,36 @@ LANDING_MOTION_HEAD = "<script>try{if(window.matchMedia&&matchMedia('(prefers-re
 LANDING_MOTION_JS = r'''(function(){
 var R=document.documentElement;if(!R.classList.contains('cw-motion'))return;
 var raf=window.requestAnimationFrame||function(f){return setTimeout(f,16)};
-/* 1. place cards: pointer parallax on fine pointers (desktop); each card moves at its own depth */
-var cards=[].slice.call(document.querySelectorAll('.land-place>img'));
-if(cards.length&&window.matchMedia&&matchMedia('(hover: hover) and (pointer: fine)').matches){
- var mx=0,my=0,pend=false,depth=[1,1.35,.8];
- window.addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;if(pend)return;pend=true;raf(function(){pend=false;
-  cards.forEach(function(im,i){var k=depth[i%3];im.style.setProperty('--px',(-mx*18*k).toFixed(1)+'px');im.style.setProperty('--py',(-my*14*k).toFixed(1)+'px')})})},{passive:true});
- document.addEventListener('pointerleave',function(){cards.forEach(function(im){im.style.setProperty('--px','0px');im.style.setProperty('--py','0px')})});
-}
-/* 2. modal tiles: lazy images fade in once decoded; tiles rise into view; images drift as the list scrolls */
-var tiles=[].slice.call(document.querySelectorAll('.land-modal .land-app'));
-tiles.forEach(function(a){var im=a.querySelector('img');if(im&&!im.complete){im.classList.add('cw-lz');var d=function(){im.classList.add('cw-ld')};im.addEventListener('load',d);im.addEventListener('error',d)}});
-if(!('IntersectionObserver' in window))return;
-var seen=new Set(),n=0;
-var io=new IntersectionObserver(function(es){es.forEach(function(e){var a=e.target;if(e.isIntersecting){seen.add(a);if(!a.classList.contains('cw-in')){a.style.transitionDelay=((n++%4)*70)+'ms';a.classList.add('cw-in');setTimeout(function(){a.style.transitionDelay=''},900)}}else seen.delete(a)});n=0;drift()},{threshold:.06});
-tiles.forEach(function(a){a.classList.add('cw-rv');io.observe(a)});
-var dp=false;
-function drift(){if(dp)return;dp=true;raf(function(){dp=false;seen.forEach(function(a){var sc=a.closest('.land-modal-content');var im=a.querySelector('img');if(!sc||!im)return;
- var r=sc.getBoundingClientRect(),b=a.getBoundingClientRect();var d=((b.top+b.height/2)-(r.top+r.height/2))/(r.height||1);d=Math.max(-1,Math.min(1,d));im.style.setProperty('--pyi',(-d*9).toFixed(1)+'px')})})}
-[].forEach.call(document.querySelectorAll('.land-modal-content'),function(sc){sc.addEventListener('scroll',drift,{passive:true})});
-window.addEventListener('resize',drift,{passive:true});
-})();'''   # home page motion layer, 4 Nov 2026 - Sion's Tab agent
+[].forEach.call(document.querySelectorAll('.land-modal'),function(dlg){
+ var sc=dlg.querySelector('.land-modal-content');if(!sc)return;
+ var tiles=[].slice.call(sc.querySelectorAll('.land-app'));
+ var heads=[].slice.call(sc.querySelectorAll('.land-app-section>h3'));
+ /* lazy pictures fade in once decoded */
+ tiles.forEach(function(a){var im=a.querySelector(':scope>img');if(!im)return;a.classList.add('cw-px');
+  if(!im.complete){im.classList.add('cw-lz');var d=function(){im.classList.add('cw-ld')};im.addEventListener('load',d);im.addEventListener('error',d)}});
+ /* blocks fade in and rise as they enter the pop-up's own scroll area; after settling the tile is handed back to its normal styles */
+ if('IntersectionObserver' in window){
+  var batch=0,bt=0;
+  var io=new IntersectionObserver(function(es){var now=Date.now();if(now-bt>160)batch=0;bt=now;
+   es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;io.unobserve(el);
+    el.style.transitionDelay=(Math.min(batch++,5)*90)+'ms';el.classList.add('cw-in');
+    setTimeout(function(){el.classList.remove('cw-rv','cw-in');el.style.transitionDelay=''},1600)})},{root:sc,rootMargin:'0px 0px -6% 0px',threshold:0.01});
+  heads.concat(tiles).forEach(function(el){el.classList.add('cw-rv');io.observe(el)});
+ }
+ /* parallax: pictures move slower than the scroll; reads first, then writes, once per frame */
+ var pend=false;
+ function frame(){pend=false;var r=sc.getBoundingClientRect();if(!r.height)return;var mid=r.top+r.height/2,pos=[];
+  for(var i=0;i<tiles.length;i++){var b=tiles[i].getBoundingClientRect();if(b.bottom<r.top-40||b.top>r.bottom+40){pos.push(null);continue}
+   var d=((b.top+b.height/2)-mid)/r.height;d=d<-.9?-.9:d>.9?.9:d;pos.push(-d*b.height*.13)}
+  for(var j=0;j<tiles.length;j++){if(pos[j]===null)continue;var im=tiles[j].firstElementChild;if(im)im.style.transform='translate3d(0,'+pos[j].toFixed(2)+'px,0) scale(1.24)'}}
+ function tick(){if(!pend){pend=true;raf(frame)}}
+ sc.addEventListener('scroll',tick,{passive:true});
+ window.addEventListener('resize',tick,{passive:true});
+ if('ResizeObserver' in window)new ResizeObserver(tick).observe(sc);
+ dlg.addEventListener('close',function(){pend=false});
+ tick();
+});
+})();'''
 
 VOUCHERS = [  # the Stripe voucher links of the retired /wales/tour/ page (Sion 08:08 GMT 26 Oct 2026: purge /wales/tour/, keep /wales/#stop-1)
     ('w_v1', 'https%3A%2F%2Fbuy.stripe.com%2FbJecN60ht4U74a88sD6Zy0j', {'en': 'Gift voucher · one guest £25', 'cy': 'Taleb rodd · un gwestai £25', 'es': 'Vale regalo · una persona £25'}),
