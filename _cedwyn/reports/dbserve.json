@@ -1,20 +1,20 @@
 {
- "db_version": "24b40f829409",
- "paths_served_from_db": 7383,
- "blobs": 4809,
+ "db_version": "f02bce8de0b3",
+ "paths_served_from_db": 7349,
+ "blobs": 4817,
  "files_dropped": {
-  "document": 3302,
-  "image": 1586,
-  "data": 1387,
+  "document": 3267,
+  "image": 1582,
+  "data": 1394,
   "audio": 84
  },
  "bytes_dropped": {
-  "document": 1274838009,
-  "image": 149369014,
-  "data": 38227579,
+  "document": 1254035789,
+  "image": 149134572,
+  "data": 38245725,
   "audio": 14922925
  },
- "bytes_dropped_total": 1477357527,
+ "bytes_dropped_total": 1456339011,
  "files_kept_as_well": {
   "image": 876,
   "data": 105,
@@ -113,7 +113,9 @@
    "named in page markup"
   ]
  ],
- "changed_after_db_build_served_as_files": 0,
- "changed_examples": [],
- "indexed_without_file": 31
+ "changed_after_db_build_served_as_files": 1,
+ "changed_examples": [
+  "/app/_db/config.json"
+ ],
+ "indexed_without_file": 29
 }

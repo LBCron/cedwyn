@@ -18,6 +18,8 @@ Naming (from 29 Oct 2026): the John Williams of Great House Farm who died on 17 
 | 1968–69 | Western Ground Rents passes to the BP Pension Fund after an open three-way contest; cleared 7 Mar 1969 | Board of Trade notices; press of the period |
 | Sept 1974 | BP's enforcement request; Mary Williams' statement reported in the newspapers | Court file (sworn statement not yet obtained); 1974 newspapers |
 | 1982/83 | BP becomes registered proprietor (title WA240304, 1983) | HM Land Registry |
+| 1984 (Oct) | East Vale Local Plan deposited by the Vale of Glamorgan Borough Council; the farm site appears as housing allocation H2.1 ("Ty Mawr Farm (H2.1)" in a 1 Oct 1982 archaeological trust letter) | London Gazette 49895 p13844; GGAT letter, 1 Oct 1982 |
+| 1987 (9 Feb) | East Vale Local Plan adopted ("East Vale" is a planning-area name, not a historic place-name: list it in nomenclature tables as such) | London Gazette 50839 p2360 |
 | 1987 | BP Properties Ltd v Buckler [1987] EWCA Civ 2; also (1988) 55 P & CR 337 and [1987] 2 EGLR 168 | Court of Appeal judgment |
 | 1988 | Listing and demolition of the house; ITV News report | Cadw / council records; ITV News |
 | 1990 | Death of William Buckler (1990 — not 1992) | Family papers; exact day open |

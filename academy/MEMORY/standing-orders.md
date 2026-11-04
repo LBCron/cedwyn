@@ -136,6 +136,9 @@ These bind every agent, every cycle. When two orders conflict, the newer one win
 72. Outbound emails never explain the project's own workings and never mention agents, assistants, AI or automation. When an earlier sent email (from any sender) caused confusion or carried a fact that has since changed, the fix is a supplement or correction in the same thread, never an apology for the other sender.
 73. Reply drafting is automatic: a loop drafts each reply, chase, supplement, follow-up or correction as a hive draft task, reading the whole thread, every earlier thread with that body and the relevant estate pages first; no per-draft approval is needed to create a draft, the hive polishes it, and open drafts are re-reviewed at least every 6 hours. Sending still goes only through the existing approval gate.
 
+## Design preservation (owner instruction, 3 Nov 2026)
+74. Every migration or refactor keeps the original look, layout and user experience pixel-faithful; only the plumbing changes (data-driven JSON instead of hard-coded text, static hosting). Making the front end data-driven remains the goal. Prove each change with side-by-side before/after screenshots at 390 px and at desktop width before calling it done.
+
 ## Catalogue lock (owner instruction, 3 Nov 2026)
 
 Existing evidence and artifact records are locked. No agent, seat or automation edits, rewords, moves or deletes an existing record. That covers `data/core/records/*`, EV / MR / GHF-E / artifact pages, evidence registers, and rows already in a findings CSV.
