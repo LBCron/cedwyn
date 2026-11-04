@@ -11,6 +11,11 @@
    "pinned_utc": "2026-10-26T19:41:29Z",
    "sha": "00c880d2e4dfae68915b344a0f053c89866e679a"
   },
+  "argentina-3d": {
+   "branch": "section/argentina-3d",
+   "pinned_utc": "2026-11-04T12:49:34Z",
+   "sha": "b36e8de797fc8ea63b4f2e8dd71a856fc09fe03a"
+  },
   "chat": {
    "branch": "section/chat",
    "pinned_utc": "2026-10-26T19:41:29Z",
