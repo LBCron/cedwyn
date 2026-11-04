@@ -6,8 +6,8 @@
  "path": "/websites/newspapers.library.wales/view-4596745-4596752-50/",
  "latest": "/websites/newspapers.library.wales/view-4596745-4596752-50/latest.html",
  "first_captured": "2026-10-24T14:50:21Z",
- "last_captured": "2026-10-30T06:37:27Z",
- "current_version": "v1.0.1",
+ "last_captured": "2026-11-04T06:56:29Z",
+ "current_version": "v1.0.2",
  "versions": [
   {
    "version": "v1.0.0",
@@ -32,6 +32,18 @@
    "file": "v1.0.1.html",
    "screenshot": "screenshot-v1.0.1.jpg",
    "published_utc": "2026-10-30T06:42:49Z"
+  },
+  {
+   "version": "v1.0.2",
+   "change": "markup",
+   "captured_utc": "2026-11-04T06:56:29Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "8949bea851546f8fe549883a5e1996122543534588ff934fc01354a7024a8594",
+   "markup_sha256": "dbcebbffd38d003307deb98011a78b8995cebe0c46390b0f78fd1a64a204b79e",
+   "file": "v1.0.2.html",
+   "screenshot": "screenshot-v1.0.2.jpg",
+   "published_utc": "2026-11-04T07:02:35Z"
   }
  ],
  "versioning": "first capture v1.0.0; readable-text change = minor; markup/layout-only change = patch; identical capture = no new version",
