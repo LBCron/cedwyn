@@ -1,0 +1,28 @@
+{
+ "url": "https://www.british-history.ac.uk/cardiff-records/vol5/pp124-141",
+ "key": "www.british-history.ac.uk/cardiff-records/vol5/pp124-141",
+ "host": "www.british-history.ac.uk",
+ "path": "/websites/www.british-history.ac.uk/cardiff-records-vol5-pp124-141/",
+ "latest": "/websites/www.british-history.ac.uk/cardiff-records-vol5-pp124-141/latest.html",
+ "first_captured": "2026-11-04T06:51:55Z",
+ "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
+ "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
+ "title": "Cardiff Council Minutes: 1887-9 | British History Online",
+ "last_captured": "2026-11-04T06:51:55Z",
+ "current_version": "v1.0.0",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "change": "first",
+   "captured_utc": "2026-11-04T06:51:55Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "b926affb0faa5cf99fbd8d27763c9246302f9df88822b0dc5e4a4947e75a369d",
+   "markup_sha256": "9985b90d907570365f2d96e908e5f6166a13a3ab83be9720529d34e554da582c",
+   "file": "v1.0.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:03:28Z"
+  }
+ ],
+ "archive_status": "ok: captured from Tab's machine"
+}

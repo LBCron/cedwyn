@@ -1,0 +1,28 @@
+{
+ "url": "http://www.llandough-cc.co.uk/About_Us_20117.aspx",
+ "key": "www.llandough-cc.co.uk/About_Us_20117.aspx",
+ "host": "www.llandough-cc.co.uk",
+ "path": "/websites/www.llandough-cc.co.uk/about-us-20117-aspx/",
+ "latest": "/websites/www.llandough-cc.co.uk/about-us-20117-aspx/latest.html",
+ "first_captured": "2026-11-04T06:52:06Z",
+ "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
+ "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
+ "title": "About Us - Llandough Community Council",
+ "last_captured": "2026-11-04T06:52:06Z",
+ "current_version": "v1.0.0",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "change": "first",
+   "captured_utc": "2026-11-04T06:52:06Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "2238b8ad8ed5912a8fe76099639dcaa211e8e3fda46fa5405aec92aee02aa860",
+   "markup_sha256": "2c6f56c1cd81911b2ff9ad62462a1c6dc0efb72b31293ab2c5ec2014ed4e9d22",
+   "file": "v1.0.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:03:46Z"
+  }
+ ],
+ "archive_status": "ok: captured from Tab's machine"
+}
