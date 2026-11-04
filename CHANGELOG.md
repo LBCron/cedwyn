@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.3] - 2026-11-04
+
+### Added
+- Recorded the 1440 E-CIPM “Llandough-juxta-Barry or Llandough-juxta-Cowbridge (Landogh)” holding as a separate searchable historical occurrence. Explicitly marked it as a secondary transcription, with TNA membrane references and no established connection to the Penarth parish or Great House Farm.
+
+
 ## [1.2.2] - 2026-11-02
 
 ### Added
