@@ -1,5 +1,5 @@
 {
- "pages": 8676,
+ "pages": 8677,
  "unwrapped_pages": 99,
  "unwrapped_folds": 634,
  "unbalanced": [],
@@ -14,6 +14,7 @@
   "caso": 1,
   "chat": 1,
   "chess": 4,
+  "chubut-h3": 1,
   "cloudflare": 1,
   "courtdrills": 2,
   "csscpsg": 3,

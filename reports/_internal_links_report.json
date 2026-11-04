@@ -1,15 +1,15 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9259,
+  "pages_scanned": 9260,
   "references_checked": {
-    "resource": 211307,
-    "nav": 474651
+    "resource": 211324,
+    "nav": 474672
   },
-  "database_backed_paths": 7349,
-  "unique_missing_destinations": 6428,
-  "missing_references": 52884,
-  "missing_navigation_references": 37128,
-  "missing_resource_references": 15756,
+  "database_backed_paths": 7346,
+  "unique_missing_destinations": 6423,
+  "missing_references": 52818,
+  "missing_navigation_references": 37057,
+  "missing_resource_references": 15761,
   "unique_broken_fragments": 1832,
   "broken_fragment_references": 3394,
   "form_or_endpoint_actions_not_checked": {
@@ -19,7 +19,7 @@
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9230,
+      "references": 9231,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9226,
+      "references": 9227,
       "examples": [
         {
           "from": "/",
@@ -73,7 +73,7 @@
     {
       "kind": "resource",
       "path": "/blog/rss.xml",
-      "references": 6607,
+      "references": 6608,
       "examples": [
         {
           "from": "/review/",
@@ -100,7 +100,7 @@
     {
       "kind": "resource",
       "path": "/blog/atom.xml",
-      "references": 6607,
+      "references": 6608,
       "examples": [
         {
           "from": "/review/",
@@ -531,33 +531,6 @@
     },
     {
       "kind": "nav",
-      "path": "/argentina/thousand-cuts/",
-      "references": 49,
-      "examples": [
-        {
-          "from": "/",
-          "attribute": "a[href]",
-          "url": "/argentina/thousand-cuts/"
-        },
-        {
-          "from": "/argentina/",
-          "attribute": "a[href]",
-          "url": "/argentina/thousand-cuts/"
-        },
-        {
-          "from": "/argentina/",
-          "attribute": "a[href]",
-          "url": "/argentina/thousand-cuts/"
-        },
-        {
-          "from": "/caso/",
-          "attribute": "a[href]",
-          "url": "/argentina/thousand-cuts/#c02"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
       "path": "/forensic/wiki/records-access-chronology/",
       "references": 49,
       "examples": [
@@ -580,6 +553,33 @@
           "from": "/forensic/amgueddfa-cymru-museum-wales/",
           "attribute": "a[href]",
           "url": "/forensic/wiki/records-access-chronology/"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/argentina/thousand-cuts/",
+      "references": 48,
+      "examples": [
+        {
+          "from": "/argentina/",
+          "attribute": "a[href]",
+          "url": "/argentina/thousand-cuts/"
+        },
+        {
+          "from": "/argentina/",
+          "attribute": "a[href]",
+          "url": "/argentina/thousand-cuts/"
+        },
+        {
+          "from": "/caso/",
+          "attribute": "a[href]",
+          "url": "/argentina/thousand-cuts/#c02"
+        },
+        {
+          "from": "/caso/",
+          "attribute": "a[href]",
+          "url": "/argentina/thousand-cuts/#c06"
         }
       ]
     },
