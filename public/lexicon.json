@@ -1,6 +1,6 @@
 {
-  "version": "1.2.2",
-  "generated": "2026-11-03",
+  "version": "1.2.3",
+  "generated": "2026-11-04",
   "title": "Nomenclature — every name the records use for the same thing",
   "method": "Harvested from the Legal Wiki (greathousefarmwiki.wordpress.com; 794 pages read through the public REST API, 21 Oct 2026), its evidence register, transcripts and nomenclature pages. Each variant is the wording of the record cited; where no record was found it is marked SOURCE PENDING. “Wiki label” means a term the Wiki uses for analysis, not a word from a period record.",
   "status_key": {
@@ -2927,6 +2927,46 @@
           "why": "Search spelling supplied for investigation; not found as an exact form in the consulted historical-forms index. Keep as a search lead pending a record reference.",
           "url": "https://www.cymdeithasenwaulleoedd.cymru/wp-content/uploads/2019/07/PNGlam-refs.pdf",
           "status": "exact spelling not verified"
+        }
+      ]
+    },
+    {
+      "id": "medieval-llandough-holding-1440",
+      "name": "Medieval Llandough-juxta-Barry / Llandough-juxta-Cowbridge holding",
+      "kind": "historical holding reference",
+      "summary": "A 1440 inquisition transcription records a knight’s fee under the alternative wording “Llandough-juxta-Barry or Llandough-juxta-Cowbridge (Landogh)”. This is a separate medieval holding reference. No link has been established to the later Llandough-juxta-Penarth parish, Great House Farm or Tŷ Mawr.",
+      "wiki": "https://ipm-os.kdl.kcl.ac.uk/view/inquisition/25-307/330.html",
+      "variants": [
+        {
+          "term": "Llandough-juxta-Barry or Llandough-juxta-Cowbridge (Landogh)",
+          "source": "Mapping the Medieval Countryside, E-CIPM 25-330, Isabel, Countess of Warwick; inquisition at Gloucester, 3 Nov 1440, writ 29 Dec 1439; TNA C 139/96/3 mm.45–46 and E 149/169/6 m.9",
+          "date": "3 Nov 1440 (inquisition; writ 29 Dec 1439)",
+          "sort": "1440-11-03",
+          "url": "https://ipm-os.kdl.kcl.ac.uk/view/inquisition/25-307/330.html",
+          "status": "secondary (transcription)",
+          "note": "The transcription describes a knight’s fee, formerly held by the heirs of John de Wynton, valued at £20. The original membranes have not been inspected. The wording itself offers Barry or Cowbridge as alternatives; it does not identify the later Penarth parish or Great House Farm."
+        }
+      ],
+      "search_forms": [
+        "Llandough-juxta-Barry",
+        "Llandough juxta Barry",
+        "Llandough-juxta-Cowbridge",
+        "Llandough juxta Cowbridge",
+        "Landogh",
+        "John de Wynton"
+      ],
+      "not_same": [
+        {
+          "term": "Great House Farm / Tŷ Mawr, Llandough-juxta-Penarth",
+          "why": "No documentary link has been established between this 1440 knight’s fee and the modern farmhouse or Penarth parish."
+        },
+        {
+          "term": "Llandough Juxta Penarth Parish (Vision of Britain unit 10484613)",
+          "why": "The modern historical-gazetteer unit is a separate record. A shared Llandough / Barry wording is not enough to identify the medieval holding with that parish unit."
+        },
+        {
+          "term": "Llandough Parish / Llandough Juxta Cowbridge (Vision of Britain unit 10484870)",
+          "why": "The medieval transcription gives Barry OR Cowbridge as alternatives. It has not been shown to be the same as this later parish unit."
         }
       ]
     }
