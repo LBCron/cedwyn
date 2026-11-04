@@ -1,13 +1,14 @@
 // Wales 3D world v0.1.0 — Llandough / Leckwith / the Cedwyn estate on real LiDAR terrain. 
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/OrbitControls.js';
-import { Sky } from 'three/addons/Sky.js';
-import { mergeGeometries } from 'three/addons/BufferGeometryUtils.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/+esm';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js/+esm';
+import { Sky } from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/objects/Sky.js/+esm';
+import { mergeGeometries } from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js/+esm';
 import { createBackend } from './world-backend.js?v=0.1.0';
 
 const Q = new URLSearchParams(location.search);
 const PHONE = matchMedia('(max-width: 700px)').matches || /Mobi|Android|iPhone/.test(navigator.userAgent);
-const D = (document.querySelector('meta[name=w3d-data]') || {}).content || 'data/';
+const D = (document.querySelector('meta[name=w3d-data]') || {}).content || new URL('data/', import.meta.url).href;
+if (!document.querySelector('link[href*="wales-3d.css"]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = new URL('wales-3d.css?v=0.1.0', import.meta.url).href; document.head.appendChild(l); }
 const LAT = 51.4527, LON = -3.1987;
 const $ = s => document.querySelector(s);
 const info = t => { $('#w3dinfo').textContent = t || ''; };
