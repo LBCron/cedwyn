@@ -9,3 +9,5 @@ Gallery UI assets are under `web/_cedwyn/flower-gallery/`. Both app entry points
 Arcade waits for iframe load and offers a direct-opening fallback after 15 seconds. Gallery data loading has a visible spinner, a failed-load retry, and waits for the first row image decode. Reduced-motion settings stop the spinner.
 
 Run `python3 tools/test_arcade_flowers.py` and `node --check web/_cedwyn/flower-gallery/gallery.js`. Full central build and deployed route checks remain required for release.
+
+Source: existing Garden Gallery catalogue at nft-art commit 34a068d; curated records in `web/_cedwyn/flower-gallery/artworks.json`.
