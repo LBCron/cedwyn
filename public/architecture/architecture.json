@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn_academy_architecture/v1",
- "version": "1.0.14",
- "updated": "2026-11-03",
+ "version": "1.0.15",
+ "updated": "2026-11-04",
  "refreshed_by": "the agent library cycle (every 6 hours); edit this file, then rebuild the academy",
  "source_documents": [
   "/projects/data-architecture/ (programme page: plan, work packages, milestones)",
@@ -1952,6 +1952,31 @@
     "zero spend"
    ],
    "flywheel_page": "/academy/FLYWHEELS/traffic.md"
+  },
+  {
+   "id": "ebook-pr",
+   "name": "E-book PR",
+   "cadence": "every 6 hours",
+   "does": "Works the off-site channels for the e-books (listings, indexing samples, wholesale route, publisher and venue drafts), one material step per lane per run, from a ranked tracker.",
+   "inputs": [
+    "the channel tracker",
+    "researched channel terms",
+    "release-candidate book files"
+   ],
+   "outputs": [
+    "verified listing pages",
+    "tracker and log rows",
+    "drafts only"
+   ],
+   "touches": [
+    "outside listing and indexing sites (no change to the site's own shop)"
+   ],
+   "guardrails": [
+    "zero spend",
+    "drafts are never sent by the loop",
+    "case and handbook titles are not pushed to retailers"
+   ],
+   "pattern": "autoresearch"
   }
  ]
 }

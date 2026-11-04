@@ -1,6 +1,6 @@
 # Maintenance loops
 
-40 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
+41 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
 
 ## The autoresearch pattern
 
@@ -459,6 +459,16 @@ Details: [Data architecture](data.md).
 **Areas it touches:** the project's own social accounts and blog  
 **Guardrails:** one account per platform, no spam or bought engagement; case material is never promotion material; zero spend; one worker at a time (duplicate check by goal prefix).
   Runner detail: [Traffic flywheel](../FLYWHEELS/traffic.md)
+
+<a id="ebook-pr"></a>
+### E-book PR
+
+**Cadence:** every 6 hours  
+**What it does:** Works the off-site channels for the e-books (listings, indexing samples, wholesale route, publisher and venue drafts), one material step per lane per run, from a ranked tracker.  
+**Inputs:** the channel tracker; researched channel terms; release-candidate book files  
+**Outputs:** verified listing pages; tracker and log rows; drafts only  
+**Areas it touches:** outside listing and indexing sites (no change to the site's own shop)  
+**Guardrails:** zero spend; drafts are never sent by the loop; case and handbook titles are not pushed to retailers; one worker at a time (duplicate check by goal prefix).
 
 ## Also in the flywheel list
 

@@ -155,6 +155,10 @@ blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}<
 <li>Outbound emails never explain the project's own workings and never mention agents, assistants, AI or automation. When an earlier sent email (from any sender) caused confusion or carried a fact that has since changed, the fix is a supplement or correction in the same thread, never an apology for the other sender.</li>
 <li>Reply drafting is automatic: a loop drafts each reply, chase, supplement, follow-up or correction as a hive draft task, reading the whole thread, every earlier thread with that body and the relevant estate pages first; no per-draft approval is needed to create a draft, the hive polishes it, and open drafts are re-reviewed at least every 6 hours. Sending still goes only through the existing approval gate.</li>
 </ol>
+<h2>Design preservation (owner instruction, 3 Nov 2026)</h2>
+<ol start="74">
+<li>Every migration or refactor keeps the original look, layout and user experience pixel-faithful; only the plumbing changes (data-driven JSON instead of hard-coded text, static hosting). Making the front end data-driven remains the goal. Prove each change with side-by-side before/after screenshots at 390 px and at desktop width before calling it done.</li>
+</ol>
 <h2>Catalogue lock (owner instruction, 3 Nov 2026)</h2>
 <p>Existing evidence and artifact records are locked. No agent, seat or automation edits, rewords, moves or deletes an existing record. That covers <code>data/core/records/*</code>, EV / MR / GHF-E / artifact pages, evidence registers, and rows already in a findings CSV.</p>
 <ul>

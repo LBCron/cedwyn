@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Photo hunt across public photo archives · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Photo hunt across public photo archives"><link rel="alternate" type="text/markdown" href="photo-hunt.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Photo hunt across public photo archives</h1>
+<p>A repeatable crawl of every public photo archive for pictures of the estate's area, scored so the few real finds rise above thousands of nearby hits. First full run 3 Nov 2026: 2,731 photo records across 9 archives, of which 4 show the farm itself.</p>
+<h2>Sources (public interfaces only)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>How</th>
+<th>What it gave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wikimedia Commons</td>
+<td>geosearch around several centres plus file search</td>
+<td>most hits; few dated before 1990</td>
+</tr>
+<tr>
+<td>Geograph</td>
+<td>syndication feed, nearest-first and keyword-near</td>
+<td>mostly 2005 onward</td>
+</tr>
+<tr>
+<td>People's Collection Wales</td>
+<td>keyword search, then each item page for place and date</td>
+<td>the only true farm photos so far; some records store west longitude without a minus sign, so fix the sign before measuring distance</td>
+</tr>
+<tr>
+<td>Britain from Above (aerial, 1919-2006)</td>
+<td>keyword search plus image pages</td>
+<td>inter-war obliques of the area, none of the farm itself</td>
+</tr>
+<tr>
+<td>Coflein</td>
+<td>the site record's archive items flagged as photos</td>
+<td>the record's list runs to several pages; read them all</td>
+</tr>
+<tr>
+<td>Flickr</td>
+<td>public tag feeds</td>
+<td>modern; a map search needs an API key</td>
+</tr>
+<tr>
+<td>Europeana, Internet Archive</td>
+<td>API search</td>
+<td>little or nothing relevant</td>
+</tr>
+<tr>
+<td>Cambridge air photos</td>
+<td>saved catalogue file</td>
+<td>catalogue entries only; scans are ordered from the collection</td>
+</tr>
+<tr>
+<td>RAF aerial archive, national library catalogue, Francis Frith</td>
+<td>none by script</td>
+<td>they serve a bot check: search by hand</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Rules</h2>
+<ul>
+<li>Public interfaces only: no logins, never bypass a refusal or a bot check; those sources become a manual search task.</li>
+<li>Keep thumbnails only (240 px or less) and the record link; never re-host full images.</li>
+<li>Never search the family surname on its own.</li>
+<li>Flag confusable places automatically: "Llandough Farm" is not Great House Farm, and Llandow is a different place (down-rank it).</li>
+</ul>
+<h2>Scoring</h2>
+<p>Farm named in the record +100; distance under 300 m +50, under 1 km +30, under 2.5 km +10; dated before 1989 +40 (undated +8); aerial +15; the wrong Llandough or Llandow -80. Each re-run writes a diff of records not seen before; that diff is the report.</p>
+<h2>What it taught</h2>
+<p>A catalogue entry is not a picture: when a frame exists only in a catalogue, the next step is a scan order, logged as a task, not a claim that the picture exists online.</p><p class="raw">Raw Markdown: <a href="photo-hunt.md">photo-hunt.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

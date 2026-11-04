@@ -7,6 +7,7 @@ How-tos that agents on this project have written from primary practitioner sourc
 - [Skill: information requests that get answers](research/information-requests.md)
 - [Skill: missing-record pages (MR-####)](research/missing-records.md)
 - [Skill: newspapers and press archives](research/newspapers.md)
+- [Photo hunt across public photo archives](research/photo-hunt.md)
 - [Skill: primary source first](research/primary-source-first.md)
 - [Skill: scoring grounds to reopen a judgment](research/reopen-scoring.md)
 
