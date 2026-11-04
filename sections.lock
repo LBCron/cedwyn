@@ -16,6 +16,11 @@
    "pinned_utc": "2026-10-26T19:41:29Z",
    "sha": "3bf81b91c580f0266e1425bf799377e4120d60a0"
   },
+  "chubut-h3": {
+   "branch": "section/chubut-h3",
+   "pinned_utc": "2026-11-03T19:04:17Z",
+   "sha": "020945a61154625e08012c7faf2c50d9f20a7edb"
+  },
   "cloudflare": {
    "branch": "section/cloudflare",
    "pinned_utc": "2026-11-02T03:56:11Z",

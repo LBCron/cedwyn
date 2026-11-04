@@ -69,14 +69,14 @@
   out += '<link rel="preload" as="font" type="font/woff2" crossorigin href="' + F + '400-normal.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="' + F + '700-normal.woff2">';
   // 1 Nov 2026: the three scopes Wales / Argentina / Online. scope.js (sync, tiny) sets <html data-cedwyn-scope> and the
   // out-of-scope rule before the first paint, then renders the cross-link lines. Spec: docs/SCOPES.md.
-  if (!window.CedwynScope && !d.querySelector('script[src*="/_cedwyn/scope.js"]')) out += '<script src="/_cedwyn/scope.js?v=1.0.0"><\/script>';
+  if (!window.CedwynScope && !d.querySelector('script[src*="/_cedwyn/scope.js"]')) out += '<script src="/_cedwyn/scope.js?v=1.1.0"><\/script>';   // 1.1.0 (3 Nov 2026): a webapp whose body belongs to another scope opens in its own scope, never as a blank note
   var needBc = !window.GHFBasecamp && !d.querySelector('script[src*="basecamp.js"]');
   if (needBc) out += '<script src="' + B + "basecamp.js" + V + '"><\/script>';
   if (!d.querySelector('script[src*="cw-graph.js"]')) out += '<script src="/_cedwyn/cw-graph.js?v=1.3.0" defer><\/script>'; // 30 Oct 2026: 100vh Read more on every page with the header (2 Nov 2026: its graph promo strip is retired)
   if (!window.CedwynGardenBanner && !d.querySelector('script[src*="garden-banner.js"]')) out += '<script src="/_cedwyn/garden-banner.js?v=2.3.0" defer><\/script>'; // 2 Nov 2026: the one Garden banner in the header strip (replaces the graph promo, section ribbon and e-book strips). 2.3.0 (owner, 10:06 GMT 2 Nov): title, provenance line, no moving text, 68 px, Garden Gallery painting behind it. Spec: docs/GARDEN-BANNER.md
   if (!d.querySelector('script[data-cedwyn-wikilinks]')) out += '<script src="https://nomenclature.bucklerfamily.estate/wikilinks.js?v=1.0.1" defer data-cedwyn-wikilinks><\/script>'; // 31 Oct 2026: lexicon-backed cross-theme name links
   if (!window.CedwynVersionGate && !d.querySelector('script[src*="/_cedwyn/version-gate.js"]')) out += '<script src="/_cedwyn/version-gate.js?v=1.0.0" defer><\/script>'; // 1 Nov 2026: version gate (a click-to-load "Select a version" facade in the media slot + upgrade bar). Spec: docs/VERSION-GATE.md
-  if (!d.querySelector('script[src*="landing-map-views.js"]')) out += '<script src="/_cedwyn/landing-map-views.js?v=1.0.0" defer><\/script>';
+  if (!d.querySelector('script[src*="landing-map-views.js"]')) out += '<script src="/_cedwyn/landing-map-views.js?v=2.0.0" defer><\/script>';   // 2.0.0 (3 Nov 2026): one 2D/3D map block inside the Wales and Patagonia modals, framed bare; tiles open in the top window
   if (sync) { d.write(out); return; }
   var x, t = d.createElement("template"); t.innerHTML = out;
   [].slice.call(t.content.childNodes).forEach(function (n) {

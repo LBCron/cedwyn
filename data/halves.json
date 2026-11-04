@@ -1,5 +1,5 @@
 {
- "version": "1.3.2",
+ "version": "1.5.0",
  "note": "Two halves of Cedwyn (Sion, 23:39 GMT 25 Oct 2026, m:2a7c8c27): landing (two tiles), /wales/ = augmented-reality guided tour of Cedwyn Estate, Wales (former manorial house, never 'farm'; no museum stop), /argentina/ = Cedwyn Estate II / Great House II retreat with package builder. Wales copy follows EDITORIAL.md (ingredients + citations, courts' view first, banned words). AI images carry 'artist's impression'. Bookings are pre-order requests, not confirmed holidays. Welsh and Spanish are first drafts for review. tools/halves.py renders it. - Sion's Tab agent",
  "img": "/_cedwyn/halves/img/",
  "img_v": "3",
@@ -1379,7 +1379,19 @@
    "kissed-frogs"
   ],
   "default": "present",
+  "modal_exclude": {
+   "note": "1.5.0: apps left out of one half's landing modal although the modal otherwise lists every webapp: the Wales 2D map slot is Tithe H3 (the Map Room stays under Online and Patagonia), the Patagonia 2D map slot is Chubut H3.",
+   "wales": [
+    "maps",
+    "chubut-h3"
+   ],
+   "argentina": [
+    "tithe-h3"
+   ]
+  },
   "wales_exclude": [
+   "maps",
+   "chubut-h3",
    "story",
    "patagonia",
    "cloudflare",
@@ -1387,9 +1399,12 @@
    "that-old-chestnut",
    "projects",
    "chat",
-   "watchtower"
+   "watchtower",
+   "analytics",
+   "spill"
   ],
   "argentina_exclude": [
+   "tithe-h3",
    "wales",
    "whattheydontsay",
    "blog",
@@ -1408,7 +1423,9 @@
    "emails",
    "projects",
    "that-old-chestnut",
-   "chat"
+   "chat",
+   "analytics",
+   "spill"
   ],
   "online_only": [
    "hubspot",
@@ -1439,9 +1456,32 @@
      "es": "Cadena del título"
     }
    }
-  ]
+  ],
+  "online_home": [
+   "analytics",
+   "spill"
+  ],
+  "own_address": [
+   "chess",
+   "terrain",
+   "nft-art",
+   "cyberspace",
+   "forensic",
+   "mr-wolf"
+  ],
+  "online_home_note": "1.4.0 (3 Nov 2026, owner WhatsApp 17:48 GMT): Analytics and Spill (and Cloudflare, already online_only) belong to the Online card only, at their own addresses; own_address apps have an online-only page body, so the Wales and Patagonia modals open them at their own address, never as a 'see Online' line. — Cedwyn editors"
+ },
+ "section_labels": {
+  "note": "1.5.0: a place-menu tile label for one half only (Wales 2D map = Tithe H3; Patagonia 2D map = Chubut H3).",
+  "wales": {
+   "tithe-h3": "2D map · H3"
+  },
+  "argentina": {
+   "chubut-h3": "2D map · H3"
+  }
  },
  "wales_title_map": {
+  "Tithe H3": "2D map · H3",
   "The Farm Album": "The House Album",
   "farmbook 2 · Today": "The House Book · Today",
   "Great House Farm II · Patagonia Museum": "Great House II · Patagonia",
@@ -1665,6 +1705,24 @@
   ]
  },
  "changelog": [
+  {
+   "version": "1.5.0",
+   "date": "2026-11-03",
+   "pages": [
+    "/",
+    "/wales/",
+    "/argentina/"
+   ],
+   "change": "Each half has a 2D map in H3 hexagons beside its 3D map. Wales: the 2D map tile and menu entry open the Tithe H3 map (/wales/tithe-h3/); the Map Room leaves the Wales menu and stays under Online and Patagonia. Patagonia: the 2D map tile opens the Chubut H3 map (/argentina/chubut-h3/), the estate outline set on the coast south of Puerto Madryn at the same distance from the sea as at Llandough; the Tithe H3 tile leaves the Patagonia menu. - Tab agent"
+  },
+  {
+   "version": "1.4.0",
+   "date": "2026-11-03",
+   "pages": [
+    "/"
+   ],
+   "change": "Landing modals: every Wales tile is a hologram; Analytics, Spill and Cloudflare are listed under Online only; the Chessboard, 3D map, Gallery, Forensic Assessments and Mr Wolf open at their own addresses from the Wales and Patagonia menus, so no tile opens a page with nothing on it. - Tab agent"
+  },
   {
    "version": "1.2.1",
    "date": "2026-10-30",
