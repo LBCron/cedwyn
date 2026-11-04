@@ -1,0 +1,285 @@
+{
+  "schema_version": "cedwyn.dartboard.route-taxonomy/2.0.0",
+  "status": "PROPOSED_NOT_YET_WIRED_TO_PRODUCTION",
+  "created_at": "2026-11-04",
+  "principles": [
+    "Route availability, case status and deadline status are independent dimensions.",
+    "Institutional responses change only the route instance and request to which they relate.",
+    "Every case-status event must cite a case evidence artifact.",
+    "Every general route definition must cite current legal or procedural authority.",
+    "A negative search, referral, acknowledgement, fee quote or temporary access problem is not automatically a formal refusal or an exhausted route.",
+    "Do not infer motive, wrongdoing, concealment or fraud from an administrative pattern.",
+    "Raw correspondence and personal data remain private; public material must be a reviewed derivative."
+  ],
+  "route_availability": [
+    {
+      "value": "AVAILABLE",
+      "description": "A route appears to exist and is applicable on the verified facts."
+    },
+    {
+      "value": "CONDITIONAL",
+      "description": "A route may apply, but one or more legal, factual, standing or procedural prerequisites require verification."
+    },
+    {
+      "value": "UNAVAILABLE",
+      "description": "A cited rule or verified decision establishes that this route does not apply."
+    },
+    {
+      "value": "UNVERIFIED",
+      "description": "The route's existence or applicability has not yet been checked against a current primary source."
+    }
+  ],
+  "case_status": [
+    {
+      "value": "UNTRIED",
+      "description": "No application or step has been evidenced."
+    },
+    {
+      "value": "IN_PROGRESS",
+      "description": "A documented application or activity is underway."
+    },
+    {
+      "value": "AWAITING_ACKNOWLEDGEMENT",
+      "description": "Sent, with no acknowledgement yet evidenced."
+    },
+    {
+      "value": "AWAITING_RESPONSE",
+      "description": "Acknowledged or accepted for processing; substantive response outstanding."
+    },
+    {
+      "value": "AWAITING_PREREQUISITE",
+      "description": "A form, ID check, map, proof of entitlement or other prerequisite is outstanding."
+    },
+    {
+      "value": "REFERRED_TO_ANOTHER_ROUTE_OR_HOLDER",
+      "description": "The reply points to another route, archive or holder."
+    },
+    {
+      "value": "SEARCH_COMPLETED_NO_MATCH",
+      "description": "A bounded search was completed and no matching records were identified within its stated scope."
+    },
+    {
+      "value": "NOT_HELD_ASSERTED",
+      "description": "The body states that the information is not held; scope and search basis remain separately recorded."
+    },
+    {
+      "value": "FORMAL_REFUSAL_RECEIVED",
+      "description": "A formal refusal/decision notice has been received and its stated basis is recorded."
+    },
+    {
+      "value": "INTERNAL_REVIEW_REQUESTED",
+      "description": "A review/representations request has been sent."
+    },
+    {
+      "value": "INTERNAL_REVIEW_PENDING",
+      "description": "The review is accepted or acknowledged; outcome outstanding."
+    },
+    {
+      "value": "INTERNAL_REVIEW_DECIDED",
+      "description": "A review decision has been received."
+    },
+    {
+      "value": "REGULATOR_COMPLAINT_PENDING",
+      "description": "A complaint to an external regulator or ombudsman is in progress."
+    },
+    {
+      "value": "TRIBUNAL_OR_COURT_STEP_PENDING",
+      "description": "A tribunal or court application/appeal is in progress."
+    },
+    {
+      "value": "FEE_QUOTED",
+      "description": "A specific fee or charge has been quoted; amount and basis are recorded separately."
+    },
+    {
+      "value": "TEMPORARILY_UNAVAILABLE",
+      "description": "A service, collection or access route is temporarily unavailable."
+    },
+    {
+      "value": "COMPLETED_WITH_OUTPUT",
+      "description": "The step produced a verifiable output and its acceptance criteria are met."
+    },
+    {
+      "value": "EXHAUSTED",
+      "description": "The defined route instance has reached its evidenced end point; the reason and source are mandatory."
+    },
+    {
+      "value": "EXPIRED_OR_TIME_BARRED",
+      "description": "A relevant deadline appears to have expired; solicitor verification is mandatory before asserting legal effect."
+    },
+    {
+      "value": "WITHDRAWN",
+      "description": "The applicant withdrew the defined request or step."
+    },
+    {
+      "value": "NOT_APPLICABLE",
+      "description": "A documented legal or factual reason establishes that the defined route does not apply."
+    },
+    {
+      "value": "UNCLEAR_REQUIRES_REVIEW",
+      "description": "The available sources do not support a reliable classification."
+    }
+  ],
+  "deadline_state": [
+    "NO_KNOWN_DEADLINE",
+    "CLOCK_NOT_STARTED",
+    "CLOCK_RUNNING",
+    "CLOCK_PAUSED",
+    "EXTENDED",
+    "DUE_SOON",
+    "OVERDUE_UNVERIFIED",
+    "MISSED_ON_RECORDED_DATES",
+    "EXPIRED_SUBJECT_TO_LEGAL_REVIEW"
+  ],
+  "deadline_basis": [
+    "STATUTE",
+    "PROCEDURAL_RULE",
+    "TRIBUNAL_OR_COURT_RULE",
+    "REGULATOR_GUIDANCE",
+    "PUBLISHED_SERVICE_STANDARD",
+    "REQUESTED_RESPONSE_DATE",
+    "INTERNAL_TARGET",
+    "LEGAL_ADVICE"
+  ],
+  "route_requirement": [
+    "STATUTORY",
+    "EXPECTED",
+    "OPTIONAL",
+    "PARALLEL",
+    "CONDITIONAL"
+  ],
+  "route_edge_types": [
+    "ALTERNATIVE_TO",
+    "PARALLEL_WITH",
+    "REQUIRES_BEFORE",
+    "REVIEW_OF",
+    "APPEAL_OF",
+    "REFERS_TO",
+    "MAY_UNLOCK",
+    "CLOSES_ONLY_THIS_INSTANCE"
+  ],
+  "observation_types": [
+    "ACKNOWLEDGEMENT_ONLY",
+    "REFERRED_TO_NAMED_BODY",
+    "SEARCH_SCOPE_STATED",
+    "SEARCH_SCOPE_NOT_STATED",
+    "NO_RECORDS_IDENTIFIED_IN_SEARCH",
+    "NOT_HELD_ASSERTED",
+    "LEGAL_BASIS_CITED",
+    "LEGAL_BASIS_NOT_CITED_IN_REPLY",
+    "FEE_OR_COPY_CHARGE_QUOTED",
+    "FEE_ESTIMATE_NOT_SUPPLIED",
+    "COPYRIGHT_OR_REUSE_LIMITATION_STATED",
+    "ONLINE_ACCESS_LINK_UNAVAILABLE",
+    "STATUTORY_CLOCK_OR_EXTENSION_STATED",
+    "REVIEW_OR_APPEAL_ROUTE_STATED",
+    "DELIVERY_FAILURE_RECORDED"
+  ],
+  "fee_types": [
+    "STATUTORY_APPLICATION_FEE",
+    "OFFICIAL_COPY_FEE",
+    "OPTIONAL_REPRODUCTION_FEE",
+    "ARCHIVE_SEARCH_FEE",
+    "STAFF_RESEARCH_FEE",
+    "CERTIFICATION_FEE",
+    "POSTAGE_OR_MEDIA_FEE",
+    "UNSPECIFIED_CHARGE"
+  ],
+  "source_classes": [
+    "PRIMARY_LEGAL_AUTHORITY",
+    "OFFICIAL_PROCEDURE_OR_FEE_SCHEDULE",
+    "INSTITUTIONAL_CORRESPONDENCE",
+    "OFFICIAL_REGISTER_OR_CASE_RECORD",
+    "ARCHIVE_CATALOGUE_OR_SEARCH_RESULT",
+    "ORIGINAL_HISTORIC_ARTIFACT",
+    "THIRD_PARTY_ACCOUNT",
+    "AGENT_ANALYSIS",
+    "UNVERIFIED_LEAD"
+  ],
+  "provenance_requirements": {
+    "route_definition": [
+      "legal_authority_artifact_ids"
+    ],
+    "case_status_event": [
+      "case_evidence_artifact_ids"
+    ],
+    "deadline_calculation": [
+      "clock_start_event_id",
+      "deadline_basis_artifact_id",
+      "calculation_method"
+    ],
+    "fee_quote": [
+      "fee_artifact_id",
+      "fee_type",
+      "amount",
+      "currency",
+      "mandatory_or_optional"
+    ],
+    "observation": [
+      "case_evidence_artifact_ids",
+      "observed_at",
+      "neutral_description"
+    ],
+    "public_derivative": [
+      "private_source_artifact_id",
+      "redaction_record_id",
+      "rights_review_status"
+    ]
+  },
+  "legacy_migration": {
+    "old_state_mapping": [
+      {
+        "old": "open",
+        "new": "UNTRIED",
+        "requires_review": true,
+        "note": "Old open means listed/open in the catalogue; does not prove case-specific legal availability."
+      },
+      {
+        "old": "pending",
+        "new": "AWAITING_RESPONSE",
+        "requires_review": true,
+        "note": "Inspect source to distinguish acknowledgement, prerequisite, statutory clock and service target."
+      },
+      {
+        "old": "done",
+        "new": "COMPLETED_WITH_OUTPUT",
+        "requires_review": true,
+        "note": "Do not mark complete until output and acceptance criteria are evidenced."
+      },
+      {
+        "old": "na",
+        "new": "UNCLEAR_REQUIRES_REVIEW",
+        "requires_review": true,
+        "note": "May mean unavailable, inapplicable or deliberately not pursued; do not auto-convert to NOT_APPLICABLE."
+      },
+      {
+        "old": "queued",
+        "new": "AWAITING_PREREQUISITE",
+        "requires_review": true,
+        "note": "Check whether this is a queue position, prerequisite or agent allocation."
+      },
+      {
+        "old": "overdue",
+        "new": "OVERDUE_UNVERIFIED",
+        "requires_review": true,
+        "note": "Recompute from source-backed clock events; do not inherit a date-free overdue label."
+      }
+    ],
+    "preserve_legacy_value": true,
+    "migration_mode": "ADD_NEW_FIELDS_AND_EVENTS_ONLY",
+    "prohibit_delete_or_silent_overwrite": true
+  },
+  "privacy": {
+    "originals_storage": "PRIVATE_ACCESS_CONTROLLED_STORE",
+    "raw_email_publication": "PROHIBITED",
+    "public_derivative_required": true,
+    "public_derivative_requires_redaction_and_rights_review": true,
+    "attachment_hash_required": true
+  },
+  "publication_gate": {
+    "route_status_has_case_source": true,
+    "route_definition_has_current_legal_source": true,
+    "unverified_law_label": "VERIFY_WITH_A_SOLICITOR",
+    "no_automatic_publication_of_allegations": true,
+    "no_auto_close_sibling_routes": true
+  }
+}
