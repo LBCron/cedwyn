@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Verified Source Pack: one hashed, versioned &quot;official truth&quot; pack for agents · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Verified Source Pack: one hashed, versioned &quot;official truth&quot; pack for agents"><link rel="alternate" type="text/markdown" href="verified-source-pack-hashed-truth-pack-forrester-2026.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Verified Source Pack: one hashed, versioned "official truth" pack for agents</h1>
+<p>Source: Duane Forrester, "The Verified Source Pack Agents Trust First", Duane Forrester Decodes (Substack), 1 Mar 2026, read in full 4 Nov 2026:
+duaneforresterdecodes.substack.com
+Status: a consultant's framework (he sells a book), no study, no numbers. Nobody has shown an AI engine fetching such a pack; treat it as cheap insurance, not a proven ranking lever.
+Related, NOT duplicated: machine-readable-content-stack-jsonld-graph-provenance-forrester-2026.md (his follow-up: JSON-LD graph + one JSON endpoint). This skill is the pack itself: what goes in, the hashed index, constraints, freshness.</p>
+<h2>The idea in one line</h2>
+<p>Pages persuade humans, schema clarifies pages, a Verified Source Pack packages the facts an agent needs to recommend or buy (products, prices, rules, policies, constraints) with version, timestamp, hashes and a stable discovery path. Without it an agent hedges, copies a third party, or leaves you out.</p>
+<h2>Four parts (each answers one agent question)</h2>
+<ol>
+<li>Content - "what is true?" Operational facts the business would defend: catalogue, pricing rules, availability, delivery/refund terms, guarantees, support route, and CONSTRAINTS as a first-class file (exclusions, eligibility, limits). Missing constraints = the model guesses.</li>
+<li>Structure - "can I parse it?" Dataset mode: plain JSON (CSV for bulk) + a changelog. Contract mode, only for fast-changing facts: one endpoint returning the pack index, described with OpenAPI.</li>
+<li>Provenance - "is it yours and unmodified?" Version the pack, timestamp it, sha256 every file, sign the index (a detached signature is enough; C2PA is the reference pattern, full C2PA not needed).</li>
+<li>Discoverability - "can I find it?" Stable boring path on your own domain, linked from a policy/help page, in the sitemap, optionally pointed at from llms.txt (a hint only: no major LLM provider has committed to reading llms.txt).</li>
+</ol>
+<h2>Build flow (one afternoon for a small site)</h2>
+<ol>
+<li>Inventory truth domains; write down which page is canonical for each. Where pages disagree, pick one and fix the others over time.</li>
+<li>Write the dataset files (one per domain) from the site's own source data, never by hand-copying pages.</li>
+<li>Generate pack-index.json: pack_version, generated_at, review_by, and per file url + sha256 + bytes. Tool here: tools/source_pack_index.py (stdlib only, box-tested 4 Nov 2026).</li>
+<li>Optional: detached signature over pack-index.json.</li>
+<li>Link the index from one human page, add to sitemap, mention in llms.txt and agents.json.</li>
+<li>Freshness: review_by date on the index, changelog line per change, an owner. Prices regenerate on every release; policies on change.</li>
+</ol>
+<h2>Checks</h2>
+<ul>
+<li>Every price in the pack equals the price on the page and in checkout (one mismatch costs more trust than no pack).</li>
+<li>Hashes in the index match the served files (re-download and sha256).</li>
+<li>The index returns 200 with application/json, not the site's HTML 404 page.</li>
+</ul>
+<h2>How we apply it to Cedwyn</h2>
+<p>Checked live 4 Nov 2026 11:13Z: /llms.txt 200 (19 KB), /agents.json 200 (288 KB, agent-facing), /ebooks/catalogue.json 404 (serves the HTML 404 page), /.well-known/ 404. So there is an agent map but no buyer-facts pack.
+PROPOSED (page freeze holds; data files only, no page edits; owner: the version-standard flywheel):
+1. /pack/ebooks.json - each e-book: title, edition list (v0.0.1 free, each later version GBP 4.99 more per step, per the version standard), current price, format, length, buy URL (/ebooks/ only), sample URL.
+2. /pack/constraints.json - what a buyer gets and does not: digital download only, no print, which version is free, refund route as published on the checkout page. Only facts already public on the site.
+3. /pack/changelog.json - generated from the existing version changelog modal data, so it cannot drift.
+4. /pack/pack-index.json via tools/source_pack_index.py, review_by 30 days, linked from /ebooks/ footer, sitemap, llms.txt, agents.json.
+5. Add one probe to the weekly visibility check: "How much is the Cedwyn e-book and is there a free edition?" Score: right price + free v0.0.1 named = pass.
+Rules: public text never names the project lead; banned words apply to every field; nothing about holdings or addresses; no outbound links.</p><p class="raw">Raw Markdown: <a href="verified-source-pack-hashed-truth-pack-forrester-2026.md">verified-source-pack-hashed-truth-pack-forrester-2026.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

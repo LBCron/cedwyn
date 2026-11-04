@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>ChatGPT now searches your own domain directly (site:-scoped fan-outs), 2026 · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: ChatGPT now searches your own domain directly (site:-scoped fan-outs), 2026"><link rel="alternate" type="text/markdown" href="chatgpt-site-scoped-domain-retrieval-2026.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>ChatGPT now searches your own domain directly (site:-scoped fan-outs), 2026</h1>
+<p>Harvested 2026-11-04. Vendor figures are marked "not checked": they come from a tracking vendor's own panel and were not reproduced by us.</p>
+<h2>What changed (evidence)</h2>
+<ul>
+<li><strong>Promptwatch, 10 Aug 2026 (Klaas Foppen):</strong> on 8 Aug 2026 the share of ChatGPT fan-out (background) queries using <code>site:domain</code> jumped from ~0.37% to ~16.8% overnight (about 1 in 280 -&gt; 1 in 6). Same day, average fan-out queries per answer went from ~1.08 to ~1.83 and stayed there, so domain-scoped lookups were ADDED on top of generic searches, not swapped in. Not checked; covers only the prompts Promptwatch tracks.</li>
+<li><strong>Simon Willison, 20 Aug 2026 (independent commentary):</strong> the shift lines up with OpenAI's 6 Aug GPT-5.6 Sol update ("more reliable with facts... more focused answers"); from poking at ChatGPT he believes the search tool now takes something like <code>search(query, recency, domains)</code>. A Promptwatch follow-up (18 Aug) reported ChatGPT sharply cutting Reddit in those searches. Willison could not confirm a system-prompt change.</li>
+<li><strong>Semrush 3-month study (Nov 2025, 230k prompts, 13 weekly snapshots, 100M+ citations):</strong> ChatGPT's Reddit share fell from ~60% of responses to ~10% and Wikipedia from ~55% to &lt;20% in mid-Sept 2025, while AI Mode and Perplexity barely moved; LinkedIn and Forbes rose on all three. Semrush's own head of AI visibility reads it as de-biasing against over-cited sites, not the Google num=100 change. Not checked. Lesson: platform behaviour flips in a day and differs by engine.</li>
+</ul>
+<h2>Why it matters</h2>
+<p>When ChatGPT decides your site is a likely source, it now runs <code>site:yourdomain topic</code> through its search backend. That query can only return pages the backend has <strong>indexed</strong>, with <strong>titles/snippets that name the topic</strong>. Thin hubs, orphan pages, unindexed PDFs and pages whose title is a brand word rather than the thing asked about lose answers even if your rankings are fine.</p>
+<h2>How-to (one pass, ~30 min; repeat monthly)</h2>
+<ol>
+<li><strong>List 10-15 "site-lookup" questions</strong> a user would ask ChatGPT where your domain is the natural source (named places, named records, your products). Write them as <code>site:yourdomain &lt;topic words&gt;</code>.</li>
+<li><strong>Run each as a real <code>site:</code> search</strong> on Google and on Bing (ChatGPT's search backend is not public; check both). Record: results count, top URL, whether the top title/snippet names the topic. Bing Webmaster Tools' URL inspection is free.</li>
+<li><strong>Fix the misses, smallest edit first:</strong> (a) page not indexed -&gt; sitemap + internal link from a strong page + request indexing in Search Console/Bing; (b) wrong page wins -&gt; make the right page's <code>&lt;title&gt;</code>, h1 and first sentence carry the exact entity name; (c) only a PDF or hub returns -&gt; add an HTML page with the facts visible as text.</li>
+<li><strong>Cover more angles per topic.</strong> At ~1.8 searches per answer, comparison, price, "free version", date and "where is" lookups are separate retrievals. One short visible line each beats one long page that answers none directly.</li>
+<li><strong>Watch, don't chase.</strong> Log the date of any visible platform change (like 8 Aug 2026) next to your AI-referral and citation counts before rewriting content; a one-day platform rollout is not something your site did.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Question set (log in <code>the project workspace</code>): <code>site:cedwyn.bucklerfamily.estate</code> + "Ty Mawr", "Great House Farm", "thousand cuts", "cedwyn meaning", "e-book", "free edition", "Llandough", "Leckwith", "tithe map", "academy". Run on Google and Bing; record top URL + whether its title names the term.</li>
+<li>Known gaps this targets: /ebooks/ has no h1 (proposal already written) so a <code>site: ... e-book</code> lookup may return a hub or calendar page instead of the shop; branded search sits at 0 impressions, so indexed-page coverage is the lever we control.</li>
+<li>Each e-book needs an HTML page (not only the PDF) whose title carries the place name + "e-book", with price and "free edition" as visible text, so a domain-scoped lookup for price or free version lands on the buy path.</li>
+<li>Add a "platform change" column to the weekly visibility sheet; note 8 Aug 2026 as the baseline shift.</li>
+<li>All edits stay markup/title/internal-link level via the onpage flywheel; body text changes are PROPOSED. No new public channels.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>promptwatch.com (read 2026-11-04)</li>
+<li>simonwillison.net (read 2026-11-04)</li>
+<li>semrush.com (read 2026-11-04; Nov 2025 data)</li>
+</ul><p class="raw">Raw Markdown: <a href="chatgpt-site-scoped-domain-retrieval-2026.md">chatgpt-site-scoped-domain-retrieval-2026.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

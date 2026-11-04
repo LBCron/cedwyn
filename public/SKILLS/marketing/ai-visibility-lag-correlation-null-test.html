@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Does AI visibility move traffic? Lag-correlation test with a fair null · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Does AI visibility move traffic? Lag-correlation test with a fair null"><link rel="alternate" type="text/markdown" href="ai-visibility-lag-correlation-null-test.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Does AI visibility move traffic? Lag-correlation test with a fair null</h1>
+<p>Date: 2026-11-04 · Source type: practitioner experiment (4 brands, 632 tests)</p>
+<h2>Why</h2>
+<p>Teams chart "AI share of voice" against Direct or branded search, find r = 0.7 at some lag and call it impact. Kevin Indig (Growth Memo, 19 Oct 2026) ran 632 tests across 4 brands: weekly AI visibility against branded search impressions and Direct, at lags of 0-6 weeks.
+- First pass: one site had r = 0.72 (AI SoV vs Direct, peak at 3 weeks) and r = 0.59 with branded impressions. Another had r = 0.47 (ChatGPT mention rate vs Direct).
+- Fair null: he shifted the AI series against traffic, keeping each series' order. When every mismatched alignment got the same 7 lag choices, and kept its best, several wrong alignments matched or beat the real one.
+- Split-half: one site's link sat only in the second half, the other's only in the first. Usable weekly observations at the chosen lag: 17 and 35.
+- Verdict: no reliable link across the 4 brands. An effect may exist but could not be isolated. Measure with self-reported attribution plus triangulated leading indicators instead.</p>
+<h2>How-to</h2>
+<ol>
+<li>Build weekly series: AI visibility (mentions or citations over a fixed prompt set, platforms and markets) and the outcome (branded impressions from Search Console, engaged Direct, sales).</li>
+<li>Pre-register: name ONE metric pair and ONE lag before looking. If you must search lags 0-6, apply the same search to the null.</li>
+<li>Null: generate many shifted or circularly-rotated versions of the AI series. For each, take the best r over the same lags. Real p is roughly the share of nulls with r &gt;= real r. Below ~0.05 counts as signal; otherwise none.</li>
+<li>Stability: split the period in half. Count it only if both halves agree in sign and roughly in size.</li>
+<li>Minimum data: below ~30 weekly points, report "insufficient data" and skip the conclusion.</li>
+<li>Detrend first (week-over-week differences). Two rising lines always correlate.</li>
+<li>Monthly report: exposure (prompt-set visibility), discovery (self-reported "where did you first hear", in the buyer's own words, naming the AI tool), and outcome (sales/signups from those people). If visibility rises but no buyer mentions AI, check whether the prompt set matches how buyers actually research.</li>
+</ol>
+<h2>Pitfalls</h2>
+<ul>
+<li>Picking the best of 7 lags, then testing the null at only that lag, inflates significance. This was Indig's own first mistake.</li>
+<li>Many brands x metrics x lags guarantees an impressive r somewhere.</li>
+<li>Weekly AI visibility from a small prompt set is noisy, so use the same prompts every week.</li>
+</ul>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>The weekly VISIBILITY CHECK already asks the connected Grok 5 fixed questions and counts mentions. That is the exposure series (5 prompts, 1 platform: very noisy). Never claim from it that "AI drove sales/traffic" before about 30 weeks of data AND a passing shifted-null test.</li>
+<li>Outcome series: Search Console branded impressions (Cedwyn / Great House Farm / Ty Mawr Llandough queries) and engaged long-tail visits (see direct-traffic-bot-audit-hidden-ai.md).</li>
+<li>Discovery series: the /ebooks/ "where did you first hear" answers, coded by tools/hdyhau_code.py.</li>
+<li>PROPOSAL (growth report owner): one line in the Sunday report: "AI mentions x/5 · branded impressions n · buyers naming an AI tool k". Label any correlation "not tested" until the null test has been run.</li>
+<li>The null test is about 20 lines of stdlib Python (rotate list, pearson). Write it only when there are 30 or more weekly rows. Nothing installed this run.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>growth-memo.com (Kevin Indig, 19 Oct 2026; read in full)</li>
+<li>growth-memo.com (now titled "The usefulness of attribution for AI Search", 28 Sep 2026, with George Bonaci of Ramp; paywalled, only the summary was read)</li>
+</ul><p class="raw">Raw Markdown: <a href="ai-visibility-lag-correlation-null-test.md">ai-visibility-lag-correlation-null-test.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

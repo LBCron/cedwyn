@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Switchback (time-split) price test inside ONE channel · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Switchback (time-split) price test inside ONE channel"><link rel="alternate" type="text/markdown" href="switchback-price-test-single-channel.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Switchback (time-split) price test inside ONE channel</h1>
+<p>Date: 2026-11-04 · Topic: e-book launch / pricing tests where a per-visitor A/B split is not possible or not fair.</p>
+<h2>Why this exists</h2>
+<p>A per-visitor price split (two people see two prices for the same e-book at the same moment) is awkward for a small UK shop: buyers compare notes, platforms such as KDP/Google Play/Apple show one price to everyone, and UK price-transparency rules (see uk-dmcc-act-urgency-reviews-price-copy.md, uk-reference-pricing-was-now-emma-sleep-2026.md) punish "was/now" games. The marketplace answer is the <strong>switchback</strong>: everyone sees the SAME price at any moment, and the price flips between A and B on a randomised time schedule.</p>
+<h2>What the practitioners and the source paper establish</h2>
+<ul>
+<li>Statsig (experimentation vendor, practitioner guide): switchbacks flip test/control "based on time, rather than randomly splitting the population. At any given time, everyone ... receives the same treatment." Set the switching interval long enough to capture the effect, short enough to get many intervals; balance across times of day and days of week; common total duration is <strong>2-week blocks</strong>. Add <strong>burn-in/burn-out</strong> windows to drop exposures right after a switch (their example: 1-hour window with 5-min burn-in and burn-out keeps only the middle 50 min). Do NOT run a per-user t-test: the unit is the time interval; they analyse with <strong>bootstrapping</strong>; regression (DoorDash's method) is the alternative. Limitation: switchbacks measure short, in-session behaviour, not long-term effects. (vendor guide; figures are their worked examples)</li>
+<li>DoorDash engineering (cited by Statsig; page behind a bot wall from this box, not re-read): used switchbacks for surge ("SOS") delivery pricing across whole regions, analysed by regression.</li>
+<li>Bojinov, Simchi-Levi &amp; Zhao, "Design and Analysis of Switchback Experiments" (Management Science; arXiv 2009.00148, read sec. 3 + 6): the optimal randomisation frequency depends on the <strong>real duration of the carryover effect</strong>, not on how finely you slice periods; set each period close to the carryover length; they suggest a horizon so that T/p &gt; 100 periods for the carryover-order test; their Table 3 optimal design for T=12, m=2 randomises only at periods {1,5,7,9}.</li>
+</ul>
+<h2>Translation for e-books (our reading, not a published result)</h2>
+<ul>
+<li>Carryover for a book price = people who saw price A on a visit and buy later at B. For a £5-£25 PDF this is typically a day or two (wish-list, payday). So <strong>one period = 1 day</strong> (or 2), with the first ~6 h after each flip marked burn-in and excluded or analysed separately.</li>
+<li>Unit of analysis = the day. Metric = <strong>revenue per visitor (RPV) on the product page</strong>, not conversion rate (a lower price always "wins" on conversion). Secondary: orders, refunds.</li>
+<li>Randomise days in blocked pairs (each Mon–Sun week gets A and B in a random order per pair of days) so weekday effects cancel.</li>
+<li>Small shops have few orders. A switchback at ~20 product-page visits/day and ~1% conversion gives ~1.4 orders per week: no test will reach significance in a month. Use it only once a product page has <strong>≥ 100 visits/day</strong> or ≥ 3 orders/week; otherwise use the gated survey routes (van-westendorp-price-survey-gated.md, gabor-granger-price-ladder-survey-revenue-peak.md).</li>
+<li>Stopping: fix the horizon in advance (e.g. 28 days = 14 A + 14 B); no peeking-to-stop (see sequential-ab-test-miller-2sqrtN-stopping-rule.md).</li>
+</ul>
+<h2>Steps</h2>
+<ol>
+<li>Pick ONE channel you fully control (own Stripe/Gumroad checkout). Keep every other channel's price fixed during the test.</li>
+<li>Choose two prices that are both legitimate standing prices (no struck-through "was" price, no fake urgency). State on the page only the current price.</li>
+<li>Generate the schedule: <code>python3 the project workspace schedule --days 28 --start 2026-11-09 --seed 7</code> (blocked pairs, writes a CSV).</li>
+<li>Each day at 00:00 UK, switch the live price per the schedule (a Stripe Price swap on the Payment Link / Gumroad price edit) and log the switch time.</li>
+<li>Daily, record visits (Cloudflare analytics for the page, HTML 200s), orders, revenue. Mark the first 6 h after a switch as burn-in.</li>
+<li>At the end: <code>python3 .../switchback_price.py analyse days.csv</code> → difference in mean RPV per day, permutation-test p-value over day labels, and a "not enough data" verdict under 20 orders total.</li>
+<li>Segment check before naming a winner (simpson-paradox-within-segment-check-discovered-labs-limitations.md): look at traffic source per arm.</li>
+</ol>
+<h2>Interactions</h2>
+<ul>
+<li><strong>KDP</strong>: a Kindle Countdown Deal requires the list price unchanged 30 days before and 14 days after (kindle-countdown-deal-kdp-select-uk-rules.md). Never switchback-test a KDP price.</li>
+<li>Versioned-release ladder (versioned-release-rising-price-ladder.md; latest paid, each earlier version £4.99 less): test only the LATEST version's price, then recompute the ladder; never break the "v0.0.1 free" rule.</li>
+<li>Argentina scope: no money words; do not test prices in Argentina-facing pages.</li>
+</ul>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Today Cedwyn traffic to /ebooks/ is far below 100 visits/day, so the switchback is <strong>PROPOSED, gated</strong>: arm it when the e-book page passes 100 visits/day for 7 days (the traffic flywheel can flag it).</li>
+<li>Candidate first test when the gate opens: latest-version price of the lead e-book at its current price vs. one £-step lower, 28 days, own checkout only, KDP/Google Play unchanged.</li>
+<li>A price change itself is a the project lead decision (standing rule: prices are proposals); the test plan goes to the project workspace as a proposal, not executed.</li>
+<li>Tool: tools/switchback_price.py (stdlib only, written, nothing installed).</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>statsig.com (vendor practitioner guide; examples not checked)</li>
+<li>careersatdoordash.com (bot wall from this box; content relayed via Statsig/search snippet)</li>
+<li>arxiv.org (Bojinov, Simchi-Levi, Zhao; read HTML v4 sec. 3, 6)</li>
+</ul><p class="raw">Raw Markdown: <a href="switchback-price-test-single-channel.md">switchback-price-test-single-channel.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

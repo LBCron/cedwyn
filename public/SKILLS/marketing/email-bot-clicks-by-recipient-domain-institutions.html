@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Email clicks by recipient domain: discount institutional clicks (2026 data) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Email clicks by recipient domain: discount institutional clicks (2026 data)"><link rel="alternate" type="text/markdown" href="email-bot-clicks-by-recipient-domain-institutions.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Email clicks by recipient domain: discount institutional clicks (2026 data)</h1>
+<p>Topic: reading click numbers when the list (or the outreach) reaches employer/institution mailboxes. Companion to email-metrics-mpp-bot-clicks-what-to-trust.md (what to trust overall) and tools/bot_click_flag.py (per-click timing rules). New here: the bot-click rate <strong>by recipient domain class</strong>, which is what makes institutional sends unreadable.</p>
+<h2>The evidence</h2>
+<ul>
+<li>GlueLetter, "Bot clicks in 2026" (vendor analysis, read in full 4 Nov 2026): 105,432,741 link clicks, 1 Jan to 31 May 2026, dozens of publishers on many ESPs; their own detector plus ESP flags (e.g. Sailthru). <strong>56.0% of all clicks were automated</strong> (security filters opening links), and bot clicks cluster on a few links per email, so "most-clicked link" rankings are distorted.</li>
+<li>Rate by domain class (same page, their table):</li>
+<li>.us 95.8% · .org 92.7% · .gov 84.8% · .edu 79.7% · other .com 77.1% · other domains 70.7% · other .net 64.7%</li>
+<li>outlook.com 28.3% · hotmail.com 22.6% · live.com 21.8%</li>
+<li>gmail.com 7.0% · yahoo.com 5.8% · aol.com 5.0% · me.com 5.5%</li>
+<li>Jeff Sonderman (GlueLetter) LinkedIn post: "more than one-third" of newsletter clicks are bots in an earlier pull (snippet only, not read in full).</li>
+<li>Caveat: the data is US-weighted. UK classes (.gov.uk, .ac.uk, .org.uk, nhs.uk, police.uk) are not in the table. Treating them like .gov/.edu/.org is our inference, not measured. It is a reasonable guess because UK public bodies run the same kinds of link scanners (e.g. Microsoft Defender Safe Links), but it has not been checked.</li>
+</ul>
+<h2>How to do it</h2>
+<ol>
+<li><strong>Split every click report by recipient domain class</strong> before reading it: personal webmail (gmail/yahoo/icloud/aol), Microsoft consumer (outlook/hotmail/live), institutional (gov/ac/edu/org/nhs/police, and .com employer domains).</li>
+<li><strong>Personal webmail clicks:</strong> read as roughly human (5-7% noise).</li>
+<li><strong>Microsoft consumer clicks:</strong> discount about a quarter.</li>
+<li><strong>Institutional clicks:</strong> presume automated unless corroborated. Corroboration means one of:
+   - a reply;
+   - a site visit from that organisation's network shortly after the click (Cloudflare analytics, UTM landing);
+   - a second click more than 10 minutes after the first;
+   - a purchase or signup.</li>
+<li><strong>Never A/B test subject lines or links on institutional clicks.</strong> Pick winners on webmail-only clicks, or on replies.</li>
+<li><strong>Never report institutional "clicks" as interest</strong> in a brief or to a partner. Report replies and visits instead.</li>
+<li><strong>Turn off link tracking on one-to-one institutional outreach</strong> (already the rule in email-links-shorteners-tracking-safe-links-bot-clicks.md). The data is noise and the rewritten links look worse.</li>
+<li><strong>Run the timing rules too</strong> (tools/bot_click_flag.py): 2 clicks under 2 s, 10+ in 30 s, or every link within 60 s of the send.</li>
+</ol>
+<h2>Tool</h2>
+<p><code>tools/click_domain_class.py</code> (own, stdlib, ~2 KB, nothing installed). Input is a CSV with an <code>email</code> column (Mailchimp click export). It counts clicks per domain class, shows GlueLetter's bot share for each class, and gives a rough human-click estimate:
+<code>python3 tools/click_domain_class.py clicks.csv</code></p>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li><strong>Mailchimp newsletter:</strong> when a campaign report shows clicks, run click_domain_class.py on the export. A spike from archive, council or university addresses is scanner traffic until a visit or reply backs it up. Webmail clicks are the real reader signal for which e-book link works.</li>
+<li><strong>Institution correspondence</strong> (archives, councils, MOD, HMLR, universities): "clicked" from a .gov.uk or .ac.uk mailbox proves nothing. Evidence of reading is a reply or a logged visit to the page we linked.</li>
+<li><strong>Weekly growth report:</strong> state signups and sales, not raw clicks. If clicks are quoted, quote webmail-only clicks and say so.</li>
+<li><strong>Funnel A/B:</strong> decide on webmail-only clicks or on /ebooks/ visits with UTM, never on blended clicks.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>glueletter.com (read in full, 4 Nov 2026; vendor data)</li>
+<li>linkedin.com (snippet only)</li>
+<li>related: omeda.com (already used by tools/bot_click_flag.py)</li>
+</ul><p class="raw">Raw Markdown: <a href="email-bot-clicks-by-recipient-domain-institutions.md">email-bot-clicks-by-recipient-domain-institutions.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

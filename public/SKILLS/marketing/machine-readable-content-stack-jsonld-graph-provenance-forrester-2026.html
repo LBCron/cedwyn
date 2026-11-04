@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Machine-readable content stack: JSON-LD fact graph + provenance (Forrester, 2026) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Machine-readable content stack: JSON-LD fact graph + provenance (Forrester, 2026)"><link rel="alternate" type="text/markdown" href="machine-readable-content-stack-jsonld-graph-provenance-forrester-2026.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Machine-readable content stack: JSON-LD fact graph + provenance (Forrester, 2026)</h1>
+<p>Source: Duane Forrester, "llms.txt Was Step One. Here's the Architecture That Comes Next", Duane Forrester Decodes, 29 Mar 2026 (read in full 4 Nov 2026). Forrester ran SEO for MSN, built Bing Webmaster Tools and helped launch Schema.org; he also sells a book on this (The Machine Layer). This is a practitioner framework, not a controlled study.
+duaneforresterdecodes.substack.com</p>
+<h2>The point</h2>
+<p>llms.txt is a flat list of Markdown links: no relationships, no dates, no provenance, and a second copy to keep in sync. When an AI answer engine compares sources and resolves contradictions, it prefers facts that are structured, linked to each other and dated/attributed. Build a machine-facing <em>fact layer</em> generated from the same source of truth as the human page, not a second hand-maintained layer.</p>
+<p>Figures he cites (vendor/secondary, NOT CHECKED):
+- An audit of CDN logs on 1,000 Adobe Experience Manager domains found LLM bots essentially absent from llms.txt requests; Googlebot made most fetches.
+- Pages with valid structured data "2.3x more likely" to appear in AI Overviews; Princeton GEO paper "up to 40%" higher visibility with clear structure.
+- MCP "97 million monthly SDK downloads by 2026".</p>
+<h2>The four layers (build in order; stop where value runs out)</h2>
+<ol>
+<li><strong>JSON-LD fact sheets</strong>: Organization, Product/Service, Review, FAQPage, treated as a precise fact layer (attributes, price state, availability), not a rich-snippet trick.</li>
+<li><strong>Entity relationship graph</strong>: connect nodes with the <code>@id</code> pattern (product -&gt; family -&gt; topic -&gt; author -&gt; organization) so a machine can traverse it like a catalogue.</li>
+<li><strong>Content endpoint</strong>: one versioned JSON endpoint for the most-compared facts (usually price + core features), generated from the CMS/data, timestamped and attributed. MCP is the direction; not needed today.</li>
+<li><strong>Provenance metadata on every fact</strong>: timestamp (<code>dateModified</code>), author/owner, version, source chain. His claim: when sources conflict, the dated, attributed fact wins the tiebreak.</li>
+</ol>
+<h2>Minimum viable version (his "ship this quarter" list)</h2>
+<ol>
+<li>Audit + upgrade JSON-LD on core commercial pages; interlink with <code>@id</code>.</li>
+<li>One structured endpoint for price + features, generated, never hand-edited.</li>
+<li>Timestamp + author + version on each public fact you care about.</li>
+</ol>
+<h2>Failure pattern he names</h2>
+<p>Pricing rendered by JavaScript, comparison tables in PDFs, case studies with no attribution -&gt; the AI infers from crawled text and gets price and features wrong. (Pairs with the Vercel/MERJ "GPTBot does not run JS" point already in ai-visibility-3-layers-4-gates.)</p>
+<h2>How we apply it to Cedwyn</h2>
+<p>Live check of cedwyn.bucklerfamily.estate on 4 Nov 2026 10:55Z (read-only): 3 JSON-LD blocks — Organization (<code>@id</code> .../dartboard/#org), WebSite (no <code>@id</code>), ItemList; a CreativeWork (academy protocol); FAQPage. <strong>No Book/Product, no Offer, no price in markup, no <code>datePublished</code>/<code>dateModified</code>, no version.</strong> So the price, format and free v0.0.1 an AI would quote must be inferred from body text.
+Actions (all markup-only; PROPOSED while the page freeze holds; owner = CEDWYN ONPAGE run / VERSION STANDARD run):
+1. Per e-book: one <code>Book</code> node (<code>@id</code> = book URL + <code>#book</code>) with <code>name</code>, <code>author</code>/<code>publisher</code> -&gt; <code>@id</code> of the existing #org, <code>inLanguage</code>, <code>about</code> (Place: Llandough / Great House Farm), <code>bookFormat</code> EBook, <code>bookEdition</code> = current semver, <code>dateModified</code>, and <code>workExample</code>/<code>offers</code> listing each version: latest at its price (GBP), earlier versions at the £4.99-step prices, v0.0.1 <code>price: 0</code>. Generate it from the same data the version dropdown uses, so it never drifts (VERSION-STANDARD rule).
+2. Give WebSite and ItemList <code>@id</code>s and make ItemList items point at each <code>#book</code> <code>@id</code> (the graph layer).
+3. One static JSON file, e.g. /ebooks/catalogue.json, built at deploy from the same source: title, edition, price per version, free edition URL, dateModified, source count. Link it from llms.txt and /agents.json. (Layer 3, cheap: static file, no API.)
+4. Provenance: visible "Edition vX.Y.Z · updated <date> · N sources" line on each book page, mirrored in <code>dateModified</code> (supports cutoff-aware calendaring and authority-without-disclosure skills).
+5. Validate with validator.schema.org / Google Rich Results test after deploy; add "JSON-LD Book+Offer present" to the onpage audit score.
+6. Measure: weekly visibility check asks "how much is the Great House Farm e-book and is there a free version?" with search ON; correct price/free-edition answer = pass. Before/after dates logged.
+Do not: build an MCP server, hand-maintain a Markdown mirror, or spend anything.</p><p class="raw">Raw Markdown: <a href="machine-readable-content-stack-jsonld-graph-provenance-forrester-2026.md">machine-readable-content-stack-jsonld-graph-provenance-forrester-2026.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

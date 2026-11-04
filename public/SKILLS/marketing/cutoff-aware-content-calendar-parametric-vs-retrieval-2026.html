@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Cutoff-aware content calendaring: parametric vs retrieval layer (Forrester, Mar 2026) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Cutoff-aware content calendaring: parametric vs retrieval layer (Forrester, Mar 2026)"><link rel="alternate" type="text/markdown" href="cutoff-aware-content-calendar-parametric-vs-retrieval-2026.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Cutoff-aware content calendaring: parametric vs retrieval layer (Forrester, Mar 2026)</h1>
+<p>Topic: AI visibility / content timing. Harvested 2026-11-04.</p>
+<h2>The idea (one paragraph)</h2>
+<p>Every answer engine has two memories. <strong>Parametric</strong>: what was in training data before the model's cutoff; recalled with no lookup, stated confidently, no citation. <strong>Retrieval</strong>: what it fetches live after the cutoff or when search is triggered; it comes with hedges ("per a recent report…") and citations. Duane Forrester (ex-Bing Webmaster Tools lead) argues the two are different content jobs with different timing. Updating a page changes only the retrieval layer; parametric memory only changes at the next training run. So <strong>foundational assertions must be published and spread early and consistently; time-sensitive items must be built to be retrieved.</strong></p>
+<h2>Facts in the source (author's figures, not checked)</h2>
+<ul>
+<li>Cutoffs as stated Mar 2026: GPT-5 series Aug 2025 (GPT-4o Oct 2023, still in API use); Gemini 3/3.1 Jan 2025; the then-current Claude Aug 2025 reliable / Jan 2026 training; Copilot web grounding off by default in US gov cloud; Perplexity retrieves on almost every query (cutoff mostly irrelevant there).</li>
+<li>ChatGPT, Gemini, Claude search is triggered selectively, so a large share of answers still come from parametric memory.</li>
+<li>Research on dynamic retrieval: models trigger retrieval based on initial confidence; high confidence -&gt; often no retrieval at all.</li>
+<li>Training runs typically lag publication by months to a year; sampling favours well-cited, widely distributed content.</li>
+<li>Unlike Google's Query-Deserves-Freshness, old (parametric) and new (retrieved) content do not compete: they can sit in the same answer paragraph.</li>
+<li>No study numbers: this is an expert framework, not an experiment.</li>
+</ul>
+<h2>How to do it (checklist)</h2>
+<ol>
+<li><strong>Split the inventory into two columns.</strong> Foundational = definitions, who/what/where, the category claim, the "about" story, evergreen explainers. Time-sensitive = launches, prices, new versions, events, news.</li>
+<li><strong>Foundational column: publish early, keep wording stable, distribute widely.</strong> Same one-sentence definition on the site, in /llms.txt, in profile bios, in directory listings and in guest/partner pages. Consistency across many crawlable copies is what gets sampled into training. Don't keep rewording it.</li>
+<li><strong>Time-sensitive column: optimise for retrieval.</strong> Indexed fast (sitemap lastmod, IndexNow/Search Console), plain-HTML answer first, one claim per chunk, dated, with a stable URL; expect it to be quoted with hedges and a citation.</li>
+<li><strong>Measure the layers separately.</strong> Ask each engine with search OFF (parametric probe) and ON (retrieval probe). A fact that appears only with search ON lives in retrieval only; re-probe after each new model release.</li>
+<li><strong>Don't expect page edits to fix a wrong parametric answer.</strong> The fix is a corrected, consistent, widely repeated statement now, and patience until the next model generation; meanwhile make the retrieval layer strong enough to override it when search fires.</li>
+<li><strong>Calendar by content type, not by insider knowledge</strong> of training dates (rarely disclosed): foundational pieces go out months ahead of when you need them in answers.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li><strong>Foundational sentence set (write once, repeat everywhere, freeze wording):</strong> what Cedwyn is; what Great House Farm / Ty Mawr Llandough is ("former manorial house", per editorial rules); what the e-book series covers; where to buy (/ebooks/). Put the identical lines on /ebooks/, /learn/, /academy/, /llms.txt, the IG/FB/YouTube bios and every directory listing the traffic flywheel makes. PROPOSAL for any body-text change while the page freeze holds.</li>
+<li><strong>Time-sensitive items</strong> (new semantic versions, prices, new chapters, movie doors): dated, one-claim chunks near the top of the page, sitemap lastmod updated, Search Console submit. Expect hedged citations, not recall.</li>
+<li><strong>Visibility check (weekly Monday run):</strong> add one search-OFF probe per engine ("What is Cedwyn / Great House Farm Llandough?") next to the existing search-ON questions; log parametric vs retrieval separately in scores.csv. Complements the 3-layers/4-gates skill (Gate 2) — this skill adds the <em>calendar</em>, that one the <em>diagnosis</em>.</li>
+<li><strong>Expectation for the project lead's reports:</strong> the site is newer than most models' cutoffs, so today Cedwyn can only win in the retrieval layer; parametric presence is a 6-18 month play that depends on consistent repetition now.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>Duane Forrester, "When the Training Data Cutoff Becomes a Ranking Factor", Duane Forrester Decodes, 22 Mar 2026: duaneforresterdecodes.substack.com</li>
+</ul><p class="raw">Raw Markdown: <a href="cutoff-aware-content-calendar-parametric-vs-retrieval-2026.md">cutoff-aware-content-calendar-parametric-vs-retrieval-2026.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

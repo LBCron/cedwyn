@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Retrieval economics: why AI citations follow Google top-10/20 (Indig on the Sept 2025 Reddit drop) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Retrieval economics: why AI citations follow Google top-10/20 (Indig on the Sept 2025 Reddit drop)"><link rel="alternate" type="text/markdown" href="retrieval-economics-google-top20-pool-reddit-drop-indig.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Retrieval economics: why AI citations follow Google top-10/20 (Indig on the Sept 2025 Reddit drop)</h1>
+<p>Sources (read 4 Nov 2026):
+- Kevin Indig, "Decoding Google's Role in Reddit's Recent ChatGPT Citation Dip", G2 Learn, 2 Oct 2025. learn.g2.com
+- Semrush blog, "Reddit's citations in ChatGPT fall from 3.8% to 0.5%" (2026), recaps the 2025 drop and Indig's explanation. semrush.com
+Indig led SEO/growth at Shopify, G2 and Atlassian and writes Growth Memo; the G2 piece uses data from Profound (a G2 partner). His causal story is a reasoned hypothesis, not confirmed by OpenAI or Google.</p>
+<h2>What happened (figures NOT CHECKED)</h2>
+<ul>
+<li>Around 10 Sep 2025 Google removed the <code>&amp;num=100</code> results parameter. SERP-data vendors (whom OpenAI reportedly buys search data from) could then cheaply see only the top ~10-20 results.</li>
+<li>Ahrefs: 57.8% of Reddit's keywords rank outside the top 20, so those Reddit URLs stopped entering ChatGPT's candidate pool.</li>
+<li>Semrush (230,000+ prompts): Reddit cited in ~60% of ChatGPT responses early Aug 2025 -&gt; ~10% by mid-Sep 2025.</li>
+<li>Profound data: Wikipedia's visibility rose as Reddit's fell — canonical, structured, consistently top-ranked pages filled the gap.</li>
+<li>Reddit's stock fell 14.4% in five days (26 Sep -&gt; 2 Oct 2025).</li>
+<li>A second, separate drop came 14 Aug 2026 (Promptwatch 3.83% -&gt; 0.52%), covered in post-reddit-citation-source-mix-audit; OpenAI states it sets no fixed visibility per site.</li>
+</ul>
+<h2>The transferable rule</h2>
+<p>Live retrieval for answer engines is cost-optimised: it pulls from sources that are cheap to fetch, easy to refresh and consistently structured, and for ChatGPT that candidate pool appears to be fed by <em>Google's first page or two</em>. An API or licensing deal does not guarantee citations. So:
+1. <strong>Gate = top-20 Google rank for each sub-query</strong>, not for the head term. A page ranking 25th for a facet is invisible to retrieval, however good it is.
+2. <strong>Upstream plumbing changes move citations overnight.</strong> A citation drop may be a pipeline change, not your content. Check a known third-party domain (Reddit, Wikipedia) in the same week before rewriting anything.
+3. <strong>Canonical + structured beats conversational</strong> when the pool shrinks (Wikipedia effect).
+4. Don't build a strategy on one channel being cited (the "Reddit SEO" lesson, twice in 12 months).</p>
+<h2>How-to (monthly, 20 minutes, free)</h2>
+<ol>
+<li>Take the facet list from query-fan-out-answer-a-facet (8-15 sub-queries per e-book).</li>
+<li>For each facet, record our best URL's Google position from Search Console (Performance -&gt; Queries, filter query; average position, last 28 days). No paid rank tracker needed.</li>
+<li>Bucket: 1-10 = in pool; 11-20 = at the edge; 21+ = out of pool. Only buckets 1-20 are worth AI-citation work; 21+ need classic SEO first (internal links, a dedicated H2/page, title match).</li>
+<li>When the weekly AI visibility check shows a sudden fall, first test a control: ask the same prompts and count Reddit/Wikipedia citations. If they moved too, log "pipeline change" and do not rewrite pages that week.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Add a "Google position" column (from the connected Search Console, read-only) beside each facet in the weekly visibility check; mark in-pool / edge / out. Priority list for onpage work = facets at 11-20 (cheapest to lift into the pool).</li>
+<li>Our natural "Wikipedia-like" assets are the evidence catalogue and dated record pages: keep them canonical (one URL per record, stable titles, <code>@id</code> graph per the machine-readable-content-stack skill) so they qualify when pools shrink.</li>
+<li>Bing: ChatGPT's search has historically leaned on Bing too (2026 share not checked); Bing currently shows 0 pages indexed (the project lead's open task: import from Search Console). Until that is done, treat ChatGPT citation numbers as capped.</li>
+<li>Reddit stays research-only (our standing rule: no Reddit by script); this source is one more reason not to invest there for AI visibility.</li>
+<li>Lead NOT made a skill this run: Similarweb's AI Traffic Tracker advertises per-landing-page chatbot prompts ("the prompts behind the clicks") as a facet source; free tier and data coverage for a ~450 visits/day site are not checked (likely below panel threshold; login needed). Use Search Console queries + our own Cloudflare referrers instead.</li>
+</ul><p class="raw">Raw Markdown: <a href="retrieval-economics-google-top20-pool-reddit-drop-indig.md">retrieval-economics-google-top20-pool-reddit-drop-indig.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

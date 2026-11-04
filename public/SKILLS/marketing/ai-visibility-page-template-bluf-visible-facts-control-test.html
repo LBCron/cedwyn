@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>AI-visibility page template: answer first, facts in visible text, crawler tiers, one-change tests (Similarweb, 3 Nov 2026) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: AI-visibility page template: answer first, facts in visible text, crawler tiers, one-change tests (Similarweb, 3 Nov 2026)"><link rel="alternate" type="text/markdown" href="ai-visibility-page-template-bluf-visible-facts-control-test.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>AI-visibility page template: answer first, facts in visible text, crawler tiers, one-change tests (Similarweb, 3 Nov 2026)</h1>
+<p>Read 4 Nov 2026. Source: Shai Belinsky (Similarweb), "How Publishers Can Improve AI Visibility: 12 Tips Ranked by Confidence and Effort", 3 Nov 2026
+aisearch.similarweb.com
+It cites: Princeton GEO-Bench (already in ai-answer-citations-geo-sources-quotes-stats.md), Kevin Indig's 18,012 ChatGPT citations (Growth Memo), Pew Research (68,879 Google searches, 900 US adults, Mar 2025), searchVIU JSON-LD test (Oct 2025), OpenAI crawler docs, Google's May 2026 AI features guide. Not each checked at source.</p>
+<h2>Context numbers</h2>
+<ul>
+<li>Google Search referrals to hundreds of publishers fell 40% Jul 2025 -&gt; Jul 2026 (Chartbeat via Reuters Institute).</li>
+<li>AI referrals to news sites: 44.5M visits/month worldwide, +115.6% YoY, still under 2% of organic search volume for US news.</li>
+<li>Pew: with an AI summary, people clicked a normal result in 8% of visits vs 15% without; clicked a link inside the summary in 1%.</li>
+<li>Explainers, background pieces and profiles sit closest to AI answers (AIO is off for breaking news).</li>
+<li>Example (foxnews.com, Apr-Sep 2026): AI chatbots = 0.19% of traffic; homepage took 35% of AI visits, but ChatGPT rarely CITES homepages: cited pages sit several folders deep.</li>
+</ul>
+<h2>The template (best-supported first)</h2>
+<ol>
+<li>Original data + named source in one sentence: number, name and source together.</li>
+<li>Answer first (BLUF): the main fact in the first sentence of the page and of each section.
+   Indig: 44.2% of 18,012 ChatGPT citations came from the first 30% of the text.</li>
+<li>Refresh evergreen explainers: new facts, visible "updated <date>" in the text.</li>
+<li>TL;DR of 40-100 words on long explainers only (no test shows the label alone earns citations).</li>
+<li>Sections that stand alone: descriptive subhead, one question, 3-4 sentence paragraphs (Google: chunking not required; write for readers).</li>
+<li>Tables for comparable facts (timelines, prices) with a one-line takeaway above.</li>
+<li>FAQ of 3-5 real follow-up questions at the end of explainers/profiles.</li>
+<li>Crawler access by bot type: OAI-SearchBot (ChatGPT search results) is separate from GPTBot (training); allow the first even if blocking the second. Check server logs for 200/403/429 to AI bots; check CDN one-click AI blocks don't block retrieval bots.
+   Google AI Overviews/AI Mode opt-out toggle in Search Console: tested in the UK from 3 Jun 2026, worldwide by 31 Aug 2026; opting out means no traffic from those features. Leave it ON (included).</li>
+<li>Indexed and snippet-eligible (no nosnippet), canonicals right, accurate dates, lastmod in sitemap.</li>
+<li>Key facts in VISIBLE HTML text: searchVIU put a price only in JSON-LD; none of ChatGPT, Claude, Perplexity, Gemini or AI Mode extracted it on live fetch. Check with JavaScript off.</li>
+<li>Article schema with named Person author + Organization sameAs: low cost, no proven lift.</li>
+<li>Test one change at a time against a control group of similar pages, over several weeks.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Ebook and evidence pages: make sure title, price, version and the one-line "what this record shows" are in visible HTML, not only in JSON-LD or JS (the version dropdown/price must render server-side or in a no-JS fallback). Spot-check 5 pages with JS off; log as ONPAGE fixes.</li>
+<li>Explainer pages (/research/, /wiki/, place profiles): first sentence states the dated fact with its record source; visible "updated" date; FAQ of 3-5 questions from Search Console queries.</li>
+<li>Cloudflare AI crawl controls: confirm OAI-SearchBot, PerplexityBot and Claude/Google retrieval bots get 200 on cedwyn (AI crawler check already in the visibility runner); Search Console generative-AI setting stays included.</li>
+<li>Run tip 12 as the ONPAGE flywheel's test method: change 3-5 pages, keep 3-5 similar pages as control, compare AI mentions/citations and clicks after 3-4 weeks (pair with ai-citation-stability-days-cited-of-7.md, since day-to-day citations churn).</li>
+<li>Editorial rules apply to all page text (never name the project lead, banned words, neutral dated wording).</li>
+</ul><p class="raw">Raw Markdown: <a href="ai-visibility-page-template-bluf-visible-facts-control-test.md">ai-visibility-page-template-bluf-visible-facts-control-test.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

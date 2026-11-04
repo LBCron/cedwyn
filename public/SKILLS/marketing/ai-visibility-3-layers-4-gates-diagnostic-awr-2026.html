@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>AI visibility diagnostic: 3 layers and 4 gates (AWR / Fiorelli, Oct 2026) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: AI visibility diagnostic: 3 layers and 4 gates (AWR / Fiorelli, Oct 2026)"><link rel="alternate" type="text/markdown" href="ai-visibility-3-layers-4-gates-diagnostic-awr-2026.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>AI visibility diagnostic: 3 layers and 4 gates (AWR / Fiorelli, Oct 2026)</h1>
+<p>Source type: practitioner framework from a consultant's client audits (Gianluca Fiorelli, Advanced Web Ranking blog, 15 Oct 2026). It is a method, not a study. The only figures in it are third-party (Vercel + MERJ crawler analysis) and are <strong>not checked</strong>. AWR sells AI-visibility tracking.</p>
+<h2>The idea in one line</h2>
+<p>Stop asking "how do we rank in AI search". Ask which of four gates is shut, because each gate has a different fix and a different clock.</p>
+<h2>Three layers (where visibility is decided)</h2>
+<ol>
+<li><strong>Parametric</strong>: what the model already knows from training (Common Crawl, books, papers, transcripts, Wikipedia/Wikidata as disambiguation anchors). No write access; moves over model generations. Consistency and breadth of mentions likely matter more than recency (author's stated assumption).</li>
+<li><strong>Retrieval</strong>: what gets fetched while the user waits: crawler access, query fan-out (one prompt split into many sub-queries; Google patent US11663201B2 "query variant generation"), raw-HTML extraction.</li>
+<li><strong>Synthesis</strong>: what the answer states. Score each prompt in one of four states: own-page citation / third-party citation / unlinked mention / full absence.</li>
+</ol>
+<h2>The four gates (run in order, but more than one can fail at once)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Test</th>
+<th>If it fails</th>
+<th>Fix</th>
+<th>Clock</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Access</td>
+<td>Can GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot fetch the page and see the content in <strong>raw HTML</strong>? Check robots per agent, WAF/CDN 429s, consent walls, tabs/accordions</td>
+<td>Plumbing</td>
+<td>Server-rendered HTML for anything you want cited; separate rules for training vs search bots; audit CDN bot rules</td>
+<td>days</td>
+</tr>
+<tr>
+<td>2 Parametric</td>
+<td>Grounding OFF: ask cold "name the leading X" then "what do you know about [brand]?" across several models and phrasings</td>
+<td>Parametric absence</td>
+<td>One canonical entity home; full Organization/Person schema with sameAs, foundingDate, knowsAbout; identical naming everywhere; sourced Wikidata item; presence in directories, press, datasets</td>
+<td>model generations</td>
+</tr>
+<tr>
+<td>3 Category binding</td>
+<td>Model knows you but does not name you for "who does this?"</td>
+<td>Weak binding</td>
+<td>Co-occurrence of your name with the category's vocabulary <strong>on pages that are not yours</strong> (roundups, review sites, community threads); on-site comparison/use-case/definition pages. More articles does not fix this</td>
+<td>months to generations</td>
+</tr>
+<tr>
+<td>4 Grounding</td>
+<td>Test the <strong>fan-out set</strong>, not just the head prompt (head prompt is ~a tenth of the surface)</td>
+<td>Grounding gap</td>
+<td>Split it: fetched-but-losing = chunkability (self-contained passages, headings in fan-out phrasing, answer-first paragraphs, specs in HTML not images); absent = placement on the pages that are actually cited (PR/partnerships)</td>
+<td>weeks to months</td>
+</tr>
+</tbody>
+</table></div>
+<p>Key crawler fact (Vercel + MERJ, &gt;500M GPTBot fetches, <strong>not checked</strong>): GPTBot downloaded JS in ~11.5% of requests, ClaudeBot ~24%, neither executed it; same for PerplexityBot, CCBot, Bytespider, Meta. Google's AI surfaces and AppleBot do render JS. So a client-rendered page can rank #1 in Google and be an empty shell to every other answer engine.</p>
+<p>Myth flagged: Organization schema does not "get you into the Knowledge Graph"; it only disambiguates. Entities are resolved from independent sources agreeing, not submitted.</p>
+<p>Reporting rule: never put all four gates on one quarterly timeline; gates 2-3 will look like failures and get cut before they could work. Label gate-2 probing as a proxy.</p>
+<h2>Do this (checklist)</h2>
+<ol>
+<li>Gate 1: <code>curl -A "GPTBot"</code> (and OAI-SearchBot, ClaudeBot, PerplexityBot) each money page; grep the raw HTML for the title, price and first answer paragraph. Any 403/429 or missing text = fix first.</li>
+<li>Gate 2: 3 models x 2 phrasings, search/grounding off, 2 questions each. Log named / not named.</li>
+<li>Gate 3: "best/recommended [category] for [use]" prompts; log whether named and who is named instead.</li>
+<li>Gate 4: write 6-10 likely fan-out sub-queries per head prompt; log the four-state outcome and the cited URLs (these are your placement targets).</li>
+<li>One sheet, one row per prompt, columns: gate, state, cited URL, next action, expected clock.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li><strong>Gate 1 (do now, days):</strong> fetch cedwyn.bucklerfamily.estate <code>/ebooks/</code>, each e-book page, <code>/learn/</code> and <code>/academy/</code> with the four bot user agents; confirm title, price/free edition and the answer-first paragraph are in raw HTML (not injected by JS) and that Cloudflare bot rules do not 403/429 them. Log in the weekly visibility check (the project workspace).</li>
+<li><strong>Gate 2:</strong> add two grounding-off probes to the 5 fixed Grok questions: "What is Great House Farm (Ty Mawr), Llandough?" and "What do you know about Cedwyn Estate?". Report as a proxy, never as fact.</li>
+<li><strong>Gate 3:</strong> category = Welsh local / farm history, Vale of Glamorgan heritage. Binding comes from Cedwyn being named on others' pages (local-history societies, heritage directories, Wikidata). Any outreach or new listing stays a PROPOSAL per existing rules (press only on the project lead's GO).</li>
+<li><strong>Gate 4:</strong> for each e-book, list fan-out questions a reader asks (when was it built, who lived there, what records survive, tithe map) and check each has a self-contained, dated passage with the catalogue ID in HTML.</li>
+<li>Keep the clocks apart in the Sunday growth report: gate 1 weekly, gate 4 monthly, gates 2-3 quarterly.</li>
+<li>Entity hygiene: one canonical name form for Cedwyn and Great House Farm / Ty Mawr across footer, schema and social profiles; no change to public wording without the usual editorial rules (never name the project lead, banned words).</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>advancedwebranking.com (Fiorelli, 15 Oct 2026; read 4 Nov 2026)</li>
+<li>Vercel + MERJ crawler figures as cited there (not checked)</li>
+</ul><p class="raw">Raw Markdown: <a href="ai-visibility-3-layers-4-gates-diagnostic-awr-2026.md">ai-visibility-3-layers-4-gates-diagnostic-awr-2026.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

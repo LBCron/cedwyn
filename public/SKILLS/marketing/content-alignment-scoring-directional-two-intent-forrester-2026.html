@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Content alignment scores are a direction, not a verdict (Forrester, 31 May 2026) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Content alignment scores are a direction, not a verdict (Forrester, 31 May 2026)"><link rel="alternate" type="text/markdown" href="content-alignment-scoring-directional-two-intent-forrester-2026.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Content alignment scores are a direction, not a verdict (Forrester, 31 May 2026)</h1>
+<p><strong>Source:</strong> Duane Forrester, "You Can Finally Measure Content Alignment. That's the Dangerous Part." (Duane Forrester Decodes, 31 May 2026; also on Search Engine Journal). Read in full 4 Nov 2026. Consultant essay, no study of his own. Cites Steck, Ekanadham &amp; Kallus (Netflix, 2024) on cosine similarity of learned embeddings being able to give "arbitrary" results, and the MTEB leaderboard spread between embedding models.</p>
+<h2>The idea</h2>
+<ul>
+<li>Keyword research and vector (embedding) alignment both <strong>approximate</strong> relevance. Vector scores have far higher resolution, but a cosine of 0.89 only measures closeness <strong>inside the model you scored with</strong>. Google, ChatGPT and Perplexity use their own embedders and rerankers, and no public list states which.</li>
+<li>Keyword tools give a <em>known unknown</em> (you know it's blunt, so you over-cover). Vector scores risk an <em>unknown unknown</em>: decimals feel like proof, so teams "optimise until the number goes up".</li>
+<li>What alignment scoring is genuinely good at: spotting <strong>drift</strong>. His example: a "churn prevention" piece passed every keyword audit, but its semantic centre sat nearer "measuring churn" than "preventing churn" because most of it was diagnosis, little was action. Keywords can't see that; an alignment score can.</li>
+</ul>
+<h2>How to do it (practitioner steps)</h2>
+<ol>
+<li>Write the target intent as a plain question, plus 1-2 <strong>competing nearby intents</strong> (e.g. "buy the book" vs "learn the history"). Scoring against one query alone tells you little; the gap between intents is the signal.</li>
+<li>Score <strong>per section</strong>, not per page, and take a word-weighted centre of gravity. Drift lives in which sections carry the words.</li>
+<li>Use 2+ instruments (lexical TF-IDF plus at least one embedding model if available). Trust only a direction that agrees across them; never compare raw scores across models.</li>
+<li>Act on the drift, not the number: add or rewrite the thin section the intent needs (the "what to do" half), then re-score. Stop when the direction flips, not when you hit a target score.</li>
+<li>Validate outside the instrument: does the page get retrieved or cited for that question (Search Console query, the weekly AI visibility probe)? That's the ground truth; the score is a hypothesis.</li>
+<li>Keep keyword research as the demand map (what people ask); use alignment only to check whether a page answers it.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li><strong>Measured live 4 Nov 2026 11:25Z</strong> with <code>tools/section_alignment.py</code> (lexical TF-IDF only, no install) on cedwyn.bucklerfamily.estate against two intents: A "buy the Llandough history e-book price free edition download", B "history of Great House Farm Llandough court case evidence".</li>
+<li>Centre of gravity: <strong>A 0.054 vs B 0.065</strong>. The shop page leans to history/case content, not to the buying question.</li>
+<li>Of 24 sections, only "Questions" (FAQ, 107 words) leans clearly to buying (0.190 vs 0.067). The book blurbs ("Recorded Incidents", "Concealment...", "The Tŷ Mawr Deaths") score 2-7x higher on B. The price sections ("All four books · £19.96", "Cedwyn Academy · £49.99 a month") barely touch A (0.007 / 0.005) because they carry prices but not the words a buyer asks with (what's inside, format, free edition, how to download).</li>
+<li>Directional only: one lexical instrument, two hand-written intents.</li>
+<li><strong>PROPOSED (page freeze holds, nothing committed):</strong> under each book card add one plain buyer line: "What you get: PDF, N pages, v-number; v0.0.1 free; instant download". Moves buying words into the sections that carry the price without touching the history copy. Re-score after; confirm with the weekly visibility probe question "what does the Cedwyn e-book cost and is there a free edition?" (already proposed by the Verified Source Pack skill; reuse, don't duplicate).</li>
+<li>Use the same two-intent check before any new /ebooks/ or /learn/ copy goes live; log scores in the visibility RUNNER's findings, never as a KPI to chase.</li>
+<li>Don't buy an "AI alignment score" tool: zero spend, and the score is model-specific anyway.</li>
+</ul>
+<h2>Tool</h2>
+<ul>
+<li><code>tools/section_alignment.py URL "intent A" "intent B" [...]</code>: per-section TF-IDF cosine to each intent + word-weighted centre of gravity. requests + lxml (already on box), no install. Lexical only; add an embedding pass later if one is available without install.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>duaneforresterdecodes.substack.com (read in full)</li>
+<li>searchenginejournal.com (SEJ syndication, snippet)</li>
+<li>Steck, Ekanadham, Kallus, "Is Cosine-Similarity of Embeddings Really About Similarity?" (2024), cited by Forrester (not opened)</li>
+</ul><p class="raw">Raw Markdown: <a href="content-alignment-scoring-directional-two-intent-forrester-2026.md">content-alignment-scoring-directional-two-intent-forrester-2026.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

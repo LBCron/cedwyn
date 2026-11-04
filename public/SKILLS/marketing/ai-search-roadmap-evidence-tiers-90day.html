@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Evidence-sorted AI search roadmap: 90-day cycles, tier every tactic, retrieval before markup · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Evidence-sorted AI search roadmap: 90-day cycles, tier every tactic, retrieval before markup"><link rel="alternate" type="text/markdown" href="ai-search-roadmap-evidence-tiers-90day.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Evidence-sorted AI search roadmap: 90-day cycles, tier every tactic, retrieval before markup</h1>
+<p>Date harvested: 2026-11-04 (skills harvest). Topic: SEO / AI visibility planning, analytics.</p>
+<h2>The evidence</h2>
+<ul>
+<li><strong>Similarweb, Limor Barenholtz, "How to Build an AI Search Optimization Roadmap" (2 Nov 2026)</strong>, method: the "Evidence-Sorted Roadmap".</li>
+<li><strong>SEOFOMO 2026 State of AI Search Optimization survey</strong> (Aleyda Solis, 171 search professionals): 57% have a dedicated AI search strategy for all/most sites (35% a year earlier); top challenges are measuring visibility and knowing what drives it; <strong>35% cannot say what AI search contributes to revenue</strong>. Cyrus Shepard: "very few people know what they should be doing with AI."</li>
+<li><strong>Toronto study (Chen &amp; Koudas, University of Toronto, arXiv preprint, Oct 2026)</strong>, compared pages within the same site, which removes site popularity as a factor:</li>
+<li>Pages whose <strong>title and best paragraph matched the questions people ask</strong> earned <strong>14.1% and 15.5% more citations per standard deviation</strong> of match. For ChatGPT only the paragraph effect held; titles helped Gemini and Perplexity.</li>
+<li>FAQ blocks, structured data and summary boxes looked effective only across sites, with no within-site lift.</li>
+<li>Replaying questions through ChatGPT search: <strong>retrieval (whether the page is pulled up at all) explained 32%</strong> of which page got cited vs <strong>2.8% for page properties</strong> (structure, markup). Construction-software market: 30% vs 10% (not significant).</li>
+<li>Caveat: English commercial questions in two markets; associations from a preprint.</li>
+<li>Short windows mislead: OpenAI example, ChatGPT appearance rate <strong>4.4% over 28 days vs 7.5% over the latest 2 days</strong>.</li>
+</ul>
+<h2>The how-to (one 90-day cycle)</h2>
+<ol>
+<li><strong>Baseline (days 1-7)</strong>: a fixed set of 30-50 prompts, each mapped to a real journey and tagged by stage; experimental prompts in a separate list. Record per run: platform, appeared, recommended, linked, described accurately, competitors, cited sources. Minimum 3 runs per prompt; better one run a day for 4 weeks.</li>
+<li><strong>Diagnose (days 8-10)</strong>: one hypothesis per gap, labelled with one of Solis's 10 readiness traits (accessible, extractable, useful, fresh, differentiated, recognizable, consistent, corroborated, credible, transactable). Rank gaps by severity x importance / effort.</li>
+<li><strong>Sort (days 11-13)</strong>: give every action an evidence tier.
+   - <strong>Do</strong>: question-matching titles and best paragraph; coverage on the third-party sites AI cites; crawlable, indexed, key facts in HTML (not loaded by JavaScript).
+   - <strong>Only if</strong> (nearly free): sourced stats, answer-first openers, visible dates, author/summary boxes.
+   - <strong>Good to have</strong>: FAQ blocks, schema, heading/list structure, llms.txt, chunking. Never let these displace a Do action.
+   - <strong>Skip</strong>: bought or faked mentions.
+   - <strong>Parked</strong>: no clear next step; monitor only.
+   Then score impact 1-3 and effort 1-3; priority = impact / effort. Override: a <strong>Do action with effort 3 starts in block 1</strong> because third-party coverage has long lead times.</li>
+<li><strong>Sequence (days 14-15)</strong>: two 30-day build blocks (days 16-45, 46-75).</li>
+<li><strong>Assign</strong>: one owner, one KPI, one re-test date per action.</li>
+<li><strong>Re-test (days 76-90)</strong>: same prompts, same protocol; keep, change or drop. Commit only to the next cycle; four stacked cycles make the yearly view.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Our weekly visibility check asks Grok <strong>5</strong> fixed questions. That's too few to read an average (see ai-visibility-lag-correlation-null-test.md). PROPOSED for the visibility RUNNER: grow to 30 journey-tagged prompts (research / walk / e-book buy) with daily runs where cheap, and report the 28-day rate, not the latest run.</li>
+<li><strong>Re-tier our own backlog</strong>: llms.txt, agents.json, JSON-LD and FAQ work on Cedwyn are <strong>Good to have</strong>, already done and kept, but no more run time goes into them as AI-visibility levers. Run time goes first to:
+  1. <strong>Accessible</strong>: many Cedwyn pages are JS webapps (tour runtime, H3 maps). Check that each key page's facts (dates, names, the e-book offer) are in the server HTML. Test: curl the page and grep for the fact.
+  2. <strong>Useful</strong>: rewrite titles and first paragraphs of the top 10 research pages to match the questions people actually ask ("Who owned Great House Farm Llandough?", "What was BP Properties v Buckler 1987?"). Editorial rules apply: neutral wording, banned words.
+  3. <strong>Corroborated</strong>: third-party coverage (Wikipedia gate skill, review profiles skill, heritage directories). This is effort 3, so it starts in block 1.</li>
+<li>Cycle 1 start: the next Monday visibility run (9 Nov) = day 1 baseline; re-test due ~2 Feb 2027. Owner per action = the named flywheel (onpage, visibility, ebook-pr). KPI = appearance rate on the tracked prompts.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>aisearch.similarweb.com (2 Nov 2026; includes the Google Sheet template and two fill prompts)</li>
+<li>Secondary, cited there: SEOFOMO 2026 State of AI Search Optimization (Aleyda Solis); Aleyda Solis AI search optimization checklist; Chen &amp; Koudas, University of Toronto arXiv preprint (Oct 2026); Google's 2026 guide to generative AI search; iPullRank strategic roadmap.</li>
+</ul><p class="raw">Raw Markdown: <a href="ai-search-roadmap-evidence-tiers-90day.md">ai-search-roadmap-evidence-tiers-90day.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

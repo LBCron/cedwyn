@@ -19,3 +19,5 @@
 15. When the national catalogue's record page answers "accepted, try later", its open interface's record-details call usually answers at once; archived PDFs download through the capture's original-file form (the timestamp followed by `id_`) with an ordinary browser identity (3 Nov 2026).
 
 - Parliamentary records by company name (4 Nov 2026): search the parliamentary record (Hansard) by the exact name of each company in the title chain, not only by place. It surfaces official mentions the site may hold only as snippets; log each hit with its sitting date and column.
+- The company register's public search and company pages read cleanly by plain script fetch, so officers, filing history and dissolution dates can be logged with their page URL and read date (4 Nov 2026).
+- Printed city records with a place-name schedule (for example the Cardiff Records volumes) are a rich source of minor field and farm names with dated forms; read the whole schedule, not only the first letters of the alphabet, and log each form with volume and page (4 Nov 2026).

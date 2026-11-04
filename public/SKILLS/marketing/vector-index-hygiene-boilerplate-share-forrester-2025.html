@@ -1,0 +1,137 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Vector index hygiene: keep repeated boilerplate out of the chunks AI retrieves · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Vector index hygiene: keep repeated boilerplate out of the chunks AI retrieves"><link rel="alternate" type="text/markdown" href="vector-index-hygiene-boilerplate-share-forrester-2025.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Vector index hygiene: keep repeated boilerplate out of the chunks AI retrieves</h1>
+<p>Source: Duane Forrester, "Vector Index Hygiene: A New Layer of Technical SEO", Duane Forrester Decodes (Substack), autumn 2025 (his 2026 piece calls it "last year"; exact date not checked), read in full 4 Nov 2026:
+duaneforresterdecodes.substack.com
+Supporting papers he cites: "Lost in the Middle" arxiv.org ; chunking trade-offs arxiv.org
+Status: a practitioner framework with no numbers of its own. Big engines very likely strip cookie banners themselves; the open question he raises is whether a page that is mostly repeated text looks lower-utility. Our own measurement below is real; the effect on citations is not checked.</p>
+<h2>The idea</h2>
+<p>AI search retrieves chunks, not pages. A chunk mixing topics embeds as mush; identical blocks repeated across pages make identical vectors that compete with the unique text; sidebars, CTAs and footers get chunked and retrieved as if they were content. Hygiene = canonicalisation for the retrieval era.</p>
+<h2>Five pollution types</h2>
+<ol>
+<li>Bloated blocks (one section, several topics).</li>
+<li>Boilerplate duplication (same intro/promo/notice on many pages).</li>
+<li>Noise leakage (nav, CTAs, footers, banners chunked as content).</li>
+<li>One chunk shape for every content type (FAQ vs guide vs record need different sizes).</li>
+<li>Stale embeddings (only matters for indexes we run ourselves, e.g. a site chat/RAG).</li>
+</ol>
+<h2>Practice for a publisher</h2>
+<ol>
+<li>Measure: share of each page's words sitting in lines repeated on 3+ pages. Tool: tools/boilerplate_share.py URL... (requests + lxml, no install). Target under ~15% on money and record pages (our working line, not Forrester's).</li>
+<li>Move repeated blocks out of the served HTML of human pages, or shrink them to one short line + link. Agent-facing material belongs on agent pages (/academy/, llms.txt, agents.json), not inline.</li>
+<li>One topic per H2 section, a self-contained first sentence per section (it is the chunk's label).</li>
+<li>Vary intros and summaries; never paste the same 200-word block on every page.</li>
+<li>Date, language and source on every block that matters (visible "updated" line + dateModified).</li>
+<li>If we run our own retrieval (site chat): strip boilerplate before embedding, tag chunks with type/date/URL, re-embed after a model change, use hybrid (keyword + vector) search.</li>
+</ol>
+<h2>How we apply it to Cedwyn (measured 4 Nov 2026 11:13Z, 8 live pages, lines on 3+ pages)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>page</th>
+<th>words</th>
+<th>repeated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>1,165</td>
+<td>5.1%</td>
+</tr>
+<tr>
+<td>/ebooks/</td>
+<td>2,302</td>
+<td>12.0%</td>
+</tr>
+<tr>
+<td>/learn/</td>
+<td>1,254</td>
+<td>4.7%</td>
+</tr>
+<tr>
+<td>/academy/</td>
+<td>1,298</td>
+<td>4.5%</td>
+</tr>
+<tr>
+<td>/movie/</td>
+<td>2,203</td>
+<td>37.9%</td>
+</tr>
+<tr>
+<td>/review/</td>
+<td>1,591</td>
+<td>52.4%</td>
+</tr>
+<tr>
+<td>/chess/</td>
+<td>1,461</td>
+<td>18.9%</td>
+</tr>
+<tr>
+<td>/maps/</td>
+<td>1,305</td>
+<td>63.9%</td>
+</tr>
+<tr>
+<td>Biggest repeated blocks in the served HTML (whether hidden by CSS was not checked):</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- a 558-word "CEDWYN SNOWBALL - FIRST READ FOR ALL AGENTS" protocol block on 3 of the 8 pages;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- a 217-word "Page versions &amp; agent info / change log" block on 5 pages;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- a 59-word "For AI agents (e.g. ChatGPT) acting on behalf of a signed-in contributor..." notice on all 8.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>On /maps/ and /review/ more than half of what a crawler reads is that shared text, so the chunk an AI retrieves for "Llandough maps" may be the agent protocol, not the maps.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PROPOSED (page freeze holds; log, do not commit; owner: site flywheel / agent-library cycle):</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1. Remove the 558-word snowball block from human pages' HTML; link to /academy/ with one line. This also matches the standing rule that agent text never sits on human pages.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2. Collapse the version/change-log block to the dropdown + (i) modal loaded on click, so its table is not in the initial HTML of every page (check the version standard still passes).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3. Shorten the 59-word agent notice to one sentence or move it to agents.json.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4. Re-run tools/boilerplate_share.py after the freeze lifts; target under 15% on /ebooks/, /maps/, /review/, /movie/. Log before/after in the project workspace</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5. Watch: Search Console impressions for /maps/ and /review/ 4 weeks before/after (effect not checked; no promise).</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div><p class="raw">Raw Markdown: <a href="vector-index-hygiene-boilerplate-share-forrester-2025.md">vector-index-hygiene-boilerplate-share-forrester-2025.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

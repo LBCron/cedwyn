@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Skill: Page type and engine freshness for AI citations (Discovered Labs 2M-citation study, 2026) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Skill: Page type and engine freshness for AI citations (Discovered Labs 2M-citation study, 2026)"><link rel="alternate" type="text/markdown" href="ai-citations-page-type-pricing-engine-freshness-discovered-labs-2026.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Skill: Page type and engine freshness for AI citations (Discovered Labs 2M-citation study, 2026)</h1>
+<p>Written 4 Nov 2026 (skills harvest). Topic: which page-level levers actually move AI citations once domain strength is set, and how often to refresh.
+Not a duplicate of: consensus-plus-information-gain (what a cited <em>passage</em> states), content-alignment-scoring (Forrester, how to read an alignment score), vector-index-hygiene (boilerplate in chunks). This file is about <em>page type</em>, <em>checklist effect sizes</em> and <em>per-engine freshness</em>.</p>
+<h2>Source and how far to trust it</h2>
+<ul>
+<li>Discovered Labs, "What actually drives AI citations: a statistical analysis of 2M AI citations across 10K pages" (Liam Dunne, Ben Moore; last updated Aug 2026; read in full 4 Nov 2026). Six months, ~2M (prompt, engine, citation) rows from ChatGPT, Claude, Google AI and Gemini; 10,000 cited pages crawled with 60+ features; domain fixed effects, FDR correction, bootstrapped Lasso, double ML, leave-one-domain-out. A technical paper PDF is linked (also posted to arXiv 2609.35077).</li>
+<li>Discovered Labs, "Content structure for AI search" (Dunne, 5 Jun 2026; read): answer placement and page-type templates.</li>
+<li><strong>Vendor research.</strong> Discovered Labs sells AEO services and a tracker; the sample is B2B SaaS prompts, not heritage or books. Every figure below is theirs and <strong>not checked</strong>. It is observational: the effects are associations after controls, not tested interventions.</li>
+<li><strong>Internal contradiction to remember:</strong> the summary states schema and page speed give "real, measurable gains"; the detail section states Core Web Vitals, Lighthouse score and schema showed <strong>no significant independent effect</strong> after controls. Trust the detail section.</li>
+</ul>
+<h2>What it found (all not checked)</h2>
+<ol>
+<li><strong>Domain authority dominates.</strong> AI-perceived domain authority was ~6x more influential (SHAP) than the strongest single page feature. Off-page reputation is upstream of every on-page fix.</li>
+<li><strong>Prompt-content alignment</strong> is the biggest page lever: standardised effect +0.37, ~3x the next signal; +1 SD alignment ~ +30% citations. (How to <em>measure</em> alignment honestly is in content-alignment-scoring-directional-two-intent-forrester-2026.md; do not duplicate here.)</li>
+<li><strong>Checklist items are small.</strong> FAQ block +0.07 (third-party pages, conditional on domain), TL;DR/BLUF block +0.05, author bio +0.02 (collapses after content-depth controls). None reach 0.10, the usual "small effect" bar. CWV, Lighthouse, schema: no independent effect.</li>
+<li><strong>Page type matters on its own.</strong> Pricing pages +0.39; listicle reviews -0.12; comparison and how-to near the reference. Holds after controlling for alignment. Their read: a pricing page is what a "how much / is it free" prompt asks for.</li>
+<li><strong>Engines differ on freshness.</strong> Median cited-content age: Claude 5.1 months, Google AI 6.0, Gemini 7.8, ChatGPT 8.0. Share of citations on content under 6 months: Claude 60%, ChatGPT 40%. Comparison content is cited fresh everywhere (3-6 months median); blog posts 6-10 months. Advice: set cadence to the steepest engine (Claude), so refresh key pages inside 6 months.</li>
+<li><strong>Brand pages:</strong> 39% of ChatGPT's unique cited URLs are brand-controlled vs 14% on Gemini. 97% of LinkedIn citations came from Google AI.</li>
+<li><strong>Answer placement (structure post):</strong> 55% of AI Overview citations come from the top 30% of a page; put the direct answer in the first ~500 words; match H1/title to how people phrase the question.</li>
+</ol>
+<h2>How to do it (any site)</h2>
+<ol>
+<li>Fix off-page first: being named on strong third-party sites beats any template change.</li>
+<li>For every buying question ("how much", "is there a free version", "which edition"), give it a page whose <em>type</em> matches: a plain pricing page with a table, and one comparison page for "which one should I get".</li>
+<li>Put the answer (price, free edition, what you get) in the first 30% of the page body, not below long intros or nav.</li>
+<li>Add one FAQ block and one 2-3 line summary at the top; expect small lift, so do it once and move on. Do not spend time on schema or speed <em>for AI citations</em> (they may still matter for Google and humans).</li>
+<li>Show a visible "Updated <date>" line and actually refresh pricing/comparison pages at least every 6 months (sooner when a version ships).</li>
+<li>Measure per engine, not "AI" in general: ask the same fixed question set in each engine and log which URL is cited.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<p>Live check of cedwyn.bucklerfamily.estate at ~11:45Z 4 Nov:
+- First "£" appears at word 176 of 2,641, so the price is already in the top 30%. But the 175 words before it are navigation labels (see vector-index-hygiene skill).
+- No visible "Updated <date>" line on the page (only body text mentioning "updated editions").
+- /ebooks/pricing/, /pricing/ and /ebooks/compare/ all return 404. There is no page whose <em>type</em> is pricing or comparison.
+PROPOSED (page freeze holds; markup and new pages only, nothing committed):
+1. A new /ebooks/pricing/ page: one table (book, latest version and price, earlier versions at £4.99 less per step, v0.0.1 free, bundle £19.96, Academy £49.99/month), generated from the version-standard data so it cannot drift. Two-line summary at the top: "Every book has a free edition (v0.0.1). The latest edition is £4.99 or more." Linked from /ebooks/, llms.txt and the sitemap.
+2. A /ebooks/compare/ page: "Which book should I start with?" table (topic, pages, period covered, free edition yes/no), no listicle framing.
+3. A visible "Edition · Updated <date>" line on /ebooks/ and each book page (also proposed in the machine-readable stack skill; do it once).
+4. Add a 6-month refresh date for /ebooks/, /ebooks/pricing/ and /ebooks/compare/ to the version-standard flywheel log.
+5. Weekly visibility check: log the cited URL per engine for "How much is the Great House Farm e-book?" and "Is there a free version?"; success = /ebooks/pricing/ cited.
+6. Bigger lever per this study: third-party mentions (archives, history societies, Goodreads, review profiles) already covered by existing skills; keep them ahead of page tweaks.
+Public text rules apply to any page copy: never name the project lead, banned words, no outbound links.</p>
+<h2>Sources</h2>
+<ul>
+<li>discoveredlabs.com (read 4 Nov 2026)</li>
+<li>discoveredlabs.com (listed, not read)</li>
+<li>discoveredlabs.com (read 4 Nov 2026)</li>
+</ul><p class="raw">Raw Markdown: <a href="ai-citations-page-type-pricing-engine-freshness-discovered-labs-2026.md">ai-citations-page-type-pricing-engine-freshness-discovered-labs-2026.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

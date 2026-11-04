@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>UK AI answers lean on news; mentions are not citations (Semrush AI Visibility Index, UK benchmark) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: UK AI answers lean on news; mentions are not citations (Semrush AI Visibility Index, UK benchmark)"><link rel="alternate" type="text/markdown" href="uk-ai-answers-news-weight-mention-vs-citation.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>UK AI answers lean on news; mentions are not citations (Semrush AI Visibility Index, UK benchmark)</h1>
+<p>Read 4 Nov 2026. Source: Semrush press release "Semrush Releases 2026 AI Visibility Index, Revealing Its First UK Benchmark"
+semrush.com
+(full study: ai-visibility-index.semrush.com , not read: download form)
+Data: Jan-Jul 2026, fixed monthly prompt sets of 2.5M UK and 25M US prompts, 22 industries, 4 platforms (ChatGPT, Gemini, Google AI Mode, AI Overviews).
+Note: this is a vendor's own study (Semrush sells the tracking tool). Figures are theirs; not checked against the full PDF.</p>
+<h2>The numbers that matter for a UK site</h2>
+<ul>
+<li>UK ChatGPT answers cite news more: news sites were 29.5% of citations among the top-100 cited UK domains vs 19.6% in the US.</li>
+<li>On Gemini, news was the top UK source category every month (16.6-23.0% of top-100 citations).</li>
+<li>After news, UK ChatGPT leans on trip-planning sites and marketplaces; US leans on online learning and streaming.</li>
+<li>Mention is not citation: fewer than half of the top-100 mentioned brands were also top-100 cited domains, every month, both markets. UK overlap: 36.7-45.3 of 100.
+  Example: Tesco and Asda were both top-100 mentioned on all 4 platforms; in July Tesco was ChatGPT's 25th most-cited UK domain, Asda 606th (Gemini: 29th vs 60th).</li>
+<li>UK visibility is fragmented: more leading UK domains appear on only ONE platform. Do not assume ChatGPT performance carries to Gemini/AI Mode/AIO.</li>
+<li>Concentration: UK AI Mode's top-10 source domains took 23.2-35.8% of citations (of its top 10,000 domains) vs 12.8-15.4% for ChatGPT. AI Mode is harder to break into.</li>
+<li>AI Overviews is the odd one out: lowest brand-mention overlap with the other 3, and the AIO/ChatGPT pair has the lowest source overlap.</li>
+</ul>
+<h2>How to do it (free, manual)</h2>
+<ol>
+<li>Keep TWO counts per platform per week: (a) was our name/site MENTIONED in the answer text, (b) was a cedwyn URL CITED as a source. Never merge them into one score.</li>
+<li>Score each platform separately (ChatGPT, Gemini, AI Mode, AIO, plus Grok which we already query). A win on one states nothing about the others.</li>
+<li>For UK prompts, check which NEWS domains are cited for our topic (BBC Wales, WalesOnline, Nation.Cymru, Golwg360, local papers). Those are the third-party sources most likely to carry us into UK answers.</li>
+<li>Third-party authority beats self-description: every accurate independent page (news piece, museum/library catalogue entry, society journal, Wikipedia where rules allow) is a route into citations.</li>
+<li>Benchmark against our own category (UK local history / heritage), not a global average.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Visibility check runner (the project workspace): add a mention column AND a cited-URL column per question; record per platform. Proposed scores.csv fields: platform, question, mentioned (0/1), cited_url (blank or URL), cited_news_domains.</li>
+<li>For the 5 fixed questions, log which UK news domains AI cites; that list becomes the PR target list. Press only on the project lead's GO; drafts only.</li>
+<li>Do not report "AI visibility up" from mentions alone; the Sunday report shows mentions and citations as separate lines.</li>
+<li>Gemini/AI Mode/AIO checks need a browser or a manual pass (Grok is the only connected AI). Note which platform each number came from.</li>
+<li>Public text rules unchanged: never name the project lead, banned words, no family holdings.</li>
+</ul><p class="raw">Raw Markdown: <a href="uk-ai-answers-news-weight-mention-vs-citation.md">uk-ai-answers-news-weight-mention-vs-citation.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

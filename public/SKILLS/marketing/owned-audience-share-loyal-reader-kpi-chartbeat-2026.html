@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Owned-audience share + loyal-reader KPI (Chartbeat 2026 Publisher Playbook) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Owned-audience share + loyal-reader KPI (Chartbeat 2026 Publisher Playbook)"><link rel="alternate" type="text/markdown" href="owned-audience-share-loyal-reader-kpi-chartbeat-2026.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Owned-audience share + loyal-reader KPI (Chartbeat 2026 Publisher Playbook)</h1>
+<p>Read 4 Nov 2026. Topic: when Google referrals fall, measure and grow the channels you control (direct, internal, dark social, loyal readers) and sort content by how exposed it is to no-click AI answers.</p>
+<h2>The evidence (with numbers)</h2>
+<ul>
+<li>Chartbeat 2026 Publisher Playbook (client network, skews news/media; no site count given): Google Search referrals -40.2% YoY (Jul 2025 to Jul 2026), after -21.9% the year before. Discover -34.3% (was -6.6%). Source: Search Engine Journal, 4 Nov 2026 coverage (read); The Measure (read).</li>
+<li>Google Search share of all pageviews fell from ~9% (Jul 2024) to ~5% (Jul 2026), a ~46% relative drop. Network pageviews still ~31.1B/month (Jan-Jul 2026) vs ~32B in 2025: small decline overall.</li>
+<li>What held traffic up, Jul 2024 to Jul 2026 shares: dark social 7.1% -&gt; 11.3%, direct 13.5% -&gt; 15.9%, internal (clicks within the site) 37.9% -&gt; 40.4%.</li>
+<li>Loyal readers (visited on 8+ of the last 16 days) flat: 14.98B -&gt; 15.02B monthly pageviews. Returning readers -8%, new readers -14%. Chartbeat: loyal readers "are a major reason why overall pageviews haven't seen a major decline."</li>
+<li>AI referrals grew 8x in two years but are 0.01% of traffic and were declining across ChatGPT, Claude, Perplexity, Copilot and Gemini in 2026. ChatGPT was the best AI traffic driver.</li>
+<li>Chartbeat quote: "If a chatbot can fully answer the question your article addresses without a click-through, that content is more exposed than your differentiated reporting is." Recommendation: "treat SEO as just one channel among several, while moving resources to developing audiences your organization can more closely influence."</li>
+<li>Caveats (SEJ): YoY figures do not say whether they are counts or shares; Chartbeat sells analytics. Treat the direction as solid, the exact numbers as one vendor's network, not checked against other datasets.</li>
+</ul>
+<h2>How to do it</h2>
+<ol>
+<li>Monthly channel-share table (not raw counts): Search, Discover, Social, AI, Direct, Dark social (untagged shares from WhatsApp/DMs; tag your own share links with UTMs so they stop hiding in Direct), Internal. Track each channel's share of pageviews July-to-July and month-to-month.</li>
+<li>Owned-audience share KPI = (direct + internal + tagged dark social + email) / all human pageviews. Goal: rising, even if total traffic is flat.</li>
+<li>Loyal-reader KPI: count visitors seen on 8+ of the last 16 days (or, for a small site, 2+ visits in 30 days). Report it weekly beside new visitors. A small site with a few loyal readers is healthier than a spike of one-visit traffic.</li>
+<li>Exposure audit: tag every page A (fully answerable by a chatbot: definitions, generic summaries, dates lists) or B (original: primary records, scans, transcriptions, maps, film, first-hand material). Put new effort into B; for A pages, add a reason to click (the record image, the full transcript, a downloadable source) or fold them into a B page.</li>
+<li>Internal clicks are the biggest single share (40%): every page ends with a next step (see dead-end-pages-read-next-recirculation-register.md), and the shop/signup is one of the next steps.</li>
+<li>Do not chase AI referrals as a traffic channel this year (0.01%); chase being cited (trust) and owned audience (return visits).</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Baseline now: from the Cloudflare non-US HTML-200 proxy already used in growth-report/cf_traffic.py, split by referrer class into the share table above; first row goes in the Sunday growth report. Exclude bursts (the 5,653-visit Belgium homepage burst, 1-3 Nov) before computing shares.</li>
+<li>Loyal-reader proxy: Cloudflare has no user ids, so use Mailchimp list growth + repeat visits to /ebooks/ and /learn/ where a cookie-free count exists; state it as a proxy.</li>
+<li>Exposure audit of the top 20 pages by traffic: most Cedwyn pages are B (period records, evidence catalogue, transcriptions, the /movie/ scenes); generic pages like /nomenclature/ meanings are A and should show the source record image beside the answer.</li>
+<li>Share links on evidence pages (WhatsApp, copy link) carry utm_source=share so dark social becomes measurable (pairs with share-links-dark-social-web-share-utm.md).</li>
+<li>Weekly line for the growth report: "Owned share X% (last week Y%); loyal/repeat readers N".</li>
+<li>Proposals only for page changes (BRIEF.md/RULES.md); no spend; nothing outward.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>searchenginejournal.com (read 4 Nov 2026)</li>
+<li>themeasure.net (read 4 Nov 2026)</li>
+<li>chartbeat.com (Chartbeat's own resource page; the playbook article itself returned 403 to plain fetches in the previous run)</li>
+</ul><p class="raw">Raw Markdown: <a href="owned-audience-share-loyal-reader-kpi-chartbeat-2026.md">owned-audience-share-loyal-reader-kpi-chartbeat-2026.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

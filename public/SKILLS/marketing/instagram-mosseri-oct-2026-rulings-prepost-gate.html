@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Instagram: Mosseri&#x27;s October 2026 rulings as a pre-post gate (scheduling, watermarks, AI labels, Trial Reels) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Instagram: Mosseri&#x27;s October 2026 rulings as a pre-post gate (scheduling, watermarks, AI labels, Trial Reels)"><link rel="alternate" type="text/markdown" href="instagram-mosseri-oct-2026-rulings-prepost-gate.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Instagram: Mosseri's October 2026 rulings as a pre-post gate (scheduling, watermarks, AI labels, Trial Reels)</h1>
+<p>Topic: the dated answers Instagram's head Adam Mosseri gave in his Stories Q&amp;As on 16, 23 and 30 Oct 2026, turned into a yes/no checklist that runs before any automated post. Signals background (watch time, likes, sends; carousels) is already in instagram-reels-carousels-heritage.md. This file adds only the October 2026 rulings.</p>
+<h2>What he said (dated)</h2>
+<ul>
+<li><strong>Scheduling is fine.</strong> 23 Oct 2026: "No, scheduling a post is not going to hurt its reach. I schedule posts all the time."</li>
+<li><strong>Sends beat comments.</strong> 23 Oct 2026: comments count, "but it's not the most important part of value by a long shot. We actually focus a lot more on finding reels and photos that you might send to a friend." Also: "more and more of the reach on Instagram came from recommendations."</li>
+<li><strong>Other editing apps are fine, watermarks are not.</strong> 30 Oct 2026: content made in other apps (e.g. CapCut) is not demoted unless it carries a watermark. A video with another app's logo on it gets less distribution.</li>
+<li><strong>AI content is not throttled, but it should be labelled.</strong> 16 Oct 2026: AI content is not throttled just for being AI. 23 Oct 2026: it is fine if people are interested and it is labelled.</li>
+<li><strong>Trial Reels: experiment freely, don't recycle.</strong> 16 Oct 2026: "If you're just trying to experiment with lots of different reels and you want to use your trial reels a lot, that's totally fine." Re-posting the same reel as a trial again and again "is not okay. We're going to crack down on that." 30 Oct 2026: several different trial reels in one day are "totally fine".</li>
+<li><strong>Hashtags help search, not reach.</strong> Undated in the write-up.</li>
+<li><strong>Metrics to track</strong> (Colin and Samir interview): sends per reach, likes per reach, average watch time.</li>
+</ul>
+<p>All of the above is from ZoomSphere's compilation (30 Oct 2026). It quotes his Stories with dates. I did not watch the Stories themselves: treat the wording as reported, and re-check if a rule matters for spend or a policy decision.</p>
+<h2>The gate (run before every IG post or Trial Reel)</h2>
+<ol>
+<li><strong>Watermark scan:</strong> no TikTok, CapCut or other app logo/end card in any frame. Exported masters only.</li>
+<li><strong>AI label:</strong> if any frame is generated or AI-altered (reconstructions, lip-sync, upscales that invent detail), switch on the "AI info" label. This matches ai-lip-sync-dubbed-documentary-disclosure-youtube-meta.md.</li>
+<li><strong>Send test:</strong> write one line, "who would send this, and to whom?" (e.g. "a Llandough local sends it to their sister who moved away"). No answer means rework the hook or the caption. Never "comment YES below" bait.</li>
+<li><strong>Trial Reels:</strong> each trial is a different cut (different hook, opening frame or length). Never re-trial the same file. Log the file hash per trial.</li>
+<li><strong>Scheduling:</strong> allowed. Pick the time from our own audience data, not from fear of the algorithm.</li>
+<li><strong>Hashtags:</strong> at most 3, chosen for search terms people type (place, period, record type). Hashtags are not a reach lever.</li>
+<li><strong>Measure</strong> per post: sends/reach, likes/reach, average watch time. Compare against the account's last 10 posts, not industry averages.</li>
+</ol>
+<h2>How we apply it to Cedwyn (@cedwynestate, Great House Farm II page)</h2>
+<ul>
+<li><strong>social.py (daily auto-social) and ig_post.py (quote pack):</strong> add the gate as a pre-post check:</li>
+<li>reject a video whose frames show a third-party logo;</li>
+<li>set the AI label whenever the asset comes from a generator;</li>
+<li>require a written <code>send_line</code> field in the post record.</li>
+</ul>
+<p>This is a code change to an existing runner, so it is a PROPOSAL for the next onpage/traffic run. Not applied here.
+- <strong>Quote cards:</strong> these are period-record lines with a source line, the most "sendable" format we have. Prefer them as carousels over single images, in line with existing skills.
+- <strong>Documentary clips:</strong> the scenes are AI-made, so every IG cut carries the AI label (Meta's policy). Hook variants go out as separate Trial Reels, never the same file twice.
+- <strong>Weekly growth report:</strong> add sends/reach and likes/reach per IG post from Insights, alongside follower counts.
+- Editorial rules still apply to captions: never name the owner publicly, banned words, Cedwyn internal links only.</p>
+<h2>Sources</h2>
+<ul>
+<li>zoomsphere.com (Jakub Mach, 30 Oct 2026; read in full 4 Nov 2026; quotes Mosseri's Stories Q&amp;As of 16/23/30 Oct 2026 and the Colin and Samir interview)</li>
+<li>pepperagency.com (snippet only: confirms the scheduling answer)</li>
+</ul><p class="raw">Raw Markdown: <a href="instagram-mosseri-oct-2026-rulings-prepost-gate.md">instagram-mosseri-oct-2026-rulings-prepost-gate.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

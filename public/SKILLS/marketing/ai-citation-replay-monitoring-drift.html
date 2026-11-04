@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>AI citation monitoring by replay: per question, every two weeks, expect drift · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: AI citation monitoring by replay: per question, every two weeks, expect drift"><link rel="alternate" type="text/markdown" href="ai-citation-replay-monitoring-drift.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>AI citation monitoring by replay: per question, every two weeks, expect drift</h1>
+<p>Date harvested: 2026-11-04. Topic: analytics for AI search visibility (how to measure, not how to optimise).</p>
+<h2>The evidence (primary source)</h2>
+<p>Chen &amp; Koudas, arXiv:2610.15033v1 (University of Toronto, 10 Oct 2026). They replayed the questions through the
+engines' own APIs to see which pages each engine's search retrieved, at what rank, and which were retrieved but not
+cited.
+- Every page ChatGPT cites is one its own search retrieved. Retrieval explains 32% of within-site variation vs 2.8%
+  for page properties.
+- Rank inside the engine's own search decides citation: ChatGPT cites 57.1% of pages it ranks first and 8.3% of
+  those at ranks 11-20 (niche market).
+- The engines rewrite the question on every answer: two same-day runs of ChatGPT share 2.7% of their sub-queries
+  (Jaccard) and 15% of cited pages. Their results almost never match Google's or Bing's, even Gemini's. A good classic
+  rank is NOT a proxy for AI citation.
+- Ranking follows meaning more than keywords (embedding similarity rho 0.20 vs BM25 0.08).
+- Drift: within a 14-day window 63-67% of the citation pattern repeats; two weeks later 40% (ChatGPT), 47% (Gemini),
+  22% (Perplexity) is still shared; ten weeks later 14%, 29%, 0%.
+- robots.txt blocking does not keep pages out: 7.1% of pages ChatGPT cites disallow OAI-SearchBot; 19.9% of those
+  Gemini cites disallow Googlebot (read at download time).
+- Forum pages get +78% citations vs articles within site, lists +13%; Reddit is 2.2% of ChatGPT and 13.1% of Gemini
+  citations, but ChatGPT rarely cites Reddit threads it retrieved at equal rank.</p>
+<h2>How to do it</h2>
+<ol>
+<li>Fix a question set (30-50 real questions, same wording each time) and keep it in a file.</li>
+<li>Every 14 days (drift makes monthly too coarse for Perplexity, weekly too noisy), ask each question 3 times per
+   engine (single runs are noise: 15% page overlap between same-day runs). Record per question: brand named yes/no,
+   our page cited yes/no, which third-party pages cited, and position.</li>
+<li>Report per question, not as one score; flag questions where a competitor or a third-party page appears that
+   could name us.</li>
+<li>Where an API with web search exposes the search results or sources, log retrieved-but-not-cited pages too:
+   retrieved-not-cited means the page was found but lost at selection (make it more concise/original); not
+   retrieved means fix the question match or get a third-party page.</li>
+<li>Treat changes under ~2 runs as noise; act on patterns that persist across two windows.</li>
+<li>Free tooling: a stdlib/pandas script over a CSV is enough; no paid tracker needed.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>The weekly VISIBILITY CHECK (Monday 07:30) asks the connected Grok 5 fixed questions (repeat count not checked in its RUNNER). Proposal for its
+  RUNNER: (a) run each question 3x and count named/cited per run; (b) keep the result per question in scores.csv;
+  (c) treat one-week swings as noise, compare 14-day windows; (d) add 5 question-phrased queries taken from Search
+  Console. Zero spend; only engines already connected (no new paid API keys).</li>
+<li>Do not read classic Google rank as AI visibility; record both separately.</li>
+<li>Do not change robots.txt to "get into" AI answers on the basis of this study alone; keep OAI-SearchBot allowed
+  (blocking does not reliably remove pages, allowing costs nothing).</li>
+<li>Log changes we make (titles, answer paragraphs, third-party listings) with dates beside the scores so a later run
+  can see what moved after what.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>arxiv.org (sections 5.3, 6, appendix C read, 4 Nov 2026)</li>
+</ul><p class="raw">Raw Markdown: <a href="ai-citation-replay-monitoring-drift.md">ai-citation-replay-monitoring-drift.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

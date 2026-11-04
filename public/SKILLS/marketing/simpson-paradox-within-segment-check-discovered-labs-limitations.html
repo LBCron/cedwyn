@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Check a tactic inside each segment before trusting a pooled result (Simpson&#x27;s paradox guard) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Check a tactic inside each segment before trusting a pooled result (Simpson&#x27;s paradox guard)"><link rel="alternate" type="text/markdown" href="simpson-paradox-within-segment-check-discovered-labs-limitations.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Check a tactic inside each segment before trusting a pooled result (Simpson's paradox guard)</h1>
+<p><strong>Topic:</strong> analytics hygiene for every "pages with X do better" conclusion we draw, whether about AI citations, traffic, email or sales pages. Compare like with like (the same host, channel or list) before acting.
+<strong>Source read:</strong> Moore &amp; Dunne (Discovered Labs), "What Drives Citations in Production Large Language Models?", arXiv 2609.35077 v1 (28 Sep 2026). This is the technical paper behind the existing skill ai-citations-page-type-pricing-engine-freshness-discovered-labs-2026.md, which only read the web summary. I read section 5.2 and section 7, "Limitations and threats to validity", in full. The authors sell AI-visibility services, so every figure is <strong>not checked</strong>. The method lesson stands whatever the figures turn out to be.</p>
+<h2>What the paper found about its own method</h2>
+<ul>
+<li><strong>Simpson's paradox, in their data:</strong></li>
+<li>Pooled across all sites, faster pages looked <em>less</em> cited.</li>
+<li>Within the same domain (domain fixed effects, N = 4,841 pages with real-user speed data), the speed effect collapsed to about zero or flipped sign.</li>
+<li>Cause: big incumbent brands have many citations <em>and</em> slow pages, so domain was the hidden third factor. Most yes/no on-page signals (schema, FAQ, Core Web Vitals) behaved the same way, "to a smaller absolute degree".</li>
+<li><strong>Surviving on-page effects are small (not checked):</strong> FAQ section +0.07, TLDR/summary +0.05, author bio +0.02 (non-significant after content-depth controls). Prompt-content alignment +0.37 (a word-overlap measure against the full prompt list, including prompts that did not cite the page). Domain-level authority is about 6x the strongest other page feature.</li>
+<li><strong>Limitations, in their words:</strong>
+  1. Observational. Clients did not randomise anything, so coefficients are "within-domain partial associations, not treatment effects". Unmeasured content quality and editorial investment "cannot be ruled out".
+  2. Scope. 19 B2B SaaS workspaces from one platform; "results do not transfer without re-validation to news, e-commerce, B2C, or other content domains". Four engines (ChatGPT, Claude, Google AI, Gemini); Perplexity and Bing are absent. One six-month window, while engine pipelines change across quarters.
+  3. The semantic-similarity metrics were computed only against prompts that cited the page, so read them as upper bounds.
+  4. Schema extraction failed on many brand-owned pages, so the schema results cover third-party pages only. 4.4% of speed data was filled in with the median.</li>
+<li>Side facts (not checked):</li>
+<li>Of 23,908 LinkedIn citations, 96.6% came from Google AI Overviews and none from Gemini.</li>
+<li>Claude cites pricing content at a median age of 3.3 months, ChatGPT at 14.0 months.</li>
+</ul>
+<h2>The playbook (for any "X works" claim, ours or a vendor's)</h2>
+<ol>
+<li><strong>Name the segment that could fake the effect.</strong> Usually host (apex / cedwyn / wiki), channel (Facebook / Instagram / email / Nostr), list or audience, or month. Big, old segments differ from small, new ones in many ways at once.</li>
+<li><strong>Compare inside segments.</strong> Run <code>python3 the project workspace data.csv --segment &lt;col&gt; --treat &lt;0/1 col&gt; --outcome &lt;number col&gt;</code>. It prints the pooled difference, the within-segment difference (weighted by rows) and a verdict:
+   - SIGN FLIP: the pooled result is a segment artefact;
+   - SHRINKS &gt;50%: most of the effect is the segment mix;
+   - holds;
+   - cannot separate: no segment has both versions.
+   It uses only the standard library; nothing was installed. Self-test on a built paradox: pooled -26.8, within -0.6, verdict SHRINKS.</li>
+<li><strong>Can't separate? Then randomise.</strong> Use the existing A/B skills and <code>tools/ab_stats.py</code>: split within one segment and run a fixed window.</li>
+<li><strong>Read a study's limitations before its headline.</strong> Was it randomised? Is it our domain (B2B SaaS is not a heritage e-book shop)? Which engines? Which time window? If it fails on domain or randomisation, treat its numbers as a hypothesis for our own test.</li>
+<li><strong>Log the verdict</strong> next to the tactic in the experiments log, so the next run doesn't re-adopt it on the pooled number.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li><strong>Traffic flywheel</strong> (the project workspace, experiments.csv): before calling a channel or post format a winner, add a <code>segment</code> column (host or channel) and run the check. Our hosts differ hugely: the apex wiki is old and linked, cedwyn is new.</li>
+<li><strong>AI visibility check run:</strong> when comparing pages with and without an FAQ, summary block or schema, segment by host. Within cedwyn, compare only pages of the same type (book page vs book page). The Discovered Labs page-type skill's own numbers came from B2B SaaS, so treat them as hypotheses for us, not targets.</li>
+<li><strong>Email (Mailchimp):</strong> "subscribers who got the PS link bought more" must be checked within the signup source (shop vs wiki vs Facebook), because shop signups already intend to buy.</li>
+<li><strong>What we take from the paper for Cedwyn:</strong> domain strength and question-matching wording dominate. Page checklist items (FAQ, schema, speed) are small and partly confounded. This agrees with the C-SEO Bench original and the Hobo triage. No new page edits are proposed from it (page freeze holds).</li>
+<li>Internal analytics only; nothing public. Never name the project lead in any write-up that is published.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>arxiv.org (v1, read 4 Nov 2026: abstract, section 5.2, section 7 Limitations, section 8)</li>
+<li>discoveredlabs.com (redirects to the arXiv record; this is the "technical PDF")</li>
+<li>Related skills: ai-citations-page-type-pricing-engine-freshness-discovered-labs-2026.md, cseo-bench-original-books-domain-rank-first-top-summary-test.md, geo-tactic-triage-retrieval-rerank-gate-isolation-filter-hobo-2026.md</li>
+</ul><p class="raw">Raw Markdown: <a href="simpson-paradox-within-segment-check-discovered-labs-limitations.md">simpson-paradox-within-segment-check-discovered-labs-limitations.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Query fan-out: answer-a-facet pages (Aleyda Solís method) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Query fan-out: answer-a-facet pages (Aleyda Solís method)"><link rel="alternate" type="text/markdown" href="query-fan-out-answer-a-facet-solis.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Query fan-out: answer-a-facet pages (Aleyda Solís method)</h1>
+<p>Topic: SEO / AI visibility, content architecture. Harvested 2026-11-04. Source is May 2025 but the mechanism is current (Google AI Mode / AI Overviews; ChatGPT also fans out, see chatgpt-site-scoped-domain-retrieval-2026.md).</p>
+<h2>The idea</h2>
+<p>Google's own description: AI Mode "breaks down your question into subtopics and issues a multitude of queries simultaneously". One prompt becomes many sub-queries run in parallel against the web, Knowledge Graph and Shopping graph; the answer is synthesised from the winners of each. Simple fact queries barely fan out; complex, comparative or multi-criteria ones fan out a lot. You don't need to rank for the prompt: you need to be the best answer to <strong>one or more facets</strong>.</p>
+<h2>Worked example (Solís, real prompt from Similarweb's AI-traffic report)</h2>
+<p>Prompt: "Could you suggest Bluetooth headphones with a comfortable over-ear design and long-lasting battery?" -&gt; 13 plausible sub-queries: general discovery, entity list, comfort, battery, comfort+battery, price (implicit), user reviews, brand comparison, build quality, battery tech, portability (implicit), noise isolation, charging time. Source types targeted: product listings, expert reviews, forums/user reviews, official spec pages. The AI Mode answer linked ~20 source pages in its sidebar. (Example is a reconstruction, not Google's logged queries.)</p>
+<h2>How to do it</h2>
+<ol>
+<li><strong>Take one money prompt</strong> (a real one: from Search Console queries, Similarweb/GA AI-referral landing pages, reader emails, comments).</li>
+<li><strong>Explode it into facets</strong>: explicit facets (words in the prompt), implicit facets (price, trust, "is it worth it", who wrote it, how long it is), synonyms, comparisons, user-experience angle, follow-up questions. Aim for 8-15. Free helpers: People Also Ask / AlsoAsked free tier, Google autocomplete, Reddit/forum question titles.</li>
+<li><strong>Map each facet to one URL and one heading</strong> that answers it in the first 1-2 sentences, in plain HTML, scannable (H2 = the facet phrased as a question, answer, then detail).</li>
+<li><strong>Cluster and interlink</strong>: a hub page for the broad topic, spokes for facets, links both ways with descriptive anchors.</li>
+<li><strong>Cover the source types the fan-out looks for</strong>: the official/spec layer (your page), the review/editorial layer (third-party write-ups), the experience layer (forums, reader comments). Your site can only own the first; the others come from outreach and community.</li>
+<li><strong>Add what AI can't find elsewhere</strong>: original research, first-hand records, unique data. Visible authorship/credentials, brand mentions elsewhere.</li>
+<li><strong>Measure by facet</strong>: for each sub-query, are we cited? Re-run the facet list monthly in the engines; note which facets cite a competitor and build that page next.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<p>Money prompt (example): "Is there a good book on the history of Llandough and Great House Farm?" Facet list to build/check:
+- what is Great House Farm / Ty Mawr Llandough (definition facet)
+- history of Llandough village / Roman villa at Llandough (topic facets)
+- the Williams family of Llandough (people facet)
+- what the e-book covers / table of contents (product facet)
+- how long is it, what format, price, free first version (v0.0.1) (implicit price/format facets)
+- who researched it and from which records (trust facet)
+- reviews / reader comments (experience facet — needs real readers; do not fabricate)
+- "Llandough history book vs Cardiff local history books" (comparison facet)
+- where to buy (/ebooks/) and "is there a free sample" (follow-up facets)
+Actions: (1) add the facet list per e-book to the project workspace as fixed fan-out probes (also feeds Gate 4 in the 3-layers/4-gates skill); (2) for each e-book page, PROPOSE H2-as-question blocks for the product, format/price and trust facets (page freeze: PROPOSED only); (3) map existing /research/, /wiki/, /wales/ pages to the topic facets and add internal links to the e-book page — markup/link changes go through the onpage flywheel rules; (4) the experience facet comes from genuine reader replies only.</p>
+<h2>Sources</h2>
+<ul>
+<li>Aleyda Solís, "Google AI Mode's Query Fan-Out Technique: What is it and What Does it Mean for SEO?", 25 May 2025: aleydasolis.com</li>
+<li>Google, "AI in Search: going beyond information to intelligence" (I/O 2025): blog.google</li>
+</ul><p class="raw">Raw Markdown: <a href="query-fan-out-answer-a-facet-solis.md">query-fan-out-answer-a-facet-solis.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>AI referral ratio: AI visits per 100 Google organic visits (benchmark: 1.25) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: AI referral ratio: AI visits per 100 Google organic visits (benchmark: 1.25)"><link rel="alternate" type="text/markdown" href="ai-referral-ratio-per-100-organic-benchmark.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>AI referral ratio: AI visits per 100 Google organic visits (benchmark: 1.25)</h1>
+<p>Harvested 2026-11-04. Topic: analytics / SEO + AI visibility.</p>
+<h2>The evidence (primary, read)</h2>
+<p>SEOcrawl AI, David Kaufmann, "AI Traffic vs. Google Organic in 2026: A Study of 16,000+ Websites", 23 Oct 2026 (free 32-page PDF, no email). GSC + GA4 from sites connected to SEOcrawl.
+- Google organic clicks, fixed cohort of 16,661 sites: 3.72bn -&gt; 3.16bn (Sep 24-Aug 25 vs Sep 25-Aug 26), -15.0%. Median site -20.1%; 69% of sites declined. Top 1% of sites = ~70% of clicks.
+- YoY decline accelerating: -7.5% (May 2025) -&gt; -18.1% (Jul 2026) -&gt; -21.8% (Aug 2026). Impressions flat (+0.4%): sites still shown, clicked less.
+- AI-referred GA4 sessions (3,949 sites): +44.6% YoY (Mar-Aug 2026 vs 2025); strict cohort 3,099 sites +41.1% (2.13M -&gt; 3.00M). AI share of all sessions 0.23% -&gt; 0.36% (0.42% Aug 2026). AI grew at 57.6% of sites.
+- Ratio: 1.25 AI sessions per 100 Google organic sessions (was 0.70); 1.52 in Aug 2026. Large sites 0.68 -&gt; 1.21; vs GSC clicks 0.78 -&gt; 1.18. Google still sends ~80x more visits than all assistants.
+- Mix Mar-Aug 2026: ChatGPT 83.3% (91% in Aug), Gemini 6.0%, Perplexity 4.7%, Claude 3.7%, Copilot 2.1%. Claude x6.6, Gemini x2.8, Perplexity halved.
+- Mid-size sites (1k-10k clicks/month) hit hardest: median -28%, 78% lost clicks. Education -20%; travel AI referrals +120%.
+- Measured AI traffic is a FLOOR: ChatGPT app visits often arrive with no referrer (counted as Direct); AIO/AI Mode clicks count as ordinary organic in GSC; many answers never become a click. (Growth Memo 26 Oct adds: after GPT-6 shipped in early Oct, ChatGPT links lost referrer/UTM for about a week; Adobe's Cedric Huesler measured ~31k fewer daily ChatGPT visits and ~26k more Direct across 500 pages.)</p>
+<h2>How to do it</h2>
+<ol>
+<li>Monthly, compute: AI sessions / Google organic sessions x 100. AI sessions = referrers matching chatgpt.com, chat.openai.com, gemini.google.com, perplexity.ai, claude.ai, copilot.microsoft.com, deepseek.com (keep the regex in one place).</li>
+<li>Report three numbers side by side: Google clicks YoY, AI sessions YoY, ratio. Judge yourself against 1.25 (and 1.52 for the latest month) and against the median-site -20%, not the -15% aggregate.</li>
+<li>Add a "Direct to deep pages" line (Direct landings that are not the homepage) as a proxy for unattributed AI app traffic; watch for jumps when an assistant ships a release.</li>
+<li>Do not chase the ratio with volume content; it is a context number. Its use: deciding how much time AI-visibility work earns versus email/direct (see organic-decline-peer-benchmark-email-direct.md).</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>We have no GA4 property confirmed in notes; Cloudflare analytics + Search Console are the sources. PROPOSAL (growth report): add an "AI ratio" line computed from Cloudflare referrer counts for the regex above vs Google referrals, plus Direct deep-page landings; log monthly in growth-report/weekly.csv. At our scale counts will be single digits; record raw counts, never percentages alone.</li>
+<li>Expect ChatGPT to dominate; the weekly visibility check asks Grok, so add ChatGPT-style questions only via free surfaces, zero spend.</li>
+<li>Treat any AI number as a floor in what we tell the owner.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>seocrawl.ai (read 2026-11-04)</li>
+<li>growth-memo.com (GPT-6 referrer bug paragraph, read 2026-11-04)</li>
+</ul><p class="raw">Raw Markdown: <a href="ai-referral-ratio-per-100-organic-benchmark.md">ai-referral-ratio-per-100-organic-benchmark.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

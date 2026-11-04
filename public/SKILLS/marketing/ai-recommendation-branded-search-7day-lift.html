@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>AI recommendation -&gt; branded search within 7 days (Similarweb downstream-impact study) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: AI recommendation -&gt; branded search within 7 days (Similarweb downstream-impact study)"><link rel="alternate" type="text/markdown" href="ai-recommendation-branded-search-7day-lift.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>AI recommendation -&gt; branded search within 7 days (Similarweb downstream-impact study)</h1>
+<p>Read 4 Nov 2026. Source: Adelle Kehoe (Similarweb), "Being Recommended in AI Makes Users 2.5x More Likely to Visit Your Site", 23 Jun 2026
+aisearch.similarweb.com
+Also covered by PPC Land: ppc.land (not read).
+Method (as stated): thousands of real user journeys (panel data) in Finance, Travel and Beauty; users asked ChatGPT an industry question, got a brand recommendation, then were followed for 7 days. Only users who had not visited the brand before and did not name it in the prompt.
+Caveat: vendor study, 3 consumer categories, full report behind a form (not read). Treat the ratio as direction, not a promise for a niche heritage site.</p>
+<h2>Findings</h2>
+<ul>
+<li>Users recommended a brand by ChatGPT were 2.5x more likely to visit that brand's site within 7 days, with no AI referral click to track. When a competitor was recommended, the visit went to the competitor.</li>
+<li>How they arrive: about 56% of AI-influenced visits came via a search engine (mostly branded search) vs about 40% for standard visits. AI primes people to search the name.</li>
+<li>Depth: AI-influenced visitors viewed nearly 2x the pages and spent about 2x the time on site.</li>
+<li>Analytics misses it: the visit is logged as branded organic search (or Direct), and the AI answer gets zero credit.</li>
+<li>Rand Fishkin (SparkToro), quoted: measure it like billboard/TV lift, not last click.</li>
+</ul>
+<h2>How to do it</h2>
+<ol>
+<li>Watch BRANDED search, not only AI referrals. In Search Console, filter queries containing the brand words; track weekly impressions and clicks as the AI-lift proxy.</li>
+<li>Make the brand SERP clean: the brand query should return our own page first with a clear title and description; Google Business-style facts, sameAs links, consistent name everywhere.</li>
+<li>Compare branded-search trend against the weeks our AI mention count rose (lag 0-7 days). Use the null test in ai-visibility-lag-correlation-null-test.md before claiming a link.</li>
+<li>Ask buyers "where did you hear about us?" (one optional field at checkout or in the welcome email). Ramp found 30-40% of Direct came from AI answer engines this way (see direct-traffic-bot-audit-hidden-ai.md).</li>
+<li>The study's "protect your brand with paid search" step is skipped: zero spend.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Brand terms to track in Search Console (connected): "cedwyn", "great house farm llandough", "ty mawr llandough", "bucklerfamily". Add one weekly row to the Sunday growth report: branded impressions/clicks vs last week.</li>
+<li>Check the brand SERP for each term once a week (search, not paid). If our own page is not first, that is an ONPAGE action (title/description/canonical), proposed in the visibility findings.</li>
+<li>Add an optional "How did you find us?" free-text field to the e-book thank-you/welcome email (Mailchimp) with "AI assistant (ChatGPT, Gemini...)" as an example answer. Proposal only; email journeys are proposals per BRIEF.md.</li>
+<li>Do not credit AI for sales from branded search alone; report it as "possible AI influence".</li>
+</ul><p class="raw">Raw Markdown: <a href="ai-recommendation-branded-search-7day-lift.md">ai-recommendation-branded-search-7day-lift.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

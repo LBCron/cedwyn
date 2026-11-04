@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Direct-traffic audit: strip bots, find hidden AI visits, annotate tag outages · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Direct-traffic audit: strip bots, find hidden AI visits, annotate tag outages"><link rel="alternate" type="text/markdown" href="direct-traffic-bot-audit-hidden-ai.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Direct-traffic audit: strip bots, find hidden AI visits, annotate tag outages</h1>
+<p>Date: 2026-11-04 · Source type: practitioner analysis of 12 GA4 properties + incident reporting</p>
+<h2>Why</h2>
+<p>"AI traffic hides in Direct" is widely believed. Kevin Indig (Growth Memo, 19 Oct 2026) tested it on 12 GA4 properties (Aug-Sep 2026; homepages and unknown landings excluded):
+- 8 of 12 showed Direct growth, some over 100%. Most of it was bots: one site logged 409,000 Direct sessions, of which 198 were engaged.
+- Filtered Jan-Sep sample: total Direct +140.9%, engaged Direct -1.0% (monthly counts) / +2.3% (average daily volume). Flat.
+- Direct sessions with identifiable AI traces: 0.003% of Direct on average.
+- Counter-example: Eric Wu (Ramp, via the Siege Media Podcast) attributed 30-40% of Ramp's Direct to answer engines. Method: Direct growth on long blog URLs nobody types, minus email-campaign patterns, compared with organic visitors on time on page, scroll depth and clicks, then confirmed by self-reported attribution.
+- Known outage: from 8 to 16 Oct 2026, ChatGPT's outbound links lost the utm_source=chatgpt.com tag. Most ChatGPT clicks carry no referrer, so those visits were counted as Direct. Search Engine Roundtable's comparison (9-13 Oct vs the week before, cited by Arcalea): ChatGPT-attributed visits about -31,000/day, Direct about +26,000/day on the same pages. Direct rose on 2 of every 3 pages that lost ChatGPT traffic. Adobe's Cedric Huesler reported that OpenAI called it a bug (14 Oct), with the fix rolling out from 15 Oct. That report is second-hand. Gemini appears to have started adding UTMs to some links around 1 Oct; Google has not documented this.</p>
+<h2>How-to (monthly, about 20 min)</h2>
+<ol>
+<li><strong>Strip bots first.</strong> Break Direct down by day, landing page, country, browser, OS, browser version and screen size. Flag sudden growth concentrated in one browser configuration with zero or low engagement. From then on, report engaged Direct only.</li>
+<li><strong>Exclude naturally-direct pages:</strong> home and regional roots, index aliases, untracked landings, pricing/plans, login/account/dashboard, checkout and confirmation, help/about/privacy, internal search.</li>
+<li><strong>Long-tail Direct = candidate AI visits.</strong> Count engaged Direct landings on deep URLs (long slugs, evidence/record pages) that nobody would type. Drop email-campaign signatures: spikes on send days, newsletter-linked URLs, and mail-app user agents.</li>
+<li><strong>Behaviour match.</strong> Compare those landings with organic search landings on the same pages (time on page, scroll, next click). Similar behaviour supports "probably AI or search-like". It is not proof.</li>
+<li><strong>Confirm only with self-reports.</strong> Use the "Where did you first hear about us?" answer (see self-reported-attribution-hdyhau-survey.md and tools/hdyhau_code.py). Without it, label the number "candidate", never "AI traffic".</li>
+<li><strong>Annotate tag incidents.</strong> Mark 8-16 Oct 2026 (ChatGPT tag loss) and 1 Oct 2026 (Gemini UTMs, undocumented) on every chart. Never multiply the gap back as a correction factor; Arcalea warns against it. Compare the same pages before and after instead.</li>
+<li>Report three rows: raw Direct, engaged Direct (non-naturally-direct pages), and tagged AI referrals. Keep raw counts beside percentages.</li>
+</ol>
+<h2>Pitfalls</h2>
+<ul>
+<li>Raw Direct growth is usually bots, scrapers or prefetch. Never celebrate it unfiltered.</li>
+<li>One-person accounts of a vendor bug are second-hand. Quote them as such.</li>
+<li>Small sites have tiny counts. Show raw numbers and do not compute shares under ~30 sessions.</li>
+</ul>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>The site has no GA4. Use Cloudflare analytics/logs (the same source as cf_traffic.py in the growth report). Run the bot strip on the existing "non-US HTML 200" visitor proxy by user agent + country + path, and keep only requests that also load page assets or carry a second pageview.</li>
+<li>Candidate-AI pages: deep evidence-catalogue, /research/ and /wiki/ record URLs, /movie/ scenes. Exclude /, /ebooks/ checkout and confirmation, /learn/ login, /hive/ and the agent-facing /academy/, /llms.txt and /agents.json (machine traffic).</li>
+<li>Add the 8-16 Oct 2026 annotation to the Sunday growth report charts and to the AI referral ratio (ai-referral-ratio-per-100-organic-benchmark.md). October ChatGPT counts are a floor.</li>
+<li>PROPOSAL (growth report owner): add the "engaged long-tail Direct" row weekly. Label it "candidate, not confirmed" until the /ebooks/ "where did you hear" answers mention an AI tool.</li>
+<li>Zero spend, read-only, no tool installed.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>growth-memo.com (Kevin Indig, 19 Oct 2026; read in full)</li>
+<li>arcalea.com (Arcalea, 29 Oct 2026; cites SER and SEJ for the -31k/+26k figures and Huesler's account)</li>
+<li>onlyaclick.com (search snippet only, not read)</li>
+</ul><p class="raw">Raw Markdown: <a href="direct-traffic-bot-audit-hidden-ai.md">direct-traffic-bot-audit-hidden-ai.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>
