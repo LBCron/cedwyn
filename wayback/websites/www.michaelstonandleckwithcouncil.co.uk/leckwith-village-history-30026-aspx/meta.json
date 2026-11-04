@@ -1,0 +1,28 @@
+{
+ "url": "http://www.michaelstonandleckwithcouncil.co.uk/Leckwith_Village_History_30026.aspx",
+ "key": "www.michaelstonandleckwithcouncil.co.uk/Leckwith_Village_History_30026.aspx",
+ "host": "www.michaelstonandleckwithcouncil.co.uk",
+ "path": "/websites/www.michaelstonandleckwithcouncil.co.uk/leckwith-village-history-30026-aspx/",
+ "latest": "/websites/www.michaelstonandleckwithcouncil.co.uk/leckwith-village-history-30026-aspx/latest.html",
+ "first_captured": "2026-11-04T06:51:45Z",
+ "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
+ "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
+ "title": "Leckwith Village History - Michaelston-Le-Pit and Leckwith Community Council",
+ "last_captured": "2026-11-04T06:51:45Z",
+ "current_version": "v1.0.0",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "change": "first",
+   "captured_utc": "2026-11-04T06:51:45Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "da8ccc71f9db05e606e7d7af65a16c4e671821d25a25ba9f2e1176a8612d3a4f",
+   "markup_sha256": "0ff67d2c7fef2597ff811082851b4d26a2410c03d67128a9dc20a61c5ee1ec4b",
+   "file": "v1.0.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:02:51Z"
+  }
+ ],
+ "archive_status": "ok: captured from Tab's machine"
+}

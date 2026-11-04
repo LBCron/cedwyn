@@ -1,0 +1,28 @@
+{
+ "url": "https://www.penarthsociety.org.uk/history",
+ "key": "www.penarthsociety.org.uk/history",
+ "host": "www.penarthsociety.org.uk",
+ "path": "/websites/www.penarthsociety.org.uk/history/",
+ "latest": "/websites/www.penarthsociety.org.uk/history/latest.html",
+ "first_captured": "2026-11-04T06:51:53Z",
+ "versioning": "first capture v1.0.0; wording change = minor; markup/layout-only change (incl. capture noise: mis-decoded characters, image placeholders, one- or two-word widget lines) = patch; identical capture = no new version",
+ "note": "Static copy for reference: scripts, forms, iframes, external styles and images removed; links off bucklerfamily.estate disabled (archived targets point to their Wayback copy).",
+ "title": "History of Penarth | PenarthCivicSociety",
+ "last_captured": "2026-11-04T06:51:53Z",
+ "current_version": "v1.0.0",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "change": "first",
+   "captured_utc": "2026-11-04T06:51:53Z",
+   "capture_source": "live",
+   "mode": "html",
+   "text_sha256": "08070ce924cfacdc9deff3fcb5599f344067f0bd93fcae75e087b18709e9698c",
+   "markup_sha256": "7e3fb3168e6572a165022f1915e1a2008d843b0ba5520468fa9e2a0a5ca3fe7e",
+   "file": "v1.0.0.html",
+   "screenshot": null,
+   "published_utc": "2026-11-04T07:03:12Z"
+  }
+ ],
+ "archive_status": "ok: captured from Tab's machine"
+}
