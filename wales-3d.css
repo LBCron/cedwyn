@@ -1,0 +1,23 @@
+#w3d{position:relative;width:100%;height:100vh;height:100dvh;min-height:420px;overflow:hidden;background:#1b2330;color:#eef;font:14px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif}
+#w3dc{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+#w3dtop{position:absolute;top:8px;left:8px;right:8px;display:flex;gap:8px;align-items:flex-start;pointer-events:none;z-index:2}
+#w3dttl{pointer-events:auto;background:rgba(15,20,30,.62);padding:5px 9px;border-radius:8px;font-weight:600;font-size:13px;white-space:nowrap;backdrop-filter:blur(4px)}
+#w3dctl{pointer-events:auto;margin-left:auto;background:rgba(15,20,30,.72);border-radius:8px;max-width:min(92vw,360px);backdrop-filter:blur(4px)}
+#w3dctl summary{cursor:pointer;padding:5px 10px;font-weight:600;font-size:13px;list-style:none}
+#w3dctl summary::-webkit-details-marker{display:none}
+#w3dctl summary::after{content:" ▾"}
+#w3dctl[open] summary::after{content:" ▴"}
+#w3dctl .row{padding:4px 10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+#w3dctl .row b{font-weight:600;min-width:48px}
+#w3dctl input[type=range]{flex:1;min-width:110px}
+#w3dctl button,#w3dctl select{background:#2b3648;color:#eef;border:1px solid #4a5870;border-radius:6px;padding:3px 7px;font:inherit;font-size:13px}
+#w3dctl .go button{margin:0}
+#steer input{flex:1;min-width:150px;background:#101722;color:#eef;border:1px solid #4a5870;border-radius:6px;padding:4px 6px;font:inherit;font-size:13px}
+.small{font-size:12px;opacity:.9}
+#w3dinfo{position:absolute;left:8px;bottom:30px;z-index:2;background:rgba(15,20,30,.55);padding:3px 8px;border-radius:6px;pointer-events:none;max-width:70vw}
+#w3dinfo:empty{display:none}
+#w3dload{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3;background:#1b2330;font-size:15px}
+#w3dload.done{display:none}
+#w3dcred{position:absolute;left:0;right:0;bottom:0;z-index:2;background:rgba(10,14,22,.72);font-size:11px;padding:3px 8px;color:#cdd}
+#w3dcred summary{cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#w3dcred details[open]{max-height:40vh;overflow:auto}

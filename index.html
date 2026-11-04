@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Wales in 3D · Llandough, Leckwith and the Cedwyn estate</title>
+<meta name="description" content="A 3D model of Llandough and Leckwith built from Welsh Government LiDAR terrain, OpenStreetMap and the 1841 tithe parcels, with contour lines, real sun and sky.">
+<meta name="theme-color" content="#1b2330">
+<meta name="w3d-data" content="data/">
+<link rel="stylesheet" href="wales-3d.css?v=0.1.0">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js","three/addons/OrbitControls.js":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js","three/addons/Sky.js":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/objects/Sky.js","three/addons/BufferGeometryUtils.js":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/utils/BufferGeometryUtils.js"}}</script>
+</head>
+<body>
+<div id="w3d" data-version="0.1.0">
+  <canvas id="w3dc" aria-label="3D view of Llandough and Leckwith"></canvas>
+  <div id="w3dtop">
+    <span id="w3dttl">Llandough &amp; Leckwith in 3D</span>
+    <details id="w3dctl"><summary>Layers</summary>
+      <div class="row"><b>Era</b>
+        <label><input type="radio" name="era" value="today" checked> Today</label>
+        <label><input type="radio" name="era" value="1841"> 1841 tithe</label></div>
+      <div class="row"><label><input type="checkbox" id="ctr" checked> Contours (2 m, 10 m bold)</label></div>
+      <div class="row"><label><input type="checkbox" id="trees" checked> LiDAR trees &amp; hedges</label></div>
+      <div class="row"><label><input type="checkbox" id="lbl" checked> Labels</label></div>
+      <div class="row"><b>Time</b> <input type="range" id="hour" min="0" max="24" step="0.25"> <span id="hourv"></span>
+        <button id="now" type="button">Now</button></div>
+      <div class="row"><b>Relief</b> <input type="range" id="vex" min="1" max="3" step="0.25" value="1"> <span id="vexv">×1</span></div>
+      <div class="row"><b>Weather</b>
+        <select id="wx"><option value="clear">Clear</option><option value="overcast">Overcast</option><option value="rain">Rain</option><option value="fog">Fog</option></select>
+        <button id="snd" type="button" aria-pressed="false">Sound off</button></div>
+      <div class="row go"><b>Go to</b> <button data-go="tymawr" type="button">Tŷ Mawr</button><button data-go="church" type="button">Church</button><button data-go="ely" type="button">River Ely</button><button data-go="wide" type="button">Whole area</button></div>
+      <form id="steer" class="row" autocomplete="off"><input id="steert" placeholder="Steer the world: “dusk, heavy rain”, “go back to 1840”" aria-label="Steer the world"><button type="submit">Go</button></form>
+      <div id="steero" class="row small"></div>
+    </details>
+  </div>
+  <div id="w3dinfo" class="small" aria-live="polite"></div>
+  <div id="w3dload">Loading LiDAR terrain…</div>
+  <footer id="w3dcred"><details><summary>Data: Welsh Government LiDAR · OpenStreetMap · 1841 tithe</summary>
+    Terrain and tree heights: Welsh Government LiDAR 2020–22, 1 m DTM and DSM (DataMapWales), Open Government Licence v3.0, © Crown copyright.
+    Buildings, roads, rivers and woodland: © OpenStreetMap contributors, ODbL. Building heights from LiDAR where OpenStreetMap has none.
+    1841 layer: parcels of the David Stewart estate plan traced through the 1841 Llandough tithe map (Tithe H3). Sun position from the date and time at Llandough. Rendering: three.js (MIT).
+    Contours are drawn from the LiDAR terrain every 2 m, bold every 10 m. Heights are metres above Ordnance Datum (Newlyn).
+  </details></footer>
+</div>
+<script type="module" src="wales-3d.js?v=0.1.0"></script>
+</body>
+</html>
