@@ -225,20 +225,24 @@
   },
   {
    "title": "Under the Rafters",
-   "caption": "Flower garden edition of Under the Rafters.",
-   "image": "/nft-art/art/nfa-0025.webp",
-   "thumb": "/nft-art/art/nfa-0025-t.webp",
-   "alt": "Under the Rafters: AI garden artwork with flowers and blossom",
+   "caption": "Light falls through sound new roof timbers onto a swept stone floor.",
+   "image": "/nft-art/art/nfa-0025-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0025-v0.0.2-t.webp",
+   "alt": "Under the Rafters: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 086",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-086_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 086)",
-   "id": "NFA-0025"
+   "id": "NFA-0025",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Gable End",
@@ -749,54 +753,66 @@
   },
   {
    "title": "The Dresser Room",
-   "caption": "Flower garden edition of The Dresser Room.",
-   "image": "/nft-art/art/nfa-0058.webp",
-   "thumb": "/nft-art/art/nfa-0058-t.webp",
-   "alt": "The Dresser Room: AI garden artwork with flowers and blossom",
+   "caption": "China on the dresser, polished wood and morning light.",
+   "image": "/nft-art/art/nfa-0058-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0058-v0.0.2-t.webp",
+   "alt": "The Dresser Room: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 026",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-026_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 026)",
-   "id": "NFA-0058"
+   "id": "NFA-0058",
+   "master_px": "1152x864",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Quilted Bedroom",
-   "caption": "Flower garden edition of The Quilted Bedroom.",
-   "image": "/nft-art/art/nfa-0059.webp",
-   "thumb": "/nft-art/art/nfa-0059-t.webp",
-   "alt": "The Quilted Bedroom: AI garden artwork with flowers and blossom",
+   "caption": "A quilted bed and a dark dresser in a freshly painted room.",
+   "image": "/nft-art/art/nfa-0059-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0059-v0.0.2-t.webp",
+   "alt": "The Quilted Bedroom: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 028",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-028_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 028)",
-   "id": "NFA-0059"
+   "id": "NFA-0059",
+   "master_px": "1536x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Fireside Corner",
-   "caption": "Flower garden edition of The Fireside Corner.",
-   "image": "/nft-art/art/nfa-0060.webp",
-   "thumb": "/nft-art/art/nfa-0060-t.webp",
-   "alt": "The Fireside Corner: AI garden artwork with flowers and blossom",
+   "caption": "A fireside corner, the hearth swept and the chair waiting.",
+   "image": "/nft-art/art/nfa-0060-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0060-v0.0.2-t.webp",
+   "alt": "The Fireside Corner: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 031",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-031_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 031)",
-   "id": "NFA-0060"
+   "id": "NFA-0060",
+   "master_px": "1536x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "From the Veranda",
@@ -919,139 +935,171 @@
   },
   {
    "title": "The Blue Parlour",
-   "caption": "Flower garden edition of The Blue Parlour.",
-   "image": "/nft-art/art/nfa-0068.webp",
-   "thumb": "/nft-art/art/nfa-0068-t.webp",
-   "alt": "The Blue Parlour: AI garden artwork with flowers and blossom",
+   "caption": "A blue parlour with a landscape over the mantel and the hearth laid.",
+   "image": "/nft-art/art/nfa-0068-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0068-v0.0.2-t.webp",
+   "alt": "The Blue Parlour: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 055",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-055_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 055)",
-   "id": "NFA-0068"
+   "id": "NFA-0068",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "A Wall of Small Pictures",
-   "caption": "Flower garden edition of A Wall of Small Pictures.",
-   "image": "/nft-art/art/nfa-0069.webp",
-   "thumb": "/nft-art/art/nfa-0069-t.webp",
-   "alt": "A Wall of Small Pictures: AI garden artwork with flowers and blossom",
+   "caption": "A wall hung with little paintings of fields and lanes.",
+   "image": "/nft-art/art/nfa-0069-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0069-v0.0.2-t.webp",
+   "alt": "A Wall of Small Pictures: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 056",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-056_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 056)",
-   "id": "NFA-0069"
+   "id": "NFA-0069",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Back Kitchen",
-   "caption": "Flower garden edition of The Back Kitchen.",
-   "image": "/nft-art/art/nfa-0070.webp",
-   "thumb": "/nft-art/art/nfa-0070-t.webp",
-   "alt": "The Back Kitchen: AI garden artwork with flowers and blossom",
+   "caption": "A back kitchen with the window open onto the orchard.",
+   "image": "/nft-art/art/nfa-0070-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0070-v0.0.2-t.webp",
+   "alt": "The Back Kitchen: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 057",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-057_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 057)",
-   "id": "NFA-0070"
+   "id": "NFA-0070",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Lamp in the Hall",
-   "caption": "Flower garden edition of The Lamp in the Hall.",
-   "image": "/nft-art/art/nfa-0071.webp",
-   "thumb": "/nft-art/art/nfa-0071-t.webp",
-   "alt": "The Lamp in the Hall: AI garden artwork with flowers and blossom",
+   "caption": "A pink lamp, a polished floor and freshly painted doors.",
+   "image": "/nft-art/art/nfa-0071-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0071-v0.0.2-t.webp",
+   "alt": "The Lamp in the Hall: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 058",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-058_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 058)",
-   "id": "NFA-0071"
+   "id": "NFA-0071",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Tall Doorway",
-   "caption": "Flower garden edition of The Tall Doorway.",
-   "image": "/nft-art/art/nfa-0072.webp",
-   "thumb": "/nft-art/art/nfa-0072-t.webp",
-   "alt": "The Tall Doorway: AI garden artwork with flowers and blossom",
+   "caption": "A tall doorway, its frame freshly painted and its step scrubbed.",
+   "image": "/nft-art/art/nfa-0072-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0072-v0.0.2-t.webp",
+   "alt": "The Tall Doorway: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 066",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-066_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 066)",
-   "id": "NFA-0072"
+   "id": "NFA-0072",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Side Table",
-   "caption": "Flower garden edition of The Side Table.",
-   "image": "/nft-art/art/nfa-0073.webp",
-   "thumb": "/nft-art/art/nfa-0073-t.webp",
-   "alt": "The Side Table: AI garden artwork with flowers and blossom",
+   "caption": "A side table polished bright beside the door.",
+   "image": "/nft-art/art/nfa-0073-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0073-v0.0.2-t.webp",
+   "alt": "The Side Table: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 067",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-067_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 067)",
-   "id": "NFA-0073"
+   "id": "NFA-0073",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Bunk Room",
-   "caption": "Flower garden edition of The Bunk Room.",
-   "image": "/nft-art/art/nfa-0074.webp",
-   "thumb": "/nft-art/art/nfa-0074-t.webp",
-   "alt": "The Bunk Room: AI garden artwork with flowers and blossom",
+   "caption": "Bunk beds in a bright room, period covers turned down.",
+   "image": "/nft-art/art/nfa-0074-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0074-v0.0.2-t.webp",
+   "alt": "The Bunk Room: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 071",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-071_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 071)",
-   "id": "NFA-0074"
+   "id": "NFA-0074",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Spare Room",
-   "caption": "Flower garden edition of The Spare Room.",
-   "image": "/nft-art/art/nfa-0075.webp",
-   "thumb": "/nft-art/art/nfa-0075-t.webp",
-   "alt": "The Spare Room: AI garden artwork with flowers and blossom",
+   "caption": "A quiet spare room, the wardrobe polished and the bed made.",
+   "image": "/nft-art/art/nfa-0075-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0075-v0.0.2-t.webp",
+   "alt": "The Spare Room: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 072",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-072_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 072)",
-   "id": "NFA-0075"
+   "id": "NFA-0075",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The House Over the Hedge",
@@ -1072,105 +1120,129 @@
   },
   {
    "title": "The Green Quilt",
-   "caption": "Flower garden edition of The Green Quilt.",
-   "image": "/nft-art/art/nfa-0077.webp",
-   "thumb": "/nft-art/art/nfa-0077-t.webp",
-   "alt": "The Green Quilt: AI garden artwork with flowers and blossom",
+   "caption": "A bed with a green quilt below a freshly lime-washed wall.",
+   "image": "/nft-art/art/nfa-0077-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0077-v0.0.2-t.webp",
+   "alt": "The Green Quilt: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 074",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-074_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 074)",
-   "id": "NFA-0077"
+   "id": "NFA-0077",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Turn of the Stair",
-   "caption": "Flower garden edition of The Turn of the Stair.",
-   "image": "/nft-art/art/nfa-0078.webp",
-   "thumb": "/nft-art/art/nfa-0078-t.webp",
-   "alt": "The Turn of the Stair: AI garden artwork with flowers and blossom",
+   "caption": "An oak stair turning upward, garlanded all the way.",
+   "image": "/nft-art/art/nfa-0078-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0078-v0.0.2-t.webp",
+   "alt": "The Turn of the Stair: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 076",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-076_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 076)",
-   "id": "NFA-0078"
+   "id": "NFA-0078",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Landing",
-   "caption": "Flower garden edition of The Landing.",
-   "image": "/nft-art/art/nfa-0079.webp",
-   "thumb": "/nft-art/art/nfa-0079-t.webp",
-   "alt": "The Landing: AI garden artwork with flowers and blossom",
+   "caption": "A landing banister, turned and polished.",
+   "image": "/nft-art/art/nfa-0079-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0079-v0.0.2-t.webp",
+   "alt": "The Landing: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 077",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-077_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 077)",
-   "id": "NFA-0079"
+   "id": "NFA-0079",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "Window Over the Valley",
-   "caption": "Flower garden edition of Window Over the Valley.",
-   "image": "/nft-art/art/nfa-0080.webp",
-   "thumb": "/nft-art/art/nfa-0080-t.webp",
-   "alt": "Window Over the Valley: AI garden artwork with flowers and blossom",
+   "caption": "A small window framing the valley, the frame freshly painted.",
+   "image": "/nft-art/art/nfa-0080-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0080-v0.0.2-t.webp",
+   "alt": "Window Over the Valley: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 078",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-078_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 078)",
-   "id": "NFA-0080"
+   "id": "NFA-0080",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Old Bedstead",
-   "caption": "Flower garden edition of The Old Bedstead.",
-   "image": "/nft-art/art/nfa-0082.webp",
-   "thumb": "/nft-art/art/nfa-0082-t.webp",
-   "alt": "The Old Bedstead: AI garden artwork with flowers and blossom",
+   "caption": "An iron bedstead in a timbered loft, made up with period covers.",
+   "image": "/nft-art/art/nfa-0082-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0082-v0.0.2-t.webp",
+   "alt": "The Old Bedstead: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 085",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-085_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 085)",
-   "id": "NFA-0082"
+   "id": "NFA-0082",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Window Seat",
-   "caption": "Flower garden edition of The Window Seat.",
-   "image": "/nft-art/art/nfa-0083.webp",
-   "thumb": "/nft-art/art/nfa-0083-t.webp",
-   "alt": "The Window Seat: AI garden artwork with flowers and blossom",
+   "caption": "A window seat in the sun, curtains drawn back on the fields.",
+   "image": "/nft-art/art/nfa-0083-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0083-v0.0.2-t.webp",
+   "alt": "The Window Seat: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 089",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-089_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 089)",
-   "id": "NFA-0083"
+   "id": "NFA-0083",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Lane by the Wall",
@@ -1208,54 +1280,66 @@
   },
   {
    "title": "The Dining Room Door",
-   "caption": "Flower garden edition of The Dining Room Door.",
-   "image": "/nft-art/art/nfa-0087.webp",
-   "thumb": "/nft-art/art/nfa-0087-t.webp",
-   "alt": "The Dining Room Door: AI garden artwork with flowers and blossom",
+   "caption": "A polished table and the door to the yard.",
+   "image": "/nft-art/art/nfa-0087-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0087-v0.0.2-t.webp",
+   "alt": "The Dining Room Door: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 106",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-106_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 106)",
-   "id": "NFA-0087"
+   "id": "NFA-0087",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Inglenook",
-   "caption": "Flower garden edition of The Inglenook.",
-   "image": "/nft-art/art/nfa-0088.webp",
-   "thumb": "/nft-art/art/nfa-0088-t.webp",
-   "alt": "The Inglenook: AI garden artwork with flowers and blossom",
+   "caption": "A deep inglenook fireplace and a single chair beside it.",
+   "image": "/nft-art/art/nfa-0088-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0088-v0.0.2-t.webp",
+   "alt": "The Inglenook: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 108",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-108_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 108)",
-   "id": "NFA-0088"
+   "id": "NFA-0088",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The China Cabinets",
-   "caption": "Flower garden edition of The China Cabinets.",
-   "image": "/nft-art/art/nfa-0089.webp",
-   "thumb": "/nft-art/art/nfa-0089-t.webp",
-   "alt": "The China Cabinets: AI garden artwork with flowers and blossom",
+   "caption": "Tall cabinets of china above a long, polished table.",
+   "image": "/nft-art/art/nfa-0089-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0089-v0.0.2-t.webp",
+   "alt": "The China Cabinets: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 109",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-109_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 109)",
-   "id": "NFA-0089"
+   "id": "NFA-0089",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "Below the Chapel Windows",
@@ -1412,37 +1496,45 @@
   },
   {
    "title": "The Long Hall",
-   "caption": "Flower garden edition of The Long Hall.",
-   "image": "/nft-art/art/nfa-0099.webp",
-   "thumb": "/nft-art/art/nfa-0099-t.webp",
-   "alt": "The Long Hall: AI garden artwork with flowers and blossom",
+   "caption": "A long hall laid for a gathering under sound new beams.",
+   "image": "/nft-art/art/nfa-0099-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0099-v0.0.2-t.webp",
+   "alt": "The Long Hall: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 2 · 105",
    "source_vault_name": "0000-00-00_great-house-farm-part-2-105_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 2 · 105)",
-   "id": "NFA-0099"
+   "id": "NFA-0099",
+   "master_px": "1536x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "Tables for the Party",
-   "caption": "Flower garden edition of Tables for the Party.",
-   "image": "/nft-art/art/nfa-0100.webp",
-   "thumb": "/nft-art/art/nfa-0100-t.webp",
-   "alt": "Tables for the Party: AI garden artwork with flowers and blossom",
+   "caption": "Tables set under the eaves, every chair waiting.",
+   "image": "/nft-art/art/nfa-0100-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0100-v0.0.2-t.webp",
+   "alt": "Tables for the Party: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 2 · 112",
    "source_vault_name": "0000-00-00_great-house-farm-part-2-112_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 2 · 112)",
-   "id": "NFA-0100"
+   "id": "NFA-0100",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "Pony and Cart",
@@ -1532,19 +1624,23 @@
   },
   {
    "title": "The Great Hearth",
-   "caption": "Flower garden edition of The Great Hearth.",
-   "image": "/nft-art/art/nfa-0110.webp",
-   "thumb": "/nft-art/art/nfa-0110-t.webp",
-   "alt": "The Great Hearth: AI garden artwork with flowers and blossom",
+   "caption": "A great stone hearth with the fire lit and the table laid.",
+   "image": "/nft-art/art/nfa-0110-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0110-v0.0.2-t.webp",
+   "alt": "The Great Hearth: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "FB-122241504200112242",
    "source_title": "a farm photograph in the Wayback Vault (FB-122241504200112242)",
-   "id": "NFA-0110"
+   "id": "NFA-0110",
+   "master_px": "1536x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Old Cart",
@@ -1633,20 +1729,24 @@
   },
   {
    "title": "The Open Door",
-   "caption": "Flower garden edition of The Open Door.",
-   "image": "/nft-art/art/nfa-0118.webp",
-   "thumb": "/nft-art/art/nfa-0118-t.webp",
-   "alt": "The Open Door: AI garden artwork with flowers and blossom",
+   "caption": "A door left open between a quiet room and the hall.",
+   "image": "/nft-art/art/nfa-0118-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0118-v0.0.2-t.webp",
+   "alt": "The Open Door: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 027",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-027_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 027)",
-   "id": "NFA-0118"
+   "id": "NFA-0118",
+   "master_px": "864x1152",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Flagstone Walk",
@@ -1787,106 +1887,130 @@
   {
    "title": "The Rose Quilt Room",
    "caption": "A bedroom with a rose quilt, a dark chair and the door open to the light.",
-   "image": "/nft-art/art/nfa-0127.webp",
-   "thumb": "/nft-art/art/nfa-0127-t.webp",
+   "image": "/nft-art/art/nfa-0127-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0127-v0.0.2-t.webp",
    "alt": "The Rose Quilt Room: a farmhouse bedroom restored and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "v001_title": "The Rose Quilt Room",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 069",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-069_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 069)",
-   "id": "NFA-0127"
+   "id": "NFA-0127",
+   "master_px": "1024x1024",
+   "reworked": "2026-11-02",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "Through to the Hall",
-   "caption": "Flower garden edition of Through to the Hall.",
-   "image": "/nft-art/art/nfa-0128.webp",
-   "thumb": "/nft-art/art/nfa-0128-t.webp",
-   "alt": "Through to the Hall: AI garden artwork with flowers and blossom",
+   "caption": "A view from the bedroom through to a lamplit hall.",
+   "image": "/nft-art/art/nfa-0128-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0128-v0.0.2-t.webp",
+   "alt": "Through to the Hall: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 070",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-070_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 070)",
-   "id": "NFA-0128"
+   "id": "NFA-0128",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Banister",
-   "caption": "Flower garden edition of The Banister.",
-   "image": "/nft-art/art/nfa-0129.webp",
-   "thumb": "/nft-art/art/nfa-0129-t.webp",
-   "alt": "The Banister: AI garden artwork with flowers and blossom",
+   "caption": "A turned banister, polished to a soft shine.",
+   "image": "/nft-art/art/nfa-0129-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0129-v0.0.2-t.webp",
+   "alt": "The Banister: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 079",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-079_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 079)",
-   "id": "NFA-0129"
+   "id": "NFA-0129",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Long-Case Clock",
-   "caption": "Flower garden edition of The Long-Case Clock.",
-   "image": "/nft-art/art/nfa-0130.webp",
-   "thumb": "/nft-art/art/nfa-0130-t.webp",
-   "alt": "The Long-Case Clock: AI garden artwork with flowers and blossom",
+   "caption": "A long-case clock in the hall, keeping time.",
+   "image": "/nft-art/art/nfa-0130-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0130-v0.0.2-t.webp",
+   "alt": "The Long-Case Clock: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 103",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-103_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 103)",
-   "id": "NFA-0130"
+   "id": "NFA-0130",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "Brass on the Sideboard",
-   "caption": "Flower garden edition of Brass on the Sideboard.",
-   "image": "/nft-art/art/nfa-0131.webp",
-   "thumb": "/nft-art/art/nfa-0131-t.webp",
-   "alt": "Brass on the Sideboard: AI garden artwork with flowers and blossom",
+   "caption": "Candlesticks and brass on the sideboard below the mirror.",
+   "image": "/nft-art/art/nfa-0131-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0131-v0.0.2-t.webp",
+   "alt": "Brass on the Sideboard: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 104",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-104_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 104)",
-   "id": "NFA-0131"
+   "id": "NFA-0131",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Front Hall",
    "caption": "A front hall with the door open to the light.",
-   "image": "/nft-art/art/nfa-0132.webp",
-   "thumb": "/nft-art/art/nfa-0132-t.webp",
+   "image": "/nft-art/art/nfa-0132-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0132-v0.0.2-t.webp",
    "alt": "The Front Hall: a farmhouse hall restored and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "v001_title": "The Front Hall",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 105",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-105_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 105)",
-   "id": "NFA-0132"
+   "id": "NFA-0132",
+   "master_px": "1024x1024",
+   "reworked": "2026-11-02",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Blossom Lawn",
@@ -2009,20 +2133,24 @@
   },
   {
    "title": "Lamplight and Mantel",
-   "caption": "Flower garden edition of Lamplight and Mantel.",
-   "image": "/nft-art/art/nfa-0143.webp",
-   "thumb": "/nft-art/art/nfa-0143-t.webp",
-   "alt": "Lamplight and Mantel: AI garden artwork with flowers and blossom",
+   "caption": "A lamp lit by the mantel, the door open to the hall.",
+   "image": "/nft-art/art/nfa-0143-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0143-v0.0.2-t.webp",
+   "alt": "Lamplight and Mantel: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 030",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-030_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 030)",
-   "id": "NFA-0143"
+   "id": "NFA-0143",
+   "master_px": "1152x864",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Terrace Steps",
@@ -2043,88 +2171,108 @@
   },
   {
    "title": "The Kitchen Hearth",
-   "caption": "Flower garden edition of The Kitchen Hearth.",
-   "image": "/nft-art/art/nfa-0145.webp",
-   "thumb": "/nft-art/art/nfa-0145-t.webp",
-   "alt": "The Kitchen Hearth: AI garden artwork with flowers and blossom",
+   "caption": "A wide brick hearth with the kitchen table close by.",
+   "image": "/nft-art/art/nfa-0145-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0145-v0.0.2-t.webp",
+   "alt": "The Kitchen Hearth: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 064",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-064_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 064)",
-   "id": "NFA-0145"
+   "id": "NFA-0145",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Pink Bedhead",
-   "caption": "Flower garden edition of The Pink Bedhead.",
-   "image": "/nft-art/art/nfa-0146.webp",
-   "thumb": "/nft-art/art/nfa-0146-t.webp",
-   "alt": "The Pink Bedhead: AI garden artwork with flowers and blossom",
+   "caption": "A bed with a pink bedhead and a period quilt.",
+   "image": "/nft-art/art/nfa-0146-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0146-v0.0.2-t.webp",
+   "alt": "The Pink Bedhead: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 065",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-065_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 065)",
-   "id": "NFA-0146"
+   "id": "NFA-0146",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Cottage Window",
-   "caption": "Flower garden edition of The Cottage Window.",
-   "image": "/nft-art/art/nfa-0147.webp",
-   "thumb": "/nft-art/art/nfa-0147-t.webp",
-   "alt": "The Cottage Window: AI garden artwork with flowers and blossom",
+   "caption": "A cottage window with blue curtains and a clean sill.",
+   "image": "/nft-art/art/nfa-0147-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0147-v0.0.2-t.webp",
+   "alt": "The Cottage Window: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 068",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-068_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 068)",
-   "id": "NFA-0147"
+   "id": "NFA-0147",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The White Door",
-   "caption": "Flower garden edition of The White Door.",
-   "image": "/nft-art/art/nfa-0148.webp",
-   "thumb": "/nft-art/art/nfa-0148-t.webp",
-   "alt": "The White Door: AI garden artwork with flowers and blossom",
+   "caption": "A white door in a yellow room, a landscape on the wall.",
+   "image": "/nft-art/art/nfa-0148-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0148-v0.0.2-t.webp",
+   "alt": "The White Door: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 075",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-075_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 075)",
-   "id": "NFA-0148"
+   "id": "NFA-0148",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Hall Door",
-   "caption": "Flower garden edition of The Hall Door.",
-   "image": "/nft-art/art/nfa-0149.webp",
-   "thumb": "/nft-art/art/nfa-0149-t.webp",
-   "alt": "The Hall Door: AI garden artwork with flowers and blossom",
+   "caption": "A red-panelled door at the end of a freshly painted passage.",
+   "image": "/nft-art/art/nfa-0149-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0149-v0.0.2-t.webp",
+   "alt": "The Hall Door: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 102",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-102_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 102)",
-   "id": "NFA-0149"
+   "id": "NFA-0149",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Blue Van and Trailer",
@@ -2162,37 +2310,45 @@
   },
   {
    "title": "The Curving Stair",
-   "caption": "Flower garden edition of The Curving Stair.",
-   "image": "/nft-art/art/nfa-0152.webp",
-   "thumb": "/nft-art/art/nfa-0152-t.webp",
-   "alt": "The Curving Stair: AI garden artwork with flowers and blossom",
+   "caption": "A whitewashed stair curving up out of sight.",
+   "image": "/nft-art/art/nfa-0152-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0152-v0.0.2-t.webp",
+   "alt": "The Curving Stair: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 082",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-082_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 082)",
-   "id": "NFA-0152"
+   "id": "NFA-0152",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "Steps Under the Lintel",
-   "caption": "Flower garden edition of Steps Under the Lintel.",
-   "image": "/nft-art/art/nfa-0153.webp",
-   "thumb": "/nft-art/art/nfa-0153-t.webp",
-   "alt": "Steps Under the Lintel: AI garden artwork with flowers and blossom",
+   "caption": "Stone steps rising under an old lintel, the walls made good.",
+   "image": "/nft-art/art/nfa-0153-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0153-v0.0.2-t.webp",
+   "alt": "Steps Under the Lintel: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 083",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-083_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 083)",
-   "id": "NFA-0153"
+   "id": "NFA-0153",
+   "master_px": "1024x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Road Past the Farm",
@@ -2230,20 +2386,24 @@
   },
   {
    "title": "Supper by the Fire",
-   "caption": "Flower garden edition of Supper by the Fire.",
-   "image": "/nft-art/art/nfa-0156.webp",
-   "thumb": "/nft-art/art/nfa-0156-t.webp",
-   "alt": "Supper by the Fire: AI garden artwork with flowers and blossom",
+   "caption": "A stone fireplace ablaze, the table laid beside it.",
+   "image": "/nft-art/art/nfa-0156-v0.0.2.webp",
+   "thumb": "/nft-art/art/nfa-0156-v0.0.2-t.webp",
+   "alt": "Supper by the Fire: the farm restored to its prime, freshly painted and kept, in gouache and warm gold light",
    "issued": "2026-10-27",
    "series": "Wayback Garden",
-   "version": "v0.0.1",
+   "version": "v0.0.2",
    "versions": [
-    "v0.0.1"
+    "v0.0.2"
    ],
    "source_id": "Great House Farm Part 1 · 024",
    "source_vault_name": "0000-00-00_great-house-farm-part-1-024_en_v0.0.0",
    "source_title": "a farm photograph in the Wayback Vault (Great House Farm Part 1 · 024)",
-   "id": "NFA-0156"
+   "id": "NFA-0156",
+   "master_px": "1536x1024",
+   "reworked": "2026-10-27",
+   "medium": "Restored AI interior artwork",
+   "interior": true
   },
   {
    "title": "The Farmhouse Over the Wall",

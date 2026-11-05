@@ -7,6 +7,8 @@ R=pathlib.Path(__file__).resolve().parent.parent
 with tempfile.TemporaryDirectory() as td:
  site_consolidations.run(td)
  s=(pathlib.Path(td)/'arcade/index.html').read_text()
+ assert 'data-ghf-native="auto"' in s and '--wiki-bg:#000' in s
+ assert 'data-ghf-native="auto"' not in site_consolidations.render_tabs('Other','',[('Other','/other/')])
  assert 'Three interactive experiences' not in s
  assert '3D estate' not in s and '/terrain/' not in s
  assert '/garden/' in s and '/nft-art/' in s and '/cyberspace/' in s
@@ -15,9 +17,10 @@ with tempfile.TemporaryDirectory() as td:
 manifest=json.loads((R/'web/_cedwyn/flower-gallery/artworks.json').read_text())
 assert len(manifest['artworks'])==134
 for a in manifest['artworks']:
- assert a['version']=='v0.0.1' and a['versions']==['v0.0.1']
+ assert a['versions']==[a['version']]
+ assert a['version']==('v0.0.2' if a.get('interior') else 'v0.0.1')
  assert a['image'].startswith('/nft-art/art/') and a['thumb'].startswith('/nft-art/art/')
- assert '-v0.0.2' not in a['image']
+ assert ('-v0.0.2' in a['image'])==bool(a.get('interior'))
  assert not any(k in a for k in ['src','buy','v001_image'])
 for name in ['garden','nft-art']:
  s=(R/'web'/name/'index.html').read_text()
@@ -38,3 +41,25 @@ with tempfile.TemporaryDirectory() as td:
  except FileNotFoundError:pass
  else:raise AssertionError('Missing flower image must fail build')
  print('Post-dedupe asset rewrite and missing-asset guard PASS')
+
+# Real final serving pass: catalogue images must remain files on a first visit.
+import dbserve, hashlib
+for prefix in ('/nft-art/art/', '/_blob/'):
+ with tempfile.TemporaryDirectory() as td:
+  d=pathlib.Path(td);m=d/'_cedwyn/flower-gallery/artworks.json';m.parent.mkdir(parents=True)
+  paths=[prefix+'a.webp',prefix+'a-t.webp']
+  m.write_text(json.dumps({'artworks':[dict(zip(('image','thumb'),paths))]}))
+  (d/'db').mkdir();b=[];indexes={}
+  for path in paths:
+   f=d/path.lstrip('/');f.parent.mkdir(parents=True,exist_ok=True);f.write_bytes(b'test')
+   indexes[path]=len(b);b.append([4,0,0,[],'image/webp',hashlib.sha256(b'test').hexdigest()[:16]])
+  (d/'db/blobmap.json').write_text(json.dumps({'paths':indexes,'blobs':b,'v':'test'}))
+  dbserve.DIST=d;dbserve.main()
+  assert all((d/p.lstrip('/')).is_file() for p in paths)
+ print('Real dbserve keeps first-visit '+prefix+' artwork PASS')
+
+assert sum(bool(a.get("interior")) for a in manifest["artworks"])==40
+
+nft=(R/'web/nft-art/index.html').read_text()
+assert nft.index("h.classList.add('gg-framed')")<nft.index('gallery.css')
+assert "h.classList.toggle('ghf-inv',m==='night')" in nft

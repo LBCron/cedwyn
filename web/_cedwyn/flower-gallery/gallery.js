@@ -1,7 +1,27 @@
 /* Garden Gallery front end: layout only. Every word and every artwork comes from the Cedwyn catalogue database
    (table section_records, theme 'nft-art'), read in the browser through /_cedwyn/cat.js. */
 (function () {
-  if (window.self !== window.top) { document.documentElement.classList.add('gg-framed'); }
+  if (window.self !== window.top) {
+    document.documentElement.classList.add('gg-framed');
+    // ghf-boot intentionally omits bars and theme in frames. Use the same theme
+    // engine here, without bars, and follow the containing website's live mode.
+    var themeCss = document.createElement('link'); themeCss.rel = 'stylesheet';
+    themeCss.href = '/_cedwyn/ghf/ghf-theme.css?v=2.1.23'; themeCss.setAttribute('data-ghf-theme', '');
+    document.head.appendChild(themeCss);
+    function syncTheme() {
+      if (!window.GHFTheme) return;
+      var mode;
+      try { mode = window.parent.document.documentElement.getAttribute('data-ghf-mode'); } catch (e) {}
+      window.GHFTheme.apply(mode === 'day' || mode === 'night' ? mode : window.GHFTheme.mode());
+    }
+    var themeScript = document.createElement('script'); themeScript.src = '/_cedwyn/ghf/basecamp.js?v=2.1.23';
+    themeScript.onload = syncTheme; document.head.appendChild(themeScript);
+    try {
+      window.parent.document.addEventListener('ghf-theme-change', syncTheme);
+      window.addEventListener('pagehide', function () { window.parent.document.removeEventListener('ghf-theme-change', syncTheme); }, { once: true });
+    } catch (e) {}
+    document.addEventListener('DOMContentLoaded', syncTheme);
+  }
   var galleryOnly = document.body.dataset.galleryMode === 'garden'; var T = {}, A = [], $ = function (id) { return document.getElementById(id); };
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function fill(s, o) { return String(s || '').replace(/\{(\w+)\}/g, function (_, k) { return o[k] != null ? o[k] : ''; }); }
@@ -65,7 +85,7 @@
       '<h2>' + esc(a.title) + '</h2><p class="gg-cap">' + esc(a.caption) + '</p>' +
       '<dl class="gg-meta"><dt>' + esc(T.catalogue_label) + '</dt><dd>' + esc(a.id) + '</dd>' +
       (a.edition ? '<dt>' + esc(T.edition_label) + '</dt><dd>' + esc(edition(a)) + '</dd>' : '') +
-      '<dt>' + esc(T.medium_label) + '</dt><dd>' + esc(T.medium) + '</dd>' +
+      '<dt>' + esc(T.medium_label) + '</dt><dd>' + esc(a.medium || T.medium) + '</dd>' +
       (a.source_id ? '<dt>' + esc(T.source_label) + '</dt><dd>' + esc(a.source_id) + '</dd>' : '') + '</dl>' +
       (false ? '<div class="gg-src"><img loading="lazy" src="' + esc(a.src) + '" alt=""><span>' + esc(T.grown_from) + ' ' + esc(a.source_title) + '</span></div>' : '') +
       '<div class="gg-buy gg-sv"><label class="gg-svl" for="gg-sv">' + esc(T.select_version || 'Select a version') + '</label>' +
@@ -73,7 +93,7 @@
       '<button type="button" class="gg-vi" aria-haspopup="dialog" aria-controls="gg-vt" aria-label="' + esc(T.versions_info || 'Version table') + '">i</button></div>' + vtable(a, vers(a)) +
       '<div class="gg-acts"><button type="button" class="gg-btn gg-soon" disabled aria-disabled="true">' + esc(T.coming_soon || 'Coming soon') + '</button>' +
       '<button type="button" class="gg-btn gg-png" aria-label="' + esc((T.save_png || 'Save as PNG') + ' (selected version)') + '">' + esc(T.save_png || 'Save as PNG') + '</button></div>' +
-      '<a class="gg-free" href="' + esc(a.v001_image || a.image) + '" data-png="1">free version (v0.0.1 2026)</a></div>';
+      '<a class="gg-free" href="' + esc(a.image) + '" data-png="1">free version (' + esc(ver(a)) + ' 2026)</a></div>';
     if (galleryOnly) { var buy = d.querySelector('.gg-buy'); if (buy) buy.remove(); }
     var pb = d.querySelector('.gg-png'), fl = d.querySelector('.gg-free');
     var sel = d.querySelector('.gg-sel'), fig = d.querySelector('figure img');
@@ -90,7 +110,7 @@
     }
     if (sel && fig) sel.addEventListener('change', function () { fig.src = pick(sel.value).image; });
     if (pb) pb.addEventListener('click', function () { savePng(pick(sel ? sel.value : ver(a)), pb); });
-    if (fl) fl.addEventListener('click', function (ev) { if (ev.button || ev.metaKey || ev.ctrlKey) return; ev.preventDefault(); savePng(pick('v0.0.1'), pb || fl); });
+    if (fl) fl.addEventListener('click', function (ev) { if (ev.button || ev.metaKey || ev.ctrlKey) return; ev.preventDefault(); savePng(pick(ver(a)), pb || fl); });
     show(true); window.scrollTo(0, 0);
     document.title = a.title + ' · ' + (T.title || '');
   }
