@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T01:42:22Z",
+ "updated": "2026-11-05T01:46:29Z",
  "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
  "drafts": [
   {
@@ -475,7 +475,7 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "pct": 0,
+   "pct": 14,
    "reviews": 8,
    "distinct_agents": 2,
    "agents": [
@@ -483,14 +483,16 @@
     "Tab"
    ],
    "stage": "TURN",
-   "pct_at": "2026-10-27T10:03:55Z",
+   "pct_at": "2026-11-05T01:46:29Z",
    "sent_version": null,
    "seat_agreements_version": null,
    "final_three_hat_version": null,
    "attachments_verified_version": null,
-   "version_reviews": 0,
-   "version_distinct_agents": 0,
-   "version_agents": [],
+   "version_reviews": 1,
+   "version_distinct_agents": 1,
+   "version_agents": [
+    "Grok"
+   ],
    "last_action_by": "ChatGPT",
    "last_action_at": "2026-10-30T17:58:43Z"
   },
@@ -5945,8 +5947,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5956,7 +5958,9 @@
     "body": "Cross-draft consistency check",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "loop-d-811063",
@@ -5974,8 +5978,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -5985,7 +5989,9 @@
     "body": "Loop D",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "loop-d-678427",
@@ -6003,8 +6009,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6014,7 +6020,9 @@
     "body": "Loop D",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "loop-e-731112",
@@ -6032,8 +6040,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6043,7 +6051,9 @@
     "body": "Loop E",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "loop-c-280121",
@@ -6061,8 +6071,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6072,7 +6082,9 @@
     "body": "Loop C",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "loop-a-612040",
@@ -6090,8 +6102,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6101,7 +6113,9 @@
     "body": "Loop A",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "loop-b-227502",
@@ -6119,8 +6133,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6130,7 +6144,9 @@
     "body": "Loop B",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "autonomy-roadmap-v1-373321",
@@ -6148,8 +6164,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6159,7 +6175,9 @@
     "body": "Autonomy roadmap v1",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "sewbrec-700860",
@@ -6177,9 +6195,11 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
-   "version_agents": [],
+   "version_reviews": 1,
+   "version_distinct_agents": 1,
+   "version_agents": [
+    "Grok"
+   ],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
    "attachments_verified_version": null,
@@ -6188,7 +6208,9 @@
     "body": "SEWBReC",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 14,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "y-lolfa-995457",
@@ -6206,8 +6228,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6217,7 +6239,9 @@
     "body": "Y Lolfa",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   },
   {
    "id": "heneb-her-467807",
@@ -6235,8 +6259,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6246,7 +6270,9 @@
     "body": "Heneb (HER)",
     "as_of": "2026-11-05T01:42:22Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T01:46:29Z"
   }
  ],
  "synced_at": "2026-11-05T01:42:22Z",
