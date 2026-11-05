@@ -21,6 +21,18 @@ body:
         - blocker
     validations:
       required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: "Use P0 only for an active critical failure; otherwise choose the lowest priority that reflects the impact."
+      options:
+        - P0 — Critical
+        - P1 — High
+        - P2 — Normal
+        - P3 — Low
+    validations:
+      required: true
   - type: textarea
     id: purpose
     attributes:
