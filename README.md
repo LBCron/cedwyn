@@ -55,6 +55,12 @@ released weeks later on a new request, found after a "not held" answer, or produ
 ## Latest mail (v0.3.3)
 Replies that arrive after the last full audit go into `public/_ui/latest-mail.a2ui.json`: the same record shape as the `chestnuts` collection of `_db/view.json` (ids `TOC-E01`…), plus `mail_read_to` (the last day of mail read) and its status-line text in en / cy / es. `toc.js` adds a record only when the catalogue does not already carry its id, puts the newest first, and shows "Replies received up to <day> are included." The file is in `_ui/` because the site build publishes only `_ui/*.a2ui.json` as plain files. When `tools/chestnut_sync.py` next brings these replies into the catalogue under the same ids, the file can be emptied.
 
+## Silence (v0.4.0)
+Another kind of old chestnut: a direct question from the Executive left unanswered, in full or skipped in a reply that answered other points. On the Executive's standing rule it stands as the Executive's account until it is explicitly challenged; the page presents this as the Executive's position, not a court ruling or settled law.
+- Data: `public/_ui/silence.a2ui.json` (`entries[]`: id `TOC-S<nn>`, institution, asked, question (verbatim), back_kind `nothing | auto | holding | partial | declined`, back_date, back_quote (verbatim), back_note, days_as_of, source, checked), with en / cy / es labels in `i18n`.
+- `toc.js` renders `SilenceList` straight after the old-chestnuts list, ordered by date asked, and counts days unanswered on the reader's clock.
+- Add an entry only after checking the thread (and the body's later mail) for a reply. If a later reply answers the question, remove the entry. Role titles only.
+
 ## Editorial
 Role titles only, no individual officers; neutral labels; internal links only; the public gate in `tools/views.py`
 applies to everything published.
