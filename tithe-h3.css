@@ -84,4 +84,4 @@
 .th3-ctl .th3-bar .lab{font-weight:600;color:#1e4d45}
 .th3-ctl .th3-bar .hint{font-size:.72rem;color:#666;max-width:240px}
 .th3-ctl label.lr{color:#00737f}
-.leaflet-top.leaflet-left .th3-stat{margin:6px 0 0 0;max-width:62vw}
+.leaflet-top.leaflet-left .th3-stat.leaflet-control{display:block;margin:6px 0 0 10px;max-width:62vw;background:rgba(255,255,255,.9);border-radius:4px;padding:1px 6px;font-size:.75rem;color:#333;box-shadow:0 1px 3px #0003}
