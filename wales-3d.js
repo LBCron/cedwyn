@@ -1,4 +1,4 @@
-// Wales 3D world v0.2.0 — Llandough / Leckwith / the Cedwyn estate on real LiDAR terrain. 
+// Wales 3D world v0.2.1 — Llandough / Leckwith / the Cedwyn estate on real LiDAR terrain. 
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/+esm';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js/+esm';
 import { Sky } from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/objects/Sky.js/+esm';
@@ -171,7 +171,7 @@ async function loadHeights(meta) {
   const t = new THREE.DataTexture(hf, HN, HN, THREE.RedFormat, THREE.HalfFloatType);
   t.magFilter = t.minFilter = THREE.LinearFilter; t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping; t.needsUpdate = true; return t;
 }
-const getJ = u => fetch(D + u + '?v=0.2.0').then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
+const getJ = u => fetch(D + u + '?v=0.2.1').then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); });
 
 const world = { buildings: null, labels: [], trees: null, shrubs: null, ghost: null, rain: null, anchors: {} };
 
@@ -558,7 +558,7 @@ let backend;
       (h, i) => [1.3 + 0.5 * hash(i), h * 0.55, h * 0.45], (c, i) => c.setRGB(0.09 + 0.05 * hash(i), 0.14 + 0.06 * hash(i + 1), 0.04));
     build1841(pj); buildOverlay(p59, h3j);
     // labels
-    label('Great House Farm · Tŷ Mawr', anchor[0], anchor[1], 22, 1.1);
+    label('Tŷ Mawr (Great House)', anchor[0], anchor[1], 22, 1.1);
     if (ch) label(ch[2] || 'Church', ch[0], ch[1], 30, 0.9);
     if (world.anchors.ely) label('River Ely', world.anchors.ely[0], world.anchors.ely[1], 24, 0.9);
     label('Cardiff ↗', 1400, -1700, 60, 0.85); label('Penarth ↘', 1500, 1500, 60, 0.85); label('Leckwith', -1150, -900, 50, 0.85);
@@ -570,6 +570,8 @@ let backend;
     controls.target.set(tx, ty, tz); camera.position.set(tx + 650, ty + 330, tz + 820);
     if (Q.get('view') && views[Q.get('view')]) { const [x, z, d, e, a] = views[Q.get('view')]; const az = a * Math.PI / 180, el = e * Math.PI / 180;
       controls.target.set(x, hAt(x, z), z); camera.position.set(x + Math.sin(az) * Math.cos(el) * d, hAt(x, z) + Math.sin(el) * d, z + Math.cos(az) * Math.cos(el) * d); }
+    if (Q.get('cam')) { const [x, z, d, e, a] = Q.get('cam').split(',').map(Number); if ([x, z, d, e, a].every(Number.isFinite)) { const az = a * Math.PI / 180, el = e * Math.PI / 180; // v0.2.1: fixed review cameras, ?cam=x,z,dist,elev,az
+      controls.target.set(x, hAt(x, z), z); camera.position.set(x + Math.sin(az) * Math.cos(el) * d, hAt(x, z) + Math.sin(el) * d, z + Math.cos(az) * Math.cos(el) * d); } }
     if (Q.get('era') === '1841') state.era = '1841';
     if (Q.get('hour')) state.hour = +Q.get('hour'); else if (sunPos(new Date()).alt < 12 * Math.PI / 180) state.hour = 12; // clear daylight by default
     backend = createBackend({ THREE, scene, camera, renderer, state, applyPatch, parseSteer, flyTo, simDate });
