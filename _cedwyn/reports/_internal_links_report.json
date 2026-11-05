@@ -1,14 +1,14 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9432,
+  "pages_scanned": 9433,
   "references_checked": {
-    "resource": 217514,
-    "nav": 481426
+    "resource": 217520,
+    "nav": 481459
   },
-  "database_backed_paths": 7443,
-  "unique_missing_destinations": 6409,
-  "missing_references": 53394,
-  "missing_navigation_references": 37462,
+  "database_backed_paths": 7434,
+  "unique_missing_destinations": 6408,
+  "missing_references": 53395,
+  "missing_navigation_references": 37463,
   "missing_resource_references": 15932,
   "unique_broken_fragments": 1834,
   "broken_fragment_references": 3562,
@@ -19,7 +19,7 @@
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9402,
+      "references": 9403,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9398,
+      "references": 9399,
       "examples": [
         {
           "from": "/",

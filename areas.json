@@ -2,7 +2,7 @@
  "schema": "cedwyn_areas/v1",
  "source": "data/site-areas.json + themes.json slot",
  "order": "main menu reading order; previous/next wrap from the last area to the first",
- "count": 40,
+ "count": 41,
  "parcel_total": 59,
  "areas": [
   {
@@ -575,6 +575,19 @@
    "skip_in": [],
    "built": true,
    "slot": 47,
+   "of": 59
+  },
+  {
+   "id": "releases",
+   "path": "/releases/",
+   "title": "The Release Machine",
+   "cy": "Y Peiriant Rhyddhau",
+   "es": "La máquina de publicaciones",
+   "group": "interactive",
+   "aliases": [],
+   "skip_in": [],
+   "built": true,
+   "slot": 41,
    "of": 59
   }
  ],
@@ -1314,6 +1327,23 @@
    "apex": "/mr-wolf/",
    "href": "/mr-wolf/",
    "sec": false
+  },
+  {
+   "id": "releases",
+   "path": "/releases/",
+   "title": "The Release Machine",
+   "cy": "Y Peiriant Rhyddhau",
+   "es": "La máquina de publicaciones",
+   "group": "interactive",
+   "aliases": [],
+   "skip_in": [],
+   "built": true,
+   "slot": 41,
+   "of": 59,
+   "src": "/releases/",
+   "apex": "/releases/",
+   "href": "/releases/",
+   "sec": true
   },
   {
    "id": "tithe-h3",
