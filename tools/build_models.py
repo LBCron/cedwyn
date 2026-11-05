@@ -77,13 +77,19 @@ sizes['monastery']=m.save(os.path.join(OUT,'monastery.glb'),meta('monastery',{"d
 G=json.load(open(os.path.join(os.path.dirname(__file__),'tymawr-layout.json')))
 m=Model('tymawr')
 # issue #200 (3D model loop): stone colours are glTF linear factors of the paintings' honey-grey rubble and cream dressed limestone (were near-white grey)
-m.mat('limewash',(0.93,0.92,0.87),0.85); m.mat('slate',(0.23,0.25,0.28),0.55); m.mat('pantile',(0.62,0.27,0.17),0.75)
-m.mat('rubble',(0.48,0.37,0.24),0.95); m.mat('dressed',(0.69,0.57,0.34),0.85); m.mat('brick',(0.55,0.24,0.18),0.85); m.mat('green',(0.16,0.33,0.2),0.6); m.mat('gravel',(0.6,0.57,0.5),1.0); m.mat('glass',(0.15,0.18,0.2),0.15,0.0)
+# realism pass (3D model loop, 5 Nov 2026, the Executive's 10:16 direction): wall/roof textures are sampled from the 1988 Cadw survey
+# photographs of the house and barn (tools/tex/*.jpg, 256 px, box-projected); factors become a tint (1,1,1 = the photo's colour).
+TX=os.path.join(os.path.dirname(__file__),'tex')
+m.mat('limewash',(1,1,1),0.9,tex=os.path.join(TX,'limewash.jpg'),tile=2.2); m.mat('slate',(1,1,1),0.6,tex=os.path.join(TX,'slate_house.jpg'),tile=2.4); m.mat('pantile',(1,1,1),0.75,tex=os.path.join(TX,'pantile.jpg'),tile=2.0)
+m.mat('rubble',(1,1,1),0.95,tex=os.path.join(TX,'rubble_house.jpg'),tile=1.6); m.mat('dressed',(1,1,1),0.9,tex=os.path.join(TX,'rubble_barn.jpg'),tile=2.0)
+m.mat('slate_barn',(1,1,1),0.6,tex=os.path.join(TX,'slate_barn.jpg'),tile=2.4); m.mat('ridge',(0.26,0.07,0.04),0.7); m.mat('frame',(0.85,0.84,0.80),0.6); m.mat('timber',(0.20,0.14,0.09),0.85)
+m.mat('brick',(0.20,0.06,0.035),0.85); m.mat('green',(0.16,0.33,0.2),0.6); m.mat('gravel',(0.33,0.30,0.25),1.0); m.mat('glass',(0.04,0.045,0.05),0.35,0.0)
 m.mat('dark',(0.08,0.08,0.08),0.9); m.mat('gate',(0.10,0.11,0.10),0.7); m.mat('pane',(0.75,0.85,0.85),0.1,0.0,0.45); m.mat('bark',(0.30,0.22,0.15),0.95); m.mat('leaf',(0.24,0.36,0.18),1.0)
 WM={'limewash':'limewash','rubble stone':'rubble','dressed stone':'dressed'}; RM={'slate':'slate','red pantile':'pantile'}
 for b in G['buildings']:
     if b['id']=='church': continue
     wm=WM.get(b.get('walls'),'limewash'); rm=RM.get(b.get('roof'),'slate')
+    if b['id']=='stone_barn': rm='slate_barn'   # the 1988 barn photograph: paler, weathered slate
     if 'len_ew' in b: w,d,ridge=b['len_ew'],b['dep_ns'],'x'
     else: w,d,ridge=b['dep_ew'],b['len_ns'],'z'
     m.box(wm,b['x'],b['z'],w,d,b['eave'],top=False)
@@ -94,13 +100,30 @@ for b in G['buildings']:
         h0=ry if at=='centre' else b['eave']
         m.box('brick' if 'brick' in ch['mat'] else 'rubble',cxx,b['z'],0.9,1.0,ry-h0+1.0,y0=h0)
     if 'chimney' in b: m.box('rubble',b['x'],b['z']-d/2+0.6,1.0,0.9,ry-b['eave']+1.0,y0=b['eave'])
-    if 'porch' in b:
+    if b.get('ridge_tiles'):   # red clay ridge tiles (1988 photographs of house and barn)
+        if ridge=='x': m.box('ridge',b['x'],b['z'],w+0.6,0.32,0.2,y0=ry-0.08)
+        else: m.box('ridge',b['x'],b['z'],0.32,d+0.6,0.2,y0=ry-0.08)
+    if b.get('gable_rubble_east'):   # 1988 photograph: the east gable is bare rubble, not limewashed
+        xe=b['x']+w/2+0.03; m.box('rubble',xe,b['z'],0.04,d,b['eave'])
+        m.tri('rubble',[[xe+0.02,b['eave'],b['z']+d/2],[xe+0.02,b['eave'],b['z']-d/2],[xe+0.02,ry,b['z']]])
+    if b.get('downpipe_x') is not None:
+        m.cyl('dark',b['x']+b['downpipe_x'],b['z']+d/2+0.12,0.06,b['eave'],seg=8)
+        m.box('dark',b['x'],b['z']+d/2+0.15,w,0.16,0.12,y0=b['eave']-0.12)
+    if 'porch' in b and b['porch'].get('open'):   # 1988 photograph: open timber porch, slate gable, door behind
+        p=b['porch']; px=b['x']+p['x']; pz=b['z']+d/2+p['d']/2
+        for sx in (-p['w']/2+0.1,p['w']/2-0.1): m.box('timber',px+sx,pz+p['d']/2-0.1,0.14,0.14,2.3)
+        m.box('timber',px,pz+p['d']/2-0.1,p['w'],0.16,0.18,y0=2.25)
+        m.gable('slate','timber',px,pz,p['w'],p['d'],2.4,40,ridge_along='z',over=0.15)
+        m.box('green',px,b['z']+d/2+0.02,0.95,0.05,2.0)
+    elif 'porch' in b:
         p=b['porch']; pz=b['z']+d/2+p['d']/2
         m.box(wm,b['x']+p['x'],pz,p['w'],p['d'],2.4,top=False); m.gable(rm,wm,b['x']+p['x'],pz,p['w'],p['d'],2.4,40,ridge_along='z')
         m.box('green',b['x']+p['x'],pz+p['d']/2+0.01,1.0,0.05,2.0)
-    if b['id']=='house':
-        for wx in (-3.6,-1.2,3.4):
-            for wy in (1.2,3.4): m.box('glass',b['x']+wx,b['z']+d/2+0.01,1.0,0.04,1.2,y0=wy)
+    if b['id']=='house':   # windows: positions read from the 1988 photograph (house front 11 m); white frames, dark panes
+        for (wx,wy) in b.get('windows',[(-3.6,1.2),(-1.2,1.2),(3.4,1.2),(-3.6,3.4),(-1.2,3.4),(3.4,3.4)]):
+            m.box('frame',b['x']+wx,b['z']+d/2+0.02,1.1,0.05,1.3,y0=wy-0.05)
+            m.box('glass',b['x']+wx,b['z']+d/2+0.05,0.85,0.04,1.05,y0=wy+0.08)
+            m.box('frame',b['x']+wx,b['z']+d/2+0.08,0.06,0.03,1.05,y0=wy+0.08); m.box('frame',b['x']+wx,b['z']+d/2+0.08,0.85,0.03,0.05,y0=wy+0.55)
     if b['id']=='stable_range':
         for i in range(5): m.box('green',b['x']-5.6+i*2.8,b['z']+d/2+0.01,1.1,0.05,2.0)
     if 'cart_porch' in b:
@@ -152,6 +175,18 @@ if 'church' in G:   # v0.2.1: church massing so the lane's semicircle reads (est
     m.box('rubble',c['x'],c['z'],nl,nw,c['nave_eave'],top=False); m.gable('slate','rubble',c['x'],c['z'],nl,nw,c['nave_eave'],45,ridge_along='x')
     m.box('rubble',c['x']-nl/2-ts/2,c['z'],ts,ts,th)
 m.mat('lane',(0.56,0.51,0.42),1.0); m.mat('hedge',(0.20,0.33,0.15),1.0)
+# photo tripods (3D model loop, the Executive's 10:16 direction 5 Nov 2026): one small tripod where each published photograph was taken
+# (photos.json beside SITES.json; positions estimated by matching the photograph to the model); the viewer puts a tappable marker on each.
+PJ=os.path.join(os.path.dirname(__file__),'..','photos.json')
+if os.path.exists(PJ):
+    m.mat('tripod',(0.05,0.05,0.05),0.5); m.mat('tripodcam',(0.55,0.42,0.12),0.4,0.6)
+    for tp in json.load(open(PJ))['tripods']:
+        if tp.get('site')!='tymawr': continue
+        tx,tz,hh=tp['x'],tp['z'],math.radians(tp['heading'])
+        for k in range(3):
+            a=hh+math.pi+(k-1)*2.1; fx,fz=tx+0.55*math.sin(a),tz-0.55*math.cos(a)
+            m.quad('tripod',[fx-0.03,0,fz],[fx+0.03,0,fz],[tx+0.02,1.45,tz],[tx-0.02,1.45,tz]); m.quad('tripod',[fx,0,fz-0.03],[fx,0,fz+0.03],[tx,1.45,tz+0.02],[tx,1.45,tz-0.02])
+        m.box('tripodcam',tx+0.12*math.sin(hh),tz-0.12*math.cos(hh),0.34,0.22,0.24,y0=1.45,yaw=math.degrees(hh))
 def strip(key,a,b,wd,h=0.06,y0=0.0):
     (ax,az),(bx,bz)=a,b; m.box(key,(ax+bx)/2,(az+bz)/2,math.hypot(bx-ax,bz-az)+0.2,wd,h,y0=y0,yaw=math.degrees(math.atan2(bz-az,bx-ax)))
 if 'lane_arc' in G:

@@ -8,7 +8,7 @@
    "z": 0,
    "len_ew": 11.0,
    "dep_ns": 6.2,
-   "eave": 5.0,
+   "eave": 4.2,
    "pitch": 40,
    "storeys": 2,
    "walls": "limewash",
@@ -28,12 +28,39 @@
     }
    ],
    "porch": {
-    "x": 1.0,
-    "w": 2.1,
-    "d": 1.8,
-    "gabled": true
+    "x": -1.9,
+    "w": 2.2,
+    "d": 1.7,
+    "gabled": true,
+    "open": true
    },
-   "faces": "south"
+   "faces": "south",
+   "ridge_tiles": true,
+   "gable_rubble_east": true,
+   "downpipe_x": 5.2,
+   "windows": [
+    [
+     -3.4,
+     2.55
+    ],
+    [
+     -1.1,
+     2.55
+    ],
+    [
+     2.2,
+     2.55
+    ],
+    [
+     -3.6,
+     0.8
+    ],
+    [
+     2.1,
+     0.8
+    ]
+   ],
+   "photo_ref": "1988 Cadw survey photograph of the farmhouse, 29 July 1988 (front from the south-east): eave c.4.2 m, open timber porch left of centre, 3 first-floor windows, red ridge tiles, east gable bare rubble, red-brick east chimney"
   },
   {
    "id": "stone_gable_bay",
@@ -143,7 +170,9 @@
      "note": "window in the west wall between the cart porch and the south gable (painting; position estimated)"
     }
    ],
-   "note": "long axis north-south, front (cart porch) faces west to the lane; south gable at z=3.1, level with the house front; stable range attached at its south-east corner"
+   "note": "long axis north-south, front (cart porch) faces west to the lane; south gable at z=3.1, level with the house front; stable range attached at its south-east corner",
+   "ridge_tiles": true,
+   "photo_ref": "1988 Cadw survey photograph of the barn, 29 July 1988 (west wall and south gable from the south-west): grey-brown rubble, pale weathered slate, red ridge tiles"
   },
   {
    "id": "church",
@@ -275,7 +304,7 @@
   }
  },
  "written_by": "Revival AR layout fix, 5 Nov 2026 (from the wales-3d geometry v0.1)",
- "version": "0.2.1",
+ "version": "0.2.3",
  "features": [
   {
    "id": "glasshouse",

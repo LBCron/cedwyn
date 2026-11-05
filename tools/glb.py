@@ -6,8 +6,9 @@ import numpy as np
 class Model:
     def __init__(self, name):
         self.name=name; self.mats={}; self.geo={}
-    def mat(self, key, rgb, rough=0.85, metal=0.0, alpha=1.0, double=False):
-        self.mats[key]=dict(rgb=rgb,rough=rough,metal=metal,alpha=alpha,double=double); self.geo.setdefault(key,[[],[],[]])
+    def mat(self, key, rgb, rough=0.85, metal=0.0, alpha=1.0, double=False, tex=None, tile=2.0):
+        """tex: path to a small jpg (<=256 KB) embedded in the GLB; tile: metres per texture repeat (box-projected UVs)."""
+        self.mats[key]=dict(rgb=rgb,rough=rough,metal=metal,alpha=alpha,double=double,tex=tex,tile=tile); self.geo.setdefault(key,[[],[],[]])
     def tri(self, key, pts, n=None):
         P,N,I=self.geo[key]; base=len(P)
         pts=[np.array(p,float) for p in pts]
@@ -67,14 +68,19 @@ class Model:
         self.box(key,(ax+bx)/2,(az+bz)/2,L,t,h,y0=y0,yaw=yaw)
     # --- export ---
     def save(self,path,extras=None):
-        bufs=bytearray(); views=[]; accs=[]; prims=[]; mats=[]
+        bufs=bytearray(); views=[]; accs=[]; prims=[]; mats=[]; images=[]; textures=[]
         def add(arr,target):
             nonlocal bufs
             while len(bufs)%4: bufs+=b'\0'
             off=len(bufs); b=arr.tobytes(); bufs+=b
-            views.append({"buffer":0,"byteOffset":off,"byteLength":len(b),"target":target}); return len(views)-1
+            views.append({"buffer":0,"byteOffset":off,"byteLength":len(b),**({"target":target} if target else {})}); return len(views)-1
         for mi,(k,m) in enumerate(self.mats.items()):
-            mats.append({"name":k,"pbrMetallicRoughness":{"baseColorFactor":list(m['rgb'])+[m['alpha']],"metallicFactor":m['metal'],"roughnessFactor":m['rough']},
+            pbr={"baseColorFactor":list(m['rgb'])+[m['alpha']],"metallicFactor":m['metal'],"roughnessFactor":m['rough']}
+            if m.get('tex'):   # photo-sampled texture (3D model loop, realism pass): factor is a tint, the image carries the colour
+                iv=add(np.frombuffer(open(m['tex'],'rb').read(),np.uint8),None); views[iv].pop('target',None)
+                images.append({"bufferView":iv,"mimeType":"image/jpeg"}); textures.append({"source":len(images)-1,"sampler":0})
+                pbr["baseColorTexture"]={"index":len(textures)-1}
+            mats.append({"name":k,"pbrMetallicRoughness":pbr,
                          "doubleSided":True, **({"alphaMode":"BLEND"} if m['alpha']<1 else {})})
             P,N,I=self.geo[k]
             if not I: continue
@@ -82,10 +88,16 @@ class Model:
             vp=add(P,34962); accs.append({"bufferView":vp,"componentType":5126,"count":len(P),"type":"VEC3","min":P.min(0).tolist(),"max":P.max(0).tolist()}); ap=len(accs)-1
             vn=add(N,34962); accs.append({"bufferView":vn,"componentType":5126,"count":len(N),"type":"VEC3"}); an=len(accs)-1
             vi=add(I,34963); accs.append({"bufferView":vi,"componentType":5125,"count":len(I),"type":"SCALAR"}); ai=len(accs)-1
-            prims.append({"attributes":{"POSITION":ap,"NORMAL":an},"indices":ai,"material":mi})
+            att={"POSITION":ap,"NORMAL":an}
+            if m.get('tex'):   # box-projected UVs: drop the dominant normal axis, metres / tile
+                ax=np.abs(N).argmax(1); t=float(m['tile'])
+                U=np.where(ax==0,P[:,2],P[:,0]); V=np.where(ax==1,P[:,2],-P[:,1])
+                UV=(np.stack([U,V],1)/t).astype(np.float32)
+                vu=add(UV,34962); accs.append({"bufferView":vu,"componentType":5126,"count":len(UV),"type":"VEC2"}); att["TEXCOORD_0"]=len(accs)-1
+            prims.append({"attributes":att,"indices":ai,"material":mi})
         gl={"asset":{"version":"2.0","generator":"cedwyn revival glb.py — Sion's Tab agent"},"scene":0,"scenes":[{"nodes":[0],"name":self.name}],
             "nodes":[{"mesh":0,"name":self.name,**({"extras":extras} if extras else {})}],"meshes":[{"name":self.name,"primitives":prims}],
-            "materials":mats,"accessors":accs,"bufferViews":views,"buffers":[{"byteLength":len(bufs)}]}
+            "materials":mats,**({"images":images,"textures":textures,"samplers":[{"magFilter":9729,"minFilter":9987,"wrapS":10497,"wrapT":10497}]} if images else {}),"accessors":accs,"bufferViews":views,"buffers":[{"byteLength":len(bufs)}]}
         if extras: gl["asset"]["extras"]=extras
         js=json.dumps(gl,ensure_ascii=False).encode('utf8'); js+=b' '*((4-len(js)%4)%4)
         while len(bufs)%4: bufs+=b'\0'
