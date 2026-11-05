@@ -32,8 +32,9 @@
     "existing_mirrors": 8,
     "existing_standalone": 1,
     "missing_repositories": 50,
-    "source_unresolved": 4,
-    "composite_apps": 5
+    "source_unresolved": 3,
+    "composite_apps": 5,
+    "source_branch_mappings": 62
   },
   "safety": {
     "preserve_old_branches": true,
@@ -1165,9 +1166,17 @@
       "source_themes": [
         "terrain"
       ],
-      "source_branches": [],
-      "composition": "source_unresolved",
-      "creation_gate": "resolve_source_first",
+      "source_branches": [
+        {
+          "theme_id": "terrain",
+          "source_repository": "unclehowell/terrain",
+          "branch": "main",
+          "tip_sha": "ac2c0ca2498eae4cfc4b484d65aab4f484cbaedb",
+          "branch_role": "standalone_repository_default_branch"
+        }
+      ],
+      "composition": "single_source",
+      "creation_gate": "already_standalone_dependency_and_test_audit_required",
       "notes": [
         "Existing standalone repository omitted from navigator apps.json (repo=null there); no Cedwyn branch source."
       ]
