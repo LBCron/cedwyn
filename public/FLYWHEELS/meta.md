@@ -5,7 +5,7 @@
 **Runner:** `the meta flywheel runner on the project box` (on the project workspace)
 
 ## Purpose
-The outermost loop: reflects on every other loop and task, benchmarks each against the repository, the live site and the task tracker, keeps deterministic per-loop performance data, and adds, retires, merges or re-times loops (its own settings included) on a nested halving ladder of cadences. North star: sales, traffic and the digital reconstruction of the farm and estate.
+The outermost loop: reflects on every other loop and task, benchmarks each against the repository, the live site and the task tracker, keeps deterministic per-loop performance data, and adds, retires, merges or re-times loops (its own settings included) on a nested halving ladder of cadences. North star: sales, traffic and the digital reconstruction of the manorial house and estate.
 
 ## Inputs
 - the live schedule list

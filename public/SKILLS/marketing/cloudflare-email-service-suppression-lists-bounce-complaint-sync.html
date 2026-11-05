@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Cloudflare Email Service suppression lists + bounce/complaint sync (read 5 Nov 2026) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Cloudflare Email Service suppression lists + bounce/complaint sync (read 5 Nov 2026)"><link rel="alternate" type="text/markdown" href="cloudflare-email-service-suppression-lists-bounce-complaint-sync.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Cloudflare Email Service suppression lists + bounce/complaint sync (read 5 Nov 2026)</h1>
+<p>Topic: email deliverability. What Cloudflare's own sender does with bounces and spam complaints, how a send fails when a recipient is suppressed, and the one switch to check before any Worker sends mail from bucklerfamily.estate. Pairs with cloudflare-email-service-free-verified-destination-alerts.md and gmail-send-as-custom-domain-dmarc-alignment.md (both 5 Nov).</p>
+<h2>What the primary sources state (Cloudflare docs, read 5 Nov 2026)</h2>
+<ul>
+<li>Suppression list = recipients Email Service will not contact. Cloudflare adds entries after eligible bounces and spam complaints; you can add manual ones. Applies to Email Sending only (not Email Routing).</li>
+<li>Scope: <code>account</code> (every sending domain and subdomain) or <code>sending_domain</code> (exact domain only: a suppression on example.com does NOT block mail.example.com and vice versa). Bounce/complaint suppressions take the sending domain of the message that bounced; a complaint whose domain can't be identified becomes <code>account</code>.</li>
+<li>Expiry rules (Suppression lists page, updated 25 Sep 2026):</li>
+<li>manual: your choice or never; dashboard entries default to <code>account</code> scope</li>
+<li>complaint (validated feedback report from the mailbox provider): never expires</li>
+<li>hard bounce, mailbox/domain does not exist or persists across repeated attempts: never expires</li>
+<li>other eligible hard bounce: 7 days</li>
+<li>soft bounce (full mailbox, rate limit): 24 hours by default; sender-side auth/reputation failures do NOT create a suppression</li>
+<li><code>read_only: true</code> entries (incl. Cloudflare <code>policy</code> entries) can't be deleted; use the flag, not the reason, to decide.</li>
+<li>Enforcement ("Drop suppressed recipients" per sending domain, OFF by default):</li>
+<li>OFF: REST API returns 400 and rejects the whole request if ANY recipient is suppressed; Workers binding throws <code>E_RECIPIENT_SUPPRESSED</code> and rejects the whole <code>send()</code>; SMTP rejects the message.</li>
+<li>ON: suppressed recipients are removed and the rest go out. SMTP edge case: if none remain it may answer <code>250 2.0.0 Ok</code> with no Message-ID and deliver nothing.</li>
+<li>Suppressed recipients don't count toward quota/daily limits; they show as Rejected in sending logs.</li>
+<li>Import: paste or upload .csv/.txt (<code>email[,RFC3339 expiry[,scope]]</code>, no header) or .json.</li>
+<li>Deliverability page (updated 26 Oct 2026): hard bounces never retried; soft bounces retried with exponential backoff; Cloudflare handles ISP complaint feedback itself.</li>
+<li>Sync example (Email Sending event subscriptions -&gt; Queue -&gt; Worker -&gt; KV): remove the app's own record on every <code>message.complained</code>; on <code>message.bounced</code> only when <code>payload.bounce.type == "hard"</code>; <code>message.deferred</code> = still retrying; exhausted soft retries can arrive as <code>message.bounced</code> with type <code>"soft"</code> (keep the record). KV deletions can take 60 s+ to propagate.</li>
+<li>Best practices (Cloudflare): add manual suppressions for unsubscribes; <code>account</code> scope when a person must get nothing from any of our domains; require a fresh opt-in before deleting a complaint suppression; let temporary ones expire.</li>
+</ul>
+<h2>How to do it (checklist)</h2>
+<ol>
+<li>Before the first Worker send from a domain, decide the Drop switch. For one-recipient alerts leave it OFF (a suppressed address should fail loudly). For any multi-recipient send turn it ON, or one complaint blocks the whole batch.</li>
+<li>Wrap every <code>send()</code> in try/catch: on <code>E_RECIPIENT_SUPPRESSED</code> log the event id + "suppressed" and stop; never retry, never route the same mail through another sender (that dodges the provider's signal).</li>
+<li>Mirror unsubscribes: when someone unsubscribes in Mailchimp or replies "stop", add a manual <code>account</code>-scope suppression with no expiry for any address our Workers might mail.</li>
+<li>Monthly: export the Suppressions table (reason, scope, expiry) into the growth notes; a complaint entry on an alert address means our own alerts are being junked: fix content or frequency first.</li>
+<li>Only if we ever mail more than verified destinations: subscribe a queue to <code>message.bounced</code> + <code>message.complained</code> and drop hard-bounced/complained addresses from our own lists (sync example).</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Today Cedwyn only has Email Routing; Email Sending to verified destination addresses (the Executive's own inbox for sale/signup alerts) is the free route PROPOSED in the 5 Nov alerts skill. When that Worker is built: Drop switch OFF (single recipient), try/catch on <code>E_RECIPIENT_SUPPRESSED</code>, write failures to the alert log, metric = alerts rejected per week (target 0).</li>
+<li>Never use Cloudflare sending for the newsletter or institution correspondence: the newsletter stays in Mailchimp (its own suppression handling), institution mail stays in Gmail. That keeps one complaint from blocking sale alerts.</li>
+<li>Nothing to change in the dashboard until the Executive's Worker exists. All DNS/Worker changes are PROPOSED on the Executive's GO; zero spend (verified-destination sends are free per the 5 Nov pricing read).</li>
+<li>Not checked: whether <code>read_only</code> policy entries can appear for verified destination addresses; whether the free plan shows the Suppressions page with Email Routing only.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>developers.cloudflare.com (read, updated 2026-09-25)</li>
+<li>developers.cloudflare.com (read, updated 2026-09-25)</li>
+<li>developers.cloudflare.com (read, updated 2026-10-26)</li>
+<li>developers.cloudflare.com (read)</li>
+</ul><p class="raw">Raw Markdown: <a href="cloudflare-email-service-suppression-lists-bounce-complaint-sync.md">cloudflare-email-service-suppression-lists-bounce-complaint-sync.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

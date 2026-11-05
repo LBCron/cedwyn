@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Bot clicks from security scanners: read B2B/institutional click data honestly · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Bot clicks from security scanners: read B2B/institutional click data honestly"><link rel="alternate" type="text/markdown" href="bot-clicks-security-scanners-institutional-email-analytics.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Bot clicks from security scanners: read B2B/institutional click data honestly</h1>
+<p>Harvested 2026-11-05. Topic: analytics + email outreach to UK institutions. ("link scan", "click tracking", "non-human" 0 hits in INDEX before; "bot click" 5 passing mentions.)</p>
+<h2>The evidence</h2>
+<ul>
+<li>M3AAWG (anti-abuse industry body), Non-Human Interactions document (Nov 2020, PDF; figures via two 2026 vendor write-ups, PDF not re-read): automated activity can be 20%-80% of recorded clicks on B2B email, under 10% on large consumer mailbox providers (Gmail/Yahoo/Outlook.com).</li>
+<li>Scanners that pre-click every link: Microsoft Defender for Office 365 Safe Links, Proofpoint URL Defense, Mimecast URL Protect, Barracuda Link Protection (emailcalculator.com blog, 22 Aug 2026, read).</li>
+<li>Practitioner tell (r/email thread, 2026, snippet): a "click" within ~3 seconds of delivery is a gateway pre-scan, not a reader.</li>
+<li>HubSpot KB "Understand bot filtering in marketing email analytics" (updated 19 Oct 2026, read): when bot filtering is on, HubSpot excludes suspected bots (IP blocklists + speed patterns), explicitly including security scanners, Apple MPP and corporate screeners such as Mimecast; the email performance page shows opens/clicks with and without bots.</li>
+<li>Mailchimp Help "About Bot Activity and Bot Filtering" (read): filtering is ON by default, account-wide; filtered history exists from 10 Jul 2024 (MPP opens) and 10 Aug 2025 (email clicks); "your open and click metrics will drop significantly" when it is on; use bounces, unsubscribes and conversions alongside.</li>
+</ul>
+<h2>Signals a click was a machine</h2>
+<ol>
+<li>Seconds after delivery, before any open.</li>
+<li>Every link in the email clicked at once by one recipient (including footer, unsubscribe-adjacent and image links).</li>
+<li>Datacentre/vendor IP ranges, odd user agents, no page view after the click in site analytics.</li>
+<li>Click with no session on the site (Cloudflare/analytics shows no matching visit) -&gt; treat as unread.</li>
+</ol>
+<h2>The rules</h2>
+<ol>
+<li>Never treat an institutional click as interest. A council, university, museum or police address clicking = "delivered past the gateway", nothing more.</li>
+<li>Keep bot filtering ON in Mailchimp (default) and turn it ON in HubSpot; compare the with/without figures once and record the gap.</li>
+<li>Judge institutional outreach on replies and on-site actions (sample download, signup, purchase), never opens or clicks.</li>
+<li>A/B tests on institutional lists: use replies or conversions as the metric; click-based winners on these lists are noise.</li>
+<li>For one-to-one emails to institutions, send plain text with untracked links (Gmail personal send has no tracking); tracked redirect links in cold mail also look phishing-like to the same scanners.</li>
+<li>Optional honeypot: a 1x1 hidden link at the top of an HTML campaign; anyone "clicking" it is a bot. Exclude those contacts' clicks for that send. (Common practitioner tactic; not tested by us.)</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Hive/HubSpot drafts to councils, Land Registry, archives and museums go from the connected Gmail as plain text: no tracking to misread. Keep it that way; never move them to a tracked tool.</li>
+<li>Mailchimp newsletter: confirm bot filtering is on (Analytics &gt; Analytics settings) before the Sunday growth report reads click numbers; note in weekly.csv whether figures are filtered.</li>
+<li>Growth report and traffic flywheel: for any send that went to .gov.uk / .ac.uk / museum addresses, report clicks only where the site analytics shows a matching visit to the tracked UTM page; otherwise "delivered".</li>
+<li>The e-book PR and WI/u3a speaker-secretary mailings: success = reply or booking, never click rate.</li>
+<li>Tŷ Mawr (Great House) campaign links carry UTMs already; match utm_campaign visits in Cloudflare against Mailchimp clicks for one send to measure our own bot gap (one-off, 10 minutes).</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>knowledge.hubspot.com (read 2026-11-05)</li>
+<li>mailchimp.com (read 2026-11-05)</li>
+<li>emailcalculator.com (read 2026-11-05)</li>
+<li>clearout.io (read 2026-11-05)</li>
+<li>m3aawg.org (primary; figures via the two pages above, not re-read)</li>
+<li>reddit.com (snippet)</li>
+</ul><p class="raw">Raw Markdown: <a href="bot-clicks-security-scanners-institutional-email-analytics.md">bot-clicks-security-scanners-institutional-email-analytics.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

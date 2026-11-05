@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>BookTube small history reviewers: find them with the yt-dlp finder, size them, ask reader-first · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: BookTube small history reviewers: find them with the yt-dlp finder, size them, ask reader-first"><link rel="alternate" type="text/markdown" href="booktube-small-history-reviewers-finder-reader-first-ask.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>BookTube small history reviewers: find them with the yt-dlp finder, size them, ask reader-first</h1>
+<p>Date: 2026-11-05 · Harvest run (lead from the 07:35Z run: "BookTube small reviewers for nonfiction").
+Status: channel numbers below were READ on 2026-11-05 from public YouTube via the box (yt-dlp). Advice lines are practitioner testimony, quoted with source.</p>
+<h2>Why small channels</h2>
+<ul>
+<li>In a test search on 2026-11-05 ("welsh history book review", "local history book review uk", "history book haul nonfiction booktube", 8 results each), the channels that actually review history books were mostly small: The History Fella 582 subs, KRAZTV 1,750 (a John Davies <em>History of Wales</em> review, 178 views), Graham Loveluck-Edwards 2,770, BritainsHiddenHistory Ross 11,200 (median 1,234 views on the hits), The History Shelf 21,900 (median 2,447), BenjaminAngwin 21,200 ("You need this book to understand Wales!", 1,499 views).</li>
+<li>A 1,000-view review by a Wales or local-history channel reaches more of the right readers than a big general channel ever would. BookBub's Bookstagram advice makes the same point (genre match beats size; see bookstagram-10-post-test-niche-tags-history-ebook.md).</li>
+<li>A r/books thread on BookTube economics notes that "the huge channels earn their livelihood with booktube. So they have to avoid making vids with small views". A niche regional e-book is exactly that kind of small-view video, so big channels are a poor fit (reddit.com).</li>
+</ul>
+<h2>Method (about 10 minutes, free)</h2>
+<ol>
+<li>Run the finder (tool below) with 3-5 niche queries: place + "history book review", "local history book review uk", "history book haul", "welsh history books". Use <code>--max-subs 30000</code>.</li>
+<li>Keep channels with 2 or more hits, or 1 hit that is a real review of a place-history book. Drop councils, archives, news outlets and fiction-only channels. Archives such as Cumbria Archive Service are a separate route: institutions, not reviewers.</li>
+<li>Open each channel's About tab and note any review policy and business email. Many BookTubers post one, e.g. "I would gladly receive review copies from publishers" (readthistwice.com).</li>
+<li>Check the last 5 uploads are within about 60 days. A dormant channel won't review.</li>
+<li>To widen the net, Nonfiction Authors Association (Stephanie Chandler) suggests a Google Alert on <code>"book review" &lt;genre&gt;</code>, e.g. <code>"book review" "welsh history"</code>. Note who writes the reviews, check that the site is credible, then "send a note asking if they would like a review copy … along with a brief overview". Build the list "several months in advance" (nonfictionauthorsassociation.com).</li>
+<li>The ask is reader-first: "would you like to read it?", never "will you feature it?". One short note with a one-paragraph overview and a free download link, and no attachments. Gifted copies need the creator to disclose them under UK CMA/ASA rules (gifted-ebook-copies-history-creators-uk-cma-asa-disclosure.md).</li>
+</ol>
+<h2>Tool</h2>
+<p><code>tools/booktube_finder.py</code> (stdlib + the yt-dlp already on the box, 0 bytes installed, no API key, read-only).
+<code>python3 tools/booktube_finder.py "welsh history book review" "local history book review uk" --n 8 --max-subs 30000</code>
+Output: subscribers, hits across queries, median views of the hit videos, channel URL, a sample title. Box-tested 2026-11-05: 3 queries x 8 results gave 17 channels in about 25 s.</p>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Run the finder once a month with Wales/Glamorgan/Cardiff/local-history queries. Keep a shortlist in the project workspace with columns channel, subs, last upload, policy, email, fit note.</li>
+<li>First candidates from today's run: KRAZTV, Graham Loveluck-Edwards, BenjaminAngwin (Wales history series), BritainsHiddenHistory Ross, The History Fella. Check each About page before listing it.</li>
+<li>Any review-copy ask is outreach, so it goes on the proposals queue (the project workspace) for the project lead's press GO. No DMs, no comments, nothing sent by script.</li>
+<li>The offer is the free v0.0.1 edition (the version rule makes it free anyway), with a /ebooks/ link tagged <code>utm_source=youtube&amp;utm_medium=review&amp;utm_campaign=booktube_&lt;channel&gt;</code>.</li>
+<li>Measure: clicks per tagged link at 30 days. A review that brings fewer than 10 clicks means that channel type is dropped from the next shortlist.</li>
+<li>Do not overstate: no source gives sales per BookTube review for nonfiction or local history. That figure is not checked.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>Box read 2026-11-05: yt-dlp ytsearch results + channel_follower_count (YouTube public pages)</li>
+<li>nonfictionauthorsassociation.com (read; post dated 2015, method still current)</li>
+<li>readthistwice.com (snippet: example review policy; page is JS-rendered)</li>
+<li>reddit.com (snippet)</li>
+</ul><p class="raw">Raw Markdown: <a href="booktube-small-history-reviewers-finder-reader-first-ask.md">booktube-small-history-reviewers-finder-reader-first-ask.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>
