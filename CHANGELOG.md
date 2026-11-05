@@ -1,5 +1,17 @@
 # Changelog
 
+## [library-v2.2.0] - 2026-11-05
+
+### Changed
+- Architecture page rewritten as the whole-site guide (map, repository layout, build and deploy, Workers, site areas, catalogue database, data flows, flywheels, contributing, not checked, changelog table). Issue #195.
+- Catalogue counts refreshed from /db/stats.json; section list refreshed from themes.json (build.py --refresh).
+- Library theme switched to a dark palette (no white backgrounds).
+
+## [library-v2.1.0] - 2026-10-31
+
+### Added
+- Cedwyn Snowball page and programme pointers (library.json, llms guide).
+
 ## [library-v2.0.0] - 2026-10-24
 
 ### Changed
