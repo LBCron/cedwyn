@@ -13,3 +13,5 @@ Every change to the live site goes through a pull request first, so it can be pr
 
 Adapted from the datro repo's Cloudflare Pages per-branch deploys (`wrangler pages deploy --branch`, deploy-qa.yml) and its
 October 2025 move to Cloudflare Pages git previews. No Cloudflare token is stored in this repo; Cloudflare builds the previews itself.
+
+Source: unclehowell/datro `.github/workflows/deploy-qa.yml` (gh-pages, `wrangler pages deploy --branch`); Cloudflare Pages project `cedwyn` preview settings.

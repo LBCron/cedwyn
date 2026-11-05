@@ -54,7 +54,7 @@ jobs:
               except urllib.error.HTTPError as e: return e.code
               except Exception: return 0
           pr=api('GET',f'/repos/{R}/pulls/{N}')
-          base,head=lock(pr['base']['sha']),lock(pr['head']['sha'])
+          base,head=lock(pr['base']['sha']).get('sections',{}),lock(pr['head']['sha']).get('sections',{})
           branches=[]
           hb=pr['head']['ref']
           if hb.startswith('staging/') or hb.startswith('section/'): branches.append((hb,'this PR'))
