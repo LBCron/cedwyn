@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn_academy_architecture/v1",
- "version": "1.0.17",
+ "version": "1.0.18",
  "updated": "2026-11-05",
  "refreshed_by": "the agent library cycle (every 6 hours); edit this file, then rebuild the academy",
  "source_documents": [
@@ -933,6 +933,10 @@
   {
    "url": "film-studio repository (separate, public)",
    "what": "the documentary as code: one JSON package per scene and shot, manifests with checksums, render and quality-gate tools; media stored as repository release files with content ids; validated by its own CI, never rendered by CI"
+  },
+  {
+   "url": "/mcp/archive (card: /.well-known/mcp/server-card.json)",
+   "what": "read-only MCP server for the Cedwyn record over streamable HTTP, registry name estate.bucklerfamily.cedwyn/archive; tools get_cedwyn_guide, search_cedwyn_names, list_cedwyn_ebooks, read_cedwyn_page, get_catalogue_export, get_provenance, list_open_agent_jobs. /mcp stays the read-only traffic server. Provenance: SHA-256 list and OpenTimestamps proofs of the catalogue export files (5 Nov 2026)"
   }
  ],
  "autoresearch_pattern": {
@@ -2022,6 +2026,55 @@
     "never merges",
     "mailbox housekeeping is label and archive only",
     "zero spend"
+   ],
+   "pattern": "autoresearch"
+  },
+  {
+   "id": "3d-model",
+   "name": "3D model loop",
+   "cadence": "every 2 hours",
+   "does": "Renders fixed views of the Tŷ Mawr model, scores each against reference photographs, files mismatches as issues and redraws the model.",
+   "inputs": [
+    "layout source",
+    "written corrections",
+    "reference photographs"
+   ],
+   "outputs": [
+    "model on the revival branch preview",
+    "per-view scores",
+    "issues"
+   ],
+   "touches": [
+    "section/revival-ar"
+   ],
+   "guardrails": [
+    "never merges",
+    "reference paintings stay off the public site",
+    "owner corrections outrank images"
+   ],
+   "pattern": "autoresearch"
+  },
+  {
+   "id": "repo-split",
+   "name": "Webapp branch split",
+   "cadence": "every 15 minutes until done",
+   "does": "Splits the site into 59 webapp branches plus a 60th navigator branch (central database, landing page, header) that loads each webapp in a container.",
+   "inputs": [
+    "main and section branches",
+    "parcel slot registry"
+   ],
+   "outputs": [
+    "webapp branches with previews",
+    "navigator branch",
+    "progress count of 59"
+   ],
+   "touches": [
+    "section branches through pull requests"
+   ],
+   "guardrails": [
+    "never merges",
+    "no force-push",
+    "never dispatches or cancels a running build"
    ],
    "pattern": "autoresearch"
   }

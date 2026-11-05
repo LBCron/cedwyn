@@ -98,5 +98,6 @@ States: BUILT 2 · BUILT, 3 · DATA-DRIVEN 2 · GENERATED 1 · HARD-CODED 16 · 
 - `/_cedwyn/`: shared runtime, header files, versions file, A2UI catalog; scope.js and scope-map.json (Wales / Argentina / Online scope switching, standing orders section 'Scopes')
 - `/db/`: the catalogue database in chunks
 - `film-studio repository (separate, public)`: the documentary as code: one JSON package per scene and shot, manifests with checksums, render and quality-gate tools; media stored as repository release files with content ids; validated by its own CI, never rendered by CI
+- `/mcp/archive (card: /.well-known/mcp/server-card.json)`: read-only MCP server for the Cedwyn record over streamable HTTP, registry name estate.bucklerfamily.cedwyn/archive; tools get_cedwyn_guide, search_cedwyn_names, list_cedwyn_ebooks, read_cedwyn_page, get_catalogue_export, get_provenance, list_open_agent_jobs. /mcp stays the read-only traffic server. Provenance: SHA-256 list and OpenTimestamps proofs of the catalogue export files (5 Nov 2026)
 
 Shared across all of them: the header and menu files and `/_cedwyn/versions.json` (see [Structure](structure.md)).

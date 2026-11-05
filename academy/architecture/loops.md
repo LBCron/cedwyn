@@ -1,6 +1,6 @@
 # Maintenance loops
 
-43 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
+45 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
 
 ## The autoresearch pattern
 
@@ -489,6 +489,26 @@ Details: [Data architecture](data.md).
 **Outputs:** branches and pull requests with previews; lane progress files  
 **Areas it touches:** section and staging branches through pull requests  
 **Guardrails:** never merges; mailbox housekeeping is label and archive only; zero spend; one worker at a time (duplicate check by goal prefix).
+
+<a id="3d-model"></a>
+### 3D model loop
+
+**Cadence:** every 2 hours  
+**What it does:** Renders fixed views of the Tŷ Mawr model, scores each against reference photographs, files mismatches as issues and redraws the model.  
+**Inputs:** layout source; written corrections; reference photographs  
+**Outputs:** model on the revival branch preview; per-view scores; issues  
+**Areas it touches:** section/revival-ar  
+**Guardrails:** never merges; reference paintings stay off the public site; owner corrections outrank images; one worker at a time (duplicate check by goal prefix).
+
+<a id="repo-split"></a>
+### Webapp branch split
+
+**Cadence:** every 15 minutes until done  
+**What it does:** Splits the site into 59 webapp branches plus a 60th navigator branch (central database, landing page, header) that loads each webapp in a container.  
+**Inputs:** main and section branches; parcel slot registry  
+**Outputs:** webapp branches with previews; navigator branch; progress count of 59  
+**Areas it touches:** section branches through pull requests  
+**Guardrails:** never merges; no force-push; never dispatches or cancels a running build; one worker at a time (duplicate check by goal prefix).
 
 ## Also in the flywheel list
 
