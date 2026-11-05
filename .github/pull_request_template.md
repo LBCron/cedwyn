@@ -1,9 +1,8 @@
 <!-- GitHub Issues are the canonical project work ledger. See docs/GITHUB-ISSUES-WORKFLOW.md. -->
 ## Canonical work issue
 
-Closes #<!-- issue number only when this PR fully satisfies the issue; otherwise use "Part of #123" below -->
-
-<!-- If this PR is partial, blocked or only one part of the issue, replace the line above with: Part of #123 -->
+- Issue: #
+- Relationship: closes / part of / blocks / unblocks (choose one)
 
 ## Summary
 
