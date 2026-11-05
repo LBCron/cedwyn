@@ -3,12 +3,12 @@
   "pages_scanned": 9394,
   "references_checked": {
     "resource": 217238,
-    "nav": 479902
+    "nav": 479904
   },
-  "database_backed_paths": 7441,
+  "database_backed_paths": 7438,
   "unique_missing_destinations": 6402,
-  "missing_references": 53233,
-  "missing_navigation_references": 37305,
+  "missing_references": 53232,
+  "missing_navigation_references": 37304,
   "missing_resource_references": 15928,
   "unique_broken_fragments": 1834,
   "broken_fragment_references": 3562,
@@ -802,7 +802,7 @@
     {
       "kind": "nav",
       "path": "/research/>*.html",
-      "references": 35,
+      "references": 34,
       "examples": [
         {
           "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
