@@ -1,0 +1,191 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>The Release Machine · publication dates of related documents, 1987-2026 · Cedwyn</title>
+<meta name="description" content="A music-maker style sequencer of the publication dates of documents related to Great House Farm (Tŷ Mawr), Llandough and the Cedwyn research, 1987-2026. Every populated title is hyperlinked to its source.">
+<script src="/_cedwyn/ghf/ghf-boot.js?v=2.1.26"></script>
+<script>
+/* Theme fallback when ghf-boot is not available (e.g. offline preview): same keys the site uses. */
+(function(){function m(){var d=document.documentElement;if(d.hasAttribute('data-ghf-mode'))return;var t=null;try{t=localStorage.getItem('ghf-theme')}catch(e){}
+if(t!=='day'&&t!=='night'){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'night':'day';}
+d.setAttribute('data-ghf-mode',t);}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',m);}else{m();}
+try{window.addEventListener('storage',function(e){if(e.key==='ghf-theme'){document.documentElement.removeAttribute('data-ghf-mode');m();}});}catch(e){}})();
+</script>
+<style>
+html[data-ghf-mode="night"],html:not([data-ghf-mode]){color-scheme:dark;
+ --bg:#14141c;--panel:#1d1d28;--line:#2c2c3a;--ink:#e8e8f0;--muted:#9a9ab0;--accent:#fca;--link:#9cc8ff}
+html[data-ghf-mode="day"]{color-scheme:light;
+ --bg:#f7f6f2;--panel:#ffffff;--line:#ddd8ce;--ink:#1c1c22;--muted:#5c5a52;--accent:#8a5a00;--link:#0645ad}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--link)}
+header.rm{padding:14px 16px 10px;border-bottom:2px solid var(--accent);display:flex;flex-wrap:wrap;gap:10px;align-items:baseline}
+header.rm a.home{color:var(--accent);font-weight:700;text-decoration:none;font-size:18px}
+header.rm h1{font-size:1.25em;margin:0}
+header.rm .sub{color:var(--muted);font-size:.9em;flex-basis:100%}
+main{padding:12px 12px 48px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 12px}
+.controls button{font:inherit;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 14px;cursor:pointer;font-weight:600}
+.controls button.on{background:var(--accent);color:#14141c;border-color:var(--accent)}
+.controls .hint{color:var(--muted);font-size:.85em;flex-basis:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 12px;font-size:.82em;color:var(--muted)}
+.legend b{color:var(--ink);font-weight:600}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+.seqwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.seq{border-collapse:separate;border-spacing:3px}
+.seq th,.seq td{padding:0}
+.seq thead th{font-size:.62em;color:var(--muted);font-weight:600;min-width:24px;text-align:center;padding:2px 0}
+.seq thead th.cur{color:var(--accent)}
+.seq thead th:first-child,.seq tbody th{position:sticky;left:0;background:var(--panel);z-index:2;text-align:left;min-width:240px;max-width:320px}
+.seq tbody th{font-weight:500;padding:4px 10px 4px 8px;border-radius:6px}
+.seq tbody th .tt{display:block;font-size:.92em;line-height:1.3}
+.seq tbody th .meta{display:block;font-size:.72em;color:var(--muted);font-weight:400;margin-top:2px}
+.seq tbody tr.hit th{background:var(--line)}
+tr.aux{display:none}
+body.show-aux tr.aux{display:table-row}
+td.cell{width:26px;height:30px;text-align:center}
+.pad{display:block;width:22px;height:22px;margin:0 auto;border-radius:5px;background:var(--line);opacity:.35;border:0;padding:0}
+td.on .pad{opacity:1;cursor:pointer;box-shadow:0 0 6px 0 rgba(0,0,0,.25)}
+td.on .pad:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+tr.hit td.on .pad{transform:scale(1.18);box-shadow:0 0 10px 1px currentColor}
+.pad.t-print{background:#58c472;color:#58c472}.dot.t-print{background:#58c472}
+.pad.t-article{background:#4fc3f7;color:#4fc3f7}.dot.t-article{background:#4fc3f7}
+.pad.t-foi{background:#ef6b5e;color:#ef6b5e}.dot.t-foi{background:#ef6b5e}
+.pad.t-site{background:#3ec9b0;color:#3ec9b0}.dot.t-site{background:#3ec9b0}
+.pad.t-judgment{background:#b07fe8;color:#b07fe8}.dot.t-judgment{background:#b07fe8}
+.pad.t-catalogue{background:#5b8def;color:#5b8def}.dot.t-catalogue{background:#5b8def}
+.pad.t-capture{background:#e8b34a;color:#e8b34a}.dot.t-capture{background:#e8b34a}
+.pad.t-digitisation{background:#f28bb4;color:#f28bb4}.dot.t-digitisation{background:#f28bb4}
+.note{color:var(--muted);font-size:.85em;max-width:64rem;margin:16px 0 0}
+.note h2{font-size:1em;color:var(--ink);margin:0 0 4px}
+.note li{margin:3px 0}
+@media (max-width:640px){.seq tbody th{min-width:180px;max-width:220px}.seq tbody th .tt{font-size:.85em}}
+</style>
+</head><body>
+<header class="rm"><a class="home" href="/">Cedwyn</a><h1>The Release Machine</h1>
+<p class="sub">A music-maker for publication dates: each line is a document related to Great House Farm (T&#375; Mawr), Llandough and the Cedwyn research, placed at its publication date between 1987 and 2026. Every populated title is hyperlinked to its source.</p></header>
+<main>
+<div class="controls">
+ <button id="play" aria-pressed="false">&#9654; Play</button>
+ <button id="sound" aria-pressed="false">Sound: off</button>
+ <button id="aux" aria-pressed="false">Related chronology: hidden</button>
+ <span class="hint">Press play and the playhead sweeps the years like a music maker; each pad that lights is that line's publication date. Tap a lit pad (or the title) to open the source. "Related chronology" adds lines whose date is not a publication date (a court decision, an archived capture, a catalogue record's creation, a scan upload) - clearly labelled, and never mixed into the publication lines.</span>
+</div>
+<div class="legend" id="legend" aria-label="Document types"></div>
+<div class="seqwrap"><table class="seq" id="seq" aria-label="Publication-date sequencer, 1987 to 2026"></table></div>
+<div class="note"><h2>How to read the dates</h2>
+<ul>
+<li>Every default line is a <b>publication date</b>: the document's own print or online publication date. Where only the year is known, the pad sits on the year and the line says "(year only)" - no day or month is invented.</li>
+<li>Source links open through this site's Wayback Vault, which shows its captured copy first and always offers the live website and the Internet Archive copy.</li>
+<li>Each line names its <b>source basis</b>. A library-catalogue or publisher page verifies the book and its date; it is not a full text. Full-text scans are labelled as such.</li>
+<li>The optional <b>related chronology</b> lines are not publication dates: the BAILII line is the date the judgment was handed down; the Amazon line is the date of an archived capture; the ADS line is when the catalogue record was created; the Internet Archive line is when the scan was uploaded. They are kept on separate, labelled lines so the two kinds of date are never conflated.</li>
+</ul></div>
+<noscript><p>JavaScript is needed for the sequencer. The publication entries:</p><ul id="nslist"></ul></noscript>
+</main>
+<script>
+var YEARS=[];for(var y=1987;y<=2026;y++)YEARS.push(y);
+var GROUPS=[
+ {id:'pub',label:'Publication dates',types:[
+  {id:'print',label:'Print publication'},
+  {id:'article',label:'Online publication'},
+  {id:'foi',label:'FOI release (published online)'},
+  {id:'site',label:'Site publication'}]},
+ {id:'aux',label:'Related chronology (not publication dates - hidden until toggled)',types:[
+  {id:'judgment',label:'Court decision (date handed down)'},
+  {id:'capture',label:'Web capture (archived copy)'},
+  {id:'catalogue',label:'Catalogue record created'},
+  {id:'digitisation',label:'Scan uploaded'}]}
+];
+var NOTES={print:329.63,article:392.00,foi:698.46,site:783.99,judgment:196.00,capture:523.25,catalogue:440.00,digitisation:587.33};
+/* aux:true => related chronology, hidden by default */
+var ENTRIES=[
+ {year:1987,date:'1987 (year only)',type:'print',title:'Geology of the South Wales Coalfield, Part III: the country around Cardiff - R. A. Waters & D. J. D. Lawrence (BGS memoir, HMSO)',url:'https://obnb.uk/p11005392-geology-of-the-south-wales-coalfield-pt-3-the-country-around-cardiff-memoir-for-150-000-geological-sheet-263-england-and-wales',basis:'national bibliography record',meta:'Memoir for geological sheet 263 (Cardiff)'},
+ {year:1988,date:'1988 (year only)',type:'print',title:'Biglis, Caldicot & Llandough: Three Late Iron Age and Romano-British Sites in South-East Wales - ed. David M. Robinson (BAR British Series 188)',url:'https://archaeologydataservice.ac.uk/library/browse/issue.xhtml?recordId=1080468&recordType=MonographSeries',basis:'ADS library catalogue record',meta:'Excavations 1977-79; print publication year'},
+ {year:1988,date:'1988 (year only)',type:'print',title:'An Inventory of the Ancient Monuments in Glamorgan, Vol. IV Part II: Farmhouses and Cottages (RCAHMW)',url:'https://shop.rcahmw.gov.uk/collections/downloads/products/glamorgan-inventory-vol-4-part-2-farmhouses-and-cottages-ebook',basis:'publisher page (RCAHMW shop)',meta:'Includes the Great House Farm description'},
+ {year:1993,date:'1993 (year only)',type:'print',title:'The Glamorgan Village Book - Glamorgan Federation of Women\u2019s Institutes',url:'https://search.worldcat.org/title/59959830',basis:'WorldCat library catalogue',meta:'\u201cLlandough (Penarth)\u201d entry, pp. 64-66'},
+ {year:1994,date:'1994 (year only)',type:'print',title:'The Glamorgan Hearth Tax Assessment of 1670 - ed. Elizabeth Parkinson (South Wales Record Society)',url:'https://ci.nii.ac.jp/ncid/BD10354242',basis:'CiNii library catalogue',meta:'Print publication year per catalogue'},
+ {year:1995,date:'1995 (year only)',type:'print',title:'Glamorgan (The Buildings of Wales) - John Newman',url:'https://archive.org/details/glamorganmidglam0000newm',basis:'full-text scan, Internet Archive',meta:'Great House Farm, p. 377'},
+ {year:1997,date:'1997 (year only)',type:'print',title:'Artists in Wales, c.1740-c.1851 - Paul Joyner (National Library of Wales)',url:'https://archive.org/details/artistsinwalesc10000joyn',basis:'full-text scan, Internet Archive',meta:'Handlist; Cardiff architect entries'},
+ {year:1998,date:'1998 (year only)',type:'print',title:'Bro Morgannwg - Islwyn Jones',url:'https://archive.org/details/bromorgannwg0000jone',basis:'full-text scan, Internet Archive',meta:'Vale of Glamorgan local history'},
+ {year:2002,date:'2002 (year only)',type:'print',title:'Cardiff: a Pocket Guide - John Davies',url:'https://archive.org/details/cardiffpocketgui0000davi',basis:'full-text scan, Internet Archive',meta:'Bute estate section'},
+ {year:2002,date:'2002 (year only)',type:'print',title:'A Natural History of Cardiff: Exploring along the River Taff - Mary E. Gillham',url:'https://archive.org/details/naturalhistoryof0000gill',basis:'full-text scan, Internet Archive',meta:'Includes the Ely / Llandough side'},
+ {year:2005,date:'2005 (year only)',type:'print',title:'An Early-medieval Monastic Cemetery at Llandough, Glamorgan: Excavations in 1994 - Holbrook & Thomas (Medieval Archaeology 49)',url:'https://doi.org/10.1179/007660905X54044',basis:'publisher article page (DOI)',meta:'The 1994 Great House Farm dig'},
+ {year:2007,date:'2 May 2007',type:'article',title:'The suffering of burial 631 - Museum Wales',url:'https://museum.wales/blog/1345/The-suffering-of-burial-631/',basis:'Museum Wales blog page',meta:'Published online; the 1994 Llandough cemetery excavation'},
+ {year:2026,date:'16 June 2026',type:'foi',title:'FOI release 27021: Great House Farm - Welsh Government / Cadw',url:'https://www.gov.wales/atisn27021',basis:'GOV.WALES release page',meta:'Published online'},
+ {year:2026,date:'2026 (year only)',type:'site',title:'Great House Farm (T\u0177 Mawr), Llandough - The Wiki (e-book, first edition)',url:'/ebooks/',basis:'this site (page shows v0.0.1, 2026)',meta:'First publication on this site'},
+ {year:2026,date:'20 October 2026',type:'site',title:'Concealment and Government Involvement (e-book, first edition)',url:'/ebooks/fcg/',basis:'this site (page metadata datePublished)',meta:'First publication on this site'},
+ {year:2026,date:'20 October 2026',type:'site',title:'Great House Farm Projects (e-book, first edition)',url:'/ebooks/projects/',basis:'this site (page metadata datePublished)',meta:'First publication on this site'},
+ {year:2026,date:'20 October 2026',type:'site',title:'The Disclosure Dartboard (e-book, first edition)',url:'/ebooks/dartboard/',basis:'this site (page metadata datePublished)',meta:'First publication on this site'},
+ {year:2026,date:'20 October 2026',type:'site',title:'The T\u0177 Mawr Deaths (e-book, first edition)',url:'/ebooks/tymawr-deaths/',basis:'this site (page metadata datePublished)',meta:'First publication on this site'},
+ {year:2026,date:'20 October 2026',type:'site',title:'Recorded Incidents (e-book, first edition)',url:'/ebooks/recorded-incidents/',basis:'this site (page metadata datePublished)',meta:'First publication on this site'},
+ {year:2026,date:'20 October 2026',type:'site',title:'T\u0177 Mawr (e-book, first edition)',url:'/ebooks/tymawr-heritage/',basis:'this site (page metadata datePublished)',meta:'First publication on this site'},
+ {year:2026,date:'20 October 2026',type:'site',title:'The Williams\u2013Buckler Family (e-book, first edition)',url:'/ebooks/williams-buckler-family/',basis:'this site (page metadata datePublished)',meta:'First publication on this site'},
+ {year:2026,date:'20 October 2026',type:'site',title:'Cedwyn: Names, Places, Legend and Title of T\u0177 Mawr (e-book, first edition)',url:'/ebooks/cedwyn/',basis:'this site (page metadata datePublished)',meta:'First publication on this site'},
+ {year:2026,date:'25 October 2026',type:'site',title:'Supplement: The title chain and the twelve-year pairs (PDF)',url:'/ebooks/supplement/cedwyn-supplement-2026-10-25.pdf',basis:'this site (listed on /ebooks/)',meta:'Site e-book supplement'},
+ {year:2026,date:'26 October 2026',type:'site',title:'Enwau: the names of T\u0177 Mawr - e-book',url:'/ebooks/enwau/',basis:'this site (page metadata datePublished)',meta:'Free e-book, first publication on this site'},
+ {aux:true,year:1987,date:'31 July 1987',type:'judgment',title:'BP Properties Ltd v Buckler [1987] EWCA Civ 2',url:'https://www.bailii.org/ew/cases/EWCA/Civ/1987/2.html',basis:'BAILII full text',meta:'Date the Court of Appeal handed down the judgment - a decision date, not a publication date'},
+ {aux:true,year:2002,date:'22 September 2002',type:'capture',title:'Amazon UK listing for Biglis, Caldicot & Llandough - archived copy',url:'http://web.archive.org/web/20020922115457/http://www.amazon.co.uk/exec/obidos/ASIN/0860545385',basis:'Wayback Machine capture',meta:'Capture date; proves an online listing by Sep 2002, not a publication'},
+ {aux:true,year:2008,date:'5 December 2008',type:'catalogue',title:'ADS record 1080468 for Biglis, Caldicot & Llandough',url:'https://archaeologydataservice.ac.uk/library/browse/issue.xhtml?recordId=1080468&recordType=MonographSeries',basis:'ADS record metadata',meta:'Date the catalogue record was created, not the 1988 print date'},
+ {aux:true,year:2019,date:'31 January 2019',type:'digitisation',title:'Internet Archive scan of Biglis, Caldicot & Llandough',url:'https://archive.org/details/bigliscaldicotll0000unse',basis:'Internet Archive item metadata (addeddate)',meta:'Date the scan was uploaded'}
+];
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function typeLabel(id){for(var g=0;g<GROUPS.length;g++){var ts=GROUPS[g].types;for(var i=0;i<ts.length;i++){if(ts[i].id===id)return ts[i].label;}}return id;}
+/* Legend */
+document.getElementById('legend').innerHTML=GROUPS.map(function(g){
+ return '<b>'+esc(g.label)+':</b> '+g.types.map(function(t){return '<span><span class="dot t-'+t.id+'"></span>'+esc(t.label)+'</span>';}).join('');
+}).join('<span style="flex-basis:100%"></span>');
+/* Grid */
+var html='<thead><tr><th scope="col">Document (title links to source)</th>';
+YEARS.forEach(function(y){html+='<th scope="col" data-y="'+y+'">'+String(y).slice(2)+'</th>';});
+html+='</tr></thead><tbody>';
+ENTRIES.forEach(function(e,i){
+ var ext=/^https?:/.test(e.url);
+ html+='<tr data-i="'+i+'"'+(e.aux?' class="aux"':'')+'><th scope="row"><a class="tt" href="'+esc(e.url)+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+esc(e.title)+'</a><span class="meta">'+esc(e.date)+' · '+esc(typeLabel(e.type))+' · Source: '+esc(e.basis)+' · '+esc(e.meta)+'</span></th>';
+ YEARS.forEach(function(y){
+  if(y===e.year){html+='<td class="cell on"><button class="pad t-'+e.type+'" data-i="'+i+'" aria-label="'+esc(e.title)+' - open source" title="'+esc(e.date)+'"></button></td>';}
+  else{html+='<td class="cell"><span class="pad"></span></td>';}
+ });
+ html+='</tr>';
+});
+html+='</tbody>';
+document.getElementById('seq').innerHTML=html;
+document.getElementById('seq').addEventListener('click',function(ev){
+ var b=ev.target.closest('button.pad');if(!b)return;
+ var a=document.querySelector('#seq tbody tr[data-i="'+b.dataset.i+'"] a.tt');
+ window.open(a?a.href:ENTRIES[+b.dataset.i].url,'_blank','noopener');
+});
+try{document.getElementById('nslist').innerHTML=ENTRIES.map(function(e){return '<li>'+esc(e.date)+' - <a href="'+esc(e.url)+'">'+esc(e.title)+'</a></li>';}).join('');}catch(e){}
+/* Related-chronology toggle */
+var auxBtn=document.getElementById('aux');
+auxBtn.addEventListener('click',function(){
+ var on=document.body.classList.toggle('show-aux');
+ auxBtn.setAttribute('aria-pressed',on);auxBtn.classList.toggle('on',on);
+ auxBtn.textContent='Related chronology: '+(on?'shown':'hidden');
+});
+/* Sequencer playback */
+var playing=false,timer=null,col=0,soundOn=false,actx=null;
+var playBtn=document.getElementById('play'),sndBtn=document.getElementById('sound');
+function blip(type){if(!soundOn)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+ var o=actx.createOscillator(),g=actx.createGain();o.type='square';o.frequency.value=NOTES[type]||440;
+ g.gain.setValueAtTime(0.06,actx.currentTime);g.gain.exponentialRampToValueAtTime(0.0001,actx.currentTime+0.18);
+ o.connect(g);g.connect(actx.destination);o.start();o.stop(actx.currentTime+0.2);}catch(e){}}
+function step(){
+ document.querySelectorAll('#seq thead th').forEach(function(th){th.classList.toggle('cur',+th.dataset.y===YEARS[col]);});
+ document.querySelectorAll('#seq tbody tr').forEach(function(tr){tr.classList.remove('hit');});
+ var y=YEARS[col];
+ ENTRIES.forEach(function(e,i){if(e.year===y&&(!e.aux||document.body.classList.contains('show-aux'))){var tr=document.querySelector('#seq tbody tr[data-i="'+i+'"]');if(tr)tr.classList.add('hit');blip(e.type);}});
+ col=(col+1)%YEARS.length;
+}
+playBtn.addEventListener('click',function(){
+ playing=!playing;playBtn.setAttribute('aria-pressed',playing);playBtn.classList.toggle('on',playing);
+ playBtn.innerHTML=playing?'&#9646;&#9646; Pause':'&#9654; Play';
+ if(playing){col=0;step();timer=setInterval(step,420);}else{clearInterval(timer);document.querySelectorAll('#seq tbody tr').forEach(function(tr){tr.classList.remove('hit');});document.querySelectorAll('#seq thead th').forEach(function(th){th.classList.remove('cur');});}
+});
+sndBtn.addEventListener('click',function(){
+ soundOn=!soundOn;sndBtn.setAttribute('aria-pressed',soundOn);sndBtn.classList.toggle('on',soundOn);
+ sndBtn.textContent='Sound: '+(soundOn?'on':'off');
+});
+</script>
+</body></html>
