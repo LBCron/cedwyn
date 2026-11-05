@@ -14,6 +14,9 @@
   "Work"
  ],
  "work_board": "/academy/work.json",
+ "work_authority": "GitHub Issues",
+ "work_index": "/academy/work.json",
+ "issues_url": "https://github.com/unclehowell/cedwyn/issues",
  "self_test": "/academy/ACADEMY/check.json",
  "purpose": "Everything an AI agent new to the Cedwyn project needs to inherit: soul, memory, skills, flywheels, harness and lessons.",
  "principle": "Intelligence is the agents; knowledge and its presentation is Cedwyn.",
