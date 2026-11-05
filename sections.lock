@@ -61,6 +61,11 @@
    "pinned_utc": "2026-11-04T05:56:56Z",
    "sha": "2122b92bf570e5db181db2b70a52e45f0d3ed129"
   },
+  "revival-ar": {
+   "branch": "section/revival-ar",
+   "pinned_utc": "2026-11-05T01:52:04Z",
+   "sha": "fea451f5f110107f8a56a227b9eaaffa2eb91c3f"
+  },
   "spill": {
    "branch": "section/spill",
    "pinned_utc": "2026-11-02T05:03:00Z",
