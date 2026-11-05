@@ -1,8 +1,8 @@
 {
  "site": "mr-wolf",
- "version": "2.1.0",
- "updated": "2026-11-05",
- "note": "Interface strings only. Legal analysis and leaderboard remain in English as the authoritative record; Welsh and Spanish legal translation pending.",
+ "version": "1.0.0",
+ "updated": "2026-11-01",
+ "note": "Interface strings only. Leaderboard text stays in English, the authoritative record; Welsh and Spanish translation pending.",
  "strings": {
   "Leaderboard": {
    "cy": "Tabl y blaenwyr",
@@ -29,8 +29,8 @@
    "es": "puntuación más alta"
   },
   "at 100 or more": {
-   "cy": "yn cyrraedd pob un o’r pedwar isafswm",
-   "es": "cumplen los cuatro mínimos"
+   "cy": "100 neu fwy",
+   "es": "100 o más"
   },
   "Our case, prospective, not a finding of any court.": {
    "cy": "Ein hachos, arfaethedig, nid canfyddiad gan unrhyw lys.",
@@ -39,22 +39,6 @@
   "Changelog": {
    "cy": "Log newidiadau",
    "es": "Registro de cambios"
-  },
-  "Procedural route: unresolved — filing blocked": {
-   "cy": "Llwybr gweithdrefnol: heb ei ddatrys — ffeilio wedi’i atal",
-   "es": "Vía procesal: sin resolver — presentación bloqueada"
-  },
-  "best weakest-gate progress": {
-   "cy": "cynnydd gorau'r porth gwannaf",
-   "es": "mejor avance de la puerta más débil"
-  },
-  "leads reviewed": {
-   "cy": "arweiniadau wedi’u hadolygu",
-   "es": "indicios revisados"
-  },
-  "highest raw score / 200": {
-   "cy": "sgôr crai uchaf / 200",
-   "es": "puntuación bruta más alta / 200"
   }
  }
 }
