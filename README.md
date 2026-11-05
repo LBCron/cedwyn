@@ -1,4 +1,4 @@
-# Revival AR · Llandough (v0.2.0)
+# Revival AR · Llandough (v0.2.1)
 
 Four places on the hill at Llandough, rebuilt from the records and pinned where they stood:
 Iron Age roundhouse, Roman villa, early medieval monastery (cemetery and pillar cross) and Tŷ Mawr.
