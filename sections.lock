@@ -43,8 +43,8 @@
   },
   "forensic": {
    "branch": "section/forensic",
-   "pinned_utc": "2026-11-05T11:58:59Z",
-   "sha": "6d9daa84cfd01a7dd8cfd3d07f9da2a983e45d40"
+   "pinned_utc": "2026-11-05T18:23:33Z",
+   "sha": "3ddde849b508bb73d9effb42642b9ae157fa7ee6"
   },
   "mr-wolf": {
    "branch": "section/mr-wolf",
