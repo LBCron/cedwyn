@@ -21,9 +21,9 @@
   "concepts": [
     {
       "id": "great-house-farm",
-      "name": "Great House Farm",
+      "name": "Tŷ Mawr (Great House)",
       "kind": "place",
-      "summary": "The farm and farmhouse beside St Dochdwy’s Church, Llandough-juxta-Penarth (HER GGAT02038s; NPRN 20182; NGR ST16707335).",
+      "summary": "The manorial house and former court house of a countryside estate, beside St Dochdwy’s Church, Llandough-juxta-Penarth (HER GGAT02038s; NPRN 20182; NGR ST16707335).",
       "wiki": "https://cedwyn.bucklerfamily.estate/wiki/great-house-farm/name-variations/",
       "variants": [
         {
@@ -960,7 +960,7 @@
     },
     {
       "id": "whole-farm",
-      "name": "The whole farm (Parcels A and B together)",
+      "name": "The whole estate (Parcels A and B together)",
       "kind": "land",
       "summary": "Wording for the combined holding. The Wiki tests every use against the two-parcel structure.",
       "wiki": "https://cedwyn.bucklerfamily.estate/wiki/the-two-parcels/whole-farm-nomenclature/",
