@@ -15,7 +15,7 @@ html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-u
 a{color:#9cc7ff}
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .wrap{max-width:860px;margin:0 auto;padding:8px 12px 24px}
-.about{margin-top:18px}
+.app{min-height:calc(100vh - 140px);min-height:calc(100svh - 140px)}
 .below{margin:10px 0}.about{margin:6px 0 12px}.about>p{margin-top:8px}.below summary,.about summary{cursor:pointer;color:var(--muted);font-size:15px;padding:8px 2px;min-height:40px}
 .intro{font-size:15px;color:var(--muted);margin:6px 2px 10px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -78,13 +78,15 @@ footer{margin-top:22px;text-align:center;color:var(--muted);font-size:14px}
 </head>
 <body>
 <div class="wrap">
+<main>
+<div class="app">
 <div class="parcelpick"><label for="parcelPick">Parcel of the 1824 Stewart plan</label>
 <select id="parcelPick" aria-label="Choose a parcel, 1 to 59"><option value="" selected>Pick a parcel, 1–59</option></select></div>
-<main>
 <div class="stage" data-ghf-keep>
 <svg id="ring" viewBox="-520 -440 1040 880" role="img" aria-label="Circle diagram: title holders and official actors on the ring, permissive occupancy ploys inside it, and the path of each parcel"></svg>
 <button class="replay" id="replay" aria-label="Play the line again">↻</button>
 <button class="snd" id="snd" aria-pressed="true" aria-label="Narration on">🔊</button>
+</div>
 </div>
 <details class="below"><summary>Steps and narration caption</summary>
 <p class="cap" id="cap" aria-live="polite" translate="no" data-no-translate></p>
