@@ -1,5 +1,10 @@
 # Changelog
 
+## [3.6.1] - 2026-11-05
+
+### Changed
+- App-first first screen: on load, only the header, the parcel dropdown and the diagram show. The introduction, the note on the 1824 Stewart plan parcel figures (including the unsettled 30-39 / 50-59 readings) and the title-chain link moved into a collapsed section under the diagram (steps list and caption likewise; replay opens the steps). Wording unchanged. The diagram is capped to the screen height.
+
 ## [3.6.0] - 2026-11-04
 
 ### Added
