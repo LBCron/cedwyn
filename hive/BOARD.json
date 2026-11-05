@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T12:12:47Z",
+  "updated": "2026-11-05T12:13:23Z",
   "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
   "drafts": [
     {
@@ -862,7 +862,7 @@
       "record": "HubSpot task 532517620954",
       "version": "v0.4.0",
       "status": "TURN: Tab",
-      "turn": "Tab (next independent reviewer after ChatGPT's owner-directed v0.4.0 rewrite)",
+      "turn": "Tab (next independent reviewer; HubSpot subject is authoritative)",
       "open_issues": 0,
       "last_change": "2026-11-05T12:12:47Z",
       "last_agent": "ChatGPT",
@@ -883,7 +883,7 @@
       "version_reviews": 0,
       "version_distinct_agents": 0,
       "version_agents": [],
-      "last_action_at": "2026-11-05T12:12:47Z",
+      "last_action_at": "2026-11-05T12:13:23Z",
       "last_action_by": "ChatGPT",
       "queue_after": null,
       "note": "Owner-directed substantive rewrite in response to Nia Britton's 4 Nov 2026 email; v0.4.0 is a HubSpot-only reply draft, not sent; written-only, no phone/collaboration; next independent review: Tab.",
