@@ -1,4 +1,4 @@
-/* Revival AR v0.2.3 — Llandough. Photo tripods from photos.json (tap a tripod -> the photograph taken from there). Positions and evidence from SITES.json; tour from tour.json. — Sion's Tab agent */
+/* Revival AR v0.2.4 — Llandough. Photo tripods from photos.json (tap a tripod -> the photograph taken from there). Positions and evidence from SITES.json; tour from tour.json. — Sion's Tab agent */
 (function(){
 'use strict';
 // opening camera per site (3D model loop, issue #198): Tŷ Mawr opens on the house group, not the whole 180 m model
@@ -82,7 +82,7 @@ function all(){renderCards();renderTour();pick();show(cur);var q=location.hash.r
 $('lang').value=lang; $('lang').onchange=function(){lang=this.value;document.documentElement.lang=lang;if(!me)$('gpsline').textContent=t('off');all();Object.keys(markers).forEach(function(k){var s=S.sites.filter(function(x){return x.id===k})[0];markers[k].setTooltipContent(nm(s))})};
 $('info').onclick=function(){var d=$('about');if(d.showModal)d.showModal();else d.setAttribute('open','')};
 $('locate').onclick=locate;
-Promise.all([fetch('SITES.json').then(function(r){return r.json()}),fetch('tour.json').then(function(r){return r.json()}),fetch('photos.json?v=0.2.3').then(function(r){return r.json()}).catch(function(){return {tripods:[]}})]).then(function(a){S=a[0];T=a[1];P=a[2]||P;
+Promise.all([fetch('SITES.json').then(function(r){return r.json()}),fetch('tour.json').then(function(r){return r.json()}),fetch('photos.json?v=0.2.4').then(function(r){return r.json()}).catch(function(){return {tripods:[]}})]).then(function(a){S=a[0];T=a[1];P=a[2]||P;
   var p=new URLSearchParams(location.search).get('site'); if(p) cur=p;
   initMap(); all(); if(p) show(p);});
 })();
