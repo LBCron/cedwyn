@@ -1,10 +1,10 @@
 {
- "pages": 8678,
+ "pages": 8728,
  "unwrapped_pages": 99,
  "unwrapped_folds": 634,
  "unbalanced": [],
  "themes": {
-  "academy": 891,
+  "academy": 940,
   "accounts": 1,
   "analytics": 1,
   "app": 14,
@@ -34,6 +34,7 @@
   "fb2": 121,
   "fcg": 141,
   "forensic": 133,
+  "garden": 1,
   "hubspot": 1,
   "infographic": 2,
   "kissed-frogs": 56,
