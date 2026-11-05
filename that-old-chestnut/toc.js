@@ -1,5 +1,5 @@
 /* That Old Chestnut — generative UI, built in the browser on page load from _ui/index.a2ui.json + _db/view.json.
-   No model, no paid service, no network beyond these same-site files. v0.3.3: plus _ui/latest-mail.a2ui.json (replies received after the last full audit). */
+   No model, no paid service, no network beyond these same-site files. v0.3.3: plus _ui/latest-mail.a2ui.json (replies received after the last full audit). v0.4.0: plus _ui/silence.a2ui.json (Silence). */
 (function(){
 "use strict";
 var app=document.getElementById("toc-app"); if(!app) return;
@@ -241,8 +241,29 @@ function openParcel(ev){var p=DB.copy.parcel;if(!p)return;ev.preventDefault();
  var x=$("button",{type:"button",cls:"cwp-x","aria-label":"Close",text:"×"});x.addEventListener("click",function(){d.close();});d.appendChild(x);d.appendChild(body);
  d.addEventListener("close",function(){d.remove();});document.body.appendChild(d);if(d.showModal)d.showModal();else d.setAttribute("open","");}
 
+/* ---------- v0.4.0 Silence: another kind of old chestnut. A direct question from the Executive left unanswered (in full, or skipped in a reply
+   that answered other points) stands as the Executive's account until it is explicitly challenged. Data: _ui/silence.a2ui.json (entries checked
+   against their email threads for a later reply). Ordered by date asked; days unanswered counted on the reader's clock. ---------- */
+var SIL=null;
+function SL(k){var d=(SIL&&SIL.i18n)||{};return (d[LANG]&&d[LANG][k])||(d.en&&d.en[k])||k;}
+function silDays(e){var a=Date.parse((e.asked||"")+"T00:00:00Z");if(isNaN(a))return e.days_as_of;var n=Math.floor((Date.now()-a)/86400000);return n>=0?n:e.days_as_of;}
+C.SilenceList=function(){var R=((SIL&&SIL.entries)||[]).slice();if(!R.length)return null;R.sort(function(a,b){return a.asked<b.asked?-1:a.asked>b.asked?1:0;});
+ var s=$("section",{cls:"toc-sil","aria-labelledby":"toc-sil-h",id:"silence"},[/* v0.4.1: the section opens on the count; kicker, heading, intro and method lines removed */
+  $("p",{cls:"toc-sil-count",id:"toc-sil-h"},[$("b",{text:String(R.length)}),document.createTextNode(" "+SL("sil_count"))])]);
+ var ol=$("ol",{cls:"toc-sil-ol"});R.forEach(function(e){var d=silDays(e);
+  var li=$("li",{cls:"toc-sil-li k-"+(e.back_kind||"nothing"),id:(e.id||"").toLowerCase()},[
+   $("div",{cls:"toc-sil-top"},[$("h3",{text:e.institution}),$("p",{cls:"toc-sil-days"},[$("b",{text:String(d)}),document.createTextNode(" "+SL("sil_days"))])]),
+   $("p",{cls:"toc-date",text:SL("sil_asked")+": "+e.asked}),
+   $("p",{cls:"toc-sub",text:SL("sil_q")}),$("blockquote",{cls:"q-neg"},[$("p",null,[$("q",{text:e.question})])]),
+   $("p",{cls:"toc-sub",text:SL("sil_back")+": "+SL("k_"+(e.back_kind||"nothing"))+(e.back_date?" ("+e.back_date+")":"")})]);
+  if(e.back_quote)li.appendChild($("blockquote",{cls:"q-back"},[$("p",null,[$("q",{text:e.back_quote})])]));
+  if(e.back_note)li.appendChild($("p",{cls:"toc-conduct",text:e.back_note}));
+  li.appendChild($("p",{cls:"toc-sil-status",text:SL(e.status_key||"sil_status")}));
+  li.appendChild($("p",{cls:"toc-muted toc-sil-src",text:SL("sil_src")+": "+e.source+(e.checked?" · "+SL("sil_chk")+": "+e.checked:"")}));
+  ol.appendChild(li);});s.appendChild(ol);return s;};
 function cnRoot(){var r=UI.root.slice(),has=function(c){return r.some(function(n){return n.component===c;});};
  if(!has("ChestnutList")){var i=-1;r.forEach(function(n,j){if(n.component==="Radar")i=j;});r.splice(i+1,0,{component:"ChestnutList",id:"toc-chestnuts",props:{}});}
+ if(!has("SilenceList")){var p=-1;r.forEach(function(n,j){if(n.component==="ChestnutList")p=j;});r.splice(p+1,0,{component:"SilenceList",id:"toc-silence",props:{}});}
  if(!has("ChestnutDetails")){var k=r.length;r.forEach(function(n,j){if(n.component==="Glossary"||n.component==="Footer")k=Math.min(k,j);});r.splice(k,0,{component:"ChestnutDetails",id:"toc-chestnut-details",props:{}});}return r;}
 /* ---------- render ---------- */
 function render(keep,focusId){if(radarStop&&!keep){radarStop();radarStop=null;}LANG=lang();document.body.classList.add("toc-ready");
@@ -263,5 +284,5 @@ function addLatest(L){if(!L||!DB)return;var have={};rows().forEach(function(r){h
  add.sort(function(a,b){var x=get(a,"date.sort")||"",y=get(b,"date.sort")||"";return x<y?1:x>y?-1:0;});DB.chestnuts=add.concat(rows());
  var C0=DB.copy=DB.copy||{},I0=C0.i18n=C0.i18n||{en:{}},A=C0.audit=C0.audit||{};if(L.mail_read_to&&(!A.mail_read_to||L.mail_read_to>A.mail_read_to))A.mail_read_to=L.mail_read_to;
  var I=L.i18n||{};Object.keys(I).forEach(function(l){var d=I0[l]=I0[l]||{};Object.keys(I[l]).forEach(function(k){if(d[k]==null)d[k]=I[l][k];});});}
-Promise.all([j(app.getAttribute("data-ui")),j(app.getAttribute("data-db")),j(app.getAttribute("data-rules")||"_ui/chestnut-rules.a2ui.json").catch(function(){return null;}),j(app.getAttribute("data-latest")||"_ui/latest-mail.a2ui.json").catch(function(){return null;})]).then(function(v){UI=v[0];DB=v[1];cnRules(v[2]);addLatest(v[3]);boot();}).catch(function(){var ld=app.querySelector(".toc-loading");if(ld)ld.textContent="Audit in progress. The data for this page could not be loaded just now; please try again shortly.";});
+Promise.all([j(app.getAttribute("data-ui")),j(app.getAttribute("data-db")),j(app.getAttribute("data-rules")||"_ui/chestnut-rules.a2ui.json").catch(function(){return null;}),j(app.getAttribute("data-latest")||"_ui/latest-mail.a2ui.json").catch(function(){return null;}),j(app.getAttribute("data-silence")||"_ui/silence.a2ui.json").catch(function(){return null;})]).then(function(v){UI=v[0];DB=v[1];cnRules(v[2]);addLatest(v[3]);SIL=v[4];boot();}).catch(function(){var ld=app.querySelector(".toc-loading");if(ld)ld.textContent="Audit in progress. The data for this page could not be loaded just now; please try again shortly.";});
 })();

@@ -11,7 +11,8 @@
   "nobasis": "no record of why records were left out",
   "public": "made public during the request",
   "pending": "found but not yet released",
-  "withheld": "withheld"
+  "withheld": "withheld",
+  "silence": "a direct question left unanswered (see _ui/silence.a2ui.json)"
  },
  "rules": [
   {
