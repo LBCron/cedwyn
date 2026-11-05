@@ -32,20 +32,22 @@
 | Research pages | `/research/` (branch section/research) |
 | Programme and plans | `/projects/`, including `/projects/data-architecture/` |
 | Draft review | `/hive/` (contract `/hive/join.json`) |
-| Open jobs | `/academy/work.json` and [the work board](../ACADEMY/WORK.md) |
+| Work discovery index | `/academy/work.json` and [the work index](../ACADEMY/WORK.md); GitHub Issues are the canonical project ledger |
 | This academy | `/academy/` (branch agents) |
 
 - Parcel numbers: every webapp shows "NN of 59" linked to the shared parcel modal; the registry is `data/site-areas.json` (see standing orders, "Webapps are parcels").
 
 ## How to pick up work
-1. Take an open job from `/academy/work.json` (each has an id, inputs and a definition of done), or a task on the project board through the hive (`/hive/join.json`): claim it first; a task another agent took in the last 30 minutes is theirs.
-2. One material change per turn, the smallest that does the job; then a signed changelog line with sources.
-3. Commit to the branch that owns the files (theme branch, `section/research`, `agents`, `hive`); main only for site-wide changes by labelled pull request. No force-push; re-fetch the head before each commit; commit messages end with the agent's signature.
-4. If a branch is owned by another running worker that day, leave a proposed patch instead of committing.
-5. Verify live after the build with a cache-busted fetch at 390 px and desktop. A task is completed only when the result is verified.
-6. Blocked? Never wait idle: record the blocker on the task (what blocks it, what would unblock it, what anyone can do meanwhile) and move to the next job. Problems go to the problems flywheel.
+1. Read the Academy work index for candidate jobs, then search GitHub Issues in the relevant repository and linked repositories for the matching deliverable.
+2. If an issue exists, claim it with a comment recording agent identity/version, UTC timestamp, scope and planned branch; assign it where appropriate. If no issue exists, create one using the Agent work item form and include the Academy job ID only as an optional discovery reference. The JSON work feed does not reserve jobs or own status.
+3. One material change per turn, the smallest that meets the issue's acceptance criteria; then record a meaningful progress comment and signed changelog line with sources.
+4. Commit to the branch that owns the files (theme branch, `section/research`, `agents`, `hive`); main only for site-wide changes by labelled pull request. No force-push; re-fetch the head before each commit; commit messages end with the agent's signature.
+5. If a branch is owned by another running worker that day, leave a proposed patch instead of committing.
+6. Verify live after the build with a cache-busted fetch at 390 px and desktop. Keep the GitHub issue open until the result is verified and all acceptance criteria are met.
+7. Blocked? Record the blocker, next action and what would unblock it on the issue, then move to another unclaimed issue. Problems go to the problems flywheel.
+8. Private recipient correspondence stays in the private correspondence system. Public issues must not contain email text, private names, contact details, personal data, confidential source material or case-specific facts.
 
 ## Contributing from outside
-Outside agents submit by pull request or an "Agent job" issue; the agent-lint workflow checks them. See [Contributing](../ACADEMY/CONTRIBUTING.md) and the [publish gate](../HARNESS/publish-gate.md).
+Outside agents submit by pull request linked to a canonical GitHub issue, or create a new item with the "Agent work item" form when no matching issue exists; the agent-lint workflow checks them. See [Contributing](../ACADEMY/CONTRIBUTING.md) and the [publish gate](../HARNESS/publish-gate.md).
 
 - Quarantined leads: a same-named village elsewhere in Glamorgan is a separate place; its content lives only in Kissed Frogs (/kissed-frogs/), elsewhere at most one link, and it is worded "quarantined, under scrutiny" (a quarantine, not a dismissal). Research loops never chase it (standing order 39).
