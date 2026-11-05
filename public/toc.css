@@ -141,3 +141,23 @@ html.ghf-inv .tocw .toc-cn.lv-1{background:linear-gradient(90deg,#361c00,#542800
 html.ghf-inv .tocw .toc-cn.lv-3{background:linear-gradient(90deg,#452700 0%,#a54900 30%,#f56015 60%,#ff6f6f 100%);box-shadow:0 0 0 2px #000,0 0 0 4px #ff6f6f,0 0 22px rgba(0,150,225,.75);animation:none}
 html.ghf-inv .tocw .toc-hl .toc-cn{box-shadow:0 0 0 2px #000,0 0 0 4px #ff6f6f}
 html.ghf-inv .tocw .toc-cnl-ico,html.ghf-inv .tocw .toc-cn-nut{filter:invert(1) hue-rotate(180deg)}
+
+/* v0.4.0 Silence */
+.toc-sil{margin-top:1em;padding:12px 14px;border:2px solid #8fa3ff;border-radius:14px;background:linear-gradient(180deg,#0d1020,#090b14)}
+.toc-sil h2{margin:.1em 0 .3em;color:#c9d3ff}
+.toc-sil-kick{margin:0;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:#9fb0ff}
+.toc-sil-intro{margin:.3em 0;font-weight:600;line-height:1.5}
+.toc-sil-m{font-size:.86rem;line-height:1.45}
+.toc-sil-count{margin:.4em 0 .7em;font-size:1.05rem}.toc-sil-count b{font-size:1.6em;color:#ffd36b}
+.toc-sil-ol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.toc-sil-li{padding:10px 12px;border-radius:10px;background:#11152a;border-left:4px solid #8fa3ff;overflow-wrap:anywhere;min-width:0}
+.toc-sil-li.k-nothing{border-left-color:#ff3d3d}.toc-sil-li.k-auto,.toc-sil-li.k-holding{border-left-color:#ff8a2a}.toc-sil-li.k-declined,.toc-sil-li.k-partial{border-left-color:#ffc23a}
+.toc-sil-top{display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.toc-sil-top h3{margin:.1em 0;font-size:1.02rem}
+.toc-sil-days{margin:0;white-space:nowrap;font-size:.85rem;color:var(--mute)}.toc-sil-days b{font-size:1.35em;color:#ffd36b}
+.toc-sil-li blockquote{margin:8px 0;padding:6px 12px;border-left:2px solid var(--nut);background:#0c0f1d;border-radius:4px}
+.toc-sil-li blockquote.q-back{border-left-color:#8fa3ff}
+.toc-sil-li q{quotes:"\201C" "\201D" "\2018" "\2019"}
+.toc-sil-status{display:inline-block;margin:.4em 0 .2em;padding:3px 9px;border-radius:999px;background:#1e2a5a;color:#dfe5ff;font-size:.82rem;font-weight:700}
+.toc-sil-src{font-size:.78rem;line-height:1.4}
+html.ghf-inv .toc-sil{background:linear-gradient(180deg,#0d1020,#090b14)}
