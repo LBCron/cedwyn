@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn-core/0.1.0",
  "note": "Statutory and civic records touching land in Llandough-juxta-Penarth and Leckwith, 1828-1958, catalogued 3 November 2026 for the parcel chains work. Each entry is a catalogue record of the source; which parcels each touched is open until the deposited plans and books of reference are read.",
- "updated": "2026-11-03",
+ "updated": "2026-11-05",
  "records": [
   {
    "id": "AR-GAZETTE-1884-11-25-BARRY-LLANDOUGH",
@@ -990,6 +990,64 @@
     {
      "heading": "Deposited plan",
      "text": "Parliamentary Archives HL/PO/PB/3/plan1859/P5: plan, section, book of reference, Gazette notice (catalogue entry read 3 November 2026; not seen)."
+    }
+   ]
+  },
+  {
+   "id": "AR-GAZETTE-1856-11-21-ELY-TIDAL-HARBOUR-LLANDOUGH",
+   "kind": "artifact",
+   "slug": "ar-gazette-1856-11-21-ely-tidal-harbour-llandough",
+   "title": "London Gazette, 21 Nov 1856: Ely Tidal Harbour and Railway Bill, a railway from near a house in Llandough to the River Ely",
+   "aliases": [
+    "Penarth Harbour, Dock and Railway Bill 1857"
+   ],
+   "date": {
+    "display": "21 November 1856",
+    "sort": 1856.89,
+    "precision": "date of publication"
+   },
+   "place_text": "Parish of Llandough (Llandough-juxta-Penarth): from a point near a house in the parish, to the south-west bank of the River Ely between Cogan Pill and Cwtch-y-Cwn",
+   "description": "Parliamentary notice for the 1857 session by the Ely Tidal Harbour and Railway Company (incorporated by an Act of 21 July 1856, 19 & 20 Vict. c.200; renamed the Penarth Harbour, Dock and Railway Company by the Act of 1857, 20 & 21 Vict. c.78). Among the works it lists a railway from a point near a house in Llandough, then in the occupation of John Stuart Corbett, to the south-west bank of the River Ely between Cogan Pill and Cwtch-y-Cwn, in the parishes of Llandough and Penarth. Plans and a book of reference were to be deposited. The company's earlier notice (London Gazette, 20 November 1855, issue 21816 p.4329) lists its works in Llandaff, Llandough, Leckwith, Cogan, St Mary Cardiff, Penarth Flats or West Mud, and Penarth.",
+   "transcript": "\"Also a railway from and out of the said intended railway, at a point near to a house in the parish of Llandough, in the occupation of Mr. John Stuart Corbett, to a point on the south-west bank of the River Ely, midway or thereabouts between Cogan Pill and Cwtch-y-Cwn, which said railway will be situate in the parish of Llandough and Penarth, or one of them\" […]",
+   "transcript_status": "Read on 5 November 2026 from the OCR text of the Gazette PDF; […] marks text left out; not checked against the page image.",
+   "interpretation": "With hindsight and wider context: the deposited plans with books of reference and lists of owners, lessees and occupiers are catalogued by the Parliamentary Archives as HL/PO/PB/3/plan1856/E4 and HL/PO/PB/3/plan1857/E2. The company's land papers at The National Archives include RAIL 1057/1503 (1858-1866), a draft conveyance of lands in the parishes of Llandough and Penarth from Baroness Windsor and others, and RAIL 1057/1504/1, an agreement of 30 April 1856 as to the conveyance of lands. What it shows: statutory railway and dock works over land in Llandough from 1855-57, earlier than the waterworks notices of 1858-59. What it does not show: which plots were taken, or who owned them. Which John Stuart Corbett is meant is not checked. What cuts against a wider reading: a notice of intended works is not evidence that every work was made or that any particular plot changed hands.",
+   "provenance": {
+    "holder": "The London Gazette",
+    "reference": "Issue 21943, pp.3847-3848",
+    "date": "1856-11-21",
+    "obtained": "Read on 5 November 2026 from the Gazette PDF (https://www.thegazette.co.uk/London/issue/21943/page/3847).",
+    "independent_origin_id": "ORIG-GAZETTE-21943"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of intended statutory works over land in Llandough-juxta-Penarth; plots not identified.",
+    "tags": [
+     "london-gazette",
+     "railway",
+     "dock",
+     "ely-tidal-harbour",
+     "penarth-harbour-dock-and-railway",
+     "llandough",
+     "cogan-pill",
+     "1856"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "Deposited plans",
+     "text": "Parliamentary Archives HL/PO/PB/3/plan1856/E4 and HL/PO/PB/3/plan1857/E2: plan, section, book of reference, published map, Gazette notice, list of owners, lessees and occupiers (catalogue entries read 5 November 2026; not seen)."
+    },
+    {
+     "heading": "Acts",
+     "text": "19 & 20 Vict. c.200 (1856), Parliamentary Archives HL/PO/PB/1/1856/19and20V1n200; 20 & 21 Vict. c.78 (1857), HL/PO/PB/1/1857/20and21V1n78 (catalogue entries; texts not read)."
+    },
+    {
+     "heading": "Company land papers",
+     "text": "The National Archives RAIL 1057/1502, RAIL 1057/1503, RAIL 1057/1504/1, RAIL 1057/1506 (catalogue entries read 5 November 2026; not seen)."
     }
    ]
   }
