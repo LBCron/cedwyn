@@ -1,6 +1,8 @@
 /* Revival AR v0.1.0 — Llandough. Positions and evidence from SITES.json; tour from tour.json. — Sion's Tab agent */
 (function(){
 'use strict';
+// opening camera per site (3D model loop, issue #198): Tŷ Mawr opens on the house group, not the whole 180 m model
+var CAM={tymawr:{target:'-10m 2m 2m',orbit:'-30deg 65deg 120m',fov:'30deg'}};
 var COL={roundhouse:'#b5874a',villa:'#c4553a',monastery:'#5f8fb8',tymawr:'#e8e2cf'};
 var UI={en:{conf:'Confidence',known:'From the record',est:'Reconstruction — estimated',src:'Sources',view:'View 3D / AR',tour:'Tour stop',away:'away',here:'You are here',off:'Location off — tap to show distances.',deny:'Location not shared; distances hidden.',onsite:'You are at this site. Tap “View in your space”, point the phone at open ground, turn until the arrow points north, then place it.',far:'You are {d} from this site. AR works anywhere at true size; on site it stands where the record puts it.',go:'Show on map',stop:'Stop'},
  cy:{conf:'Hyder',known:"O'r cofnod",est:'Ail-greadigaeth — amcangyfrif',src:'Ffynonellau',view:'Gweld 3D / AR',tour:'Man aros',away:'i ffwrdd',here:'Rydych chi yma',off:'Lleoliad i ffwrdd — tapiwch i weld pellteroedd.',deny:'Lleoliad heb ei rannu.',onsite:"Rydych chi ar y safle. Tapiwch “View in your space”, trowch nes bod y saeth yn pwyntio i'r gogledd, yna gosodwch.",far:'Rydych {d} o’r safle.',go:'Dangos ar y map',stop:'Man aros'},
@@ -26,6 +28,8 @@ function tab(n){[].forEach.call(document.querySelectorAll('.tabs button'),functi
 function show(id){cur=id;var s=S.sites.filter(function(x){return x.id===id})[0];tab('view');
   [].forEach.call($('pick').children,function(b){b.classList.toggle('on',b.getAttribute('data-id')===id)});
   var mv=$('mv'); mv.setAttribute('src',s.model); mv.setAttribute('alt',nm(s)+' — reconstruction'); mv.setAttribute('ios-src','');
+  var c=CAM[id]; if(c){mv.setAttribute('min-camera-orbit','auto auto 20m');mv.setAttribute('max-camera-orbit','auto auto 400m');mv.setAttribute('camera-target',c.target);mv.setAttribute('field-of-view',c.fov);mv.setAttribute('camera-orbit',c.orbit);}else{['min-camera-orbit','max-camera-orbit','camera-target','field-of-view'].forEach(function(a){mv.removeAttribute(a)});mv.setAttribute('camera-orbit','35deg 62deg auto');}
+  if(mv.jumpCameraToGoal)mv.jumpCameraToGoal();
   var L='<h3>'+esc(nm(s))+'</h3><div class="meta">'+esc(s.period)+'</div><p><b>'+t('conf')+':</b> '+esc(s.confidence)+'</p>';
   L+='<p><span class="tag k">'+t('known')+'</span></p><ul>'+s.known.map(function(k){return '<li>'+esc(k)+'</li>'}).join('')+'</ul>';
   L+='<p><span class="tag e">'+t('est')+'</span></p><ul>'+s.estimated.map(function(k){return '<li>'+esc(k)+'</li>'}).join('')+'</ul>';
