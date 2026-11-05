@@ -35,6 +35,27 @@
    "old_branch": "dartboard",
    "page": "/dartboard/",
    "mode": "mirror"
+  },
+  {
+   "app": "Analytics",
+   "repo": "unclehowell/cedwyn-analytics",
+   "old_branch": "section/analytics",
+   "page": "/analytics/",
+   "mode": "mirror"
+  },
+  {
+   "app": "Ask the Archive",
+   "repo": "unclehowell/cedwyn-chat",
+   "old_branch": "section/chat",
+   "page": "/chat/",
+   "mode": "mirror"
+  },
+  {
+   "app": "Mr Wolf",
+   "repo": "unclehowell/cedwyn-mr-wolf",
+   "old_branch": "section/mr-wolf",
+   "page": "/mr-wolf/",
+   "mode": "mirror"
   }
  ]
 }
