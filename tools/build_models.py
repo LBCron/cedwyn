@@ -84,24 +84,36 @@ m.mat('limewash',(1,1,1),0.9,tex=os.path.join(TX,'limewash.jpg'),tile=2.2); m.ma
 m.mat('rubble',(1,1,1),0.95,tex=os.path.join(TX,'rubble_house.jpg'),tile=1.6); m.mat('dressed',(1,1,1),0.9,tex=os.path.join(TX,'rubble_barn.jpg'),tile=2.0)
 m.mat('slate_barn',(1,1,1),0.6,tex=os.path.join(TX,'slate_barn.jpg'),tile=2.4); m.mat('ridge',(0.26,0.07,0.04),0.7); m.mat('frame',(0.85,0.84,0.80),0.6); m.mat('timber',(0.20,0.14,0.09),0.85)
 m.mat('brick',(0.20,0.06,0.035),0.85); m.mat('green',(0.16,0.33,0.2),0.6); m.mat('gravel',(0.33,0.30,0.25),1.0); m.mat('glass',(0.04,0.045,0.05),0.35,0.0)
-m.mat('dark',(0.08,0.08,0.08),0.9); m.mat('gate',(0.10,0.11,0.10),0.7); m.mat('pane',(0.75,0.85,0.85),0.1,0.0,0.45); m.mat('bark',(0.30,0.22,0.15),0.95); m.mat('leaf',(0.24,0.36,0.18),1.0)
+m.mat('dark',(0.08,0.08,0.08),0.9); m.mat('boards',(0.42,0.40,0.35),0.9); m.mat('gate',(0.10,0.11,0.10),0.7); m.mat('pane',(0.75,0.85,0.85),0.1,0.0,0.45); m.mat('bark',(0.30,0.22,0.15),0.95); m.mat('leaf',(0.24,0.36,0.18),1.0)
 WM={'limewash':'limewash','rubble stone':'rubble','dressed stone':'dressed'}; RM={'slate':'slate','red pantile':'pantile'}
 for b in G['buildings']:
     if b['id']=='church': continue
     wm=WM.get(b.get('walls'),'limewash'); rm=RM.get(b.get('roof'),'slate')
-    if b['id']=='stone_barn': rm='slate_barn'   # the 1988 barn photograph: paler, weathered slate
+    if b['id'].startswith('stone_barn'): rm='slate_barn'   # the 1988 barn photograph: paler, weathered slate
     if 'len_ew' in b: w,d,ridge=b['len_ew'],b['dep_ns'],'x'
     else: w,d,ridge=b['dep_ew'],b['len_ns'],'z'
     m.box(wm,b['x'],b['z'],w,d,b['eave'],top=False)
-    ry=m.gable(rm,wm,b['x'],b['z'],w,d,b['eave'],b['pitch'],ridge_along=ridge)
-    for ch in b.get('chimneys',[]):
+    ry=m.gable(rm,wm,b['x'],b['z'],w,d,b['eave'],b['pitch'],ridge_along=ridge,hip0=b.get('hip_west_pitch'))
+    for ch in b.get('chimneys',[]):   # 'x' (offset from the building centre), 'w', 'd', 'h' (height above the ridge): measured from the 1988 photograph (3D model loop run 3)
         at=ch.get('at') or ('left' if ch.get('x',0)<1 else 'right')
         cxx={'left':b['x']-w/2+0.5,'centre':b['x'],'right':b['x']+w/2-0.5}[at]
-        h0=ry if at=='centre' else b['eave']
-        m.box('brick' if 'brick' in ch['mat'] else 'rubble',cxx,b['z'],0.9,1.0,ry-h0+1.0,y0=h0)
+        if 'x' in ch: cxx=b['x']+ch['x']
+        h0=ry-1.2 if ('x' in ch or at=='centre') else b['eave']
+        cw,cd,chh=ch.get('w',0.9),ch.get('d',1.0),ch.get('h',1.0)
+        m.box('brick' if 'brick' in ch['mat'] else 'rubble',cxx,b['z'],cw,cd,ry-h0+chh,y0=h0)
+        m.box('brick' if 'brick' in ch['mat'] else 'rubble',cxx,b['z'],cw+0.12,cd+0.12,0.15,y0=ry+chh-0.25)   # projecting cap course
     if 'chimney' in b: m.box('rubble',b['x'],b['z']-d/2+0.6,1.0,0.9,ry-b['eave']+1.0,y0=b['eave'])
     if b.get('ridge_tiles'):   # red clay ridge tiles (1988 photographs of house and barn)
-        if ridge=='x': m.box('ridge',b['x'],b['z'],w+0.6,0.32,0.2,y0=ry-0.08)
+        if ridge=='x' and b.get('hip_west_pitch'):   # hipped west end: ridge tiles from the hip apex east, plus the two hip lines
+            xr=b['x']+m.hip_ridge; xe=b['x']+w/2+0.3; m.box('ridge',(xr+xe)/2,b['z'],xe-xr,0.32,0.2,y0=ry-0.08)
+            for sz in (1,-1):
+                a=[b['x']-w/2,b['eave'],b['z']+sz*d/2]; c=[xr,ry,b['z']]
+                mid=[(a[0]+c[0])/2,(a[1]+c[1])/2,(a[2]+c[2])/2]; ln=math.dist(a,c)
+                hor=math.hypot(c[0]-a[0],c[2]-a[2]); yaw=math.degrees(math.atan2(c[2]-a[2],c[0]-a[0]))
+                n=max(2,int(ln/0.5))
+                for k in range(n):   # hip tiles as short stepped pieces along the hip line
+                    t=(k+0.5)/n; m.box('ridge',a[0]+(c[0]-a[0])*t,a[2]+(c[2]-a[2])*t,ln/n+0.05,0.3,0.16,y0=a[1]+(c[1]-a[1])*t-0.06,yaw=-yaw)
+        elif ridge=='x': m.box('ridge',b['x'],b['z'],w+0.6,0.32,0.2,y0=ry-0.08)
         else: m.box('ridge',b['x'],b['z'],0.32,d+0.6,0.2,y0=ry-0.08)
     if b.get('gable_rubble_east'):   # 1988 photograph: the east gable is bare rubble, not limewashed
         xe=b['x']+w/2+0.03; m.box('rubble',xe,b['z'],0.04,d,b['eave'])
@@ -120,18 +132,20 @@ for b in G['buildings']:
         m.box(wm,b['x']+p['x'],pz,p['w'],p['d'],2.4,top=False); m.gable(rm,wm,b['x']+p['x'],pz,p['w'],p['d'],2.4,40,ridge_along='z')
         m.box('green',b['x']+p['x'],pz+p['d']/2+0.01,1.0,0.05,2.0)
     if b['id']=='house':   # windows: positions read from the 1988 photograph (house front 11 m); white frames, dark panes
-        for (wx,wy) in b.get('windows',[(-3.6,1.2),(-1.2,1.2),(3.4,1.2),(-3.6,3.4),(-1.2,3.4),(3.4,3.4)]):
-            m.box('frame',b['x']+wx,b['z']+d/2+0.02,1.1,0.05,1.3,y0=wy-0.05)
-            m.box('glass',b['x']+wx,b['z']+d/2+0.05,0.85,0.04,1.05,y0=wy+0.08)
-            m.box('frame',b['x']+wx,b['z']+d/2+0.08,0.06,0.03,1.05,y0=wy+0.08); m.box('frame',b['x']+wx,b['z']+d/2+0.08,0.85,0.03,0.05,y0=wy+0.55)
+        for win in b.get('windows',[(-3.6,1.2),(-1.2,1.2),(3.4,1.2),(-3.6,3.4),(-1.2,3.4),(3.4,3.4)]):
+            wx,wy=win[0],win[1]; gw,gh=(win[2],win[3]) if len(win)>=4 else (0.85,1.05)   # [x, sill, glass w, glass h]: sizes measured per window (run 3)
+            m.box('frame',b['x']+wx,b['z']+d/2+0.02,gw+0.2,0.05,gh+0.22,y0=wy-0.05)
+            m.box('glass',b['x']+wx,b['z']+d/2+0.05,gw,0.04,gh,y0=wy+0.08)
+            m.box('frame',b['x']+wx,b['z']+d/2+0.08,0.06,0.03,gh,y0=wy+0.08); m.box('frame',b['x']+wx,b['z']+d/2+0.08,gw,0.03,0.05,y0=wy+0.08+gh/2)
+            if len(win)>=5 and win[4]=='shutter': m.box('dark',b['x']+wx+gw/2+0.2,b['z']+d/2+0.04,0.35,0.04,gh,y0=wy+0.08)
     if b['id']=='stable_range':
         for i in range(5): m.box('green',b['x']-5.6+i*2.8,b['z']+d/2+0.01,1.1,0.05,2.0)
     if 'cart_porch' in b:
         p=b['cart_porch']
         if p.get('side')=='west':   # porch projects west from the barn's west wall, door facing west
             px=b['x']-w/2-p['d']/2; pz=p['z']
-            m.box(wm,px,pz,p['d'],p['w'],4.0,top=False); m.gable(rm,wm,px,pz,p['d'],p['w'],4.0,40,ridge_along='x')
-            m.box('green',px-p['d']/2-0.02,pz,0.05,3.3,3.5)
+            m.box(wm,px,pz,p['d'],p['w'],4.0,top=False); m.gable(rm,'boards' if p.get('boarded_gable') else wm,px,pz,p['d'],p['w'],4.0,40,ridge_along='x')
+            m.box('dark' if p.get('open') else 'green',px-p['d']/2-0.02,pz,0.05,3.3,3.5)   # run 3: the 1988 photograph shows the cart entry open (dark), boarded gable apex
         else:
             pz=b['z']+d/2+p['d']/2
             m.box(wm,p['x'],pz,p['w'],p['d'],4.0,top=False); m.gable(rm,wm,p['x'],pz,p['w'],p['d'],4.0,40,ridge_along='z')
@@ -156,8 +170,9 @@ for wl in G['walls']:
     for a,b2 in segs: m.wall('rubble',a,b2,1.5,0.5)
     if wl.get('gate_piers'):   # forecourt gate: stone piers, ball finial on one, dark five-bar gate
         g0,g1=wl['gate_x']; z=az
-        for gx in (g0,g1): m.box('rubble',gx,z,0.8,0.8,1.9)
-        m.cyl('rubble',g1,z,0.28,0.45,y0=1.9,seg=12)
+        ph=wl.get('pier_h',1.9)   # run 3 (#203): piers 2.5 m with projecting caps, read against the 1.25 m gate in the house-and-gate painting
+        for gx in (g0,g1): m.box('rubble',gx,z,0.9,0.9,ph); m.box('dressed',gx,z,1.1,1.1,0.16,y0=ph)
+        m.cyl('dressed',g1,z,0.3,0.5,y0=ph+0.16,seg=12,r_top=0.12)
         for k in range(5): m.box('gate',(g0+g1)/2,z,g1-g0-0.8,0.07,0.08,y0=0.25+k*0.25)
         for gx in (g0+0.45,(g0+g1)/2,g1-0.45): m.box('gate',gx,z,0.1,0.08,1.25,y0=0.1)
 for y in G['yards']:
@@ -169,7 +184,9 @@ for f in G.get('features',[]):
         m.gable('pane','pane',f['x'],f['z'],f['w'],f['d'],f['eave'],f['pitch'],ridge_along='x',over=0.05)
     if f['id']=='gate_tree':
         m.cyl('bark',f['x'],f['z'],f['trunk'],f['height']*0.45,seg=10)
-        m.cyl('leaf',f['x'],f['z'],f['crown'],f['height']*0.6,y0=f['height']*0.4,seg=16,r_top=f['crown']*0.35)
+        if f.get('lobes'):   # run 3 (#201): broad, uneven crown as offset lobes (the painting's tree is wider than tall and leans over the gate)
+            for (dx,dz,dy,rr) in f['lobes']: m.cyl('leaf',f['x']+dx,f['z']+dz,rr,rr*1.1,y0=f['height']*0.45+dy,seg=14,r_top=rr*0.55)
+        else: m.cyl('leaf',f['x'],f['z'],f['crown'],f['height']*0.6,y0=f['height']*0.4,seg=16,r_top=f['crown']*0.35)
 if 'church' in G:   # v0.2.1: church massing so the lane's semicircle reads (estimated)
     c=G['church']; (nl,nw),(ts,th)=c['nave'],c['tower']
     m.box('rubble',c['x'],c['z'],nl,nw,c['nave_eave'],top=False); m.gable('slate','rubble',c['x'],c['z'],nl,nw,c['nave_eave'],45,ridge_along='x')

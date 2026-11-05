@@ -8,28 +8,39 @@
    "z": 0,
    "len_ew": 11.0,
    "dep_ns": 6.2,
-   "eave": 4.2,
-   "pitch": 40,
+   "eave": 5.2,
+   "pitch": 35,
    "storeys": 2,
    "walls": "limewash",
    "roof": "slate",
    "chimneys": [
     {
      "at": "left",
+     "x": -3.4,
+     "w": 1.3,
+     "d": 1.0,
+     "h": 0.8,
      "mat": "stone"
     },
     {
      "at": "centre",
+     "x": 0.9,
+     "w": 1.0,
+     "d": 0.9,
+     "h": 0.9,
      "mat": "stone"
     },
     {
      "at": "right",
+     "w": 0.6,
+     "d": 0.7,
+     "h": 1.4,
      "mat": "red brick"
     }
    ],
    "porch": {
-    "x": -1.9,
-    "w": 2.2,
+    "x": -1.4,
+    "w": 2.6,
     "d": 1.7,
     "gabled": true,
     "open": true
@@ -37,30 +48,42 @@
    "faces": "south",
    "ridge_tiles": true,
    "gable_rubble_east": true,
-   "downpipe_x": 5.2,
+   "downpipe_x": 5.3,
    "windows": [
     [
-     -3.4,
-     2.55
+     -3.05,
+     3.15,
+     0.65,
+     1.4
     ],
     [
-     -1.1,
-     2.55
+     -0.6,
+     3.1,
+     0.7,
+     1.5
     ],
     [
-     2.2,
-     2.55
+     2.7,
+     3.05,
+     0.8,
+     1.55,
+     "shutter"
     ],
     [
-     -3.6,
-     0.8
+     -3.3,
+     0.8,
+     0.75,
+     1.2
     ],
     [
-     2.1,
-     0.8
+     2.4,
+     0.75,
+     0.75,
+     1.3
     ]
    ],
-   "photo_ref": "1988 Cadw survey photograph of the farmhouse, 29 July 1988 (front from the south-east): eave c.4.2 m, open timber porch left of centre, 3 first-floor windows, red ridge tiles, east gable bare rubble, red-brick east chimney"
+   "photo_ref": "1988 Cadw survey photograph of the farmhouse, 29 July 1988 (front from the south-east): eave c.4.2 m, open timber porch left of centre, 3 first-floor windows, red ridge tiles, east gable bare rubble, red-brick east chimney | run 3 (5 Nov 2026) measured from the photograph with a perspective scale (window 1.5 m tall): eave c.5.2 m (first-floor window heads 0.6 m below the eave, ground-floor heads c.3.4 m below), roof c.35 deg, WEST END HIPPED (east end gabled with the brick stack), centre stack c.0.9 m east of centre, windows unevenly spaced (upper at -3.05/-0.6/+2.7 m, blank wall over the east 2.5 m), west upper window smaller",
+   "hip_west_pitch": 50
   },
   {
    "id": "pantile_range",
@@ -91,71 +114,88 @@
   {
    "id": "stone_barn",
    "x": -31.2,
-   "z": -4.9,
-   "len_ns": 16.0,
+   "z": -0.4,
+   "len_ns": 7.0,
    "dep_ew": 7.4,
-   "eave": 4.9,
-   "pitch": 40,
+   "eave": 5.6,
+   "pitch": 36,
    "walls": "dressed stone",
    "roof": "slate",
    "faces": "west",
-   "cart_porch": {
-    "z": -8.5,
-    "w": 4.6,
-    "d": 2.2,
-    "side": "west",
-    "door": "green cart door 3.3 x 3.5"
-   },
    "openings": [
     {
      "side": "south",
-     "x": -1.7,
-     "w": 1.7,
-     "h": 2.2,
+     "x": -1.35,
+     "w": 2.0,
+     "h": 1.1,
      "arch": true,
      "mat": "dark",
-     "note": "round-headed doorway in the south gable, open (barn-and-stables painting; issue #199)"
+     "note": "round-headed opening, west of centre, narrower (1988 photograph; run 3 measured)"
     },
     {
      "side": "south",
      "x": 1.7,
-     "w": 1.7,
-     "h": 2.2,
+     "w": 2.3,
+     "h": 1.1,
      "arch": true,
-     "mat": "green",
-     "note": "round-headed doorway in the south gable, green door (painting)"
+     "mat": "dark",
+     "note": "round-headed opening, east of centre, wider (1988 photograph; run 3 measured)"
     },
     {
      "side": "south",
-     "x": -1.7,
-     "y0": 3.3,
-     "w": 0.9,
-     "h": 1.0,
-     "mat": "glass",
-     "note": "first-floor window above (painting)"
+     "x": -1.6,
+     "y0": 2.4,
+     "w": 0.6,
+     "h": 2.2,
+     "mat": "timber",
+     "note": "tall louvred vent (1988 photograph; was a glazed window from the painting)"
     },
     {
      "side": "south",
-     "x": 1.7,
-     "y0": 3.3,
-     "w": 0.9,
-     "h": 1.0,
-     "mat": "glass",
-     "note": "first-floor window above (painting)"
+     "x": 1.6,
+     "y0": 2.4,
+     "w": 0.6,
+     "h": 2.2,
+     "mat": "timber",
+     "note": "tall louvred vent (1988 photograph)"
     },
     {
      "side": "west",
-     "z": -2.0,
-     "y0": 1.5,
-     "w": 1.0,
-     "h": 1.2,
-     "mat": "glass",
-     "note": "window in the west wall between the cart porch and the south gable (painting; position estimated)"
+     "z": -2.6,
+     "y0": 1.0,
+     "w": 1.1,
+     "h": 2.2,
+     "mat": "boards",
+     "note": "raised boarded pitching door with an arched head, c.3/4 of the way south along the west wall (1988 photograph; run 3)"
     }
    ],
-   "note": "long axis north-south, front (cart porch) faces west to the lane; south gable at z=3.1, level with the house front; stable range attached at its south-east corner",
+   "note": "run 3 (5 Nov 2026): the 1988 photograph shows a long barn (c.22 m) whose roof steps: the southern 7 m bay rides c.0.3 m higher (steeper pitch) than the northern 15 m; modelled as stone_barn (south bay, gables/openings) + stone_barn_north. Front (cart porch) faces west to the lane at the north end; south gable at z=3.1, level with the house front.",
    "ridge_tiles": true,
-   "photo_ref": "1988 Cadw survey photograph of the barn, 29 July 1988 (west wall and south gable from the south-west): grey-brown rubble, pale weathered slate, red ridge tiles"
+   "photo_ref": "1988 Cadw survey photograph of the barn, 29 July 1988 (west wall and south gable from the south-west): grey-brown rubble, pale weathered slate, red ridge tiles",
+   "len_note": "south bay 7.0 m of a c.22 m barn"
+  },
+  {
+   "id": "stone_barn_north",
+   "x": -31.2,
+   "z": -11.4,
+   "len_ns": 15.0,
+   "dep_ew": 7.4,
+   "eave": 5.6,
+   "pitch": 33,
+   "walls": "dressed stone",
+   "roof": "slate",
+   "ridge_tiles": true,
+   "faces": "west",
+   "note": "northern 15 m of the barn, lower ridge than the south bay (1988 photograph, run 3); carries the cart porch",
+   "cart_porch": {
+    "z": -16.4,
+    "w": 5.0,
+    "d": 2.4,
+    "side": "west",
+    "open": false,
+    "boarded_gable": true,
+    "door": "green cart door 3.3 x 3.5 kept (painting); 1988 photograph shows it open — owner decision pending, issue #216"
+   }
   },
   {
    "id": "church",
@@ -179,7 +219,8 @@
     12.1
    ],
    "gate_piers": true,
-   "gate": "dark five-bar gate between stone piers, ball finial on one pier"
+   "gate": "dark five-bar gate between stone piers, ball finial on one pier",
+   "pier_h": 2.5
   },
   {
    "from": [
@@ -304,10 +345,42 @@
    "id": "gate_tree",
    "x": 14.2,
    "z": 15.8,
-   "trunk": 0.35,
-   "height": 9.0,
-   "crown": 4.2,
-   "note": "large tree at the gate (painting); species and size not checked"
+   "trunk": 0.5,
+   "height": 15.0,
+   "crown": 6.0,
+   "note": "large spreading tree at the gate (painting): run 3 scaled to c.15 m against the house ridge (c.7.4 m) with an uneven lobed crown; species not checked",
+   "lobes": [
+    [
+     0,
+     0,
+     0,
+     5.0
+    ],
+    [
+     -3.2,
+     0.8,
+     1.5,
+     3.6
+    ],
+    [
+     2.8,
+     -1.0,
+     2.2,
+     3.4
+    ],
+    [
+     0.6,
+     1.5,
+     4.0,
+     3.2
+    ],
+    [
+     -1.2,
+     -2.0,
+     3.0,
+     2.8
+    ]
+   ]
   }
  ],
  "not_checked": [
