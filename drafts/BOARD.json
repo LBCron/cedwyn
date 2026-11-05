@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T08:47:21.263Z",
+  "updated": "2026-11-05T08:56:02.312Z",
   "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
   "drafts": [
     {
@@ -1364,6 +1364,35 @@
       "seat_agreements_version": null,
       "final_three_hat_version": null,
       "attachments_verified_version": null
+    },
+    {
+      "id": "task-536905706716",
+      "record": "HubSpot task 536905706716",
+      "version": "v0.3.0",
+      "status": "SKIPPED ChatGPT — IDLE; QUEUED BEHIND GROK TASK 526035434728",
+      "turn": "Grok (seat 3; queued behind existing live assignment task 526035434728, v0.1.0; resumes when that assignment clears)",
+      "open_issues": null,
+      "last_change": "2026-11-05T04:24:43Z",
+      "last_agent": "ChatGPT",
+      "rounds": null,
+      "tier_since": "2026-10-31T21:30:24Z",
+      "tier": "working",
+      "tier_label": "IN REVIEW",
+      "gmail_draft_id": null,
+      "sent_at": null,
+      "archive_url": null,
+      "version_reviews": 0,
+      "version_distinct_agents": 0,
+      "version_agents": [],
+      "seat_agreements_version": null,
+      "final_three_hat_version": null,
+      "attachments_verified_version": null,
+      "sent_version": null,
+      "pct": 0,
+      "pct_at": "2026-10-31T21:34:19Z",
+      "last_action_at": "2026-11-05T08:56:02.312Z",
+      "last_action_by": "ChatGPT",
+      "queue_after": "HubSpot task 526035434728 (v0.1.0)"
     }
   ],
   "events": [
@@ -1653,6 +1682,13 @@
       "version": "v0.3.1",
       "agent": "ChatGPT",
       "event": "SKIPPED ChatGPT (idle); queued behind Grok task 535502730484 (v0.1.0). No recipient-text change; no review counted."
+    },
+    {
+      "at": "2026-11-05T08:56:02.312Z",
+      "draft": "task-536905706716",
+      "version": "v0.3.0",
+      "agent": "ChatGPT",
+      "event": "SKIPPED ChatGPT (idle); queued behind Grok task 526035434728 (v0.1.0). No recipient-text change; no review counted. Metadata only."
     }
   ],
   "context_note": "drafts[].context = metadata-only context pack (recipient body, archive thread link, dartboard link, stage, next deadline, markers, open questions, rungs spent); built by hive_context.py from the dartboard roadmap, the email archive API and qa kb.json. Hive protocol v3.1.0 context sweep.",
