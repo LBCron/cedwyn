@@ -10,4 +10,6 @@ Iron Age roundhouse, Roman villa, early medieval monastery (cemetery and pillar 
 
 Rule: shapes and positions only from records (Heneb HER, RCAHMW Coflein, Holbrook & Thomas 2005 Fig. 2, the 1824 survey tracing, reference photographs). Anything else is listed under `estimated` and shown as “reconstruction — estimated”.
 
+Preview (branch build): https://section-revival-ar.cedwyn-274.pages.dev/
+
 — Sion's Tab agent
