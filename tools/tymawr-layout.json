@@ -98,17 +98,49 @@
    },
    "openings": [
     {
-     "z": -0.6,
-     "w": 1.6,
-     "h": 2.4,
-     "side": "west",
-     "note": "arched openings at the south end (painting); drawn square, arch not modelled"
+     "side": "south",
+     "x": -1.7,
+     "w": 1.7,
+     "h": 2.2,
+     "arch": true,
+     "mat": "dark",
+     "note": "round-headed doorway in the south gable, open (barn-and-stables painting; issue #199)"
     },
     {
-     "z": 1.6,
-     "w": 1.6,
-     "h": 2.4,
-     "side": "west"
+     "side": "south",
+     "x": 1.7,
+     "w": 1.7,
+     "h": 2.2,
+     "arch": true,
+     "mat": "green",
+     "note": "round-headed doorway in the south gable, green door (painting)"
+    },
+    {
+     "side": "south",
+     "x": -1.7,
+     "y0": 3.3,
+     "w": 0.9,
+     "h": 1.0,
+     "mat": "glass",
+     "note": "first-floor window above (painting)"
+    },
+    {
+     "side": "south",
+     "x": 1.7,
+     "y0": 3.3,
+     "w": 0.9,
+     "h": 1.0,
+     "mat": "glass",
+     "note": "first-floor window above (painting)"
+    },
+    {
+     "side": "west",
+     "z": -2.0,
+     "y0": 1.5,
+     "w": 1.0,
+     "h": 1.2,
+     "mat": "glass",
+     "note": "window in the west wall between the cart porch and the south gable (painting; position estimated)"
     }
    ],
    "note": "long axis north-south, front (cart porch) faces west to the lane; south gable at z=3.1, level with the house front; stable range attached at its south-east corner"
@@ -268,7 +300,7 @@
  ],
  "not_checked": [
   "exact distances between the barn group and the house (images give relative order only)",
-  "barn arch shapes (drawn square)",
+  "barn arch sizes (two round-headed doorways in the south gable, from the painting; sizes estimated)",
   "stable door count (5 kept from 4 Nov photo)",
   "boundary-wall and lane lines",
   "glasshouse and tree sizes",

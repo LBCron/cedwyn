@@ -114,7 +114,15 @@ for b in G['buildings']:
             m.box(wm,p['x'],pz,p['w'],p['d'],4.0,top=False); m.gable(rm,wm,p['x'],pz,p['w'],p['d'],4.0,40,ridge_along='z')
             m.box('green',p['x'],pz+p['d']/2+0.02,3.3,0.05,3.5)
     for o in b.get('openings',[]):
-        if o.get('side')=='west': m.box('dark',b['x']-w/2-0.02,o['z'],0.05,o['w'],o['h'])
+        if o.get('side')=='west': m.box(o.get('mat','dark'),b['x']-w/2-0.02,o['z'],0.05,o['w'],o['h'],y0=o.get('y0',0.0))
+        if o.get('side')=='south':   # issue #199: gable openings; arch=True draws a round head as four stepped bands
+            ox,zf,y0=b['x']+o['x'],b['z']+d/2+0.02,o.get('y0',0.0); mk=o.get('mat','dark')
+            m.box(mk,ox,zf,o['w'],0.05,o['h'],y0=y0)
+            if o.get('arch'):
+                r=o['w']/2
+                for k in range(4):
+                    yk=r*(k+0.5)/4; m.box(mk,ox,zf,2*math.sqrt(max(r*r-yk*yk,0.0)),0.05,r/4,y0=y0+o['h']+r*k/4)
+                m.box('dressed',ox,zf-0.01,o['w']+0.5,0.04,o['h']+r+0.25,y0=y0)   # dressed-stone surround
 for wl in G['walls']:
     (ax,az),(bx,bz)=wl['from'],wl['to']
     if 'gate_x' in wl:
