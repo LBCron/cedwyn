@@ -138,5 +138,25 @@ for f in G.get('features',[]):
     if f['id']=='gate_tree':
         m.cyl('bark',f['x'],f['z'],f['trunk'],f['height']*0.45,seg=10)
         m.cyl('leaf',f['x'],f['z'],f['crown'],f['height']*0.6,y0=f['height']*0.4,seg=16,r_top=f['crown']*0.35)
-sizes['tymawr']=m.save(os.path.join(OUT,'tymawr.glb'),meta('tymawr',{"geometry_source":"tools/tymawr-layout.json v"+G.get('version','0.2.0')+" (Tŷ Mawr reference photographs and paintings; sizes best guess)","layout":"house and stable range face south, stable front level with the house front; west barn runs north-south and faces west","not_checked":G.get('not_checked',[]),"note":"pin = 1824 homestead-group centroid; model origin = house centre; church omitted (position conflict, see SITES.json)","version":"0.2.0"}))
+if 'church' in G:   # v0.2.1: church massing so the lane's semicircle reads (estimated)
+    c=G['church']; (nl,nw),(ts,th)=c['nave'],c['tower']
+    m.box('rubble',c['x'],c['z'],nl,nw,c['nave_eave'],top=False); m.gable('slate','rubble',c['x'],c['z'],nl,nw,c['nave_eave'],45,ridge_along='x')
+    m.box('rubble',c['x']-nl/2-ts/2,c['z'],ts,ts,th)
+m.mat('lane',(0.56,0.51,0.42),1.0); m.mat('hedge',(0.20,0.33,0.15),1.0)
+def strip(key,a,b,wd,h=0.06,y0=0.0):
+    (ax,az),(bx,bz)=a,b; m.box(key,(ax+bx)/2,(az+bz)/2,math.hypot(bx-ax,bz-az)+0.2,wd,h,y0=y0,yaw=math.degrees(math.atan2(bz-az,bx-ax)))
+if 'lane_arc' in G:
+    la=G['lane_arc']; (ccx,ccz),R0=la['centre'],la['radius']; a0=math.atan2(-ccz,-ccx); ha=math.radians(la['half_angle_deg']); N=48
+    pts=[(ccx+R0*math.cos(a0-ha+2*ha*i/N), ccz+R0*math.sin(a0-ha+2*ha*i/N)) for i in range(N+1)]
+    for p0,p1 in zip(pts,pts[1:]): strip('lane',p0,p1,la['width'],y0=0.02)
+for tr in G.get('tracks',[]):
+    a=tuple(tr['from'])
+    if tr['to']=='arc':
+        la=G['lane_arc']; (ccx,ccz),R0=la['centre'],la['radius']; dx,dz=a[0]-ccx,a[1]-ccz; k=R0/math.hypot(dx,dz); b=(ccx+dx*k,ccz+dz*k)
+    else: b=tuple(tr['to'])
+    strip('lane',a,b,tr['width'],y0=0.02)
+    if tr.get('hedges'):
+        for off in (-tr['width']/2-0.6, tr['width']/2+0.6): strip('hedge',(a[0]+off,a[1]),(b[0]+off,b[1]),0.9,1.3)
+for hd in G.get('hedges',[]): strip('hedge',tuple(hd['from']),tuple(hd['to']),0.9,1.3)
+sizes['tymawr']=m.save(os.path.join(OUT,'tymawr.glb'),meta('tymawr',{"geometry_source":"tools/tymawr-layout.json v"+G.get('version','0.2.0')+" (Tŷ Mawr reference photographs and paintings; sizes best guess)","layout":"house and stable range face south, stable front level with the house front; west barn runs north-south and faces west","not_checked":G.get('not_checked',[]),"note":"pin = 1824 homestead-group centroid; model origin = house centre; church shown as massing only (see SITES.json)","version":G.get("version","0.2.1")}))
 print(json.dumps(sizes))

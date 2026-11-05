@@ -199,7 +199,8 @@
    "estimated": [
     "building sizes and pitches from Tŷ Mawr reference photographs (4 Nov 2026) and two reference paintings and a historic aerial photograph (5 Nov 2026) (tools/tymawr-layout.json, 'best guess')",
     "layout (v0.2.0, corrected 5 Nov 2026): the house and the stable range face south, with the stable front level with the house front (not forward of it); the stone barn on the west side of the group runs north-south and faces west, with the stable range joined at its south-east corner; distances between the barn group and the house, wall and lane lines, the glasshouse and the gate tree are estimated",
-    "NOTE: tymawr-geometry.json places the church NE of the house; HER + Stewart plan place it c.107 m SE. Church omitted from this model until resolved."
+    "church shown as massing only (v0.2.1): position from the OSM church point, c.107 m SE of the pin, as HER 02038s and the 1824 Stewart plan place it; a historic aerial photograph (5 Nov 2026) shows the tower east of the house group; the earlier photo-scaled geometry had placed it NE",
+     "lane (v0.2.1): drawn as a semicircle around the church, between the church and the house and its buildings, which sit on the outside of the curve; radius about 80 m, estimated; meadow hedges and the track north from a painted aerial plan, positions not checked"
    ],
    "evidence": [
     {
@@ -219,7 +220,7 @@
      "url": ""
     }
    ],
-   "model": "models/tymawr.glb?v=0.2.0"
+   "model": "models/tymawr.glb?v=0.2.1"
   }
  ]
 }

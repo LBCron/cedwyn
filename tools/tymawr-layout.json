@@ -243,7 +243,7 @@
   }
  },
  "written_by": "Revival AR layout fix, 5 Nov 2026 (from the wales-3d geometry v0.1)",
- "version": "0.2.0",
+ "version": "0.2.1",
  "features": [
   {
    "id": "glasshouse",
@@ -272,6 +272,81 @@
   "stable door count (5 kept from 4 Nov photo)",
   "boundary-wall and lane lines",
   "glasshouse and tree sizes",
-  "church position (omitted; see SITES.json)"
+  "lane radius and exact line (semicircle around the church, estimated)",
+  "church shape and exact position (massing only)",
+  "meadow hedges and the north track (painted aerial plan, positions not checked)",
+  "river / water course at the top right of the painted aerial plan (not modelled)"
+ ],
+ "church": {
+  "x": 74.8,
+  "z": 76.1,
+  "nave": [
+   18.0,
+   7.6
+  ],
+  "nave_eave": 6.0,
+  "tower": [
+   5.6,
+   15.0
+  ],
+  "note": "massing only: position = OSM church point (offset from the pin), nave 18 x 7.6 m and west tower 5.6 m sq x 15 m from the 4 Nov aerial; the 5 Nov historic aerial shows the tower east of the house group, as HER 02038s and the 1824 Stewart plan place it (c.107 m SE); shape and orientation estimated"
+ },
+ "lane_arc": {
+  "centre": [
+   74.8,
+   76.1
+  ],
+  "radius": 80.0,
+  "half_angle_deg": 90,
+  "width": 4.5,
+  "note": "the Executive (5 Nov 2026): a road curving like a clock / semicircle around the church, between the church and the house and its buildings; drawn as a semicircle centred on the church on the house side; the buildings sit on the outside of the curve; radius chosen so the lane passes between the forecourt gate and the church (estimated, not checked against a measured plan)"
+ },
+ "tracks": [
+  {
+   "from": [
+    10.3,
+    14.0
+   ],
+   "to": "arc",
+   "width": 3.0,
+   "note": "track from the forecourt gate to the lane (house-and-gate painting); line estimated"
+  },
+  {
+   "from": [
+    -49,
+    8
+   ],
+   "to": [
+    -49,
+    -70
+   ],
+   "width": 3.0,
+   "hedges": true,
+   "note": "track north between the meadows, west of the group (painted aerial plan); line not checked"
+  }
+ ],
+ "hedges": [
+  {
+   "from": [
+    -47,
+    -20
+   ],
+   "to": [
+    40,
+    -20
+   ],
+   "note": "field boundary north of the buildings (painted aerial plan); line not checked"
+  },
+  {
+   "from": [
+    0,
+    -20
+   ],
+   "to": [
+    -10,
+    -70
+   ],
+   "note": "hedge dividing the meadows (painted aerial plan); line not checked"
+  }
  ]
 }
