@@ -4,7 +4,7 @@ Live tracking is on /dartboard/ (one lane per body). This list is refreshed each
 
 | Due | What |
 |---|---|
-| early Dec 2026 | HM Land Registry: response to an information request. On 27 Oct the body asked for identity verification; the evidence was sent on 2 Nov and the one-month period runs from its receipt |
+| 6 Nov 2026 | HM Land Registry: response to an information request. The body asked for identity verification on 27 Oct, confirmed receipt of the evidence on 4 Nov and set 6 Nov as the response date; no chase before the end of that day |
 | 29 Oct 2026 | South Wales Police: response to an information request |
 | about 5 Nov 2026 | Arts Council England: its FOI mailbox is no longer monitored; resend if its information team has not replied within five working days of 29 Oct |
 | 6 Nov 2026 | HM Land Registry copies: if not received, a PRINCE2 exception report is raised |
@@ -20,7 +20,7 @@ Live tracking is on /dartboard/ (one lane per body). This list is refreshed each
 | 26 Nov 2026 | Ministry of Defence: FOI2026/25726 response (the request and its nomenclature supplement were re-logged on 30 Oct; target moved from 6 Nov) |
 | open | HM Land Registry: online enquiry 261029-6904545 drew an automatic reply that the address is no longer supported and no action will be taken; resend through the body's current route |
 | 14 Dec 2026 | Vale of Glamorgan Council: environmental information requests 00211721 and 00211722, extended response date |
-| overdue | The National Archives: information request response; chaser drafted for review |
+| 21 Nov 2026 | The National Archives: earliest date for the next chase on its information request |
 | open | Wales Office IR/26/16: whether to take it to the ICO (time limit not checked) |
 
 Rules: never chase before a deadline has passed; one email per body per day; read the whole thread and the body's dartboard lane before drafting the next step.

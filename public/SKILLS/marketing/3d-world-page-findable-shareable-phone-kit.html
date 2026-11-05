@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>3D world pages: make them findable, shareable and phone-safe (launch kit) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: 3D world pages: make them findable, shareable and phone-safe (launch kit)"><link rel="alternate" type="text/markdown" href="3d-world-page-findable-shareable-phone-kit.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>3D world pages: make them findable, shareable and phone-safe (launch kit)</h1>
+<p>Written 4 Nov 2026 while the Wales (real-terrain) and Argentina 3D worlds are being built. ('three.js'/'webgl'/'3d world' had 0 hits in INDEX.md; the Sketchfab route is separate: sketchfab-3d-virtual-tour-replica-views.md.)</p>
+<h2>Facts this rests on (primary, read 4 Nov 2026)</h2>
+<ul>
+<li>Google Search does not interact with pages: content that loads only after a click, scroll or drag is not seen. Lazy-load must fire on viewport visibility (native lazy images, IntersectionObserver), "which is important as Google Search does not interact with your page"; and do not lazy-load what is visible on open (Search Central, "Fix lazy-loaded content").</li>
+<li>Google's own research figure: 53% of mobile visits are likely abandoned if a page takes longer than 3 s to load (Google AdSense Help 7450973; the study dates from 2016-17, treat as direction, not a 2026 measurement).</li>
+<li>Google renders JavaScript and picks up JS-injected canonicals/links (Search Central, JavaScript SEO basics). Our reading, not a Google sentence: a WebGL canvas is pixels, so place names, captions and credits drawn inside it are not text Google can index - they must also exist as HTML.</li>
+</ul>
+<h2>The kit (do all six per world page)</h2>
+<ol>
+<li>HTML layer first. Above or below the canvas, in plain HTML: an H1 with the place name, 2-4 sentences of what the viewer is looking at, the data-credits footer (OS/OSM/LiDAR licences, which the spec already requires), and normal links to the matching history pages. This is what search and AI answers can read and cite.</li>
+<li>Poster, then load. Show a static still (WebP, &lt;200 KB, real render of the scene) with a "Enter the 3D world" button; start heavy assets on tap or when the canvas scrolls into view. The page is usable and indexable in &lt;3 s on a phone even if the 3D takes 15 s. Never hide the HTML text behind the button.</li>
+<li>Share card from a real render. og:image / twitter:image = 1200x630 render of the anchor view (the farm, not a logo); og:title names the place; og:description one plain sentence. Check with a cache-busted fetch of the page head.</li>
+<li>Deep links to views. ?view=tymawr, ?era=1841 style URLs (the Wales build already uses them) so each post, talk slide or email can open the exact spot; each shared link carries utm_source/utm_medium/utm_campaign.</li>
+<li>A 20-40 s fly-through clip recorded from the scene (vertical 1080x1920 for Shorts/Reels; landscape for the page) with an on-screen place caption and the deep link in the description. Clips travel on social feeds; the canvas does not. Post through the existing YouTube Shorts / Instagram flywheels, not a new channel.</li>
+<li>Measure: page views on the world path vs "entered 3D" taps (beacon on button press) vs clicks onward to history pages and /ebooks/. If under 30% of visitors tap Enter, the poster/button is the problem, not the terrain.</li>
+</ol>
+<h2>Checks before calling it live</h2>
+<ul>
+<li>Cache-busted fetch: H1, description text and credits present in the served HTML (not only after JS).</li>
+<li>390 px screenshot: poster visible, text readable, button above the fold.</li>
+<li>Lighthouse-style look at LCP: the LCP element should be the poster image or H1, not the canvas.</li>
+<li>No file &gt;25 MB (spec), page weight before tap &lt;1 MB.</li>
+</ul>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Wales world (a worker) and Argentina world (a worker, own path): hand both this checklist as a PROPOSED follow-up once phase 1 is live; do not interrupt their builds.</li>
+<li>Wales text states "former manorial house"; credits must name OS/OSM/LiDAR sources exactly.</li>
+<li>Argentina page: no money words, no prices, no shop strip; link only to the Argentina history pages.</li>
+<li>Public text never names the project lead; banned words; no insignia; no family holdings/addresses beyond what the site already shows.</li>
+<li>Fly-through clips go into the Shorts queue as normal items (shop line + documentary line rules apply to Wales clips only; Argentina clips carry no shop line).</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>developers.google.com (read 4 Nov 2026)</li>
+<li>developers.google.com (read 4 Nov 2026)</li>
+<li>support.google.com (snippet: 53% / 3 s)</li>
+</ul><p class="raw">Raw Markdown: <a href="3d-world-page-findable-shareable-phone-kit.md">3d-world-page-findable-shareable-phone-kit.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>

@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Ticketing the pilot walk and talks: Ticket Tailor vs Eventbrite (UK, 2026) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Ticketing the pilot walk and talks: Ticket Tailor vs Eventbrite (UK, 2026)"><link rel="alternate" type="text/markdown" href="ticket-tailor-vs-eventbrite-walk-ticketing-uk.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Ticketing the pilot walk and talks: Ticket Tailor vs Eventbrite (UK, 2026)</h1>
+<p>Read 4 Nov 2026. Topic: funnel/checkout for paid places on the Llandough heritage walk and paid talks. ('ticket tailor' had 0 hits in INDEX.md; Eventbrite free-listing and listing-rule skills already exist: free-online-talk-listings-eventbrite-meetup.md, eventbrite-listing-rules-and-author-talks-sell-books.md, pilot-walk-presale-minimum-numbers-hold-then-charge.md.)</p>
+<h2>The numbers (primary pages, read live 4 Nov 2026)</h2>
+<ul>
+<li>Eventbrite UK organiser fee: 6.95% + £0.59 per paid ticket, payment processing "Not applicable" (rolled in); free tickets free. (Eventbrite Help 755615.)</li>
+<li>Ticket Tailor (GBP page): free tickets free up to 5,000/yr; pay-as-you-go £0.60 per paid ticket + VAT; prepaid credits from £0.22 + VAT; first 5 tickets free; 50% off for registered charities and some not-for-profits; reduced fee on very low-priced tickets. Payment is taken by OUR Stripe/PayPal/Square account (illustrative Stripe cost on a £20 ticket £0.40 -&gt; we keep £19.60 on credits). Ticket Tailor never holds the money.</li>
+<li>Eventbrite holds ticket money and pays out by default 3 days after the event, then 3-7 business days to the bank (rework.com reading of Eventbrite Help; not re-checked).</li>
+</ul>
+<p>Worked cost per £12 walk place (our arithmetic, VAT on TT fee at 20% included, Stripe UK standard card ~1.5% + 20p assumed, not checked against our Stripe account):
+- Eventbrite: 0.0695*12 + 0.59 = £1.42 (11.8%).
+- Ticket Tailor PAYG: 0.72 + Stripe ~0.38 = £1.10 (9.2%).
+- Ticket Tailor credits: 0.26 + ~0.38 = £0.64 (5.4%).
+- Gap grows with price: Eventbrite's % never stops; TT is flat (rework.com table: TT fee 6.0% of a £10 ticket PAYG, 1.2% of £50).</p>
+<h2>What you buy with Eventbrite's extra fee</h2>
+<p>Reach. Eventbrite is a marketplace that surfaces events to strangers (its own search/app); Ticket Tailor is white-label and sends no buyers. Practitioner rule (rework.com 2026): pay the % only when buyers are strangers; when every attendee comes from your own list, that reach is "close to worthless". Eventbrite's own figure (in our existing skill): ~30% of literary-event tickets come from its discovery (vendor stat, not checked).</p>
+<h2>How to decide (in this order)</h2>
+<ol>
+<li>Free event (talk, launch, online Q&amp;A)? Eventbrite free listing: discovery at £0. Done.</li>
+<li>Paid, and buyers mostly strangers (tourists, Cardiff day-trippers)? Eventbrite paid, accept ~12%. Its reach is the product.</li>
+<li>Paid, and buyers mostly ours (newsletter, Facebook page, talk audiences, society members)? Ticket Tailor PAYG (no upfront spend), embedded box office on our own page, money lands in our Stripe at once, we own the attendee list (consent to email asked at checkout, PECR).</li>
+<li>Can do both: list the same dated walk on Eventbrite for discovery AND sell from our page via Ticket Tailor, with one shared capacity counted by hand (small groups) - stop sales on both when full.</li>
+<li>Re-read both fee pages before each season; the numbers above are 4 Nov 2026.</li>
+</ol>
+<h2>Setup checklist (Ticket Tailor)</h2>
+<ul>
+<li>Account free; connect the existing Stripe account (no new card, zero spend; fees only per sold ticket).</li>
+<li>Event: date, meeting point, capacity (walk safety cap), minimum numbers note and what happens if not met (refund rule from pilot-walk-presale skill), accessibility notes, weather policy.</li>
+<li>Ask: name, email, optional "how did you hear" (fixed list: newsletter / Facebook / talk / Eventbrite / friend / other) -&gt; this is our channel attribution.</li>
+<li>Embed the box office on the walk page; add ?utm_ tags on every link pointing to it.</li>
+<li>Use the free check-in app on the day; export the list afterwards; HubSpot import only for those who ticked email consent.</li>
+</ul>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>The pilot walk is our own audience (talks, newsletter, Facebook page, local societies): default route is Ticket Tailor PAYG on the /wales/ walk page, with a parallel Eventbrite listing only if a public, led date is set (Eventbrite rejects self-guided listings - see existing skill).</li>
+<li>Free talks stay on Eventbrite free listings (discovery at £0).</li>
+<li>Nothing is published or priced without the project lead: walk price, dates, capacity and refund rule are his decisions -&gt; PROPOSED in the project workspace, not live. Account creation in his name needs his yes (it is a new public channel).</li>
+<li>Use tools/ticket_fees.py to show him the per-place cost at the price he picks.</li>
+<li>Public text: no banned words, never names the project lead; Argentina scope: no money words (ticketing is Wales-only).</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>eventbrite.com (read 4 Nov 2026)</li>
+<li>tickettailor.com (GBP, read 4 Nov 2026)</li>
+<li>help.tickettailor.com (snippet)</li>
+<li>resources.rework.com (read 4 Nov 2026: marketplace vs white-label, GBP fee table, payout timing)</li>
+</ul><p class="raw">Raw Markdown: <a href="ticket-tailor-vs-eventbrite-walk-ticketing-uk.md">ticket-tailor-vs-eventbrite-walk-ticketing-uk.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>
