@@ -1,4 +1,4 @@
-/* Mr Wolf · webapp 40 of 59 · v1.0.0 */
+/* Mr Wolf · webapp 40 of 59 · v2.1.0 */
 :root{--bg:#f7f2e7;--card:#fbf8f1;--ink:#2b2418;--mute:#6b5f4b;--line:#e2d8c3;--acc:#7a3b12;--fill:#7a3b12;--th:#2b2418}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink)}
 body.mw{font:16px/1.55 Georgia,"Times New Roman",serif;-webkit-text-size-adjust:100%}
