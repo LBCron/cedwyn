@@ -6,7 +6,7 @@
 //    per-host requests and humans versus bots (browser strings classified in memory, never stored).
 // Its own SQLite database: the Durable Object instance "cedwyn-analytics" (class Ticker, name 'web') of the Worker bfe-analytics,
 // refreshed every 15 min by the object's alarm. Aggregates only: no IPs, no user agents kept, no ids. - Cedwyn editors
-export const WEB_VERSION = '1.1.0';
+export const WEB_VERSION = '1.2.0';
 const WEB_SLOT = '45 of 59';
 const SITE_TAG = '5d0dd318c4974bed9e3da48c62cc3b7f';   // the zone's Web Analytics site (auto-installed beacon)
 
@@ -108,10 +108,10 @@ function agg(rows, key, val) {   // rows -> [{key, total, by_class}] sorted by t
 
 export async function collectWeb(env, gql, source, sql) {
   const now = new Date(), t1 = new Date(Math.floor(now / 6e4) * 6e4), t0 = new Date(t1 - 864e5), w0 = new Date(t1 - 7 * 864e5), u0 = new Date(t1 - 2 * 864e5);
-  const today = ymd(now), d30 = ymd(new Date(now - 29 * 864e5));
+  const today = ymd(now), d30 = ymd(new Date(now - 30 * 864e5));
   const h0 = new Date(Math.floor(now / 36e5) * 36e5 - 47 * 36e5);
   const y0 = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - 864e5);
-  const days = []; for (let i = 29; i >= 0; i--) days.push(ymd(new Date(now - i * 864e5)));
+  const days = []; for (let i = 30; i >= 1; i--) days.push(ymd(new Date(now - i * 864e5))); // v1.2.0: per-day series end at yesterday (UTC); today's partial day is never drawn
   // history: today and yesterday are exact from the 48 h lists; one older missing day is back-filled per refresh with that day's own lists
   let have = {}, bf = null;
   if (sql) {
@@ -119,7 +119,7 @@ export async function collectWeb(env, gql, source, sql) {
       histInit(sql);
       for (const r of sql.exec(`SELECT * FROM cls_day WHERE date >= ?`, d30).toArray()) have[r.date] = r;
       sql.exec(`DELETE FROM cls_day WHERE date < ?`, d30);
-      const miss = days.slice(0, -2).filter(d => !have[d]);
+      const miss = days.slice(0, -1).filter(d => !have[d]);
       if (miss.length) bf = miss[miss.length - 1];
     } catch (e) { sql = null; }
   }
@@ -198,7 +198,7 @@ export async function collectWeb(env, gql, source, sql) {
   }
   const sum = (arr, kk, n) => arr.slice(-n).reduce((s, x) => s + (x[kk] || 0), 0);
   return {
-    webapp: 'analytics', slot: WEB_SLOT, version: WEB_VERSION, generated_at: tiso(now), source,
+    webapp: 'analytics', slot: WEB_SLOT, version: WEB_VERSION, generated_at: tiso(now), source, days_end: days[days.length - 1], days_note: 'per-day series and 7-day totals end at the last full day (UTC); today is left out',
     class_colours: CLASS_COLOURS, class_labels: CLASS_LABELS,
     totals: {
       edge_requests_7d: sum(edge_days, 'requests', 7), edge_page_views_7d: sum(edge_days, 'page_views', 7), edge_uniques_7d: sum(edge_days, 'uniques', 7),

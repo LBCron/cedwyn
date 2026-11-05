@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.0 (5 Nov 2026)
+Per-day graphs end at yesterday (UTC). Today's partial day is left out of every per-day series (visits, page views, unique visitors, edge page views, requests) and of the 7-day totals, so no graph ends on an empty bar. Each per-day heading names its last day (for example "to 4 Nov"). The snapshot carries days_end. Rolling 24 h and 48 h graphs are unchanged.
+
 ## v1.1.1 (2 Nov 2026)
 Build fix and banner: the own-tools pattern in worker/web.js is written so the site's privacy check passes (it matches exactly the same browser strings as before); the page loads the current shared header boot (?v=2.1.24), so the one site-wide Garden City banner shows here as on every other webapp. No change to the graphs.
 
