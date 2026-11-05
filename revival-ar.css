@@ -25,3 +25,10 @@ model-viewer{width:100%;height:50vh;min-height:300px;background:linear-gradient(
 dialog{background:#18221d;color:#e9e6dc;border:1px solid #3a4d42;border-radius:14px;max-width:92vw}dialog table{border-collapse:collapse;font-size:13px}dialog td,dialog th{border:1px solid #3a4d42;padding:4px 6px;text-align:left}.small{font-size:12px;opacity:.8}
 dialog button{background:#c9a45c;border:0;border-radius:8px;padding:7px 12px;font-weight:700}
 .leaflet-tooltip.lbl{background:#16201b;color:#f3e7c4;border:1px solid #c9a45c;font-weight:600}
+
+/* photo tripods (v0.2.3) */
+.tripod{width:36px;height:36px;border-radius:50%;border:2px solid #16201b;background:#e6c77f;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 2px 6px rgba(0,0,0,.5);cursor:pointer}
+#photo{padding:10px;width:92vw;max-width:560px}#photo::backdrop{background:rgba(0,0,0,.7)}
+.photoset{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;-webkit-overflow-scrolling:touch}
+.photoset figure{flex:0 0 100%;scroll-snap-align:center;margin:0}.photoset img{width:100%;height:auto;max-height:60vh;object-fit:contain;border-radius:8px;background:#0e1411}
+.photoset figcaption{font-size:13px;margin-top:6px;line-height:1.35}
