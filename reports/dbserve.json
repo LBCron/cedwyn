@@ -1,23 +1,23 @@
 {
- "db_version": "062936669fa9",
- "paths_served_from_db": 7443,
- "blobs": 4850,
+ "db_version": "8fcb6344879f",
+ "paths_served_from_db": 7439,
+ "blobs": 4846,
  "files_dropped": {
   "document": 3267,
   "image": 1451,
-  "data": 1404,
+  "data": 1399,
   "audio": 84
  },
  "bytes_dropped": {
   "document": 1254035789,
   "image": 128270263,
-  "data": 38511140,
+  "data": 36059274,
   "audio": 14922925
  },
- "bytes_dropped_total": 1435740117,
+ "bytes_dropped_total": 1433288251,
  "files_kept_as_well": {
   "image": 1090,
-  "data": 106,
+  "data": 107,
   "document": 12
  },
  "kept_why": {
@@ -27,7 +27,7 @@
   "download file (.csv opened by a plain link, outside the service worker)": 24,
   "fetched by script": 16,
   "fetched by browsers outside a service worker": 15,
-  "webapp database / A2UI surface (read without a service worker)": 18,
+  "webapp database / A2UI surface (read without a service worker)": 19,
   "page without runtime": 48,
   "flower gallery first-visit image/download": 268,
   "fetched by script (built path)": 16
