@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-04",
- "count": 66,
+ "generated": "2026-11-05",
+ "count": 68,
  "items": [
   {
    "mr": "MR-0001",
@@ -92,7 +92,8 @@
     "EV-0019",
     "EV-0216",
     "F001",
-    "F002"
+    "F002",
+    "London Gazette 59962 (9 Nov 2011): Mountjoy Limited's own conveyance of 25 December 1938 (see MR item mountjoy-bv21111179-title-papers)"
    ],
    "search_record": [
     [
@@ -112,6 +113,12 @@
      "Heneb (Historic Environment Record)",
      "email reply to a records request of 29 Oct 2026 for the 1926 and 1938 conveyances and their plans",
      "\"This information is not held in the HER.\""
+    ],
+    [
+     "2026-11-04",
+     "Persimmon Homes Limited (litigation team), present holder of the land",
+     "email reply to preservation and disclosure requests of 27 Sep and 31 Oct 2026 for the 1938 conveyance with plan and schedule",
+     "\"given the passage of time, it is therefore unlikely Persimmon retains any such copies\" (a likelihood, not a search result; the reply also questions the basis of the request)"
     ]
    ],
    "url": "/research/missing-records/mr-0005/"
@@ -1051,6 +1058,12 @@
      "Heneb (formerly GGAT)",
      "email reply",
      "holds no records on the Llandough Roman villa and medieval house finds, the 1983 fire, or the custody of the archive"
+    ],
+    [
+     "2026-11-04",
+     "Heneb (formerly GGAT)",
+     "email reply to a request of 2 Nov 2026 to reconsider, which asked whether the paper HER files had been searched",
+     "\"We made all reasonable searches within the digital and paper HER records, and confirm that everything we have on file is available on Archwilio\""
     ]
    ],
    "url": "/research/missing-records/mr-0056/"
@@ -1224,6 +1237,36 @@
    ],
    "search_record": [],
    "url": "/research/missing-records/mr-0066/"
+  },
+  {
+   "mr": "MR-0067",
+   "title": "Schedule and plans to the Bute deed of exchange of 27 September 1893 (Glamorgan Archives DB/33/1-2)",
+   "date": "1893-09-27",
+   "status": "CATALOGUED, NOT YET VIEWED",
+   "holder": "Glamorgan Archives (Bute Glamorgan Estates collection, DB/33/1-2). Reading-room item; not yet viewed.",
+   "basis": "cross-reference (holder's own catalogue entry DB/33/1-2, GB 0214 DB, 'Detailed schedule and plans included'); practice (an exchange deed carries a schedule of the parcels exchanged)",
+   "why": "The Bute estate catalogue lists a deed of exchange of 27 September 1893 between the trustees of the late Marquess's will and the Marquess himself, for lands in Leckwith, 'Llandough-juxta-Barry', Cogan and neighbouring parishes, and records that a detailed schedule and plans are included. An exchange between will trustees and the life owner moves land between settled and free estate, which decides whose will could later carry it. If the holding is on the schedule, this is the first plan of the Bute title to it since the 1840s tithe survey and it fixes which side of the family the freehold sat on before the 1900 division. Against: the catalogue gives no direction of exchange and no parcel list; 'Llandough-juxta-Barry' is not checked as the Llandough beside Penarth (the Cogan, Lavernock and St Andrew's Major company points that way, but another catalogue entry uses the same form with a Cardiff parish); and the deed may concern only quarry or railway land.",
+   "refs": [
+    "Glamorgan Archives GB 0214 DB catalogue, DB/33/1-2",
+    "MR item 1938-conveyance"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0067/"
+  },
+  {
+   "mr": "MR-0068",
+   "title": "Mountjoy Ltd's surviving title papers in the Crown's 2011 bona vacantia file (T S ref BV21111179), including its 25 December 1938 conveyance",
+   "date": "1938-12-25 / 2011",
+   "status": "NOT YET SEARCHED",
+   "holder": "Government Legal Department (Bona Vacantia), and the Crown Estate for land disclaimed after 2011. A records request to the Crown Estate is drafted, not sent.",
+   "basis": "cross-reference (London Gazette 59962, 9 Nov 2011, notices L-59962-1473802 and -1473803); practice (a disclaimer of unregistered land identifies the deed under which it was held)",
+   "why": "Mountjoy Limited, the Bute estate company that was party to the sale to Western Ground Rents on 25 December 1938, was itself a purchaser by a conveyance of the same date (land at Cwmbargoed, Merthyr Tydfil). That land stayed unregistered in its name, passed to the Crown when the company was dissolved, and was disclaimed by the Treasury Solicitor in 2011. To disclaim unregistered land the Crown's lawyers had to identify the deed it was held under, so the file should hold or cite the 1938 conveyance, and may show whether the Mountjoy purchase and the WGR sale were one multi-party instrument with a single schedule. The WGR conveyance itself is not held (see the 1938 conveyance item). Against: the Cwmbargoed land is not Llandough land; an earlier check found no Llandough land in the 2011 notices; and the file may hold only a copy of the Gazette notice and a land search.",
+   "refs": [
+    "London Gazette 59962 (9 Nov 2011), T S ref BV21111179",
+    "MR item 1938-conveyance"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0068/"
   }
  ]
 }
