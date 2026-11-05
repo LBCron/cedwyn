@@ -11,3 +11,5 @@ Geometry is generated in code from survey dimensions (a few KB) rather than ship
 Budget: about 20 draw calls and 130-200k triangles; 1024 shadow map and fewer grass clumps on phones.
 Query flags: ?view=front|quarter|yard|above, ?low (phone budget on desktop), ?debug (fps, draws, triangles).
 What is evidence and what is a best guess: the Sources dialog in the page. Argentina scope: no money words. — Sion's Tab agent
+
+Staging preview (Cloudflare Pages, rebuilt on every push to this branch): https://section-argentina-3d.cedwyn-274.pages.dev/
