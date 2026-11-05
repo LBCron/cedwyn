@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T05:44:30Z",
+ "updated": "2026-11-05T05:48:41Z",
  "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
  "drafts": [
   {
@@ -6290,8 +6290,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6301,7 +6301,9 @@
     "body": "National Library of Wales (FOI)",
     "as_of": "2026-11-05T05:44:30Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T05:48:41Z"
   },
   {
    "id": "welsh-railways-research-circle-rhiwderin-archive-719473",
@@ -6319,8 +6321,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6330,7 +6332,9 @@
     "body": "Welsh Railways Research Circle (Rhiwderin archive)",
     "as_of": "2026-11-05T05:44:30Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T05:48:41Z"
   },
   {
    "id": "the-crown-estate-896710",
@@ -6348,8 +6352,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6359,7 +6363,9 @@
     "body": "The Crown Estate",
     "as_of": "2026-11-05T05:44:30Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T05:48:41Z"
   },
   {
    "id": "wiltshire-and-swindon-history-centre-188493",
@@ -6377,8 +6383,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6388,7 +6394,9 @@
     "body": "Wiltshire and Swindon History Centre",
     "as_of": "2026-11-05T05:44:30Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-05T05:48:41Z"
   }
  ],
  "synced_at": "2026-11-05T05:44:30Z",
