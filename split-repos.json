@@ -1,5 +1,5 @@
 {
-  "note": "Webapps in their own repositories (REPO SPLIT #188). mode 'mirror': old branch is source; separate repo copies from it. mode 'split-repo': separate repo is source; sync-split-repos.yml copies it back into the old branch so the live build and paths keep working. Activated to split-repo 5 Nov 2026 by owner. No branch is deleted.",
+  "note": "Webapps in their own repositories (REPO SPLIT #188). mode 'mirror': old branch is source; separate repo copies from it. mode 'split-repo': separate repo is source; sync-split-repos.yml copies it back into the old branch so the live build and paths keep working. Activated to split-repo 5 Nov 2026 by owner for the first cohort. Gap batch 5 Nov evening stays mirror until seeded. No branch is deleted.",
   "apps": [
     {"app": "Wales 3D world", "repo": "unclehowell/cedwyn-wales-3d", "old_branch": "section/wales-3d", "page": "/wales/", "mode": "split-repo"},
     {"app": "Argentina Tŷ Mawr 3D world", "repo": "unclehowell/cedwyn-argentina-3d", "old_branch": "section/argentina-3d", "page": "/argentina/", "mode": "split-repo"},
@@ -17,7 +17,7 @@
     {"app": "Case Office", "repo": "unclehowell/cedwyn-app", "old_branch": "section/app", "page": "/app/", "mode": "split-repo"},
     {"app": "Estate hub", "repo": "unclehowell/cedwyn-estate", "old_branch": "section/estate", "page": "/estate/", "mode": "split-repo"},
     {"app": "Patagonia", "repo": "unclehowell/cedwyn-patagonia", "old_branch": "section/patagonia", "page": "/patagonia/", "mode": "split-repo"},
-    {"app": "Cyberspace / Arcade", "repo": "unclehowell/cedwyn-cyberspace", "old_branch": "section/cyberspace", "page": "/cyberspace/", "mode": "split-repo"},
+    {"app": "Cyberspace", "repo": "unclehowell/cedwyn-cyberspace", "old_branch": "section/cyberspace", "page": "/cyberspace/", "mode": "split-repo"},
     {"app": "Forensic Assessments", "repo": "unclehowell/cedwyn-forensic", "old_branch": "section/forensic", "page": "/forensic/", "mode": "split-repo"},
     {"app": "Chessboard", "repo": "unclehowell/cedwyn-chess", "old_branch": "chess", "page": "/chess/", "mode": "split-repo"},
     {"app": "Grammar House", "repo": "unclehowell/cedwyn-csscpsg", "old_branch": "csscpsg", "page": "/csscpsg/", "mode": "split-repo"},
@@ -42,6 +42,24 @@
     {"app": "NFT Art", "repo": "unclehowell/cedwyn-nft-art", "old_branch": "nft-art", "page": "/nft-art/", "mode": "split-repo"},
     {"app": "Gift Shop", "repo": "unclehowell/cedwyn-shop", "old_branch": "merch", "page": "/shop/", "mode": "split-repo"},
     {"app": "Farm Album", "repo": "unclehowell/cedwyn-fb", "old_branch": "fb", "page": "/fb/", "mode": "split-repo"},
-    {"app": "Post Office & Calendar", "repo": "unclehowell/cedwyn-emails", "old_branch": "emails", "page": "/email/", "mode": "split-repo"}
+    {"app": "Post Office & Calendar", "repo": "unclehowell/cedwyn-emails", "old_branch": "emails", "page": "/email/", "mode": "split-repo"},
+    {"app": "Legal Wiki & Evidence", "repo": "unclehowell/cedwyn-wiki", "old_branch": "section/wiki", "page": "/wiki/", "mode": "mirror"},
+    {"app": "The Story & Documentary", "repo": "unclehowell/cedwyn-story", "old_branch": "bpvsbuckler", "page": "/story/", "mode": "mirror"},
+    {"app": "Arcade", "repo": "unclehowell/cedwyn-arcade", "old_branch": "arcade-final-serving-20261104", "page": "/arcade/", "mode": "mirror"},
+    {"app": "Public Authorities & Council Chamber", "repo": "unclehowell/cedwyn-authorities", "old_branch": "ghf-public-authorities", "page": "/authorities/", "mode": "mirror"},
+    {"app": "FOI Requests", "repo": "unclehowell/cedwyn-wdtk", "old_branch": "", "page": "/wdtk/", "mode": "mirror", "note": "repo created; durable source branch not yet identified"},
+    {"app": "Independent Review", "repo": "unclehowell/cedwyn-review", "old_branch": "ghf-independent-review", "page": "/review/", "mode": "mirror"},
+    {"app": "HubSpot Task Control", "repo": "unclehowell/cedwyn-hubspot", "old_branch": "webapp/hubspot-20261101", "page": "/hubspot/", "mode": "mirror"},
+    {"app": "Flower Garden", "repo": "unclehowell/cedwyn-garden", "old_branch": "garden", "page": "/garden/", "mode": "mirror"},
+    {"app": "Revival AR", "repo": "unclehowell/cedwyn-revival-ar", "old_branch": "section/revival-ar", "page": "/revival-ar/", "mode": "mirror"},
+    {"app": "Peekaboo", "repo": "unclehowell/cedwyn-peekaboo", "old_branch": "section/peekaboo", "page": "/peekaboo/", "mode": "mirror"},
+    {"app": "Bloculous", "repo": "unclehowell/cedwyn-bloculous", "old_branch": "section/bloculous", "page": "/bloculous/", "mode": "mirror"},
+    {"app": "Theories", "repo": "unclehowell/cedwyn-theories", "old_branch": "section/theories", "page": "/theories/", "mode": "mirror"},
+    {"app": "Garden Store", "repo": "unclehowell/cedwyn-garden-store", "old_branch": "section/garden-store", "page": "/garden-store/", "mode": "mirror"},
+    {"app": "Storytime", "repo": "unclehowell/cedwyn-storytime", "old_branch": "storytime", "page": "/storytime/", "mode": "mirror"},
+    {"app": "Molt", "repo": "unclehowell/cedwyn-molt", "old_branch": "molt", "page": "/molt/", "mode": "mirror"},
+    {"app": "Gallery", "repo": "unclehowell/cedwyn-gallery", "old_branch": "gallery", "page": "/gallery/", "mode": "mirror"},
+    {"app": "Internet Archive Sources", "repo": "unclehowell/cedwyn-internetarchive", "old_branch": "internetarchive", "page": "/internetarchive/", "mode": "mirror"},
+    {"app": "Terrain", "repo": "unclehowell/terrain", "old_branch": "", "page": "/terrain/", "mode": "split-repo", "note": "pre-existing separate repo"}
   ]
 }
