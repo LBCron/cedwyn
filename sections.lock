@@ -1,5 +1,5 @@
 {
- "note": "Pinned commits of the section snapshot branches the build reads (tools/assemble.py). sections-ci.yml updates an entry when its branch moves. See work/cedwyn-arch/SCOPE.md \u2014 Sion's Tab agent",
+ "note": "Pinned commits of the section snapshot branches the build reads (tools/assemble.py). sections-ci.yml updates an entry when its branch moves. See work/cedwyn-arch/SCOPE.md — Sion's Tab agent",
  "sections": {
   "analytics": {
    "branch": "section/analytics",
@@ -48,8 +48,8 @@
   },
   "mr-wolf": {
    "branch": "section/mr-wolf",
-   "pinned_utc": "2026-11-01T04:06:00Z",
-   "sha": "917fd1afee8a5d7865a20082fdf84898cdd80434"
+   "sha": "9c8bc883537bb475d9e6773beb2b91f6ca87c982",
+   "pinned_utc": "2026-11-05T22:45:00Z"
   },
   "patagonia": {
    "branch": "section/patagonia",
