@@ -76,8 +76,9 @@ sizes['monastery']=m.save(os.path.join(OUT,'monastery.glb'),meta('monastery',{"d
 # house front, the west barn runs north-south and faces west (the Executive's written corrections; reference paintings + aerial).
 G=json.load(open(os.path.join(os.path.dirname(__file__),'tymawr-layout.json')))
 m=Model('tymawr')
+# issue #200 (3D model loop): stone colours are glTF linear factors of the paintings' honey-grey rubble and cream dressed limestone (were near-white grey)
 m.mat('limewash',(0.93,0.92,0.87),0.85); m.mat('slate',(0.23,0.25,0.28),0.55); m.mat('pantile',(0.62,0.27,0.17),0.75)
-m.mat('rubble',(0.55,0.52,0.46),0.95); m.mat('dressed',(0.70,0.67,0.58),0.85); m.mat('brick',(0.55,0.24,0.18),0.85); m.mat('green',(0.16,0.33,0.2),0.6); m.mat('gravel',(0.6,0.57,0.5),1.0); m.mat('glass',(0.15,0.18,0.2),0.15,0.0)
+m.mat('rubble',(0.48,0.37,0.24),0.95); m.mat('dressed',(0.69,0.57,0.34),0.85); m.mat('brick',(0.55,0.24,0.18),0.85); m.mat('green',(0.16,0.33,0.2),0.6); m.mat('gravel',(0.6,0.57,0.5),1.0); m.mat('glass',(0.15,0.18,0.2),0.15,0.0)
 m.mat('dark',(0.08,0.08,0.08),0.9); m.mat('gate',(0.10,0.11,0.10),0.7); m.mat('pane',(0.75,0.85,0.85),0.1,0.0,0.45); m.mat('bark',(0.30,0.22,0.15),0.95); m.mat('leaf',(0.24,0.36,0.18),1.0)
 WM={'limewash':'limewash','rubble stone':'rubble','dressed stone':'dressed'}; RM={'slate':'slate','red pantile':'pantile'}
 for b in G['buildings']:
