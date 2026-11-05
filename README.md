@@ -1,5 +1,7 @@
 # infographic.bucklerfamily.estate — Great House Farm: the land changing hands
 
+v3.7.0 (5 Nov 2026). A Map dropdown (working model, 1824 Stewart plan, 1841 tithe plots) sits above the parcel dropdown; the pick draws only what the records tie to it, with text under the diagram.
+
 v3.6.0 (4 Nov 2026). A dropdown lists the parcels of the 1824 Stewart plan, numbered 1-59; each number opens the record tied to that parcel (1841 tithe entries from the site's index, grid reference, traced area, and the farm's documented chain). The 30-39 / 50-59 figure readings are unsettled (old-style 3 or 5) and both are listed rather than excluding 46-59; unread figures and open source conflicts are stated as such. One circle. On the ring: title holders and official actors. Inside it: no title — the permissive occupancy ploys (💩, each with its year; 💩💩 = 1955), the two people named in the statement of Mary (Nancy) Williams (🦹 Bruce Sutherland, with Mr. Knapp, estate agent, above), and the shredded-paper icons (papers gone).
 
 Data-status note: the 1877 A/B division is shown as the working model, not as a verified conveyance. The separate 1877 Clyde Street, Roath lease is excluded as a different property; a Great House Farm-specific instrument is still required to establish the proposed split.

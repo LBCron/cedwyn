@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.7.0] - 2026-11-05
+
+### Added
+- A "Map" dropdown above the parcel dropdown, three entries: the working model of the title lines (not a survey map), the 1824 Stewart plan of Cedfin (parcels 1-59) and the 1841 tithe map (only the plots this page links to Stewart parcels, not every plot). The second dropdown refills for the chosen map and the text for the selection appears under the diagram.
+- Working model: the ring's own lines (whole farm A+B, A, B, SA1, SA2, SA3, SA3+B) each draw on pick. The data file's labels A1, A2 and A3 are listed apart and draw nothing, because which ring line each matches has not been established.
+- Stewart parcels and tithe plots: the circle shows only what the records tie to the pick (the 1841 listed owner and occupier, then a dashed unknown). Tithe landowner and occupier entries are shown as listings as written, not proof of title; replay, narration and node taps are off in these views so the farm-level chain does not appear. No journey is drawn where no transfer is tied to the number.
+- Deep links: `?map=stewart&parcel=N`, `?map=tithe&plot=N`, `?map=model&p=KEY`.
+
+### Changed
+- The record sheet for a parcel is now text under the diagram, not a pop-up. The farm-level chain stays in a collapsed block, labelled as not tied to the number.
+- 1987 is described as an application to merge titles, not a confirmed merger.
+- Tithe plot 223: the earlier open note about an unnumbered 8a row is replaced by a source note. On page 12 of the library apportionment the 8a 0r 30p line sits against plot 223 (one-line offset); the land-use word is read by alignment and is not settled independently. Stewart plan figures are described as read from a phone photograph, not the archive image.
+
 ## [3.6.1] - 2026-11-05
 
 ### Changed
