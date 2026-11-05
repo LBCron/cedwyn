@@ -1,6 +1,6 @@
 {
   "schema": "hive_runner_observations/v1",
-  "updated": "2026-11-01T23:07:52.595Z",
+  "updated": "2026-11-05T08:55:00Z",
   "purpose": "Metadata-only evidence of recurring task schedules. This file never determines seat membership, assignment, review count, Gmail readiness or sent status.",
   "seat_authority": "drafts/ROSTER.json",
   "required_task_title": "Hive check-in — ",
@@ -12,9 +12,9 @@
       "schedule_status": "CONFIGURED",
       "task_title": "Hive check-in — ChatGPT",
       "actual_cadence": "daily at 08:00 Europe/London",
-      "checked_at": "2026-11-01T23:07:52.595Z",
-      "evidence": "Verified by the active ChatGPT automation harness: existing automation 6adc76031f00819182be426543f55547 was re-enabled and its saved DTSTART/RRULE changed to DTSTART;TZID=Europe/London:20261102T080000 with FREQ=DAILY; default timezone Europe/London. Saved prompt updated to explicitly use the connector-supported CONFIRMATION_WAIVED_FOR_SESSION for routine HubSpot TASK writes under the owner's instruction.",
-      "limitations": "Harness next_run_time field remains null; DTSTART establishes the saved schedule but the first execution after this change has not yet been independently confirmed. The five-minute Watch monitors sites/branches and does not invoke LLM agents."
+      "checked_at": "2026-11-05T08:36:02Z",
+      "evidence": "Verified by the active ChatGPT automation harness: existing automation 6adc76031f00819182be426543f55547 was re-enabled and its saved DTSTART/RRULE changed to DTSTART;TZID=Europe/London:20261102T080000 with FREQ=DAILY; default timezone Europe/London. Saved prompt updated to explicitly use the connector-supported CONFIRMATION_WAIVED_FOR_SESSION for routine HubSpot TASK writes under the owner's instruction. Actual scheduled execution observed in the ChatGPT automation runtime on 2026-11-05 08:36:02Z (Europe/London); this is direct execution evidence, not inference from DTSTART.",
+      "limitations": "One scheduled execution is now independently confirmed. This does not prove every future daily run will fire; retain the next-cycle check. The five-minute Watch monitors sites/branches and does not invoke LLM agents."
     },
     {
       "agent": "Tab",
