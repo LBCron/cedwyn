@@ -1,23 +1,23 @@
 {
  "title": "Research progress — the Great House (Tŷ Mawr) records programme",
- "generated": "2026-11-04T12:20Z",
+ "generated": "2026-11-05T12:39Z",
  "about": "Counts from the project correspondence register: every records question sent to an institution and every reply. Organisations only; no message text and no personal names.",
  "totals": {
-  "institutions": 75,
+  "institutions": 76,
   "questions_sent": 529,
-  "replies": 261,
-  "automatic_acknowledgements": 300,
-  "records_disclosed": 48,
-  "not_held": 62,
-  "refused": 8,
-  "pointed_elsewhere": 49
+  "replies": 269,
+  "automatic_acknowledgements": 301,
+  "records_disclosed": 49,
+  "not_held": 64,
+  "refused": 10,
+  "pointed_elsewhere": 50
  },
  "last_30_days": {
-  "questions_sent": 221,
-  "replies": 99,
-  "automatic_acknowledgements": 98
+  "questions_sent": 220,
+  "replies": 106,
+  "automatic_acknowledgements": 97
  },
- "waiting_on_institutions": 29,
+ "waiting_on_institutions": 27,
  "by_month": [
   {
    "month": "2026-01",
@@ -82,8 +82,8 @@
   {
    "month": "2026-11",
    "asked": 10,
-   "replies": 21,
-   "records": 1
+   "replies": 29,
+   "records": 2
   }
  ],
  "institutions": [
@@ -132,11 +132,26 @@
   {
    "institution": "HM Land Registry",
    "questions_sent": 36,
-   "replies": 7,
+   "replies": 9,
    "outcomes": {
     "asked for clarification or a fee": 2,
     "pointed elsewhere": 3,
-    "answered, no records": 2
+    "answered, no records": 3,
+    "refused": 1
+   },
+   "last_activity": "2026-11-04",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Amgueddfa Cymru - Museum Wales",
+   "questions_sent": 21,
+   "replies": 18,
+   "outcomes": {
+    "asked for clarification or a fee": 2,
+    "not held": 9,
+    "review / complaint outcome": 2,
+    "answered, no records": 2,
+    "records disclosed": 3
    },
    "last_activity": "2026-11-04",
    "waiting_on": "us"
@@ -155,18 +170,19 @@
    "waiting_on": "them"
   },
   {
-   "institution": "Amgueddfa Cymru - Museum Wales",
+   "institution": "National Library of Wales",
    "questions_sent": 21,
-   "replies": 17,
+   "replies": 12,
    "outcomes": {
-    "asked for clarification or a fee": 2,
-    "not held": 8,
-    "review / complaint outcome": 2,
-    "answered, no records": 2,
-    "records disclosed": 3
+    "pointed elsewhere": 2,
+    "records disclosed": 3,
+    "review / complaint outcome": 1,
+    "answered, no records": 4,
+    "not held": 1,
+    "refused": 1
    },
-   "last_activity": "2026-10-29",
-   "waiting_on": "them"
+   "last_activity": "2026-11-05",
+   "waiting_on": "us"
   },
   {
    "institution": "Ministry of Justice / HMCTS",
@@ -181,20 +197,6 @@
     "review / complaint outcome": 1
    },
    "last_activity": "2026-10-29",
-   "waiting_on": "them"
-  },
-  {
-   "institution": "National Library of Wales",
-   "questions_sent": 21,
-   "replies": 11,
-   "outcomes": {
-    "pointed elsewhere": 2,
-    "records disclosed": 3,
-    "review / complaint outcome": 1,
-    "answered, no records": 4,
-    "not held": 1
-   },
-   "last_activity": "2026-10-31",
    "waiting_on": "them"
   },
   {
@@ -239,14 +241,15 @@
   {
    "institution": "South Wales Police",
    "questions_sent": 17,
-   "replies": 9,
+   "replies": 10,
    "outcomes": {
     "pointed elsewhere": 2,
     "not held": 2,
     "asked for clarification or a fee": 3,
-    "answered, no records": 1
+    "answered, no records": 1,
+    "records disclosed": 1
    },
-   "last_activity": "2026-10-31",
+   "last_activity": "2026-11-04",
    "waiting_on": "us"
   },
   {
@@ -275,14 +278,14 @@
   {
    "institution": "Cardiff and Vale University Health Board",
    "questions_sent": 9,
-   "replies": 8,
+   "replies": 9,
    "outcomes": {
     "not held": 2,
-    "asked for clarification or a fee": 1,
+    "asked for clarification or a fee": 2,
     "pointed elsewhere": 3,
     "answered, no records": 2
    },
-   "last_activity": "2026-10-21",
+   "last_activity": "2026-11-04",
    "waiting_on": "us"
   },
   {
@@ -671,6 +674,16 @@
    "waiting_on": "us"
   },
   {
+   "institution": "Health and Safety Executive",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {
+    "not held": 1
+   },
+   "last_activity": "2026-11-05",
+   "waiting_on": "us"
+  },
+  {
    "institution": "Historic Buildings & Places",
    "questions_sent": 1,
    "replies": 1,
@@ -753,14 +766,6 @@
    "waiting_on": "us"
   },
   {
-   "institution": "Health and Safety Executive",
-   "questions_sent": 1,
-   "replies": 0,
-   "outcomes": {},
-   "last_activity": "2026-11-02",
-   "waiting_on": "us"
-  },
-  {
    "institution": "Hugh James (successor to John Loosemore & Co.)",
    "questions_sent": 1,
    "replies": 0,
@@ -798,6 +803,16 @@
    "replies": 0,
    "outcomes": {},
    "last_activity": "2026-10-31",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "SEWBReC (South East Wales Biodiversity Records Centre)",
+   "questions_sent": 0,
+   "replies": 1,
+   "outcomes": {
+    "pointed elsewhere": 1
+   },
+   "last_activity": "2026-11-04",
    "waiting_on": "us"
   },
   {
