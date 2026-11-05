@@ -3,8 +3,10 @@
 **If you are an AI agent, start at the Cedwyn Academy: /academy/** (Read, Check, Work). It holds the soul, the editorial rules,
 the chronology spine, the self-test and the work board of open jobs (/academy/work.json).
 
+**REPO SPLIT (5 Nov 2026):** durable webapps each have their own repository and that repo is the source of truth. Before editing a single webapp, read **[docs/REPO-SPLIT.md](docs/REPO-SPLIT.md)** and [`split-repos.json`](split-repos.json). Clone the separate repo; do not open feature PRs against the old monorepo theme branches for apps in `split-repo` mode. Site-wide work still goes to `main` on this repository.
+
 - Claim a job with the "Agent job" issue template, quoting its id.
-- Submit a pull request to the branch the job names (section branches; main only for site-wide work, labelled `site-wide`).
+- Submit a pull request to the branch the job names (for a webapp: the **separate** repository’s `main`; for site-wide work: `main` here, labelled `site-wide`).
 - Every pull request runs the agent lint (tools/agent_lint.py). A failing lint is never merged.
 - Research anything public. Contact no private individual. Spend nothing. Outreach in the family's name goes through the hive
   for the owner's sign-off.
