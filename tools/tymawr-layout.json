@@ -63,23 +63,6 @@
    "photo_ref": "1988 Cadw survey photograph of the farmhouse, 29 July 1988 (front from the south-east): eave c.4.2 m, open timber porch left of centre, 3 first-floor windows, red ridge tiles, east gable bare rubble, red-brick east chimney"
   },
   {
-   "id": "stone_gable_bay",
-   "x": -7.4,
-   "z": 0.6,
-   "len_ns": 8.2,
-   "dep_ew": 5.4,
-   "eave": 5.0,
-   "pitch": 44,
-   "walls": "rubble stone",
-   "roof": "slate",
-   "gable_faces": "south",
-   "chimney": {
-    "z": 3.8,
-    "mat": "stone"
-   },
-   "faces": "south"
-  },
-  {
    "id": "pantile_range",
    "x": 13.5,
    "z": -0.2,
@@ -408,6 +391,30 @@
     -70
    ],
    "note": "hedge dividing the meadows (painted aerial plan); line not checked"
+  }
+ ],
+ "removed": [
+  {
+   "id": "stone_gable_bay",
+   "when": "2026-11-05",
+   "why": "issue #204: the house-and-gate painting and the 1988 Cadw photograph of the farmhouse both show the west end of the house plain, with no gabled stone bay or fourth stack",
+   "was": {
+    "id": "stone_gable_bay",
+    "x": -7.4,
+    "z": 0.6,
+    "len_ns": 8.2,
+    "dep_ew": 5.4,
+    "eave": 5.0,
+    "pitch": 44,
+    "walls": "rubble stone",
+    "roof": "slate",
+    "gable_faces": "south",
+    "chimney": {
+     "z": 3.8,
+     "mat": "stone"
+    },
+    "faces": "south"
+   }
   }
  ]
 }
