@@ -1,6 +1,6 @@
 {
  "schema": "cedwyn_mr_wolf_leaderboard/v2",
- "version": "2.0.0",
+ "version": "2.1.0",
  "updated": "2026-11-05",
  "slot": 40,
  "of": 59,
@@ -10,19 +10,19 @@
   "limbs": [
    {
     "key": "a",
-    "label": "Conscious, deliberate dishonesty attributable to the successful party",
+    "label": "Conscious and deliberate dishonesty",
     "max": 50,
     "minimum": 25
    },
    {
     "key": "b",
-    "label": "Court deception and materiality / operative cause",
+    "label": "Attribution to the successful party and actual deception of the court",
     "max": 50,
     "minimum": 25
    },
    {
     "key": "c",
-    "label": "Critical undermining of process and powerful probability of real injustice",
+    "label": "Operative cause and materiality to the judgment",
     "max": 50,
     "minimum": 25
    },
@@ -33,16 +33,15 @@
     "minimum": 25
    }
   ],
-  "mapping": "Each limb is an internal evidence-readiness score from 0 to 50. 0 = no supporting material; 10 = lead or unsupported inference; 20 = documented anomaly or indirect/circumstantial support; 25 = minimum internal gate with a particularised case and credible primary-source support for that limb; 30–40 = stronger authenticated primary material and corroboration; 50 = complete, admissible, authenticated proof, independently checked and stress-tested. These are triage anchors, not legal standards or probability estimates.",
-  "threshold_note": "100 is the internal floor only if every limb is at least 25/50. A total of 100 or more does not pass if any limb is below 25. 200/200 means every limb is at 50: twice the internal floor on each limb, the owner's double-lock target. It is not 200% statistical certainty and cannot guarantee a court outcome.",
-  "progress": "Threshold progress percentage = the weakest limb divided by 25, capped at 100%. This deliberately prevents strong evidence on one element compensating for a missing essential element. The total score out of 200 is shown as a separate evidence index.",
-  "order": "Score high to low; ties by materiality (limb b), process integrity (limb c), then proof quality (limb d).",
-  "reasonable_diligence": "Reasonable diligence is not scored as a core limb of a freestanding Takhar fraud action. Takhar rejects a general diligence prerequisite where fraud was not alleged at the original trial, subject to abuse-of-process considerations in the particular case. Diligence remains tracked separately for procedural-route analysis and any ordinary fresh-evidence route."
+  "mapping": "Internal evidence-readiness scale, not a court-prescribed points test or probability estimate. 0 = no supporting material; 10 = lead or unsupported inference; 20 = documented anomaly or indirect/circumstantial support; 25 = internal minimum requiring a particularised theory and credible primary-source support for that element; 30–40 = stronger authenticated primary material and corroboration; 50 = complete admissible authenticated proof, independently checked and stress-tested. Each element is separately assessed; no element can be compensated for by another.",
+  "threshold_note": "The internal 100-point floor is passed only when all four limbs are at least 25/50. A raw total of 100 or more with any limb below 25 does not pass. 200/200 means 50/50 on every limb: the owner's double-lock target, not 200% statistical probability or a guarantee of a court result.",
+  "progress": "Threshold progress percentage = weakest Takhar limb divided by 25, capped at 100%. This measures the distance to the internal minimum on the weakest essential element; the raw sum out of 200 is a separate evidence index. Passing the four internal gates is not itself proof that a court will find fraud.",
+  "reasonable_diligence": "Reasonable diligence is not scored as an element of a freestanding Takhar fraud action. Takhar rejects a general diligence prerequisite where fraud was not alleged at the original trial, subject to abuse-of-process considerations in the particular case. Diligence remains tracked separately for route analysis and any ordinary fresh-evidence procedure."
  },
  "source": {
   "reopen_grounds_run": 59,
   "reopen_grounds_updated": "2026-11-05T00:00Z",
-  "note": "All 15 leads have been recalibrated against the fraud/materiality/process-integrity/proof rubric. Their component scores remain provisional desk assessments; source records must be read and authenticated. The case-wide CPR 52.30 route gate remains unresolved and blocks filing."
+  "note": "All 15 leads recalibrated to the four elements of a freestanding Takhar fraud case. Component scores are provisional desk assessments, not probability estimates. The CPR 52.30 reopening route is a separate case-wide gateway and remains unresolved; filing is blocked pending independent legal advice."
  },
  "quarantine_note": "Kissed-frog items remain quarantined and are not scored. Post-July 1987 archaeology and later records-disclosure events are not treated as causes of the July 1987 judgment without primary evidence of pre-judgment knowledge and material deception.",
  "rows": [
@@ -50,17 +49,17 @@
    "rank": 1,
    "id": "MW-11",
    "title": "The licence letters rejected in writing?",
-   "score": 80,
+   "score": 70,
    "limbs": {
     "a": 10,
-    "b": 50,
-    "c": 10,
+    "b": 10,
+    "c": 40,
     "d": 10
    },
    "limbs_0_5": {
     "a": 1,
-    "b": 5,
-    "c": 1,
+    "b": 1,
+    "c": 4,
     "d": 1
    },
    "reopen_ground": "R2",
@@ -68,11 +67,11 @@
    "what": "The decisive finding was that Mary (Nancy) Williams never told BP she rejected the 1974 letters ('she did not, however, do that'). A written rejection, if BP held one while its case said there was none, would go to the heart of the decision.",
    "why": {
     "a": "No evidence yet that BP possessed a written rejection or knowingly concealed one. The lead identifies what a future record might prove, not proof of deliberate dishonesty now.",
-    "b": "The court wrote that the result 'may' have been different had she plainly told BP she did not accept the letters.",
-    "c": "Potentially central if an authenticated rejection was held by BP and withheld or the court was misled about its existence. No such record has been found, so critical corruption of the litigation process is not yet demonstrated.",
+    "b": "This limb needs proof that the dishonest act is attributable to BP or a person for whom it is responsible, and that the court was actually deceived. The court's conditional observation about what might have happened if Mary had rejected the letters is not proof that BP held or concealed a rejection. No such document has been found.",
+    "c": "The Court of Appeal said the result may have been different had Mary plainly told BP that she did not accept the letters. That is strong judicial support for the potential materiality of a genuine rejection; it does not establish that one existed or was concealed. The score is therefore below full proof.",
     "d": "No communication to BP after 4 November 1974 has been found."
    },
-   "what_would_raise_it": "Find and authenticate a contemporaneous written rejection, or BP/solicitor file material recording it; identify who knew of it, whether it was withheld or represented as absent, the disclosure history, and exactly what the 1987 court was told.",
+   "what_would_raise_it": "Find and authenticate a contemporaneous written rejection or BP/solicitor file material recording one; establish the author, recipient, BP's knowledge, whether it was withheld or misrepresented as absent, what the court was told, and why the original court was thereby deceived.",
    "status": "Open: letter being traced",
    "records": [
     {
@@ -99,14 +98,14 @@
    "score": 60,
    "limbs": {
     "a": 10,
-    "b": 30,
-    "c": 10,
+    "b": 10,
+    "c": 30,
     "d": 10
    },
    "limbs_0_5": {
     "a": 1,
-    "b": 3,
-    "c": 1,
+    "b": 1,
+    "c": 3,
     "d": 1
    },
    "reopen_ground": "R1",
@@ -114,11 +113,11 @@
    "what": "The Court of Appeal answered the 'wrong company' point from the letters' own words that BP Properties Ltd 'had agreed to buy'. Completion came only in May 1975, and HM Land Registry's file adds a plan to that sale dated 23 February 1975.",
    "why": {
     "a": "The letters say BP Properties had agreed to buy. No record yet shows that the writers knew this was false or misleading when they said it.",
-    "b": "The whole result rests on the licence of BP Properties Ltd: 'from the time of her receipt of the letters, Mrs Buckler was in possession ... by the licence of BP Properties Ltd'.",
-    "c": "This could matter only if primary evidence showed that the writers knowingly misstated BP Properties' status and that the court was thereby misled on the point that determined the licence finding. Neither element is proved on the present record.",
+    "b": "No record shows that the writers knew the asserted purchase status was false, that the relevant statement was put before the court as a false fact, or that the court was actually deceived by it.",
+    "c": "The court expressly treated the licence of BP Properties as decisive to the character of Mary's possession. A knowingly false representation about BP Properties' ability or status could therefore be material, but the alleged falsity and deception remain unproved.",
     "d": "Catalogue entries only; the conveyance and any recital of the contract date are unread."
    },
-   "what_would_raise_it": "Read the 1975 conveyance, contract and contemporaneous BP Properties file. Look for instructions or correspondence showing the writers knew the asserted purchase status was false, and link that statement to the court's licence finding.",
+   "what_would_raise_it": "Read the 1975 conveyance, contract and contemporaneous BP Properties file. Establish who knew any statement in the 1974 letters was false, whether the false statement was advanced to the court, and how it operated on the licence finding.",
    "status": "Open: conveyance to be read",
    "records": [
     {
@@ -141,14 +140,14 @@
    "score": 60,
    "limbs": {
     "a": 10,
-    "b": 30,
-    "c": 10,
+    "b": 10,
+    "c": 30,
     "d": 10
    },
    "limbs_0_5": {
     "a": 1,
-    "b": 3,
-    "c": 1,
+    "b": 1,
+    "c": 3,
     "d": 1
    },
    "reopen_ground": "R4",
@@ -156,11 +155,11 @@
    "what": "In September 1974 BP Pension Trust obtained leave to enforce the 1962 possession order 'as successors in title to Western Ground Rents'. The 1969 conveyance from Western Ground Rents is not among the documents lodged on either first-registration file.",
    "why": {
     "a": "No primary record presently shows that BP Pension Trust or its predecessor knowingly misstated succession to the 1962 judgment.",
-    "b": "The court held that enforcement of the 1962 judgment 'was still open to the landlords at October 31 1974'. Only the judgment creditor or its successor could enforce it.",
-    "c": "A missing deed or incomplete title file is not itself a corrupted process. This would need proof that a party knowingly misstated the successor's rights, that the court was deceived, and that the misstatement materially affected its decision.",
+    "b": "No primary record yet shows that BP knowingly advanced a false account of succession to the 1962 judgment or that the Court of Appeal was actually deceived by such an account.",
+    "c": "The court treated enforcement of the 1962 order as still open to the landlords at 31 October 1974. If the asserted succession or right to enforce were knowingly misrepresented, that could matter; the deed and affidavit are not yet read.",
     "d": "Absence from a list of lodged documents does not prove the deed did not exist; the deed itself is unread."
    },
-   "what_would_raise_it": "Obtain the 1969 conveyance and the 1974 affidavit for leave. Establish whether BP knowingly misstated succession to the 1962 judgment, whether the court was deceived, and whether that assertion was material to the 1987 decision.",
+   "what_would_raise_it": "Obtain the 1969 conveyance and 1974 affidavit for leave. Establish the actual succession to the 1962 judgment, any knowingly false statement about it, its attribution to BP, what the court was told and how that assertion affected the judgment.",
    "status": "Open: records requested",
    "records": [
     {
@@ -214,11 +213,11 @@
    "what": "The farmhouse was registered separately (title WA240304, application on Form 1C, register edition 23 February 1983) while BP's own 1974 action against the occupier, Mary (Nancy) Williams, had never been finally heard.",
    "why": {
     "a": "The application and statutory declaration have not yet been read. No current record shows that the applicant or its agent knowingly made a false statement about occupation.",
-    "b": "The Court of Appeal held that any title she had acquired would have been an overriding interest binding the registration, so the registration date was not why she lost.",
-    "c": "A registration irregularity alone does not show that the 1987 appeal process was corrupted. The Court of Appeal treated an accrued overriding interest as binding on registration; no evidence links the application to the reasoning that decided the appeal.",
+    "b": "The registration file has not been shown to have been used to mislead the Court of Appeal. No evidence currently identifies a knowingly false statement by BP or an agent, adopted or deployed in the litigation, that actually deceived the court.",
+    "c": "The Court of Appeal held that an interest acquired by occupation would bind registration. On the present account, the registration date itself was not why Mary lost. A materiality case would need to identify a different false fact actually relied on in the 1987 reasoning.",
     "d": "An official anomaly; the declaration itself is unread."
    },
-   "what_would_raise_it": "Read the complete Form 1C, statutory declaration, requisitions and service record. A route to a fraud ground would require a knowingly false statement attributable to the successful party and proof that the court relied on it materially.",
+   "what_would_raise_it": "Read the complete Form 1C, statutory declaration, requisitions, notices and service record. Then identify who made or adopted any false statement, how it entered the 1986–87 proceedings, and the exact finding it materially affected.",
    "status": "Open: HM Land Registry request pending",
    "records": [
     {
@@ -253,14 +252,14 @@
    "score": 50,
    "limbs": {
     "a": 10,
-    "b": 20,
-    "c": 10,
+    "b": 10,
+    "c": 20,
     "d": 10
    },
    "limbs_0_5": {
     "a": 1,
-    "b": 2,
-    "c": 1,
+    "b": 1,
+    "c": 2,
     "d": 1
    },
    "reopen_ground": "R5",
@@ -268,11 +267,11 @@
    "what": "Our case: the farmhouse plot left the Bute estate under an 1877 arrangement with Daniel Thomas & Son, with rent ending in 1928. If so, the farmhouse lay outside the 1916 and 1949 tenancies and the 1938 conveyance, and the paper title the court relied on would fail for it.",
    "why": {
     "a": "The 1877 agreement and later rent history may challenge the title narrative, but they do not yet show that anyone knowingly concealed the arrangement or lied to the court.",
-    "b": "The court started from BP's 'paper title to the farm' and a 1916 tenancy of 'the whole of the farm'.",
-    "c": "A competing title theory, even if ultimately correct, is not fraud. The process-integrity case requires proof that a party knowingly concealed the 1877 arrangement or made a material false representation to the court and that this affected the judgment.",
+    "b": "No record currently attributes a deliberate false title or tenancy representation to BP or a responsible agent, or shows that the Court of Appeal was actually deceived by concealment of the 1877 arrangement.",
+    "c": "The judgment relied on BP's paper title and the asserted tenancy history. A proved exclusion of the farmhouse plot from the relevant title or tenancy could be material, but the 1877/1928/1938 chain and any dishonest court representation remain unproved.",
     "d": "The 1877 agreement, plan and 1928 receipt are unread originals."
    },
-   "what_would_raise_it": "Produce the 1877 agreement and plan, 1928 receipt and 1938 conveyance with plans; then identify contemporaneous material showing deliberate concealment or a knowingly false title/tenancy assertion actually relied on by the court.",
+   "what_would_raise_it": "Produce the 1877 agreement and plan, 1928 receipt and 1938 conveyance with plans; map the farmhouse plot; then prove any knowing concealment or false title/tenancy assertion attributable to BP which the court actually relied on.",
    "status": "Open: originals being traced",
    "records": [
     {
@@ -334,11 +333,11 @@
    "what": "The 1974 letters gave the sale to BP Properties as 'the only way' to 'safeguard your future occupation'. The 23 May 1975 conveyance, as entered on the register, kept development rights over the farmhouse plot.",
    "why": {
     "a": "The wording of the 1974 letters and the later conveyance reservations raise a question about purpose, but do not prove conscious and deliberate dishonesty.",
-    "b": "The court decided the letters' legal effect; the writer's motive played no part in that reasoning.",
-    "c": "The conveyance may expose a factual inconsistency, but the current record does not show a knowingly false representation to the court or that such a representation was an operative cause of the licence decision.",
+    "b": "The wording and conveyance reservations do not by themselves prove that the successful party knowingly misrepresented a fact to the court or that the court was actually deceived.",
+    "c": "The Court of Appeal decided the legal effect of the 1974 letters. The 1975 reservations may provide context, but the present record does not show they would have changed how the court approached the decisive licence evidence.",
     "d": "A register view, not an official copy; the deed is unread."
    },
-   "what_would_raise_it": "Read the official 1975 conveyance, plan, contract and drafting file. Identify any knowingly false representation to the 1987 court and show that it was an operative cause of the licence decision.",
+   "what_would_raise_it": "Read the official 1975 conveyance, plan, contract and drafting file. Identify a knowingly false representation attributable to the successful party, prove it was put before the court and show that it materially affected the licence analysis.",
    "status": "Open: conveyance to be read",
    "records": [
     {
@@ -380,11 +379,11 @@
    "what": "HM Land Registry merged the farmhouse title (WA240304) into the main title (WA231076) on 2 February 1987, while the appeal was before the Court of Appeal.",
    "why": {
     "a": "The timing of the amalgamation raises a question, but the applicant, purpose and knowledge are not established. Timing alone is not deliberate dishonesty.",
-    "b": "The court's description of the registration matches the register as merged, but it held the registration date was not why the occupier lost.",
-    "c": "An administrative amalgamation during the appeal, without proof of concealment or reliance by the court, does not show that the appeal process was critically undermined. The judgment treated the registration date as non-determinative.",
+    "b": "The application and correspondence are unread. There is no current evidence of a knowingly false representation by the successful party, attribution to it, or actual deception of the Court of Appeal.",
+    "c": "The court noted the registration history but treated the registration date as non-determinative to the occupier's overriding interest. The present amalgamation anomaly therefore has a weak causal connection to the actual decision.",
     "d": "Listed, not read."
    },
-   "what_would_raise_it": "Obtain the full amalgamation application, plan and correspondence. It would need to show more than an administrative change: deliberate concealment or misrepresentation, court reliance and a powerful link to the appeal result.",
+   "what_would_raise_it": "Obtain the full amalgamation application, plan and contemporaneous correspondence. Prove a deliberate false statement or concealment attributable to the successful party, actual deception of the court and a material connection to its reasoning.",
    "status": "Open: record requested (Mr Wolf seed score)",
    "records": [
     {
@@ -422,11 +421,11 @@
    "what": "The judgment records that documents proving title were 'never produced'. A typed statement from about 1974 records that in June 1950 a Penarth estate agent had the family's papers taken from a blanket box.",
    "why": {
     "a": "The account is second-hand and does not yet link the agent to Western Ground Rents, BP or a deliberate concealment of title papers.",
-    "b": "The missing papers appear only in the judgment's background; the decision turned on the 1974 letters.",
-    "c": "The family account may explain a title-record gap, but it does not yet connect a dishonest act by the successful party to the court's decision. Its present form is too indirect to show critical process corruption.",
+    "b": "The second-hand account does not establish who removed the papers, who instructed them, or that BP or a responsible agent knowingly concealed material from and thereby deceived the Court of Appeal.",
+    "c": "The missing title papers appear in the judgment's background, but the result turned on the 1974 letters. No causal link from the alleged 1950 removal to the decisive finding is presently demonstrated.",
     "d": "An unsigned, undated typed copy with its last page missing."
    },
-   "what_would_raise_it": "Locate the original statement, establish its author and provenance, identify the agent independently, and find records linking that agent to BP/WGR and to deliberate concealment that materially misled the court.",
+   "what_would_raise_it": "Locate the original statement, establish its author and provenance, identify the agent independently, and obtain records linking that agent to BP/WGR and to deliberate concealment deployed in the litigation.",
    "status": "Open",
    "records": [
     {
@@ -468,11 +467,11 @@
    "what": "Land was registered as village green VG41 in 1970 by Glamorgan County Council, whose own planning committee had heard Mary (Nancy) Williams object in 1958 that family land had been 'wrongfully appropriated'.",
    "why": {
     "a": "No village-green application has been read; the legislation also permitted registration by the authority. No knowingly false statement is identified.",
-    "b": "The judgment does not mention the green, so it cannot have caused the 1987 decision. A separate route (correcting the register), not a reopening ground.",
-    "c": "This concerns a separate village-green registration route. The 1987 judgment did not rely on VG41, so the current material cannot show that the appeal process was corrupted.",
+    "b": "No evidence identifies a knowingly false representation by the successful party to the Court of Appeal. The village-green material concerns a separate register route and was not relied on in the judgment.",
+    "c": "The 1987 judgment did not rely on VG41. This is a separate register-correction issue, not a material cause of the Court of Appeal's decision.",
     "d": "A newspaper report of her words; the VG41 file is unread."
    },
-   "what_would_raise_it": "Keep this on its separate register-correction route. It should enter the reopening score only if primary evidence proves deliberate false evidence or concealment actually relied on in the 1987 judgment.",
+   "what_would_raise_it": "Keep on the separate register-correction route. Reconsider the Takhar score only if primary evidence proves a knowingly false representation attributable to the successful party, actually deceiving the court and materially affecting the judgment.",
    "status": "Open: separate route, request pending",
    "records": [
     {
@@ -499,14 +498,14 @@
    "score": 10,
    "limbs": {
     "a": 0,
-    "b": 10,
-    "c": 0,
+    "b": 0,
+    "c": 10,
     "d": 0
    },
    "limbs_0_5": {
     "a": 0,
-    "b": 1,
-    "c": 0,
+    "b": 0,
+    "c": 1,
     "d": 0
    },
    "reopen_ground": "R6",
@@ -514,11 +513,11 @@
    "what": "The 1974 letters were addressed to 'Mrs Buckler', not Mary (Nancy) Williams.",
    "why": {
     "a": "The letters addressed to Mrs Buckler were before the court. No separate concealed fact or knowingly false statement is identified by this lead.",
-    "b": "Low.",
-    "c": "The letters were already before the 1987 court. Without proof of a concealed fact or false representation not addressed by the court, this does not presently show a corrupted process.",
+    "b": "The letters were before the court. This lead identifies no separate concealed fact, responsible actor or actual deception.",
+    "c": "The letters addressed to Mrs Buckler were before the court. This lead does not identify a separate false fact that operated on the court's decision.",
     "d": "Not fresh."
    },
-   "what_would_raise_it": "No present uplift is identified. Reassess only if a distinct, previously concealed fact or knowingly false representation emerges and can be tied to the court's reasoning.",
+   "what_would_raise_it": "No current uplift is identified. Reassess only if a distinct concealed fact or knowingly false representation attributable to the successful party emerges, was put before the court and materially affected its decision.",
    "status": "Parked: before the court in 1987",
    "records": [
     {
@@ -552,11 +551,11 @@
    "what": "The 1988 demolition, Cadw's missing 1988 file and answers that records 'would have been destroyed'. Limitation Act 1980 s.32 postpones time where facts were deliberately concealed.",
    "why": {
     "a": "Different modern explanations for missing records do not establish that anyone deliberately concealed material from the 1987 court.",
-    "b": "All of this happened after the July 1987 judgment, so it cannot have caused it.",
-    "c": "The demolition, later file-loss explanations and modern disclosure replies post-date the July 1987 judgment. They cannot have caused or corrupted that decision and belong in a separate records-accountability track.",
+    "b": "Modern records-disclosure responses do not establish attribution of pre-judgment dishonesty to the successful party or actual deception of the Court of Appeal.",
+    "c": "The records-disclosure events and explanations post-date the July 1987 judgment. They cannot have caused the decision; they may be relevant to separate record-access or accountability work.",
     "d": "Not yet assessable: no destruction log has been read."
    },
-   "what_would_raise_it": "Do not raise the 1987 reopening score with post-judgment record loss alone. Keep destruction logs, retention schedules and disclosure answers in the separate records/limitation analysis.",
+   "what_would_raise_it": "Keep post-judgment record loss and disclosure answers on a separate records/accountability track. They cannot increase the Takhar score without evidence of pre-judgment deception that caused the 1987 decision.",
    "status": "Parked as a reopening ground: after 1987",
    "records": [
     {
@@ -610,11 +609,11 @@
    "what": "A May 1939 agreement by which Western Ground Rents let 5.30 acres of pasture to John Williams the younger, signed before a bank cashier. Our case asks whether the signature is his.",
    "why": {
     "a": "The signature question remains untested. There is no handwriting opinion, proof of forgery or evidence that a responsible party knowingly used a false signature.",
-    "b": "The 1987 judgment does not mention the 1939 letting. It rested on the 1916 tenancy, the 1949 surrender and re-grant, and the 31 October 1974 letters.",
-    "c": "Even a proved signature anomaly in the 1939 letting would need to be tied to a knowingly false case advanced to the 1987 court and shown to have affected its reasoning. No such link is presently identified.",
+    "b": "The signature has not been examined. No proved forgery, responsible party attribution or actual deception of the Court of Appeal is presently established.",
+    "c": "Even a proved signature anomaly in the 1939 letting would need to be shown to have materially affected the 1987 court's reasoning. The judgment's decisive reasoning concerned the later licence letters.",
     "d": "Nothing a court could weigh yet: one photograph, no specimens, no examiner."
    },
-   "what_would_raise_it": "Obtain the complete DBDT123/7 agreement and dated comparison signatures, then an independent handwriting report. Even a proved forgery needs proof of knowing use, court deception and materiality to the 1987 decision.",
+   "what_would_raise_it": "Obtain the complete DBDT123/7 agreement and dated comparison signatures, then an independent handwriting report. A proved forgery would still require attribution to the successful party, use to deceive the court and material effect on the judgment.",
    "status": "Open: specimens being gathered",
    "records": [
     {
@@ -652,11 +651,11 @@
    "what": "A deed between Western Ground Rents, South Western Brick & Tile and Cardiff City Corporation, known only from its recital on the woodland title WA735527.",
    "why": {
     "a": "The woodland deed and plan have not been read. No deliberate false statement or concealment connected with the 1987 decision is presently identified.",
-    "b": "The 1987 judgment does not rely on it, and the appeal concerned only the farmhouse and garden.",
-    "c": "The woodland deed may affect parcel analysis, but no dishonest conduct or court deception connected with the 1987 decision is presently identified.",
+    "b": "The deed is unread. No knowingly false representation attributable to the successful party, or actual deception of the Court of Appeal, is presently identified.",
+    "c": "The woodland deed may affect parcel boundaries, but no connection to the decisive licence finding in the 1987 judgment is established.",
     "d": "No copy, image or transcript held."
    },
-   "what_would_raise_it": "Order the 1961 deed and plan, map the parcels precisely, and identify any knowingly false representation about them that was made to and materially relied on by the 1987 court.",
+   "what_would_raise_it": "Order the 1961 deed and plan, map the parcels precisely, and identify a knowingly false statement about them attributable to the successful party which was put before and materially relied on by the 1987 court.",
    "status": "Open: deed orderable (Mr Wolf seed score)",
    "records": [
     {
@@ -698,11 +697,11 @@
    "what": "Our case asks whether the 1955 Order 14 possession order reached all the ground that was taken on 4 July 1955.",
    "why": {
     "a": "The current record does not show that anyone knowingly misrepresented the scope of the 1955 order to the 1987 court.",
-    "b": "The judgment records possession taken in 1955 of all parts of the farm except the farmhouse and garden, and the 1987 appeal concerned only the farmhouse and garden.",
-    "c": "The recorded 1955 possession event excluded the farmhouse and garden, while the 1987 appeal concerned those premises. The current material does not show a powerful probability of a different appeal decision.",
+    "b": "The current records do not show a false representation made by the successful party to the Court of Appeal about the 1955 execution, or that the appeal court was actually deceived.",
+    "c": "The judgment records possession in 1955 of all parts of the farm except the farmhouse and garden, while the appeal concerned the farmhouse and garden. On the current record the alleged overreach is not causally material to the 1987 decision.",
     "d": "No document yet."
    },
-   "what_would_raise_it": "No present uplift is identified. Any further work would need to connect the alleged overreach to the farmhouse/garden issue actually decided in 1987 and to a deliberate false representation to the court.",
+   "what_would_raise_it": "No current uplift is identified. Any further work must connect the alleged overreach to the farmhouse/garden issue decided in 1987 and prove that a knowingly false account of it actually deceived the court.",
    "status": "Open: records not located (Mr Wolf seed score)",
    "records": [
     {
@@ -740,11 +739,11 @@
    "what": "Was knowledge of the burials found under the farm (1,026 recorded in 1994) held before the 1986–87 trial and kept from the court?",
    "why": {
     "a": "No pre-1987 record presently shows plot-specific knowledge of burials, still less deliberate concealment from the court.",
-    "b": "What lay underground has no bearing on whether the 1974 letters turned possession into permission.",
-    "c": "No pre-July 1987 evidence of knowledge has been identified. Later archaeology cannot show that the 1987 court was deceived or that the decision-making process was critically undermined.",
+    "b": "No pre-July 1987 record currently identifies a person with plot-specific knowledge who deliberately concealed it from the Court of Appeal.",
+    "c": "Later archaeology cannot have caused the 1987 decision. No pre-judgment fact presently connects the reported burials to the court's reasoning.",
     "d": "Credible sources, but they would not have influenced the decision."
    },
-   "what_would_raise_it": "Only a primary record dated before July 1987 showing plot-specific knowledge could reopen this lead; it would still need proof of deliberate concealment from the court and material effect on the issue decided.",
+   "what_would_raise_it": "Only a primary record dated before July 1987 showing plot-specific knowledge could advance this lead; it would still need to prove attributable deliberate concealment, actual court deception and materiality to the judgment.",
    "status": "Parked: no pre-1987 record",
    "records": [
     {
@@ -760,7 +759,7 @@
  "minimum_per_limb": 25,
  "route_gate": {
   "status": "UNRESOLVED — filing blocked",
-  "governing_route": "The 1987 decision is a final Court of Appeal determination. The current procedural route must be advised, not assumed.",
+  "governing_route": "The 1987 decision is a final Court of Appeal determination. A freestanding Takhar fraud action and reopening that final appeal under CPR 52.30 are different procedural routes. The route must be advised and selected; neither route is assumed.",
   "cpr_52_30": {
    "requirements": [
     "Reopening must be necessary to avoid real injustice.",
@@ -773,7 +772,7 @@
     "Goring-on-Thames Parish Council v South Oxfordshire DC [2018] EWCA Civ 860",
     "Wingfield v Canterbury City Council [2020] EWCA Civ 1588"
    ],
-   "further_requirements": "The earlier process must have been critically undermined; there must be a powerful probability of significant injustice and a powerful probability the decision would have been different if integrity had not been undermined. Mere fresh evidence or an arguably wrong result is insufficient."
+   "further_requirements": "For CPR 52.30, the earlier process must have been critically undermined; there must be a powerful probability of significant injustice and a powerful probability that the decision would have been different if integrity had not been undermined. Fresh evidence or an arguably wrong result alone is insufficient."
   },
   "takhar_action": {
    "status": "Separate route — legal advice required",
@@ -787,6 +786,6 @@
    "Do limitation, deliberate-concealment postponement, standing, parties, service and other procedural requirements permit the proposed route?",
    "Has independent counsel reviewed the pleaded fraud particulars and evidence bundle?"
   ],
-  "hard_stop": "No individual lead score, even 200/200, authorises filing while the case-wide procedural route remains unresolved."
+  "hard_stop": "No individual Takhar lead score, even 200/200, authorises reopening the appeal while the case-wide route remains unresolved. Independent counsel must advise whether a freestanding fraud action is available, whether CPR 52.30 is available or necessary, whether an alternative effective remedy defeats CPR 52.30, and on limitation, standing, parties and service."
  }
 }
