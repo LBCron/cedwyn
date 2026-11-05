@@ -1,4 +1,4 @@
-// fcg.bucklerfamily.estate theme script: the nav turns solid on scroll (as on projects.bucklerfamily.estate), and inline colours
+// bucklerfamily.estate/fcg/ theme script: the nav turns solid on scroll (as on projects.bucklerfamily.estate), and inline colours
 // carried over from the source pages are re-toned so no text ends up dark-on-black.
 (function(){var n=document.querySelector('.sl-nav');if(n){var f=function(){n.classList.toggle('is-solid',window.scrollY>24)};f();window.addEventListener('scroll',f,{passive:true})}
 function rgb(s){var m=/rgba?\(([^)]+)\)/.exec(s||'');if(!m)return null;var p=m[1].split(',').map(parseFloat);return{r:p[0],g:p[1],b:p[2],a:p.length>3?p[3]:1}}

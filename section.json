@@ -1,10 +1,10 @@
 {
  "id": "fcg",
- "title": "FCG · Security Clearance",
+ "title": "FCG · Fraud, Concealment and Government involvement",
  "group": "research",
- "source": "snapshot of https://fcg.bucklerfamily.estate/",
+ "source": "snapshot of https://bucklerfamily.estate/fcg/",
  "snapshot_utc": "2026-10-26T19:39:37Z",
  "files": 153,
  "build": "none (static files; served at /fcg/)",
- "note": "Section branch: everything Cedwyn serves at /fcg/ comes from this branch at the commit main/sections.lock pins. Change only this section here."
+ "note": "Source of truth is the unclehowell/cedwyn-fcg repository (REPO SPLIT, 5 Nov 2026); sync-split-repos copies it to the section/fcg branch that main/sections.lock pins. Change only this section, in that repo. FCG = Fraud, Concealment and Government involvement. Canonical host is bucklerfamily.estate/fcg/ (subdomain being retired from 5 Nov 2026: its root already redirects to the canonical address; deep URLs follow when its Cloudflare route is removed)."
 }
