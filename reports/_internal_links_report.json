@@ -3,12 +3,12 @@
   "pages_scanned": 9402,
   "references_checked": {
     "resource": 217304,
-    "nav": 480284
+    "nav": 480339
   },
-  "database_backed_paths": 7439,
-  "unique_missing_destinations": 6405,
-  "missing_references": 53290,
-  "missing_navigation_references": 37358,
+  "database_backed_paths": 7443,
+  "unique_missing_destinations": 6406,
+  "missing_references": 53325,
+  "missing_navigation_references": 37393,
   "missing_resource_references": 15932,
   "unique_broken_fragments": 1834,
   "broken_fragment_references": 3562,
@@ -802,7 +802,7 @@
     {
       "kind": "nav",
       "path": "/research/>*.html",
-      "references": 34,
+      "references": 35,
       "examples": [
         {
           "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
@@ -2286,6 +2286,33 @@
     },
     {
       "kind": "nav",
+      "path": "/forensic/forensic/national-library-of-wales/",
+      "references": 15,
+      "examples": [
+        {
+          "from": "/forensic/itv-cymru-wales/",
+          "attribute": "a[href]",
+          "url": "/forensic/forensic/national-library-of-wales/"
+        },
+        {
+          "from": "/forensic/itv-cymru-wales/",
+          "attribute": "a[href]",
+          "url": "/forensic/forensic/national-library-of-wales/"
+        },
+        {
+          "from": "/forensic/bute-estate/",
+          "attribute": "a[href]",
+          "url": "/forensic/forensic/national-library-of-wales/"
+        },
+        {
+          "from": "/forensic/glamorgan-archives/",
+          "attribute": "a[href]",
+          "url": "/forensic/forensic/national-library-of-wales/"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
       "path": "/docs/ghf_wiki/la_1955parcelalossdossierwoodlandvg41green/latest/html/en/1-record.html",
       "references": 15,
       "examples": [
@@ -2389,33 +2416,6 @@
           "from": "/docs/ghf_wiki/tl_recordsaccesschronology/latest/html/en/",
           "attribute": "a[href]",
           "url": "1-record.html#october-2026-new-gmail-derived-records-updates"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/forensic/forensic/national-library-of-wales/",
-      "references": 14,
-      "examples": [
-        {
-          "from": "/forensic/itv-cymru-wales/",
-          "attribute": "a[href]",
-          "url": "/forensic/forensic/national-library-of-wales/"
-        },
-        {
-          "from": "/forensic/bute-estate/",
-          "attribute": "a[href]",
-          "url": "/forensic/forensic/national-library-of-wales/"
-        },
-        {
-          "from": "/forensic/glamorgan-archives/",
-          "attribute": "a[href]",
-          "url": "/forensic/forensic/national-library-of-wales/"
-        },
-        {
-          "from": "/forensic/glamorgan-archives/",
-          "attribute": "a[href]",
-          "url": "/forensic/forensic/national-library-of-wales/"
         }
       ]
     },
@@ -3366,6 +3366,33 @@
     },
     {
       "kind": "nav",
+      "path": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/",
+      "references": 9,
+      "examples": [
+        {
+          "from": "/forensic/itv-cymru-wales/",
+          "attribute": "a[href]",
+          "url": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/"
+        },
+        {
+          "from": "/forensic/itv-cymru-wales/",
+          "attribute": "a[href]",
+          "url": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/"
+        },
+        {
+          "from": "/forensic/itv-cymru-wales/",
+          "attribute": "a[href]",
+          "url": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/"
+        },
+        {
+          "from": "/forensic/itv-cymru-wales/",
+          "attribute": "a[href]",
+          "url": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
       "path": "/docs/ghf_wiki/ir_henebforensicinstitutionalreview/latest/html/en/1-record.html",
       "references": 9,
       "examples": [
@@ -3798,28 +3825,28 @@
     },
     {
       "kind": "nav",
-      "path": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/",
+      "path": "/forensic/research/timeline/",
       "references": 8,
       "examples": [
         {
           "from": "/forensic/itv-cymru-wales/",
           "attribute": "a[href]",
-          "url": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/"
+          "url": "/forensic/research/timeline/"
         },
         {
           "from": "/forensic/itv-cymru-wales/",
           "attribute": "a[href]",
-          "url": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/"
+          "url": "/forensic/research/timeline/"
         },
         {
           "from": "/forensic/itv-cymru-wales/",
           "attribute": "a[href]",
-          "url": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/"
+          "url": "/forensic/research/timeline/"
         },
         {
           "from": "/forensic/itv-cymru-wales/",
           "attribute": "a[href]",
-          "url": "/forensic/wiki/evidence-library/ghf-e113-itv-wales-report-great-house-farm-1988/"
+          "url": "/forensic/research/timeline/"
         }
       ]
     },
@@ -4036,33 +4063,6 @@
           "from": "/docs/ghf_wiki/rp_198687solicitorsfilespreservationdisclos/latest/html/en/",
           "attribute": "a[href]",
           "url": "1-record.html#lead-register"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/1-record.html",
-      "references": 8,
-      "examples": [
-        {
-          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html"
-        },
-        {
-          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html"
-        },
-        {
-          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html#thread-index"
-        },
-        {
-          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html#thread-6-internal-review-1188-26-of-foi-719-26"
         }
       ]
     }
