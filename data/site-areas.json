@@ -594,7 +594,7 @@
       "source_themes": [],
       "path": "/releases/",
       "description": "Publication-date sequencer, 1987-2026: each line is a related document placed at its publication date, titles hyperlinked to sources.",
-      "serendipity_slot": 40,
+      "serendipity_slot": 41,
       "tithe_parcel_number": null,
       "parcel_record": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
       "parcel_mapping_status": "historic_plot_number_pending_verification"
