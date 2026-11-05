@@ -296,10 +296,10 @@
    74.8,
    76.1
   ],
-  "radius": 80.0,
+  "radius": 74.0,
   "half_angle_deg": 90,
   "width": 4.5,
-  "note": "the Executive (5 Nov 2026): a road curving like a clock / semicircle around the church, between the church and the house and its buildings; drawn as a semicircle centred on the church on the house side; the buildings sit on the outside of the curve; radius chosen so the lane passes between the forecourt gate and the church (estimated, not checked against a measured plan)"
+  "note": "the Executive (5 Nov 2026): a road curving like a clock / semicircle around the church, between the church and the house and its buildings; drawn as a semicircle centred on the church on the house side; the buildings sit on the outside of the curve; radius 74 m chosen so the lane passes between the forecourt (c.5 m clear of its south-east corner) and the church (estimated, not checked against a measured plan)"
  },
  "tracks": [
   {
