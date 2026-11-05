@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.8.0] - 2026-11-05
+
+### Changed
+- The parcel dropdown now lists the same 59 numbers on every map. The map choice (working model, 1824 Stewart plan, 1841 tithe map of Landough, Cogan and Leckwith) changes which records show beneath a number, never the list; the tithe map no longer swaps in its own plot-number list. The list is always the 1824 Stewart plan figures; the tithe map's own plot numbers appear inside each record, never in the list. Legacy ?plot=N links open the parcel the plot is linked to.
+- The native select is replaced by a custom dropdown (button plus listbox, with keyboard support), because browsers do not reliably colour native options. Each row carries a real CSS status dot plus a status word, so colour is never the only cue: green "concrete", amber "ambiguous", red "none". The same CSS dots restate the meanings in the key.
+- Status colours follow the site's own per-parcel index and 1824 reading record: green only where the parcel's figure is clearly read in that record (the parcel-by-year sheet, tab 1824, "Number read?" = yes, outside the two-ways 30-39 / 50-59 band) and the parcel is placed, with its record (23 numbers); amber where something is held even if ambiguous (31: the homestead group 1-4, the unread figure 18, figures read unclearly or two ways, and the whole unsettled 30-39 / 50-59 band); red where nothing is held for that number yet (46-49 and 51). A tithe row linked via the site's reading never by itself makes a number green.
+- Each number now carries its core identifying trait in brackets, taken only from the site's own index: an 1841 field name or land use with its tithe plot (Parsonage, Salt marsh, Cottage & garden, Old land, orchard, wood), the homestead-group note for 1-4, the unread-figure note for 18, and the paired reading for 50-59. Every tithe-derived bracket is marked as the site's own reading in place (e.g. "meadow, tithe plots 217/262 - site's reading"), and where a figure or pairing is unresolved the bracket says so too (e.g. "arable (use word unsettled), tithe plot 223 - site's reading - 33/53 unsettled", "figure unclear"), not only in a buried note. No trait is invented; where nothing is held the bracket says so.
+- Working model: the 59 parcels head the list and the model's own lines (A+B, A, B, SA1-SA3, SA3+B) and data-file labels (A1-A3) sit in a separate group, marked as not matched to parcel numbers. Picking a parcel under the model explains that the ring's labels are not matched to Stewart numbers (open research) and what is held for the number.
+
+
 ## [3.7.0] - 2026-11-05
 
 ### Added
