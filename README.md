@@ -12,3 +12,5 @@ Local frame: x = Easting − 317000, z = 174000 − Northing, y = metres above O
 URL options: `?view=tymawr|church|ely|wide`, `?era=1841`, `?hour=16.5`, `?wx=rain|fog|overcast`.
 
 Data: Welsh Government LiDAR 2020–22 (DataMapWales), Open Government Licence v3.0; © OpenStreetMap contributors, ODbL; Tithe H3 parcels.
+
+Staging preview (Cloudflare Pages, rebuilt on every push to this branch): https://section-wales-3d.cedwyn-274.pages.dev/
