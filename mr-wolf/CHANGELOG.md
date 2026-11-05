@@ -1,10 +1,18 @@
 # Changelog — Mr Wolf (webapp 40 of 59)
 
+## [2.1.0] - 2026-11-05
+### Corrected
+- Restricted the 200-point lead score to the four elements of a freestanding Takhar fraud action.
+- Removed CPR 52.30 process-integrity requirements from individual lead scores; CPR 52.30 remains a separate case-wide route gateway.
+- Split conscious dishonesty from attribution/actual court deception, and scored operative cause/materiality separately.
+- Recalibrated the licence-rejection lead's materiality element to 40/50: the judgment supports conditional materiality, but no rejection document has been found.
+- Retained four non-compensatory internal minima and weakest-limb progress. No lead reaches the floor; route remains unresolved and filing blocked.
+
+## [2.0.0] - 2026-11-05
+### Changed
+- Introduced non-compensatory legal/evidential gates and a separate CPR 52.30 route review.
+- Removed reasonable diligence from the Takhar limbs and tracked it separately.
+
 ## [1.0.0] - 2026-11-01
 ### Added
-- New webapp at /mr-wolf/ (branch section/mr-wolf): "Mr Wolf", subtitle "What's the time, Mr Wolf?".
-- Leaderboard of 15 leads scored out of 200 on the four Takhar limbs (0–50 each); bar marked at the 100 threshold.
-- Ten seeded leads merged with the twelve grounds already scored by our reopen research (no duplicates); three leads carry seed scores.
-- Each row: rank, score, per-limb breakdown, what would raise it, status, and catalogue records (internal links).
-- Published rubric and mapping (reopen research 0–5 per limb x10). Highest score at launch: 80. Nothing reaches 100.
-- leaderboard.json for later score updates; "40 of 59" parcel link; en/cy/es interface strings.
+- Mr Wolf leaderboard with 15 leads, first-generation scoring and supporting record links.
