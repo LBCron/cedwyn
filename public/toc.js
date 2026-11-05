@@ -258,7 +258,7 @@ C.SilenceList=function(){var R=((SIL&&SIL.entries)||[]).slice();if(!R.length)ret
    $("p",{cls:"toc-sub",text:SL("sil_back")+": "+SL("k_"+(e.back_kind||"nothing"))+(e.back_date?" ("+e.back_date+")":"")})]);
   if(e.back_quote)li.appendChild($("blockquote",{cls:"q-back"},[$("p",null,[$("q",{text:e.back_quote})])]));
   if(e.back_note)li.appendChild($("p",{cls:"toc-conduct",text:e.back_note}));
-  li.appendChild($("p",{cls:"toc-sil-status",text:SL("sil_status")}));
+  li.appendChild($("p",{cls:"toc-sil-status",text:SL(e.status_key||"sil_status")}));
   li.appendChild($("p",{cls:"toc-muted toc-sil-src",text:SL("sil_src")+": "+e.source+(e.checked?" · "+SL("sil_chk")+": "+e.checked:"")}));
   ol.appendChild(li);});s.appendChild(ol);return s;};
 function cnRoot(){var r=UI.root.slice(),has=function(c){return r.some(function(n){return n.component===c;});};
