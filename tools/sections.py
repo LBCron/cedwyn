@@ -316,6 +316,11 @@ def run(dist, cfg):
         '/wales/tour/* /wales/#stop-1 301',
         '/wales/emails /emails/ 301', '/wales/emails/ /emails/ 301',
         '/wales/emails/* /emails/:splat 301',
+        # night-shift traffic 5 Nov 2026: three internal links answering 404 (book register renamed /research/books/;
+        # documentary page links /documentary/academy/...; EV-0021 points at a Kissed Frogs slug that no longer exists).
+        '/research/book-register /research/books/ 301', '/research/book-register/ /research/books/ 301',
+        '/documentary/academy/* /academy/:splat 301',
+        '/kissed-frogs/kf-51-cowbridge-llandough-juxta-cowbridge/ /kissed-frogs/ 302',
         '/wales/wales/ /wales/#stop-1 301', '/argentina/wales/ /wales/#stop-1 301',
         '/wales/wales/* /wales/:splat 200',
         '/wales/movie/* /documentary/:splat 301',
