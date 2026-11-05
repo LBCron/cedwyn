@@ -101,3 +101,57 @@ Any agent arriving via WebMCP, Hive, llms.txt, the agent footer, or a chat runne
 6. Treat BucklerFamily.Estate as the brain being continuously improved by the snowball, not as a static site to decorate.
 
 Signed: Grok (Hive), 3 Nov 2026, under owner direction.
+
+
+## 7. Email-to-task intake and connector-outage continuity (owner direction, 5 Nov 2026)
+
+HubSpot remains the **single authoritative task register**. An email is an intake transport, not a second task database. This route exists so an owner or authorised agent can lodge work even when the HubSpot MCP connector or a direct CRM API client is unavailable.
+
+### Supported paths — keep these distinct
+
+1. **Normal automation:** use the HubSpot MCP or CRM API to create/read/update the CRM `TASK` object. The portal schema has confirmed `TASK` read/write access (object type `0-27`). Required task fields include subject, body and status; priority, due timestamp, task type and owner are available. Follow the current CRM schema, permissions and association rules; do not invent object types or association IDs.
+2. **Gmail task creation:** where the HubSpot Sales integration is connected and available, the HubSpot Tasks side panel in Gmail can create a task manually. This is a human UI fallback, not an unattended inbound-email parser.
+3. **HubSpot BCC / forwarding address:** these addresses log sent emails or forwarded replies to CRM contact timelines. **They do not, by themselves, create a CRM task.** Do not describe an email as a task merely because it was logged. The native forwarding path also has sender, connected-email, supported-client and message-format constraints.
+4. **Dedicated Cedwyn email intake (implementation target):** provision a distinct address such as `task-intake@bucklerfamily.estate` only after the mail route is actually configured and tested. Route it through Cloudflare Email Routing to a Worker which validates and parses a task-submission message, then creates the HubSpot `TASK` via the CRM API. This address is not live until the configuration and end-to-end acceptance tests pass.
+
+HubSpot references: [log email with BCC or forwarding address](https://knowledge.hubspot.com/connected-email/log-email-in-your-crm-with-the-bcc-or-forwarding-address) (timeline logging); [create tasks](https://knowledge.hubspot.com/tasks/create-tasks) (including Gmail task creation); [HubSpot remote MCP server](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server) (task/activity access and the sensitive-data restriction).
+
+### Intake envelope
+
+A message is a task command only when its subject begins `[CEDWYN TASK]` or it contains the explicit `X-Cedwyn-Task: 1` header. Ordinary correspondence forwarded for filing must never be converted into work automatically.
+
+- Subject after the prefix becomes the concise task title.
+- Body becomes the private task brief, retaining the original message ID, sender, received time, source URL/reference and any explicit requested due date or priority.
+- Optional `HubSpot-Record: <record URL or verified object ID>` identifies the record association. Resolve and validate the association against HubSpot before creating it. If the required association cannot be resolved, quarantine the intake for review; never create a dummy contact/company or guess an ID.
+- Default status is `NOT_STARTED`; use `IN_PROGRESS` only when work has genuinely begun. Priority and due date are set only when explicitly supplied or derived from a documented rule.
+- Accept only configured, authenticated senders. Validate the envelope sender and SPF/DKIM/DMARC where available; do not trust display names or arbitrary forwarded headers. Reject spoofed or unapproved submitters.
+- Never send an automatic outbound reply or create a Gmail draft as part of intake unless separately authorised. A task-creation receipt is an internal confirmation surfaced to the submitting agent/owner, not a claim based only on SMTP acceptance.
+
+### Reliability and failure handling
+
+1. Validate message size, MIME structure, allowed sender, command marker and required fields before writing.
+2. Compute an idempotency key from the authenticated sender plus RFC Message-ID (and retain a content hash as a collision check). A retry of the same message must not create a second task.
+3. Create the task through the CRM API, then read it back and verify its HubSpot task ID, subject, status and source marker. Only this read-back counts as successful intake.
+4. On a transient API failure, place a **private, minimal retry record** in the existing Cedwyn intake queue (or another approved private durable store), retaining the original email in the mailbox of record. The queue must not expose task bodies, correspondence, contacts or attachments through public routes, logs, GitHub or preview deployments. Use an expiry/retention policy and a dead-letter state after bounded retries.
+5. On duplicate, malformed, unauthenticated or unassociated input, quarantine/reject with a reason. Never silently drop it or silently create a partial task.
+6. When both MCP and API paths are unavailable, the inbound email itself is the durable handoff. Record the receipt ID and queued state; do **not** say it is in HubSpot until the later task read-back succeeds.
+7. Keep the bridge idempotent, observable and cheap: store only the minimum dedupe/queue metadata; avoid repeated D1 writes and bulk polling. No public endpoint may retrieve raw submissions.
+
+### Security and governance
+
+- HubSpot remains authoritative after successful creation; the email, queue and GitHub are not parallel task registers.
+- Private email bodies, legal strategy, SAR/health material, addresses, attachments and personal data stay in the mailbox and private HubSpot task. GitHub receives only code, schemas, tests and public-safe protocol metadata.
+- Agent-created tasks must carry the correct Hive lane and owner/claim metadata in the HubSpot body; they do not gain permission to send correspondence. Draft emails remain HubSpot tasks; only the authorised dealer may create the final in-thread Gmail draft after all review gates, and the owner alone sends.
+- One original message maps to at most one task. If a submission contains multiple distinct jobs, create separate tasks only after explicit structured delimitation and preserve a common intake correlation ID.
+- Never mark a task complete because an email was received, parsed, queued or accepted by the SMTP gateway.
+
+### Activation gate — do not claim the address works until all pass
+
+- Confirm ownership and routing of the dedicated intake address; configure Cloudflare Email Routing and the Worker binding.
+- Store a least-privilege HubSpot private-app/API credential only as a Worker secret; never commit it, expose it to browser code or place it in GitHub Actions logs. Confirm the account scopes and the `TASK` API permissions.
+- Decide and test the approved sender allowlist and the canonical HubSpot association policy.
+- Test a valid submission, duplicate Message-ID, spoofed sender, malformed MIME, oversized attachment, unresolved association, API timeout, queued retry and successful replay. Check that no raw private payload is exposed in logs or public URLs.
+- Verify the created task by reading it back from HubSpot. Test replay without duplication and verify the queue drains.
+- Publish the address to agents only after a cache-busted end-to-end test and a documented rollback. Until then, use MCP/API or the Gmail Tasks side panel; never invent an intake address.
+
+Change note: 5 Nov 2026 — ChatGPT (Hive seat 2), under owner direction. Architecture addition only; no email address, Cloudflare route, Worker, secret or API credential has been provisioned by this change.
