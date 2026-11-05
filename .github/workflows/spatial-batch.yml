@@ -1,0 +1,62 @@
+name: spatial-batch
+# Read-only validation of Cedwyn H3 / perimeter / estate spatial registry.
+# Manually dispatched. Publishes a validation report as a workflow artifact.
+# Never writes to the site branch, production, or D1.
+# See issue #174.
+on:
+  workflow_dispatch:
+    inputs:
+      registry_path:
+        description: 'Path to spatial registry JSON (relative to repo root)'
+        required: false
+        default: 'data/spatial/cedwyn.json'
+permissions:
+  contents: read
+concurrency:
+  group: spatial-batch
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Validate spatial registry (read-only)
+        id: validate
+        run: |
+          python3 tools/validate_spatial.py "${{ inputs.registry_path }}"
+          echo "report=reports/_spatial_validation.json" >> "$GITHUB_OUTPUT"
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spatial-validation-${{ github.run_id }}
+          path: reports/_spatial_validation.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Summary
+        if: always()
+        run: |
+          if [ -f reports/_spatial_validation.json ]; then
+            python3 - <<'PY'
+          import json
+          r = json.load(open('reports/_spatial_validation.json'))
+          print('### Spatial validation')
+          print(f"- pass: `{r.get('pass')}`")
+          print(f"- errors: {len(r.get('errors') or [])}")
+          print(f"- warnings: {len(r.get('warnings') or [])}")
+          print(f"- features listed: {len(r.get('features_summary') or [])}")
+          print(f"- CRS: `{r.get('crs')}`")
+          for e in (r.get('errors') or []):
+              print(f"- error: {e}")
+          for w in (r.get('warnings') or []):
+              print(f"- warning: {w}")
+          PY
+          else
+            echo "No report produced"
+          fi
