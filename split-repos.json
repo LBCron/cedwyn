@@ -1,5 +1,5 @@
 {
- "note": "Webapps moved to their own repositories (REPO SPLIT, issue #188). mode 'mirror': the old branch here is the source and the new repository copies it every 30 min. mode 'split-repo': the new repository is the source and sync-split-repos.yml copies it back into the old branch every 30 min so the live build and old paths keep working. The owner flips a mode by editing this file on main. No branch is deleted. — Sion's Tab agent",
+ "note": "Webapps moved to their own repositories (REPO SPLIT, issue #188). mode 'mirror': the old branch here is the source and the new repository copies it every 30 min. mode 'split-repo': the new repository is the source and sync-split-repos.yml copies it back into the old branch every 30 min so the live build and old paths keep working. The owner flips a mode by editing this file on main. No branch is deleted. — Cedwyn maintainers",
  "apps": [
   {
    "app": "Wales 3D world",
