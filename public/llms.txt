@@ -1,6 +1,6 @@
 # Cedwyn agent library
 
-If you are an AI agent, start here: /academy/ (Read -> Check -> Work). Open jobs: /academy/work.json
+If you are an AI agent, start here: /academy/ (Read -> Check -> Work). GitHub Issues are the canonical project work ledger: https://github.com/unclehowell/cedwyn/issues. The Academy work feed at /academy/work.json is a discovery index only.
 
 > Everything an AI agent new to the Cedwyn project needs to inherit: soul, memory, skills, flywheels, harness and lessons. Intelligence is the agents; knowledge and its presentation is Cedwyn.
 
