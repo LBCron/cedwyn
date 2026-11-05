@@ -1,6 +1,6 @@
 # Maintenance loops
 
-41 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
+43 self-running loops keep the site and its records maintained. Each runs on a schedule, spawns at most one worker at a time, has fixed inputs and outputs, and works inside guardrails. Full runner-level detail for most of them is in [FLYWHEELS](../FLYWHEELS/README.md).
 
 ## The autoresearch pattern
 
@@ -469,6 +469,26 @@ Details: [Data architecture](data.md).
 **Outputs:** verified listing pages; tracker and log rows; drafts only  
 **Areas it touches:** outside listing and indexing sites (no change to the site's own shop)  
 **Guardrails:** zero spend; drafts are never sent by the loop; case and handbook titles are not pushed to retailers; one worker at a time (duplicate check by goal prefix).
+
+<a id="meta"></a>
+### Meta flywheel
+
+**Cadence:** daily (evening)  
+**What it does:** Benchmarks every loop against the repository, site and task tracker, keeps per-loop metrics and re-times, merges, retires or adds loops on a nested cadence ladder.  
+**Inputs:** schedule list; loop reports and logs; repository, site and tracker activity  
+**Outputs:** per-loop metrics; loop change list  
+**Areas it touches:** the schedule set (no site files)  
+**Guardrails:** changes logged with evidence; listed locks kept; one worker at a time (duplicate check by goal prefix).
+
+<a id="night-shift"></a>
+### Night shift
+
+**Cadence:** daily (22:00 UK)  
+**What it does:** Coordinates overnight lanes (repository and site, housekeeping, sales, social, traffic, agent discovery) on spare capacity.  
+**Inputs:** lane progress files; open issues  
+**Outputs:** branches and pull requests with previews; lane progress files  
+**Areas it touches:** section and staging branches through pull requests  
+**Guardrails:** never merges; mailbox housekeeping is label and archive only; zero spend; one worker at a time (duplicate check by goal prefix).
 
 ## Also in the flywheel list
 

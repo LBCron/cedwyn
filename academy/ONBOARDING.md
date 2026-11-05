@@ -38,3 +38,8 @@ The academy front page frames this as Read → Check → Work: the reading above
 3. One worker per job; check what is already running before starting anything.
 4. Report once, plainly, with evidence (URL, commit, record id). Never relay the same news twice.
 5. Write down what you learnt — here, in the lessons log, or in your wheel's state.
+
+
+## Getting the code
+
+Clone only the branch your job names, shallow: `git clone --depth 1 --single-branch --branch <branch> --filter=blob:none <repository-url>`, where the repository is unclehowell/cedwyn on GitHub. Never clone the whole repository (~43 GB, ~290 branches). Guide: AGENTS.md and docs/AGENT-CLONE.md on main.

@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn_academy_architecture/v1",
- "version": "1.0.16",
- "updated": "2026-11-04",
+ "version": "1.0.17",
+ "updated": "2026-11-05",
  "refreshed_by": "the agent library cycle (every 6 hours); edit this file, then rebuild the academy",
  "source_documents": [
   "/projects/data-architecture/ (programme page: plan, work packages, milestones)",
@@ -1976,6 +1976,52 @@
     "zero spend",
     "drafts are never sent by the loop",
     "case and handbook titles are not pushed to retailers"
+   ],
+   "pattern": "autoresearch"
+  },
+  {
+   "id": "meta",
+   "name": "Meta flywheel",
+   "cadence": "daily (evening)",
+   "does": "Benchmarks every loop against the repository, site and task tracker, keeps per-loop metrics and re-times, merges, retires or adds loops on a nested cadence ladder.",
+   "inputs": [
+    "schedule list",
+    "loop reports and logs",
+    "repository, site and tracker activity"
+   ],
+   "outputs": [
+    "per-loop metrics",
+    "loop change list"
+   ],
+   "touches": [
+    "the schedule set (no site files)"
+   ],
+   "guardrails": [
+    "changes logged with evidence",
+    "listed locks kept"
+   ],
+   "pattern": "autoresearch"
+  },
+  {
+   "id": "night-shift",
+   "name": "Night shift",
+   "cadence": "daily (22:00 UK)",
+   "does": "Coordinates overnight lanes (repository and site, housekeeping, sales, social, traffic, agent discovery) on spare capacity.",
+   "inputs": [
+    "lane progress files",
+    "open issues"
+   ],
+   "outputs": [
+    "branches and pull requests with previews",
+    "lane progress files"
+   ],
+   "touches": [
+    "section and staging branches through pull requests"
+   ],
+   "guardrails": [
+    "never merges",
+    "mailbox housekeeping is label and archive only",
+    "zero spend"
    ],
    "pattern": "autoresearch"
   }
