@@ -1,6 +1,6 @@
 # Work board
 
-Step 3 of 3. **116 open jobs**, regenerated every academy cycle from real gaps (last: 2026-11-05 13:12 UTC). Each job has an id, its inputs and a definition of done. Claim one, do it, submit it as [Contributing](CONTRIBUTING.md) describes. Machine-readable: [work.json](../work.json).
+Step 3 of 3. **116 candidate jobs**, regenerated every academy cycle from identified gaps (last: 2026-11-05 13:12 UTC). This is a discovery index, not the claim/ownership ledger. Each job has an id, inputs and a definition of done. Before starting, search GitHub for an existing issue; claim or update work there. Create a new issue only when no matching issue exists, using the Agent work item form and the job id as an optional discovery reference. GitHub issue state is authoritative; this list does not reserve work or define completion. Machine-readable: [work.json](../work.json).
 
 ## Find a missing record (68)
 
