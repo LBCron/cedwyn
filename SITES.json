@@ -178,7 +178,7 @@
   {
    "id": "tymawr",
    "name": {
-    "en": "Tŷ Mawr — Great House Farm",
+    "en": "Tŷ Mawr (Great House)",
     "cy": "Tŷ Mawr",
     "es": "Tŷ Mawr — la Casa Grande"
    },
@@ -191,14 +191,14 @@
    "lon": -3.199678,
    "confidence": "medium-high: Stewart 1824 plan homestead group (tithe 1841 plots 209/210 'Courtyard &c', traced) centroid ST 16737 73353 agrees within c. 30 m with HER 02038s NGR ST16707335. Coflein 20182 gives ST1681073310 (c. 85 m east) — differing record",
    "known": [
-    "limestone (local lias) farmhouse and barn next to the parish church (HER 02038s)",
+    "limestone (local lias) house and barn next to the parish church (HER 02038s)",
     "cross-passage, end-chimney plan with masonry partitions and battered N wall; ogee-stopped beams (Suggett/RCAHMW 1988)",
     "ground floor surveyed 26 Apr 1974 (RCAHMW ST 1681 7331)",
     "demolished 6 Dec 1988"
    ],
    "estimated": [
-    "building sizes, pitches and yard layout from 4 reference photographs of the farm (Nov 2026) (tymawr-geometry.json, 'best guess')",
-    "orientation of the group on the ground — reconstruction — estimated (front faces south)",
+    "building sizes and pitches from Tŷ Mawr reference photographs (4 Nov 2026) and two reference paintings and a historic aerial photograph (5 Nov 2026) (tools/tymawr-layout.json, 'best guess')",
+    "layout (v0.2.0, corrected 5 Nov 2026): the house and the stable range face south, with the stable front level with the house front (not forward of it); the stone barn on the west side of the group runs north-south and faces west, with the stable range joined at its south-east corner; distances between the barn group and the house, wall and lane lines, the glasshouse and the gate tree are estimated",
     "NOTE: tymawr-geometry.json places the church NE of the house; HER + Stewart plan place it c.107 m SE. Church omitted from this model until resolved."
    ],
    "evidence": [
@@ -215,11 +215,11 @@
      "url": "https://cedwyn.bucklerfamily.estate/tithe-h3/"
     },
     {
-     "label": "tymawr-geometry.json (from reference photographs)",
+     "label": "tools/tymawr-layout.json (from reference photographs and paintings)",
      "url": ""
     }
    ],
-   "model": "models/tymawr.glb"
+   "model": "models/tymawr.glb?v=0.2.0"
   }
  ]
 }

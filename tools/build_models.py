@@ -72,10 +72,13 @@ for i in range(30):
     m.box('mark',6+r*math.cos(a),8+r*math.sin(a),0.5,1.8,0.12,yaw=math.degrees(a))
 sizes['monastery']=m.save(os.path.join(OUT,'monastery.glb'),meta('monastery',{"dims":"church/oratory 12x6 m estimated at St Dochdwy's; pillar cross 2.97 m (Coflein 301373); enclosure r 45 m estimated; grave markers a sample"}))
 # ---------------- TY MAWR ----------------
-G=json.load(open('/home/user/tab/work/wales-3d/tymawr-geometry.json'))
+# v0.2.0 (5 Nov 2026): layout from tools/tymawr-layout.json — house and stable range face south, stable front level with the
+# house front, the west barn runs north-south and faces west (the Executive's written corrections; reference paintings + aerial).
+G=json.load(open(os.path.join(os.path.dirname(__file__),'tymawr-layout.json')))
 m=Model('tymawr')
 m.mat('limewash',(0.93,0.92,0.87),0.85); m.mat('slate',(0.23,0.25,0.28),0.55); m.mat('pantile',(0.62,0.27,0.17),0.75)
-m.mat('rubble',(0.55,0.52,0.46),0.95); m.mat('dressed',(0.64,0.6,0.52),0.85); m.mat('brick',(0.55,0.24,0.18),0.85); m.mat('green',(0.16,0.33,0.2),0.6); m.mat('gravel',(0.6,0.57,0.5),1.0); m.mat('glass',(0.15,0.18,0.2),0.15,0.0)
+m.mat('rubble',(0.55,0.52,0.46),0.95); m.mat('dressed',(0.70,0.67,0.58),0.85); m.mat('brick',(0.55,0.24,0.18),0.85); m.mat('green',(0.16,0.33,0.2),0.6); m.mat('gravel',(0.6,0.57,0.5),1.0); m.mat('glass',(0.15,0.18,0.2),0.15,0.0)
+m.mat('dark',(0.08,0.08,0.08),0.9); m.mat('gate',(0.10,0.11,0.10),0.7); m.mat('pane',(0.75,0.85,0.85),0.1,0.0,0.45); m.mat('bark',(0.30,0.22,0.15),0.95); m.mat('leaf',(0.24,0.36,0.18),1.0)
 WM={'limewash':'limewash','rubble stone':'rubble','dressed stone':'dressed'}; RM={'slate':'slate','red pantile':'pantile'}
 for b in G['buildings']:
     if b['id']=='church': continue
@@ -85,28 +88,55 @@ for b in G['buildings']:
     m.box(wm,b['x'],b['z'],w,d,b['eave'],top=False)
     ry=m.gable(rm,wm,b['x'],b['z'],w,d,b['eave'],b['pitch'],ridge_along=ridge)
     for ch in b.get('chimneys',[]):
-        cxx=b['x']-w/2+0.5 if ch['x']<1 else b['x']+w/2-0.5
-        m.box('brick' if 'brick' in ch['mat'] else 'rubble',cxx,b['z'],0.9,1.0,ry-b['eave']+1.0,y0=b['eave'])
+        at=ch.get('at') or ('left' if ch.get('x',0)<1 else 'right')
+        cxx={'left':b['x']-w/2+0.5,'centre':b['x'],'right':b['x']+w/2-0.5}[at]
+        h0=ry if at=='centre' else b['eave']
+        m.box('brick' if 'brick' in ch['mat'] else 'rubble',cxx,b['z'],0.9,1.0,ry-h0+1.0,y0=h0)
     if 'chimney' in b: m.box('rubble',b['x'],b['z']-d/2+0.6,1.0,0.9,ry-b['eave']+1.0,y0=b['eave'])
     if 'porch' in b:
         p=b['porch']; pz=b['z']+d/2+p['d']/2
         m.box(wm,b['x']+p['x'],pz,p['w'],p['d'],2.4,top=False); m.gable(rm,wm,b['x']+p['x'],pz,p['w'],p['d'],2.4,40,ridge_along='z')
+        m.box('green',b['x']+p['x'],pz+p['d']/2+0.01,1.0,0.05,2.0)
     if b['id']=='house':
         for wx in (-3.6,-1.2,3.4):
             for wy in (1.2,3.4): m.box('glass',b['x']+wx,b['z']+d/2+0.01,1.0,0.04,1.2,y0=wy)
     if b['id']=='stable_range':
         for i in range(5): m.box('green',b['x']-5.6+i*2.8,b['z']+d/2+0.01,1.1,0.05,2.0)
     if 'cart_porch' in b:
-        p=b['cart_porch']; pz=b['z']+d/2+p['d']/2
-        m.box(wm,p['x'],pz,p['w'],p['d'],4.0,top=False); m.gable(rm,wm,p['x'],pz,p['w'],p['d'],4.0,40,ridge_along='z')
-        m.box('green',p['x'],pz+p['d']/2+0.02,3.3,0.05,3.5)
+        p=b['cart_porch']
+        if p.get('side')=='west':   # porch projects west from the barn's west wall, door facing west
+            px=b['x']-w/2-p['d']/2; pz=p['z']
+            m.box(wm,px,pz,p['d'],p['w'],4.0,top=False); m.gable(rm,wm,px,pz,p['d'],p['w'],4.0,40,ridge_along='x')
+            m.box('green',px-p['d']/2-0.02,pz,0.05,3.3,3.5)
+        else:
+            pz=b['z']+d/2+p['d']/2
+            m.box(wm,p['x'],pz,p['w'],p['d'],4.0,top=False); m.gable(rm,wm,p['x'],pz,p['w'],p['d'],4.0,40,ridge_along='z')
+            m.box('green',p['x'],pz+p['d']/2+0.02,3.3,0.05,3.5)
+    for o in b.get('openings',[]):
+        if o.get('side')=='west': m.box('dark',b['x']-w/2-0.02,o['z'],0.05,o['w'],o['h'])
 for wl in G['walls']:
     (ax,az),(bx,bz)=wl['from'],wl['to']
     if 'gate_x' in wl:
         g0,g1=wl['gate_x']; segs=[((ax,az),(g0,bz)),((g1,az),(bx,bz))]
+    elif 'gate_z' in wl:
+        g0,g1=wl['gate_z']; segs=[((ax,az),(bx,g0)),((ax,g1),(bx,bz))]
     else: segs=[((ax,az),(bx,bz))]
     for a,b2 in segs: m.wall('rubble',a,b2,1.5,0.5)
+    if wl.get('gate_piers'):   # forecourt gate: stone piers, ball finial on one, dark five-bar gate
+        g0,g1=wl['gate_x']; z=az
+        for gx in (g0,g1): m.box('rubble',gx,z,0.8,0.8,1.9)
+        m.cyl('rubble',g1,z,0.28,0.45,y0=1.9,seg=12)
+        for k in range(5): m.box('gate',(g0+g1)/2,z,g1-g0-0.8,0.07,0.08,y0=0.25+k*0.25)
+        for gx in (g0+0.45,(g0+g1)/2,g1-0.45): m.box('gate',gx,z,0.1,0.08,1.25,y0=0.1)
 for y in G['yards']:
     x0,x1,z0,z1=y['gravel']; m.box('gravel',(x0+x1)/2,(z0+z1)/2,x1-x0,z1-z0,0.04)
-sizes['tymawr']=m.save(os.path.join(OUT,'tymawr.glb'),meta('tymawr',{"geometry_source":"work/wales-3d/tymawr-geometry.json (farm reference photographs, best guess)","note":"pin = 1824 homestead-group centroid; model origin = house centre; church omitted (position conflict, see SITES.json)"}))
+for f in G.get('features',[]):
+    if f['id']=='glasshouse':
+        m.box('rubble',f['x'],f['z'],f['w'],f['d'],f['base'])
+        m.box('pane',f['x'],f['z'],f['w'],f['d'],f['eave']-f['base'],y0=f['base'],top=False)
+        m.gable('pane','pane',f['x'],f['z'],f['w'],f['d'],f['eave'],f['pitch'],ridge_along='x',over=0.05)
+    if f['id']=='gate_tree':
+        m.cyl('bark',f['x'],f['z'],f['trunk'],f['height']*0.45,seg=10)
+        m.cyl('leaf',f['x'],f['z'],f['crown'],f['height']*0.6,y0=f['height']*0.4,seg=16,r_top=f['crown']*0.35)
+sizes['tymawr']=m.save(os.path.join(OUT,'tymawr.glb'),meta('tymawr',{"geometry_source":"tools/tymawr-layout.json v"+G.get('version','0.2.0')+" (Tŷ Mawr reference photographs and paintings; sizes best guess)","layout":"house and stable range face south, stable front level with the house front; west barn runs north-south and faces west","not_checked":G.get('not_checked',[]),"note":"pin = 1824 homestead-group centroid; model origin = house centre; church omitted (position conflict, see SITES.json)","version":"0.2.0"}))
 print(json.dumps(sizes))
