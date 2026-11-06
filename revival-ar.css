@@ -28,6 +28,7 @@ dialog button{background:#c9a45c;border:0;border-radius:8px;padding:7px 12px;fon
 
 /* photo tripods (v0.2.3) */
 .tripod{height:20px;min-width:20px;border-radius:10px;border:1.5px solid #16201b;background:#e6c77f;color:#16201b;display:flex;align-items:center;gap:2px;padding:0 5px 0 3px;font:600 10px/1 system-ui,sans-serif;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.5);cursor:pointer}.tripod.paint{background:#f3ead6}
+.tripod.mini{min-width:14px;height:14px;padding:0 2px;border-width:1px;opacity:.85}.tripod.mini .tl{display:none}.tripod.mini svg{width:7px;height:9px}
 .photoset .atlas{width:100%;aspect-ratio:1/1;max-height:60vh;border-radius:8px;background-color:#0e1411;background-repeat:no-repeat}
 #photo{padding:10px;width:92vw;max-width:560px}#photo::backdrop{background:rgba(0,0,0,.7)}
 .photoset{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;-webkit-overflow-scrolling:touch}

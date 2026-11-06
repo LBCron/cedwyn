@@ -42,8 +42,16 @@ function tripods(id){var mv=$('mv');[].forEach.call(mv.querySelectorAll('.tripod
   // field-of-view cone are in the model, this label sits on the tripod head and opens the image with the catalogue description
   (P.tripods||[]).filter(function(p){return p.site===id}).forEach(function(p,i){var b=document.createElement('button');b.className='tripod'+(p.kind==='painting'?' paint':'');b.slot='hotspot-photo-'+i;
     b.setAttribute('data-position',p.x+'m '+((p.y||1.6)+0.25)+'m '+p.z+'m');b.setAttribute('data-normal','0m 1m 0m');b.setAttribute('aria-label',(p.cat_id||'')+' '+p.title);
-    b.innerHTML='<svg viewBox="0 0 12 14" width="10" height="12" aria-hidden="true"><rect x="3.5" y="0" width="5" height="3" fill="currentColor"/><path d="M6 3 L1 14 M6 3 L6 14 M6 3 L11 14" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>'+esc(p.cat_id||'');
-    b.onclick=function(e){e.stopPropagation();photo(p)}; mv.appendChild(b)})}
+    b.innerHTML='<svg viewBox="0 0 12 14" width="10" height="12" aria-hidden="true"><rect x="3.5" y="0" width="5" height="3" fill="currentColor"/><path d="M6 3 L1 14 M6 3 L6 14 M6 3 L11 14" stroke="currentColor" stroke-width="1.4" fill="none"/></svg><span class="tl">'+esc(p.cat_id||'')+'</span>';
+    b.onclick=function(e){e.stopPropagation();photo(p)}; mv.appendChild(b)});
+  if(!mv._declut){mv._declut=1;var q=0;mv.addEventListener('camera-change',function(){if(!q){q=1;requestAnimationFrame(function(){q=0;declutter(mv)})}})}
+  setTimeout(function(){declutter(mv)},300)}
+// 3D model loop run 4: at 390 px the 27 catalogue labels piled on top of each other and over the buildings; a label whose centre falls
+// within one label-width of an already-labelled tripod shrinks to its tripod icon (still tappable); zooming in spreads them out again
+function declutter(mv){var kept=[];[].forEach.call(mv.querySelectorAll('.tripod'),function(e){var r=e.getBoundingClientRect();
+  if(!r.width)return;var cx=r.left+r.width/2,cy=r.top+r.height/2;
+  var hit=kept.some(function(k){return Math.abs(k[0]-cx)<58&&Math.abs(k[1]-cy)<24});
+  e.classList.toggle('mini',hit);if(!hit)kept.push([cx,cy])})}
 function pic(f){if(f.atlas){var g=f.grid||3,c=f.cell%g,r=Math.floor(f.cell/g),k=100/(g-1);
     return '<div class="atlas" role="img" aria-label="'+esc(f.view||f.caption)+'" style="background-image:url('+esc(f.atlas)+');background-size:'+(g*100)+'% '+(g*100)+'%;background-position:'+(c*k)+'% '+(r*k)+'%"></div>'}
   return '<img src="'+esc(f.src)+'" alt="'+esc(f.view||f.caption)+'" loading="lazy">'}
