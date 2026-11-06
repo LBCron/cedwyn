@@ -58,28 +58,32 @@
       "repo": "unclehowell/cedwyn-cloudflare",
       "old_branch": "section/cloudflare",
       "page": "/cloudflare/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Spill",
       "repo": "unclehowell/cedwyn-spill",
       "old_branch": "section/spill",
       "page": "/spill/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Ask the Archive",
       "repo": "unclehowell/cedwyn-chat",
       "old_branch": "section/chat",
       "page": "/chat/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Mr Wolf",
       "repo": "unclehowell/cedwyn-mr-wolf",
       "old_branch": "section/mr-wolf",
       "page": "/mr-wolf/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "FCG",
@@ -107,14 +111,16 @@
       "repo": "unclehowell/cedwyn-estate",
       "old_branch": "section/estate",
       "page": "/estate/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Patagonia",
       "repo": "unclehowell/cedwyn-patagonia",
       "old_branch": "section/patagonia",
       "page": "/patagonia/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Cyberspace",
@@ -366,28 +372,32 @@
       "repo": "unclehowell/cedwyn-peekaboo",
       "old_branch": "section/peekaboo",
       "page": "/peekaboo/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Bloculous",
       "repo": "unclehowell/cedwyn-bloculous",
       "old_branch": "section/bloculous",
       "page": "/bloculous/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Theories",
       "repo": "unclehowell/cedwyn-theories",
       "old_branch": "section/theories",
       "page": "/theories/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Garden Store",
       "repo": "unclehowell/cedwyn-garden-store",
       "old_branch": "section/garden-store",
       "page": "/garden-store/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Storytime",
