@@ -28,7 +28,8 @@
       "repo": "unclehowell/cedwyn-chubut-h3",
       "old_branch": "section/chubut-h3",
       "page": "/chubut-h3/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Hive",
