@@ -112,7 +112,7 @@ def one(t):
                 report.setdefault('_build_logs', {})[tid] = (b.stdout[-600:] + b.stderr[-900:])
             else:
                 how = 'branch'
-            d = work / t['dir'] if t['dir'] else work
+            d = work / t['dir'] if t.get('dir') else work   # a missing dir means the branch root (#283)
             if d.exists() and any(d.iterdir()):
                 shutil.copytree(d, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github', 'worker'))
                 if t.get('overlay') and (work / t['overlay']).is_dir():   # the folder the live site serves at its root (e.g. qa: static/qa)
