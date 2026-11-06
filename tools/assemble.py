@@ -119,7 +119,7 @@ def fetch_split_repo(repo, out, branch='main'):
     # Prefer public/ or dist/ or site/ if present, else repo root
     for cand in ('public', 'dist', 'site', 'static'):
         d = work / cand
-        if d.is_dir() and any(d.iterdir()):
+        if d.is_dir() and (d / 'index.html').is_file():   # #418: a folder without index.html (e.g. an assets static/) is not the site root
             shutil.copytree(d, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
             shutil.rmtree(work, ignore_errors=True)
             n = sum(1 for _ in out.rglob('*') if _.is_file())
