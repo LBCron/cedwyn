@@ -1,4 +1,4 @@
-// Wales 3D world v0.2.1 — Llandough / Leckwith / the Cedwyn estate on real LiDAR terrain. 
+// Wales 3D world v0.3.0 — Llandough / Leckwith / the Cedwyn estate on real LiDAR terrain. 
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/+esm';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js/+esm';
 import { Sky } from 'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/objects/Sky.js/+esm';
@@ -8,10 +8,14 @@ import { createBackend } from './world-backend.js?v=0.2.0';
 const Q = new URLSearchParams(location.search);
 const PHONE = matchMedia('(max-width: 700px)').matches || /Mobi|Android|iPhone/.test(navigator.userAgent);
 const D = (document.querySelector('meta[name=w3d-data]') || {}).content || new URL('data/', import.meta.url).href;
-if (!document.querySelector('link[href*="wales-3d.css"]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = new URL('wales-3d.css?v=0.2.0', import.meta.url).href; document.head.appendChild(l); }
+if (!document.querySelector('link[href*="wales-3d.css"]')) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = new URL('wales-3d.css?v=0.3.0', import.meta.url).href; document.head.appendChild(l); }
 const LAT = 51.4527, LON = -3.1987;
 const $ = s => document.querySelector(s);
 const info = t => { $('#w3dinfo').textContent = t || ''; };
+// This webapp's own data store: data/central.json, the catalogue fields for the records in data/sources.json, synced
+// read-only from the central catalogue by tools/sync_central.py (every 6 h). Optional: the world works without it.
+let central = null;
+fetch(D + 'central.json?h=' + Math.floor(Date.now() / 3.6e6)).then(r => r.ok ? r.json() : null).then(j => { central = j; }).catch(() => {});
 const perf = window.__w3dperf = { phone: PHONE, frames: 0, fps: 0, dpr: 0, tris: 0, calls: 0, loadMs: 0 };
 const t0 = performance.now();
 
@@ -348,6 +352,12 @@ function showParcel(p) {
   if (p.src) bits.push('outline from: ' + p.src);
   box.innerHTML = ''; const b = document.createElement('b'); b.textContent = bits.shift(); box.appendChild(b);
   const s = document.createElement('span'); s.textContent = bits.join(' · '); box.appendChild(s);
+  const recs = central && central.items ? Object.values(central.items) : [];
+  if (recs.length) { const r = document.createElement('small'); r.className = 'w3drec'; r.append('Records: ');
+    recs.forEach((it, k) => { if (k) r.append(' · '); const l = document.createElement('a'); l.target = '_top';
+      l.href = it.page ? 'https://cedwyn.bucklerfamily.estate' + it.page : 'https://bucklerfamily.estate/catalogue/?id=' + encodeURIComponent(it.id);
+      l.textContent = it.id + (it.date_display ? ' (' + it.date_display + ')' : ''); l.title = it.title || it.id; r.appendChild(l); });
+    box.appendChild(r); }
   const x = document.createElement('button'); x.type = 'button'; x.textContent = '×'; x.setAttribute('aria-label', 'Close'); x.onclick = () => showParcel(null); box.appendChild(x);
   box.hidden = false;
 }

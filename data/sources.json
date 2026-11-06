@@ -1,0 +1,13 @@
+{
+ "note": "The central-catalogue records the Wales 3D world's 1841 layer rests on. Hand-kept list of IDs only; tools/sync_central.py pulls their catalogue fields into data/central.json. Add an ID here when the world starts to show another record. — Sion's Tab agent",
+ "records": [
+  {
+   "id": "EV-0211",
+   "used_for": "parcel outlines: the Stewart estate survey plan (c.1824) the parcels are traced from"
+  },
+  {
+   "id": "EV-0215",
+   "used_for": "1841 occupier and landowner as entered: the Llandough, Cogan and Leckwith tithe apportionment"
+  }
+ ]
+}
