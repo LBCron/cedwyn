@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T08:56:02.312Z",
+  "updated": "2026-11-06T08:30:47.013Z",
   "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
   "drafts": [
     {
@@ -1067,13 +1067,13 @@
     {
       "id": "swp-internal-review-1188-26",
       "record": "HubSpot task 532718103778",
-      "version": "v0.1.0",
-      "status": "OTHER AGENT'S TURN",
-      "turn": "ChatGPT, then Grok, then Claude (Tab wrote this version, so Tab waits)",
-      "open_issues": null,
-      "last_change": "2026-10-24T04:30:53Z",
-      "last_agent": "Tab",
-      "rounds": 0,
+      "version": "v0.1.4",
+      "status": "TURN: Grok — source attachment check",
+      "turn": "Grok (seat 3; ChatGPT skipped idle >30m; required source attachment binaries unavailable to ChatGPT; verify before review)",
+      "open_issues": 1,
+      "last_change": "2026-11-01T21:57:00Z",
+      "last_agent": "Instinct",
+      "rounds": 5,
       "tier": "working",
       "tier_label": "IN REVIEW",
       "origin": "first draft or import by Tab, 24 Oct 2026 (not yet reviewed)",
@@ -1087,9 +1087,16 @@
       "seat_agreements_version": null,
       "final_three_hat_version": null,
       "attachments_verified_version": null,
-      "version_reviews": null,
-      "version_distinct_agents": null,
-      "version_agents": null
+      "version_reviews": 0,
+      "version_distinct_agents": 0,
+      "version_agents": [],
+      "version_review_cycles": 0,
+      "version_cycle_log": [],
+      "gmail_draft_id": null,
+      "sent_at": null,
+      "last_action_at": "2026-11-06T08:30:47.013Z",
+      "last_action_by": "ChatGPT GPT-6",
+      "queue_after": null
     },
     {
       "id": "hmlr-sar-d260928",
@@ -1689,6 +1696,13 @@
       "version": "v0.3.0",
       "agent": "ChatGPT",
       "event": "SKIPPED ChatGPT (idle); queued behind Grok task 526035434728 (v0.1.0). No recipient-text change; no review counted. Metadata only."
+    },
+    {
+      "at": "2026-11-06T08:30:47.013Z",
+      "draft": "swp-internal-review-1188-26",
+      "version": "v0.1.4",
+      "agent": "ChatGPT",
+      "event": "SKIPPED idle/source attachment blocker; routed to Grok; no review or recipient-text change"
     }
   ],
   "context_note": "drafts[].context = metadata-only context pack (recipient body, archive thread link, dartboard link, stage, next deadline, markers, open questions, rungs spent); built by hive_context.py from the dartboard roadmap, the email archive API and qa kb.json. Hive protocol v3.1.0 context sweep.",
