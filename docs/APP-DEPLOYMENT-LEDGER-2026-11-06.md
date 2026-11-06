@@ -5,7 +5,7 @@
 
 ## Evidence and scope
 
-This follows the 6 November owner directive in [cedwyn#188](https://github.com/unclehowell/cedwyn/issues/188) and the migration step in [cedwyn#311](https://github.com/unclehowell/cedwyn/issues/311). It separates repository source-of-truth from actual production serving path. The registry field `mode: split-repo` does **not** mean that an app is already directly served from its repository.
+This follows the 6 November owner directive in cedwyn#188 and the migration step in cedwyn#311. It separates repository source-of-truth from actual production serving path. The registry field `mode: split-repo` does **not** mean that an app is already directly served from its repository.
 
 | Source | SHA / state |
 |---|---|
@@ -112,15 +112,15 @@ All 65 application repository `main` HEADs below were read from GitHub's branche
 
 - The 3 November `migration/CENTRAL-DB.md` design describes a shared Cloudflare D1 database, `cedwyn-apps`, for central catalogue queries; reviewed Git records remain the writer path, and static `catalogue-db` exports are for app consumption. That note reports the account at the 10-database free-tier cap; re-check Cloudflare account state before treating the quota as current.
 - The per-app store actually demonstrated in current app code is **generated static JSON**, not a dedicated per-app D1. The 3D apps and Tithe H3 pull a small public field set from the central API. This is not a private D1 for each app.
-- The three inspected path Workers proxy raw GitHub files and do not reference D1/KV bindings in their Worker modules. The Cloudflare account's actual routes, secrets and all other app bindings remain unverified in this snapshot.
+- The three inspected path Workers proxy raw GitHub files and do not reference D1/KV bindings in their Worker modules. The Cloudflare account's actual routes, secrets and all other app bindings have not yet been checked against Cloudflare account configuration in this snapshot.
 - No app page should read D1 directly. Keep central catalogue reads in static sync/build flows unless a reviewed design authorises otherwise.
 
 ## Current release and verification gates
 
-1. [cedwyn#377](https://github.com/unclehowell/cedwyn/pull/377) fixes the missing Releases theme `dir`. After adding the required `site-wide` label, `sections-ci` #571 passed; `evidence-hierarchy-ci` on the PR head also passed. The failed main build has **not** been rerun; PR remains unmerged, and no new Pages revision is claimed.
-2. [cedwyn#313](https://github.com/unclehowell/cedwyn/pull/313) remains open/unmerged. The PR's title/body is narrower than the later #366 status note; audit its exact 44-row proposal before merge.
-3. [cedwyn-hive#10](https://github.com/unclehowell/cedwyn-hive/pull/10) is the current append-only draft-body protocol PR. PR #9 is closed as superseded. PR #10's preview job reports success but skips deployment because Cloudflare preview secrets are absent.
-4. [cedwyn#351](https://github.com/unclehowell/cedwyn/issues/351) tracks chrome/navigation parity for direct-path Worker apps. [cedwyn#267](https://github.com/unclehowell/cedwyn/issues/267) tracks the duplicate Wales route/slot ambiguity.
+1. cedwyn#377 fixes the missing Releases theme `dir`. After adding the required `site-wide` label, `sections-ci` #571 passed; `evidence-hierarchy-ci` on the PR head also passed. The failed main build has **not** been rerun; PR remains unmerged, and no new Pages revision is claimed.
+2. cedwyn#313 remains open/unmerged. The PR's title/body is narrower than the later #366 status note; audit its exact 44-row proposal before merge.
+3. cedwyn-hive#10 is the current append-only draft-body protocol PR. PR #9 is closed as superseded. PR #10's preview job reports success but skips deployment because Cloudflare preview secrets are absent.
+4. cedwyn#351 tracks chrome/navigation parity for direct-path Worker apps. cedwyn#267 tracks the duplicate Wales route/slot ambiguity.
 5. Revival AR and Research remain in `mirror` mode. Their repo `main` heads had not yet caught up with their legacy branch heads at the time of this check; verify the next mirror workflow before changing either mode again.
 
 ## Work remaining — explicit unknowns
