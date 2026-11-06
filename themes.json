@@ -866,8 +866,21 @@
    "branch": "theme-settings",
    "dir": "public",
    "group": "interactive"
-  }
- ],
+  },
+ {
+  "id": "releases",
+  "title": "The Release Machine",
+  "cy": "Y Peiriant Rhyddhau",
+  "es": "La máquina de publicaciones",
+  "live": "https://cedwyn.bucklerfamily.estate/releases/",
+  "hosts": [],
+  "paths": [],
+  "desc": "Publication-date sequencer, 1987-2026: each line is a related document placed at its publication date, titles hyperlinked to sources.",
+  "branch": "releases",
+  "slot": 41,
+  "group": "interactive"
+ }
+],
  "allowed_tile_templates": [
   "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/",
   "https://{s}.tile.openstreetmap.org/",
