@@ -1,5 +1,34 @@
 # Changelog
 
+## [3.10.0] - 2026-11-06
+
+### Changed
+- The parcel database moved into the repo: `data/maps.json`, `data/parcels.json`, `data/title_events.json`, `data/settings.json` and `data/parties.json`, typed (numbers, true/false, null) and checked against `data/schema.graphql` on every build. Migrated from the committed copy and checked row for row against the linked workbook on 6 Nov 2026: 3 maps, 177 parcel rows, 34 title events, 28 parties, 3 settings, nothing lost (`chain_for_A` = 1, `chain_for_B` = 2; the parcel 1-3 review notes kept). Facts and the family position stay in separate fields.
+- The page no longer reads the Google Sheet. Its data is the build's answer to the persisted query `data/queries/db.graphql`, inlined into the page (no data request on first view) and also published as `public/api/db.json`.
+- `settings` row `sheet_note`: its note now says to edit the row in the repo.
+
+### Added
+- `tools/gql.py`: a small GraphQL subset (schema checks, persisted queries with arguments and nested parties/maps) run at build time; no server.
+- `public/api/title-chain.json` (each title step with its parties) and `public/api/stewart-parcels.json` (the 1824 parcels, facts and family position side by side) for other apps.
+- `public/sw.js`: the page and title-chain/ open at once from the device on repeat visits and work offline; the server copy is revalidated in the background and a "tap to refresh" button appears when a new build lands. The site's own worker runs inside it. `?sw=off` removes it.
+- `.github/workflows/build-data.yml`: an edit to `data/` on GitHub rebuilds and commits the page.
+- `tools/import_sheet.py`: optional one-way import from the old workbook (dry run by default; the repo wins).
+
+### Removed
+- `public/data/db/*.csv`, `public/data/db/source.json` and `public/data/db.json` (replaced by `data/` and `public/api/`). The editor-only `review_flag` notes are no longer sent to the public page.
+
+## [3.9.0] - 2026-11-06
+
+### Added
+- Parcel database shaped like the family's parcel-by-year workbooks: one tab each for maps, parcels, title_events and settings (plus parties and a README), held in a linked Google Sheet and committed beside the page as `public/data/db/*.csv` with a combined `public/data/db.json`. The page reads the sheet as published CSV on each load; if it cannot, it uses the committed copy, and the build inlines that copy so the first view never waits.
+- 🗺️ Map button above the diagram: opens the chosen map in a popup, cropped to the picked parcel, with a dot on the number where one is set; "Whole map" toggles the crop. The 1824 plan shown is the uploaded image held as EV-0004. Crops are set by eye and are approximate.
+- Tenants toggle (Tenants: shown / hidden, kept in the address as `ten=1`): tenancies and leases from the title_events tab appear beside the freehold lines — the 1877 lease (reported), the 1916 Bute tenancy and the 1939 Western Ground Rents tenancy are drawn on the ring; the 1824 tenant entry and the 1841 occupier listing appear in the steps list.
+- Picking a parcel tied to a line by the family position plays that line: on the 1824 plan, parcel 1 plays line A and parcel 2 plays line B (settings tab, one cell per line). The record shows the family position in its own box, marked as not a finding.
+
+### Changed
+- The parcel dropdown lists only numbers something is held for; the five with nothing held (46-49, 51) are left out, with a note saying so.
+- On the 1824 plan the bracket after each number is the name in the plan's own reference table where one is read (1 House, Buildings, Garden & Yard; 2 Orchard; 4 and 7 Wood; 6 strip; 8 Fresh Marsh, meadow; 31 strip south of the church; and others), from a family photograph of the archive screen, so digits are not certain. The map is named "1824 Stewart/Bute plan 19 (Glamorgan Archives DB/E/1)".
+
 ## [3.8.0] - 2026-11-05
 
 ### Changed
