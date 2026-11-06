@@ -51,7 +51,7 @@
    "config": "ingredients.json",
    "theme": "infographic",
    "file": "index.html",
-   "n": 42
+   "n": 50
   },
   {
    "config": "ingredients.json",
@@ -10875,7 +10875,7 @@
    "config": "ingredients.json",
    "theme": "infographic",
    "file": "index.html",
-   "n": 3
+   "n": 4
   },
   {
    "config": "ingredients.json",
@@ -13556,7 +13556,7 @@
   {
    "config": "spa-basepath.json",
    "theme": "dartboard",
-   "file": "assets/index-CZshe5Gu.js",
+   "file": "assets/index-DaFKda7a.js",
    "n": 1
   },
   {
