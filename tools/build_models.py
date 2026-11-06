@@ -85,7 +85,7 @@ m.mat('limewash',(1,1,1),0.9,tex=os.path.join(TX,'limewash.jpg'),tile=2.2); m.ma
 m.mat('rubble',(1,1,1),0.95,tex=os.path.join(TX,'rubble_house.jpg'),tile=1.6); m.mat('dressed',(1,1,1),0.9,tex=os.path.join(TX,'rubble_barn.jpg'),tile=2.0)
 m.mat('slate_barn',(1,1,1),0.6,tex=os.path.join(TX,'slate_barn.jpg'),tile=2.4); m.mat('ridge',(0.26,0.07,0.04),0.7); m.mat('frame',(0.85,0.84,0.80),0.6); m.mat('timber',(0.20,0.14,0.09),0.85)
 m.mat('brick',(0.20,0.06,0.035),0.85); m.mat('green',(0.16,0.33,0.2),0.6); m.mat('gravel',(0.33,0.30,0.25),1.0); m.mat('glass',(0.04,0.045,0.05),0.35,0.0)
-m.mat('dark',(0.08,0.08,0.08),0.9); m.mat('boards',(0.42,0.40,0.35),0.9); m.mat('gate',(0.10,0.11,0.10),0.7); m.mat('pane',(0.75,0.85,0.85),0.1,0.0,0.45); m.mat('bark',(0.30,0.22,0.15),0.95); m.mat('leaf',(0.24,0.36,0.18),1.0)
+m.mat('dark',(0.08,0.08,0.08),0.9); m.mat('boards',(0.42,0.40,0.35),0.9); m.mat('gate',(0.10,0.11,0.10),0.7); m.mat('pane',(0.75,0.85,0.85),0.1,0.0,0.45); m.mat('bark',(0.30,0.22,0.15),0.95); m.mat('leaf',(0.075,0.10,0.04),1.0)   # run 4 (#201): leaf colour sampled from the house-and-gate painting's tree (sRGB median 0.28/0.31/0.20 -> linear), was (0.24,0.36,0.18) and read mint
 WM={'limewash':'limewash','rubble stone':'rubble','dressed stone':'dressed'}; RM={'slate':'slate','red pantile':'pantile'}
 for b in G['buildings']:
     if b['id']=='church': continue
