@@ -1,23 +1,23 @@
 {
  "title": "Research progress — the Great House (Tŷ Mawr) records programme",
- "generated": "2026-11-06T12:29Z",
+ "generated": "2026-11-06T18:32Z",
  "about": "Counts from the project correspondence register: every records question sent to an institution and every reply. Organisations only; no message text and no personal names.",
  "totals": {
   "institutions": 86,
   "questions_sent": 547,
-  "replies": 271,
-  "automatic_acknowledgements": 307,
-  "records_disclosed": 49,
-  "not_held": 64,
+  "replies": 281,
+  "automatic_acknowledgements": 308,
+  "records_disclosed": 54,
+  "not_held": 68,
   "refused": 11,
   "pointed_elsewhere": 51
  },
  "last_30_days": {
   "questions_sent": 238,
-  "replies": 105,
-  "automatic_acknowledgements": 102
+  "replies": 115,
+  "automatic_acknowledgements": 103
  },
- "waiting_on_institutions": 37,
+ "waiting_on_institutions": 34,
  "by_month": [
   {
    "month": "2026-01",
@@ -82,24 +82,24 @@
   {
    "month": "2026-11",
    "asked": 27,
-   "replies": 31,
-   "records": 2
+   "replies": 41,
+   "records": 7
   }
  ],
  "institutions": [
   {
    "institution": "Glamorgan Archives",
    "questions_sent": 45,
-   "replies": 38,
+   "replies": 40,
    "outcomes": {
-    "asked for clarification or a fee": 5,
+    "asked for clarification or a fee": 6,
     "answered, no records": 5,
     "pointed elsewhere": 5,
-    "records disclosed": 13,
+    "records disclosed": 14,
     "not held": 10
    },
-   "last_activity": "2026-10-31",
-   "waiting_on": "them"
+   "last_activity": "2026-11-06",
+   "waiting_on": "us"
   },
   {
    "institution": "Vale of Glamorgan Council",
@@ -118,28 +118,29 @@
   {
    "institution": "Welsh Government / Cadw",
    "questions_sent": 45,
-   "replies": 16,
+   "replies": 17,
    "outcomes": {
     "pointed elsewhere": 2,
-    "records disclosed": 5,
+    "records disclosed": 6,
     "answered, no records": 4,
     "review / complaint outcome": 1,
     "not held": 4
    },
-   "last_activity": "2026-11-05",
+   "last_activity": "2026-11-06",
    "waiting_on": "us"
   },
   {
    "institution": "HM Land Registry",
    "questions_sent": 36,
-   "replies": 9,
+   "replies": 12,
    "outcomes": {
     "asked for clarification or a fee": 2,
     "pointed elsewhere": 3,
     "answered, no records": 3,
-    "refused": 1
+    "refused": 1,
+    "records disclosed": 3
    },
-   "last_activity": "2026-11-04",
+   "last_activity": "2026-11-06",
    "waiting_on": "us"
   },
   {
@@ -241,15 +242,15 @@
   {
    "institution": "South Wales Police",
    "questions_sent": 17,
-   "replies": 10,
+   "replies": 11,
    "outcomes": {
     "pointed elsewhere": 2,
-    "not held": 2,
+    "not held": 3,
     "asked for clarification or a fee": 3,
     "answered, no records": 1,
     "records disclosed": 1
    },
-   "last_activity": "2026-11-04",
+   "last_activity": "2026-11-06",
    "waiting_on": "us"
   },
   {
@@ -300,6 +301,16 @@
    "waiting_on": "them"
   },
   {
+   "institution": "Dwr Cymru Welsh Water",
+   "questions_sent": 8,
+   "replies": 4,
+   "outcomes": {
+    "not held": 4
+   },
+   "last_activity": "2026-11-06",
+   "waiting_on": "us"
+  },
+  {
    "institution": "ITV Archive",
    "questions_sent": 7,
    "replies": 5,
@@ -310,16 +321,6 @@
    },
    "last_activity": "2026-10-29",
    "waiting_on": "us"
-  },
-  {
-   "institution": "Dwr Cymru Welsh Water",
-   "questions_sent": 8,
-   "replies": 3,
-   "outcomes": {
-    "not held": 3
-   },
-   "last_activity": "2026-10-29",
-   "waiting_on": "them"
   },
   {
    "institution": "Coroner's Service (RCT Council)",
@@ -398,6 +399,18 @@
    "waiting_on": "us"
   },
   {
+   "institution": "Ordnance Survey",
+   "questions_sent": 4,
+   "replies": 3,
+   "outcomes": {
+    "pointed elsewhere": 1,
+    "asked for clarification or a fee": 1,
+    "not held": 1
+   },
+   "last_activity": "2026-11-06",
+   "waiting_on": "us"
+  },
+  {
    "institution": "Archaeology Data Service",
    "questions_sent": 3,
    "replies": 3,
@@ -427,17 +440,6 @@
     "answered, no records": 2
    },
    "last_activity": "2026-11-02",
-   "waiting_on": "us"
-  },
-  {
-   "institution": "Ordnance Survey",
-   "questions_sent": 4,
-   "replies": 2,
-   "outcomes": {
-    "pointed elsewhere": 1,
-    "asked for clarification or a fee": 1
-   },
-   "last_activity": "2026-10-29",
    "waiting_on": "us"
   },
   {
@@ -472,6 +474,16 @@
    "waiting_on": "them"
   },
   {
+   "institution": "Mount Stuart (Bute archive)",
+   "questions_sent": 4,
+   "replies": 1,
+   "outcomes": {
+    "not held": 1
+   },
+   "last_activity": "2026-11-06",
+   "waiting_on": "us"
+  },
+  {
    "institution": "Persimmon Homes",
    "questions_sent": 4,
    "replies": 1,
@@ -501,14 +513,6 @@
   },
   {
    "institution": "Government Legal Department (Bona Vacantia)",
-   "questions_sent": 4,
-   "replies": 0,
-   "outcomes": {},
-   "last_activity": "2026-10-31",
-   "waiting_on": "them"
-  },
-  {
-   "institution": "Mount Stuart (Bute archive)",
    "questions_sent": 4,
    "replies": 0,
    "outcomes": {},
