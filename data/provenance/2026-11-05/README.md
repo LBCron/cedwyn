@@ -10,7 +10,7 @@ SHA-256 digests of the published Cedwyn open-data export (`/db/export/`, built 2
 ## Verify a file yourself
 1. Download it from https://cedwyn.bucklerfamily.estate<path>.
 2. `sha256sum <file>` and compare with its line in `SHA256SUMS`.
-3. `pip install opentimestamps-client`, then `ots verify SHA256SUMS.ots` with `SHA256SUMS` beside it. Until the calendars commit to a Bitcoin block the proof reports as pending; `ots upgrade SHA256SUMS.ots` completes it (an upgraded copy will be committed here).
+3. `pip install opentimestamps-client`, then `ots verify SHA256SUMS.ots` with `SHA256SUMS` beside it. Until the calendars commit to a Bitcoin block the proof reports as pending; `ots upgrade SHA256SUMS.ots` completes it. Upgraded proofs (SHA256SUMS.ots and every proof in ots-files.zip), each with Bitcoin block header attestations (blocks 974607-974643), were committed here on 6 November 2026, so `ots verify` now completes without the calendars.
 
 The same list is served to AI agents by the read-only MCP server at https://cedwyn.bucklerfamily.estate/mcp/archive (tool `get_provenance`).
 
