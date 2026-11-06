@@ -1,12 +1,12 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.2.0",
- "updated_utc": "2026-11-03T07:16Z",
- "count": 574,
+ "version": "1.3.0",
+ "updated_utc": "2026-11-06T08:54Z",
+ "count": 575,
  "by_category": {
   "heritage": 109,
   "press": 162,
-  "history": 43,
+  "history": 44,
   "legal": 124,
   "social": 4,
   "title": 70,
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 2
+  "spill": 3
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -1029,6 +1029,20 @@
    "sort": "1917-03-01",
    "id": "CH-0075",
    "date_display": "1 Mar 1917"
+  },
+  {
+   "date": "1920",
+   "event": "Kelly's Directory of Monmouthshire and South Wales (1920) lists the Marquess of Bute as lord of the manor of Llandough and patron of the joint rectory (Llandough with Leckwith and Cogan), and Lord Colum E. Crichton-Stuart as lord of the manor of Cogan. The publisher's entry names no farm or parcel.",
+   "source": "Kelly's Directory of Monmouthshire and South Wales (1920), p.711, read in the Internet Archive copy 6 Nov 2026",
+   "url": "https://archive.org/details/kellysdirectoryo141920lond",
+   "wayback": "",
+   "evidence": "EV-0681",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1920-01-01",
+   "id": "CH-0599",
+   "date_display": "1920",
+   "spill": "SP-00004"
   },
   {
    "date": "1922",
@@ -7222,6 +7236,14 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.3.0",
+   "date": "2026-11-06",
+   "change": "Added CH-0599 (1920): Kelly's Directory of Monmouthshire and South Wales (1920) lists the Marquess of Bute as lord of the manor of Llandough and patron of the joi [spill SP-00004]",
+   "size": "575 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
   {
    "version": "1.2.0",
    "date": "2026-11-03",
