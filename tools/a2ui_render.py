@@ -125,13 +125,13 @@ def Page(s, c, ctx):
     path_script = ""
     if cedwyn_path:
         path = str(cedwyn_path)
-        if not path.startswith("/") or path.startswith("//") or any(ch in path for ch in "\\r\\n"):
+        if not path.startswith("/") or path.startswith("//") or any(ch in path for ch in "\r\n"):
             raise RenderError("cedwynPath must be a root-relative path")
-        encoded = json.dumps(path, ensure_ascii=True).replace("<", r"\\u003c").replace(">", r"\\u003e").replace("&", r"\\u0026")
+        encoded = json.dumps(path, ensure_ascii=True).replace("<", r"\u003c").replace(">", r"\u003e").replace("&", r"\u0026")
         path_script = "<script>window.__cedwynLP=" + encoded + ";</script>"
     return ('<!doctype html><html lang="%s"%s><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             '<title>%s</title><meta name="description" content="%s">%s%s%s'
-            '<meta name="generator" content="cedwyn-a2ui/0.2 (A2UI v0.9 surface %s)"></head><body class="%s"><main class="%s">%s</main>%s</body></html>\\n'
+            '<meta name="generator" content="cedwyn-a2ui/0.2 (A2UI v0.9 surface %s)"></head><body class="%s"><main class="%s">%s</main>%s</body></html>\n'
             % (E(lang), html_attrs, E(title), E(desc), css, path_script, "".join(hs), E(s.surface),
                E(c.get("bodyClass", "")), E(c.get("mainClass", "")), s.inner(c, ctx), js))
 
@@ -225,14 +225,14 @@ def Card(s, c, ctx):
     body = s.val(c.get("body"), ctx); bl = s.val(c.get("bodyLabel"), ctx)
     badge, bcls = s.val(c.get("badge"), ctx), s.val(c.get("badgeClass"), ctx)
     foot = s.val(c.get("foot"), ctx)
-    return ('<article class="%s"%s><h3 class="a2-card-h">%s</h3>%s%s%s<p class="a2-card-f">%s%s</p></article>'
+    return ('<article class="%s"%s><h3 class="a2-card-h">%s</h3>%s%s%s%s<p class="a2-card-f">%s</p></article>'
             % (_cls(s, c, ctx, "a2-card"), attrs, head,
                ('<p class="a2-meta">%s</p>' % "".join(meta)) if meta else "",
                ('<p class="a2-card-b"><span class="a2-l">%s</span> %s</p>' % (E(bl), E(body))) if body else "",
                s.inner(c, ctx),
                ('<span class="%s">%s</span>' % (E(bcls or "a2-badge"), E(badge))) if badge else "",
-               (' <small>%s</small>' % E(foot)) if foot else ""))
-
+               E(foot) if foot else ""))
+    
 def Meter(s, c, ctx):
     try:
         value = float(s.val(c.get("value"), ctx) or 0)
