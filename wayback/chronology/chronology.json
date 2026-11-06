@@ -1,15 +1,15 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.5.0",
+ "version": "1.6.0",
  "updated_utc": "2026-11-06T10:56Z",
- "count": 577,
+ "count": 578,
  "by_category": {
   "heritage": 110,
   "press": 162,
   "history": 44,
   "legal": 124,
   "social": 4,
-  "title": 70,
+  "title": 71,
   "correspondence": 87
  },
  "by_origin": {
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 5
+  "spill": 6
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -2531,6 +2531,20 @@
    "sort": "1983-03-26",
    "id": "CH-0191",
    "date_display": "26 Mar 1983"
+  },
+  {
+   "date": "1983-04-08",
+   "event": "HM Land Registry's file list for the farmhouse first-registration application WA240304 (lodged 23 Feb 1983) lists form D23 with a letter of 8 April 1983 (item 7) and correspondence of 12 April 1983 (item 4). Contents not held; both dates fall after Mary Williams' death on 26 March 1983. No record held gives the date of any notice of the application to the occupier.",
+   "source": "HM Land Registry title file WA240304, items 4 and 7, as listed in the registry's schedule of first-registration documents (catalogue EV-0069, EV-0070, EV-0161)",
+   "url": "https://cedwyn.bucklerfamily.estate/api/catalogue/EV-0069",
+   "wayback": "",
+   "evidence": "EV-0069",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1983-04-08",
+   "id": "CH-0602",
+   "date_display": "8 and 12 Apr 1983",
+   "spill": "SP-00114"
   },
   {
    "date": "29 Jul 1983",
@@ -7264,6 +7278,14 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.6.0",
+   "date": "2026-11-06",
+   "change": "Added CH-0602 (8 and 12 Apr 1983): HM Land Registry's file list for the farmhouse first-registration application WA240304 (lodged 23 Feb 1983) lists form D23 with a letter of  [spill SP-00114]",
+   "size": "578 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
   {
    "version": "1.5.0",
    "date": "2026-11-06",
