@@ -449,6 +449,14 @@
       "old_branch": "theme-settings",
       "page": "/settings/",
       "mode": "split-repo"
+    },
+    {
+      "app": "The Release Machine",
+      "repo": "unclehowell/cedwyn-releases",
+      "old_branch": "releases",
+      "page": "/releases/",
+      "mode": "split-repo",
+      "min_files": 1
     }
   ]
 }
