@@ -40,6 +40,23 @@ FORCE_CRAWL = os.environ.get('FORCE_CRAWL') == '1'           # snapshot runs: cr
 LOCK = {}
 try: LOCK = json.load(open(ROOT / 'sections.lock')).get('sections', {})
 except Exception: pass
+# 6 Nov 2026 (REPO SPLIT step 3, owner 09:04 GMT): a webapp whose split-repos.json row carries "deploy": "repo" is built
+# straight from its own repository's main, not from the old cedwyn branch. Each such repository is fetched here once, one
+# at a time, before the themes run in parallel (parallel shallow fetches race on mirror.git's shallow lock). A repository
+# that cannot be read falls back to the old branch, and _assemble_report.json says so under _split_source. - Sion's Tab agent
+SPLIT = {}
+try:
+    for _a in json.load(open(ROOT / 'split-repos.json')).get('apps', []):
+        if _a.get('mode') == 'split-repo' and _a.get('deploy') == 'repo' and _a.get('old_branch') and _a.get('repo'):
+            _ref = 'refs/split/' + _a['old_branch'].replace('/', '--')
+            _r = sh(f"git --git-dir={MIRROR} fetch -q --depth 1 https://github.com/{_a['repo']}.git +refs/heads/main:{_ref}", t=600)
+            report.setdefault('_split_source', {})[_a['old_branch']] = {'repo': _a['repo'], 'ok': _r.returncode == 0}
+            if _r.returncode == 0: SPLIT[_a['old_branch']] = _ref
+except Exception as e: report.setdefault('_split_source', {})['_error'] = str(e)[:200]
+def split_tidy(d):
+    """The split repository's SPLIT.json is not part of the app; its APP-README.md is the app's own README."""
+    if (d / 'SPLIT.json').exists(): (d / 'SPLIT.json').unlink()
+    if (d / 'APP-README.md').exists(): (d / 'APP-README.md').replace(d / 'README.md')
 def snapshot(t, out):
     """26 Oct 2026: a crawled section is read from its own snapshot branch (section/<id>, made by snapshot-sections.yml)
     at the commit sections.lock pins, so a build no longer crawls the live Worker sites. Falls back to the crawl when the
@@ -54,7 +71,9 @@ def snapshot(t, out):
         if sh(f"git --git-dir={MIRROR} cat-file -e {pin}^{{commit}}").returncode != 0:
             sh(f"git --git-dir={MIRROR} fetch -q --depth 1 https://github.com/{repo}.git {pin}", t=600)
         want = pin if sh(f"git --git-dir={MIRROR} cat-file -e {pin}^{{commit}}").returncode == 0 else ref
+    if br in SPLIT: want = SPLIT[br]   # REPO SPLIT step 3: the app's own repository is the deploy source
     r = sh(f"git --git-dir={MIRROR} archive --format=tar {want} | tar -x -C {out}")
+    if br in SPLIT and r.returncode == 0: split_tidy(out)
 
     # A site build can accidentally be pinned instead of a section snapshot. Its root
     # contains several sibling theme directories; extracting it into /<theme>/ would
@@ -103,7 +122,9 @@ def one(t):
     if how: pass
     elif t.get('branch'):
         work = pathlib.Path('src_tmp_' + tid); shutil.rmtree(work, ignore_errors=True); work.mkdir()
-        r = sh(f"git --git-dir={MIRROR} archive --format=tar refs/heads/{t['branch']} | tar -x -C {work}")
+        src = SPLIT.get(t['branch']) or f"refs/heads/{t['branch']}"   # REPO SPLIT step 3: own repository when deploy is 'repo'
+        r = sh(f"git --git-dir={MIRROR} archive --format=tar {src} | tar -x -C {work}")
+        if r.returncode == 0 and t['branch'] in SPLIT: split_tidy(work)
         if r.returncode == 0:
             if t.get('build'):
                 bdir = work / (t.get('root') or '')

@@ -20,7 +20,8 @@
       "repo": "unclehowell/cedwyn-tithe-h3",
       "old_branch": "section/tithe-h3",
       "page": "/tithe-h3/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Chubut H3 map",
