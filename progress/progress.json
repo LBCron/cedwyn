@@ -1,23 +1,23 @@
 {
  "title": "Research progress — the Great House (Tŷ Mawr) records programme",
- "generated": "2026-11-06T10:26Z",
+ "generated": "2026-11-06T12:29Z",
  "about": "Counts from the project correspondence register: every records question sent to an institution and every reply. Organisations only; no message text and no personal names.",
  "totals": {
-  "institutions": 76,
-  "questions_sent": 529,
+  "institutions": 86,
+  "questions_sent": 547,
   "replies": 271,
-  "automatic_acknowledgements": 304,
+  "automatic_acknowledgements": 307,
   "records_disclosed": 49,
   "not_held": 64,
   "refused": 11,
   "pointed_elsewhere": 51
  },
  "last_30_days": {
-  "questions_sent": 220,
+  "questions_sent": 238,
   "replies": 105,
-  "automatic_acknowledgements": 100
+  "automatic_acknowledgements": 102
  },
- "waiting_on_institutions": 26,
+ "waiting_on_institutions": 37,
  "by_month": [
   {
    "month": "2026-01",
@@ -75,13 +75,13 @@
   },
   {
    "month": "2026-10",
-   "asked": 213,
+   "asked": 214,
    "replies": 78,
    "records": 12
   },
   {
    "month": "2026-11",
-   "asked": 10,
+   "asked": 27,
    "replies": 31,
    "records": 2
   }
@@ -356,6 +356,16 @@
    "waiting_on": "us"
   },
   {
+   "institution": "Information Commissioner's Office",
+   "questions_sent": 6,
+   "replies": 2,
+   "outcomes": {
+    "pointed elsewhere": 2
+   },
+   "last_activity": "2026-11-03",
+   "waiting_on": "us"
+  },
+  {
    "institution": "The Postal Museum",
    "questions_sent": 4,
    "replies": 4,
@@ -367,22 +377,33 @@
   },
   {
    "institution": "Vale of Glamorgan Council (Scrutiny)",
-   "questions_sent": 6,
+   "questions_sent": 7,
    "replies": 1,
    "outcomes": {
     "answered, no records": 1
    },
    "last_activity": "2026-11-02",
-   "waiting_on": "us"
+   "waiting_on": "them"
   },
   {
    "institution": "Companies House",
-   "questions_sent": 2,
+   "questions_sent": 3,
    "replies": 4,
    "outcomes": {
     "pointed elsewhere": 1,
     "asked for clarification or a fee": 2,
     "records disclosed": 1
+   },
+   "last_activity": "2026-11-03",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Archaeology Data Service",
+   "questions_sent": 3,
+   "replies": 3,
+   "outcomes": {
+    "records disclosed": 1,
+    "answered, no records": 2
    },
    "last_activity": "2026-11-03",
    "waiting_on": "us"
@@ -395,16 +416,6 @@
     "not held": 3
    },
    "last_activity": "2026-10-29",
-   "waiting_on": "us"
-  },
-  {
-   "institution": "Information Commissioner's Office",
-   "questions_sent": 4,
-   "replies": 2,
-   "outcomes": {
-    "pointed elsewhere": 2
-   },
-   "last_activity": "2026-11-03",
    "waiting_on": "us"
   },
   {
@@ -439,17 +450,6 @@
    },
    "last_activity": "2026-07-20",
    "waiting_on": "them"
-  },
-  {
-   "institution": "Archaeology Data Service",
-   "questions_sent": 2,
-   "replies": 3,
-   "outcomes": {
-    "records disclosed": 1,
-    "answered, no records": 2
-   },
-   "last_activity": "2026-11-03",
-   "waiting_on": "us"
   },
   {
    "institution": "Historic England",
@@ -554,6 +554,16 @@
    "waiting_on": "them"
   },
   {
+   "institution": "Darwin Gray",
+   "questions_sent": 2,
+   "replies": 1,
+   "outcomes": {
+    "not held": 1
+   },
+   "last_activity": "2026-11-03",
+   "waiting_on": "them"
+  },
+  {
    "institution": "Department for Culture, Media and Sport",
    "questions_sent": 2,
    "replies": 1,
@@ -628,6 +638,16 @@
    "waiting_on": "them"
   },
   {
+   "institution": "British Geological Survey",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {
+    "pointed elsewhere": 1
+   },
+   "last_activity": "2026-11-05",
+   "waiting_on": "us"
+  },
+  {
    "institution": "Cambridge University Collection of Aerial Photography (CUCAP)",
    "questions_sent": 1,
    "replies": 1,
@@ -656,13 +676,13 @@
    "waiting_on": "us"
   },
   {
-   "institution": "Darwin Gray",
+   "institution": "FSB Wales (Federation of Small Businesses)",
    "questions_sent": 1,
    "replies": 1,
    "outcomes": {
-    "not held": 1
+    "refused": 1
    },
-   "last_activity": "2026-11-03",
+   "last_activity": "2026-11-04",
    "waiting_on": "us"
   },
   {
@@ -722,6 +742,16 @@
    "waiting_on": "us"
   },
   {
+   "institution": "SEWBReC (South East Wales Biodiversity Records Centre)",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {
+    "pointed elsewhere": 1
+   },
+   "last_activity": "2026-11-04",
+   "waiting_on": "us"
+  },
+  {
    "institution": "SPAB (Society for the Protection of Ancient Buildings)",
    "questions_sent": 1,
    "replies": 1,
@@ -750,14 +780,20 @@
    "waiting_on": "us"
   },
   {
-   "institution": "British Geological Survey",
-   "questions_sent": 0,
-   "replies": 1,
-   "outcomes": {
-    "pointed elsewhere": 1
-   },
-   "last_activity": "2026-11-05",
-   "waiting_on": "us"
+   "institution": "Cadw (via Transport for Wales customer support)",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-10-24",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Chambers Wales South East Wales",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
+   "waiting_on": "them"
   },
   {
    "institution": "Church of England archives (Lambeth Palace Library)",
@@ -768,14 +804,20 @@
    "waiting_on": "us"
   },
   {
-   "institution": "FSB Wales (Federation of Small Businesses)",
-   "questions_sent": 0,
-   "replies": 1,
-   "outcomes": {
-    "refused": 1
-   },
-   "last_activity": "2026-11-04",
-   "waiting_on": "us"
+   "institution": "Companies House (Archive Searches)",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-03",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Glamorgan Federation of Women's Institutes",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
+   "waiting_on": "them"
   },
   {
    "institution": "Hugh James (successor to John Loosemore & Co.)",
@@ -794,11 +836,35 @@
    "waiting_on": "them"
   },
   {
+   "institution": "Mid and West Wales Fire and Rescue Service",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
+   "waiting_on": "them"
+  },
+  {
    "institution": "Modern Records Centre (University of Warwick)",
    "questions_sent": 1,
    "replies": 0,
    "outcomes": {},
    "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "National Collection of Aerial Photography (Historic Environment Scotland)",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "National Library of Wales (Screen and Sound Archive)",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-03",
    "waiting_on": "them"
   },
   {
@@ -818,14 +884,12 @@
    "waiting_on": "us"
   },
   {
-   "institution": "SEWBReC (South East Wales Biodiversity Records Centre)",
-   "questions_sent": 0,
-   "replies": 1,
-   "outcomes": {
-    "pointed elsewhere": 1
-   },
-   "last_activity": "2026-11-04",
-   "waiting_on": "us"
+   "institution": "The Georgian Group",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
+   "waiting_on": "them"
   },
   {
    "institution": "The Law Society",
@@ -833,6 +897,14 @@
    "replies": 0,
    "outcomes": {},
    "last_activity": "2026-10-31",
+   "waiting_on": "them"
+  },
+  {
+   "institution": "Wildlife Trust of South and West Wales",
+   "questions_sent": 1,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-11-02",
    "waiting_on": "them"
   },
   {
@@ -857,6 +929,14 @@
    "replies": 0,
    "outcomes": {},
    "last_activity": "2026-09-24",
+   "waiting_on": "us"
+  },
+  {
+   "institution": "Welsh Government (Ministerial correspondence)",
+   "questions_sent": 0,
+   "replies": 0,
+   "outcomes": {},
+   "last_activity": "2026-09-30",
    "waiting_on": "us"
   },
   {
