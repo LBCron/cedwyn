@@ -3008,7 +3008,7 @@
   {
    "config": "ingredients.json",
    "theme": "research",
-   "file": "evidence/index.html",
+   "file": "evidence/register/index.html",
    "n": 1
   },
   {
@@ -10718,13 +10718,13 @@
   {
    "config": "ingredients.json",
    "theme": "research",
-   "file": "evidence/index.html",
+   "file": "evidence/pending-evidence/index.html",
    "n": 1
   },
   {
    "config": "ingredients.json",
    "theme": "research",
-   "file": "evidence/pending-evidence/index.html",
+   "file": "evidence/register/index.html",
    "n": 1
   },
   {
@@ -12039,18 +12039,6 @@
    "config": "ingredients.json",
    "theme": "research",
    "file": "evidence/ev-0085-glamorgan-village-book-demolition-page/index.html",
-   "n": 1
-  },
-  {
-   "config": "ingredients.json",
-   "theme": "research",
-   "file": "evidence/index.html",
-   "n": 1
-  },
-  {
-   "config": "ingredients.json",
-   "theme": "research",
-   "file": "evidence/index.html",
    "n": 1
   },
   {
@@ -13568,7 +13556,7 @@
   {
    "config": "spa-basepath.json",
    "theme": "dartboard",
-   "file": "assets/index-DIJeF9Pw.js",
+   "file": "assets/index-CZshe5Gu.js",
    "n": 1
   },
   {
@@ -13710,6 +13698,18 @@
    "theme": "story",
    "file": "**/*.html",
    "find": "Mary's father. Tenant of the house and fields from 1908; pai"
+  },
+  {
+   "config": "ingredients.json",
+   "theme": "research",
+   "file": "evidence/index.html",
+   "find": "-penarth-pp64-65/\">EV-0645</a> — Printed local-history book,"
+  },
+  {
+   "config": "ingredients.json",
+   "theme": "research",
+   "file": "evidence/index.html",
+   "find": "the demolition of 6 December 1988</li></ul></section>"
   },
   {
    "config": "spa-basepath.json",

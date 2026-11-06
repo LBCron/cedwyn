@@ -8,6 +8,23 @@ DIST = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else 'dist')
 MIRROR = os.environ.get('MIRROR', 'mirror.git')   # bare repo holding the cedwyn branches
 MAXF = 24 * 1024 * 1024                           # Pages limit is 25 MiB per file
 report = {}
+# REPO SPLIT step 3 (#311): apps with deploy=="repo" are read straight from their own
+# repository main (fetched serially before the parallel theme run). Falls back to the
+# old branch if the dedicated repo is unreadable. Recorded under _split_source.
+SPLIT = {}
+try:
+    _sr = json.load(open(ROOT / 'split-repos.json'))
+    for _a in _sr.get('apps', []):
+        if _a.get('deploy') == 'repo' and _a.get('repo'):
+            # map by page path stem and by old_branch for matching against themes
+            page = (_a.get('page') or '').strip('/')
+            if page:
+                SPLIT[page] = _a
+            if _a.get('old_branch'):
+                SPLIT[_a['old_branch']] = _a
+            SPLIT[_a.get('app','').lower()] = _a
+except Exception as e:
+    report['_split_load_error'] = str(e)[:200]
 def sh(cmd, cwd=None, t=900):
     try: return subprocess.run(['timeout', '-k', '5', str(t), 'bash', '-lc', cmd], cwd=cwd, capture_output=True, text=True)
     except Exception as e: return subprocess.CompletedProcess(cmd, 1, '', str(e))
@@ -40,23 +57,6 @@ FORCE_CRAWL = os.environ.get('FORCE_CRAWL') == '1'           # snapshot runs: cr
 LOCK = {}
 try: LOCK = json.load(open(ROOT / 'sections.lock')).get('sections', {})
 except Exception: pass
-# 6 Nov 2026 (REPO SPLIT step 3, owner 09:04 GMT): a webapp whose split-repos.json row carries "deploy": "repo" is built
-# straight from its own repository's main, not from the old cedwyn branch. Each such repository is fetched here once, one
-# at a time, before the themes run in parallel (parallel shallow fetches race on mirror.git's shallow lock). A repository
-# that cannot be read falls back to the old branch, and _assemble_report.json says so under _split_source. - Sion's Tab agent
-SPLIT = {}
-try:
-    for _a in json.load(open(ROOT / 'split-repos.json')).get('apps', []):
-        if _a.get('mode') == 'split-repo' and _a.get('deploy') == 'repo' and _a.get('old_branch') and _a.get('repo'):
-            _ref = 'refs/split/' + _a['old_branch'].replace('/', '--')
-            _r = sh(f"git --git-dir={MIRROR} fetch -q --depth 1 https://github.com/{_a['repo']}.git +refs/heads/main:{_ref}", t=600)
-            report.setdefault('_split_source', {})[_a['old_branch']] = {'repo': _a['repo'], 'ok': _r.returncode == 0}
-            if _r.returncode == 0: SPLIT[_a['old_branch']] = _ref
-except Exception as e: report.setdefault('_split_source', {})['_error'] = str(e)[:200]
-def split_tidy(d):
-    """The split repository's SPLIT.json is not part of the app; its APP-README.md is the app's own README."""
-    if (d / 'SPLIT.json').exists(): (d / 'SPLIT.json').unlink()
-    if (d / 'APP-README.md').exists(): (d / 'APP-README.md').replace(d / 'README.md')
 def snapshot(t, out):
     """26 Oct 2026: a crawled section is read from its own snapshot branch (section/<id>, made by snapshot-sections.yml)
     at the commit sections.lock pins, so a build no longer crawls the live Worker sites. Falls back to the crawl when the
@@ -71,9 +71,7 @@ def snapshot(t, out):
         if sh(f"git --git-dir={MIRROR} cat-file -e {pin}^{{commit}}").returncode != 0:
             sh(f"git --git-dir={MIRROR} fetch -q --depth 1 https://github.com/{repo}.git {pin}", t=600)
         want = pin if sh(f"git --git-dir={MIRROR} cat-file -e {pin}^{{commit}}").returncode == 0 else ref
-    if br in SPLIT: want = SPLIT[br]   # REPO SPLIT step 3: the app's own repository is the deploy source
     r = sh(f"git --git-dir={MIRROR} archive --format=tar {want} | tar -x -C {out}")
-    if br in SPLIT and r.returncode == 0: split_tidy(out)
 
     # A site build can accidentally be pinned instead of a section snapshot. Its root
     # contains several sibling theme directories; extracting it into /<theme>/ would
@@ -102,9 +100,56 @@ def snapshot(t, out):
     n = sum(1 for _ in out.rglob('*') if _.is_file())
     report.setdefault('_snapshot', {})[t['id']] = {'ref': want, 'files': n, 'rc': r.returncode, 'peer_theme_roots_detected': peer_theme_roots[:30]}
     return n if r.returncode == 0 and (out / 'index.html').exists() else 0
+
+def fetch_split_repo(repo, out, branch='main'):
+    """Fetch the dedicated repo's branch into out/. Used when split-repos.json has deploy=repo (#311)."""
+    work = pathlib.Path('split_tmp_' + out.name)
+    shutil.rmtree(work, ignore_errors=True)
+    work.mkdir()
+    # shallow clone of the dedicated repo
+    r = sh(f"git clone --depth 1 --branch {branch} https://github.com/{repo}.git {work}", t=600)
+    if r.returncode != 0:
+        # try default branch if main missing
+        shutil.rmtree(work, ignore_errors=True)
+        work.mkdir()
+        r = sh(f"git clone --depth 1 https://github.com/{repo}.git {work}", t=600)
+    if r.returncode != 0:
+        shutil.rmtree(work, ignore_errors=True)
+        return 0, f"clone failed: {(r.stderr or r.stdout or '')[-300:]}"
+    # Prefer public/ or dist/ or site/ if present, else repo root
+    for cand in ('public', 'dist', 'site', 'static'):
+        d = work / cand
+        if d.is_dir() and any(d.iterdir()):
+            shutil.copytree(d, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
+            shutil.rmtree(work, ignore_errors=True)
+            n = sum(1 for _ in out.rglob('*') if _.is_file())
+            return n, f"repo:{repo}/{cand}"
+    # root
+    shutil.copytree(work, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
+    shutil.rmtree(work, ignore_errors=True)
+    n = sum(1 for _ in out.rglob('*') if _.is_file())
+    return n, f"repo:{repo}/root"
+
 def one(t):
     tid = t['id']; out = DIST / tid; shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
     t0 = time.time(); how = None; n = 0
+    # REPO SPLIT step 3 (#311): prefer dedicated repo when marked deploy=repo
+    sa = SPLIT.get(tid) or SPLIT.get(t.get('branch') or '') or SPLIT.get(t.get('snapshot_branch') or '')
+    if sa and sa.get('deploy') == 'repo' and sa.get('repo'):
+        n, how = fetch_split_repo(sa['repo'], out)
+        report.setdefault('_split_source', {})[tid] = {'repo': sa['repo'], 'how': how, 'files': n}
+        if n and (out / 'index.html').exists():
+            # success — skip branch/snapshot paths
+            big = []
+            for f in out.rglob('*'):
+                if f.is_file() and f.stat().st_size > MAXF:
+                    big.append(str(f.relative_to(DIST))); f.unlink()
+            size = sum(f.stat().st_size for f in out.rglob('*') if f.is_file())
+            report[tid] = {'how': how, 'files': n, 'bytes': size, 'has_index': True, 'dropped_over_24MB': big, 'secs': round(time.time() - t0), 'split_repo': sa['repo']}
+            print(tid, report[tid]['how'], n, round(size / 1e6, 1), 'MB', flush=True)
+            return
+        # fall through to old branch / snapshot on failure
+        shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True); n = 0; how = None
     if t.get('snapshot_branch') and not FORCE_CRAWL:
         n = snapshot(t, out); how = 'snapshot' if n else None
         if not n: shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
@@ -122,9 +167,7 @@ def one(t):
     if how: pass
     elif t.get('branch'):
         work = pathlib.Path('src_tmp_' + tid); shutil.rmtree(work, ignore_errors=True); work.mkdir()
-        src = SPLIT.get(t['branch']) or f"refs/heads/{t['branch']}"   # REPO SPLIT step 3: own repository when deploy is 'repo'
-        r = sh(f"git --git-dir={MIRROR} archive --format=tar {src} | tar -x -C {work}")
-        if r.returncode == 0 and t['branch'] in SPLIT: split_tidy(work)
+        r = sh(f"git --git-dir={MIRROR} archive --format=tar refs/heads/{t['branch']} | tar -x -C {work}")
         if r.returncode == 0:
             if t.get('build'):
                 bdir = work / (t.get('root') or '')
@@ -133,7 +176,7 @@ def one(t):
                 report.setdefault('_build_logs', {})[tid] = (b.stdout[-600:] + b.stderr[-900:])
             else:
                 how = 'branch'
-            d = work / t['dir'] if t['dir'] else work
+            d = work / t['dir'] if t.get('dir') else work   # a missing dir means the branch root (#283)
             if d.exists() and any(d.iterdir()):
                 shutil.copytree(d, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github', 'worker'))
                 if t.get('overlay') and (work / t['overlay']).is_dir():   # the folder the live site serves at its root (e.g. qa: static/qa)

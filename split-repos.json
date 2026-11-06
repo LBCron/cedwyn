@@ -1,5 +1,5 @@
 {
-  "note": "Webapps in their own repositories (REPO SPLIT #188). mode 'mirror': old branch is source; separate repo copies from it. mode 'split-repo': separate repo is source; sync-split-repos.yml copies it back into the old branch so the live build and paths keep working. All seeded durable apps are split-repo as of 6 Nov 2026 so the live domain is fed from the separate repositories. No branch is deleted.",
+  "note": "Webapps in their own repositories (REPO SPLIT #188). mode 'mirror': the old branch is source; the separate repo copies from it. mode 'split-repo': the separate repo is source; sync-split-repos.yml copies it back into the old branch so the live build and paths keep working. Two writer-backed apps remain temporarily in mirror mode until their writers are migrated; no branch is deleted.",
   "apps": [
     {
       "app": "Wales 3D world",
@@ -9,7 +9,7 @@
       "mode": "split-repo"
     },
     {
-      "app": "Argentina T\u0177 Mawr 3D world",
+      "app": "Argentina Tŷ Mawr 3D world",
       "repo": "unclehowell/cedwyn-argentina-3d",
       "old_branch": "section/argentina-3d",
       "page": "/argentina/",
@@ -98,7 +98,7 @@
       "repo": "unclehowell/cedwyn-research",
       "old_branch": "section/research",
       "page": "/research/",
-      "mode": "split-repo"
+      "mode": "mirror"
     },
     {
       "app": "Case Office",
@@ -390,7 +390,7 @@
       "repo": "unclehowell/cedwyn-revival-ar",
       "old_branch": "section/revival-ar",
       "page": "/revival-ar/",
-      "mode": "split-repo"
+      "mode": "mirror"
     },
     {
       "app": "Peekaboo",

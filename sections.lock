@@ -58,8 +58,8 @@
   },
   "research": {
    "branch": "section/research",
-   "pinned_utc": "2026-11-05T22:48:15Z",
-   "sha": "a8a187f252d42f2c3402a1d2853c28da5c01e47b"
+   "pinned_utc": "2026-11-06T15:02:55Z",
+   "sha": "4d85aec26c06c164365c449290f748f4f26f2d8c"
   },
   "spill": {
    "branch": "section/spill",
@@ -68,8 +68,13 @@
   },
   "tithe-h3": {
    "branch": "section/tithe-h3",
-   "pinned_utc": "2026-11-04T12:17:47Z",
-   "sha": "6042f4a3decaef912e8ae132979408f0590e0ad9"
+   "pinned_utc": "2026-11-06T16:19:54Z",
+   "sha": "fec07cff1bd93417ba861dec589b574f0fb97e1c"
+  },
+  "wales-3d": {
+   "branch": "section/wales-3d",
+   "pinned_utc": "2026-11-06T16:19:42Z",
+   "sha": "28b1b0a53f4011c51816d946cf03add75aa3b6d8"
   },
   "wiki": {
    "branch": "section/wiki",
