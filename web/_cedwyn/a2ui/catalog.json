@@ -2,7 +2,7 @@
   "catalogId": "https://cedwyn.bucklerfamily.estate/_cedwyn/a2ui/catalog.json",
   "version": "0.2.0",
   "spec": "A2UI v0.9 message model (createSurface, updateComponents, updateDataModel); https://a2ui.org",
-  "description": "The trusted component catalog for Cedwyn webapps. A surface may use only these components; tools/a2ui_render.py renders them at build time with each app's own CSS classes. Strings are always escaped; links must be root-relative or relative.",
+  "description": "The trusted component catalog for Cedwyn webapps. A surface may use only these components; tools/a2ui_render.py renders them at build time with each app's own CSS classes. Data strings are escaped; content links remain root-relative or relative. Page head scripts may use the canonical https://cedwyn.bucklerfamily.estate/_cedwyn/ asset path only.",
   "binding": "A prop is a literal, {\"path\": \"/absolute/pointer\"} into the surface data model, {\"path\": \"relative\"} into the current template item, or {\"fmt\": \"…{name}…\", \"args\": {name: binding}}. children: [ids] or {\"path\": list, \"componentId\": template}.",
   "components": {
     "Page": "document shell: title, description, css[], headScripts[{src,defer,attrs}], js[], htmlAttrs, cedwynPath, bodyClass, mainClass, children",

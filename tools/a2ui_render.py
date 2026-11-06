@@ -11,6 +11,7 @@ Contract (see web/_cedwyn/a2ui/catalog.json and work/cedwyn-data-arch/PLAN.md se
   data: every string is escaped. Links must be root-relative or relative (outbound links are refused).
 Used by tools/views.py at build time. Stdlib only. - Cedwyn data-driven architecture, WP1 pilot, 30 Oct 2026."""
 import html, json, re
+from urllib.parse import urlparse
 
 CATALOG_ID = "https://cedwyn.bucklerfamily.estate/_cedwyn/a2ui/catalog.json"
 E = lambda s: html.escape("" if s is None else str(s), quote=True)
@@ -38,6 +39,16 @@ def _safe_href(u):
     if u.startswith("//") or re.match(r"^[a-z][a-z0-9+.-]*:", u, re.I):
         raise RenderError("outbound or scheme link refused: " + u[:80])
     return u
+
+def _safe_asset(u):
+    """Assets may be relative, or a shared Cedwyn shell asset from its canonical origin."""
+    if u is None: return None
+    value = str(u)
+    if not re.match(r"^https?://", value, re.I): return _safe_href(value)
+    p = urlparse(value)
+    if p.scheme != "https" or p.hostname != "cedwyn.bucklerfamily.estate" or p.username or p.password or not p.path.startswith("/_cedwyn/"):
+        raise RenderError("untrusted external asset refused: " + value[:100])
+    return value
 
 class Surface:
     def __init__(self, messages):
@@ -105,7 +116,7 @@ def Page(s, c, ctx):
     for x in c.get("headScripts", []):
         attrs = _safe_attrs(x.get("attrs", {}))
         defer = " defer" if x.get("defer") else ""
-        hs.append('<script src="%s"%s%s></script>' % (E(_safe_href(x["src"])), defer, attrs))
+        hs.append('<script src="%s"%s%s></script>' % (E(_safe_asset(x["src"])), defer, attrs))
     js = "".join('<script src="%s" defer></script>' % E(_safe_href(u)) for u in c.get("js", []))
     title, desc = s.val(c.get("title"), ctx), s.val(c.get("description"), ctx)
     lang = c.get("lang", "en")
