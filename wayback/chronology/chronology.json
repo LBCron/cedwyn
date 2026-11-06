@@ -1,8 +1,8 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.4.0",
- "updated_utc": "2026-11-06T08:55Z",
- "count": 576,
+ "version": "1.5.0",
+ "updated_utc": "2026-11-06T10:56Z",
+ "count": 577,
  "by_category": {
   "heritage": 110,
   "press": 162,
@@ -10,7 +10,7 @@
   "legal": 124,
   "social": 4,
   "title": 70,
-  "correspondence": 86
+  "correspondence": 87
  },
  "by_origin": {
   "wiki-master-timeline": 183,
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 4
+  "spill": 5
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -7217,6 +7217,20 @@
    "date_display": "26 Oct 2026"
   },
   {
+   "date": "2026-11-04",
+   "event": "HM Land Registry (ref Z084NQV, title WA231076) replies that the statement asked about is contained in the first-registration application (Form 1E), that no application for alteration or indemnity may be considered (its letters of 23 Mar, 19 Apr and 25 May 2026), and that the appropriate forum for any further action is the Court (HM Land Registry's position). No date is given for any notice to the occupier.",
+   "source": "HM Land Registry letter, 4 Nov 2026, ref Z084NQV (catalogue EV-0684)",
+   "url": "https://cedwyn.bucklerfamily.estate/api/catalogue/EV-0684",
+   "wayback": "",
+   "evidence": "EV-0684",
+   "origin": "spill",
+   "category": "correspondence",
+   "sort": "2026-11-04",
+   "id": "CH-0601",
+   "date_display": "4 Nov 2026",
+   "spill": "SP-00112"
+  },
+  {
    "date": "2026-11-06",
    "event": "Ministry of Justice / HMCTS: review decision date (one calendar month for the controller to answer the complaint (our timetable; SAR has no statutory review); answered 2026-10-09)",
    "source": "Disclosure Dartboard roadmap · EV-0506",
@@ -7250,6 +7264,14 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.5.0",
+   "date": "2026-11-06",
+   "change": "Added CH-0601 (4 Nov 2026): HM Land Registry (ref Z084NQV, title WA231076) replies that the statement asked about is contained in the first-registration application (Fo [spill SP-00112]",
+   "size": "577 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
   {
    "version": "1.4.0",
    "date": "2026-11-06",
