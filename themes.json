@@ -877,6 +877,7 @@
   "paths": [],
   "desc": "Publication-date sequencer, 1987-2026: each line is a related document placed at its publication date, titles hyperlinked to sources.",
   "branch": "releases",
+  "dir": "",
   "slot": 41,
   "group": "interactive"
  }
