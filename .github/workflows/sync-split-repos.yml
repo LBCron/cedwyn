@@ -5,15 +5,26 @@ name: sync-split-repos
 # here instead). For section/<id> branches the job then asks sections-ci to pin the new tip (a push made with this job's
 # token does not start other workflows by itself). Never force-pushes, never deletes a branch, never starts the site build.
 # - REPO SPLIT #188; activated by owner 5 Nov 2026
+# - 6 Nov 2026 (P-SPLIT-SYNC-CRON-SILENT): GitHub fires this repo's schedules rarely (05 Nov 20:00Z-06 Nov 12:50Z: this cron ran 2 times
+#   of ~33 slots; the two '*/5' schedules flow-watch-events and cms-relay ran 3 and 2 times of ~200). So a sync can also be asked for ONE
+#   app: workflow_dispatch input `repo`, or a repository_dispatch 'split-repo-push' with client_payload.repo, sent after a push to that
+#   split repo's main. Only that app's old branch is touched; the cron stays as the catch-all.
 on:
   schedule:
     - cron: '15,45 * * * *'
   workflow_dispatch:
+    inputs:
+      repo:
+        description: 'Sync only this split repository (owner/name, as in split-repos.json). Empty = every app in split-repo mode.'
+        required: false
+        default: ''
+  repository_dispatch:
+    types: [split-repo-push]
 permissions:
   contents: write
   actions: write
 concurrency:
-  group: sync-split-repos
+  group: sync-split-repos-${{ github.event.inputs.repo || github.event.client_payload.repo || 'all' }}
   cancel-in-progress: false
 jobs:
   sync:
@@ -26,14 +37,18 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ONLY: ${{ github.event.inputs.repo || github.event.client_payload.repo || '' }}
         run: |
           python3 - <<'PY' > /tmp/apps.txt
-          import json
+          import json, os
+          only = os.environ.get('ONLY', '').strip()
           for a in json.load(open('split-repos.json')).get('apps', []):
+              if only and a.get('repo') != only:
+                  continue
               if a.get('mode') == 'split-repo' and a.get('old_branch'):
                   print(a['repo'], a['old_branch'], a.get('min_files', 2))
           PY
-          [ -s /tmp/apps.txt ] || { echo "no app in split-repo mode"; exit 0; }
+          [ -s /tmp/apps.txt ] || { echo "no app in split-repo mode${ONLY:+ matching $ONLY}"; exit 0; }
           while read -r REPO BR MIN; do
             echo "== $REPO -> $BR"
             rm -rf /tmp/new /tmp/old
@@ -48,7 +63,7 @@ jobs:
             git add -A
             if git diff --cached --quiet; then echo "no change"; cd - >/dev/null; continue; fi
             git -c user.name="cedwyn-split-sync" -c user.email="actions@users.noreply.github.com" commit -q -m "Sync from $REPO@$NEW_SHA (split repository is the source)"
-            git push origin "HEAD:$BR"
+            git push origin "HEAD:$BR" || { echo "::warning::push to $BR refused (moved meanwhile); the next sync retries"; cd - >/dev/null; continue; }
             cd - >/dev/null
             case "$BR" in section/*) gh workflow run sections-ci.yml -R "$GITHUB_REPOSITORY" -f section="${BR#section/}" || echo "::warning::could not ask sections-ci to pin $BR";; esac
           done < /tmp/apps.txt
