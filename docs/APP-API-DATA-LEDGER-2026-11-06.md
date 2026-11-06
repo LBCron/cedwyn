@@ -1,6 +1,6 @@
 # App API, database and deployment evidence ledger — 6 November 2026
 
-**Status:** partial, evidence-labelled review addendum to [PR #378](https://github.com/unclehowell/cedwyn/pull/378), [#311](https://github.com/unclehowell/cedwyn/issues/311), [#188](https://github.com/unclehowell/cedwyn/issues/188) and [#310](https://github.com/unclehowell/cedwyn/issues/310). This document does not certify production readiness. No merge, production deployment, route/DNS change, Worker change or database provisioning is included.
+**Status:** partial, evidence-labelled review addendum to PR #378 (https://github.com/unclehowell/cedwyn/pull/378), issue #311 (https://github.com/unclehowell/cedwyn/issues/311), issue #188 (https://github.com/unclehowell/cedwyn/issues/188) and issue #310 (https://github.com/unclehowell/cedwyn/issues/310). This document does not certify production readiness. No merge, production deployment, route/DNS change, Worker change or database provisioning is included.
 
 **Registry snapshot:** `split-repos.json` at `2f442c5773442383396acf63cbdfe54ead026d40`. It has 65 app rows, 63 `split-repo`, 2 `mirror`, and 58 `deploy: repo` flags. A flag means eligible/configured for repo-source assembly; it is not proof that the app is deployed straight from its repo. The main estate is still served by the central `cedwyn` Pages project (production branch `site`); a separate Pages project or successful preview is not proof that the public `/[app]/` route uses it.
 
@@ -12,7 +12,7 @@
 | Repo source | `main` at `005895fc2a8e4f0d9d57d08f169319dd52a1bf82` at inspection |
 | Registry | `mode: split-repo`, `deploy: repo`, route `/tithe-h3/` |
 | Production deployment | **Not independently verified.** The existing main-estate route still requires reconciliation with the final assembler report and a live route check. |
-| Preview | [PR #6](https://github.com/unclehowell/cedwyn-tithe-h3/pull/6); Cloudflare Pages successful preview: https://pilot-tithe-h3-api-contract.cedwyn-tithe-h3.pages.dev |
+| Preview | PR #6 (https://github.com/unclehowell/cedwyn-tithe-h3/pull/6); Cloudflare Pages successful preview: https://pilot-tithe-h3-api-contract.cedwyn-tithe-h3.pages.dev |
 | JSON / XML | Fixture-only `GET /api/v1` and content negotiation at `/` in PR #6 |
 | MCP | Fixture-only Streamable HTTP `POST /mcp`, `resources/list`, `resources/read`; PR #6 |
 | App-local dataset | `data/parcels.json`, `data/parcels-est.json`, `data/pins.json`, GeoJSON/CSV and the generated projection `data/central.json` |
