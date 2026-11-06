@@ -1,26 +1,373 @@
 {
- "files": 25646,
- "changed": 3435,
- "sub": 0,
- "ext": 0,
- "cdn": 0,
- "boot_added": 0,
- "boot_moved": 3435,
- "tags_dropped": 0,
+ "files": 25537,
+ "changed": 13826,
+ "sub": 32032,
+ "ext": 82526,
+ "cdn": 3232,
+ "boot_added": 3056,
+ "boot_moved": 9793,
+ "tags_dropped": 15,
  "inline_boot_removed": 0,
- "tour_removed": 0,
+ "tour_removed": 13,
  "geo_fixed": 0,
- "redirects_to_themes": 0,
+ "agent_tools_added": 3438,
+ "yt_links_removed": 22,
+ "redirects_to_themes": 42,
  "filled_missing": {
-  "wanted": 0,
-  "copied": 0,
-  "not_found": [],
-  "rounds": 0,
-  "not_found_n": 0
+  "wanted": 6699,
+  "copied": 1533,
+  "not_found": [
+   [
+    "dartboard/campus/index.html",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/webapp/index.html",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "analytics/analytics/api/llms.txt",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/agents.json",
+    "html fallback (not on the live site either)"
+   ],
+   [
+    "app/evidence/analysis/2026-02-05-timeline-v0.1.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/analysis/2026-09-22-forensic-analysis-1962-possession-order.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/analysis/flaws-in-the-1962-possession-order.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/archaeology/1980-04-ggat-wales-west-ha-letters-roman-villa-finds.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/archaeology/1990-08-ggat-archaeological-assessment-great-house-farm.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/archaeology/1994-excavations-great-house-farm-preliminary-report.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/background/davis-filling-the-gaps-iron-age-cardiff-vale.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/background/ggat-rcahmw-funerary-and-ritual-sites-records.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/background/portable-antiquities-scheme-finds-2022-23.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/court/1989-04-14-echr-decision-buckler-v-uk-14464-88.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/development/butterley-brick-products-guide.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/development/external-finishes-schedule-20-dwellings.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/development/ideal-homes-hunters-green-brochure.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/2026-02-13-hmlr-holding-letter.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/2026-03-23-hmlr-registration-history-ty-mawr-farm.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/2026-04-19-hmlr-stage-one-complaint-decision.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/2026-04-21-hmlr-stage-two-acknowledgement.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/2026-05-25-hmlr-stage-two-complaint-decision.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/2026-07-30-hmlr-schedule-first-registration-documents-WA231076-WA240304.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/WA231076-title-plan-2026-09.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/WA231076-title-register-2026-09.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/WA513690-title-plan-2026-09.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/WA513690-title-register-2026-09.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/WA735527-title-plan-2026-09.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/land-registry/WA735527-title-register-2026-09.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/maps-photos/1824-map-of-ty-mawr.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/maps-photos/1877-plan-of-williams-parcel.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/maps-photos/1939-wgr-tenancy-plan-parcel-to-east.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/maps-photos/tree-planting-photograph.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/planning/1989-ggat-comments-planning-application-89-01396-OUT.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/planning/1989-planning-application-89-01396-OUT.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/planning/1990-03-13-outline-planning-permission-89-01396-OUT.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/planning/1990-planning-officer-report-89-01396-OUT.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/planning/1992-09-03-screen-wall-detail-92-00671-RES.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/planning/1992-approved-site-layout-92-00671-RES.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/planning/1992-planning-officer-report-92-00671-RES.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/planning/1992-reserved-matters-application-92-00671-RES.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/planning/setting-out-drawing-ideal-homes.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "app/evidence/records-requests/2026-09-20-records-request-heneb-schedule.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "blog/blog/feed.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "blog/ebooks/covers/great-house-farm-wiki-0.2.1.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "blog/ebooks/covers/tymawr-heritage-0.2.0.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "blog/ebooks/covers/williams-buckler-family-0.2.0.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "blog/maps/img/og.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "blog/story/media/1791868564541.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "blog/wayback/images/evidence/1824-00-00_wp87_map-of-ty-mawr-dated-1824-uploaded-image.jpg",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "chat/agents.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "cloudflare/cloudflare/api/llms.txt",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "cyberspace/agents.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "cyberspace/apple-touch-icon.png",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "cyberspace/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "cyberspace/favicon-32.png",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "cyberspace/favicon.ico",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "cyberspace/llms.txt",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/1d/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/3d/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/accessibility/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/agent/tools.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/agent/webmcp.js",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/agents.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/ai-policy/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/assets/1988-07-29_cadw_barn-survey-photo-high-resolution.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/assets/1988-07-29_cadw_farmhouse-survey-photo-high-resolution.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/assets/63.24.1.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/assets/63.24.2.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/assets/Correspondence.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/assets/F260213.pdf",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/assets/ghf-lang.js",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/assets/roadmap.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/choose/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/cookies/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/dartboard-hoops.webm",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/disclaimer/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/ebook/api/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ],
+   [
+    "dartboard/ebook/data/journal/pages.json",
+    "HTTP Error 404: Not Found"
+   ]
+  ],
+  "rounds": 3,
+  "pages_fetched": [
+   "story/story/index.html"
+  ],
+  "not_found_n": 3086
  },
- "vendored": 0,
- "vendor_failed": [],
- "vendor_failed_n": 0,
+ "vendored": 177,
+ "vendor_failed": [
+  [
+   "/_ext/cdn.jsdelivr.net/gh/unclehowell/cedwyn-movie@main/extras/parcels-1841.webm",
+   "https://cdn.jsdelivr.net/gh/unclehowell/cedwyn-movie@main/extras/parcels-1841.webm",
+   "HTTP Error 403: Forbidden"
+  ],
+  [
+   "/_ext/s-ssl.wordpress.com/i/logo/wpcom-gray-white.png",
+   "https://s-ssl.wordpress.com/i/logo/wpcom-gray-white.png",
+   "HTTP Error 403: Forbidden"
+  ],
+  [
+   "/_ext/cdn.jsdelivr.net/gh/unclehowell/cedwyn-movie@main/extras/parcels-1841.webm",
+   "https://cdn.jsdelivr.net/gh/unclehowell/cedwyn-movie@main/extras/parcels-1841.webm",
+   "HTTP Error 403: Forbidden"
+  ],
+  [
+   "/_ext/s-ssl.wordpress.com/i/logo/wpcom-gray-white.png",
+   "https://s-ssl.wordpress.com/i/logo/wpcom-gray-white.png",
+   "HTTP Error 403: Forbidden"
+  ]
+ ],
+ "vendor_failed_n": 4,
  "allowed_tile_templates": [
   "https://mapseries-tilesets.s3.amazonaws.com/os/6inchsecond/{z}/{x}/{y}.png",
   "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
