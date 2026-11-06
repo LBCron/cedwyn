@@ -1,5 +1,5 @@
 {
-  "note": "Webapps in their own repositories (REPO SPLIT #188). mode 'mirror': the old branch is source; the separate repo copies from it. mode 'split-repo': the separate repo is source; sync-split-repos.yml copies it back into the old branch so the live build and paths keep working. Two writer-backed apps remain temporarily in mirror mode until their writers are migrated; no branch is deleted.",
+  "note": "Webapps in their own repositories (REPO SPLIT #188). mode 'mirror': the old branch is source; the separate repo copies from it. mode 'split-repo': the separate repo is source; sync-split-repos.yml copies it back into the old branch so the live build and paths keep working. Two writer-backed apps remain temporarily in mirror mode until their writers are migrated; no branch is deleted. mode 'deploy=repo' (step 3 / #311): assemble.py reads the dedicated repository main directly; the old branch is only a fallback.",
   "apps": [
     {
       "app": "Wales 3D world",
@@ -20,7 +20,8 @@
       "repo": "unclehowell/cedwyn-tithe-h3",
       "old_branch": "section/tithe-h3",
       "page": "/tithe-h3/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Chubut H3 map",
