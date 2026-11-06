@@ -47,3 +47,5 @@ Public highlights and dashboards are derived from GitHub's allowlisted issue fie
 ## Completion evidence
 
 Before closure, record the checks appropriate to the change: tests, lint, workflow run, preview, production version and live inspection. Report incomplete verification honestly. A green build is not proof that a visitor-facing change works, and a merged PR is not proof that all acceptance criteria are met.
+
+Source: Repository project-governance policy and GitHub Issues-first architecture, 6 November 2026.
