@@ -57,10 +57,48 @@ def unchanged_line_numbers(base_text, text):
             unchanged.update(range(j1 + 1, j2 + 1))
     return unchanged
 
+def approved_view_term_lines(path, text):
+    """Return only the JSON value lines in a documented app-view terminology allowlist.
+
+    The exception is exact-word only and applies only to data/views/*.view.json. The
+    sibling note is mandatory. Other fields and every other lint check stay active.
+    """
+    if not (path.startswith('data/views/') and path.endswith('.view.json')):
+        return set()
+    try:
+        obj = json.loads(text)
+    except (ValueError, TypeError):
+        return set()
+    terms = obj.get('allowed_public_terms') if isinstance(obj, dict) else None
+    note = obj.get('approved_terms_note') if isinstance(obj, dict) else None
+    if not isinstance(terms, list) or not terms or not isinstance(note, str) or len(note.strip()) < 24:
+        return set()
+    if any(not isinstance(x, str) or x not in BANNED for x in terms) or len(set(terms)) != len(terms):
+        return set()
+    match = re.search(r'"allowed_public_terms"\\s*:\\s*\\[(.*?)\\]', text, re.S)
+    if not match:
+        return set()
+    allowed_lines = set()
+    pos = match.start(1)
+    for segment in match.group(1).splitlines(True):
+        line_no = text.count('\\n', 0, pos) + 1
+        value = segment.strip()
+        if value.endswith(','):
+            value = value[:-1].rstrip()
+        try:
+            item = json.loads(value)
+        except (ValueError, TypeError):
+            item = None
+        if isinstance(item, str) and item in terms:
+            allowed_lines.add(line_no)
+        pos += len(segment)
+    return allowed_lines if len(allowed_lines) == len(terms) else set()
+
 def lint(path, text, unchanged_lines=None):
     out = []
     unchanged_lines = unchanged_lines or set()
     neutral = path == JOURNAL and journal_shape_ok(text)
+    approved_terms = approved_view_term_lines(path, text)
     for i, line in enumerate(text.splitlines(), 1):
         if i in unchanged_lines:
             continue
@@ -74,6 +112,7 @@ def lint(path, text, unchanged_lines=None):
                 scan = mk.group(1) + '"/page/"' + mk.group(3)
         for name, rx in CHECKS:
             if name == 'private working process' and path.startswith(EXEMPT): continue
+            if name == 'banned word' and i in approved_terms: continue
             m = rx.search(scan if name == 'banned word' else line)
             if m: out.append(f'{path}:{i}: {name}: {m.group(0)[:50]}')
         for tok in re.findall(r"[A-Za-zÀ-ÿŵŷ]+", line):
