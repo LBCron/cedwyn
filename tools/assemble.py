@@ -101,7 +101,7 @@ def snapshot(t, out):
     report.setdefault('_snapshot', {})[t['id']] = {'ref': want, 'files': n, 'rc': r.returncode, 'peer_theme_roots_detected': peer_theme_roots[:30]}
     return n if r.returncode == 0 and (out / 'index.html').exists() else 0
 
-def fetch_split_repo(repo, out, branch='main', tdir=None, build=None, root=None, tid=None):
+def fetch_split_repo(repo, out, branch='main', tdir=None, build=None, root=None, tid=None, overlay=None):
     """Fetch the dedicated repo's branch into out/. Used when split-repos.json has deploy=repo (#311)."""
     work = pathlib.Path('split_tmp_' + out.name)
     shutil.rmtree(work, ignore_errors=True)
@@ -125,25 +125,35 @@ def fetch_split_repo(repo, out, branch='main', tdir=None, build=None, root=None,
         if b.returncode != 0:
             shutil.rmtree(work, ignore_errors=True)
             return 0, f"repo:{repo} build failed rc={b.returncode}"
+    # #422: the theme's 'overlay' (qa: static/qa), copied over the site root the same way the branch path does, so a split
+    # repo serves the same front page as its old branch (qa's repo root index.html is not the page the live site serves).
+    def _ov(how):
+        if overlay and (work / overlay).is_dir():
+            shutil.copytree(work / overlay, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', 'functions', 'worker'))
+            return how + '+overlay'
+        return how
     # #418: the theme's own 'dir' (themes.json) first, when the repo holds an index.html there (projects/public, static/2026-10-22, ...)
     if tdir and (work / tdir / 'index.html').is_file():
         shutil.copytree(work / tdir, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
+        how = _ov(f"repo:{repo}/{tdir}")
         shutil.rmtree(work, ignore_errors=True)
         n = sum(1 for _ in out.rglob('*') if _.is_file())
-        return n, f"repo:{repo}/{tdir}"
+        return n, how
     # Prefer public/ or dist/ or site/ if present, else repo root
     for cand in ('public', 'dist', 'site', 'static'):
         d = work / cand
         if d.is_dir() and (d / 'index.html').is_file():   # #418: a folder without index.html (e.g. an assets static/) is not the site root
             shutil.copytree(d, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
+            how = _ov(f"repo:{repo}/{cand}")
             shutil.rmtree(work, ignore_errors=True)
             n = sum(1 for _ in out.rglob('*') if _.is_file())
-            return n, f"repo:{repo}/{cand}"
+            return n, how
     # root
     shutil.copytree(work, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
+    how = _ov(f"repo:{repo}/root")
     shutil.rmtree(work, ignore_errors=True)
     n = sum(1 for _ in out.rglob('*') if _.is_file())
-    return n, f"repo:{repo}/root"
+    return n, how
 
 def one(t):
     tid = t['id']; out = DIST / tid; shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
@@ -151,7 +161,7 @@ def one(t):
     # REPO SPLIT step 3 (#311): prefer dedicated repo when marked deploy=repo
     sa = SPLIT.get(tid) or SPLIT.get(t.get('branch') or '') or SPLIT.get(t.get('snapshot_branch') or '')
     if sa and sa.get('deploy') == 'repo' and sa.get('repo'):
-        n, how = fetch_split_repo(sa['repo'], out, tdir=t.get('dir'), build=t.get('build'), root=t.get('root'), tid=tid)
+        n, how = fetch_split_repo(sa['repo'], out, tdir=t.get('dir'), build=t.get('build'), root=t.get('root'), tid=tid, overlay=t.get('overlay'))
         report.setdefault('_split_source', {})[tid] = {'repo': sa['repo'], 'how': how, 'files': n}
         if n and (out / 'index.html').exists():
             # success — skip branch/snapshot paths
