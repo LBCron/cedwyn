@@ -47,7 +47,7 @@
     {"app": "The Story & Documentary", "repo": "unclehowell/cedwyn-story", "old_branch": "bpvsbuckler", "page": "/story/", "mode": "split-repo"},
     {"app": "Arcade", "repo": "unclehowell/cedwyn-arcade", "old_branch": "arcade-final-serving-20261104", "page": "/arcade/", "mode": "split-repo"},
     {"app": "Public Authorities & Council Chamber", "repo": "unclehowell/cedwyn-authorities", "old_branch": "ghf-public-authorities", "page": "/authorities/", "mode": "split-repo"},
-    {"app": "FOI Requests", "repo": "unclehowell/cedwyn-wdtk", "old_branch": "", "page": "/wdtk/", "mode": "mirror", "note": "repo exists; durable source branch not yet identified — still served from monorepo until branch is named"},
+    {"app": "FOI Requests", "repo": "unclehowell/cedwyn-wdtk", "old_branch": "whatdotheyknow", "page": "/wdtk/", "mode": "split-repo"},
     {"app": "Independent Review", "repo": "unclehowell/cedwyn-review", "old_branch": "ghf-independent-review", "page": "/review/", "mode": "split-repo"},
     {"app": "HubSpot Task Control", "repo": "unclehowell/cedwyn-hubspot", "old_branch": "webapp/hubspot-20261101", "page": "/hubspot/", "mode": "split-repo"},
     {"app": "Flower Garden", "repo": "unclehowell/cedwyn-garden", "old_branch": "garden", "page": "/garden/", "mode": "split-repo"},
