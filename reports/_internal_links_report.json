@@ -1,25 +1,25 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9434,
+  "pages_scanned": 9648,
   "references_checked": {
-    "resource": 217543,
-    "nav": 481589
+    "resource": 219970,
+    "nav": 492021
   },
-  "database_backed_paths": 7438,
-  "unique_missing_destinations": 6457,
-  "missing_references": 53455,
-  "missing_navigation_references": 37519,
-  "missing_resource_references": 15936,
-  "unique_broken_fragments": 1835,
-  "broken_fragment_references": 3563,
+  "database_backed_paths": 7767,
+  "unique_missing_destinations": 6453,
+  "missing_references": 54504,
+  "missing_navigation_references": 38141,
+  "missing_resource_references": 16363,
+  "unique_broken_fragments": 2011,
+  "broken_fragment_references": 3637,
   "form_or_endpoint_actions_not_checked": {
-    "form[action]": 2550
+    "form[action]": 2765
   },
   "top_missing_destinations": [
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9404,
+      "references": 9618,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9400,
+      "references": 9614,
       "examples": [
         {
           "from": "/",
@@ -73,7 +73,7 @@
     {
       "kind": "resource",
       "path": "/blog/rss.xml",
-      "references": 6695,
+      "references": 6909,
       "examples": [
         {
           "from": "/review/",
@@ -100,7 +100,7 @@
     {
       "kind": "resource",
       "path": "/blog/atom.xml",
-      "references": 6695,
+      "references": 6909,
       "examples": [
         {
           "from": "/review/",
@@ -180,55 +180,55 @@
     },
     {
       "kind": "nav",
-      "path": "/fb/m/login",
-      "references": 815,
+      "path": "/fb2/m/login",
+      "references": 573,
       "examples": [
         {
           "from": "/fb2/videos.html",
           "attribute": "a[href]",
-          "url": "/fb/m/login"
+          "url": "/fb2/m/login"
         },
         {
           "from": "/fb2/videos.html",
           "attribute": "a[href]",
-          "url": "/fb/m/login"
+          "url": "/fb2/m/login"
         },
         {
-          "from": "/fb2/profiles.html",
+          "from": "/fb2/timeline.html",
           "attribute": "a[href]",
-          "url": "/fb/m/login"
+          "url": "/fb2/m/login"
         },
         {
-          "from": "/fb2/profiles.html",
+          "from": "/fb2/photos.html",
           "attribute": "a[href]",
-          "url": "/fb/m/login"
+          "url": "/fb2/m/login"
         }
       ]
     },
     {
       "kind": "nav",
-      "path": "/graphql",
-      "references": 142,
+      "path": "/fb/m/login",
+      "references": 573,
       "examples": [
         {
-          "from": "/fcg/first-seen.html",
+          "from": "/fb/videos.html",
           "attribute": "a[href]",
-          "url": "/graphql"
+          "url": "/fb/m/login"
         },
         {
-          "from": "/fcg/mandate.html",
+          "from": "/fb/videos.html",
           "attribute": "a[href]",
-          "url": "/graphql"
+          "url": "/fb/m/login"
         },
         {
-          "from": "/fcg/case.html",
+          "from": "/fb/timeline.html",
           "attribute": "a[href]",
-          "url": "/graphql"
+          "url": "/fb/m/login"
         },
         {
-          "from": "/fcg/",
+          "from": "/fb/photos.html",
           "attribute": "a[href]",
-          "url": "/graphql"
+          "url": "/fb/m/login"
         }
       ]
     },
@@ -283,6 +283,33 @@
           "from": "/forensic/parliamentary-archives/",
           "attribute": "a[href]",
           "url": "/forensic/wiki/editing-protocol/"
+        }
+      ]
+    },
+    {
+      "kind": "resource",
+      "path": "/fb2/m/social.js",
+      "references": 99,
+      "examples": [
+        {
+          "from": "/fb2/timeline.html",
+          "attribute": "script[src]",
+          "url": "/fb2/m/social.js"
+        },
+        {
+          "from": "/fb2/photos.html",
+          "attribute": "script[src]",
+          "url": "/fb2/m/social.js"
+        },
+        {
+          "from": "/fb2/about.html",
+          "attribute": "script[src]",
+          "url": "/fb2/m/social.js"
+        },
+        {
+          "from": "/fb2/api/",
+          "attribute": "script[src]",
+          "url": "/fb2/m/social.js"
         }
       ]
     },
@@ -585,33 +612,6 @@
     },
     {
       "kind": "resource",
-      "path": "/fb2/u/media-register",
-      "references": 48,
-      "examples": [
-        {
-          "from": "/fb2/u/mr-heneb-her-archwilio.html",
-          "attribute": "article[data-src]",
-          "url": "media-register"
-        },
-        {
-          "from": "/fb2/u/sion-buckler-project-manager.html",
-          "attribute": "article[data-src]",
-          "url": "media-register"
-        },
-        {
-          "from": "/fb2/u/sion-buckler-project-manager.html",
-          "attribute": "article[data-src]",
-          "url": "media-register"
-        },
-        {
-          "from": "/fb2/u/sion-buckler-project-manager.html",
-          "attribute": "article[data-src]",
-          "url": "media-register"
-        }
-      ]
-    },
-    {
-      "kind": "resource",
       "path": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/assets/img/user2-160x160.jpg",
       "references": 47,
       "examples": [
@@ -634,33 +634,6 @@
           "from": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/deletable_index3.html",
           "attribute": "img[src]",
           "url": "./assets/img/user2-160x160.jpg"
-        }
-      ]
-    },
-    {
-      "kind": "resource",
-      "path": "/fb2/wall/media-register",
-      "references": 45,
-      "examples": [
-        {
-          "from": "/fb2/wall/2020.html",
-          "attribute": "article[data-src]",
-          "url": "media-register"
-        },
-        {
-          "from": "/fb2/wall/2020.html",
-          "attribute": "article[data-src]",
-          "url": "media-register"
-        },
-        {
-          "from": "/fb2/wall/2020.html",
-          "attribute": "article[data-src]",
-          "url": "media-register"
-        },
-        {
-          "from": "/fb2/wall/2020.html",
-          "attribute": "article[data-src]",
-          "url": "media-register"
         }
       ]
     },
@@ -4065,6 +4038,33 @@
           "url": "1-record.html#lead-register"
         }
       ]
+    },
+    {
+      "kind": "nav",
+      "path": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/1-record.html",
+      "references": 8,
+      "examples": [
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#thread-index"
+        },
+        {
+          "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
+          "attribute": "a[href]",
+          "url": "1-record.html#thread-6-internal-review-1188-26-of-foi-719-26"
+        }
+      ]
     }
   ],
   "top_broken_fragments": [
@@ -4088,25 +4088,6 @@
       ]
     },
     {
-      "path": "/fb2/",
-      "fragment": "latest",
-      "references": 121,
-      "examples": [
-        {
-          "from": "/fb2/videos.html",
-          "url": "/fb2/#latest"
-        },
-        {
-          "from": "/fb2/profiles.html",
-          "url": "/fb2/#latest"
-        },
-        {
-          "from": "/fb2/friends.html",
-          "url": "/fb2/#latest"
-        }
-      ]
-    },
-    {
       "path": "/research/mary-williams-statement/",
       "fragment": ":~:text=1928%3A%20The%20last%20rent%20to%20Alfred%20Thomas",
       "references": 30,
@@ -4122,6 +4103,44 @@
         {
           "from": "/research/index.html@page_id=2945.html",
           "url": "/research/mary-williams-statement/#:~:text=1928%3A%20The%20last%20rent%20to%20Alfred%20Thomas"
+        }
+      ]
+    },
+    {
+      "path": "/wayback/artifacts/",
+      "fragment": "EV-0216",
+      "references": 11,
+      "examples": [
+        {
+          "from": "/csscpsg/",
+          "url": "/wayback/artifacts/#EV-0216"
+        },
+        {
+          "from": "/fb2/wall/1938.html",
+          "url": "/wayback/artifacts/#EV-0216"
+        },
+        {
+          "from": "/fb2/u/bute-estate.html",
+          "url": "/wayback/artifacts/#EV-0216"
+        }
+      ]
+    },
+    {
+      "path": "/wayback/artifacts/",
+      "fragment": "EV-0045",
+      "references": 11,
+      "examples": [
+        {
+          "from": "/csscpsg/",
+          "url": "/wayback/artifacts/#EV-0045"
+        },
+        {
+          "from": "/csscpsg/",
+          "url": "/wayback/artifacts/#EV-0045"
+        },
+        {
+          "from": "/csscpsg/",
+          "url": "/wayback/artifacts/#EV-0045"
         }
       ]
     },
@@ -4160,44 +4179,6 @@
         {
           "from": "/research/evidence/ev-0128-ggat-letter-reserved-matters-approval/",
           "url": "/wayback/artifacts/#WB-0801"
-        }
-      ]
-    },
-    {
-      "path": "/wayback/artifacts/",
-      "fragment": "EV-0216",
-      "references": 7,
-      "examples": [
-        {
-          "from": "/csscpsg/",
-          "url": "/wayback/artifacts/#EV-0216"
-        },
-        {
-          "from": "/fb/wall/1938.html",
-          "url": "/wayback/artifacts/#EV-0216"
-        },
-        {
-          "from": "/fb/u/bute-estate.html",
-          "url": "/wayback/artifacts/#EV-0216"
-        }
-      ]
-    },
-    {
-      "path": "/wayback/artifacts/",
-      "fragment": "EV-0045",
-      "references": 7,
-      "examples": [
-        {
-          "from": "/csscpsg/",
-          "url": "/wayback/artifacts/#EV-0045"
-        },
-        {
-          "from": "/csscpsg/",
-          "url": "/wayback/artifacts/#EV-0045"
-        },
-        {
-          "from": "/csscpsg/",
-          "url": "/wayback/artifacts/#EV-0045"
         }
       ]
     },
@@ -5038,6 +5019,25 @@
       ]
     },
     {
+      "path": "/fb2/index.html",
+      "fragment": "p-1988-07-29",
+      "references": 3,
+      "examples": [
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1988-07-29"
+        },
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1988-07-29"
+        },
+        {
+          "from": "/fb2/p/p-1988-07-29.html",
+          "url": "../index.html#p-1988-07-29"
+        }
+      ]
+    },
+    {
       "path": "/dartboard/",
       "fragment": "shop",
       "references": 3,
@@ -5224,6 +5224,126 @@
         {
           "from": "/wiki/john-williams/",
           "url": "/wiki/mary-williams-statement/#:~:text=1908%20%E2%80%93%201944"
+        }
+      ]
+    },
+    {
+      "path": "/fb2/index.html",
+      "fragment": "p-1881-04-03",
+      "references": 2,
+      "examples": [
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1881-04-03"
+        },
+        {
+          "from": "/fb2/p/p-1881-04-03.html",
+          "url": "../index.html#p-1881-04-03"
+        }
+      ]
+    },
+    {
+      "path": "/fb2/index.html",
+      "fragment": "p-1939-05",
+      "references": 2,
+      "examples": [
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1939-05"
+        },
+        {
+          "from": "/fb2/p/p-1939-05.html",
+          "url": "../index.html#p-1939-05"
+        }
+      ]
+    },
+    {
+      "path": "/fb2/index.html",
+      "fragment": "p-1980-05-22",
+      "references": 2,
+      "examples": [
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1980-05-22"
+        },
+        {
+          "from": "/fb2/p/p-1980-05-22.html",
+          "url": "../index.html#p-1980-05-22"
+        }
+      ]
+    },
+    {
+      "path": "/fb2/index.html",
+      "fragment": "p-1988-04-29",
+      "references": 2,
+      "examples": [
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1988-04-29"
+        },
+        {
+          "from": "/fb2/p/p-1988-04-29.html",
+          "url": "../index.html#p-1988-04-29"
+        }
+      ]
+    },
+    {
+      "path": "/fb2/index.html",
+      "fragment": "p-1989-04-14",
+      "references": 2,
+      "examples": [
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1989-04-14"
+        },
+        {
+          "from": "/fb2/p/p-1989-04-14.html",
+          "url": "../index.html#p-1989-04-14"
+        }
+      ]
+    },
+    {
+      "path": "/fb2/index.html",
+      "fragment": "p-1990-03-13",
+      "references": 2,
+      "examples": [
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1990-03-13"
+        },
+        {
+          "from": "/fb2/p/p-1990-03-13.html",
+          "url": "../index.html#p-1990-03-13"
+        }
+      ]
+    },
+    {
+      "path": "/fb2/index.html",
+      "fragment": "p-1990-08",
+      "references": 2,
+      "examples": [
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1990-08"
+        },
+        {
+          "from": "/fb2/p/p-1990-08.html",
+          "url": "../index.html#p-1990-08"
+        }
+      ]
+    },
+    {
+      "path": "/fb2/index.html",
+      "fragment": "p-1877-2",
+      "references": 2,
+      "examples": [
+        {
+          "from": "/fb2/photos.html",
+          "url": "index.html#p-1877-2"
+        },
+        {
+          "from": "/fb2/p/p-1877-2.html",
+          "url": "../index.html#p-1877-2"
         }
       ]
     },
@@ -6439,126 +6559,6 @@
         {
           "from": "/wiki/evidence/ev-0603-whatdotheyknow-ministry-of-defence-1988-dispossession/",
           "url": "/wayback/artifacts/#WB-0403"
-        }
-      ]
-    },
-    {
-      "path": "/wayback/artifacts/",
-      "fragment": "EV-0167",
-      "references": 2,
-      "examples": [
-        {
-          "from": "/research/evidence/ev-0167-wa231076-title-plan-2026/",
-          "url": "/wayback/artifacts/#EV-0167"
-        },
-        {
-          "from": "/wiki/evidence/ev-0167-wa231076-title-plan-2026/",
-          "url": "/wayback/artifacts/#EV-0167"
-        }
-      ]
-    },
-    {
-      "path": "/wayback/artifacts/",
-      "fragment": "EV-0057",
-      "references": 2,
-      "examples": [
-        {
-          "from": "/research/evidence/ev-0057-hansard-rowlands-western-ground-rents-bp/",
-          "url": "/wayback/artifacts/#EV-0057"
-        },
-        {
-          "from": "/wiki/evidence/ev-0057-hansard-rowlands-western-ground-rents-bp/",
-          "url": "/wayback/artifacts/#EV-0057"
-        }
-      ]
-    },
-    {
-      "path": "/wayback/artifacts/",
-      "fragment": "EV-0111",
-      "references": 2,
-      "examples": [
-        {
-          "from": "/research/evidence/ev-0111-echo-readers-letter-bulldozed-report/",
-          "url": "/wayback/artifacts/#EV-0111"
-        },
-        {
-          "from": "/wiki/evidence/ev-0111-echo-readers-letter-bulldozed-report/",
-          "url": "/wayback/artifacts/#EV-0111"
-        }
-      ]
-    },
-    {
-      "path": "/research/embed/",
-      "fragment": "?secret=9eltsXe494#?secret=njJ8ndwOR9",
-      "references": 2,
-      "examples": [
-        {
-          "from": "/research/evidence/vale-of-glamorgan-council-correspondence/",
-          "url": "/research/embed/#?secret=9eltsXe494#?secret=njJ8ndwOR9"
-        },
-        {
-          "from": "/research/evidence/vale-of-glamorgan-council-correspondence/",
-          "url": "/research/embed/#?secret=9eltsXe494#?secret=njJ8ndwOR9"
-        }
-      ]
-    },
-    {
-      "path": "/wayback/artifacts/",
-      "fragment": "EV-0097",
-      "references": 2,
-      "examples": [
-        {
-          "from": "/research/evidence/ev-0097-echo-angry-scenes-farmer-evicted/",
-          "url": "/wayback/artifacts/#EV-0097"
-        },
-        {
-          "from": "/wiki/evidence/ev-0097-echo-angry-scenes-farmer-evicted/",
-          "url": "/wayback/artifacts/#EV-0097"
-        }
-      ]
-    },
-    {
-      "path": "/wayback/artifacts/",
-      "fragment": "EV-0110",
-      "references": 2,
-      "examples": [
-        {
-          "from": "/research/evidence/ev-0110-south-wales-echo-eviction-extract/",
-          "url": "/wayback/artifacts/#EV-0110"
-        },
-        {
-          "from": "/wiki/evidence/ev-0110-south-wales-echo-eviction-extract/",
-          "url": "/wayback/artifacts/#EV-0110"
-        }
-      ]
-    },
-    {
-      "path": "/research/land-registry-titles/embed/",
-      "fragment": "?secret=gXiRcJekOh#?secret=AVvr7nVMaW",
-      "references": 2,
-      "examples": [
-        {
-          "from": "/research/evidence/national-library-of-wales-correspondence/",
-          "url": "/research/land-registry-titles/embed/#?secret=gXiRcJekOh#?secret=AVvr7nVMaW"
-        },
-        {
-          "from": "/research/evidence/national-library-of-wales-correspondence/",
-          "url": "/research/land-registry-titles/embed/#?secret=gXiRcJekOh#?secret=AVvr7nVMaW"
-        }
-      ]
-    },
-    {
-      "path": "/wayback/artifacts/",
-      "fragment": "EV-0103",
-      "references": 2,
-      "examples": [
-        {
-          "from": "/research/evidence/ev-0103-echo-history-fight-save-farm/",
-          "url": "/wayback/artifacts/#EV-0103"
-        },
-        {
-          "from": "/wiki/evidence/ev-0103-echo-history-fight-save-farm/",
-          "url": "/wayback/artifacts/#EV-0103"
         }
       ]
     }
