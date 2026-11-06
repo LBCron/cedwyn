@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn-core/0.1.0",
  "note": "Statutory and civic records touching land in Llandough-juxta-Penarth and Leckwith, 1828-1958, catalogued 3 November 2026 for the parcel chains work. Each entry is a catalogue record of the source; which parcels each touched is open until the deposited plans and books of reference are read.",
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "records": [
   {
    "id": "AR-GAZETTE-1884-11-25-BARRY-LLANDOUGH",
@@ -1048,6 +1048,152 @@
     {
      "heading": "Company land papers",
      "text": "The National Archives RAIL 1057/1502, RAIL 1057/1503, RAIL 1057/1504/1, RAIL 1057/1506 (catalogue entries read 5 November 2026; not seen)."
+    }
+   ]
+  },
+  {
+   "id": "AR-GAZETTE-1895-11-22-LONDON-SOUTH-WALES-RAILWAY-LLANDOUGH",
+   "kind": "artifact",
+   "slug": "ar-gazette-1895-11-22-london-south-wales-railway-llandough",
+   "title": "London Gazette, 22 Nov 1895: London and South Wales Railway Bill, Railways No.1 and No.5 in Llandough-juxta-Cardiff",
+   "aliases": [],
+   "date": {
+    "display": "22 November 1895",
+    "sort": 1895.89,
+    "precision": "date of publication"
+   },
+   "place_text": "Parish of Llandough-juxta-Cardiff: junction with the Barry Railway east of the Cogan Tunnel; the Penarth Moors by the Llandough sidings of the Taff Vale Railway Penarth branch",
+   "description": "Parliamentary notice for the 1896 session to incorporate the London and South Wales Railway Company, with a main line from the Barry Railway near Cardiff to Kingswood in Gloucestershire and on towards London. Railway No.1 was to begin in the parish of Llandough-juxta-Cardiff by a junction with the Barry Railway; Railway No.5 was to lie wholly in that parish, from Railway No.1 on the Penarth Moors to a junction with the Penarth branch of the Taff Vale Railway. The notice seeks powers for the compulsory purchase of lands and states that plans and a book of reference were to be deposited.",
+   "transcript": "\"Railway No. 1.—A railway commencing in the parish of Llandough-juxta-Cardiff, in the county of Glamorgan, by a junction with the Barry Railway at a point 48 yards, or thereabouts (measured in an easterly direction along such railway), from the eastern face of the Cogan Tunnel thereon […]\" \"Railway No. 5.—A railway wholly situate in the said parish of Llandough-juxta-Cardiff, commencing by a junction with the intended Railway No. 1 at a point on the Penarth Moors 220 yards, or thereabouts, measured in an easterly direction from the bridge under the Penarth Branch of the Taff Vale Railway Company at the northern end of the Llandough sidings upon such branch, and terminating by a junction with the said branch […]\"",
+   "transcript_status": "Read on 6 November 2026 from the OCR text of the Gazette PDF, with the interleaved columns separated by hand; […] marks text left out; not checked against the page image.",
+   "interpretation": "With hindsight and wider context: the deposited plans and book of reference are catalogued by the Parliamentary Archives as HL/PO/PB/3/plan1896/L13 (with /L13/2: book of reference and list of owners, lessees and occupiers) and by Glamorgan Archives as Q/D/P/607 (plan and reference book, sealed). The National Archives holds heads of agreement between the promoters and the Great Western Railway, January 1896 (RAIL 252/1132). What it shows: an intended compulsory purchase of land in Llandough-juxta-Cardiff for a trunk line in the 1896 session. What it does not show: which plots, or who owned or occupied them. What cuts against a wider reading: whether the Bill was passed is not checked; a scheme that was not authorised took no land.",
+   "provenance": {
+    "holder": "The London Gazette",
+    "reference": "Issue 26682, pp.6424-6425",
+    "date": "1895-11-22",
+    "obtained": "Read on 6 November 2026 from the Gazette PDF (https://www.thegazette.co.uk/London/issue/26682/page/6424).",
+    "independent_origin_id": "ORIG-GAZETTE-26682"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of intended statutory works over land in Llandough-juxta-Cardiff; plots not identified.",
+    "tags": [
+     "london-gazette",
+     "railway",
+     "london-and-south-wales-railway",
+     "llandough",
+     "cogan",
+     "penarth-moors",
+     "1895"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "Deposited plans and books of reference",
+     "text": "Parliamentary Archives HL/PO/PB/3/plan1896/L13, /L13/1 (plan, section, map), /L13/2 (book of reference, list of owners, lessees and occupiers); Glamorgan Archives Q/D/P/607 (plan and reference book). Catalogue entries read 6 November 2026; not seen."
+    },
+    {
+     "heading": "Related",
+     "text": "The National Archives RAIL 252/1132, heads of agreement with the Great Western Railway, January 1896; RAIL 1030/205, map of the proposed line, 1896 (catalogue entries read 6 November 2026; not seen)."
+    }
+   ]
+  },
+  {
+   "id": "AR-GAZETTE-1897-11-23-BARRY-RAILWAY-LLANDOUGH-LECKWITH",
+   "kind": "artifact",
+   "slug": "ar-gazette-1897-11-23-barry-railway-llandough-leckwith",
+   "title": "London Gazette, 23 Nov 1897: Barry Railway Bill, Railway No.1 through Llandough-juxta-Cardiff, Leckwith and Canton",
+   "aliases": [],
+   "date": {
+    "display": "23 November 1897",
+    "sort": 1897.89,
+    "precision": "date of publication"
+   },
+   "place_text": "Parishes of Llandough-juxta-Cardiff (urban district of Penarth), Leckwith and Canton: from the Penarth branch east of the Cogan Tunnel to the Penarth Curve of the Great Western Railway",
+   "description": "Parliamentary notice of the Barry Railway Company for the 1898 session. Railway No.1 was to begin in Llandough-juxta-Cardiff by a junction with the company's Penarth branch east of the Cogan Tunnel and end in Canton by a junction with the Penarth Curve of the Great Western Railway, passing through Llandough-juxta-Cardiff, Canton and Leckwith. The notice also lists a road in Llandough-juxta-Cardiff and Cogan, seeks powers to purchase lands compulsorily or by agreement, and states that plans of the lands with a book of reference naming owners or reputed owners, lessees or reputed lessees and occupiers were to be deposited with the Clerk of the Peace for Glamorgan by 30 November 1897.",
+   "transcript": "\"A Railway (No. 1) commencing in the parish of Llandough-juxta-Cardiff, in the urban district of Penarth, and county of Glamorgan, by a junction with the Penarth branch railway of the Company at a point 9 chains or thereabouts, measured along that railway eastward from the eastern face of the Cogan Tunnel, and terminating in the parish of Canton and county borough of Cardiff by a junction with the Penarth Curve railway of the Great Western Railway Company […] which said proposed railway will be made in the said parishes of Llandough-juxta-Cardiff […] Canton […] and in the parish of Leckwith, in the rural district of Llandaff and Dinas Powis […]\"",
+   "transcript_status": "Read on 6 November 2026 from the OCR text of the Gazette PDF, with the interleaved columns separated by hand; […] marks text left out; not checked against the page image.",
+   "interpretation": "With hindsight and wider context: Glamorgan Archives catalogues a Barry Railway deposit for 1898 as Q/D/P/643 (title only; that it is this deposit is not checked). What it shows: an intended line crossing both Llandough-juxta-Cardiff and Leckwith, the first such scheme in this catalogue. What it does not show: which plots or owners. What cuts against a wider reading: whether the line was authorised and built is not checked; a notice of intended works is not evidence that any plot changed hands.",
+   "provenance": {
+    "holder": "The London Gazette",
+    "reference": "Issue 26913, pp.6820-6822",
+    "date": "1897-11-23",
+    "obtained": "Read on 6 November 2026 from the Gazette PDF (https://www.thegazette.co.uk/London/issue/26913/page/6821).",
+    "independent_origin_id": "ORIG-GAZETTE-26913"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of intended statutory works over land in Llandough-juxta-Cardiff and Leckwith; plots not identified.",
+    "tags": [
+     "london-gazette",
+     "railway",
+     "barry-railway",
+     "llandough",
+     "leckwith",
+     "canton",
+     "cogan",
+     "1897"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "Deposited plans",
+     "text": "Glamorgan Archives Q/D/P/643, Barry Railway, 1898 (catalogue title read 6 November 2026 through the online catalogue; contents and match not checked)."
+    }
+   ]
+  },
+  {
+   "id": "AR-GAZETTE-1899-11-24-CARDIFF-CORPORATION-LLANDOUGH",
+   "kind": "artifact",
+   "slug": "ar-gazette-1899-11-24-cardiff-corporation-llandough",
+   "title": "London Gazette, 24 Nov 1899: Cardiff Corporation Bill, road widening on Penarth Road and Cogan Hill in Llandough-juxta-Cardiff",
+   "aliases": [],
+   "date": {
+    "display": "24 November 1899",
+    "sort": 1899.9,
+    "precision": "date of publication"
+   },
+   "place_text": "Parish of Llandough-juxta-Cardiff (urban district of Penarth): Penarth Road and Cogan Hill, near the occupation bridge over the Taff Vale Railway Penarth branch by the Cogan waterworks",
+   "description": "Parliamentary notice of Cardiff Corporation for the 1900 session, covering tramways, sewers and street works. Among them, Road Widening and Improvement No.7, of Penarth Road and Cogan Hill, lies wholly in the parish of Llandough-juxta-Cardiff. Plans, sections and a book of reference were to be deposited, with the copy for Penarth, Cogan and Llandough-juxta-Cardiff lodged with the clerk to Penarth Urban District Council.",
+   "transcript": "\"11. A Road Widening and Improvement (No. 7), of Penarth-road and Cogan-Hill, wholly in the said parish of Llandough-juxta-Cardiff, in the urban district of Penarth, commencing at a point in the Penarth-road, [figure not clear in the OCR] chains, or thereabouts, north-westward of the centre of the Occupation Bridge over the Penarth Branch of the Taff Vale Railway, near the Cogan Waterworks of the Cardiff Corporation, and terminating at a point in Cogan-hill […]\"",
+   "transcript_status": "Read on 6 November 2026 from the OCR text of the Gazette PDF, with the interleaved columns separated by hand; […] marks text left out; not checked against the page image.",
+   "interpretation": "What it shows: intended road works and land for them in Llandough-juxta-Cardiff in the 1900 session. What it does not show: which plots or owners. What cuts against a wider reading: whether the works were authorised is not checked; the works lie by Cogan, at the north-east edge of the parish.",
+   "provenance": {
+    "holder": "The London Gazette",
+    "reference": "Issue 27138, pp.7629-7633",
+    "date": "1899-11-24",
+    "obtained": "Read on 6 November 2026 from the Gazette PDF (https://www.thegazette.co.uk/London/issue/27138/page/7630).",
+    "independent_origin_id": "ORIG-GAZETTE-27138"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Record of intended statutory works over land in Llandough-juxta-Cardiff; plots not identified.",
+    "tags": [
+     "london-gazette",
+     "road",
+     "cardiff-corporation",
+     "llandough",
+     "cogan",
+     "penarth-road",
+     "1899"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "Deposit",
+     "text": "Book of reference: the copy for Penarth, Cogan and Llandough-juxta-Cardiff with the clerk to Penarth Urban District Council (London Gazette, 24 November 1899, p.7633); a surviving copy is not identified."
     }
    ]
   }
