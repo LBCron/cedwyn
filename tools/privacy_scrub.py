@@ -153,35 +153,54 @@ def corr(t, rel):
             t, k = rx.subn(rep, t); n += k
         t = t.replace('\ue000', KEEP)
     return t, n
+def _one(args):
+    """Scrub and check one file. Independent of every other file, so main() can run it in a process pool.
+    Returns (changed, hits, left, warnings) with exactly the messages the serial loop used to emit."""
+    f, root, check_only = args
+    f = pathlib.Path(f); root = pathlib.Path(root); changed = hits = 0; left = []; warns = []
+    try: t = f.read_text('utf-8')
+    except Exception: return 0, 0, left, warns
+    rel = f.relative_to(root).as_posix()
+    if not check_only:
+        sx = f.suffix.lower()
+        new, n = scrub(t, 'code' if sx in ('.js', '.mjs', '.json', '.jsonl', '.webmanifest', '.svg') else 'html' if sx in ('.html', '.htm', '.xml', '.rss', '.atom') else 'text')
+        new, k = corr(new, rel); n += k
+        if n and new != t:
+            if f.suffix.lower() == '.json':
+                # P-136 (31 Oct 2026): blame the scrub only for JSON it broke. A file an earlier step already left invalid
+                # (build 531e0a8: selfcontain's link removal ate a quote escape in story/api/qa.json) keeps the scrubbed
+                # text, so the attribution still goes, and is named as a warning. — Sion's Tab agent
+                try: json.loads(new)
+                except Exception:
+                    try: json.loads(t); was_valid = True
+                    except Exception: was_valid = False
+                    if was_valid: new = t; left.append(f'{f}: json would break, left for review')
+                    else: warns.append(f'::warning::privacy: {rel} was not valid JSON before the scrub; scrubbed text kept')
+            if new != t: f.write_text(new, 'utf-8'); changed = 1; hits = n; t = new
+    for m in CHECK.finditer(t): left.append(f'{f.relative_to(root)}: {t[max(0,m.start()-60):m.end()+40]!r}')
+    for m in CONTACT_CHECK.finditer(t): left.append(f'{rel}: contact detail {t[max(0,m.start()-40):m.end()+20]!r}')
+    if CORR_PATH.search(rel) and PRIV_CHECK.search(t): warns.append(f'::warning::privacy: private name left in {rel}')
+    if CORR_PATH.search(rel):
+        for m in CORR_CHECK.finditer(t): left.append(f'{rel}: name in correspondence {t[max(0,m.start()-60):m.end()+40]!r}')
+    return changed, hits, left, warns
 def main(root, check_only=False):
     root = pathlib.Path(root); changed = hits = 0; left = []
+    todo = []
     for f in root.rglob('*'):
         if not f.is_file() or f.suffix.lower() not in EXT or f.stat().st_size > 40_000_000: continue
         if any(p in ('db', '.git', 'node_modules') for p in f.relative_to(root).parts[:1]): continue
-        try: t = f.read_text('utf-8')
-        except Exception: continue
-        rel = f.relative_to(root).as_posix()
-        if not check_only:
-            sx = f.suffix.lower()
-            new, n = scrub(t, 'code' if sx in ('.js', '.mjs', '.json', '.jsonl', '.webmanifest', '.svg') else 'html' if sx in ('.html', '.htm', '.xml', '.rss', '.atom') else 'text')
-            new, k = corr(new, rel); n += k
-            if n and new != t:
-                if f.suffix.lower() == '.json':
-                    # P-136 (31 Oct 2026): blame the scrub only for JSON it broke. A file an earlier step already left invalid
-                    # (build 531e0a8: selfcontain's link removal ate a quote escape in story/api/qa.json) keeps the scrubbed
-                    # text, so the attribution still goes, and is named as a warning. — Sion's Tab agent
-                    try: json.loads(new)
-                    except Exception:
-                        try: json.loads(t); was_valid = True
-                        except Exception: was_valid = False
-                        if was_valid: new = t; left.append(f'{f}: json would break, left for review')
-                        else: print(f'::warning::privacy: {rel} was not valid JSON before the scrub; scrubbed text kept')
-                if new != t: f.write_text(new, 'utf-8'); changed += 1; hits += n; t = new
-        for m in CHECK.finditer(t): left.append(f'{f.relative_to(root)}: {t[max(0,m.start()-60):m.end()+40]!r}')
-        for m in CONTACT_CHECK.finditer(t): left.append(f'{rel}: contact detail {t[max(0,m.start()-40):m.end()+20]!r}')
-        if CORR_PATH.search(rel) and PRIV_CHECK.search(t): print(f'::warning::privacy: private name left in {rel}')
-        if CORR_PATH.search(rel):
-            for m in CORR_CHECK.finditer(t): left.append(f'{rel}: name in correspondence {t[max(0,m.start()-60):m.end()+40]!r}')
+        todo.append((str(f), str(root), check_only))
+    # Files are independent, so scrub them in a process pool (was one file at a time, ~11 min on the full site).
+    # imap keeps the input order, so the messages and the 200-line error list come out exactly as the serial loop gave them.
+    import multiprocessing as mp, os
+    procs = max(1, min(os.cpu_count() or 1, 8))
+    if procs > 1 and len(todo) > 200:
+        with mp.Pool(procs) as pool: results = list(pool.imap(_one, todo, chunksize=64))
+    else:
+        results = [_one(a) for a in todo]
+    for c, h, l, w in results:
+        changed += c; hits += h; left += l
+        for x in w: print(x)
     print(json.dumps({'files_changed': changed, 'rewrites': hits, 'remaining': len(left)}))
     for x in left[:200]: print('::error::privacy: ' + x)
     return 1 if left else 0
