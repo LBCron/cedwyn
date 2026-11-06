@@ -19,3 +19,6 @@
 .a3d-modal{max-width:min(720px,94vw);border:0;border-radius:14px;padding:0;background:#1d242c;color:#eef2f5}
 .a3d-modal::backdrop{background:rgba(0,0,0,.55)}.a3d-modal .mh{position:relative;padding:12px 40px 8px 14px;border-bottom:1px solid rgba(255,255,255,.12)}
 .a3d-modal .mb{padding:8px 12px 14px;max-height:70vh;overflow:auto}.a3d-modal table{border-collapse:collapse;font-size:13px}.a3d-modal th,.a3d-modal td{text-align:left;vertical-align:top;padding:6px;border-bottom:1px solid rgba(255,255,255,.1)}
+
+/* v0.3.0 catalogue records panel in the Sources dialog — Sion's Tab agent */
+.a3d-recs{margin-top:12px;font-size:13px;overflow-wrap:anywhere}.a3d-recs ul{margin:6px 0;padding-left:18px}.a3d-recs li{margin:0 0 8px}.a3d-recs a{color:#9fd0ff}.a3d-recs .d,.a3d-recs .u{opacity:.75}

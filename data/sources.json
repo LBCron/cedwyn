@@ -1,0 +1,21 @@
+{
+ "note": "The central-catalogue records the Patagonia 3D world of Tŷ Mawr is drawn from or relates to. Hand-kept list of IDs only; tools/sync_central.py pulls their catalogue fields into data/central.json. Add an ID here when the world starts to show another record. — Sion's Tab agent",
+ "records": [
+  {
+   "id": "EV-0631",
+   "used_for": "house ground plan: the 1974 measured plan of the house the main range is drawn to"
+  },
+  {
+   "id": "EV-0630",
+   "used_for": "the 26 April 1974 survey visit: sketch plan and notes on the record card"
+  },
+  {
+   "id": "AR-0002",
+   "used_for": "the house and its setting seen from the air (a different angle from the one the Helicopter view follows)"
+  },
+  {
+   "id": "AR-0004",
+   "used_for": "the stable range and its doors, one of the restored paintings the stable range follows"
+  }
+ ]
+}
