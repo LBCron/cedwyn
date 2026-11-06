@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T09:45:29Z",
+ "updated": "2026-11-06T09:55:04Z",
  "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
  "drafts": [
   {
@@ -870,19 +870,21 @@
    "tier": "working",
    "tier_label": "IN REVIEW",
    "origin": "Tab import 24 Oct (v0.1.0); Claude reframe to plain in-thread follow-up 26 Oct (v0.2.0); Tab review 26 Oct (v0.3.0)",
-   "pct": 0,
+   "pct": 14,
    "reviews": 0,
    "distinct_agents": 0,
    "agents": [],
    "stage": "TURN",
-   "pct_at": "2026-11-05T12:12:47Z",
+   "pct_at": "2026-11-06T09:55:04Z",
    "sent_version": null,
    "seat_agreements_version": null,
    "final_three_hat_version": null,
    "attachments_verified_version": null,
-   "version_reviews": 0,
-   "version_distinct_agents": 0,
-   "version_agents": [],
+   "version_reviews": 1,
+   "version_distinct_agents": 1,
+   "version_agents": [
+    "ChatGPT"
+   ],
    "last_action_at": "2026-11-05T12:13:23Z",
    "last_action_by": "ChatGPT",
    "queue_after": null,
@@ -6525,8 +6527,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6536,7 +6538,9 @@
     "body": "Cadw",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   },
   {
    "id": "ghf-reply-draft-310298",
@@ -6554,8 +6558,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6565,7 +6569,9 @@
     "body": "GHF · Reply draft",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   },
   {
    "id": "health-and-safety-executive-188056",
@@ -6583,8 +6589,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6594,7 +6600,9 @@
     "body": "Health and Safety Executive",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   },
   {
    "id": "1992-appeal-657556",
@@ -6612,8 +6620,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6623,7 +6631,9 @@
     "body": "1992 appeal",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   },
   {
    "id": "tcpa-1971-s-58-651174",
@@ -6641,8 +6651,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6652,7 +6662,9 @@
     "body": "TCPA 1971 s.58",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   },
   {
    "id": "llandough-old-school-on-the-same-county-list-spo-407589",
@@ -6670,8 +6682,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6681,7 +6693,9 @@
     "body": "Llandough old school on the same county list spot-listed Grade II on 6 Apr 1989 -> catalogue",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   },
   {
    "id": "ggat-letter-1-oct-1982-582427",
@@ -6699,8 +6713,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6710,7 +6724,9 @@
     "body": "GGAT letter 1 Oct 1982",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   },
   {
    "id": "victorian-society-wales-casework-files-19582001-849945",
@@ -6728,8 +6744,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6739,7 +6755,9 @@
     "body": "Victorian Society Wales casework files 1958–2001",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   },
   {
    "id": "wa240304-336583",
@@ -6757,8 +6775,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6768,7 +6786,9 @@
     "body": "WA240304",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   },
   {
    "id": "hm-land-registry-letter-4-nov-2026-on-wa231076-893017",
@@ -6786,8 +6806,8 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": null,
-   "version_distinct_agents": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
    "final_three_hat_version": null,
@@ -6797,7 +6817,9 @@
     "body": "HM Land Registry letter 4 Nov 2026 on WA231076",
     "as_of": "2026-11-06T09:45:29Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
-   }
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T09:55:04Z"
   }
  ],
  "synced_at": "2026-11-06T09:45:29Z",
