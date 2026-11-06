@@ -25,75 +25,75 @@ The pilot intentionally serves synthetic records only. It does not read `data/ce
 
 ## Per-app registry and API/database verification
 
-The table lists the registry rows as they stand. API/MCP and local-database status is deliberately marked **unverified** unless a repository-level implementation and evidence were inspected. Do not interpret an unverified row as proof no API or database exists. App/page aliases require separate canonicalisation by deployment source and route; this registry table preserves every row, rather than silently collapsing same-repo or same-page aliases.
+The table lists the registry rows as they stand. API/MCP and local-database status is deliberately marked **not checked** unless a repository-level implementation and evidence were inspected. Do not interpret an not checked row as proof no API or database exists. App/page aliases require separate canonicalisation by deployment source and route; this registry table preserves every row, rather than silently collapsing same-repo or same-page aliases.
 
 | App row | Dedicated repository | Registered path | Source mode | Repo deploy setting | JSON/XML/MCP evidence | App-local DB evidence |
 |---|---|---|---|---|---|---|
-| Wales 3D world | `unclehowell/cedwyn-wales-3d` | `/wales/` | split-repo | not set | Not audited / unverified | Not audited / unverified |
-| Argentina Tŷ Mawr 3D world | `unclehowell/cedwyn-argentina-3d` | `/argentina/` | split-repo | not set | Not audited / unverified | Not audited / unverified |
+| Wales 3D world | `unclehowell/cedwyn-wales-3d` | `/wales/` | split-repo | not set | Not audited / not checked | Not audited / not checked |
+| Argentina Tŷ Mawr 3D world | `unclehowell/cedwyn-argentina-3d` | `/argentina/` | split-repo | not set | Not audited / not checked | Not audited / not checked |
 | Tithe H3 map | `unclehowell/cedwyn-tithe-h3` | `/tithe-h3/` | split-repo | configured `repo` (not production proof) | Fixture JSON/XML/MCP on PR preview only; no live API | Static `data/central.json` (45-row projection); no D1/local DB found |
-| Chubut H3 map | `unclehowell/cedwyn-chubut-h3` | `/chubut-h3/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Hive | `unclehowell/cedwyn-hive` | `/hive/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Dartboard | `unclehowell/cedwyn-dartboard` | `/dartboard/` | split-repo | not set | Not audited / unverified | Not audited / unverified |
-| Analytics | `unclehowell/cedwyn-analytics` | `/analytics/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Cloudflare | `unclehowell/cedwyn-cloudflare` | `/cloudflare/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Spill | `unclehowell/cedwyn-spill` | `/spill/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Ask the Archive | `unclehowell/cedwyn-chat` | `/chat/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Mr Wolf | `unclehowell/cedwyn-mr-wolf` | `/mr-wolf/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| FCG | `unclehowell/cedwyn-fcg` | `/fcg/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Research Library | `unclehowell/cedwyn-research` | `/research/` | mirror | not set | Not audited / unverified | Not audited / unverified |
-| Case Office | `unclehowell/cedwyn-app` | `/app/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Estate hub | `unclehowell/cedwyn-estate` | `/estate/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Patagonia | `unclehowell/cedwyn-patagonia` | `/patagonia/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Cyberspace | `unclehowell/cedwyn-cyberspace` | `/cyberspace/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Forensic Assessments | `unclehowell/cedwyn-forensic` | `/forensic/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Chessboard | `unclehowell/cedwyn-chess` | `/chess/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Grammar House | `unclehowell/cedwyn-csscpsg` | `/csscpsg/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Court Drills | `unclehowell/cedwyn-courtdrills` | `/courtdrills/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Old Bill | `unclehowell/cedwyn-oldbill` | `/oldbill/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Counting House | `unclehowell/cedwyn-accounts` | `/accounts/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Project Office | `unclehowell/cedwyn-projects` | `/projects/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Watchtower | `unclehowell/cedwyn-watchtower` | `/watchtower/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Directory | `unclehowell/cedwyn-directory` | `/directory/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Family Tree | `unclehowell/cedwyn-familytree` | `/familytree/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Kissed Frogs | `unclehowell/cedwyn-kissed-frogs` | `/kissed-frogs/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| That Old Chestnut | `unclehowell/cedwyn-that-old-chestnut` | `/that-old-chestnut/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Blog | `unclehowell/cedwyn-blog` | `/blog/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Nomenclature | `unclehowell/cedwyn-nomenclature` | `/nomenclature/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Map Room | `unclehowell/cedwyn-maps` | `/maps/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Docs / Evidence Catalogue | `unclehowell/cedwyn-docs` | `/docs/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Wayback Vault | `unclehowell/cedwyn-wayback` | `/wayback/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| E-book Shelf | `unclehowell/cedwyn-ebooks` | `/ebooks/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Land Changing Hands | `unclehowell/cedwyn-infographic` | `/infographic/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Q&A Hall | `unclehowell/cedwyn-qa` | `/qa/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| What They Don't Say | `unclehowell/cedwyn-whattheydontsay` | `/whattheydontsay/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| NFT Art | `unclehowell/cedwyn-nft-art` | `/nft-art/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Gift Shop | `unclehowell/cedwyn-shop` | `/shop/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Farm Album | `unclehowell/cedwyn-fb` | `/fb/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Post Office & Calendar | `unclehowell/cedwyn-emails` | `/email/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Legal Wiki & Evidence | `unclehowell/cedwyn-wiki` | `/wiki/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| The Story & Documentary | `unclehowell/cedwyn-story` | `/story/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Arcade | `unclehowell/cedwyn-arcade` | `/arcade/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Public Authorities & Council Chamber | `unclehowell/cedwyn-authorities` | `/authorities/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| FOI Requests | `unclehowell/cedwyn-wdtk` | `/wdtk/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Independent Review | `unclehowell/cedwyn-review` | `/review/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| HubSpot Task Control | `unclehowell/cedwyn-hubspot` | `/hubspot/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Flower Garden | `unclehowell/cedwyn-garden` | `/garden/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Revival AR | `unclehowell/cedwyn-revival-ar` | `/revival-ar/` | mirror | not set | Not audited / unverified | Not audited / unverified |
-| Peekaboo | `unclehowell/cedwyn-peekaboo` | `/peekaboo/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Bloculous | `unclehowell/cedwyn-bloculous` | `/bloculous/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Theories | `unclehowell/cedwyn-theories` | `/theories/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Garden Store | `unclehowell/cedwyn-garden-store` | `/garden-store/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Storytime | `unclehowell/cedwyn-storytime` | `/storytime/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Molt | `unclehowell/cedwyn-molt` | `/molt/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Gallery | `unclehowell/cedwyn-gallery` | `/gallery/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Internet Archive Sources | `unclehowell/cedwyn-internetarchive` | `/internetarchive/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Terrain | `unclehowell/terrain` | `/terrain/` | split-repo | not set | Not audited / unverified | Not audited / unverified |
-| Primary Records | `unclehowell/cedwyn-records` | `/records/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| The Council Chamber | `unclehowell/cedwyn-meeting` | `/2026-10-22/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Cedwyn documentary | `unclehowell/cedwyn-documentary` | `/documentary/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| Display settings | `unclehowell/cedwyn-settings` | `/settings/` | split-repo | configured `repo` (not production proof) | Not audited / unverified | Not audited / unverified |
-| The Release Machine | `unclehowell/cedwyn-releases` | `/releases/` | split-repo | not set | Not audited / unverified | Not audited / unverified |
+| Chubut H3 map | `unclehowell/cedwyn-chubut-h3` | `/chubut-h3/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Hive | `unclehowell/cedwyn-hive` | `/hive/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Dartboard | `unclehowell/cedwyn-dartboard` | `/dartboard/` | split-repo | not set | Not audited / not checked | Not audited / not checked |
+| Analytics | `unclehowell/cedwyn-analytics` | `/analytics/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Cloudflare | `unclehowell/cedwyn-cloudflare` | `/cloudflare/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Spill | `unclehowell/cedwyn-spill` | `/spill/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Ask the Archive | `unclehowell/cedwyn-chat` | `/chat/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Mr Wolf | `unclehowell/cedwyn-mr-wolf` | `/mr-wolf/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| FCG | `unclehowell/cedwyn-fcg` | `/fcg/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Research Library | `unclehowell/cedwyn-research` | `/research/` | mirror | not set | Not audited / not checked | Not audited / not checked |
+| Case Office | `unclehowell/cedwyn-app` | `/app/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Estate hub | `unclehowell/cedwyn-estate` | `/estate/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Patagonia | `unclehowell/cedwyn-patagonia` | `/patagonia/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Cyberspace | `unclehowell/cedwyn-cyberspace` | `/cyberspace/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Forensic Assessments | `unclehowell/cedwyn-forensic` | `/forensic/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Chessboard | `unclehowell/cedwyn-chess` | `/chess/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Grammar House | `unclehowell/cedwyn-csscpsg` | `/csscpsg/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Court Drills | `unclehowell/cedwyn-courtdrills` | `/courtdrills/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Old Bill | `unclehowell/cedwyn-oldbill` | `/oldbill/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Counting House | `unclehowell/cedwyn-accounts` | `/accounts/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Project Office | `unclehowell/cedwyn-projects` | `/projects/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Watchtower | `unclehowell/cedwyn-watchtower` | `/watchtower/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Directory | `unclehowell/cedwyn-directory` | `/directory/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Family Tree | `unclehowell/cedwyn-familytree` | `/familytree/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Kissed Frogs | `unclehowell/cedwyn-kissed-frogs` | `/kissed-frogs/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| That Old Chestnut | `unclehowell/cedwyn-that-old-chestnut` | `/that-old-chestnut/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Blog | `unclehowell/cedwyn-blog` | `/blog/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Nomenclature | `unclehowell/cedwyn-nomenclature` | `/nomenclature/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Map Room | `unclehowell/cedwyn-maps` | `/maps/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Docs / Evidence Catalogue | `unclehowell/cedwyn-docs` | `/docs/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Wayback Vault | `unclehowell/cedwyn-wayback` | `/wayback/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| E-book Shelf | `unclehowell/cedwyn-ebooks` | `/ebooks/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Land Changing Hands | `unclehowell/cedwyn-infographic` | `/infographic/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Q&A Hall | `unclehowell/cedwyn-qa` | `/qa/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| What They Don't Say | `unclehowell/cedwyn-whattheydontsay` | `/whattheydontsay/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| NFT Art | `unclehowell/cedwyn-nft-art` | `/nft-art/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Gift Shop | `unclehowell/cedwyn-shop` | `/shop/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Farm Album | `unclehowell/cedwyn-fb` | `/fb/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Post Office & Calendar | `unclehowell/cedwyn-emails` | `/email/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Legal Wiki & Evidence | `unclehowell/cedwyn-wiki` | `/wiki/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| The Story & Documentary | `unclehowell/cedwyn-story` | `/story/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Arcade | `unclehowell/cedwyn-arcade` | `/arcade/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Public Authorities & Council Chamber | `unclehowell/cedwyn-authorities` | `/authorities/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| FOI Requests | `unclehowell/cedwyn-wdtk` | `/wdtk/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Independent Review | `unclehowell/cedwyn-review` | `/review/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| HubSpot Task Control | `unclehowell/cedwyn-hubspot` | `/hubspot/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Flower Garden | `unclehowell/cedwyn-garden` | `/garden/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Revival AR | `unclehowell/cedwyn-revival-ar` | `/revival-ar/` | mirror | not set | Not audited / not checked | Not audited / not checked |
+| Peekaboo | `unclehowell/cedwyn-peekaboo` | `/peekaboo/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Bloculous | `unclehowell/cedwyn-bloculous` | `/bloculous/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Theories | `unclehowell/cedwyn-theories` | `/theories/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Garden Store | `unclehowell/cedwyn-garden-store` | `/garden-store/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Storytime | `unclehowell/cedwyn-storytime` | `/storytime/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Molt | `unclehowell/cedwyn-molt` | `/molt/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Gallery | `unclehowell/cedwyn-gallery` | `/gallery/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Internet Archive Sources | `unclehowell/cedwyn-internetarchive` | `/internetarchive/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Terrain | `unclehowell/terrain` | `/terrain/` | split-repo | not set | Not audited / not checked | Not audited / not checked |
+| Primary Records | `unclehowell/cedwyn-records` | `/records/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| The Council Chamber | `unclehowell/cedwyn-meeting` | `/2026-10-22/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Cedwyn documentary | `unclehowell/cedwyn-documentary` | `/documentary/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| Display settings | `unclehowell/cedwyn-settings` | `/settings/` | split-repo | configured `repo` (not production proof) | Not audited / not checked | Not audited / not checked |
+| The Release Machine | `unclehowell/cedwyn-releases` | `/releases/` | split-repo | not set | Not audited / not checked | Not audited / not checked |
 
 ## Alias and scope cautions
 
