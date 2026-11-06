@@ -3,6 +3,7 @@ name: daily-control-audit
 # Public GitHub inventory/search and read-only visitor-route checks; one report comment on #241.
 on:
   schedule:
+    - cron: '0 11 * * *'
     - cron: '0 12 * * *'
   workflow_dispatch:
   push:
@@ -30,6 +31,17 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const siteOrigin = "https://cedwyn.bucklerfamily.estate";
+            // GitHub cron is UTC. Run at 12:00 Europe/London through both DST seasons:
+            // 11:00 UTC during BST, 12:00 UTC during GMT. Ignore the non-matching slot.
+            if (context.eventName === "schedule") {
+              const londonHour = new Intl.DateTimeFormat("en-GB", {
+                timeZone: "Europe/London", hour: "2-digit", hourCycle: "h23"
+              }).format(new Date());
+              if (londonHour !== "12") {
+                core.info("Skipping the alternate UTC schedule slot; Europe/London is at " + londonHour + ":xx.");
+                return;
+              }
+            }
             const reportDate = new Date().toISOString().replace("T", " ").slice(0, 19) + " UTC";
             const clean = value => String(value ?? "").replace(/[\r\n|]+/g, " ").slice(0, 150);
 
