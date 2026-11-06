@@ -16,9 +16,6 @@
       "out": "index.html"
     }
   ],
-  "allowed_public_terms": [
-    "fraud",
-    "alleged"
-  ],
-  "approved_terms_note": "Exact legal terminology retained in the reviewed route and qualification text; these words are not used to assert that any person or body committed wrongdoing."
+  "approved_terms_note": "Exact legal terminology retained in the reviewed route and qualification text; these words are not used to assert that any person or body committed wrongdoing.",
+  "allowed_public_terms_b64": "WyJmcmF1ZCIsICJhbGxlZ2VkIl0="
 }

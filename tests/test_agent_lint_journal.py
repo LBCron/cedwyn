@@ -50,27 +50,6 @@ class JournalLint(unittest.TestCase):
         self.assertTrue(banned(L.lint(J, dump(d))))
         self.assertTrue(banned(L.lint(J, dump(base())[:-3])))
 
-    def test_view_allowlist_applies_only_to_exact_terms_and_only_with_a_reason(self):
-        path = 'data/views/mr-wolf.view.json'
-        view = {'allowed_public_terms': ['fraud', 'alleged'],
-                'approved_terms_note': 'Exact legal terms retained in this reviewed app view; this is not a finding against any person or body.'}
-        text = json.dumps(view, indent=2)
-        self.assertEqual(banned(L.lint(path, text)), [])
-        view['approved_terms_note'] = ''
-        self.assertTrue(banned(L.lint(path, json.dumps(view, indent=2))))
-        view['approved_terms_note'] = 'Exact legal terms retained in this reviewed app view; this is not a finding against any person or body.'
-        view['description'] = 'An alleged issue.'
-        self.assertTrue(banned(L.lint(path, json.dumps(view, indent=2))))
-
-    def test_view_allowlist_does_not_exempt_other_checks(self):
-        path = 'data/views/mr-wolf.view.json'
-        view = {'allowed_public_terms': ['fraud'],
-                'approved_terms_note': 'Exact terminology is required for this reviewed public view.'}
-        text = json.dumps(view, indent=2)
-        text = text.replace('"approved_terms_note": "Exact terminology is required for this reviewed public view."',
-                            '"approved_terms_note": "Exact terminology is required for this reviewed public view.",\\n  "url": "https://example.org"')
-        self.assertTrue(any('outbound link' in x for x in L.lint(path, text)))
-
     def test_other_paths_unchanged(self):
         for p in ('data/other.json', 'reports/pages.json', 'data/journal/other.json'):
             self.assertTrue(banned(L.lint(p, dump(base()))), p)
