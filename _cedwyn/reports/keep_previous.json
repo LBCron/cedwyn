@@ -2,7 +2,7 @@
  "checked": {
   "fcg": {
    "files_now": 151,
-   "files_previous_build": 155,
+   "files_previous_build": 154,
    "home": true
   },
   "research": {
@@ -12,17 +12,17 @@
   },
   "app": {
    "files_now": 22,
-   "files_previous_build": 25,
+   "files_previous_build": 23,
    "home": true
   },
   "chat": {
    "files_now": 8,
-   "files_previous_build": 8,
+   "files_previous_build": 9,
    "home": true
   },
   "email": {
    "files_now": 1647,
-   "files_previous_build": 1673,
+   "files_previous_build": 1668,
    "home": true
   },
   "dartboard": {
@@ -32,27 +32,27 @@
   },
   "estate": {
    "files_now": 5,
-   "files_previous_build": 4,
+   "files_previous_build": 5,
    "home": true
   },
   "patagonia": {
    "files_now": 5,
-   "files_previous_build": 4,
+   "files_previous_build": 5,
    "home": true
   },
   "terrain": {
    "files_now": 6,
-   "files_previous_build": 10,
+   "files_previous_build": 9,
    "home": true
   },
   "cyberspace": {
    "files_now": 5,
-   "files_previous_build": 4,
+   "files_previous_build": 5,
    "home": true
   }
  },
  "restored": {
-  "terrain": 6
+  "terrain": 5
  },
  "refused": [
   "terrain"
