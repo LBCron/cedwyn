@@ -198,7 +198,7 @@ m.mat('lane',(0.56,0.51,0.42),1.0); m.mat('hedge',(0.20,0.33,0.15),1.0)
 # (heading, pitch and fov from photos.json). Aerial viewpoints get the same tripod head at altitude plus a plumb line to the ground.
 PJ=os.path.join(os.path.dirname(__file__),'..','photos.json')
 if os.path.exists(PJ):
-    m.mat('tripod',(0.07,0.07,0.07),0.5); m.mat('tripodhead',(0.62,0.48,0.14),0.4,0.6); m.mat('tripodfov',(0.95,0.78,0.25),0.9,0.0,alpha=0.22)
+    m.mat('tripod',(0.07,0.07,0.07),0.5); m.mat('tripodhead',(0.62,0.48,0.14),0.4,0.6); m.mat('tripodfov',(0.95,0.78,0.25),0.9,0.0,alpha=0.16)
     def _fov(tx,ty,tz,hd,pt,fov,Lc):
         h,p=math.radians(hd),math.radians(pt)
         dv=np.array([math.sin(h)*math.cos(p),math.sin(p),-math.cos(h)*math.cos(p)]); r=np.array([math.cos(h),0.0,math.sin(h)]); u=np.cross(r,dv)
@@ -215,7 +215,7 @@ if os.path.exists(PJ):
         if aerial: m.box('tripod',tx,tz,0.25,0.25,base,y0=0.0)
         m.box('tripodhead',tx,tz,0.16,0.16,0.10,y0=top,yaw=math.degrees(hh))
         m.box('tripodhead',tx+0.14*math.sin(hh),tz-0.14*math.cos(hh),0.09,0.16,0.09,y0=ty-0.04,yaw=math.degrees(hh))
-        _fov(tx,ty+0.01,tz,tp['heading'],tp.get('pitch',0),tp.get('fov',50),30.0 if aerial else 5.0)
+        _fov(tx,ty+0.01,tz,tp['heading'],tp.get('pitch',0),tp.get('fov',50),9.0 if aerial else 3.5)   # run 4: cones were 30 m (aerial) / 5 m, the aerial ones swept through the ground-level views and washed them yellow
 def strip(key,a,b,wd,h=0.06,y0=0.0):
     (ax,az),(bx,bz)=a,b; m.box(key,(ax+bx)/2,(az+bz)/2,math.hypot(bx-ax,bz-az)+0.2,wd,h,y0=y0,yaw=math.degrees(math.atan2(bz-az,bx-ax)))
 if 'lane_arc' in G:
