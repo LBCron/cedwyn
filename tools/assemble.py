@@ -101,7 +101,7 @@ def snapshot(t, out):
     report.setdefault('_snapshot', {})[t['id']] = {'ref': want, 'files': n, 'rc': r.returncode, 'peer_theme_roots_detected': peer_theme_roots[:30]}
     return n if r.returncode == 0 and (out / 'index.html').exists() else 0
 
-def fetch_split_repo(repo, out, branch='main'):
+def fetch_split_repo(repo, out, branch='main', tdir=None):
     """Fetch the dedicated repo's branch into out/. Used when split-repos.json has deploy=repo (#311)."""
     work = pathlib.Path('split_tmp_' + out.name)
     shutil.rmtree(work, ignore_errors=True)
@@ -116,6 +116,12 @@ def fetch_split_repo(repo, out, branch='main'):
     if r.returncode != 0:
         shutil.rmtree(work, ignore_errors=True)
         return 0, f"clone failed: {(r.stderr or r.stdout or '')[-300:]}"
+    # #418: the theme's own 'dir' (themes.json) first, when the repo holds an index.html there (projects/public, static/2026-10-22, ...)
+    if tdir and (work / tdir / 'index.html').is_file():
+        shutil.copytree(work / tdir, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
+        shutil.rmtree(work, ignore_errors=True)
+        n = sum(1 for _ in out.rglob('*') if _.is_file())
+        return n, f"repo:{repo}/{tdir}"
     # Prefer public/ or dist/ or site/ if present, else repo root
     for cand in ('public', 'dist', 'site', 'static'):
         d = work / cand
@@ -136,7 +142,7 @@ def one(t):
     # REPO SPLIT step 3 (#311): prefer dedicated repo when marked deploy=repo
     sa = SPLIT.get(tid) or SPLIT.get(t.get('branch') or '') or SPLIT.get(t.get('snapshot_branch') or '')
     if sa and sa.get('deploy') == 'repo' and sa.get('repo'):
-        n, how = fetch_split_repo(sa['repo'], out)
+        n, how = fetch_split_repo(sa['repo'], out, tdir=t.get('dir'))
         report.setdefault('_split_source', {})[tid] = {'repo': sa['repo'], 'how': how, 'files': n}
         if n and (out / 'index.html').exists():
             # success — skip branch/snapshot paths
