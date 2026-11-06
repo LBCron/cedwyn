@@ -3,6 +3,11 @@ name: build-cedwyn
 # then commits the result to branch `site` (served by the Cloudflare Pages project "cedwyn"). Never touches datro. — Sion's Tab agent
 on:
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run every build step but do NOT publish to branch site or write reports to main (for testing build speed-ups)'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths: ['tools/**', 'web/**', 'data/**', 'themes.json', '.github/workflows/build.yml']
@@ -164,6 +169,7 @@ jobs:
           mkdir -p dist/_cedwyn/reports
           printf '{"commit":"%s","built_at":"%s"}\n' "$GITHUB_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > dist/_cedwyn/reports/build.json
       - name: Publish to branch site
+        if: ${{ inputs.dry_run != true }}
         env:
           TOKEN: ${{ github.token }}
         run: |
@@ -173,7 +179,7 @@ jobs:
           cd pub && git config user.name "cedwyn-bot" && git config user.email "cedwyn-bot@users.noreply.github.com"
           git add -A && git commit -q -m "Build from main ${GITHUB_SHA::7} — Sion's Tab agent" && git push -q origin site || echo "nothing to publish"
       - name: Reports to main
-        if: always()
+        if: ${{ always() && inputs.dry_run != true }}
         env:
           TOKEN: ${{ github.token }}
         run: |
