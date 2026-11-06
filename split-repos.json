@@ -50,7 +50,8 @@
       "repo": "unclehowell/cedwyn-analytics",
       "old_branch": "section/analytics",
       "page": "/analytics/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Cloudflare",
