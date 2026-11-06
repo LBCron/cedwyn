@@ -1,11 +1,11 @@
 {
- "files": 25537,
- "changed": 13826,
- "sub": 32032,
- "ext": 82526,
+ "files": 25539,
+ "changed": 13827,
+ "sub": 32038,
+ "ext": 82528,
  "cdn": 3232,
  "boot_added": 3056,
- "boot_moved": 9793,
+ "boot_moved": 9794,
  "tags_dropped": 15,
  "inline_boot_removed": 0,
  "tour_removed": 13,
@@ -14,7 +14,7 @@
  "yt_links_removed": 22,
  "redirects_to_themes": 42,
  "filled_missing": {
-  "wanted": 6699,
+  "wanted": 6700,
   "copied": 1533,
   "not_found": [
    [
@@ -344,21 +344,11 @@
   ],
   "not_found_n": 3086
  },
- "vendored": 177,
+ "vendored": 178,
  "vendor_failed": [
-  [
-   "/_ext/cdn.jsdelivr.net/gh/unclehowell/cedwyn-movie@main/extras/parcels-1841.webm",
-   "https://cdn.jsdelivr.net/gh/unclehowell/cedwyn-movie@main/extras/parcels-1841.webm",
-   "HTTP Error 403: Forbidden"
-  ],
   [
    "/_ext/s-ssl.wordpress.com/i/logo/wpcom-gray-white.png",
    "https://s-ssl.wordpress.com/i/logo/wpcom-gray-white.png",
-   "HTTP Error 403: Forbidden"
-  ],
-  [
-   "/_ext/cdn.jsdelivr.net/gh/unclehowell/cedwyn-movie@main/extras/parcels-1841.webm",
-   "https://cdn.jsdelivr.net/gh/unclehowell/cedwyn-movie@main/extras/parcels-1841.webm",
    "HTTP Error 403: Forbidden"
   ],
   [
@@ -367,7 +357,7 @@
    "HTTP Error 403: Forbidden"
   ]
  ],
- "vendor_failed_n": 4,
+ "vendor_failed_n": 2,
  "allowed_tile_templates": [
   "https://mapseries-tilesets.s3.amazonaws.com/os/6inchsecond/{z}/{x}/{y}.png",
   "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
