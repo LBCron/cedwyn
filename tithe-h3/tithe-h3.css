@@ -70,3 +70,18 @@
 .th3-intro{font-size:.9rem;color:#444;margin:0 0 .6em}.th3-intro p{margin:0}
 #map{height:72vh}
 @media (max-width:420px){#map{height:70vh}.th3-stat{flex-basis:auto}}
+
+/* v0.6.0: pins key (Bute / Williams / Other), dated-record diamonds, estimated-boundary note, cell count in the top-left corner
+   (clear of the credits bar on a phone). */
+.th3-pin{display:inline-block;width:10px;height:10px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--c);vertical-align:-1px;border:1px solid #fff;box-shadow:0 0 0 1px var(--c)}
+.th3-dia{display:inline-block;width:9px;height:9px;transform:rotate(45deg);background:#444;vertical-align:0;border:1px solid #fff;box-shadow:0 0 0 1px #444}
+.th3-pinm,.th3-diam{background:none;border:0}
+.th3-pinm svg{filter:drop-shadow(0 1px 1px #0006)}
+.th3-diam span{display:flex;align-items:center;justify-content:center;width:20px;height:20px;margin:3px;transform:rotate(45deg);background:var(--c);border:2px solid #fff;box-shadow:0 1px 3px #0007}
+.th3-diam b{transform:rotate(-45deg);color:#fff;font:700 10px/1 system-ui,sans-serif}
+.th3-recs{margin:.4em 0 0;padding-left:1.1em;font-size:.8rem}.th3-recs li{margin:0 0 .35em}
+.th3-est{font-size:.8rem;color:#555;margin:.35em 0 .2em}
+.th3-ctl .th3-bar .lab{font-weight:600;color:#1e4d45}
+.th3-ctl .th3-bar .hint{font-size:.72rem;color:#666;max-width:240px}
+.th3-ctl label.lr{color:#00737f}
+.leaflet-top.leaflet-left .th3-stat.leaflet-control{display:block;margin:6px 0 0 10px;max-width:62vw;background:rgba(255,255,255,.9);border-radius:4px;padding:1px 6px;font-size:.75rem;color:#333;box-shadow:0 1px 3px #0003}

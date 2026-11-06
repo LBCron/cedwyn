@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.6.1 (6 Nov 2026)
+- Record IDs in the dated-record pop-ups link to their catalogue pages (title on hover). They come from the map's own data store, `data/central.json`: only id, kind, title, date, status and page for the IDs in `data/pins.json`, pulled read-only from the central catalogue by `tools/sync_central.py` every 6 hours (`.github/workflows/sync-central.yml`). An ID the central catalogue does not hold yet stays plain text.
+
+## v0.6.0 (5 Nov 2026)
+- OS c.1900 overlay stays visible at every zoom: its tiles exist to zoom 17 only, so they are now enlarged past 17 (maxNativeZoom 17) instead of going blank at 18 and above.
+- Hexagons follow the zoom, never below resolution 12: 12 up to zoom 16, 13 at zoom 17, 14 at 18 and 19, 15 from 20 (stepping back one where the view would pass the cell cap). "Lock resolution" (or picking a resolution) holds one resolution at every zoom. Resolutions 8, 10 and 11 leave the picker.
+- "Traffic light" is renamed "Highlight parcels".
+- Parcel shapes: a gap-free, non-overlapping reconstruction (data/parcels-est.json). The 43 traced outlines are merged and closed by 12 m into an estate outline; an outline lying at least 40% inside a larger one keeps the shared ground (22 in 23, B in 29, 42 in 45); other overlaps split along the midline; gaps go to the nearest parcel; scraps under 400 m² merged. Boundaries between parcels are estimated, and the page says so. The outlines as drawn stay in parcels.json and on the "Traced outlines (as drawn)" layer. Plan numbers 18 and 46-59 are not placed: no figure 18 could be read, and no figures 46-59 were found on the plan (the highest read is 45).
+- New layer "Highlight parcels — later Land Registry" (cyan, overlaps allowed in this layer only), reading data/registry-parcels.geojson, empty until registry title plans are held.
+- Pins key: Bute, Williams and Other, one pin per placed parcel from the 1841 apportionment as entered (occupier is not owner), each its own layer; and "Dated records", diamond markers grouping 80 dated records from the site's evidence pages (65 placed: estate-wide, house-and-yard plot, wooded strip, Parcel B, Leckwith Common; 15 not placed). Data: data/pins.json.
+- The cell count moves to the top-left corner so the credits bar no longer covers it at 390 px, and shows the resolution in use.
+
 ## v0.5.0 (4 Nov 2026)
 Map first on a phone. The page title is one visually hidden line (the site header already reads "Tithe H3 · 42 of 59"), the introduction moves under the map, and the layer switches (traffic light, 1841 tithe map, Stewart plan, OS c.1900, opacity) and the hexagon picker fold into a "Layers" button on the map, closed by default. The cell count sits in the map's bottom-left corner as "N cells in view"; the hexagon size shows once, in the picker. At 390 px the map now starts about 177 px from the top (was about 415 px). No change to data, layers or behaviour.
 

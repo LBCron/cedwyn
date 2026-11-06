@@ -1,6 +1,54 @@
-# Tithe H3 (webapp 42 of 59)
-The parcels of the David Stewart plan of Cedfin alias Ty Mawr, traced through the 1841 tithe map of Landough, Cogan and Leckwith (NLW 4622411) onto the OS six-inch map of c.1900 (NLS) and OpenStreetMap, with OS grid references and H3 cells (res 8, 11, 12 stored per parcel; v0.4.0 draws res 10-15 in the browser).
-Data: data/parcels.json (page bundle), data/stewart-parcels.csv, data/stewart-parcels.geojson, data/tithe-plots-vs-estate-map.csv.
-Georeference (v0.2.0): affine correction to OpenStreetMap, 7 control points, RMS 6.8 m (before: 86.2 m); the earlier tithe-to-OS similarity (5 control points, RMS 25.7 m) is superseded. Plan-to-tithe affine, 20 matched fields, RMS about 13 m.
-Traffic light (v0.3.0): red = parcels on the c.1824 estate plan; amber = Parcel B (plan 5-6, tithe 193, match not checked), Leckwith Common and the playing fields (guide pin, order extent not located), Parcel C (not drawn); green = Parcel A (tithe 209, 211, 219, 220, working match). A working classification of family-associated land, not a legal finding.
-H3 picker (v0.4.0): res 8, 10, 11, 12 (default), 13, 14, 15 (the finest H3 has). Res 10-15 are generated client-side with vendor/h3-js.umd.js (h3-js 4.5.0, Apache-2.0) for the viewport only, centroid-in-polygon against the parcel outlines, cap about 20,000 cells, res 14 from zoom 17 and res 15 from zoom 19.
+# Tithe H3 map
+
+The Tithe H3 map webapp of [cedwyn.bucklerfamily.estate](https://cedwyn.bucklerfamily.estate/tithe-h3/), in its own repository.
+
+It was split out of `unclehowell/cedwyn` (branch `section/tithe-h3`) on 5 Nov 2026, because that repository holds about 290 branches
+(~43 GB with history) and a job on one webapp should never need the rest. This repository is a few MB
+(18 files, 1.1 MB at the split).
+
+## Get the code
+
+```
+git clone --depth 1 https://github.com/unclehowell/cedwyn-tithe-h3.git
+```
+
+## Where to send changes (read this first)
+
+`split-repos.json` on `unclehowell/cedwyn` main sets the mode:
+
+- **mirror** (now): the old branch `section/tithe-h3` on unclehowell/cedwyn is still the source. `mirror.yml` here copies it every
+  30 minutes. Send pull requests to `section/tithe-h3` on unclehowell/cedwyn (clone it with
+  `git clone --depth 1 --single-branch --branch section/tithe-h3 --filter=blob:none https://github.com/unclehowell/cedwyn.git`).
+- **split-repo** (after the owner switches it): this repository is the source; send pull requests here.
+  unclehowell/cedwyn copies `main` back into `section/tithe-h3`, so the live page and every old path keep working.
+
+`SPLIT.json` records the source commit of the last copy. The app's own notes, if the branch had any, are in `APP-README.md`.
+
+## Previews
+
+Cloudflare Pages builds this repository itself (project `cedwyn-tithe-h3`): `main` at https://cedwyn-tithe-h3.pages.dev/ and every
+branch or pull request at `https://<branch>.cedwyn-tithe-h3.pages.dev/`, with the link commented on the pull request.
+`preview.yml` is the fallback route (wrangler with the secrets `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID`, unset; it stops quietly).
+
+## History before the split
+
+The full history stays on the old branch: https://github.com/unclehowell/cedwyn/commits/section/tithe-h3
+
+Latest commits on `section/tithe-h3` at the split:
+
+| Date | Commit | Change |
+| --- | --- | --- |
+| 2026-11-05 | `853258d` | Tithe H3 v0.6.0: smaller pins, cell-count box legible in the top-left corner |
+| 2026-11-05 | `62d02a0` | Tithe H3 v0.6.0 changelog and readme |
+| 2026-11-05 | `ee3d462` | Tithe H3 v0.6.0: OS c.1900 at every zoom, auto H3 resolution with lock (floor 12), Highlight parcels rename, e |
+| 2026-11-05 | `46c7689` | Tithe H3 v0.6.0 data: estimated gap-free parcel shapes, pins and dated records, empty later Land Registry laye |
+| 2026-11-04 | `6042f4a` | Tithe H3 v0.5.0 changelog |
+| 2026-11-04 | `3ac0f01` | Tithe H3 v0.5.0: map first on a phone — one-line title, intro under the map, layer and hexagon controls folded |
+| 2026-11-03 | `6054262` | Tithe H3 v0.4.0: VERSION, changelog and README |
+| 2026-11-03 | `1548495` | Tithe H3 v0.4.0: H3 resolution picker (8, 10-15), cells made in the browser for the view |
+| 2026-11-03 | `5c10ea2` | Tithe H3 v0.3.0: changelog and README for the traffic-light layer |
+| 2026-11-03 | `1759d58` | Tithe H3 v0.3.0: traffic-light parcel layer |
+| 2026-11-02 | `1a8a4f4` | Tithe H3 v0.2.0: (i) changelog modal, cache-busted data and overlays, method notes |
+| 2026-11-02 | `3e3d40a` | Tithe H3 v0.2.0: both old-map overlays moved with the same correction; version and changelog |
+
+Never force-push; never delete the old branch.

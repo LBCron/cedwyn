@@ -1,13 +1,33 @@
-# Mr Wolf — webapp 40 of 59
+# Mr Wolf
 
-"What's the time, Mr Wolf?" Served at /mr-wolf/ on cedwyn.bucklerfamily.estate from the snapshot branch `section/mr-wolf`
-(pinned in `sections.lock` on main; themes.json id `mr-wolf`).
+The Mr Wolf webapp of [cedwyn.bucklerfamily.estate](https://cedwyn.bucklerfamily.estate/mr-wolf/), in its own repository
+(webapp migration 59+1, issue #188 on unclehowell/cedwyn).
 
-A leaderboard of the leads closest to the Takhar threshold for reopening BP Properties Ltd v Buckler (1987). Each lead is
-scored 0–200: four limbs (dishonesty or concealment shown; operative cause of the 1987 outcome; not available then with
-reasonable diligence; evidence quality and admissibility), each 0–50. 100 = threshold plausibly met; 200 = proved beyond
-doubt on every limb. Limbs come from the reopen research's 0–5 limb scores x10; rows marked seed_score wait for a test.
+Split out of `unclehowell/cedwyn` branch `section/mr-wolf` on 5 Nov 2026. That repository holds about 300 branches; a job on one webapp
+should never need the rest.
 
-Data: `leaderboard.json` (schema cedwyn_mr_wolf_leaderboard/v1). `index.html` is rendered from it; when a score changes,
-update the JSON, re-render, bump VERSION and CHANGELOG. Our case, prospective, not a finding of any court.
-Background #f7f2e7 / #fbf8f1, no outbound links, 390 px mobile first, scope tag data-scope="online".
+## Get the code
+
+```
+git clone --depth 1 https://github.com/unclehowell/cedwyn-mr-wolf.git
+```
+
+## Where to send changes
+
+`split-repos.json` on `unclehowell/cedwyn` main sets the mode:
+
+- **mirror** (now): the old branch `section/mr-wolf` is the source. `mirror.yml` copies it here every 30 minutes. Send pull requests to `section/mr-wolf`.
+- **split-repo** (after the owner switches it): this repository is the source; unclehowell/cedwyn copies `main` back into `section/mr-wolf`, so the
+  live page and every old path keep working.
+
+`SPLIT.json` records the source commit of the last copy; the app's own notes, if any, are in `APP-README.md`.
+
+## Preview
+
+Cloudflare Pages project `cedwyn-mr-wolf` builds every branch and pull request: https://cedwyn-mr-wolf.pages.dev/
+
+## History before the split
+
+https://github.com/unclehowell/cedwyn/commits/section/mr-wolf
+
+Never force-push; never delete the old branch.

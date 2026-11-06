@@ -1,114 +1,11 @@
 {
  "schema": "ghf-agent-discovery/1.0",
- "generated": "2026-10-23T22:34:03Z",
- "name": "FCG · Security Clearance",
+ "generated": "2026-11-05T20:45:00Z",
+ "name": "FCG — Fraud, Concealment and Government involvement · Security Clearance",
  "description": "Institutions ranked out of 1000 on how they answered requests for the Great House Farm record: every point from a dated email or letter.",
- "url": "https://cedwyn.bucklerfamily.estate/fcg/",
- "note": "Read-only. Every tool is a plain HTTPS GET that returns JSON; arguments go in the query string. The same tools are registered with navigator.modelContext (WebMCP) on the site's pages where the browser supports it.",
- "llms": "https://cedwyn.bucklerfamily.estate/fcg/llms.txt",
- "llms_full": "https://cedwyn.bucklerfamily.estate/fcg/llms-full.txt",
- "sitemap": "https://cedwyn.bucklerfamily.estate/fcg/sitemap.xml",
- "pages": "https://cedwyn.bucklerfamily.estate/fcg/agent/pages.json",
- "webmcp_script": "https://cedwyn.bucklerfamily.estate/fcg/agent/webmcp.js",
- "tools": [
-  {
-   "name": "list_pages",
-   "description": "List every page on this site with its title, path and one-line description.",
-   "inputSchema": {
-    "type": "object",
-    "properties": {}
-   },
-   "annotations": {
-    "readOnlyHint": true
-   },
-   "http": {
-    "method": "GET",
-    "url": "https://cedwyn.bucklerfamily.estate/fcg/agent/pages.json"
-   }
-  },
-  {
-   "name": "search",
-   "description": "Search this site's pages (titles, headings and text). Returns the best matches with a snippet.",
-   "inputSchema": {
-    "type": "object",
-    "properties": {
-     "q": {
-      "type": "string",
-      "description": "Words to search for"
-     },
-     "limit": {
-      "type": "integer",
-      "description": "Max results (default 10)"
-     }
-    },
-    "required": [
-     "q"
-    ]
-   },
-   "annotations": {
-    "readOnlyHint": true
-   },
-   "http": {
-    "method": "GET",
-    "url": "https://cedwyn.bucklerfamily.estate/fcg/agent/search"
-   }
-  },
-  {
-   "name": "get_page",
-   "description": "Get one page's title, description, headings and main text by its path (slug), e.g. / or /risk-register/.",
-   "inputSchema": {
-    "type": "object",
-    "properties": {
-     "slug": {
-      "type": "string",
-      "description": "Page path, e.g. /brief/"
-     }
-    },
-    "required": [
-     "slug"
-    ]
-   },
-   "annotations": {
-    "readOnlyHint": true
-   },
-   "http": {
-    "method": "GET",
-    "url": "https://cedwyn.bucklerfamily.estate/fcg/agent/page"
-   }
-  },
-  {
-   "name": "get_clearance",
-   "description": "Institutions scored out of 1000 on how they answered requests, with the scoring rules. Filter with q (an institution).",
-   "inputSchema": {
-    "type": "object",
-    "properties": {
-     "q": {
-      "type": "string",
-      "description": "Words to match (all must appear)"
-     },
-     "limit": {
-      "type": "integer",
-      "description": "Max records (default 25)"
-     }
-    }
-   },
-   "annotations": {
-    "readOnlyHint": true
-   },
-   "http": {
-    "method": "GET",
-    "url": "https://cedwyn.bucklerfamily.estate/fcg/agent/tool/get_clearance"
-   },
-   "source": "/clearance.json"
-  }
- ],
- "data": [
-  {
-   "name": "get clearance",
-   "url": "https://cedwyn.bucklerfamily.estate/fcg/clearance.json",
-   "desc": "Institutions scored out of 1000 on how they answered requests, with the scoring rules."
-  }
- ],
+ "url": "https://cedwyn.bucklerfamily.estate/dartboard/fcg/",
+ "note": "FCG = Fraud, Concealment and Government involvement. Canonical address: https://cedwyn.bucklerfamily.estate/dartboard/fcg/ . The fcg.bucklerfamily.estate subdomain is being retired: its root already redirects to the canonical address; its remaining URLs keep answering until its Cloudflare route is removed, then redirect. The old subdomain agent endpoints (/agent/*, clearance.json, sitemap, llms-full) are not part of the canonical site; estate-level agent discovery: https://cedwyn.bucklerfamily.estate/.well-known/mcp.json and https://cedwyn.bucklerfamily.estate/agent/search?q=...",
+ "llms": "https://cedwyn.bucklerfamily.estate/dartboard/fcg/llms.txt",
  "estate": {
   "home": "https://cedwyn.bucklerfamily.estate/dartboard/",
   "sites": [
@@ -140,7 +37,7 @@
     "url": "https://cedwyn.bucklerfamily.estate/dartboard/",
     "name": "Great House Farm (Tŷ Mawr) · Home: The Disclosure Dartboard",
     "llms": "https://cedwyn.bucklerfamily.estate/dartboard/llms.txt",
-    "mcp": "https://cedwyn.bucklerfamily.estate/dartboard/.well-known/mcp.json"
+    "mcp": "https://cedwyn.bucklerfamily.estate/.well-known/mcp.json"
    },
    {
     "url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fbucklervsbp.bucklerfamily.estate%2F",
@@ -227,10 +124,10 @@
     "mcp": "https://cedwyn.bucklerfamily.estate/fb2/.well-known/mcp.json"
    },
    {
-    "url": "https://cedwyn.bucklerfamily.estate/fcg/",
-    "name": "FCG · Security Clearance",
-    "llms": "https://cedwyn.bucklerfamily.estate/fcg/llms.txt",
-    "mcp": "https://cedwyn.bucklerfamily.estate/fcg/.well-known/mcp.json"
+    "url": "https://cedwyn.bucklerfamily.estate/dartboard/fcg/",
+    "name": "FCG — Fraud, Concealment and Government involvement · Security Clearance",
+    "llms": "https://cedwyn.bucklerfamily.estate/dartboard/fcg/llms.txt",
+    "mcp": "https://cedwyn.bucklerfamily.estate/dartboard/fcg/.well-known/mcp.json"
    },
    {
     "url": "https://cedwyn.bucklerfamily.estate/infographic/",

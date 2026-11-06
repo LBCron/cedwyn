@@ -1,4 +1,4 @@
-/* analytics.js · webapp 45 of 59 · v1.1.0 (each traffic class has one fixed colour on every graph) · graphs only (inline SVG, no libraries) + WebMCP tools. - Cedwyn editors */
+/* analytics.js · webapp 45 of 59 · v1.2.0 (per-day graphs end at yesterday; each traffic class has one fixed colour on every graph) · graphs only (inline SVG, no libraries) + WebMCP tools. - Cedwyn editors */
 /* Header: "45 of 59" in the header's own numbering slot (.ghf-v2-name small) until the area registry gives the slot; the
    header's third row stays hidden except for the shared Garden banner (same rule as Tithe H3 v0.1.1). */
 (function(){
@@ -107,6 +107,12 @@ var D=function(x){return x.slice(8,10);};
 function lab(h){return h==="(apex)"?"(apex)":h;}
 function draw(s){
  $("cf-upd").textContent=s.generated_at.slice(0,16).replace("T"," ")+" UTC";
+ /* v1.2.0: per-day graphs end at yesterday (UTC); today's partial day is left out so no graph ends on an empty bar */
+ var td=s.generated_at.slice(0,10),full=function(a){return (a||[]).filter(function(x){return x.date<td;});};
+ if(s.web)s.web.days=full(s.web.days);s.edge.days=full(s.edge.days);
+ var de=s.days_end||(s.edge.days.length?s.edge.days[s.edge.days.length-1].date:""),MO=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+ ["g-wvis","g-wpv","g-euniq","g-epv","g-ereq"].forEach(function(id){var g=$(id),h=g&&g.parentNode.querySelector("h2");if(!h||!de)return;
+  if(!h.hasAttribute("data-t"))h.setAttribute("data-t",h.textContent);h.textContent=h.getAttribute("data-t")+" · to "+(+de.slice(8,10))+" "+MO[+de.slice(5,7)-1];});
  var w=s.web,e=s.edge,wk='<div class="cfw-key">upper bar visits · lower bar page views</div>';
  split("g-split",e.humans_vs_bots_24h);
  function byDay(arr,mk,vk){return arr.map(function(x){return{lab:x.date,m:x[mk]||null,x:x[mk]?0:(x[vk]||0)};});}
