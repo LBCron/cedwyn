@@ -42,9 +42,9 @@ jobs:
               if line.strip() and len(line) - len(line.lstrip()) < indent:
                   break
               script.append(line[indent:] if line.strip() else "")
-          Path("/tmp/daily-control-audit.mjs").write_text(chr(10).join(script) + chr(10))
+          Path("/tmp/daily-control-audit.js").write_text("async function __githubScript() {\\n" + chr(10).join(script) + "\\n}\\n")
           PY
-          node --check /tmp/daily-control-audit.mjs
+          node --check /tmp/daily-control-audit.js
 
   audit:
     if: github.event_name != 'pull_request'
