@@ -36,7 +36,8 @@
       "repo": "unclehowell/cedwyn-hive",
       "old_branch": "hive",
       "page": "/hive/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Dartboard",
@@ -137,7 +138,8 @@
       "repo": "unclehowell/cedwyn-forensic",
       "old_branch": "section/forensic",
       "page": "/forensic/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Chessboard",
@@ -184,14 +186,16 @@
       "repo": "unclehowell/cedwyn-projects",
       "old_branch": "projects",
       "page": "/projects/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Watchtower",
       "repo": "unclehowell/cedwyn-watchtower",
       "old_branch": "watchtower",
       "page": "/watchtower/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Directory",
@@ -222,7 +226,8 @@
       "repo": "unclehowell/cedwyn-that-old-chestnut",
       "old_branch": "that-old-chestnut",
       "page": "/that-old-chestnut/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Blog",
@@ -237,7 +242,8 @@
       "repo": "unclehowell/cedwyn-nomenclature",
       "old_branch": "nomenclature",
       "page": "/nomenclature/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Map Room",
@@ -252,14 +258,16 @@
       "repo": "unclehowell/cedwyn-docs",
       "old_branch": "docs",
       "page": "/docs/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Wayback Vault",
       "repo": "unclehowell/cedwyn-wayback",
       "old_branch": "wayback",
       "page": "/wayback/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "E-book Shelf",
@@ -274,7 +282,8 @@
       "repo": "unclehowell/cedwyn-infographic",
       "old_branch": "infographic",
       "page": "/infographic/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Q&A Hall",
@@ -297,14 +306,16 @@
       "repo": "unclehowell/cedwyn-nft-art",
       "old_branch": "nft-art",
       "page": "/nft-art/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Gift Shop",
       "repo": "unclehowell/cedwyn-shop",
       "old_branch": "merch",
       "page": "/shop/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Farm Album",
@@ -327,7 +338,8 @@
       "repo": "unclehowell/cedwyn-wiki",
       "old_branch": "section/wiki",
       "page": "/wiki/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "The Story & Documentary",
@@ -477,14 +489,16 @@
       "repo": "unclehowell/cedwyn-meeting",
       "old_branch": "2026-10-22",
       "page": "/2026-10-22/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Cedwyn documentary",
       "repo": "unclehowell/cedwyn-documentary",
       "old_branch": "cedwyn-movie",
       "page": "/documentary/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Display settings",
