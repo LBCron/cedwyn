@@ -83,5 +83,5 @@
 
 /* 1.x night 6 Nov 2026 (sales lane): on phones the book page's buy box sits on the first screen. The cover becomes a
    left thumbnail beside the kicker/title instead of a full-width block above them; the buy box clears below the text.
-   Desktop (>=760px) unchanged. Prices, versions and checkout links untouched. — Sion's Tab agent */
+   Desktop (>=760px) unchanged. Prices, versions and checkout links untouched. */
 @media(max-width:759px){.eb-shop-hero{display:block}.eb-shop-hero::after{content:"";display:table;clear:both}.eb-shop-cover:not(.eb-wide){float:left;width:34%;max-width:150px;margin:.2rem 14px 8px 0}.eb-shop-cover:not(.eb-wide) img{width:100%;max-width:none;margin:0;box-shadow:0 6px 18px rgba(0,0,0,.55)}.eb-shop-cover.eb-wide{margin-bottom:16px}.eb-shop-intro .eb-pitch{font-size:.92rem;line-height:1.45}.eb-shop-intro .eb-buybox{clear:both}}
