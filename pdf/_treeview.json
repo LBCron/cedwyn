@@ -6,5 +6,15 @@
       "html": "pdf/0000-00-00 - NLW Bute Estate Records Finding Aid - EN - V0.0.0.00.pdf"
     },
     "tags": []
+  },
+  {
+    "name": "0000-00-00_consortium-evidence_bpvsbuckler_en_v0.0.0",
+    "path": "pdf/0000-00-00_consortium-evidence_bpvsbuckler__en_v0-0-0.pdf",
+    "_links": {
+      "html": "pdf/0000-00-00_consortium-evidence_bpvsbuckler__en_v0-0-0.pdf"
+    },
+    "tags": [
+      "bpvsbuckler"
+    ]
   }
 ]
