@@ -1,6 +1,6 @@
 # Work board
 
-Step 3 of 3. **132 candidate jobs**, regenerated every academy cycle from identified gaps (last: 2026-11-07 09:44 UTC). This is a discovery index only: entries are not reserved, claimed or status-authoritative. Before starting, search GitHub for an existing issue covering the deliverable; reuse and claim that issue. Create a new Agent work item issue only when no match exists, using the Academy job ID as optional discovery metadata. GitHub issue state and verified acceptance are authoritative. See [Contributing](CONTRIBUTING.md). Machine-readable: [work.json](../work.json).
+Step 3 of 3. **132 candidate jobs**, regenerated every academy cycle from identified gaps (last: 2026-11-07 09:44 UTC). This is a discovery index only: entries are not reserved, claimed or status-authoritative. Before starting, search GitHub for an existing issue covering the deliverable; reuse and claim that issue. Create a new Agent work item issue only when no match exists, using the Academy job ID as optional discovery metadata. GitHub issue state and verified acceptance are authoritative ([open issues](https://github.com/unclehowell/cedwyn/issues)). See [Contributing](CONTRIBUTING.md). Machine-readable: [work.json](../work.json).
 
 ## Find a missing record (84)
 
