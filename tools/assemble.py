@@ -13,6 +13,12 @@ report = {}
 # silently use a Cedwyn legacy branch. Recorded under _split_source.
 SPLIT = {}
 SPLIT_FAILURES = []
+# Build commands for source-only repositories whose output is produced during
+# assembly. Kept in the build code rather than the public theme manifest.
+SPLIT_BUILDS = {
+    'docs': 'python3 -m pip install --quiet --break-system-packages -r requirements.txt && python3 _theme-docs/build.py',
+    'projects': 'node projects/check.mjs',
+}
 try:
     _sr = json.load(open(ROOT / 'split-repos.json'))
     for _a in _sr.get('apps', []):
@@ -123,7 +129,7 @@ def fetch_split_repo(repo, out, theme):
         return 0, f"clone failed: {err}", {}
 
     meta = {'repo_branch': clone_branch}
-    build = theme.get('build')
+    build = theme.get('build') or SPLIT_BUILDS.get(tid)
     root = work / (theme.get('root') or '')
     if build:
         if not root.is_dir():
