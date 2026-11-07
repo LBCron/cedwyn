@@ -10,7 +10,7 @@ on:
         default: false
   push:
     branches: [main]
-    paths: ['tools/**', 'web/**', 'data/**', 'themes.json', '.github/workflows/build.yml']
+    paths: ['tools/**', 'web/**', 'data/**', 'themes.json', 'split-repos.json', '.github/workflows/build.yml']
 permissions:
   contents: write
 concurrency:
