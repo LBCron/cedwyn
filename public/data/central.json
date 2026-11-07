@@ -1,0 +1,54 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in public/data/*.json, public/index.html, public/r/*/index.html. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-07T17:59:46Z",
+ "count": 3,
+ "not_in_central": [
+  "EV-0513",
+  "EV-0600",
+  "EV-0601",
+  "EV-0602",
+  "EV-0603",
+  "EV-0604",
+  "EV-0605",
+  "EV-0606"
+ ],
+ "items": {
+  "EV-0174": {
+   "id": "EV-0174",
+   "kind": "evidence",
+   "title": "NPCC response to FOI request 3156/2026: no information within scope identified",
+   "date_display": "16 September 2026",
+   "date_sort": "2026-09-16",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0183": {
+   "id": "EV-0183",
+   "kind": "evidence",
+   "title": "NPCC internal review decisions 3157/2026 and 3176/2026",
+   "date_display": "29 September 2026",
+   "date_sort": "2026-09-29",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0191": {
+   "id": "EV-0191",
+   "kind": "evidence",
+   "title": "NPCC FOI 3065/2026 response on search disclosure (Great House Farm / Llandough searches)",
+   "date_display": "9 October 2026",
+   "date_sort": "2026-10-09",
+   "status": "HELD",
+   "page": null
+  }
+ }
+}
