@@ -1,5 +1,5 @@
 name: sync-split-repos
-# For every app in split-repos.json whose mode is "split-repo", copy the new repository's main into its old branch here
+# For split-repo apps not deployed directly from their own repository, copy the new repository's main into the old branch here
 # (one branch, depth 1; .github, README.md and SPLIT.json are left as they are), so the live build and every old path keep
 # working after a webapp moves to its own repository. Apps in "mirror" mode are skipped (the new repository copies from
 # here instead). For section/<id> branches the job then asks sections-ci to pin the new tip (a push made with this job's
@@ -45,7 +45,7 @@ jobs:
           for a in json.load(open('split-repos.json')).get('apps', []):
               if only and a.get('repo') != only:
                   continue
-              if a.get('mode') == 'split-repo' and a.get('old_branch'):
+              if a.get('mode') == 'split-repo' and a.get('old_branch') and a.get('deploy') != 'repo':
                   print(a['repo'], a['old_branch'], a.get('min_files', 2))
           PY
           [ -s /tmp/apps.txt ] || { echo "no app in split-repo mode${ONLY:+ matching $ONLY}"; exit 0; }
