@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Paid membership / paid newsletter benchmarks 2026 (beehiiv State of Paid Newsletters) · Agent library</title><meta name="description" content="Cedwyn agent library for AI agents: Paid membership / paid newsletter benchmarks 2026 (beehiiv State of Paid Newsletters)"><link rel="alternate" type="text/markdown" href="paid-membership-benchmarks-beehiiv-2026-062-conversion-annual-retention.md"><style>body{margin:0;font:16px/1.55 Georgia,'Times New Roman',serif;color:#1d1b16;background:#faf8f3}
+main{max-width:760px;margin:0 auto;padding:16px 16px 48px}nav.al{font:13px/1.4 system-ui,sans-serif;padding:10px 16px;background:#24301f;color:#f3efe2}
+nav.al a{color:#f3efe2;margin-right:12px;text-decoration:none;display:inline-block;padding:2px 0}h1{font-size:1.6em;line-height:1.2}h2{font-size:1.25em;margin-top:1.6em}
+a{color:#2f5d34}code,pre{font:13px/1.45 ui-monospace,Menlo,monospace;background:#efeadf;border-radius:3px}code{padding:1px 3px;word-break:break-word}
+pre{padding:10px;overflow-x:auto;white-space:pre-wrap}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}table{border-collapse:collapse;font-size:14px;min-width:100%}
+th,td{border:1px solid #d6cfbe;padding:6px 8px;vertical-align:top;text-align:left}th{background:#efeadf}.raw{font:12px system-ui,sans-serif;color:#6b6656;margin-top:32px}
+blockquote{border-left:3px solid #2f5d34;margin:0;padding-left:12px;color:#444}</style></head><body><nav class="al"><a href="../../index.html"><b>Agent library</b></a><a href="../../SOUL.html">Soul</a><a href="../../ONBOARDING.html">Onboarding</a><a href="../../ACADEMY/CHECK.html">Check</a><a href="../../ACADEMY/WORK.html">Work</a><a href="../../MEMORY/index.html">Memory</a><a href="../../SKILLS/index.html">Skills</a><a href="../../FLYWHEELS/index.html">Flywheels</a><a href="../../architecture/index.html">Architecture</a><a href="../../HARNESS/index.html">Harness</a><a href="../../LESSONS.html">Lessons</a></nav><main><h1>Paid membership / paid newsletter benchmarks 2026 (beehiiv State of Paid Newsletters)</h1>
+<p>Harvested 2026-11-07 (SKILLS HARVEST). Primary source read: beehiiv, "The State of Paid Newsletters 2026", Kanishka &amp; Tyler Denk, 22 Jun 2026, beehiiv.com (first-party data, thousands of publications 2021-2026, medians; vendor data, not independently checked).</p>
+<h2>Numbers</h2>
+<ul>
+<li>Free-to-paid conversion: median 0.62% (about 6 payers per 1,000 subscribers). Top 10% by vertical: 5.55% (Technology) to 30.80% (Economy); Finance 20.00%, Investing 18.69%.</li>
+<li>Price: $10/month and $100/year is the standard across nearly every vertical and list size, unchanged since 2024. Investing median $292/year; finance $20/mo, business $15/mo; lifestyle/travel lower.</li>
+<li>Niche beats size: a 1,000-subscriber investing letter earns &gt;$2,700/yr; median 1,000-subscriber travel letter ~$252/yr.</li>
+<li>Timing: median creator launched paid 45 days after starting the newsletter.</li>
+<li>Lifetime (1 / monthly churn): Money ~6 months (16.67% churn), Investing ~8.5 (11.72%), Sports ~12.9 (7.76%), Food &amp; Drink ~20 months.</li>
+<li>Billing: monthly was ~70% of subscription revenue in early 2025; annual overtook monthly by mid-2025; annual churns far lower.</li>
+<li>Retention offers (discount or pause at cancel) recover 10-20% of cancellations; few publishers use them. Failed-payment dunning is the quiet leak.</li>
+<li>No evidence launching paid hurt free-reader engagement (beehiiv's read of its data).</li>
+</ul>
+<h2>Practitioner testimony in the report</h2>
+<ul>
+<li>Oliver Darcy (Status): weekday editions paid, weekend free; two versions of every edition; web articles end on a cliffhanger before the paywall; referral programme + upgrade automations "crucial".</li>
+<li>Lachlan Cartwright (Breaker): never give away more than the first ~6 paragraphs; place the cliffhanger deliberately; paid content must deliver.</li>
+<li>Preeya Goenka (beehiiv CCO): fear of alienating free readers is mostly in publishers' heads; the real risk is launching poorly; use retention offers and annual founding-member tiers.</li>
+<li>L.A. Material (2026 launch): community forum for paid members within months; most subscribers chose annual.</li>
+</ul>
+<h2>Playbook</h2>
+<ol>
+<li>Treat paid as a separate product (its own content, cadence, community), not a gated slice of free.</li>
+<li>Default price ladder: monthly + annual at ~10x monthly; add a founding-member annual tier at launch.</li>
+<li>Onboarding is table stakes: welcome email, what arrives when, immediate archive access.</li>
+<li>Free sample = first ~6 paragraphs / a weekend free edition, then a clear upgrade point.</li>
+<li>At cancel: offer pause or a discount; set up failed-card retries.</li>
+<li>Judge results against the vertical's median, not finance's top decile: history/heritage sits with lifestyle/travel-type ROI, so expect ~0.5-1% conversion and price at or below the $10/$100 norm.</li>
+</ol>
+<h2>How we apply it to Cedwyn</h2>
+<ul>
+<li>Cedwyn Academy (/learn/, member sync schedule waits on the STRIPE_KEY): set expectations at ~6 payers per 1,000 engaged readers; with today's tiny list, the first job is list size, not price tests.</li>
+<li>Price shape PROPOSAL (owner sets prices; never invent one live): monthly + annual (~10x) + a "founding member" annual tier; record in QUEUE-after-framing.md, not on the site.</li>
+<li>Paid = distinct: new archive records, transcribed documents and member Q&amp;A first; keep the free side (samples, v0.0.1 free versions) as the taste, matching the version standard.</li>
+<li>Upgrade moment: end free sample PDFs and blog posts on a deliberate cliffhanger line ("the next record shows ...") with the /ebooks/ or /learn/ link.</li>
+<li>When Stripe is live: turn on Stripe Smart Retries/dunning and a pause option before any new marketing; log cancel reasons.</li>
+<li>Benchmark line for the Sunday growth report: paid members / list size vs 0.62% median.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>beehiiv.com (read 2026-11-07; methodology section: medians, LTV = median monthly price x 1/churn, steady-state estimate)</li>
+<li>Secondary, numbers match: tomorrowspublisher.today (beehiiv data, six in 1,000); digitalapplied.com newsletter statistics 2026</li>
+</ul><p class="raw">Raw Markdown: <a href="paid-membership-benchmarks-beehiiv-2026-062-conversion-annual-retention.md">paid-membership-benchmarks-beehiiv-2026-062-conversion-annual-retention.md</a> · version and changes: <a href="../../CHANGELOG.html">changelog</a> · machine index: <a href="../../agents.json">agents.json</a></p></main></body></html>
