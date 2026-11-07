@@ -1,24 +1,29 @@
 {
  "_split_source": {
+  "nomenclature": {
+   "repo": "unclehowell/cedwyn-nomenclature",
+   "how": "repo:unclehowell/cedwyn-nomenclature/public",
+   "files": 36
+  },
   "records": {
    "repo": "unclehowell/cedwyn-records",
    "how": "repo:unclehowell/cedwyn-records/root",
    "files": 12
   },
-  "nomenclature": {
-   "repo": "unclehowell/cedwyn-nomenclature",
-   "how": "repo:unclehowell/cedwyn-nomenclature/public",
-   "files": 36
+  "chubut-h3": {
+   "repo": "unclehowell/cedwyn-chubut-h3",
+   "how": "repo:unclehowell/cedwyn-chubut-h3/root",
+   "files": 15
   },
   "tithe-h3": {
    "repo": "unclehowell/cedwyn-tithe-h3",
    "how": "repo:unclehowell/cedwyn-tithe-h3/root",
    "files": 22
   },
-  "chubut-h3": {
-   "repo": "unclehowell/cedwyn-chubut-h3",
-   "how": "repo:unclehowell/cedwyn-chubut-h3/root",
-   "files": 15
+  "maps": {
+   "repo": "unclehowell/cedwyn-maps",
+   "how": "repo:unclehowell/cedwyn-maps/public",
+   "files": 167
   },
   "cloudflare": {
    "repo": "unclehowell/cedwyn-cloudflare",
@@ -30,25 +35,20 @@
    "how": "repo:unclehowell/cedwyn-analytics/root",
    "files": 9
   },
-  "maps": {
-   "repo": "unclehowell/cedwyn-maps",
-   "how": "repo:unclehowell/cedwyn-maps/public",
-   "files": 167
-  },
   "spill": {
    "repo": "unclehowell/cedwyn-spill",
    "how": "repo:unclehowell/cedwyn-spill/root",
    "files": 11
   },
-  "docs": {
-   "repo": "unclehowell/cedwyn-docs",
-   "how": "repo:unclehowell/cedwyn-docs/root",
-   "files": 4210
-  },
   "wiki": {
    "repo": "unclehowell/cedwyn-wiki",
    "how": "repo:unclehowell/cedwyn-wiki/root",
    "files": 1140
+  },
+  "docs": {
+   "repo": "unclehowell/cedwyn-docs",
+   "how": "repo:unclehowell/cedwyn-docs/root",
+   "files": 4210
   },
   "infographic": {
    "repo": "unclehowell/cedwyn-infographic",
@@ -78,22 +78,22 @@
   "courtdrills": {
    "repo": "unclehowell/cedwyn-courtdrills",
    "how": "repo:unclehowell/cedwyn-courtdrills/public",
-   "files": 7
+   "files": 8
   },
-  "fcg": {
-   "repo": "unclehowell/cedwyn-fcg",
-   "how": "repo:unclehowell/cedwyn-fcg/root",
-   "files": 157
+  "oldbill": {
+   "repo": "unclehowell/cedwyn-oldbill",
+   "how": "repo:unclehowell/cedwyn-oldbill/public",
+   "files": 8
   },
   "story": {
    "repo": "unclehowell/cedwyn-story",
    "how": "repo:unclehowell/cedwyn-story/static",
    "files": 729
   },
-  "oldbill": {
-   "repo": "unclehowell/cedwyn-oldbill",
-   "how": "repo:unclehowell/cedwyn-oldbill/public",
-   "files": 7
+  "fcg": {
+   "repo": "unclehowell/cedwyn-fcg",
+   "how": "repo:unclehowell/cedwyn-fcg/root",
+   "files": 157
   },
   "accounts": {
    "repo": "unclehowell/cedwyn-accounts",
@@ -105,35 +105,35 @@
    "how": "repo:unclehowell/cedwyn-authorities/root",
    "files": 12
   },
-  "review": {
-   "repo": "unclehowell/cedwyn-review",
-   "how": "repo:unclehowell/cedwyn-review/root",
-   "files": 12
+  "wayback": {
+   "repo": "unclehowell/cedwyn-wayback",
+   "how": "repo:unclehowell/cedwyn-wayback/static",
+   "files": 9
   },
   "wdtk": {
    "repo": "unclehowell/cedwyn-wdtk",
    "how": "repo:unclehowell/cedwyn-wdtk/public",
    "files": 20
   },
-  "wayback": {
-   "repo": "unclehowell/cedwyn-wayback",
-   "how": "repo:unclehowell/cedwyn-wayback/static",
-   "files": 9
+  "review": {
+   "repo": "unclehowell/cedwyn-review",
+   "how": "repo:unclehowell/cedwyn-review/root",
+   "files": 12
   },
-  "projects": {
-   "repo": "unclehowell/cedwyn-projects",
-   "how": "repo:unclehowell/cedwyn-projects/static",
-   "files": 482
+  "qa": {
+   "repo": "unclehowell/cedwyn-qa",
+   "how": "repo:unclehowell/cedwyn-qa/static",
+   "files": 730
   },
   "meeting": {
    "repo": "unclehowell/cedwyn-meeting",
    "how": "repo:unclehowell/cedwyn-meeting/static",
    "files": 720
   },
-  "qa": {
-   "repo": "unclehowell/cedwyn-qa",
-   "how": "repo:unclehowell/cedwyn-qa/static",
-   "files": 730
+  "projects": {
+   "repo": "unclehowell/cedwyn-projects",
+   "how": "repo:unclehowell/cedwyn-projects/static",
+   "files": 482
   },
   "app": {
    "repo": "unclehowell/cedwyn-app",
@@ -150,6 +150,11 @@
    "how": "repo:unclehowell/cedwyn-watchtower/public",
    "files": 15
   },
+  "emails": {
+   "repo": "unclehowell/cedwyn-emails",
+   "how": "repo:unclehowell/cedwyn-emails/public",
+   "files": 7
+  },
   "email": {
    "repo": "unclehowell/cedwyn-emails",
    "how": "repo:unclehowell/cedwyn-emails/public",
@@ -159,11 +164,6 @@
    "repo": "unclehowell/cedwyn-fb",
    "how": "repo:unclehowell/cedwyn-fb/site",
    "files": 580
-  },
-  "emails": {
-   "repo": "unclehowell/cedwyn-emails",
-   "how": "repo:unclehowell/cedwyn-emails/public",
-   "files": 7
   },
   "estate": {
    "repo": "unclehowell/cedwyn-estate",
@@ -200,55 +200,46 @@
    "how": "repo:unclehowell/cedwyn-familytree/public",
    "files": 2
   },
-  "that-old-chestnut": {
-   "repo": "unclehowell/cedwyn-that-old-chestnut",
-   "how": "repo:unclehowell/cedwyn-that-old-chestnut/public",
-   "files": 8
-  },
   "kissed-frogs": {
    "repo": "unclehowell/cedwyn-kissed-frogs",
    "how": "repo:unclehowell/cedwyn-kissed-frogs/public",
    "files": 56
+  },
+  "that-old-chestnut": {
+   "repo": "unclehowell/cedwyn-that-old-chestnut",
+   "how": "repo:unclehowell/cedwyn-that-old-chestnut/public",
+   "files": 8
   },
   "forensic": {
    "repo": "unclehowell/cedwyn-forensic",
    "how": "repo:unclehowell/cedwyn-forensic/root",
    "files": 143
   },
-  "blog": {
-   "repo": "unclehowell/cedwyn-blog",
-   "how": "repo:unclehowell/cedwyn-blog/public",
-   "files": 2
-  },
   "whattheydontsay": {
    "repo": "unclehowell/cedwyn-whattheydontsay",
    "how": "repo:unclehowell/cedwyn-whattheydontsay/public",
    "files": 4
   },
-  "mr-wolf": {
-   "repo": "unclehowell/cedwyn-mr-wolf",
-   "how": "repo:unclehowell/cedwyn-mr-wolf/root",
-   "files": 9
+  "blog": {
+   "repo": "unclehowell/cedwyn-blog",
+   "how": "repo:unclehowell/cedwyn-blog/public",
+   "files": 2
   },
   "settings": {
    "repo": "unclehowell/cedwyn-settings",
    "how": "repo:unclehowell/cedwyn-settings/public",
    "files": 3
   },
+  "mr-wolf": {
+   "repo": "unclehowell/cedwyn-mr-wolf",
+   "how": "repo:unclehowell/cedwyn-mr-wolf/root",
+   "files": 9
+  },
   "nft-art": {
    "repo": "unclehowell/cedwyn-nft-art",
    "how": "repo:unclehowell/cedwyn-nft-art/public",
    "files": 476
   }
- },
- "records": {
-  "how": "repo:unclehowell/cedwyn-records/root",
-  "files": 12,
-  "bytes": 27595,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 1,
-  "split_repo": "unclehowell/cedwyn-records"
  },
  "nomenclature": {
   "how": "repo:unclehowell/cedwyn-nomenclature/public",
@@ -259,6 +250,24 @@
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-nomenclature"
  },
+ "records": {
+  "how": "repo:unclehowell/cedwyn-records/root",
+  "files": 12,
+  "bytes": 27595,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 1,
+  "split_repo": "unclehowell/cedwyn-records"
+ },
+ "chubut-h3": {
+  "how": "repo:unclehowell/cedwyn-chubut-h3/root",
+  "files": 15,
+  "bytes": 506469,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 1,
+  "split_repo": "unclehowell/cedwyn-chubut-h3"
+ },
  "tithe-h3": {
   "how": "repo:unclehowell/cedwyn-tithe-h3/root",
   "files": 22,
@@ -268,14 +277,14 @@
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-tithe-h3"
  },
- "chubut-h3": {
-  "how": "repo:unclehowell/cedwyn-chubut-h3/root",
-  "files": 15,
-  "bytes": 504238,
+ "maps": {
+  "how": "repo:unclehowell/cedwyn-maps/public",
+  "files": 167,
+  "bytes": 38392766,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 1,
-  "split_repo": "unclehowell/cedwyn-chubut-h3"
+  "secs": 2,
+  "split_repo": "unclehowell/cedwyn-maps"
  },
  "cloudflare": {
   "how": "repo:unclehowell/cedwyn-cloudflare/root",
@@ -294,15 +303,6 @@
   "dropped_over_24MB": [],
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-analytics"
- },
- "maps": {
-  "how": "repo:unclehowell/cedwyn-maps/public",
-  "files": 167,
-  "bytes": 38392766,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 3,
-  "split_repo": "unclehowell/cedwyn-maps"
  },
  "spill": {
   "how": "repo:unclehowell/cedwyn-spill/root",
@@ -377,12 +377,21 @@
  },
  "courtdrills": {
   "how": "repo:unclehowell/cedwyn-courtdrills/public",
-  "files": 7,
-  "bytes": 78207,
+  "files": 8,
+  "bytes": 79573,
   "has_index": true,
   "dropped_over_24MB": [],
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-courtdrills"
+ },
+ "oldbill": {
+  "how": "repo:unclehowell/cedwyn-oldbill/public",
+  "files": 8,
+  "bytes": 321557,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 0,
+  "split_repo": "unclehowell/cedwyn-oldbill"
  },
  "fcg": {
   "how": "repo:unclehowell/cedwyn-fcg/root",
@@ -393,22 +402,13 @@
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-fcg"
  },
- "oldbill": {
-  "how": "repo:unclehowell/cedwyn-oldbill/public",
-  "files": 7,
-  "bytes": 319071,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 1,
-  "split_repo": "unclehowell/cedwyn-oldbill"
- },
  "accounts": {
   "how": "repo:unclehowell/cedwyn-accounts/public",
   "files": 6,
   "bytes": 90036,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 1,
+  "secs": 0,
   "split_repo": "unclehowell/cedwyn-accounts"
  },
  "authorities": {
@@ -420,23 +420,23 @@
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-authorities"
  },
- "review": {
-  "how": "repo:unclehowell/cedwyn-review/root",
-  "files": 12,
-  "bytes": 28087,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 1,
-  "split_repo": "unclehowell/cedwyn-review"
- },
  "wdtk": {
   "how": "repo:unclehowell/cedwyn-wdtk/public",
   "files": 20,
   "bytes": 142722,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 1,
+  "secs": 0,
   "split_repo": "unclehowell/cedwyn-wdtk"
+ },
+ "review": {
+  "how": "repo:unclehowell/cedwyn-review/root",
+  "files": 12,
+  "bytes": 28087,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 0,
+  "split_repo": "unclehowell/cedwyn-review"
  },
  "_snapshot": {
   "research": {
@@ -459,7 +459,23 @@
  },
  "_build_logs": {
   "docs": "[docs] RULE ghf_evidence/ev_0284: pdf [en] url must be https://cedwyn.bucklerfamily.estate/wayback/pdf/docs-archive/ghf_evidence/ev_0284/en/2026-11-01_EV-0284_ghf_evidence-ev_0284_en_v1-0-0.pdf\n[docs] RULE ghf_evidence/ev_0284: banned word \"unverified\" in the text\n2 rule problem(s); see DOCS-STANDARD.md\n",
-  "story": "vsbuckler@0.1.1 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32m\u2713\u001b[39m 35 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                \u001b[39m\u001b[1m\u001b[2m  3.56 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip:   1.41 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[2massets/\u001b[22m\u001b[35mmain-BybMKBdS.css  \u001b[39m\u001b[1m\u001b[2m 30.18 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip:   6.88 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[2massets/\u001b[22m\u001b[36mindex-Yz4I5QJe.js  \u001b[39m\u001b[1m\u001b[33m807.04 kB\u001b[39m\u001b[22m\u001b[2m \u2502 gzip: 187.32 kB\u001b[22m\n\u001b[32m\u2713 built in 1.01s\u001b[39m\nCopied storyboard media into dist/media\noptional|peer> ...]]\nnpm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]\nnpm error [--no-bin-links] [--no-fund] [--dry-run]\nnpm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm error [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm error\nnpm error aliases: clean-install, ic, install-clean, isntall-clean\nnpm error\nnpm error Run \"npm help ci\" for more info\nnpm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-11-07T16_42_37_972Z-debug-0.log\n\u001b[33m\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Frollupjs.org%2Fconfiguration-options%2F%23output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n"
+  "story": "vsbuckler@0.1.1 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32m\u2713\u001b[39m 35 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                \u001b[39m\u001b[1m\u001b[2m  3.56 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip:   1.41 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[2massets/\u001b[22m\u001b[35mmain-BybMKBdS.css  \u001b[39m\u001b[1m\u001b[2m 30.18 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip:   6.88 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[2massets/\u001b[22m\u001b[36mindex-Yz4I5QJe.js  \u001b[39m\u001b[1m\u001b[33m807.04 kB\u001b[39m\u001b[22m\u001b[2m \u2502 gzip: 187.32 kB\u001b[22m\n\u001b[32m\u2713 built in 697ms\u001b[39m\nCopied storyboard media into dist/media\noptional|peer> ...]]\nnpm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]\nnpm error [--no-bin-links] [--no-fund] [--dry-run]\nnpm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm error [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm error\nnpm error aliases: clean-install, ic, install-clean, isntall-clean\nnpm error\nnpm error Run \"npm help ci\" for more info\nnpm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-11-07T17_55_53_585Z-debug-0.log\n\u001b[33m\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Frollupjs.org%2Fconfiguration-options%2F%23output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n"
+ },
+ "meeting": {
+  "how": "branch",
+  "files": 21,
+  "bytes": 1478698,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 3
+ },
+ "qa": {
+  "how": "branch+overlay",
+  "files": 781,
+  "bytes": 69908186,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 3
  },
  "projects": {
   "how": "branch",
@@ -468,14 +484,6 @@
   "has_index": true,
   "dropped_over_24MB": [],
   "secs": 2
- },
- "meeting": {
-  "how": "branch",
-  "files": 21,
-  "bytes": 1478698,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 4
  },
  "app": {
   "how": "repo:unclehowell/cedwyn-app/root",
@@ -486,21 +494,13 @@
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-app"
  },
- "qa": {
-  "how": "branch+overlay",
-  "files": 781,
-  "bytes": 69908186,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 4
- },
  "chat": {
   "how": "repo:unclehowell/cedwyn-chat/root",
   "files": 8,
   "bytes": 42060,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 0,
+  "secs": 1,
   "split_repo": "unclehowell/cedwyn-chat"
  },
  "watchtower": {
@@ -512,7 +512,7 @@
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-watchtower"
  },
- "email": {
+ "emails": {
   "how": "repo:unclehowell/cedwyn-emails/public",
   "files": 7,
   "bytes": 712227,
@@ -521,7 +521,7 @@
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-emails"
  },
- "emails": {
+ "email": {
   "how": "repo:unclehowell/cedwyn-emails/public",
   "files": 7,
   "bytes": 712227,
@@ -539,6 +539,14 @@
   "secs": 2,
   "split_repo": "unclehowell/cedwyn-fb"
  },
+ "wayback": {
+  "how": "branch",
+  "files": 6067,
+  "bytes": 941919316,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 11
+ },
  "estate": {
   "how": "repo:unclehowell/cedwyn-estate/root",
   "files": 4,
@@ -547,15 +555,6 @@
   "dropped_over_24MB": [],
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-estate"
- },
- "directory": {
-  "how": "repo:unclehowell/cedwyn-directory/public",
-  "files": 318,
-  "bytes": 1098617,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 1,
-  "split_repo": "unclehowell/cedwyn-directory"
  },
  "wales": {
   "how": null,
@@ -571,7 +570,16 @@
   "bytes": 2312485,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 2
+  "secs": 1
+ },
+ "directory": {
+  "how": "repo:unclehowell/cedwyn-directory/public",
+  "files": 318,
+  "bytes": 1098617,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 1,
+  "split_repo": "unclehowell/cedwyn-directory"
  },
  "patagonia": {
   "how": "repo:unclehowell/cedwyn-patagonia/root",
@@ -582,14 +590,6 @@
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-patagonia"
  },
- "terrain": {
-  "how": "crawl",
-  "files": 6,
-  "bytes": 223582,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 1
- },
  "cyberspace": {
   "how": "repo:unclehowell/cedwyn-cyberspace/root",
   "files": 4,
@@ -598,14 +598,6 @@
   "dropped_over_24MB": [],
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-cyberspace"
- },
- "wayback": {
-  "how": "branch",
-  "files": 6067,
-  "bytes": 941915169,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 15
  },
  "shop": {
   "how": "repo:unclehowell/cedwyn-shop/public",
@@ -622,7 +614,7 @@
   "bytes": 801073,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 1,
+  "secs": 0,
   "split_repo": "unclehowell/cedwyn-documentary"
  },
  "familytree": {
@@ -631,17 +623,8 @@
   "bytes": 57942,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 1,
+  "secs": 0,
   "split_repo": "unclehowell/cedwyn-familytree"
- },
- "that-old-chestnut": {
-  "how": "repo:unclehowell/cedwyn-that-old-chestnut/public",
-  "files": 8,
-  "bytes": 162287,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 1,
-  "split_repo": "unclehowell/cedwyn-that-old-chestnut"
  },
  "kissed-frogs": {
   "how": "repo:unclehowell/cedwyn-kissed-frogs/public",
@@ -649,8 +632,25 @@
   "bytes": 193680,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 1,
+  "secs": 0,
   "split_repo": "unclehowell/cedwyn-kissed-frogs"
+ },
+ "terrain": {
+  "how": "crawl",
+  "files": 6,
+  "bytes": 223582,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 1
+ },
+ "that-old-chestnut": {
+  "how": "repo:unclehowell/cedwyn-that-old-chestnut/public",
+  "files": 8,
+  "bytes": 162287,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 0,
+  "split_repo": "unclehowell/cedwyn-that-old-chestnut"
  },
  "forensic": {
   "how": "repo:unclehowell/cedwyn-forensic/root",
@@ -661,15 +661,6 @@
   "secs": 1,
   "split_repo": "unclehowell/cedwyn-forensic"
  },
- "blog": {
-  "how": "repo:unclehowell/cedwyn-blog/public",
-  "files": 2,
-  "bytes": 5579,
-  "has_index": true,
-  "dropped_over_24MB": [],
-  "secs": 0,
-  "split_repo": "unclehowell/cedwyn-blog"
- },
  "whattheydontsay": {
   "how": "repo:unclehowell/cedwyn-whattheydontsay/public",
   "files": 4,
@@ -679,14 +670,14 @@
   "secs": 0,
   "split_repo": "unclehowell/cedwyn-whattheydontsay"
  },
- "mr-wolf": {
-  "how": "repo:unclehowell/cedwyn-mr-wolf/root",
-  "files": 9,
-  "bytes": 75846,
+ "blog": {
+  "how": "repo:unclehowell/cedwyn-blog/public",
+  "files": 2,
+  "bytes": 5579,
   "has_index": true,
   "dropped_over_24MB": [],
   "secs": 0,
-  "split_repo": "unclehowell/cedwyn-mr-wolf"
+  "split_repo": "unclehowell/cedwyn-blog"
  },
  "releases": {
   "how": "branch",
@@ -705,6 +696,15 @@
   "secs": 0,
   "split_repo": "unclehowell/cedwyn-settings"
  },
+ "mr-wolf": {
+  "how": "repo:unclehowell/cedwyn-mr-wolf/root",
+  "files": 9,
+  "bytes": 75846,
+  "has_index": true,
+  "dropped_over_24MB": [],
+  "secs": 0,
+  "split_repo": "unclehowell/cedwyn-mr-wolf"
+ },
  "nft-art": {
   "how": "repo:unclehowell/cedwyn-nft-art/public",
   "files": 476,
@@ -720,7 +720,7 @@
   "bytes": 6701439,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 17
+  "secs": 13
  },
  "docs": {
   "how": "crawl(fallback)",
@@ -728,6 +728,6 @@
   "bytes": 21268288,
   "has_index": true,
   "dropped_over_24MB": [],
-  "secs": 154
+  "secs": 102
  }
 }
