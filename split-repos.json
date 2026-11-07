@@ -1,19 +1,21 @@
 {
-  "note": "Webapps in their own repositories (REPO SPLIT #188). mode 'mirror': the old branch is source; the separate repo copies from it. mode 'split-repo': the separate repo is source; sync-split-repos.yml copies it back into the old branch so the live build and paths keep working. Two writer-backed apps remain temporarily in mirror mode until their writers are migrated; no branch is deleted. mode 'deploy=repo' (step 3 / #311): assemble.py reads the dedicated repository main directly; the old branch is only a fallback.",
+  "note": "Webapps have dedicated repositories. mode 'split-repo' means the dedicated repo is the source; the old branch is retained only as a legacy copy. deploy='repo' means the estate build reads the dedicated repo directly, fails closed if that source cannot produce the page, and does not sync app content back into the old Cedwyn branch. mode 'mirror' remains only for the two writer-backed apps whose writers have not yet been migrated. DATRO is a separate private security/technology project and is not mirrored into this repository; existing legacy branches are retained pending a verified cleanup. Domains and DNS are independent and are not changed by this manifest.",
   "apps": [
     {
       "app": "Wales 3D world",
       "repo": "unclehowell/cedwyn-wales-3d",
       "old_branch": "section/wales-3d",
       "page": "/wales/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Argentina Tŷ Mawr 3D world",
       "repo": "unclehowell/cedwyn-argentina-3d",
       "old_branch": "section/argentina-3d",
       "page": "/argentina/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Tithe H3 map",
@@ -44,7 +46,8 @@
       "repo": "unclehowell/cedwyn-dartboard",
       "old_branch": "dartboard",
       "page": "/dartboard/",
-      "mode": "split-repo"
+      "mode": "split-repo",
+      "deploy": "repo"
     },
     {
       "app": "Analytics",
@@ -514,7 +517,8 @@
       "old_branch": "releases",
       "page": "/releases/",
       "mode": "split-repo",
-      "min_files": 1
+      "min_files": 1,
+      "deploy": "repo"
     }
   ]
 }
