@@ -1,6 +1,6 @@
 {
  "version": "1.0.0",
- "added_in_own_footer_or_before_agent_footer": 6206,
+ "added_in_own_footer_or_before_agent_footer": 11226,
  "no_footer_left_alone": 2754,
  "already": 0,
  "sample": [
@@ -19,10 +19,10 @@
   "hubspot/index.html",
   "whattheydontsay/index.html",
   "docs/index.html",
+  "docs/404.html",
   "infographic/index.html",
   "that-old-chestnut/index.html",
   "projects/index.html",
-  "projects/404.html",
-  "story/index.html"
+  "projects/404.html"
  ]
 }

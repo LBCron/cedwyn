@@ -1,32 +1,32 @@
 {
- "db_version": "d1c4eadeaa47",
- "paths_served_from_db": 7776,
- "blobs": 4814,
+ "db_version": "d9b56fac15f2",
+ "paths_served_from_db": 7502,
+ "blobs": 4905,
  "files_dropped": {
   "document": 3267,
-  "image": 1645,
-  "data": 1436,
+  "image": 1460,
+  "data": 1449,
   "audio": 84
  },
  "bytes_dropped": {
   "document": 1254035789,
-  "image": 135040636,
-  "data": 38233396,
+  "image": 129720167,
+  "data": 39285521,
   "audio": 14922925
  },
- "bytes_dropped_total": 1442232746,
+ "bytes_dropped_total": 1437964402,
  "files_kept_as_well": {
-  "image": 1028,
-  "data": 108,
+  "image": 1092,
+  "data": 109,
   "document": 12
  },
  "kept_why": {
-  "named in page markup": 669,
+  "named in page markup": 732,
   "link/meta tag": 45,
-  "css url()": 27,
+  "css url()": 28,
   "download file (.csv opened by a plain link, outside the service worker)": 24,
   "fetched by script": 17,
-  "fetched by browsers outside a service worker": 15,
+  "fetched by browsers outside a service worker": 16,
   "webapp database / A2UI surface (read without a service worker)": 19,
   "page without runtime": 48,
   "flower gallery first-visit image/download": 268,
@@ -34,31 +34,23 @@
  },
  "kept_examples": [
   [
-   "/_blob/01215090a8057990.webp",
+   "/_blob/03f398248225aa98.svg",
    "named in page markup"
   ],
   [
-   "/_blob/0871403295ffba7f.svg",
+   "/_blob/077eca10101a81b9.svg",
    "named in page markup"
   ],
   [
-   "/_blob/08892fdd6e55c2ef.webp",
+   "/_blob/079ab26f1bf9d91a.svg",
    "named in page markup"
   ],
   [
-   "/_blob/08ba1059e0e99495.webp",
-   "named in page markup"
-  ],
-  [
-   "/_blob/09ecb5836d3365be.svg",
+   "/_blob/09b1c36618c72fb9.png",
    "named in page markup"
   ],
   [
    "/_blob/0b3bad02dc4b1fa5.jpg",
-   "named in page markup"
-  ],
-  [
-   "/_blob/0c05acc349313132.webp",
    "named in page markup"
   ],
   [
@@ -70,15 +62,7 @@
    "link/meta tag"
   ],
   [
-   "/_blob/154bdf16a3f2e92e.svg",
-   "named in page markup"
-  ],
-  [
-   "/_blob/1695f4c24ab5b9db.webp",
-   "named in page markup"
-  ],
-  [
-   "/_blob/186ce932afaa0080.svg",
+   "/_blob/128ffd47a3d41c85.svg",
    "named in page markup"
   ],
   [
@@ -86,35 +70,51 @@
    "named in page markup"
   ],
   [
-   "/_blob/18b5a9f72c5c8102.svg",
-   "named in page markup"
-  ],
-  [
-   "/_blob/1dace2d48a483486.webp",
-   "named in page markup"
-  ],
-  [
    "/_blob/201c9de244beae01.jpg",
    "named in page markup"
   ],
   [
-   "/_blob/2270bda3fca01361.webp",
+   "/_blob/2032ec19ac6fed80.svg",
    "named in page markup"
   ],
   [
-   "/_blob/2ececafbd1e8a8b0.webp",
-   "named in page markup"
-  ],
-  [
-   "/_blob/30eef231b833b1b8.webp",
+   "/_blob/2132bc0a5d846374.svg",
    "named in page markup"
   ],
   [
    "/_blob/328d71e5fad208f8.png",
    "link/meta tag"
+  ],
+  [
+   "/_blob/3a378de7a5cccc7a.svg",
+   "named in page markup"
+  ],
+  [
+   "/_blob/441330c6c1ef82e4.svg",
+   "named in page markup"
+  ],
+  [
+   "/_blob/461d2466a365edbf.webp",
+   "named in page markup"
+  ],
+  [
+   "/_blob/4ce409d46552a17d.jpg",
+   "named in page markup"
+  ],
+  [
+   "/_blob/5021aab3ee4eed96.svg",
+   "named in page markup"
+  ],
+  [
+   "/_blob/50d69cde28e08e9f.jpg",
+   "named in page markup"
+  ],
+  [
+   "/_blob/51ea9dce8f15d163.svg",
+   "named in page markup"
   ]
  ],
  "changed_after_db_build_served_as_files": 0,
  "changed_examples": [],
- "indexed_without_file": 196
+ "indexed_without_file": 29
 }
