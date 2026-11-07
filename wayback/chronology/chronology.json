@@ -1,12 +1,12 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.39.0",
- "updated_utc": "2026-11-07T16:37Z",
- "count": 614,
+ "version": "1.40.0",
+ "updated_utc": "2026-11-07T16:41Z",
+ "count": 616,
  "by_category": {
   "heritage": 114,
   "press": 165,
-  "history": 46,
+  "history": 48,
   "legal": 134,
   "social": 4,
   "title": 80,
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 42
+  "spill": 44
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -95,6 +95,34 @@
    "sort": "1667-00-00",
    "id": "CH-0003",
    "date_display": "1667"
+  },
+  {
+   "date": "1671",
+   "event": "Hearth tax returns of 1671 and 1673 list seven households in the neighbouring parish of Cogan, as cited in the HER entry for the Cogan deserted medieval village (EV-0737). The returns themselves are not read here; no Llandough figure is given.",
+   "source": "Glamorgan-Gwent Archaeological Trust HER 1965194, Cogan Deserted Medieval Village (ADS catalogue copy, read 7 Nov 2026)",
+   "url": "https://archaeologydataservice.ac.uk/data-catalogue/resource/058444ae116661003b3b868b4882ee4a5a00594448d6f14bedee49e68c4b1a39",
+   "wayback": "",
+   "evidence": "EV-0737",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1671",
+   "id": "CH-0639",
+   "date_display": "1671–1673",
+   "spill": "GH-cedwyn-462"
+  },
+  {
+   "date": "1784",
+   "event": "An estate map of 1784 of the neighbouring parish of Cogan shows the church with four small cottages around an elongated green running east–west, and a substantial house south of the church, as described in the HER entry (EV-0737). The map’s archive reference and owner are not checked.",
+   "source": "Glamorgan-Gwent Archaeological Trust HER 1965194, Cogan Deserted Medieval Village (ADS catalogue copy, read 7 Nov 2026)",
+   "url": "https://archaeologydataservice.ac.uk/data-catalogue/resource/058444ae116661003b3b868b4882ee4a5a00594448d6f14bedee49e68c4b1a39",
+   "wayback": "",
+   "evidence": "EV-0737",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1784",
+   "id": "CH-0640",
+   "date_display": "1784",
+   "spill": "GH-cedwyn-462"
   },
   {
    "date": "1786-1832",
@@ -7782,6 +7810,14 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.40.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0639, CH-0640: Cogan hearth tax 1671–73 and the 1784 Cogan estate map, from HER 1965194 [GitHub cedwyn#462]",
+   "size": "616 events",
+   "price": "free",
+   "who": "Tab agent"
+  },
   {
    "version": "1.39.0",
    "date": "2026-11-07",
