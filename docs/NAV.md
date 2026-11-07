@@ -48,9 +48,13 @@ Owner, 7 Nov 2026: "Keep as 59 and where there's no webapps yet just have blank 
 
 It warns, without failing, when a slot is registered but not built, when a slot's address is a redirect source, or (1.3.0) when a slot of the 59 has neither a webapp nor a coming-soon placeholder.
 
+## One webapp, one number (1.4.0)
+A page with its own address that is a separate webapp never borrows another webapp's number. When a source theme merged into an area (site-areas.json "source_themes") is really its own webapp, give it a free slot with "slot": NN on its themes.json entry and remove slot NN from data/coming-soon.json; tools/site.py then lists it as its own nav entry and drops it from the area's aliases. The /wales/ and /argentina/ copies of one webapp share its number (same webapp, another language). Live check: work/nav-loop/check.py (cedwyn#497).
+
 ## Changelog
 | Version | Date | Change |
 |---|---|---|
+| 1.4.0 | 2026-11-07 | Owner (cedwyn#497): no two webapps may share a number. Merged source themes that are separate webapps with their own address got their own slots, taken from the coming-soon placeholders: /documentary/ 48 (was 7 with /story/), /nomenclature/ 49 and /records/ 50 (were 1 with /wiki/), /fb2/ 51 (was 9 with /fb/), /nft-art/ 52 and /cyberspace/ 53 (were 10 with /arcade/), /meeting/ 54 (was 17 with /authorities/), /emails/ 55 (was 26 with /email/). The area that held each one keeps its own address and number. Rule: a source theme that declares "slot" on its themes.json entry is its own nav entry and is no longer listed as the area's alias (tools/site.py). Coming-soon slots now 56–59. |
 | 1.3.0 | 2026-11-07 | Owner: keep the total at 59. Every empty slot is a blank "Coming soon" webapp from its own repository unclehowell/coming-soon-NN (slots 48–59 today; data/coming-soon.json, tools/coming_soon.py), so the chain is 59 long and reads "NN of 59". Rule for replacing a placeholder with a real webapp. Check warns on a slot with neither. |
 | 1.2.0 | 2026-11-07 | Owner: ‹ › beside "NN of 59" must open the next number down / up on every webapp, and the "This area is about …" headers must go. NN = place in the chain, TT = chain length (header, no-JS bar, menu numbers); every arrow opens the flat registry address; scope.js 1.2.0 drops the area card, the cross-scope lines and the hop. |
 | 1.1.1 | 2026-11-02 | `apex` is the flat path (`/wiki/`), read against https://bucklerfamily.estate; the absolute form was rewritten by the self-contained pass and failed build 41402080152. |

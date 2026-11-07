@@ -110,6 +110,7 @@
   },
   {
    "id": "records",
+   "slot": 50,
    "title": "Primary Records",
    "cy": "Cofnodion Sylfaenol",
    "es": "Registros Primarios",
@@ -158,6 +159,7 @@
   },
   {
    "id": "nomenclature",
+   "slot": 49,
    "title": "Nomenclature",
    "cy": "Enwau",
    "es": "Nomenclatura",
@@ -499,6 +501,7 @@
   },
   {
    "id": "meeting",
+   "slot": 54,
    "title": "The Council Chamber",
    "cy": "Siambr y Cyngor",
    "es": "La Sala del Consejo",
@@ -575,6 +578,7 @@
   },
   {
    "id": "fb2",
+   "slot": 51,
    "title": "farmbook 2 · Today",
    "cy": "farmbook 2 · Heddiw",
    "es": "farmbook 2 · Hoy",
@@ -605,6 +609,7 @@
   },
   {
    "id": "emails",
+   "slot": 55,
    "title": "The Post Office · Calendar",
    "cy": "Swyddfa’r Post · Calendr",
    "es": "La Oficina de Correos · Calendario",
@@ -710,6 +715,7 @@
   },
   {
    "id": "cyberspace",
+   "slot": 53,
    "title": "The Digital Estate",
    "cy": "Yr Ystâd Ddigidol",
    "es": "La Finca Digital",
@@ -740,6 +746,7 @@
   },
   {
    "id": "documentary",
+   "slot": 48,
    "title": "Cedwyn · documentary",
    "cy": "Cedwyn · rhaglen ddogfen",
    "es": "Cedwyn · documental",
@@ -804,6 +811,7 @@
   },
   {
    "id": "nft-art",
+   "slot": 52,
    "title": "The Garden Gallery",
    "cy": "Oriel yr Ardd",
    "es": "La Galería del Jardín",

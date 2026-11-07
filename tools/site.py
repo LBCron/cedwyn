@@ -69,10 +69,15 @@ _source_to_area = {source_id: area['id'] for area in _areas for source_id in are
 # data/site-areas.json (the area registry, same order as the main menu), so a new area appears everywhere with nothing
 # hand-kept. aliases = the merged source themes' own paths (longest prefix wins); skip_in = the halves that hide it;
 # built = the area or one of its source themes exists in this build. - Sion's Tab agent
+# nav 1.4.0 (owner, 18:32 GMT 7 Nov 2026: "/wales/story/ is 7 of 59 and /documentary/ is 7 of 59. Move one to the empty unassigned
+# numbers. Do the same for all that have duplicate occupied slots"; cedwyn#497): a source theme that declares its own "slot" on its
+# themes.json entry is its own webapp in the nav, no longer an alias of the area it was merged into, so no page shares a number.
+# The area keeps its other sources (home board and halves unchanged). - Sion's Tab agent
+_slotted = {_t['id'] for _t in CFG['themes'] if _t.get('slot')}
 _areas_pub = []
 for _c, _area in zip(chain, _areas):
     _p = _area.get('path') or '/' + _area['id'] + '/'
-    _al = sorted({'/' + s + '/' for s in _area.get('source_themes', [])} - {_p})
+    _al = sorted({'/' + s + '/' for s in _area.get('source_themes', []) if s not in _slotted} - {_p})
     _built = any((DIST / x.strip('/')).is_dir() for x in [_p] + _al)
     _areas_pub.append({'id': _area['id'], 'path': _p, 'title': _c[1], 'cy': _c[3], 'es': _c[4], 'group': _c[2],
                        'aliases': _al, 'skip_in': _c[5], 'built': _built,
@@ -85,7 +90,7 @@ for _c, _area in zip(chain, _areas):
 # its other readers. tools/nav.py stamps the bar into every slot page and fails the build on a broken slot (docs/NAV.md).
 # - Sion's Tab agent
 _nav = [dict(a, src=a['path']) for a in _areas_pub]
-_nav_seen = {a['id'] for a in _areas_pub} | set(_source_to_area)
+_nav_seen = {a['id'] for a in _areas_pub} | (set(_source_to_area) - _slotted)
 for _t in CFG['themes']:
     if not _t.get('slot') or _t['id'] in _nav_seen: continue
     _p = _t.get('path') or '/' + _t['id'] + '/'
