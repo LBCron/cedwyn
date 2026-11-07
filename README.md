@@ -69,3 +69,16 @@ linked `^L-xxx`). `tools/build.py` loads it with Beancount and takes the books t
 `/ledger/main.beancount`. After a figure change in `tools/damages.py`:
 `python3 tools/to_beancount.py && bean-check ledger/main.beancount && python3 tools/build.py` (requirements.txt).
 The build stops if the ledger's heads no longer match the damages schedule. Sync with accounts.: see SYNC.md on the accounts branch.
+
+## Own data store (repo split, 7 Nov 2026)
+
+public/data/central.json is this webapp's own store: id, kind, title, date_display, date_sort, status and page from the
+central catalogue for the record IDs cited in public/data/tickets.json, ledger.json and damages.json. On 7 Nov 2026 13 IDs
+are cited; 6 are in the central catalogue (EV-0025, EV-0032, EV-0080, EV-0122, EV-0153, EV-0159) and 7 are not yet
+(EV-0244, EV-0245, EV-0274, EV-0276, EV-0288, EV-0290, EV-0293; listed under not_in_central and picked up on the first
+run after they are added there). tools/sync_central.py fills it read-only from
+https://cedwyn.bucklerfamily.estate/api/catalogue/<id>, run by .github/workflows/sync-central.yml every 6 hours (cron
+35 */6) and on demand. It is derived: never edit it by hand, and tools/build.py does not touch it. Served at
+/oldbill/data/central.json; the page itself is unchanged for now (the site's page edit freeze is on).
+
+— Sion's Tab agent

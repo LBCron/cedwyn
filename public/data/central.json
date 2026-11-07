@@ -1,0 +1,80 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in public/data/tickets.json, public/data/ledger.json, public/data/damages.json. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-07T17:20:37Z",
+ "count": 6,
+ "not_in_central": [
+  "EV-0244",
+  "EV-0245",
+  "EV-0274",
+  "EV-0276",
+  "EV-0288",
+  "EV-0290",
+  "EV-0293"
+ ],
+ "items": {
+  "EV-0025": {
+   "id": "EV-0025",
+   "kind": "evidence",
+   "title": "Surrender and re-grant of Frederick Buckler's yearly tenancy (unwritten; no written record)",
+   "date_display": "2 February 1949",
+   "date_sort": "1949-02-02",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0025-frederick-buckler-unwritten-tenancy-1949/"
+  },
+  "EV-0032": {
+   "id": "EV-0032",
+   "kind": "evidence",
+   "title": "1955 Order 14 possession order against Frederick Buckler (not yet located)",
+   "date_display": "1955 (exact date to be confirmed)",
+   "date_sort": "1955-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0032-1955-order-14-possession-order/"
+  },
+  "EV-0080": {
+   "id": "EV-0080",
+   "kind": "evidence",
+   "title": "Court of Appeal judgment: BP Properties Ltd v Buckler [1987] EWCA Civ 2",
+   "date_display": "31 July 1987",
+   "date_sort": "1987-07-31",
+   "status": "HELD-ONLINE",
+   "page": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/"
+  },
+  "EV-0122": {
+   "id": "EV-0122",
+   "kind": "evidence",
+   "title": "European Commission of Human Rights application 14464/88 and inadmissibility decision",
+   "date_display": "lodged 3 May 1988; registered 12 December 1988; declared inadmissible 14 April 1989",
+   "date_sort": "1989-04-14",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0122-echr-application-14464-88-inadmissibility/"
+  },
+  "EV-0153": {
+   "id": "EV-0153",
+   "kind": "evidence",
+   "title": "HM Land Registry stage-two complaint decision",
+   "date_display": "25 May 2026 (date shown by file title)",
+   "date_sort": "2026-05-25",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0159": {
+   "id": "EV-0159",
+   "kind": "evidence",
+   "title": "South Wales Police response to FOI request 719/26",
+   "date_display": "16 July 2026",
+   "date_sort": "2026-07-16",
+   "status": "HELD",
+   "page": null
+  }
+ }
+}
