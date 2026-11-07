@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-05",
- "count": 68,
+ "generated": "2026-11-07",
+ "count": 84,
  "items": [
   {
    "mr": "MR-0001",
@@ -119,6 +119,18 @@
      "Persimmon Homes Limited (litigation team), present holder of the land",
      "email reply to preservation and disclosure requests of 27 Sep and 31 Oct 2026 for the 1938 conveyance with plan and schedule",
      "\"given the passage of time, it is therefore unlikely Persimmon retains any such copies\" (a likelihood, not a search result; the reply also questions the basis of the request)"
+    ],
+    [
+     "2026-11-03",
+     "RCAHMW (National Monuments Record of Wales)",
+     "email reply RC26-0375 to a request of 29 Oct 2026 for the 1926 Cardiff conveyance, Mountjoy's 1926 company records and the 1938 conveyance with plan",
+     "\"We do not hold any of the records which you have listed, nor is there record of us having previously held these records\" (a monuments record, not a title holder)"
+    ],
+    [
+     "2026-11-06",
+     "Glamorgan Archives (ref 2026-4669B, linked to 2026/4097)",
+     "email reply to a request of 10 Oct 2026 asking whether eight newly identified series (UC/73/1-5, DCVG/C/4/36/76-77 and /94, D696, DBDT/18/1, DBDT/79/1, ACA/8/2) contain the 1969 root deed, the 1938 conveyance or a notice served on the occupying family",
+     "\"these items are not within the scope of these records\" (an archivist's assessment of each series, marked 'No'; no search was made; paid searches offered)"
     ]
    ],
    "url": "/research/missing-records/mr-0005/"
@@ -1072,14 +1084,23 @@
    "mr": "MR-0057",
    "title": "Western Ground Rents Ltd directors: annual returns 1951-1954",
    "date": "1951-1954",
-   "status": "ASKED, NOT ANSWERED: company identity queried with the Registrar (10, 20 and 29 Oct 2026, ref COH2382411X); the returns not yet asked for by name",
-   "holder": "Registrar of Companies (the company's file), or The National Archives if the file was transferred on dissolution (not checked)",
+   "status": "NOT HELD BY THE REGISTRAR; NATIONAL ARCHIVES FILE CATALOGUED, NOT VIEWED",
+   "holder": "The National Archives: BT 31/84793, catalogued as 'Company No: 00342092; Western Ground Rents Ltd. Incorporated In 1938. Dissolved In 1997' (Discovery C18012213; a second series entry BT 31/87651, 1938-82, not checked as the same company). Not viewed. The Registrar of Companies states it holds only imaged documents.",
    "basis": "statute (Companies Act 1948: annual return listing directors, s.124 and Sixth Schedule; register of directors, s.200, with changes notified to the Registrar); cross-reference (HC Deb 6 Nov 1951; HC Deb 18 Mar 1955 cols 1618-19)",
-   "why": "Hansard records an MP telling the Commons on 6 November 1951 that a director of Western Ground Rents was then a member of the Government (not named), and on 18 March 1955 naming two Members associated with the company. The company owned the farm from 1938 to 1969, and its agents wrote on 10 October 1952 that they would not proceed with the letting. The annual returns name every director on each return date, so they would show who sat on the board while the 1952 letter was written. Parcel: A and B (the whole holding as conveyed in 1938; plan not held). Registrar's replies of 12 and 30 Oct 2026 (ref COH2382411X) named only a dissolved Western Ground Rents Limited, company 09760885, and set out the route and charges for copies; they did not say whether that is the company connected to the 1938 sale (a 20 Oct enquiry used company number 00342092), nor whether the 1950s returns are held. The same reply states that a list of past and present directors would not contain resignations before 1991, so the 1951-54 board can only come from the pre-1973 hard-file annual returns. Not checked: the incorporation date behind 09760885.",
+   "why": "Hansard records an MP telling the Commons on 6 November 1951 that a director of Western Ground Rents was then a member of the Government (not named), and on 18 March 1955 naming two Members associated with the company. The company owned the farm from 1938 to 1969, and its agents wrote on 10 October 1952 that they would not proceed with the letting. The annual returns name every director on each return date, so they would show who sat on the board while the 1952 letter was written. Parcel: A and B (the whole holding as conveyed in 1938; plan not held). Registrar's replies of 12 and 30 Oct 2026 (ref COH2382411X) named only a dissolved Western Ground Rents Limited, company 09760885, and set out the route and charges for copies; they did not say whether that is the company connected to the 1938 sale (a 20 Oct enquiry used company number 00342092), nor whether the 1950s returns are held. The same reply states that a list of past and present directors would not contain resignations before 1991, so the 1951-54 board can only come from the pre-1973 hard-file annual returns. Not checked: the incorporation date behind 09760885. The Registrar's Archive Searches reply of 3 November 2026 identifies the company as 00342092 (incorporated 2 July 1938, dissolved 22 August 1997) and states the paper and microfiche records were destroyed and not sent to The National Archives; The National Archives' own catalogue nonetheless lists a dissolved-company file under that number (BT 31/84793). Which statement is right has not been checked; a reading-room view of BT 31/84793 settles it.",
    "refs": [
-    "Registrar of Companies replies, 12 and 30 Oct 2026, ref COH2382411X"
+    "Registrar of Companies replies, 12 and 30 Oct 2026, ref COH2382411X",
+    "Companies House Archive Searches reply, 3 Nov 2026",
+    "TNA Discovery C18012213 (BT 31/84793)"
    ],
-   "search_record": [],
+   "search_record": [
+    [
+     "2026-11-03",
+     "Registrar of Companies (Companies House Archive Searches)",
+     "email reply 'WESTERN GROUND RENTS LIMITED' (separate thread from COH2382411X; their reference not restated in the reply) to a request of 2 Nov 2026 asking, for company 00342092, whether any paper file, microfiche or image is held and whether the file went to The National Archives",
+     "\"Company records for Western Ground Rents Limited were not sent to the National Archives\" and \"All paper Records and Microfiche have been destroyed the only records available for this company are those that were captured on Image\" (no date, schedule or destruction record given; questions 2-4 of the request not answered)"
+    ]
+   ],
    "url": "/research/missing-records/mr-0057/"
   },
   {
@@ -1267,6 +1288,221 @@
    ],
    "search_record": [],
    "url": "/research/missing-records/mr-0068/"
+  },
+  {
+   "mr": "MR-0069",
+   "title": "Survey and valuation of Llandough manor, 1824 (Bute estate papers)",
+   "date": "1824",
+   "status": "SHOULD EXIST (NOT LOCATED)",
+   "holder": "National Library of Wales (Bute papers, entry \"LLANDOUGH MANOR, survey and valuation, with other manors\")",
+   "basis": "NLW Bute papers catalogue entry; map-1824 research report; related plan EV-0211 (Glamorgan Archives DB/E/1 plan 19, partly held)",
+   "why": "The National Library of Wales catalogue of the Bute papers lists a survey and valuation of Llandough manor with other manors. A manorial survey of that date would list each holding, its occupier and its value. No copy has been seen.",
+   "refs": [
+    "EV-0211"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0069/"
+  },
+  {
+   "mr": "MR-0070",
+   "title": "HM Land Registry first-registration application and application plan, title WA231076 (1982)",
+   "date": "1982",
+   "status": "SOUGHT",
+   "holder": "HM Land Registry (Wales office)",
+   "basis": "Title register WA231076; related records MR-0020 (Form A13 and requisitions), EV-0059, EV-0063",
+   "why": "Title WA231076 was first registered on an application lodged in 1982. A first-registration application is made on a prescribed form with the deeds and a plan identifying the land. The register is held; the application form and its plan are not.",
+   "refs": [
+    "MR-0020",
+    "EV-0059",
+    "EV-0063"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0070/"
+  },
+  {
+   "mr": "MR-0071",
+   "title": "South Wales Police internal review 1188/26 (of FOI 719/26): outcome document",
+   "date": "26 October 2026",
+   "status": "SOUGHT",
+   "holder": "South Wales Police (Information Compliance)",
+   "basis": "Email from South Wales Police, 26 October 2026 (email ingest)",
+   "why": "The force sent its internal-review response on time on 26 October 2026 as a password-protected PDF. No password was sent, so the content has not been read.",
+   "refs": [],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0071/"
+  },
+  {
+   "mr": "MR-0072",
+   "title": "Llandough Community Council: original and revised agendas for the meeting of 22 October 2026, with publication dates",
+   "date": "October 2026",
+   "status": "SOUGHT",
+   "holder": "Llandough Community Council (clerk; council website)",
+   "basis": "Llandough Community Council reply, October 2026, item 5 (email ingest cycle 27 Oct 2026)",
+   "why": "The council's reply (item 5) states the agenda \"was amended in good time to provide for the three clear day's notice\". An amended agenda implies an earlier version and a date for each publication. Neither version with its date is held.",
+   "refs": [],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0072/"
+  },
+  {
+   "mr": "MR-0073",
+   "title": "Llandough Community Council: record of the decision to hold the 22 October 2026 meeting remotely",
+   "date": "October 2026",
+   "status": "SOUGHT",
+   "holder": "Llandough Community Council (clerk)",
+   "basis": "Llandough Community Council correspondence, October 2026 (email ingest cycle 27 Oct 2026)",
+   "why": "The meeting was held remotely. A council decision on the form of a meeting would normally be recorded with who made it, when and under what authority. No such record has been supplied.",
+   "refs": [],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0073/"
+  },
+  {
+   "mr": "MR-0074",
+   "title": "Llandough Community Council records about Tŷ Mawr / Great House Farm beyond the minute books deposited in 2002",
+   "date": "1974–2026",
+   "status": "SOUGHT",
+   "holder": "Llandough Community Council",
+   "basis": "Llandough Community Council reply, October 2026, items 2 and 8",
+   "why": "The council's reply (item 2) describes its holdings as \"Uncertain at this stage pending the outcome of the internal review\". Correspondence and files outside the deposited minute books would normally be kept by the clerk.",
+   "refs": [],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0074/"
+  },
+  {
+   "mr": "MR-0075",
+   "title": "Known signatures of John Williams of Great House Farm (born c.1867), c.1911–1950",
+   "date": "c.1911–1950",
+   "status": "SHOULD EXIST (NOT LOCATED)",
+   "holder": "The National Archives (census RG 14 / RG 15; National Farm Survey MAF 32); Probate Service; estate papers",
+   "basis": "Legal ticklist row T28; MR-0003; MR-0007; MR-0047",
+   "why": "A householder signed the 1911 and 1921 census schedules. A 1916 tenancy counterpart (MR-0003) and the 1949 surrender papers (MR-0007) would carry his signature, as would a will if one was made.",
+   "refs": [
+    "MR-0003",
+    "MR-0007",
+    "MR-0047"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0075/"
+  },
+  {
+   "mr": "MR-0076",
+   "title": "Bank staff record for the attesting witness to the May 1939 agreement",
+   "date": "1939",
+   "status": "SHOULD EXIST (NOT LOCATED)",
+   "holder": "Lloyds Banking Group Archives (whether 1939 staff registers survive: not checked)",
+   "basis": "Legal ticklist row T28; EV-0023",
+   "why": "The May 1939 agreement (EV-0023) is witnessed by a person described as a cashier at Lloyds Bank; the reading of the name is uncertain. Banks kept staff registers.",
+   "refs": [
+    "EV-0023"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0076/"
+  },
+  {
+   "mr": "MR-0077",
+   "title": "Petition for leave to appeal to the House of Lords, 1987 (Parliamentary Archives HL/PO/JO/10/11/2536 item 19)",
+   "date": "1987",
+   "status": "SOUGHT",
+   "holder": "Parliamentary Archives",
+   "basis": "Court of Appeal order, 1987; Parliamentary Archives catalogue HL/PO/JO/10/11/2536 item 19; legal ticklist row T25",
+   "why": "The Court of Appeal order refused leave and granted a stay pending a petition. The Parliamentary Archives catalogue lists the item. It has not been read.",
+   "refs": [],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0077/"
+  },
+  {
+   "mr": "MR-0078",
+   "title": "Court of Appeal registry papers for the notice of appeal of 30 October 1974",
+   "date": "30 October 1974",
+   "status": "SHOULD EXIST (NOT LOCATED)",
+   "holder": "Civil Appeals Office; The National Archives (J series) — not checked",
+   "basis": "Court of Appeal judgment (1987); legal ticklist rows T08; MR-0012; MR-0014",
+   "why": "The Court of Appeal judgment records that a notice of appeal was issued on 30 October 1974. Appeal registry records may survive separately from the county court file, which Cardiff County Court no longer holds (MR-0012, MR-0014).",
+   "refs": [
+    "MR-0012",
+    "MR-0014"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0078/"
+  },
+  {
+   "mr": "MR-0079",
+   "title": "Contract or memorandum of sale, BP Pension Trust Ltd to BP Properties Ltd, on or before 31 October 1974 (farmhouse and garden)",
+   "date": "on or before 31 October 1974",
+   "status": "SHOULD EXIST (NOT LOCATED)",
+   "holder": "BP group legal records; solicitors acting in 1974–75",
+   "basis": "Legal ticklist; MR-0041; MR-0050; MR-0052",
+   "why": "The farmhouse and garden were conveyed in May 1975 (MR-0050). A sale between companies is usually preceded by a contract, and the 31 October 1974 letters suggest the arrangement predated them.",
+   "refs": [
+    "MR-0041",
+    "MR-0050",
+    "MR-0052"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0079/"
+  },
+  {
+   "mr": "MR-0080",
+   "title": "Written rejection of the 31 October 1974 letters by Mary (Nancy) Williams or her solicitors (November 1974 – March 1983)",
+   "date": "November 1974 – March 1983",
+   "status": "SHOULD EXIST (NOT LOCATED)",
+   "holder": "BP group records; solicitors acting for either side",
+   "basis": "Legal ticklist; letters of 31 October 1974",
+   "why": "If the offer in the 31 October 1974 letters was declined, a reply would normally be in writing and kept on the recipient's file. None has been produced.",
+   "refs": [],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0080/"
+  },
+  {
+   "mr": "MR-0081",
+   "title": "ITV/HTV Report Wales film items on the Llandough cottage protests, 11 April and 1 November 1974 (CAN 2775 item 4; CAN 2904 item 8)",
+   "date": "1974",
+   "status": "SOUGHT",
+   "holder": "National Library of Wales (National Screen and Sound Archive)",
+   "basis": "NLW FOI/2026/15 (email ingest cycle 29 Oct 2026)",
+   "why": "The film catalogue lists both items. The underlying film or preservation copies were requested under FOI/2026/15; a reply is due 25 November 2026.",
+   "refs": [],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0081/"
+  },
+  {
+   "mr": "MR-0082",
+   "title": "GGAT 1989–90 consultee and evaluation file for Great House Farm (incl. 1990 evaluation, S387 file, 1 Oct 1982 letter)",
+   "date": "1982–1990",
+   "status": "SOUGHT",
+   "holder": "Heneb (holds the Glamorgan-Gwent Archaeological Trust records)",
+   "basis": "Heneb complaint outcome, 28 October 2026 (email ingest cycle 29 Oct 2026)",
+   "why": "The trust commented as consultee on outline application 89/01396/OUT and carried out an evaluation in 1990. The complaint of 28 October 2026 closed without a search or a not-held statement.",
+   "refs": [],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0082/"
+  },
+  {
+   "mr": "MR-0083",
+   "title": "Owner/occupier notification lists for SSSI 0524, 1972 and 1985",
+   "date": "1972; 1985",
+   "status": "SOUGHT",
+   "holder": "Natural Resources Wales (successor to the Nature Conservancy Council)",
+   "basis": "NRW EIR CAS-322825-L6S1 acknowledgement (email ingest cycle 27 Oct 2026)",
+   "why": "Notification of a Site of Special Scientific Interest is served on each owner and occupier, and a list of those served is kept. Requested under EIR CAS-322825-L6S1; response due 17 November 2026.",
+   "refs": [],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0083/"
+  },
+  {
+   "mr": "MR-0084",
+   "title": "Inspector's report and objection papers of the East Vale Local Plan inquiry, January-February 1986 (housing policy H2, site H2.1)",
+   "date": "1986-01/1986-02 (inquiry); 1987-02-09 (adoption)",
+   "status": "NOT YET ASKED",
+   "holder": "Vale of Glamorgan Council (planning policy, successor to the borough council); possibly Glamorgan Archives (borough council deposits) or the Welsh Office planning inspectorate papers at The National Archives (Discovery search 'East Vale Local Plan': 0 records). Not yet asked.",
+   "basis": "statute (Town and Country Planning Act 1971 s.13(1) as enacted: objections to a local plan duly made 'shall' be considered at 'a local inquiry or other hearing', and the Tribunals and Inquiries Act 1971 s.12 statement of reasons applies; the regulations' rule on publishing the Inspector's report not checked); cross-reference (Vale of Glamorgan adopted UDP paras 3.4.11 and 4.4.25)",
+   "why": "The council's adopted Unitary Development Plan records an \"Inspector's Report on the East Vale Local Plan Inquiry in 1986\" and that the inquiry sat in \"January/February 1986\"; it quotes the report on land west of Lower Penarth under policy H2. The holding appears in the 1982 heritage correspondence as housing site H2.1. A local plan inquiry hears every duly made objection and the Inspector reports on each, so the objection register and the report would show who objected to or supported the H2.1 allocation in early 1986 and how the site, its buildings and its occupation were described to the Inspector, while the 1986-87 possession case was in the courts. Against: the plan's timetable was the council's (allocation by 1982, inquiry 1986, adoption 9 Feb 1987), so the papers may show only a routine allocation; the UDP Inspector's later report (Llandough section C13) carries no objection about the site; and the H2.1 boundary is not yet identified (about three acres in 1982).",
+   "refs": [
+    "Vale of Glamorgan adopted Unitary Development Plan, paras 3.4.11 and 4.4.25",
+    "MR item 1987-amalgamation",
+    "MR item 1972-outline-permission"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0084/"
   }
  ]
 }
