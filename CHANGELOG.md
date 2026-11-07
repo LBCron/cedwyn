@@ -1,3 +1,8 @@
+## [0.14.0] - 2026-11-07
+
+### Added
+- South Wales Police SAR 1293/26 disclosure (4 November 2026): Art 15(4) UK GDPR refusal of FOI handling records (FOI 719/26 + IR 1188/26, 1040/26, 1189/26, 1264/26, 28 Sep 2026 email, internal notes). Text extract at `pdf/foi/2026-11-04_south-wales-police_sar-1293-26_disclosure.txt`. Full unlocked PDF held locally pending binary release workflow. Tags: foi, bpvsbuckler, sar, gdpr.
+
 ## [0.13.0] - 2026-11-03
 
 ### Added
@@ -45,4 +50,3 @@
 - Added #bpvsbuckler to all treeview names for filtering from bpvs site.
 - Hide #bpvsbuckler and #slide- tags from hashtag cloud to preserve UI.
 - Enhanced param support for year/category/hashtag filters.
-
