@@ -5,7 +5,7 @@
 **Runner:** `work/bizdev/BRIEF.md` (on the project workspace)
 
 ## Purpose
-Grow e-book sales and community for Cedwyn: plan the next 24 hours as weighted HubSpot tasks, then execute them with care.
+Grow e-book sales and community for Cedwyn: plan the next 24 hours as prioritised GitHub issue deliverables, then execute them with care. Keep HubSpot only for private recipient-facing correspondence drafts and reviews.
 
 ## Inputs
 - the weighted channel list
@@ -13,7 +13,7 @@ Grow e-book sales and community for Cedwyn: plan the next 24 hours as weighted H
 - the skills library
 
 ## Outputs
-- completed tasks with outcome notes
+- completed GitHub issue deliverables with outcome and acceptance notes
 - a log row per action
 - lessons in the growth project
 
