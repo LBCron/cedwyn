@@ -8,10 +8,11 @@ DIST = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else 'dist')
 MIRROR = os.environ.get('MIRROR', 'mirror.git')   # bare repo holding the cedwyn branches
 MAXF = 24 * 1024 * 1024                           # Pages limit is 25 MiB per file
 report = {}
-# REPO SPLIT step 3 (#311): apps with deploy=="repo" are read straight from their own
-# repository main (fetched serially before the parallel theme run). Falls back to the
-# old branch if the dedicated repo is unreadable. Recorded under _split_source.
+# REPO SPLIT step 3 (#311): apps with deploy=="repo" are read only from their own
+# repository main. A missing/unreadable repo is a build failure, never a reason to
+# silently use a Cedwyn legacy branch. Recorded under _split_source.
 SPLIT = {}
+SPLIT_FAILURES = []
 try:
     _sr = json.load(open(ROOT / 'split-repos.json'))
     for _a in _sr.get('apps', []):
@@ -148,8 +149,16 @@ def one(t):
             report[tid] = {'how': how, 'files': n, 'bytes': size, 'has_index': True, 'dropped_over_24MB': big, 'secs': round(time.time() - t0), 'split_repo': sa['repo']}
             print(tid, report[tid]['how'], n, round(size / 1e6, 1), 'MB', flush=True)
             return
-        # fall through to old branch / snapshot on failure
-        shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True); n = 0; how = None
+        # Fail closed: the dedicated repository is authoritative. Do not read a
+        # Cedwyn legacy branch, crawl another host, or substitute a DATRO-derived copy.
+        reason = how or "dedicated repository did not provide an index.html"
+        failure = {"theme": tid, "repo": sa["repo"], "reason": reason}
+        SPLIT_FAILURES.append(failure)
+        report[tid] = {"how": "split-repo-failed", "files": n, "bytes": 0,
+                       "has_index": False, "error": reason,
+                       "secs": round(time.time() - t0), "split_repo": sa["repo"]}
+        print(tid, "SPLIT REPO FAILED — no legacy fallback", flush=True)
+        return
     if t.get('snapshot_branch') and not FORCE_CRAWL:
         n = snapshot(t, out); how = 'snapshot' if n else None
         if not n: shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
@@ -199,3 +208,5 @@ def one(t):
 from concurrent.futures import ThreadPoolExecutor
 with ThreadPoolExecutor(6) as ex: list(ex.map(one, [t for t in CFG['themes'] if not SECTIONS or t['id'] in SECTIONS]))
 json.dump(report, open(DIST / '_assemble_report.json', 'w'), indent=1)
+if SPLIT_FAILURES:
+    raise SystemExit("Dedicated repository source(s) failed; legacy fallback is disabled: " + json.dumps(SPLIT_FAILURES))
