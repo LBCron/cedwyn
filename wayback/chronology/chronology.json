@@ -1,15 +1,15 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.43.0",
- "updated_utc": "2026-11-07T18:00Z",
- "count": 619,
+ "version": "1.44.0",
+ "updated_utc": "2026-11-07T18:37Z",
+ "count": 626,
  "by_category": {
-  "heritage": 114,
+  "heritage": 115,
   "press": 165,
-  "history": 51,
+  "history": 55,
   "legal": 134,
   "social": 4,
-  "title": 80,
+  "title": 82,
   "correspondence": 95
  },
  "by_origin": {
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 47
+  "spill": 54
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -83,6 +83,48 @@
    "id": "CH-0612",
    "date_display": "13th century",
    "spill": "SP-00047"
+  },
+  {
+   "date": "1535",
+   "event": "The Valor Ecclesiasticus shows the manor of Llandough belonging to the Abbot of Tewkesbury, \"who there had free and villein tenants paying rents of assize\", as summarised by the editor of Cardiff Records vol. 2 (1900) (EV-0825). The 1535 return itself is not checked.",
+   "source": "J. Hobson Matthews (ed.), Cardiff Records vol. 2 (1900), pp. 8-41 (British History Online, read 7 Nov 2026)",
+   "url": "https://www.british-history.ac.uk/cardiff-records/vol2/pp8-41",
+   "wayback": "",
+   "evidence": "EV-0825",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1535-00-00",
+   "id": "CH-0646",
+   "date_display": "1535",
+   "spill": "GH-cedwyn-research-5"
+  },
+  {
+   "date": "1543",
+   "event": "King Henry VIII grants Llandough manor to Lord Clynton and Say and Robert Turwitt; by 1545 it has been acquired by Sir George Herbert, \"as appears by a rent-roll of that date\", as summarised by the editor of Cardiff Records vol. 2 (1900) (EV-0825). A grant of a manor (lordship) is not a grant of freehold in any farm; the grant and the rent-roll are not checked.",
+   "source": "J. Hobson Matthews (ed.), Cardiff Records vol. 2 (1900), pp. 8-41 (British History Online, read 7 Nov 2026)",
+   "url": "https://www.british-history.ac.uk/cardiff-records/vol2/pp8-41",
+   "wayback": "",
+   "evidence": "EV-0825",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1543-00-00",
+   "id": "CH-0647",
+   "date_display": "1543-1545",
+   "spill": "GH-cedwyn-research-5b"
+  },
+  {
+   "date": "1596",
+   "event": "The Herbert Abbreviate records that the manor of \"Landoche-juxta-Cardif had free tenants, demesnes and copyholds\", and that Leckwith manor \"hath free tenants leases, coppy houlds, and customary lands and tenaunts to them and theire heires for ever\", as printed in Cardiff Records vol. 2 (1900) (EV-0825). The manuscript is not checked.",
+   "source": "J. Hobson Matthews (ed.), Cardiff Records vol. 2 (1900), pp. 8-41 (British History Online, read 7 Nov 2026)",
+   "url": "https://www.british-history.ac.uk/cardiff-records/vol2/pp8-41",
+   "wayback": "",
+   "evidence": "EV-0825",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1596-00-00",
+   "id": "CH-0648",
+   "date_display": "1596",
+   "spill": "GH-cedwyn-research-5c"
   },
   {
    "date": "1667",
@@ -307,6 +349,34 @@
    "id": "CH-0643",
    "date_display": "27 July 1857 (Act); excavation from 1859",
    "spill": "GH-cedwyn-research-49"
+  },
+  {
+   "date": "1858-11-26",
+   "event": "A London Gazette notice for the Penarth Waterworks Bill proposes \"A reservoir in the parish of Llandough\" about five chains south-west of \"The Merry Harrier Inn\", where the road from Dinas Powis to Cogan Pill crosses the road from Cogan to Llandough, with mains through Llandough, Cogan and Penarth (EV-0823). A book of reference naming owners, lessees and occupiers was to be deposited; it is not checked.",
+   "source": "The London Gazette, 26 Nov 1858, issue 22204, p. 5159",
+   "url": "https://www.thegazette.co.uk/London/issue/22204/page/5159",
+   "wayback": "",
+   "evidence": "EV-0823",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1858-11-26",
+   "id": "CH-0644",
+   "date_display": "26 November 1858",
+   "spill": "GH-cedwyn-research-6"
+  },
+  {
+   "date": "1859-11-25",
+   "event": "A London Gazette notice for the Cardiff Water Works Bill describes a reservoir \"lately constructed by the Company at Cogan Pill Farm, in the parish of Llandough\" (the Cogan Pill Reservoir) and a new \"Llandough Reservoir\" \"in a field in the occupation of Thomas Rees\", near the road from Leckwith to Dinas Powis and \"about 600 yards westward of Llandough Church\" (EV-0824). Thomas Rees is the separate Llandough Farm occupier; no Tŷ Mawr (Great House) parcel is named. The deposited plans and book of reference are not checked.",
+   "source": "The London Gazette, 25 Nov 1859, issue 22329, pp. 4375-4376",
+   "url": "https://www.thegazette.co.uk/London/issue/22329/page/4376",
+   "wayback": "",
+   "evidence": "EV-0824",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1859-11-25",
+   "id": "CH-0645",
+   "date_display": "25 November 1859",
+   "spill": "GH-cedwyn-research-6b"
   },
   {
    "date": "23 Dec 1864",
@@ -1264,6 +1334,20 @@
    "date_display": "26 Mar 1925"
   },
   {
+   "date": "1926",
+   "event": "The Leckwith community council's village history gives Leckwith as a manor that \"supplied farm products to the castle from the mid 1400s to 1926 when the farms were sold off\" (EV-0826, a secondary web page). Which farms were sold, and to whom, is not checked.",
+   "source": "Michaelston-le-Pit and Leckwith Community Council, \"Leckwith Village History\" (web page, read 7 Nov 2026)",
+   "url": "http://www.michaelstonandleckwithcouncil.co.uk/Leckwith_Village_History_30026.aspx",
+   "wayback": "http://web.archive.org/web/20250917045505/http://www.michaelstonandleckwithcouncil.co.uk/Leckwith_Village_History_30026.aspx",
+   "evidence": "EV-0826",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1926-00-00",
+   "id": "CH-0649",
+   "date_display": "1926",
+   "spill": "GH-cedwyn-research-4"
+  },
+  {
    "date": "14 Dec 1927",
    "event": "Alfred Thomas, Lord Pontypridd, son of Daniel Thomas of the Llandough lime works, dies unmarried; a report of 27 Dec 1927 (to be checked) states “the bulk of his property” was left “unconditionally to the corporation” of Cardiff (EV-0284)",
    "source": "Legal Wiki, Master Timeline · EV-0284",
@@ -1286,6 +1370,20 @@
    "sort": "1928-00-00",
    "id": "CH-0082",
    "date_display": "1928"
+  },
+  {
+   "date": "1928",
+   "event": "A Late Bronze Age hoard (axes, knives, sickles, razors and a chariot pole cap) is found near Leckwith bridge in the tidal reaches of the Ely (EV-0826). Museum Wales item 30.130/8, a bronze sickle, was found in 1928 \"on the flood plain between the Ely and Taff rivers, near the football ground\" and donated in 1930 (EV-0827); that it belongs to the same hoard is likely but not checked.",
+   "source": "Amgueddfa Cymru – Museum Wales, Collections Online, item 30.130/8; Leckwith community council village history",
+   "url": "https://museum.wales/collections/online/object/99f80e0d-0cea-36c1-8c8e-cd1044872d4a",
+   "wayback": "",
+   "evidence": "EV-0827",
+   "origin": "spill",
+   "category": "heritage",
+   "sort": "1928-00-00",
+   "id": "CH-0650",
+   "date_display": "1928",
+   "spill": "GH-cedwyn-research-4b"
   },
   {
    "date": "1936",
@@ -7852,6 +7950,14 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.44.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0644 (26 November 1858); CH-0645 (25 November 1859); CH-0646 (1535); CH-0647 (1543-1545); CH-0648 (1596); CH-0649 (1926); CH-0650 (1928) [idle-watch: cedwyn-research#4, #5, #6; catalogue EV-0823 to EV-0827]",
+   "size": "626 events",
+   "price": "free",
+   "who": "Tab agent (idle-watch run)"
+  },
   {
    "version": "1.43.0",
    "date": "2026-11-07",
