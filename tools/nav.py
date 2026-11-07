@@ -8,6 +8,9 @@ is done is flawed architecturally. It keeps getting stuck. Fix it". Design and c
                                       1.2.0 (owner, 7 Nov 2026): NN is the webapp's place in the chain and TT the chain's length,
                                       so ‹ always opens NN-1 and › NN+1 (wrapping TT to 1); the planned parcel_total no longer
                                       sets the label
+                                      1.3.0 (owner, 7 Nov 2026: "Keep as 59"): every empty slot of the 59 is a blank "Coming soon"
+                                      webapp from its own repo unclehowell/coming-soon-NN (tools/coming_soon.py, data/coming-soon.json),
+                                      so the chain is always 59 long and the label reads "NN of 59"
   python3 tools/nav.py dist --check   exit 1 on a duplicate slot, a slot over the total, a built slot with no page,
                                       a bar link that leads nowhere, or a slot page without the bar
 
@@ -15,7 +18,7 @@ The registry is dist/areas.json "nav" (tools/site.py: data/site-areas.json slots
 basecamp.js reads the same list at runtime and hides this bar once its own header is drawn (html.ghf-v2-on)."""
 import html, json, pathlib, re, sys
 
-VERSION = '1.2.0'
+VERSION = '1.3.0'
 OF = {'cy': 'o', 'es': 'de'}
 ALL = {'en': 'All webapps', 'cy': "Pob ap gwe", 'es': 'Todas las aplicaciones'}
 PREV = {'en': 'Previous webapp', 'cy': "Ap gwe blaenorol", 'es': 'Aplicación anterior'}
@@ -142,6 +145,9 @@ def check(dist):
             m = re.search(r'<nav class="cw-slotnav"[^>]*data-cw-slot="(\d+)"', s)
             if not m: bad.append('%s: no nav bar' % f.relative_to(dist))
             elif int(m.group(1)) != int(a['slot']): bad.append('%s: bar says slot %s, registry %s' % (f.relative_to(dist), m.group(1), a['slot']))
+    # 1.3.0: the chain should hold all 59 slots (real webapps + coming-soon placeholders); a gap is a warning, not a failure
+    gaps = sorted(set(range(1, total + 1)) - {int(a['slot']) for a in chain})
+    if gaps: warn.append('slots with neither a built webapp nor a coming-soon placeholder (data/coming-soon.json): %s; the label reads "of %d" until they are filled' % (gaps, len(chain)))
     for w in warn: print('::warning::nav: ' + w)
     for b in bad: print('::error::nav: ' + b)
     print('nav %s check: %d slots in the chain (%s), %d problems, %d warnings' % (VERSION, len(chain), ','.join(str(a['slot']) for a in chain), len(bad), len(warn)))
