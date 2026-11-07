@@ -1,23 +1,23 @@
 {
  "title": "Research progress — the Great House (Tŷ Mawr) records programme",
- "generated": "2026-11-06T18:32Z",
+ "generated": "2026-11-07T19:52Z",
  "about": "Counts from the project correspondence register: every records question sent to an institution and every reply. Organisations only; no message text and no personal names.",
  "totals": {
   "institutions": 86,
   "questions_sent": 547,
-  "replies": 281,
+  "replies": 282,
   "automatic_acknowledgements": 308,
   "records_disclosed": 54,
-  "not_held": 68,
+  "not_held": 69,
   "refused": 11,
   "pointed_elsewhere": 51
  },
  "last_30_days": {
-  "questions_sent": 238,
+  "questions_sent": 233,
   "replies": 115,
-  "automatic_acknowledgements": 103
+  "automatic_acknowledgements": 102
  },
- "waiting_on_institutions": 34,
+ "waiting_on_institutions": 33,
  "by_month": [
   {
    "month": "2026-01",
@@ -82,7 +82,7 @@
   {
    "month": "2026-11",
    "asked": 27,
-   "replies": 41,
+   "replies": 42,
    "records": 7
   }
  ],
@@ -776,6 +776,16 @@
    "waiting_on": "us"
   },
   {
+   "institution": "Wildlife Trust of South and West Wales",
+   "questions_sent": 1,
+   "replies": 1,
+   "outcomes": {
+    "not held": 1
+   },
+   "last_activity": "2026-11-07",
+   "waiting_on": "us"
+  },
+  {
    "institution": "Arts Council England",
    "questions_sent": 1,
    "replies": 0,
@@ -901,14 +911,6 @@
    "replies": 0,
    "outcomes": {},
    "last_activity": "2026-10-31",
-   "waiting_on": "them"
-  },
-  {
-   "institution": "Wildlife Trust of South and West Wales",
-   "questions_sent": 1,
-   "replies": 0,
-   "outcomes": {},
-   "last_activity": "2026-11-02",
    "waiting_on": "them"
   },
   {
