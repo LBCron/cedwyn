@@ -39,7 +39,7 @@ It warns, without failing, when a slot is registered but not built, or when a sl
 ## Changelog
 | Version | Date | Change |
 |---|---|---|
-| 1.2.0 | 2026-11-07 | Owner: ‹ › beside "NN of 59" must open the next number down / up on every webapp, and the "This area is about …" headers must go. NN = place in the chain, TT = chain length (header, no-JS bar, menu numbers); every arrow opens the flat registry address; scope.js 1.2.0 drops the area card, the cross-scope lines and the hop. — Sion's Tab agent |
+| 1.2.0 | 2026-11-07 | Owner: ‹ › beside "NN of 59" must open the next number down / up on every webapp, and the "This area is about …" headers must go. NN = place in the chain, TT = chain length (header, no-JS bar, menu numbers); every arrow opens the flat registry address; scope.js 1.2.0 drops the area card, the cross-scope lines and the hop. |
 | 1.1.1 | 2026-11-02 | `apex` is the flat path (`/wiki/`), read against https://bucklerfamily.estate; the absolute form was rewritten by the self-contained pass and failed build 41402080152. |
 | 1.1.0 | 2026-11-02 | Flat apex address per slot (`apex`), used by the header on bucklerfamily.estate; build check for it; session cache key cdw-nav-v3. |
 | 1.0.0 | 2026-11-02 | One slot registry (`/areas.json` "nav": site-areas.json + themes.json "slot"). One chain for every visitor, in slot order (no half filter, no list-position numbers). Server-rendered no-JS bar stamped at build. Build check. Slots 40, 42, 43 (and later webapps) join the nav. |
