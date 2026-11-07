@@ -5,7 +5,7 @@
 **Runner:** `work/online-gap-finder/RUNNER.md` (on the project workspace)
 
 ## Purpose
-Find public information about the farm, its places, people and the case that is not yet on the site, and queue each find as a task for the right page.
+Find public information about the farm, its places, people and the case that is not yet on the site, and queue each verified public-safe deliverable against its canonical GitHub issue.
 
 ## Inputs
 - public archives, catalogues, newspapers and reference sites
@@ -13,7 +13,7 @@ Find public information about the farm, its places, people and the case that is 
 - a seen-ledger so nothing is repeated
 
 ## Outputs
-- one '[CEDWYN GAP] <title> -> <area>' HubSpot task per genuine gap, with source, capture and target page
+- one GitHub issue per genuinely actionable public-safe gap only when no matching issue exists, with source, capture, target page and acceptance criteria
 
 ## Metric
 genuine gaps queued per run; gaps later published
