@@ -1,17 +1,16 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.38.0",
- "updated_utc": "2026-11-07T16:31Z",
- "count": 610,
+ "version": "1.39.0",
+ "updated_utc": "2026-11-07T16:37Z",
+ "count": 614,
  "by_category": {
-  "heritage": 113,
+  "heritage": 114,
   "press": 165,
   "history": 46,
-  "legal": 132,
+  "legal": 134,
   "social": 4,
-  "title": 78,
-  "correspondence": 95,
-  "archaeology": 1
+  "title": 80,
+  "correspondence": 95
  },
  "by_origin": {
   "wiki-master-timeline": 183,
@@ -20,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 38
+  "spill": 42
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -4458,6 +4457,20 @@
    "date_display": "3 Sep 1992"
   },
   {
+   "date": "1992-10-29",
+   "event": "The Llandough Hospital National Health Service Trust (Establishment) Order 1992 is made: a trust to own and manage hospital accommodation and services at Llandough Hospital, Llandough, Penarth; operational date 1 April 1993 (EV-0734).",
+   "source": "The Llandough Hospital National Health Service Trust (Establishment) Order 1992, SI 1992/2737, legislation.gov.uk",
+   "url": "https://www.legislation.gov.uk/uksi/1992/2737/made",
+   "wayback": "",
+   "evidence": "EV-0734",
+   "origin": "spill",
+   "category": "legal",
+   "sort": "1992-10-29",
+   "id": "CH-0635",
+   "date_display": "29 Oct 1992",
+   "spill": "GH-cedwyn-research-45"
+  },
+  {
    "date": "1993-08-26",
    "event": "South Wales Echo feature on Roman occupation (Llandough villa) — Feature on 400 years of Roman occupation in the area, citing the excavation of a substantial Roman villa at Llandough.",
    "source": "Media register MR-0083",
@@ -4914,6 +4927,20 @@
    "date_display": "5 Oct 1995"
   },
   {
+   "date": "1995-10-23",
+   "event": "Trust property formerly held by South Glamorgan Health Authority passes to the Llandough Hospital and Community NHS Trust, as listed in a schedule agreed on 15 August 1995 (SI 1995/2495, made 21 September 1995; EV-0735). The schedule is not seen; parcel not identified.",
+   "source": "The Llandough Hospital and Community National Health Service Trust (Transfer of Trust Property) Order 1995, SI 1995/2495, legislation.gov.uk",
+   "url": "https://www.legislation.gov.uk/uksi/1995/2495/made",
+   "wayback": "",
+   "evidence": "EV-0735",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1995-10-23",
+   "id": "CH-0636",
+   "date_display": "23 Oct 1995",
+   "spill": "GH-cedwyn-research-45"
+  },
+  {
    "date": "1996",
    "event": "Current Archaeology 146 publishes an article on the Llandough church and cemetery excavation.",
    "source": "Current Archaeology Current Archaeology 146 (1996) pp.73-77; known from the citation in the LCC St Dochdwy's Church sheet",
@@ -4924,6 +4951,20 @@
    "sort": "1996-00-00",
    "id": "CH-0352",
    "date_display": "1996"
+  },
+  {
+   "date": "1996-04-01",
+   "event": "Further trust property formerly held by South Glamorgan Health Authority passes to the Llandough Hospital and Community NHS Trust, as listed in a schedule agreed on 22 December 1995 (SI 1996/424, made 16 February 1996; EV-0736). The schedule is not seen; parcel not identified.",
+   "source": "The Llandough Hospital and Community National Health Service Trust (Transfer of Trust Property) Order 1996, SI 1996/424, legislation.gov.uk",
+   "url": "https://www.legislation.gov.uk/uksi/1996/424/made",
+   "wayback": "",
+   "evidence": "EV-0736",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1996-04-01",
+   "id": "CH-0637",
+   "date_display": "1 Apr 1996",
+   "spill": "GH-cedwyn-research-45"
   },
   {
    "date": "1996-06-26",
@@ -5007,6 +5048,20 @@
    "sort": "1997-05-16",
    "id": "CH-0358",
    "date_display": "16 May 1997"
+  },
+  {
+   "date": "1999-04-01",
+   "event": "The University Hospital of Wales and Llandough Hospital National Health Service Trust (Establishment) Order 1999 comes into force (made 11 March 1999), setting up the merged trust that took over Llandough Hospital.",
+   "source": "The University Hospital of Wales and Llandough Hospital National Health Service Trust (Establishment) Order 1999, SI 1999/1119, legislation.gov.uk",
+   "url": "https://www.legislation.gov.uk/uksi/1999/1119/made",
+   "wayback": "",
+   "evidence": "",
+   "origin": "spill",
+   "category": "legal",
+   "sort": "1999-04-01",
+   "id": "CH-0638",
+   "date_display": "1 Apr 1999",
+   "spill": "GH-cedwyn-research-45"
   },
   {
    "date": "2000",
@@ -5170,7 +5225,7 @@
    "wayback": "",
    "evidence": "EV-0733",
    "origin": "spill",
-   "category": "archaeology",
+   "category": "heritage",
    "sort": "2011",
    "id": "CH-0634",
    "date_display": "2011",
@@ -7727,6 +7782,22 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.39.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0635, CH-0636, CH-0637, CH-0638: the Llandough Hospital NHS trust Orders 1992, 1995, 1996 and 1999 (SIs 1992/2737, 1995/2495, 1996/424, 1999/1119) [GitHub cedwyn-research#45]",
+   "size": "614 events",
+   "price": "free",
+   "who": "Tab agent"
+  },
+  {
+   "version": "1.38.1",
+   "date": "2026-11-07",
+   "change": "Correction to CH-0634 (added in 1.38.0): category set to heritage, the category the other archaeology rows use (CH-0133, CH-0134). Event text unchanged.",
+   "size": "610 events",
+   "price": "free",
+   "who": "Tab agent"
+  },
   {
    "version": "1.38.0",
    "date": "2026-11-07",
