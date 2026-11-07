@@ -1,12 +1,12 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.40.0",
- "updated_utc": "2026-11-07T16:41Z",
- "count": 616,
+ "version": "1.43.0",
+ "updated_utc": "2026-11-07T18:00Z",
+ "count": 619,
  "by_category": {
   "heritage": 114,
   "press": 165,
-  "history": 48,
+  "history": 51,
   "legal": 134,
   "social": 4,
   "title": 80,
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 44
+  "spill": 47
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -293,6 +293,20 @@
    "sort": "1855-00-00",
    "id": "CH-0013",
    "date_display": "1855"
+  },
+  {
+   "date": "1857-07-27",
+   "event": "The Penarth Harbour Dock and Railway Act is passed on 27 July 1857 and work on the dock begins in 1859; the Lower Marsh and the Cogan Pill area are \"lost when work started on the Dock excavations in 1859\", as written in Alan Thorne's Place names of Penarth (1997) (EV-0819). Penarth side of the Ely; the Act's deposited plans and book of reference are not checked.",
+   "source": "Alan Thorne, Place names of Penarth (1997) (archive.org lending copy, read 7 Nov 2026)",
+   "url": "https://archive.org/details/placenamesofpena0000thor",
+   "wayback": "",
+   "evidence": "EV-0819",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1857-07-27",
+   "id": "CH-0643",
+   "date_display": "27 July 1857 (Act); excavation from 1859",
+   "spill": "GH-cedwyn-research-49"
   },
   {
    "date": "23 Dec 1864",
@@ -602,6 +616,20 @@
    "sort": "1889-08-16",
    "id": "CH-0035",
    "date_display": "16 Aug 1889"
+  },
+  {
+   "date": "1890s",
+   "event": "Andrew Road is cut into the western escarpment of the Cogan glacial bowl in the 1890s, \"the intention being to shorten the route from Cogan to Llandough\", as written in Alan Thorne's Place names of Penarth (1997, p. 11) (EV-0740). The book gives no primary source; the Penarth highway records are not checked, and its \"owner of the parishes\" wording is the book's.",
+   "source": "Alan Thorne, Place names of Penarth (1997), p. 11 (archive.org lending copy, read 7 Nov 2026)",
+   "url": "https://archive.org/details/placenamesofpena0000thor",
+   "wayback": "",
+   "evidence": "EV-0740",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1890",
+   "id": "CH-0641",
+   "date_display": "1890s",
+   "spill": "GH-cedwyn-research-47"
   },
   {
    "date": "c.1890",
@@ -1433,6 +1461,20 @@
    "sort": "1940-00-00",
    "id": "CH-0095",
    "date_display": "c. 1940"
+  },
+  {
+   "date": "1941",
+   "event": "A weir on the River Ely \"just above Leckwith Bridge\" is demolished in 1941, as written in Alan Thorne's Place names of Penarth (1997, p. 107), which also places the medieval Niwere (New Weir) in the manor of Cogan (EV-0741). Who held the fishery and who removed the weir are not stated; the 1940–41 river and parish records are not checked.",
+   "source": "Alan Thorne, Place names of Penarth (1997), p. 107 (archive.org lending copy, read 7 Nov 2026)",
+   "url": "https://archive.org/details/placenamesofpena0000thor",
+   "wayback": "",
+   "evidence": "EV-0741",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1941",
+   "id": "CH-0642",
+   "date_display": "1941",
+   "spill": "GH-cedwyn-research-48"
   },
   {
    "date": "1941–43",
@@ -7810,6 +7852,30 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.43.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0643 (27 July 1857 (Act); excavation from 1859): The Penarth Harbour Dock and Railway Act is passed on 27 July 1857 and work on the dock begins in 1859; the Lower Marsh and the Cogan Pill a [spill GH-cedwyn-research-49]",
+   "size": "619 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.42.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0642 (1941): A weir on the River Ely \"just above Leckwith Bridge\" is demolished in 1941, as written in Alan Thorne's Place names of Penarth (1997, p. 107 [spill GH-cedwyn-research-48]",
+   "size": "618 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.41.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0641 (1890s): Andrew Road is cut into the western escarpment of the Cogan glacial bowl in the 1890s, \"the intention being to shorten the route from Cogan  [spill GH-cedwyn-research-47]",
+   "size": "617 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
   {
    "version": "1.40.0",
    "date": "2026-11-07",
