@@ -1,15 +1,15 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.13.0",
- "updated_utc": "2026-11-06T21:04Z",
- "count": 585,
+ "version": "1.19.0",
+ "updated_utc": "2026-11-07T00:46Z",
+ "count": 591,
  "by_category": {
-  "heritage": 110,
+  "heritage": 111,
   "press": 162,
-  "history": 44,
-  "legal": 130,
+  "history": 45,
+  "legal": 131,
   "social": 4,
-  "title": 72,
+  "title": 75,
   "correspondence": 87
  },
  "by_origin": {
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 13
+  "spill": 19
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -69,6 +69,20 @@
    "sort": "1106-00-00",
    "id": "CH-0002",
    "date_display": "1106"
+  },
+  {
+   "date": "1200",
+   "event": "Charters printed by G. T. Clark (Cartae, vol. I, pp.181–184, from BL Additional Charters 24.287–24.290) record persons surnamed de Landoch dealing in property in Landoch. CXCIX grants a messuage on the south side of the church of St Doguin, next to the cemetery, held of the abbot and convent of Tewkesbury at 4d a year. The charters name no house; their dating is not checked.",
+   "source": "G. T. Clark (ed.), Cartae et alia munimenta, vol. I (Dowlais, 1885), pp.181–184, Internet Archive copy",
+   "url": "https://archive.org/details/cartetaliamunim00abbegoog/page/n207/mode/1up",
+   "wayback": "",
+   "evidence": "EV-0705",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1200-00-00",
+   "id": "CH-0612",
+   "date_display": "13th century",
+   "spill": "SP-00047"
   },
   {
    "date": "1667",
@@ -181,6 +195,20 @@
    "date_display": "1841"
   },
   {
+   "date": "1841",
+   "event": "Tithe apportionment for Llandough, Cogan and Leckwith, schedule canvas 23: the landowner column reads “Manor lord of the (Marquess of Bute)” only for plots 319–322 (Leckwith moors pasture, occupier William Thomas), 4 of the 577 indexed rows. The Tŷ Mawr (Great House) plots, 209 “Courtyard &c” among them, carry the other form, “Bute the Marquess of”. The schedule does not explain the difference.",
+   "source": "National Library of Wales, tithe apportionment Llandough, Cogan and Leckwith (NLW 4542756), schedule canvas 23, rows 319–334, read against the NLW Places of Wales index (577 rows) 6 Nov 2026 · EV-0215",
+   "url": "https://places.library.wales/viewer/4542756",
+   "wayback": "",
+   "evidence": "EV-0215",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1841-00-00",
+   "id": "CH-0615",
+   "date_display": "c. 1841",
+   "spill": "SP-00005"
+  },
+  {
    "date": "1842",
    "event": "Tithe plan and apportionment for Llandough-juxta-Penarth parish (Glamorgan Archives P35).",
    "source": "Glamorgan Archives (Canfod catalogue) Glamorgan Archives P35",
@@ -258,6 +286,20 @@
    ],
    "id": "CH-0016",
    "date_display": "1866"
+  },
+  {
+   "date": "1871-04-02",
+   "event": "The 1871 census for Llandough juxta Penarth (RG10/5368, p.3, schedule 14) records John Williams, head, 43, born Llandough, “Farmer 110 Acres, Emp 2 Men”, with his wife Mary (41) and daughters, at the house the enumerator names “Great House Farm”. Read from the FreeCEN transcription; the page image is not checked.",
+   "source": "TNA RG10/5368 p.3 sched.14 (1871 census), FreeCEN transcription",
+   "url": "https://www.freecen.org.uk/search_records/67be57f8b18f7c58367be811/john-williams-1871-glamorgan-morgannwg-llandough-juxta-penarth-1828-",
+   "wayback": "",
+   "evidence": "EV-0706",
+   "origin": "spill",
+   "category": "heritage",
+   "sort": "1871-04-02",
+   "id": "CH-0613",
+   "date_display": "2 Apr 1871",
+   "spill": "SP-00049"
   },
   {
    "date": "1872-01-01",
@@ -1918,6 +1960,20 @@
    "date_display": "11 June 1965"
   },
   {
+   "date": "1966-11-24",
+   "event": "The Commons Registration (Time Limits) Order 1966 (SI 1966/1470) is made: registration under the Commons Registration Act 1965 runs from 2 January 1967 to 31 March 1970, and applications to register land as common or as a town or village green are not entertained if made after 2 January 1970. The Llandough village-green entry VG41 is dated 16 June 1970. legislation.gov.uk files the order under “COMMON, ENGLAND”; its reach in Wales is not checked.",
+   "source": "SI 1966/1470 arts 2–3, legislation.gov.uk (as made)",
+   "url": "https://www.legislation.gov.uk/uksi/1966/1470/made",
+   "wayback": "",
+   "evidence": "EV-0708",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1966-11-24",
+   "id": "CH-0614",
+   "date_display": "24 Nov 1966",
+   "spill": "SP-00065"
+  },
+  {
    "date": "1967",
    "event": "Frederick dies aged 58 (GRO death index); Mary reverts to Williams and stays on. The 1987 Court of Appeal judgment records that he “died at some time in the period 1965-67” and that BP admitted “Mrs Buckler was in adverse possession from her husband’s death in 1965-67 until October 31 1974”; an estate paper gives Dec 1965 (death)",
    "source": "Legal Wiki, Master Timeline",
@@ -2341,6 +2397,20 @@
    ],
    "id": "CH-0171",
    "date_display": "1 Dec 1975"
+  },
+  {
+   "date": "1977-05-23",
+   "event": "The London Gazette carries a weekly H.M. Land Registry notice, “The following land is about to be registered. Any objections should be addressed to H.M. Land Registry …” (objections before 24 May 1977). This is the latest instance of the weekly series found in Gazette searches to 1990; no Llandough land appears in it. The 1982 and 1983 first registrations at Llandough have no Gazette notice in the record held.",
+   "source": "London Gazette issue 47219, 23 May 1977, p.6383",
+   "url": "https://www.thegazette.co.uk/London/issue/47219/page/6383",
+   "wayback": "",
+   "evidence": "EV-0703",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1977-05-23",
+   "id": "CH-0610",
+   "date_display": "23 May 1977",
+   "spill": "SP-00014"
   },
   {
    "date": "1978–79",
@@ -4832,6 +4902,20 @@
    "sort": "2004-00-00",
    "id": "CH-0360",
    "date_display": "2004"
+  },
+  {
+   "date": "2004-11-29",
+   "event": "The National Assembly for Wales (Transfer of Records) Order 2004 (SI 2004/3137) is made; from 1 January 2005 it vests in the Assembly the records to which the Secretary of State for Wales was then entitled, with a right of access kept for the Secretary of State. Until then such records, including pre-1999 Welsh Office papers, stayed with the Secretary of State. Bears on where the 1988 Welsh Office / Cadw papers on the demolition of Tŷ Mawr sat between 1999 and 2004.",
+   "source": "SI 2004/3137, arts 2(1)–(3), legislation.gov.uk (as made)",
+   "url": "https://www.legislation.gov.uk/uksi/2004/3137/made",
+   "wayback": "",
+   "evidence": "EV-0704",
+   "origin": "spill",
+   "category": "legal",
+   "sort": "2004-11-29",
+   "id": "CH-0611",
+   "date_display": "29 Nov 2004",
+   "spill": "SP-00021"
   },
   {
    "date": "2005",
@@ -7376,6 +7460,54 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.19.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0615 (c. 1841): Tithe apportionment for Llandough, Cogan and Leckwith, schedule canvas 23: the landowner column reads “Manor lord of the (Marquess of Bute)” [spill SP-00005]",
+   "size": "591 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.18.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0614 (24 Nov 1966): The Commons Registration (Time Limits) Order 1966 (SI 1966/1470) is made: registration under the Commons Registration Act 1965 runs from 2 J [spill SP-00065]",
+   "size": "590 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.17.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0613 (2 Apr 1871): The 1871 census for Llandough juxta Penarth (RG10/5368, p.3, schedule 14) records John Williams, head, 43, born Llandough, “Farmer 110 Acres [spill SP-00049]",
+   "size": "589 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.16.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0612 (13th century): Charters printed by G. T. Clark (Cartae, vol. I, pp.181–184, from BL Additional Charters 24.287–24.290) record persons surnamed de Landoch d [spill SP-00047]",
+   "size": "588 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.15.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0611 (29 Nov 2004): The National Assembly for Wales (Transfer of Records) Order 2004 (SI 2004/3137) is made; from 1 January 2005 it vests in the Assembly the re [spill SP-00021]",
+   "size": "587 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.14.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0610 (23 May 1977): The London Gazette carries a weekly H.M. Land Registry notice, “The following land is about to be registered. Any objections should be addre [spill SP-00014]",
+   "size": "586 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
   {
    "version": "1.13.0",
    "date": "2026-11-06",
