@@ -105,3 +105,14 @@ This rule overrides the older "no outbound links" rule in exactly one place: the
 - Captures live in `web/wayback/snap/b/NN.json` (16 buckets; key = FNV-1a 32-bit hex of the address, bucket = last two hex digits mod 16; value = base64 gzip JSON {u, t, title, html, ia, src, pdf}). Add captures by appending to the right bucket; never rewrite another bucket's entries.
 - Checkout, payment and mailing-list links (buy.stripe.com, checkout.stripe.com, gumroad.com) are not outside reference links: the snapshot page passes them straight through. Never send them to a snapshot.
 - Everywhere else on the site, links stay internal.
+
+
+## Parcel-specific attribution rule — 7 November 2026
+
+Never let a blanket expression such as “Bute of Llandough”, “Bute Estate”, “Lord Bute’s land”, “historic landowner”, “landlord of the Williams family”, or “Williams tenant/occupier” imply that one party held every parcel or a single uniform legal interest. Preserve an original quotation as a quotation, then append a bracketed editorial qualification beside it.
+
+For Bute references, state that the exact parcels held and not held, and the character of each interest (manorial lordship, freehold, reversion, leasehold, rent or other right), must be established from the individual instruments, plans and parcel correspondence; research is ongoing. Manorial jurisdiction is not proof of freehold ownership of each parcel within the manor.
+
+For Williams references, state that “occupier” or “tenant” is the cited source’s role-description for the stated land and date; it does not by itself exclude a proprietary, freehold, leasehold, beneficial or inheritable interest. Which parcels were owned, occupied without ownership, or held as tenant must be identified separately; research is ongoing. A tithe owner column, rates entry, court jury, rent account or tenancy recital is not a substitute for parcel-specific title analysis.
+
+Do not generalise a parcel-specific lease or reversion to all of Great House Farm / Tŷ Mawr. Where the original instrument or plan has not been inspected, say so. Treat the separate 166-acre Llandough Farm (D219/9–13) as outside the Great House Farm / Tŷ Mawr investigation; do not conflate it with the in-scope Cydfin / Cedfin / Tŷ Mawr holding in D219. Cydfin / Tŷ Mawr is core and in scope; its precise parcel boundaries are the subject of research, not a reason to downgrade its relevance.
