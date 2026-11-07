@@ -1,13 +1,13 @@
 {
- "updated": "2026-11-06T18:03:28Z",
+ "updated": "2026-11-07T00:44:21Z",
  "schema": "metadata only: id, record, version, status, turn, open_issues, last_change, last_agent, rounds (versions written so far); events: [{at, draft, version, agent, event}], newest last. Never email text.",
  "drafts": [
   {
    "id": "bp-preservation-reply",
    "record": "HubSpot task 531842137317",
    "version": "v3.2.0",
-   "status": "TURN: Claude",
-   "turn": "Claude (per HubSpot subject, read 2026-10-27T08:48Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": 3,
    "last_change": "2026-10-31T19:44:58Z",
    "last_agent": "Tab",
@@ -64,8 +64,8 @@
    ],
    "stage": "TURN",
    "pct_at": "2026-10-24T20:33:30Z",
-   "last_action_at": "2026-10-24T21:06:47Z",
-   "last_action_by": "Tab",
+   "last_action_at": "2026-10-31T19:44:58Z",
+   "last_action_by": "Claude",
    "version_reviews": 0,
    "version_distinct_agents": 0,
    "version_agents": [],
@@ -73,7 +73,9 @@
    "sent_version": null,
    "seat_agreements_version": null,
    "final_three_hat_version": null,
-   "attachments_verified_version": null
+   "attachments_verified_version": null,
+   "completed_at": "2026-10-31T19:44:58Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "cardiff-central-library-bute-x6-12-reply",
@@ -146,7 +148,8 @@
    "seat_agreements_version": null,
    "final_three_hat_version": null,
    "attachments_verified_version": null,
-   "sent_note": "Gmail SENT copy seen 27 Oct (sent 24 Oct 23:24Z); the email/wayback archive does not hold the sent copy yet, so archive_url stays null and WAYBACK fails closed until it does."
+   "sent_note": "Gmail SENT copy seen 27 Oct (sent 24 Oct 23:24Z); the email/wayback archive does not hold the sent copy yet, so archive_url stays null and WAYBACK fails closed until it does.",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "hmlr-eir-1961-deed",
@@ -217,7 +220,8 @@
    "version_agents": [],
    "last_action_by": "ChatGPT",
    "last_action_at": "2026-11-02T09:02:57.007Z",
-   "queue_after": "ChatGPT task 536877818073 (v0.3.1)"
+   "queue_after": "ChatGPT task 536877818073 (v0.3.1)",
+   "hs_task_status": "WAITING"
   },
   {
    "id": "hmlr-sar-wa735527-wa513690",
@@ -286,7 +290,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "WAITING"
   },
   {
    "id": "vale-eir-vg41",
@@ -356,7 +361,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "WAITING"
   },
   {
    "id": "glamorgan-archives-vg41-catalogue",
@@ -365,7 +371,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, updated 2026-10-27T16:13Z by Grok skip/route)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:19:49Z",
+   "last_change": "2026-11-06T23:09:31Z",
    "last_agent": "Claude",
    "rounds": 5,
    "context": {
@@ -422,7 +428,8 @@
    "version_distinct_agents": 0,
    "version_agents": [],
    "last_action_at": "2026-10-27T16:13:37Z",
-   "last_action_by": "Grok"
+   "last_action_by": "Grok",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hmlr-eir-vg41",
@@ -494,7 +501,8 @@
     "Grok"
    ],
    "last_action_by": "ChatGPT",
-   "last_action_at": "2026-10-30T17:58:43Z"
+   "last_action_at": "2026-10-30T17:58:43Z",
+   "hs_task_status": "WAITING"
   },
   {
    "id": "tna-hmlr-commons-records-1960-72",
@@ -563,7 +571,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hmlr-customer-support-titles",
@@ -632,7 +641,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hmlr-wales-office-z084nqv",
@@ -704,7 +714,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "cardiff-eir-1961-deed",
@@ -759,17 +770,18 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "WAITING"
   },
   {
    "id": "hmcts-cardiff-1955-1962-records",
    "record": "HubSpot task 532683919557",
-   "version": "v0.3.0",
-   "status": "TURN: Claude",
-   "turn": "Claude (per HubSpot subject, read 2026-10-27T22:11Z)",
+   "version": "v0.3.1",
+   "status": "TURN: ChatGPT",
+   "turn": "ChatGPT (per HubSpot subject, read 2026-11-07T00:33Z)",
    "open_issues": 2,
-   "last_change": "2026-11-04T20:16:10Z",
-   "last_agent": "Tab",
+   "last_change": "2026-11-07T00:14:11Z",
+   "last_agent": "Claude",
    "rounds": 3,
    "context": {
     "body": "HMCTS / Ministry of Justice",
@@ -828,7 +840,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "rics-022900001630-clarification",
@@ -855,7 +868,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "itv-foi-archive-footage",
@@ -897,7 +911,8 @@
      "agent": "ChatGPT",
      "event": "MATERIAL REWRITE — owner-directed written reply to Nia; preservation, production records, editorial omissions, third-party contacts and archive provenance; not sent; next Tab review"
     }
-   ]
+   ],
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "nlw-research-enquiry",
@@ -924,7 +939,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "tna-foi-resend-22-oct",
@@ -954,7 +970,8 @@
    "version_agents": [],
    "last_action_at": "2026-10-24T10:50:22.760Z",
    "last_action_by": "ChatGPT",
-   "queue_after": null
+   "queue_after": null,
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "cadw-ticket-628912926",
@@ -981,7 +998,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "heneb-her-villa-foi",
@@ -1008,7 +1026,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "swp-internal-review-1188-26",
@@ -1017,7 +1036,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-11-06T14:00Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T13:17:34Z",
+   "last_change": "2026-11-06T18:13:22Z",
    "last_agent": "ChatGPT",
    "rounds": 0,
    "tier": "working",
@@ -1037,7 +1056,8 @@
    "version_distinct_agents": 0,
    "version_agents": [],
    "last_action_by": "Grok",
-   "last_action_at": "2026-11-06T13:17:34Z"
+   "last_action_at": "2026-11-06T13:17:34Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hmlr-sar-d260928",
@@ -1064,14 +1084,15 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "heneb-complaint-outcome",
    "record": "HubSpot task 532440957153",
    "version": "v0.1.0",
-   "status": "TURN: Claude",
-   "turn": "Claude (per HubSpot subject, read 2026-10-28T01:27Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-04T09:00:11Z",
    "last_agent": "Tab",
@@ -1091,7 +1112,11 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "completed_at": "2026-11-04T09:00:11Z",
+   "hs_task_status": "COMPLETED",
+   "last_action_by": "Claude",
+   "last_action_at": "2026-11-04T09:00:11Z"
   },
   {
    "id": "tna-internal-review-cas-347296",
@@ -1100,7 +1125,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T09:00:13Z",
+   "last_change": "2026-11-06T19:01:51Z",
    "last_agent": "Claude",
    "rounds": 0,
    "tier": "working",
@@ -1118,14 +1143,15 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "WAITING"
   },
   {
    "id": "swp-foi-1264-26",
    "record": "HubSpot task 532446462157",
    "version": "v0.1.0",
-   "status": "TURN: ChatGPT",
-   "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-10-31T20:02:10Z",
    "last_agent": "Tab",
@@ -1145,7 +1171,11 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "completed_at": "2026-10-31T20:02:10Z",
+   "hs_task_status": "COMPLETED",
+   "last_action_by": "ChatGPT",
+   "last_action_at": "2026-10-31T20:02:10Z"
   },
   {
    "id": "llandough-cc-internal-review",
@@ -1154,7 +1184,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:19:50Z",
+   "last_change": "2026-11-06T18:59:10Z",
    "last_agent": "Claude",
    "rounds": 0,
    "tier": "working",
@@ -1172,14 +1202,15 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "WAITING"
   },
   {
    "id": "defra-foi-eir-20-oct",
    "record": "HubSpot task 532698618076",
    "version": "v0.1.4",
-   "status": "DONE: ChatGPT",
-   "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-05T12:45:02Z",
    "last_agent": "ChatGPT",
@@ -1201,7 +1232,9 @@
    "version_distinct_agents": 0,
    "version_agents": [],
    "last_action_by": "ChatGPT",
-   "last_action_at": "2026-11-05T12:45:02Z"
+   "last_action_at": "2026-11-05T12:45:02Z",
+   "completed_at": "2026-11-05T12:45:02Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "hmlr-eir-20-oct",
@@ -1210,7 +1243,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T22:11Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T04:25:45Z",
+   "last_change": "2026-11-06T19:55:37Z",
    "last_agent": "Claude",
    "rounds": 0,
    "tier": "working",
@@ -1228,7 +1261,8 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "WAITING"
   },
   {
    "id": "church-in-wales-rb-property",
@@ -1255,14 +1289,15 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "ico-s50-museum-wales",
    "record": "HubSpot task 532451911884",
    "version": "v0.1.0",
-   "status": "TURN: ChatGPT",
-   "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-10-31T20:29:07Z",
    "last_agent": "Tab",
@@ -1282,7 +1317,11 @@
    "attachments_verified_version": null,
    "version_reviews": 0,
    "version_distinct_agents": 0,
-   "version_agents": []
+   "version_agents": [],
+   "completed_at": "2026-10-31T20:29:07Z",
+   "hs_task_status": "COMPLETED",
+   "last_action_by": "ChatGPT",
+   "last_action_at": "2026-10-31T20:29:07Z"
   },
   {
    "id": "heritage-outreach-gwili-railway",
@@ -1308,7 +1347,8 @@
    "version_reviews": 0,
    "version_distinct_agents": 0,
    "version_agents": [],
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "heritage-outreach-pontypool-and-blaenavon-railway",
@@ -1334,14 +1374,15 @@
    "version_reviews": 0,
    "version_distinct_agents": 0,
    "version_agents": [],
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "os-foi-26-46-clarification-reply",
    "record": "HubSpot task 532921259244",
    "version": "v0.2.0",
-   "status": "TURN: ChatGPT",
-   "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:09Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": 4,
    "last_change": "2026-10-31T20:02:00Z",
    "last_agent": "Tab",
@@ -1363,14 +1404,16 @@
    "version_reviews": 0,
    "version_distinct_agents": 0,
    "version_agents": [],
-   "last_action_at": "2026-10-27T09:10:39Z",
+   "last_action_at": "2026-10-31T20:02:00Z",
    "last_action_by": "ChatGPT",
    "queue_after": null,
    "gmail_draft_id": null,
    "sent_at": null,
    "no_repeat_until": null,
    "deadline_note": "OS acknowledged receipt 20 Oct, due 17 Nov 2026; OS paused the clock 26 Oct pending clarification (request closes if no reply within two months)",
-   "pct_at": "2026-10-27T10:03:55Z"
+   "pct_at": "2026-10-27T10:03:55Z",
+   "completed_at": "2026-10-31T20:02:00Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "vale-of-glamorgan-council-democratic-scrutiny-se-159627",
@@ -1403,7 +1446,8 @@
    "pct": 100,
    "pct_at": "2026-11-03T01:49:03Z",
    "last_action_by": "ChatGPT",
-   "last_action_at": "2026-11-02T22:52:38Z"
+   "last_action_at": "2026-11-02T22:52:38Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "glamorgan-archives-236982",
@@ -1434,7 +1478,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:03:55Z"
+   "pct_at": "2026-10-27T10:03:55Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "rcahmw-nmr-enquiries-878826",
@@ -1465,7 +1510,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "lloyds-banking-group-archives-687324",
@@ -1474,7 +1520,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T04:27:26Z",
+   "last_change": "2026-11-06T19:08:13Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1496,7 +1542,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "council-for-british-archaeology-buildings-archae-067466",
@@ -1505,7 +1552,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T13:49Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:16:03Z",
+   "last_change": "2026-11-06T19:10:42Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1527,7 +1574,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-01T05:33:10Z"
+   "pct_at": "2026-11-01T05:33:10Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "glamorgan-archives-033543",
@@ -1558,7 +1606,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "cambridge-university-library-871238",
@@ -1589,7 +1638,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "glamorgan-archives-580974",
@@ -1598,7 +1648,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:14:02Z",
+   "last_change": "2026-11-06T18:59:39Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1620,7 +1670,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "crown-prosecution-service-234014",
@@ -1651,7 +1702,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "llandough-community-council-187096",
@@ -1660,7 +1712,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:13:44Z",
+   "last_change": "2026-11-06T18:58:02Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1682,7 +1734,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "wales-office-northern-ireland-office-887447",
@@ -1691,7 +1744,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T10:24:45Z",
+   "last_change": "2026-11-06T19:14:47Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1713,7 +1766,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "dwr-cymru-welsh-water-373559",
@@ -1744,7 +1798,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "amgueddfa-cymru-museum-wales-283692",
@@ -1753,7 +1808,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T04:24:53Z",
+   "last_change": "2026-11-06T19:05:24Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1775,7 +1830,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "ministry-of-justice-and-hmcts-024354",
@@ -1784,7 +1840,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:13:59Z",
+   "last_change": "2026-11-06T20:06:31Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1806,7 +1862,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "welsh-government-cadw-449717",
@@ -1815,7 +1872,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-29T10:25Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T13:00:16Z",
+   "last_change": "2026-11-06T19:09:13Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1837,7 +1894,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "the-national-archives-324670",
@@ -1846,7 +1904,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:13:58Z",
+   "last_change": "2026-11-06T19:02:52Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1868,7 +1926,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hm-land-registry-621715",
@@ -1899,7 +1958,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "south-wales-police-055865",
@@ -1908,7 +1968,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-29T10:25Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:13:58Z",
+   "last_change": "2026-11-06T19:03:51Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1930,16 +1990,17 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "vale-of-glamorgan-council-440921",
    "record": "HubSpot task 533786440921",
-   "version": "v0.2.5",
-   "status": "TURN: ChatGPT",
-   "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
+   "version": "v0.2.7",
+   "status": "TURN: Claude",
+   "turn": "Claude (per HubSpot subject, read 2026-11-07T00:33Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:13:58Z",
+   "last_change": "2026-11-07T00:15:53Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1961,7 +2022,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "vale-of-glamorgan-council-foi-unit-752808",
@@ -1970,7 +2032,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:14:02Z",
+   "last_change": "2026-11-06T19:08:43Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -1992,7 +2054,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "public-services-ombudsman-for-wales-776444",
@@ -2023,7 +2086,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "vale-of-glamorgan-council-complaints-162656",
@@ -2032,7 +2096,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T18:16Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:13:58Z",
+   "last_change": "2026-11-06T20:06:01Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -2054,7 +2118,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "wdtk-the-national-archives-457750",
@@ -2063,7 +2128,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-11-06T14:00Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T11:10:24Z",
+   "last_change": "2026-11-06T18:53:45Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -2085,7 +2150,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "information-commissioner-s-office-269388",
@@ -2094,7 +2160,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:13:58Z",
+   "last_change": "2026-11-06T18:57:27Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -2116,7 +2182,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "information-commissioner-s-office-398609",
@@ -2147,7 +2214,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "wdtk-welsh-government-427060",
@@ -2156,7 +2224,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T10:24:14Z",
+   "last_change": "2026-11-06T18:54:19Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -2178,7 +2246,8 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "wdtk-ministry-of-justice-205307",
@@ -2209,14 +2278,15 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "companies-house-395627",
    "record": "HubSpot task 533486395627",
    "version": "v0.2.0",
-   "status": "TURN: ChatGPT",
-   "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-10-29T21:37:55Z",
    "last_agent": null,
@@ -2240,7 +2310,11 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "completed_at": "2026-10-29T21:37:55Z",
+   "hs_task_status": "COMPLETED",
+   "last_action_by": "ChatGPT",
+   "last_action_at": "2026-10-29T21:37:55Z"
   },
   {
    "id": "whatdotheyknow-659647",
@@ -2249,7 +2323,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-11-06T14:00Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T12:39:24Z",
+   "last_change": "2026-11-06T19:59:11Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T08:48:07Z",
@@ -2273,14 +2347,15 @@
    "pct": 0,
    "pct_at": "2026-10-27T09:22:45Z",
    "last_action_by": "Claude",
-   "last_action_at": "2026-11-06T12:39:24Z"
+   "last_action_at": "2026-11-06T12:39:24Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "south-wales-police-840059",
    "record": "HubSpot task 533509840059",
    "version": "v0.1.0",
-   "status": "TURN: Claude",
-   "turn": "Claude (per HubSpot subject, read 2026-10-29T10:25Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-06T13:17:31Z",
    "last_agent": null,
@@ -2304,14 +2379,18 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "completed_at": "2026-11-06T13:17:31Z",
+   "hs_task_status": "COMPLETED",
+   "last_action_by": "Claude",
+   "last_action_at": "2026-11-06T13:17:31Z"
   },
   {
    "id": "health-and-safety-executive-central-disclosure-t-879490",
    "record": "HubSpot task 533021879490",
    "version": "v0.1.8",
-   "status": "TURN: ChatGPT",
-   "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-05T10:56:06Z",
    "last_agent": "ChatGPT",
@@ -2335,7 +2414,11 @@
     "note": "Board entry added from the HubSpot subject during the 27 Oct board repair; no context pack built yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T09:22:45Z"
+   "pct_at": "2026-10-27T09:22:45Z",
+   "completed_at": "2026-11-05T10:56:06Z",
+   "hs_task_status": "COMPLETED",
+   "last_action_by": "ChatGPT",
+   "last_action_at": "2026-11-05T10:56:06Z"
   },
   {
    "id": "rct-coroner-s-service-858939",
@@ -2344,7 +2427,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:09Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T04:26:56Z",
+   "last_change": "2026-11-06T19:56:06Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T10:01:12Z",
@@ -2366,7 +2449,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:03:55Z"
+   "pct_at": "2026-10-27T10:03:55Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "information-commissioner-s-office-843357",
@@ -2375,7 +2459,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-29T10:25Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T10:31:57Z",
+   "last_change": "2026-11-06T20:05:32Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T10:09:11Z",
@@ -2397,7 +2481,8 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "glamorgan-archives-vestry-tithe-location-duplica-799082",
@@ -2406,7 +2491,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-29T10:25Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T16:49:47Z",
+   "last_change": "2026-11-06T18:56:57Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T10:09:11Z",
@@ -2428,7 +2513,8 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "helical-plc-641064",
@@ -2437,7 +2523,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T04:27:16Z",
+   "last_change": "2026-11-06T19:07:03Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T10:09:11Z",
@@ -2459,7 +2545,8 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "national-grid-electricity-distribution-wayleaves-287330",
@@ -2490,7 +2577,8 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-01T05:33:10Z"
+   "pct_at": "2026-11-01T05:33:10Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "historic-environment-scotland-126242",
@@ -2523,7 +2611,8 @@
    "pct": 100,
    "pct_at": "2026-11-03T01:49:03Z",
    "last_action_by": "Claude",
-   "last_action_at": "2026-11-02T22:53:23Z"
+   "last_action_at": "2026-11-02T22:53:23Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "british-geological-survey-national-geoscience-da-481454",
@@ -2556,7 +2645,8 @@
    "pct": 100,
    "pct_at": "2026-11-03T01:49:03Z",
    "last_action_by": "ChatGPT",
-   "last_action_at": "2026-11-02T22:52:46Z"
+   "last_action_at": "2026-11-02T22:52:46Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "museum-of-english-rural-life-university-of-readi-946828",
@@ -2565,7 +2655,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-29T10:25Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:16:06Z",
+   "last_change": "2026-11-06T19:13:27Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T10:09:11Z",
@@ -2587,7 +2677,8 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "south-east-wales-biodiversity-records-centre-sew-441007",
@@ -2620,7 +2711,8 @@
    "pct": 100,
    "pct_at": "2026-11-03T01:49:03Z",
    "last_action_by": "Claude",
-   "last_action_at": "2026-11-02T22:53:26Z"
+   "last_action_at": "2026-11-02T22:53:26Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "cambridge-university-collection-of-aerial-photog-863283",
@@ -2653,7 +2745,8 @@
    "pct": 100,
    "pct_at": "2026-11-03T01:49:03Z",
    "last_action_by": "ChatGPT",
-   "last_action_at": "2026-11-02T22:53:33Z"
+   "last_action_at": "2026-11-02T22:53:33Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "network-rail-freedom-of-information-287313",
@@ -2686,7 +2779,8 @@
    "pct": 100,
    "pct_at": "2026-11-03T01:49:03Z",
    "last_action_by": "Claude",
-   "last_action_at": "2026-11-02T22:52:49Z"
+   "last_action_at": "2026-11-02T22:52:49Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "stephenson-alexander-astleys-successor-to-stephe-798068",
@@ -2717,7 +2811,8 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "cardiff-naturalists-society-012385",
@@ -2726,7 +2821,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:16:06Z",
+   "last_change": "2026-11-06T19:01:22Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T10:09:11Z",
@@ -2748,7 +2843,8 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "open-spaces-society-910661",
@@ -2781,7 +2877,8 @@
    "pct": 100,
    "pct_at": "2026-11-03T01:49:03Z",
    "last_action_by": "Claude",
-   "last_action_at": "2026-11-02T22:52:54Z"
+   "last_action_at": "2026-11-02T22:52:54Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "cardiff-rugby-museum-cardiff-athletic-club-archi-070438",
@@ -2790,7 +2887,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:16:06Z",
+   "last_change": "2026-11-06T19:02:23Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-27T10:09:11Z",
@@ -2812,7 +2909,8 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "guildhall-library-city-of-london-141058",
@@ -2821,7 +2919,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-10-27T10:31Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:19:44Z",
+   "last_change": "2026-11-06T19:10:12Z",
    "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-27T10:09:11Z",
@@ -2843,14 +2941,15 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "society-for-the-protection-of-ancient-buildings-692898",
    "record": "HubSpot task 532801692898",
    "version": "v0.1.8",
-   "status": "TURN: Claude",
-   "turn": "Claude (per HubSpot subject, read 2026-10-29T10:25Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-02T16:20:51Z",
    "last_agent": "Claude",
@@ -2874,14 +2973,18 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "completed_at": "2026-11-02T16:20:51Z",
+   "hs_task_status": "COMPLETED",
+   "last_action_by": "Claude",
+   "last_action_at": "2026-11-02T16:20:51Z"
   },
   {
    "id": "historic-buildings-places-formerly-ancient-monum-312677",
    "record": "HubSpot task 532878312677",
    "version": "v0.1.7",
-   "status": "TURN: Claude",
-   "turn": "Claude (per HubSpot subject, read 2026-10-27T10:31Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-02T10:05:05Z",
    "last_agent": "Claude",
@@ -2905,7 +3008,11 @@
     "note": "Board entry added from the HubSpot subject by Tab (hive turn 27 Oct); no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T10:09:35Z"
+   "pct_at": "2026-10-27T10:09:35Z",
+   "completed_at": "2026-11-02T10:05:05Z",
+   "hs_task_status": "COMPLETED",
+   "last_action_by": "Claude",
+   "last_action_at": "2026-11-02T10:05:05Z"
   },
   {
    "id": "rcahmw-nmr-enquiries-610892",
@@ -2914,7 +3021,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-10-27T13:49Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T04:25:55Z",
+   "last_change": "2026-11-06T19:56:34Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-27T13:49:07Z",
@@ -2936,7 +3043,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T13:52:10Z"
+   "pct_at": "2026-10-27T13:52:10Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "wales-west-utilities-640900",
@@ -2945,7 +3053,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-10-27T22:11Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:21:12Z",
+   "last_change": "2026-11-06T18:58:31Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-27T22:11:31Z",
@@ -2967,7 +3075,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-27T22:14:37Z"
+   "pct_at": "2026-10-27T22:14:37Z",
+   "hs_task_status": "WAITING"
   },
   {
    "id": "hmlr-lawyer-referral-sar-reply",
@@ -3038,7 +3147,8 @@
    "sent_version": null,
    "seat_agreements_version": null,
    "final_three_hat_version": null,
-   "attachments_verified_version": null
+   "attachments_verified_version": null,
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "llandough-cc-clerk-final-reply",
@@ -3047,7 +3157,7 @@
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-29T21:27Z)",
    "open_issues": 3,
-   "last_change": "2026-11-04T20:16:02Z",
+   "last_change": "2026-11-06T18:56:21Z",
    "last_agent": "Claude",
    "rounds": 1,
    "tier": "working",
@@ -3066,7 +3176,8 @@
    "version_reviews": 0,
    "version_distinct_agents": 0,
    "version_agents": [],
-   "pct_at": "2026-10-29T10:19:12Z"
+   "pct_at": "2026-10-29T10:19:12Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "heneb-012348",
@@ -3097,14 +3208,15 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T10:19:12Z"
+   "pct_at": "2026-10-29T10:19:12Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hm-land-registry-information-rights-535830",
    "record": "HubSpot task 535159535830",
    "version": "v0.2.5",
-   "status": "SUPERSEDED: ID sent 2 Nov 21:07Z, msg 1a19e167290c76ac",
-   "turn": "ChatGPT (per HubSpot subject, read 2026-10-29T17:58Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-02T23:01:33Z",
    "last_agent": "ChatGPT",
@@ -3130,7 +3242,9 @@
    "pct": 0,
    "pct_at": "2026-11-01T05:33:10Z",
    "last_action_by": "ChatGPT",
-   "last_action_at": "2026-11-02T23:01:33Z"
+   "last_action_at": "2026-11-02T23:01:33Z",
+   "completed_at": "2026-11-02T23:01:33Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "vale-of-glamorgan-council-dpo-855385",
@@ -3161,7 +3275,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T10:19:12Z"
+   "pct_at": "2026-10-29T10:19:12Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "cooke-arkwright-149012",
@@ -3170,7 +3285,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-10-29T10:16Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:15:53Z",
+   "last_change": "2026-11-06T19:07:37Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-29T10:16:59Z",
@@ -3192,7 +3307,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T10:19:12Z"
+   "pct_at": "2026-10-29T10:19:12Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "fsb-wales-169349",
@@ -3223,7 +3339,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 100,
-   "pct_at": "2026-11-03T01:49:03Z"
+   "pct_at": "2026-11-03T01:49:03Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "chambers-wales-south-east-south-west-and-mid-361930",
@@ -3254,7 +3371,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 100,
-   "pct_at": "2026-11-03T01:49:03Z"
+   "pct_at": "2026-11-03T01:49:03Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "michaelston-le-pit-and-leckwith-community-counci-786149",
@@ -3263,7 +3381,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-10-29T10:16Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:19:44Z",
+   "last_change": "2026-11-06T19:05:59Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-29T10:16:59Z",
@@ -3285,14 +3403,15 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T10:19:12Z"
+   "pct_at": "2026-10-29T10:19:12Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "llandough-cc-693732",
    "record": "HubSpot task 535068693732",
    "version": "v0.1.6",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-10-29T10:16Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-02T08:57:06Z",
    "last_agent": null,
@@ -3316,7 +3435,9 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T10:19:12Z"
+   "pct_at": "2026-10-29T10:19:12Z",
+   "completed_at": "2026-11-02T08:57:06Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "information-commissioner-s-office-610400",
@@ -3325,7 +3446,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-10-29T14:03Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T04:26:36Z",
+   "last_change": "2026-11-06T19:06:29Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-29T14:03:09Z",
@@ -3347,7 +3468,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T14:06:28Z"
+   "pct_at": "2026-10-29T14:06:28Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "heneb-193945",
@@ -3378,14 +3500,15 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T18:01:57Z"
+   "pct_at": "2026-10-29T18:01:57Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "national-library-of-wales-440745",
    "record": "HubSpot task 535909440745",
    "version": "v0.1.0",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-10-29T21:27Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-10-29T21:38:09Z",
    "last_agent": null,
@@ -3409,7 +3532,9 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T21:30:53Z"
+   "pct_at": "2026-10-29T21:30:53Z",
+   "completed_at": "2026-10-29T21:38:09Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "mount-stuart-bute-archive-837213",
@@ -3445,7 +3570,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T21:30:53Z"
+   "pct_at": "2026-10-29T21:30:53Z",
+   "hs_task_status": "WAITING"
   },
   {
    "id": "the-national-archives-810621",
@@ -3481,7 +3607,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T21:30:53Z"
+   "pct_at": "2026-10-29T21:30:53Z",
+   "hs_task_status": "WAITING"
   },
   {
    "id": "cardiff-central-library-356891",
@@ -3517,7 +3644,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T21:30:53Z"
+   "pct_at": "2026-10-29T21:30:53Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "bp-legal-194880",
@@ -3553,7 +3681,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T21:30:53Z"
+   "pct_at": "2026-10-29T21:30:53Z",
+   "hs_task_status": "WAITING"
   },
   {
    "id": "cardiff-council-strategic-estates-583253",
@@ -3566,7 +3695,7 @@
    "last_action_at": "2026-10-30T00:31:49Z",
    "last_action_by": "Tab",
    "open_issues": null,
-   "last_change": "2026-11-06T10:24:24Z",
+   "last_change": "2026-11-06T19:03:22Z",
    "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-29T22:27:36Z",
@@ -3588,7 +3717,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-29T22:30:51Z"
+   "pct_at": "2026-10-29T22:30:51Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "prc-te12-back-tag-evidence-catalogue-items-by-pa-348454",
@@ -3621,7 +3751,8 @@
    "pct": 0,
    "pct_at": "2026-10-30T01:31:27Z",
    "last_action_by": "Grok",
-   "last_action_at": "2026-11-02T05:10:20Z"
+   "last_action_at": "2026-11-02T05:10:20Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te11-back-tag-evidence-catalogue-items-by-pa-348451",
@@ -3655,7 +3786,8 @@
    "pct_at": "2026-10-30T01:31:27Z",
    "last_action_at": "2026-10-31T17:49:32.655Z",
    "last_action_by": "ChatGPT",
-   "queue_after": "hmlr-eir-1961-deed (HubSpot task 532017103065, v0.10.0)"
+   "queue_after": "hmlr-eir-1961-deed (HubSpot task 532017103065, v0.10.0)",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te10-back-tag-evidence-catalogue-items-by-pa-806336",
@@ -3686,7 +3818,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te09-back-tag-evidence-catalogue-items-by-pa-983740",
@@ -3719,7 +3852,8 @@
    "pct": 0,
    "pct_at": "2026-10-30T01:31:27Z",
    "last_action_by": "Grok",
-   "last_action_at": "2026-11-02T11:12:19Z"
+   "last_action_at": "2026-11-02T11:12:19Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te08-back-tag-evidence-catalogue-items-by-pa-678365",
@@ -3750,7 +3884,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te07-back-tag-evidence-catalogue-items-by-pa-551234",
@@ -3781,7 +3916,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te06-back-tag-evidence-catalogue-items-by-pa-182589",
@@ -3814,7 +3950,8 @@
    "pct": 0,
    "pct_at": "2026-10-30T01:31:27Z",
    "last_action_by": "Grok",
-   "last_action_at": "2026-11-02T21:09:55Z"
+   "last_action_at": "2026-11-02T21:09:55Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te05-back-tag-evidence-catalogue-items-by-pa-272410",
@@ -3845,7 +3982,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te04-back-tag-evidence-catalogue-items-by-pa-550263",
@@ -3876,7 +4014,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te03-back-tag-evidence-catalogue-items-by-pa-846303",
@@ -3907,7 +4046,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te02-back-tag-evidence-catalogue-items-by-pa-943461",
@@ -3938,7 +4078,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-te01-back-tag-evidence-catalogue-items-by-pa-990834",
@@ -3969,7 +4110,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf15-back-tag-research-findings-by-parcel-ba-805339",
@@ -4000,7 +4142,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf14-back-tag-research-findings-by-parcel-ba-679406",
@@ -4031,7 +4174,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf13-back-tag-research-findings-by-parcel-ba-990826",
@@ -4062,7 +4206,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf12-back-tag-research-findings-by-parcel-ba-140444",
@@ -4095,7 +4240,8 @@
    "pct": 0,
    "pct_at": "2026-10-30T01:31:27Z",
    "last_action_by": "Grok",
-   "last_action_at": "2026-11-03T03:09:22Z"
+   "last_action_at": "2026-11-03T03:09:22Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf11-back-tag-research-findings-by-parcel-ba-616495",
@@ -4126,7 +4272,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf10-back-tag-research-findings-by-parcel-ba-098325",
@@ -4157,7 +4304,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf09-back-tag-research-findings-by-parcel-ba-245670",
@@ -4190,7 +4338,8 @@
    "pct": 0,
    "pct_at": "2026-10-30T01:31:27Z",
    "last_action_by": "Grok",
-   "last_action_at": "2026-11-03T04:11:00Z"
+   "last_action_at": "2026-11-03T04:11:00Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf08-back-tag-research-findings-by-parcel-ba-327570",
@@ -4221,7 +4370,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf07-back-tag-research-findings-by-parcel-ba-404682",
@@ -4252,7 +4402,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf06-back-tag-research-findings-by-parcel-ba-880382",
@@ -4285,7 +4436,8 @@
    "pct": 0,
    "pct_at": "2026-10-30T01:31:27Z",
    "last_action_by": "Grok",
-   "last_action_at": "2026-11-03T05:10:02Z"
+   "last_action_at": "2026-11-03T05:10:02Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf05-back-tag-research-findings-by-parcel-ba-181576",
@@ -4316,7 +4468,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf04-back-tag-research-findings-by-parcel-ba-340947",
@@ -4347,7 +4500,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf03-back-tag-research-findings-by-parcel-ba-403697",
@@ -4378,7 +4532,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf02-back-tag-research-findings-by-parcel-ba-375188",
@@ -4409,7 +4564,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-tf01-back-tag-research-findings-by-parcel-ba-924312",
@@ -4440,7 +4596,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-b4-parcel-b-lead-868535",
@@ -4471,7 +4628,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-b3-parcel-b-lead-855316",
@@ -4502,7 +4660,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-b2-parcel-b-lead-242862",
@@ -4533,7 +4692,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-b1-parcel-b-lead-012397",
@@ -4564,7 +4724,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-g7-family-parcel-definitions-parcels-a-b-c-a-845245",
@@ -4595,17 +4756,18 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-g6-proposed-correction-to-wiki-page-1097-t21-923316",
    "record": "HubSpot task 535889923316",
-   "version": "v0.1.0",
+   "version": "v0.1.1",
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-10-29T22:47Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T12:01:20Z",
-   "last_agent": null,
+   "last_change": "2026-11-06T22:00:40Z",
+   "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-29T22:47:13Z",
    "tier": "working",
@@ -4626,17 +4788,18 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-g5-village-green-vg41-728676",
    "record": "HubSpot task 535882728676",
-   "version": "v0.1.3",
+   "version": "v0.1.4",
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-11-06T09:45Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T18:20:24Z",
-   "last_agent": "ChatGPT",
+   "last_change": "2026-11-06T21:12:57Z",
+   "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-29T22:47:13Z",
    "tier": "working",
@@ -4660,17 +4823,18 @@
    "pct_at": "2026-10-30T01:31:27Z",
    "last_action_at": "2026-11-04T08:37:26Z",
    "last_action_by": "ChatGPT",
-   "queue_after": null
+   "queue_after": null,
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-g4c-schedule-of-the-25-dec-1938-bute-mountjo-339945",
    "record": "HubSpot task 536500339945",
-   "version": "v0.1.2",
+   "version": "v0.1.3",
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-11-06T09:45Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T18:20:09Z",
-   "last_agent": "ChatGPT",
+   "last_change": "2026-11-06T20:55:23Z",
+   "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-29T22:47:13Z",
    "tier": "working",
@@ -4691,7 +4855,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-g4b-plan-schedule-of-the-1926-bute-cardiff-c-859343",
@@ -4722,7 +4887,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-g4a-plan-of-the-1916-tenancy-whole-of-the-fa-730484",
@@ -4753,17 +4919,18 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-g3-title-numbers-for-the-hmlr-inspire-polygo-051524",
    "record": "HubSpot task 535662051524",
-   "version": "v0.1.0",
+   "version": "v0.1.1",
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-10-29T22:47Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T11:57:14Z",
-   "last_agent": null,
+   "last_change": "2026-11-06T20:42:21Z",
+   "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-29T22:47:13Z",
    "tier": "working",
@@ -4784,17 +4951,18 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-g2-os-1-2500-field-numbers-for-all-36-tithe-864558",
    "record": "HubSpot task 536503864558",
-   "version": "v0.1.2",
+   "version": "v0.1.4",
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-11-06T14:00Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T11:17:06Z",
-   "last_agent": "Claude",
+   "last_change": "2026-11-06T21:36:47Z",
+   "last_agent": "ChatGPT",
    "rounds": null,
    "tier_since": "2026-10-29T22:47:13Z",
    "tier": "working",
@@ -4815,7 +4983,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T01:31:27Z"
+   "pct_at": "2026-10-30T01:31:27Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "prc-g1-match-the-1824-bute-survey-plan-19-to-the-043069",
@@ -4848,7 +5017,8 @@
    "pct": 0,
    "pct_at": "2026-10-30T01:31:27Z",
    "last_action_by": "Grok",
-   "last_action_at": "2026-11-03T10:10:11Z"
+   "last_action_at": "2026-11-03T10:10:11Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "glamorgan-federation-of-wis-413853",
@@ -4879,7 +5049,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 100,
-   "pct_at": "2026-11-03T01:49:03Z"
+   "pct_at": "2026-11-03T01:49:03Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "wildlife-trust-of-south-and-west-wales-215090",
@@ -4910,7 +5081,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 100,
-   "pct_at": "2026-11-03T01:49:03Z"
+   "pct_at": "2026-11-03T01:49:03Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "fcdo-427037",
@@ -4919,7 +5091,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-10-30T05:27Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:16:05Z",
+   "last_change": "2026-11-06T19:12:44Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-30T05:27:50Z",
@@ -4941,7 +5113,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T05:31:32Z"
+   "pct_at": "2026-10-30T05:31:32Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "defra-information-rights-188514",
@@ -4972,14 +5145,15 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T09:32:02Z"
+   "pct_at": "2026-10-30T09:32:02Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "companies-house-305005",
    "record": "HubSpot task 536550305005",
    "version": "v0.1.5",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-10-30T13:27Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-03T11:03:53Z",
    "last_agent": null,
@@ -5003,7 +5177,9 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-30T13:31:45Z"
+   "pct_at": "2026-10-30T13:31:45Z",
+   "completed_at": "2026-11-03T11:03:53Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "national-library-of-wales-215203",
@@ -5012,7 +5188,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-10-31T01:27Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T04:25:34Z",
+   "last_change": "2026-11-06T19:11:55Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-31T01:27:29Z",
@@ -5034,7 +5210,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-31T01:31:16Z"
+   "pct_at": "2026-10-31T01:31:16Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "liverpool-john-moores-university-913342",
@@ -5043,7 +5220,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-10-31T05:27Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:15:53Z",
+   "last_change": "2026-11-06T19:00:19Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-31T05:27:22Z",
@@ -5065,7 +5242,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-31T05:31:08Z"
+   "pct_at": "2026-10-31T05:31:08Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "mid-and-west-wales-fire-and-rescue-service-014400",
@@ -5096,7 +5274,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 100,
-   "pct_at": "2026-11-03T01:49:03Z"
+   "pct_at": "2026-11-03T01:49:03Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "west-glamorgan-archive-service-636933",
@@ -5105,7 +5284,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-10-31T05:27Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:16:06Z",
+   "last_change": "2026-11-06T19:13:55Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-10-31T05:27:22Z",
@@ -5127,7 +5306,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-10-31T05:31:08Z"
+   "pct_at": "2026-10-31T05:31:08Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "cabinet-office-711809",
@@ -5160,7 +5340,8 @@
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
    "last_action_at": "2026-11-03T21:10:09Z",
-   "last_action_by": "ChatGPT"
+   "last_action_by": "ChatGPT",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hugh-james-168527",
@@ -5192,7 +5373,8 @@
    },
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
-   "last_action_at": "2026-11-01T01:40:23Z"
+   "last_action_at": "2026-11-01T01:40:23Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "persimmon-homes-legal-enquiries-706716",
@@ -5226,7 +5408,8 @@
    "pct_at": "2026-10-31T21:34:19Z",
    "last_action_at": "2026-11-05T08:56:02.312Z",
    "last_action_by": "ChatGPT",
-   "queue_after": "HubSpot task 526035434728 (v0.1.0)"
+   "queue_after": "HubSpot task 526035434728 (v0.1.0)",
+   "hs_task_status": "WAITING"
   },
   {
    "id": "hm-land-registry-information-rights-sar-d260928-818073",
@@ -5255,7 +5438,8 @@
    "pct_at": "2026-10-31T21:34:19Z",
    "last_action_at": "2026-11-03T08:47:21.263Z",
    "last_action_by": "ChatGPT",
-   "queue_after": "HubSpot task 535502730484 (v0.1.0)"
+   "queue_after": "HubSpot task 535502730484 (v0.1.0)",
+   "hs_task_status": "WAITING"
   },
   {
    "id": "vale-of-glamorgan-council-foi-00211722-994086",
@@ -5288,7 +5472,8 @@
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
    "last_action_at": "2026-11-05T18:22:18Z",
-   "last_action_by": "ChatGPT"
+   "last_action_by": "ChatGPT",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "vale-of-glamorgan-council-foi-00211721-110955",
@@ -5321,7 +5506,8 @@
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
    "last_action_at": "2026-11-05T18:22:02Z",
-   "last_action_by": "ChatGPT"
+   "last_action_by": "ChatGPT",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "the-national-archives-foi-cas-356384-169307",
@@ -5353,7 +5539,8 @@
    },
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
-   "last_action_at": "2026-11-01T01:40:23Z"
+   "last_action_at": "2026-11-01T01:40:23Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "bp-jack-sheehy-368813",
@@ -5386,7 +5573,8 @@
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
    "last_action_at": "2026-11-05T15:28:27Z",
-   "last_action_by": "ChatGPT"
+   "last_action_by": "ChatGPT",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hm-land-registry-coventry-office-368810",
@@ -5419,17 +5607,18 @@
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
    "last_action_at": "2026-11-05T18:21:29Z",
-   "last_action_by": "ChatGPT"
+   "last_action_by": "ChatGPT",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "glamorgan-archives-669848",
    "record": "HubSpot task 536905669848",
-   "version": "v0.4.1",
+   "version": "v0.4.2",
    "status": "TURN: Claude",
    "turn": "Claude (per HubSpot subject, read 2026-11-02T09:44Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:16:02Z",
-   "last_agent": "ChatGPT",
+   "last_change": "2026-11-06T23:09:26Z",
+   "last_agent": "Claude",
    "rounds": null,
    "tier_since": "2026-10-31T21:30:24Z",
    "tier": "working",
@@ -5437,7 +5626,7 @@
    "gmail_draft_id": null,
    "sent_at": null,
    "archive_url": null,
-   "version_reviews": 1,
+   "version_reviews": 0,
    "version_distinct_agents": 0,
    "version_agents": [],
    "seat_agreements_version": null,
@@ -5449,9 +5638,10 @@
     "as_of": "2026-10-31T21:30:24Z",
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
-   "pct": 7,
-   "pct_at": "2026-11-02T09:48:08Z",
-   "last_action_at": "2026-11-01T01:40:23Z"
+   "pct": 0,
+   "pct_at": "2026-11-07T00:37:24Z",
+   "last_action_at": "2026-11-01T01:40:23Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "mount-stuart-trust-426487",
@@ -5484,7 +5674,8 @@
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
    "last_action_at": "2026-11-05T18:21:13Z",
-   "last_action_by": "ChatGPT"
+   "last_action_by": "ChatGPT",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "companies-house-637087",
@@ -5517,16 +5708,17 @@
    "pct": 0,
    "pct_at": "2026-10-31T21:34:19Z",
    "last_action_at": "2026-11-03T12:25:02Z",
-   "last_action_by": "ChatGPT"
+   "last_action_by": "ChatGPT",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "glamorgan-archives-632487",
    "record": "HubSpot task 536929632487",
-   "version": "v0.1.1",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-01T05:29Z)",
+   "version": "v0.1.2",
+   "status": "TURN: ChatGPT",
+   "turn": "ChatGPT (per HubSpot subject, read 2026-11-06T21:49Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:13:59Z",
+   "last_change": "2026-11-06T20:29:51Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-01T05:29:12Z",
@@ -5548,16 +5740,17 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-01T05:33:10Z"
+   "pct_at": "2026-11-01T05:33:10Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "bp-bp-archive-cc-jack-sheehy-833548",
    "record": "HubSpot task 537227833548",
-   "version": "v0.1.3",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-02T21:59Z)",
+   "version": "v0.1.4",
+   "status": "TURN: ChatGPT",
+   "turn": "ChatGPT (per HubSpot subject, read 2026-11-07T00:33Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:16:10Z",
+   "last_change": "2026-11-07T00:23:26Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-02T21:59:12Z",
@@ -5579,14 +5772,15 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-02T22:03:24Z"
+   "pct_at": "2026-11-02T22:03:24Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "darwin-gray-llp-295061",
    "record": "HubSpot task 537241295061",
    "version": "v0.1.3",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-02T21:59Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-03T17:35:18Z",
    "last_agent": null,
@@ -5610,14 +5804,16 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-02T22:03:24Z"
+   "pct_at": "2026-11-02T22:03:24Z",
+   "completed_at": "2026-11-03T17:35:18Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "archaeology-data-service-549740",
    "record": "HubSpot task 537222549740",
    "version": "v0.2.0",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-02T21:59Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-04T09:00:07Z",
    "last_agent": null,
@@ -5641,16 +5837,18 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-02T22:03:24Z"
+   "pct_at": "2026-11-02T22:03:24Z",
+   "completed_at": "2026-11-04T09:00:07Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "mhclg-325462",
    "record": "HubSpot task 537302325462",
-   "version": "v0.1.1",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-03T09:41Z)",
+   "version": "v0.1.2",
+   "status": "TURN: ChatGPT",
+   "turn": "ChatGPT (per HubSpot subject, read 2026-11-07T00:33Z)",
    "open_issues": null,
-   "last_change": "2026-11-04T20:16:06Z",
+   "last_change": "2026-11-07T00:03:26Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-03T09:41:04Z",
@@ -5672,7 +5870,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-03T09:44:35Z"
+   "pct_at": "2026-11-03T09:44:35Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "government-legal-department-bona-vacantia-761060",
@@ -5681,7 +5880,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-11-03T17:41Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T04:23:23Z",
+   "last_change": "2026-11-06T19:59:40Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-03T17:41:16Z",
@@ -5703,7 +5902,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-03T17:44:39Z"
+   "pct_at": "2026-11-03T17:44:39Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "the-london-archives-072399",
@@ -5734,7 +5934,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-03T17:44:39Z"
+   "pct_at": "2026-11-03T17:44:39Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "cambridge-university-collection-of-aerial-photog-292241",
@@ -5743,7 +5944,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-11-03T21:40Z)",
    "open_issues": null,
-   "last_change": "2026-11-05T09:00:05Z",
+   "last_change": "2026-11-06T18:51:00Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-03T21:40:05Z",
@@ -5765,7 +5966,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-03T21:43:12Z"
+   "pct_at": "2026-11-03T21:43:12Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "national-highways-historical-railways-estate-994546",
@@ -5796,7 +5998,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-04T06:10:09Z"
+   "pct_at": "2026-11-04T06:10:09Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "department-for-transport-758702",
@@ -5805,7 +6008,7 @@
    "status": "TURN: ChatGPT",
    "turn": "ChatGPT (per HubSpot subject, read 2026-11-06T14:00Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T10:50:45Z",
+   "last_change": "2026-11-06T18:53:16Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-04T06:07:17Z",
@@ -5827,7 +6030,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-04T06:10:09Z"
+   "pct_at": "2026-11-04T06:10:09Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hansard-hl-18-feb-1982-298599",
@@ -5858,7 +6062,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-04T06:10:09Z"
+   "pct_at": "2026-11-04T06:10:09Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "the-history-press-283532",
@@ -5889,7 +6094,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-04T06:10:09Z"
+   "pct_at": "2026-11-04T06:10:09Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "amberley-publishing-737942",
@@ -5920,7 +6126,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-04T06:10:09Z"
+   "pct_at": "2026-11-04T06:10:09Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "capital-law-757019",
@@ -5951,7 +6158,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-04T06:10:09Z"
+   "pct_at": "2026-11-04T06:10:09Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "cross-draft-consistency-check-176682",
@@ -5982,14 +6190,15 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "loop-d-811063",
    "record": "HubSpot task 538363811063",
    "version": "v0.1.0",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-05T01:42Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-06T00:01:09Z",
    "last_agent": null,
@@ -6013,14 +6222,16 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "completed_at": "2026-11-06T00:01:09Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "loop-d-678427",
    "record": "HubSpot task 538307678427",
    "version": "v0.1.0",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-05T01:42Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-06T00:01:09Z",
    "last_agent": null,
@@ -6044,14 +6255,16 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "completed_at": "2026-11-06T00:01:09Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "loop-e-731112",
    "record": "HubSpot task 538388731112",
    "version": "v0.1.0",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-05T01:42Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-06T00:01:10Z",
    "last_agent": null,
@@ -6075,14 +6288,16 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "completed_at": "2026-11-06T00:01:10Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "loop-c-280121",
    "record": "HubSpot task 538547280121",
    "version": "v0.1.0",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-05T01:42Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-06T00:01:10Z",
    "last_agent": null,
@@ -6106,14 +6321,16 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "completed_at": "2026-11-06T00:01:10Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "loop-a-612040",
    "record": "HubSpot task 538552612040",
    "version": "v0.1.0",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-05T01:42Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-06T09:00:25Z",
    "last_agent": null,
@@ -6137,14 +6354,16 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "completed_at": "2026-11-06T09:00:25Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "loop-b-227502",
    "record": "HubSpot task 538329227502",
    "version": "v0.1.0",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-05T01:42Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-06T09:00:21Z",
    "last_agent": null,
@@ -6168,14 +6387,16 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "completed_at": "2026-11-06T09:00:21Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "autonomy-roadmap-v1-373321",
    "record": "HubSpot task 538554373321",
    "version": "v0.1.0",
-   "status": "OTHER AGENT'S TURN",
-   "turn": "any other agent (per HubSpot subject, read 2026-11-05T01:42Z)",
+   "status": "COMPLETED",
+   "turn": "none (completed in HubSpot)",
    "open_issues": null,
    "last_change": "2026-11-06T00:01:09Z",
    "last_agent": null,
@@ -6199,7 +6420,9 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "completed_at": "2026-11-06T00:01:09Z",
+   "hs_task_status": "COMPLETED"
   },
   {
    "id": "sewbrec-700860",
@@ -6232,7 +6455,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 14,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "y-lolfa-995457",
@@ -6263,7 +6487,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "heneb-her-467807",
@@ -6294,7 +6519,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T01:46:29Z"
+   "pct_at": "2026-11-05T01:46:29Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "national-library-of-wales-foi-209979",
@@ -6325,7 +6551,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T05:48:41Z"
+   "pct_at": "2026-11-05T05:48:41Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "welsh-railways-research-circle-rhiwderin-archive-719473",
@@ -6356,7 +6583,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T05:48:41Z"
+   "pct_at": "2026-11-05T05:48:41Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "the-crown-estate-896710",
@@ -6387,7 +6615,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T05:48:41Z"
+   "pct_at": "2026-11-05T05:48:41Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "wiltshire-and-swindon-history-centre-188493",
@@ -6418,7 +6647,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T05:48:41Z"
+   "pct_at": "2026-11-05T05:48:41Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "information-commissioner-s-office-599308",
@@ -6449,7 +6679,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T09:44:40Z"
+   "pct_at": "2026-11-05T09:44:40Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "south-wales-police-054445",
@@ -6480,7 +6711,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T09:44:40Z"
+   "pct_at": "2026-11-05T09:44:40Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "south-wales-police-969914",
@@ -6511,7 +6743,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-05T09:44:40Z"
+   "pct_at": "2026-11-05T09:44:40Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "cadw-626691",
@@ -6542,7 +6775,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "ghf-reply-draft-310298",
@@ -6573,7 +6807,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "health-and-safety-executive-188056",
@@ -6604,7 +6839,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "1992-appeal-657556",
@@ -6635,7 +6871,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "tcpa-1971-s-58-651174",
@@ -6666,7 +6903,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "llandough-old-school-on-the-same-county-list-spo-407589",
@@ -6697,7 +6935,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "ggat-letter-1-oct-1982-582427",
@@ -6728,7 +6967,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "victorian-society-wales-casework-files-19582001-849945",
@@ -6759,7 +6999,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "wa240304-336583",
@@ -6790,7 +7031,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "hm-land-registry-letter-4-nov-2026-on-wa231076-893017",
@@ -6821,7 +7063,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T09:55:04Z"
+   "pct_at": "2026-11-06T09:55:04Z",
+   "hs_task_status": "IN_PROGRESS"
   },
   {
    "id": "welsh-government-cabinet-minister-for-culture-an-121614",
@@ -6852,7 +7095,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T14:04:33Z"
+   "pct_at": "2026-11-06T14:04:33Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "british-geological-survey-308148",
@@ -6883,7 +7127,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T14:04:33Z"
+   "pct_at": "2026-11-06T14:04:33Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "hmrc-valuation-office-914030",
@@ -6914,7 +7159,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T14:04:33Z"
+   "pct_at": "2026-11-06T14:04:33Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "glamorgan-archives-709239",
@@ -6923,7 +7169,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-11-06T17:59Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T17:16:12Z",
+   "last_change": "2026-11-06T23:09:29Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-06T17:59:24Z",
@@ -6945,7 +7191,8 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T18:03:28Z"
+   "pct_at": "2026-11-06T18:03:28Z",
+   "hs_task_status": "NOT_STARTED"
   },
   {
    "id": "ordnance-survey-400197",
@@ -6954,7 +7201,7 @@
    "status": "OTHER AGENT'S TURN",
    "turn": "any other agent (per HubSpot subject, read 2026-11-06T17:59Z)",
    "open_issues": null,
-   "last_change": "2026-11-06T17:57:58Z",
+   "last_change": "2026-11-06T21:36:37Z",
    "last_agent": null,
    "rounds": null,
    "tier_since": "2026-11-06T17:59:24Z",
@@ -6976,14 +7223,143 @@
     "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
    },
    "pct": 0,
-   "pct_at": "2026-11-06T18:03:28Z"
+   "pct_at": "2026-11-06T18:03:28Z",
+   "hs_task_status": "NOT_STARTED"
+  },
+  {
+   "id": "dwr-cymru-welsh-water-791545",
+   "record": "HubSpot task 540756791545",
+   "version": "v0.1.0",
+   "status": "OTHER AGENT'S TURN",
+   "turn": "any other agent (per HubSpot subject, read 2026-11-06T21:49Z)",
+   "open_issues": null,
+   "last_change": "2026-11-06T20:07:46Z",
+   "last_agent": null,
+   "rounds": null,
+   "tier_since": "2026-11-06T21:49:09Z",
+   "tier": "working",
+   "tier_label": "IN REVIEW",
+   "gmail_draft_id": null,
+   "sent_at": null,
+   "archive_url": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
+   "version_agents": [],
+   "seat_agreements_version": null,
+   "final_three_hat_version": null,
+   "attachments_verified_version": null,
+   "sent_version": null,
+   "context": {
+    "body": "Dŵr Cymru Welsh Water",
+    "as_of": "2026-11-06T21:49:09Z",
+    "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T21:53:28Z",
+   "hs_task_status": "NOT_STARTED"
+  },
+  {
+   "id": "glamorgan-archives-378010",
+   "record": "HubSpot task 540793378010",
+   "version": "v0.1.0",
+   "status": "OTHER AGENT'S TURN",
+   "turn": "any other agent (per HubSpot subject, read 2026-11-06T21:49Z)",
+   "open_issues": null,
+   "last_change": "2026-11-06T19:08:13Z",
+   "last_agent": null,
+   "rounds": null,
+   "tier_since": "2026-11-06T21:49:09Z",
+   "tier": "working",
+   "tier_label": "IN REVIEW",
+   "gmail_draft_id": null,
+   "sent_at": null,
+   "archive_url": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
+   "version_agents": [],
+   "seat_agreements_version": null,
+   "final_three_hat_version": null,
+   "attachments_verified_version": null,
+   "sent_version": null,
+   "context": {
+    "body": "Glamorgan Archives",
+    "as_of": "2026-11-06T21:49:09Z",
+    "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T21:53:28Z",
+   "hs_task_status": "NOT_STARTED"
+  },
+  {
+   "id": "information-commissioner-s-office-898704",
+   "record": "HubSpot task 540497898704",
+   "version": "v0.1.0",
+   "status": "OTHER AGENT'S TURN",
+   "turn": "any other agent (per HubSpot subject, read 2026-11-06T21:49Z)",
+   "open_issues": null,
+   "last_change": "2026-11-06T18:35:07Z",
+   "last_agent": null,
+   "rounds": null,
+   "tier_since": "2026-11-06T21:49:09Z",
+   "tier": "working",
+   "tier_label": "IN REVIEW",
+   "gmail_draft_id": null,
+   "sent_at": null,
+   "archive_url": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
+   "version_agents": [],
+   "seat_agreements_version": null,
+   "final_three_hat_version": null,
+   "attachments_verified_version": null,
+   "sent_version": null,
+   "context": {
+    "body": "Information Commissioner's Office",
+    "as_of": "2026-11-06T21:49:09Z",
+    "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T21:53:28Z",
+   "hs_task_status": "NOT_STARTED"
+  },
+  {
+   "id": "cadw-welsh-government-888574",
+   "record": "HubSpot task 540479888574",
+   "version": "v0.1.0",
+   "status": "OTHER AGENT'S TURN",
+   "turn": "any other agent (per HubSpot subject, read 2026-11-06T21:49Z)",
+   "open_issues": null,
+   "last_change": "2026-11-06T19:08:10Z",
+   "last_agent": null,
+   "rounds": null,
+   "tier_since": "2026-11-06T21:49:09Z",
+   "tier": "working",
+   "tier_label": "IN REVIEW",
+   "gmail_draft_id": null,
+   "sent_at": null,
+   "archive_url": null,
+   "version_reviews": 0,
+   "version_distinct_agents": 0,
+   "version_agents": [],
+   "seat_agreements_version": null,
+   "final_three_hat_version": null,
+   "attachments_verified_version": null,
+   "sent_version": null,
+   "context": {
+    "body": "Cadw / Welsh Government",
+    "as_of": "2026-11-06T21:49:09Z",
+    "note": "Board entry added from the HubSpot subject by board_sync.py; no context pack yet. Metadata only."
+   },
+   "pct": 0,
+   "pct_at": "2026-11-06T21:53:28Z",
+   "hs_task_status": "NOT_STARTED"
   }
  ],
- "synced_at": "2026-11-06T17:59:24Z",
+ "synced_at": "2026-11-07T00:44:21Z",
  "sync": {
   "by": "Sion's Tab agent (board_sync.py, 4-hourly schedule; replaces the Actions run)",
   "source": "HubSpot task subjects and hs_lastmodifieddate (metadata); changelog review counts for % complete (no body text stored)",
-  "last_changes": 3
+  "last_changes": 25
  },
  "events": [
   {
@@ -7783,6 +8159,27 @@
    "version": null,
    "agent": "Tab",
    "event": "Board sync from HubSpot subjects: added glamorgan-archives-709239; added ordnance-survey-400197; seats last_seen refreshed. Metadata only."
+  },
+  {
+   "at": "2026-11-06T21:49:09Z",
+   "draft": null,
+   "version": null,
+   "agent": "Tab",
+   "event": "Board sync from HubSpot subjects: prc-g5-village-green-vg41-728676: TURN: Claude v0.1.3 -> TURN: Claude v0.1.4; prc-g4c-schedule-of-the-25-dec-1938-bute-mountjo-339945: TURN: Claude v0.1.2 -> TURN: Claude v0.1.3; prc-g3-title-numbers-for-the-hmlr-inspire-polygo-051524: TURN: ChatGPT v0.1.0 -> TURN: ChatGPT v0.1.1; prc-g2-os-1-2500-field-numbers-for-all-36-tithe-864558: TURN: ChatGPT v0.1.2 -> TURN: ChatGPT v0.1.4; glamorgan-archives-632487: OTHER AGENT'S TURN v0.1.1 -> TURN: ChatGPT v0.1.2; added dwr-cymru-welsh-water-791545; added glamorgan-archives-378010; added information-commissioner-s-office-898704; added cadw-welsh-government-888574; seats last_seen refreshed. Metadata only."
+  },
+  {
+   "at": "2026-11-07T00:33:05Z",
+   "draft": null,
+   "version": null,
+   "agent": "Tab",
+   "event": "Board sync from HubSpot subjects: hmcts-cardiff-1955-1962-records: TURN: Claude v0.3.0 -> TURN: ChatGPT v0.3.1; vale-of-glamorgan-council-440921: TURN: ChatGPT v0.2.5 -> TURN: Claude v0.2.7; prc-g6-proposed-correction-to-wiki-page-1097-t21-923316: TURN: Claude v0.1.0 -> TURN: Claude v0.1.1; glamorgan-archives-669848: TURN: Claude v0.4.1 -> TURN: Claude v0.4.2; bp-bp-archive-cc-jack-sheehy-833548: OTHER AGENT'S TURN v0.1.3 -> TURN: ChatGPT v0.1.4; mhclg-325462: OTHER AGENT'S TURN v0.1.1 -> TURN: ChatGPT v0.1.2; seats last_seen refreshed. Metadata only."
+  },
+  {
+   "at": "2026-11-07T00:44:21Z",
+   "draft": null,
+   "version": null,
+   "agent": "Tab",
+   "event": "Board sync from HubSpot subjects: bp-preservation-reply: TURN: Claude v3.2.0 -> COMPLETED v3.2.0; heneb-complaint-outcome: TURN: Claude v0.1.0 -> COMPLETED v0.1.0; swp-foi-1264-26: TURN: ChatGPT v0.1.0 -> COMPLETED v0.1.0; defra-foi-eir-20-oct: DONE: ChatGPT v0.1.4 -> COMPLETED v0.1.4; ico-s50-museum-wales: TURN: ChatGPT v0.1.0 -> COMPLETED v0.1.0; os-foi-26-46-clarification-reply: TURN: ChatGPT v0.2.0 -> COMPLETED v0.2.0; companies-house-395627: TURN: ChatGPT v0.2.0 -> COMPLETED v0.2.0; south-wales-police-840059: TURN: Claude v0.1.0 -> COMPLETED v0.1.0; health-and-safety-executive-central-disclosure-t-879490: TURN: ChatGPT v0.1.8 -> COMPLETED v0.1.8; society-for-the-protection-of-ancient-buildings-692898: TURN: Claude v0.1.8 -> COMPLETED v0.1.8; historic-buildings-places-formerly-ancient-monum-312677: TURN: Claude v0.1.7 -> COMPLETED v0.1.7; hm-land-registry-information-rights-535830: SUPERSEDED: ID sent 2 Nov 21:07Z, m. Metadata only."
   }
  ],
  "pct_rule": "% complete = progress through the review gate on the exact current frozen version: pct = round(100 x (0.7 x min(version_reviews,10)/10 + 0.3 x min(version_distinct_agents,4)/4)). version_reviews / version_distinct_agents / version_agents are counted from each HubSpot task's signed changelog (material reviews of the current version only; creation, skips, routes and restores are not reviews; a signed version_reviews=N tally in the changelog is honoured when higher). Capped at 95 until the task is READY TO SEND or later AND its Gmail draft exists (gmail_draft_id); then 100 = in the owner's Gmail, ready to send or schedule. SENT rows show Sent. Historical reviews/distinct_agents/agents are informational only. Promotion gates beyond IN REVIEW (open_issues=0, seat_agreements_version, final_three_hat_version, attachments_verified_version equal to version) still fail closed.",
@@ -7798,8 +8195,8 @@
    "seat": 2,
    "agent": "ChatGPT",
    "status": "active",
-   "last_seen": "2026-11-06T16:55:09Z",
-   "last_seen_source": "row mount-stuart-trust-426487"
+   "last_seen": "2026-11-07T00:33:05Z",
+   "last_seen_source": "turn handoff on vale-of-glamorgan-council-440921 (seen by board sync)"
   },
   {
    "seat": 3,
@@ -7812,12 +8209,12 @@
    "seat": 4,
    "agent": "Claude",
    "status": "active",
-   "last_seen": "2026-11-06T16:49:47Z",
-   "last_seen_source": "row glamorgan-archives-vestry-tithe-location-duplica-799082"
+   "last_seen": "2026-11-07T00:33:05Z",
+   "last_seen_source": "turn handoff on hmcts-cardiff-1955-1962-records (seen by board sync)"
   }
  ],
  "seats_rule": "last_seen = newest board activity per seat agent: draft rows whose last_agent/last_action_by is the agent, board events signed by the agent, and turn handoffs (a row leaving 'TURN: <agent>' or changing version while held by the agent, dated at the sync that saw it). Recomputed by board_sync.py every run (protocol v3.11.0 roll call). Metadata only; derived from BOARD.json itself.",
- "seats_as_of": "2026-11-06T18:03:23Z",
+ "seats_as_of": "2026-11-07T00:48:40Z",
  "standing_directions": [
   {
    "id": "SD-2026-11-01-paradigm",
@@ -7830,5 +8227,6 @@
    "posted_by": "Tab (owner's agent)",
    "posted_at": "2026-11-01T22:50:00Z"
   }
- ]
+ ],
+ "open_count": 169
 }
