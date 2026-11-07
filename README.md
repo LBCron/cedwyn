@@ -9,6 +9,18 @@ Upkeep: every point needs a primary source; quotes from the judgment are verbati
 — Sion's Tab agent
 
 
+## Own data store (repo split, 7 Nov 2026)
+
+public/data/central.json is this webapp's own store: id, kind, title, date_display, date_sort, status and page from the
+central catalogue for the record IDs cited in public/data/register.json (EV-0049, EV-0094, EV-0147 today; EV-0244 is cited
+but not in the central catalogue yet and is listed under not_in_central). tools/sync_central.py fills it read-only from
+https://cedwyn.bucklerfamily.estate/api/catalogue/<id>, run by .github/workflows/sync-central.yml every 6 hours (cron
+20 */6) and on demand. It is derived: never edit it by hand. Served at /courtdrills/data/central.json beside register.json;
+the page itself is unchanged for now (the site's page edit freeze is on), so reading the store into the source lines is
+the next front-end step.
+
+— Sion's Tab agent
+
 ## Rights and licence
 
 © Williams–Buckler family. All rights reserved. Licence terms apply.
