@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn-core/0.1.0",
  "note": "Statutory and civic records touching land in Llandough-juxta-Penarth and Leckwith, 1828-1958, catalogued 3 November 2026 for the parcel chains work. Each entry is a catalogue record of the source; which parcels each touched is open until the deposited plans and books of reference are read.",
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "records": [
   {
    "id": "AR-GAZETTE-1884-11-25-BARRY-LLANDOUGH",
@@ -1194,6 +1194,53 @@
     {
      "heading": "Deposit",
      "text": "Book of reference: the copy for Penarth, Cogan and Llandough-juxta-Cardiff with the clerk to Penarth Urban District Council (London Gazette, 24 November 1899, p.7633); a surviving copy is not identified."
+    }
+   ]
+  },
+  {
+   "id": "AR-PARLARCH-1896-1897-TVR-OPPOSED-BILL-EVIDENCE",
+   "kind": "artifact",
+   "slug": "ar-parlarch-1896-1897-tvr-opposed-bill-evidence",
+   "title": "Parliamentary Archives: opposed private bill committee evidence on the Taff Vale Railway Bill, 1896 and 1897 (Lords and Commons)",
+   "aliases": [],
+   "date": {
+    "display": "1896-1897",
+    "sort": 1897.0,
+    "precision": "year"
+   },
+   "place_text": "Taff Vale Railway Bill for the 1897 session, which sought lands in Llandough-juxta-Cardiff beside the Penarth Branch (and in Canton); the 1896 volumes cover the Company's Bill of the previous session",
+   "description": "Four catalogue entries for the bound minutes of evidence taken before opposed private bill committees: House of Lords, 1896 volume 27 (Taff Vale Railway Bill; West Highland Railway Bill) and 1897 volume 21 (Taff Vale Railway Bill, with other Bills); House of Commons, 1896 volume 41 and 1897 volume 60 (Taff Vale Railway bill, with other bills). Committee evidence records the witnesses heard for and against a Bill, which can include owners and occupiers of land named in the deposited plans.",
+   "transcript": "",
+   "transcript_status": "Catalogue titles only, read on 7 November 2026 through the National Archives Discovery catalogue; the volumes are not online and their contents are not checked.",
+   "interpretation": "What it shows: that the Taff Vale Railway Bills of 1896 and 1897 were opposed and taken in committee in both Houses. What it does not show: who opposed them, whether the Llandough-juxta-Cardiff lands were discussed, or any owner or occupier. Which session's Bill carried the Llandough lands is from the London Gazette notice of 24 November 1896 (the 1897 session); the 1896 volumes may concern other works.",
+   "provenance": {
+    "holder": "Parliamentary Archives (catalogued in The National Archives Discovery)",
+    "reference": "HL/PO/PB/5/62/27; HL/PO/PB/5/63/21; HC/CL/PB/2/64/41; HC/CL/PB/2/65/60",
+    "date": "1896-1897",
+    "obtained": "Catalogue entries read on 7 November 2026: https://discovery.nationalarchives.gov.uk/details/r/9c190a7e-0ffe-434d-9fd6-6bfb9b20424a ; https://discovery.nationalarchives.gov.uk/details/r/f3766687-0560-4713-98e0-279d607eea61 ; https://discovery.nationalarchives.gov.uk/details/r/5c829fd9-ea15-49fd-a3fd-375bea52ab57 ; https://discovery.nationalarchives.gov.uk/details/r/ae80a72a-ba8f-489b-a9de-8fe510de4ec5",
+    "independent_origin_id": "ORIG-PARLARCH-TVR-EVIDENCE-1896-97"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Parliamentary proceedings on a Bill that sought compulsory powers over land in Llandough-juxta-Cardiff; contents not checked.",
+    "tags": [
+     "parliamentary-archives",
+     "committee-evidence",
+     "taff-vale-railway",
+     "llandough",
+     "canton",
+     "1896",
+     "1897"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "Related records",
+     "text": "London Gazette, 24 November 1896, issue 26797 p.6654 (AR-GAZETTE-1896-11-24-TVR-LLANDOUGH); London Gazette, 26 November 1901, issue 27380 p.8304 (AR-GAZETTE-1901-11-26-TVR-LLANDOUGH-PLOTS); deposited plan and book of reference HL/PO/PB/3/plan1897/T1 and Glamorgan Archives Q/D/P/602."
     }
    ]
   }
