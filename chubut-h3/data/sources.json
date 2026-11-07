@@ -1,0 +1,13 @@
+{
+ "note": "The central-catalogue records the Chubut outline rests on: it is the Tithe H3 map's outline, traced from the Stewart plan through the 1841 tithe survey. Hand-kept list of IDs only; tools/sync_central.py pulls their catalogue fields into data/central.json. Add an ID here when the page starts to show another record.",
+ "records": [
+  {
+   "id": "EV-0211",
+   "used_for": "the parcel outlines: the Tithe H3 parcels are traced from this plan"
+  },
+  {
+   "id": "EV-0215",
+   "used_for": "the 1841 check of the parcels: the tracing runs through this tithe survey of Landough, Cogan and Leckwith"
+  }
+ ]
+}

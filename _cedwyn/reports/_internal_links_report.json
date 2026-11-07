@@ -1,15 +1,15 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9668,
+  "pages_scanned": 9669,
   "references_checked": {
-    "resource": 220192,
-    "nav": 499037
+    "resource": 220207,
+    "nav": 499075
   },
-  "database_backed_paths": 7771,
+  "database_backed_paths": 7772,
   "unique_missing_destinations": 6475,
-  "missing_references": 54626,
-  "missing_navigation_references": 38231,
-  "missing_resource_references": 16395,
+  "missing_references": 54631,
+  "missing_navigation_references": 38234,
+  "missing_resource_references": 16397,
   "unique_broken_fragments": 2011,
   "broken_fragment_references": 3637,
   "form_or_endpoint_actions_not_checked": {
@@ -19,7 +19,7 @@
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9638,
+      "references": 9639,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9634,
+      "references": 9635,
       "examples": [
         {
           "from": "/",
@@ -73,7 +73,7 @@
     {
       "kind": "resource",
       "path": "/blog/rss.xml",
-      "references": 6925,
+      "references": 6926,
       "examples": [
         {
           "from": "/review/",
@@ -100,7 +100,7 @@
     {
       "kind": "resource",
       "path": "/blog/atom.xml",
-      "references": 6925,
+      "references": 6926,
       "examples": [
         {
           "from": "/review/",
@@ -800,6 +800,33 @@
       ]
     },
     {
+      "kind": "nav",
+      "path": "/dartboard/that-old-chestnut/",
+      "references": 27,
+      "examples": [
+        {
+          "from": "/dartboard/",
+          "attribute": "a[href]",
+          "url": "/dartboard/that-old-chestnut/#cn-toc-l10"
+        },
+        {
+          "from": "/dartboard/",
+          "attribute": "a[href]",
+          "url": "/dartboard/that-old-chestnut/#toc-s11"
+        },
+        {
+          "from": "/dartboard/",
+          "attribute": "a[href]",
+          "url": "/dartboard/that-old-chestnut/#toc-s11"
+        },
+        {
+          "from": "/dartboard/",
+          "attribute": "a[href]",
+          "url": "/dartboard/that-old-chestnut/#cn-toc-f03"
+        }
+      ]
+    },
+    {
       "kind": "resource",
       "path": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/assets/img/user3-128x128.jpg",
       "references": 27,
@@ -850,33 +877,6 @@
           "from": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/deletable_layout/fixed-header.html",
           "attribute": "script[src]",
           "url": "../js/adminlte.js"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/dartboard/that-old-chestnut/",
-      "references": 26,
-      "examples": [
-        {
-          "from": "/dartboard/",
-          "attribute": "a[href]",
-          "url": "/dartboard/that-old-chestnut/#cn-toc-l10"
-        },
-        {
-          "from": "/dartboard/",
-          "attribute": "a[href]",
-          "url": "/dartboard/that-old-chestnut/#toc-s11"
-        },
-        {
-          "from": "/dartboard/",
-          "attribute": "a[href]",
-          "url": "/dartboard/that-old-chestnut/#toc-s11"
-        },
-        {
-          "from": "/dartboard/",
-          "attribute": "a[href]",
-          "url": "/dartboard/that-old-chestnut/#cn-toc-f03"
         }
       ]
     },

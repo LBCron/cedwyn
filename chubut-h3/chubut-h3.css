@@ -29,4 +29,5 @@
 .ch3-ctable{border-collapse:collapse;width:100%;font-size:.85rem}
 .ch3-ctable th,.ch3-ctable td{border-bottom:1px solid #e3dccb;padding:5px 6px;text-align:left;vertical-align:top}
 .ch3-ctable td:first-child,.ch3-ctable td:nth-child(2){white-space:nowrap}
+.ch3-recs ul{margin:4px 0 8px;padding-left:1.2em;font-size:.9rem}.ch3-recs li{margin:.35em 0;overflow-wrap:anywhere}.ch3-recs a{color:#1f4f7a;font-weight:600}.ch3-recs small{color:#555}.ch3-recs .u{display:block;font-size:.85rem;color:#555}
 @media (max-width:420px){.ch3-hero h1{font-size:1.4rem}.ch3-facts{grid-template-columns:1fr 1fr}.ch3-facts div:first-child{grid-column:1/-1}.ch3-stat{flex-basis:100%}}

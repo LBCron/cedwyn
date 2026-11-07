@@ -27,7 +27,9 @@ d.addEventListener("ghf-lang-change",function(){setTimeout(both,0);});
 (function(){
 var d=document,BLUE="#1f4f7a",HEX="#4E8CC8",GOLD="#C8900E",RES=12,DATA=null,M={};
 function fmt(n){return n.toLocaleString("en-GB");}
-function tiles(m){L.tileLayer("https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Ftile.openstreetmap.org%2F%7Bz%7D%2F%7Bx%7D%2F%7By%7D.png",{maxNativeZoom:19,maxZoom:19,referrerPolicy:"strict-origin-when-cross-origin",attribution:"© OpenStreetMap contributors"}).addTo(m);}
+/* v0.2.1: the {s} host form is the one the site build's allowed_tile_templates lists (themes.json); the bare host form of v0.1.1
+   was rewritten by the build into an archive link, so no tiles loaded on the live page. */
+function tiles(m){L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{subdomains:"abc",maxNativeZoom:19,maxZoom:19,referrerPolicy:"strict-origin-when-cross-origin",attribution:"© OpenStreetMap contributors"}).addTo(m);}
 function mk(id,side){var m=L.map(id,{preferCanvas:true,zoomControl:true,scrollWheelZoom:false});tiles(m);
  var S=DATA[side],r=L.canvas({padding:.3}),out=L.layerGroup().addTo(m),hex=L.layerGroup().addTo(m),all=[];
  S.parcels.forEach(function(p){p.parts.forEach(function(rg){var pl=L.polygon(rg,{renderer:r,color:GOLD,weight:1.6,fill:true,fillOpacity:.04,fillColor:GOLD});
@@ -56,6 +58,23 @@ function start(){if(!window.L||!window.h3){return setTimeout(start,60);}
  var ob=d.getElementById("l-out");if(ob)ob.addEventListener("change",function(){["chubut","wales"].forEach(function(s){var o=M[s];if(!o)return;if(ob.checked)o.m.addLayer(o.out);else o.m.removeLayer(o.out);});});}
 start();
 })();
+/* Records: this webapp's own data store, data/central.json (the catalogue fields for the IDs in data/sources.json,
+   synced read-only from the central catalogue by tools/sync_central.py every 6 h). Optional: the page works without it. */
+(function(){var d=document,box=d.getElementById("recs"),ul=d.getElementById("recs-list");if(!box||!ul)return;
+var use={};
+Promise.all([fetch("data/central.json?h="+Math.floor(Date.now()/3.6e6)).then(function(r){return r.ok?r.json():null;}),
+ fetch("data/sources.json?v=0.2.0").then(function(r){return r.ok?r.json():null;}).catch(function(){return null;})])
+.then(function(a){var c=a[0],s=a[1];if(!c||!c.items)return;
+ ((s&&s.records)||[]).forEach(function(r){use[r.id]=r.used_for;});
+ var its=Object.keys(c.items).map(function(k){return c.items[k];}).sort(function(x,y){return String(x.date_sort||"").localeCompare(String(y.date_sort||""));});
+ if(!its.length)return;
+ its.forEach(function(it){var li=d.createElement("li"),a=d.createElement("a");a.target="_top";
+  a.href="/catalogue/?id="+encodeURIComponent(it.id);a.textContent=it.id+(it.date_display?" ("+it.date_display+")":"");li.appendChild(a);
+  if(it.title){li.appendChild(d.createTextNode(": "+it.title));}
+  if(it.status){var st=d.createElement("small");st.textContent=" · "+it.status;li.appendChild(st);}
+  if(use[it.id]){var u=d.createElement("span");u.className="u";u.textContent="Used for "+use[it.id]+".";li.appendChild(u);}
+  ul.appendChild(li);});
+ box.hidden=false;}).catch(function(){});})();
 (function(){var d=document,m=d.getElementById("changelog");if(!m)return;
 function op(e){if(e)e.preventDefault();if(m.showModal){if(!m.open)m.showModal();}else m.setAttribute("open","");}
 function cl(){if(m.close)m.close();else m.removeAttribute("open");}

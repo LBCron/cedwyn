@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.1 (7 Nov 2026)
+Map tiles on the live page. The site build keeps a map-tile address only when it starts with a template listed in `allowed_tile_templates` in unclehowell/cedwyn `themes.json` (`https://{s}.tile.openstreetmap.org/`); v0.1.1's bare `https://tile.openstreetmap.org/` form is not listed, so the build rewrote it into a `/wayback/go/?u=` link and the live page loaded no tiles (blocked by the browser). The tile layer is back on the `{s}` form (`subdomains: "abc"`) and keeps `referrerPolicy: strict-origin-when-cross-origin`, which the tile servers need. Issue #2.
+
+## v0.2.0 (7 Nov 2026)
+Own data store (REPO SPLIT, issue #188 on unclehowell/cedwyn; owner rule of 6 Nov: every webapp has its own backend store that pulls only what it needs from the central catalogue). `data/sources.json` lists the two catalogue records the outline rests on (EV-0211, the Stewart survey plan of 1824; EV-0215, the 1841 tithe apportionment). `tools/sync_central.py` (run by `.github/workflows/sync-central.yml` every 6 hours, read-only against `/api/catalogue/<id>`) writes their id, kind, title, date, status and page into `data/central.json`; the page reads only that file. New Records list under “How it was made”, each record linked to its catalogue entry at `/catalogue/?id=`. Footer version and the changelog table brought up to date (the v0.1.1 row was missing).
+
 ## v0.1.1 (6 Nov 2026)
 Map tiles: the tile images now send the page's origin as the referrer (`referrerPolicy: strict-origin-when-cross-origin` on the tile layer), because the site-wide `Referrer-Policy: no-referrer` header stripped it and the OpenStreetMap tile servers refuse requests with no referrer; the deprecated `{s}` subdomains are dropped for the single `tile.openstreetmap.org` host. Issue #2.
 
