@@ -1,16 +1,17 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.32.0",
- "updated_utc": "2026-11-07T12:42Z",
- "count": 604,
+ "version": "1.38.0",
+ "updated_utc": "2026-11-07T16:31Z",
+ "count": 610,
  "by_category": {
-  "heritage": 111,
-  "press": 163,
+  "heritage": 113,
+  "press": 165,
   "history": 46,
   "legal": 132,
   "social": 4,
-  "title": 77,
-  "correspondence": 95
+  "title": 78,
+  "correspondence": 95,
+  "archaeology": 1
  },
  "by_origin": {
   "wiki-master-timeline": 183,
@@ -19,7 +20,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 32
+  "spill": 38
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -136,6 +137,20 @@
    "date_display": "1800"
   },
   {
+   "date": "1813-09-11",
+   "event": "The Cambrian advertises a Chancery sale (Thomas against Hurst) of freehold estates in Llandough-juxta-Penarth, St Andrews, Cadoxton-juxta-Barry, Merthyr Dyfan and Roath, by auction at the Cardiff Arms Inn on 29 Sep 1813; the Llandough lots are not identified and Tŷ Mawr (Great House) is not named.",
+   "source": "The Cambrian, 11 Sep 1813, p.1 (Welsh Newspapers, National Library of Wales)",
+   "url": "https://newspapers.library.wales/view/3323080/3323081/1/",
+   "wayback": "",
+   "evidence": "EV-0726",
+   "origin": "spill",
+   "category": "press",
+   "sort": "1813-09-11",
+   "id": "CH-0629",
+   "date_display": "11 Sep 1813",
+   "spill": "SP-00051"
+  },
+  {
    "date": "1821",
    "event": "Former National School, Penlan Road / Lewis Road, Llandough built (Coflein NPRN 31824).",
    "source": "Coflein (RCAHMW National Monuments Record of Wales) NPRN 31824; grid ST1674073140",
@@ -225,6 +240,20 @@
    ],
    "id": "CH-0012",
    "date_display": "1842"
+  },
+  {
+   "date": "1847-12-04",
+   "event": "The Cardiff and Merthyr Guardian reports a ploughing match (1 Dec 1847) for the sons and servants of farmers in Leckwith, Llandough and Cogan; a prize goes to “William Williams, eldest son of Mr. J. … of the Great House Farm, Landough”: the name Great House Farm in print by 1847.",
+   "source": "The Cardiff and Merthyr Guardian, 4 Dec 1847, p.3, 'Agricultural Emulation' (Welsh Newspapers)",
+   "url": "https://newspapers.library.wales/view/3089099/3089102/21/",
+   "wayback": "",
+   "evidence": "EV-0727",
+   "origin": "spill",
+   "category": "press",
+   "sort": "1847-12-04",
+   "id": "CH-0630",
+   "date_display": "4 Dec 1847",
+   "spill": "SP-00075"
   },
   {
    "date": "1855",
@@ -1114,6 +1143,20 @@
    "id": "CH-0597",
    "date_display": "1923–24",
    "spill": "SP-00002"
+  },
+  {
+   "date": "1924-03",
+   "event": "Stephenson & Alexander correspondence on the sale of a “piece of land at Llandough opposite O.S. 60” by Lord Bute to Miss O.S. Corbett (Glamorgan Archives DSA/12/4232; file not seen), two months before the May 1924 drain agreement.",
+   "source": "Glamorgan Archives, DSA/12/4232 (Canfod catalogue)",
+   "url": "https://canfod.glamarchives.gov.uk/records/DSA/12/4232",
+   "wayback": "",
+   "evidence": "EV-0728",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1924-03-06",
+   "id": "CH-0631",
+   "date_display": "6–22 Mar 1924",
+   "spill": "SP-00080"
   },
   {
    "date": "15 May 1924",
@@ -2931,6 +2974,20 @@
    "spill": "SP-00077"
   },
   {
+   "date": "1987-02-19",
+   "event": "Ropemaker Properties Ltd applies (1987/00157/OUT) for outline residential development, with replacement allotment and community-garden sites, on land rear of Penlan Road and Lewis Road, Llandough; approved under delegated powers on 28 Apr 1987, during the appeal in BP Properties Ltd v Buckler.",
+   "source": "Vale of Glamorgan Council planning register, application 1987/00157/OUT",
+   "url": "https://vogonline.planning-register.co.uk/Planning/Display/1987/00157/OUT",
+   "wayback": "",
+   "evidence": "EV-0729",
+   "origin": "spill",
+   "category": "heritage",
+   "sort": "1987-02-19",
+   "id": "CH-0632",
+   "date_display": "19 Feb 1987",
+   "spill": "SP-00086"
+  },
+  {
    "date": "6 May 1987",
    "event": "South Wales Echo front page reports the dispute, between the High Court judgment and the appeal (EV-0079).",
    "source": "Legal Wiki, Master Timeline · EV-0079",
@@ -2956,6 +3013,20 @@
    "sort": "1987-05-06",
    "id": "CH-0207",
    "date_display": "6 May 1987"
+  },
+  {
+   "date": "1987-05-27",
+   "event": "A colour vertical air sortie ('Taff-Ely Estuary', Cambridge University Collection of Aerial Photography) passes over Llandough; frames RC8kAU070 and RC8kAU071 are centred close to Tŷ Mawr (Great House). Not digitised.",
+   "source": "Cambridge University Collection of Aerial Photography, catalogue entries RC8kAU070 and RC8kAU071",
+   "url": "https://www.cambridgeairphotos.com/",
+   "wayback": "",
+   "evidence": "EV-0730",
+   "origin": "spill",
+   "category": "heritage",
+   "sort": "1987-05-27",
+   "id": "CH-0633",
+   "date_display": "27 May 1987",
+   "spill": "SP-00116"
   },
   {
    "date": "31 Jul 1987",
@@ -5090,6 +5161,20 @@
    "sort": "2007-05-02",
    "id": "CH-0369",
    "date_display": "2 May 2007"
+  },
+  {
+   "date": "2011",
+   "event": "Glamorgan-Gwent Archaeological Trust field visit to the site of the former church of St Dochdwy, Llandough (GGAT 110 Abandoned Medieval Churches in Glamorgan and Gwent project): the visit confirmed that little now survives of the former church site (HER event 2096235). The old church stood on a terrace south of the present 1866 church (HER 1975891, EV-0733).",
+   "source": "Glamorgan-Gwent Archaeological Trust HER event 2096235, public copy in the Archaeology Data Service catalogue (read 7 Nov 2026)",
+   "url": "https://archaeologydataservice.ac.uk/data-catalogue/resource/00cf5f0846b762f81523769d49ed8bcab5b00c9519b921579a45b3265a53712e",
+   "wayback": "",
+   "evidence": "EV-0733",
+   "origin": "spill",
+   "category": "archaeology",
+   "sort": "2011",
+   "id": "CH-0634",
+   "date_display": "2011",
+   "spill": "GH-cedwyn-research-46"
   },
   {
    "date": "2011-10-12",
@@ -7642,6 +7727,54 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.38.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0634 (2011): Glamorgan-Gwent Archaeological Trust field visit to the site of the former church of St Dochdwy, Llandough (GGAT 110 Abandoned Medieval Chur [spill GH-cedwyn-research-46]",
+   "size": "610 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.37.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0633 (27 May 1987): A colour vertical air sortie ('Taff-Ely Estuary', Cambridge University Collection of Aerial Photography) passes over Llandough; frames RC8kA [spill SP-00116]",
+   "size": "609 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.36.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0632 (19 Feb 1987): Ropemaker Properties Ltd applies (1987/00157/OUT) for outline residential development, with replacement allotment and community-garden sites [spill SP-00086]",
+   "size": "608 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.35.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0631 (6–22 Mar 1924): Stephenson & Alexander correspondence on the sale of a “piece of land at Llandough opposite O.S. 60” by Lord Bute to Miss O.S. Corbett (Glam [spill SP-00080]",
+   "size": "607 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.34.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0630 (4 Dec 1847): The Cardiff and Merthyr Guardian reports a ploughing match (1 Dec 1847) for the sons and servants of farmers in Leckwith, Llandough and Coga [spill SP-00075]",
+   "size": "606 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.33.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0629 (11 Sep 1813): The Cambrian advertises a Chancery sale (Thomas against Hurst) of freehold estates in Llandough-juxta-Penarth, St Andrews, Cadoxton-juxta-Ba [spill SP-00051]",
+   "size": "605 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
   {
    "version": "1.32.0",
    "date": "2026-11-07",
