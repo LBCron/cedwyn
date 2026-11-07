@@ -1,15 +1,15 @@
 {
   "audit": "Cedwyn internal HTML/CSS links and fragments",
-  "pages_scanned": 9648,
+  "pages_scanned": 9664,
   "references_checked": {
-    "resource": 219970,
-    "nav": 492044
+    "resource": 220162,
+    "nav": 492508
   },
-  "database_backed_paths": 7771,
+  "database_backed_paths": 7770,
   "unique_missing_destinations": 6452,
-  "missing_references": 54504,
-  "missing_navigation_references": 38141,
-  "missing_resource_references": 16363,
+  "missing_references": 54567,
+  "missing_navigation_references": 38172,
+  "missing_resource_references": 16395,
   "unique_broken_fragments": 2011,
   "broken_fragment_references": 3637,
   "form_or_endpoint_actions_not_checked": {
@@ -19,7 +19,7 @@
     {
       "kind": "nav",
       "path": "/hive/",
-      "references": 9618,
+      "references": 9634,
       "examples": [
         {
           "from": "/",
@@ -46,7 +46,7 @@
     {
       "kind": "nav",
       "path": "/mcp/",
-      "references": 9614,
+      "references": 9630,
       "examples": [
         {
           "from": "/",
@@ -73,7 +73,7 @@
     {
       "kind": "resource",
       "path": "/blog/rss.xml",
-      "references": 6909,
+      "references": 6925,
       "examples": [
         {
           "from": "/review/",
@@ -100,7 +100,7 @@
     {
       "kind": "resource",
       "path": "/blog/atom.xml",
-      "references": 6909,
+      "references": 6925,
       "examples": [
         {
           "from": "/review/",
@@ -775,7 +775,7 @@
     {
       "kind": "nav",
       "path": "/research/>*.html",
-      "references": 36,
+      "references": 35,
       "examples": [
         {
           "from": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/",
@@ -793,7 +793,7 @@
           "url": "/research/%3E%2A.html"
         },
         {
-          "from": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/",
+          "from": "/research/evidence/ev-0044-vg41-village-green-registration-1970/",
           "attribute": "a[href]",
           "url": "/research/%3E%2A.html"
         }
