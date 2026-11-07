@@ -1,16 +1,16 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.24.0",
- "updated_utc": "2026-11-07T06:42Z",
- "count": 596,
+ "version": "1.32.0",
+ "updated_utc": "2026-11-07T12:42Z",
+ "count": 604,
  "by_category": {
   "heritage": 111,
-  "press": 162,
-  "history": 45,
+  "press": 163,
+  "history": 46,
   "legal": 132,
   "social": 4,
   "title": 77,
-  "correspondence": 89
+  "correspondence": 95
  },
  "by_origin": {
   "wiki-master-timeline": 183,
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 24
+  "spill": 32
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -2076,6 +2076,20 @@
    "date_display": "15 Feb 1969"
   },
   {
+   "date": "1969-03-01",
+   "event": "The Times reports the British Petroleum Pension Fund’s formal offer to acquire Western Ground Rents Ltd (index entry; the article itself not read).",
+   "source": "Index to The Times, March–April 1969, entry “Western Ground Rents, Ltd.” (The Times, 1 Mar 1969, p.13a)",
+   "url": "https://archive.org/details/indextotimesmarc1969unse",
+   "wayback": "",
+   "evidence": "EV-0724",
+   "origin": "spill",
+   "category": "press",
+   "sort": "1969-03-01",
+   "id": "CH-0627",
+   "date_display": "1 Mar 1969",
+   "spill": "SP-00020"
+  },
+  {
    "date": "1969-03-07",
    "event": "Board of Trade Journal (p.668): the Board of Trade does not intend to refer the proposed merger of British Petroleum Co. Ltd. and Western Ground Rents Ltd. to the Monopolies Commission (Monopolies and Mergers Act 1965).",
    "source": "Board of Trade Journal, 7 Mar 1969, p.668",
@@ -2609,6 +2623,20 @@
    "sort": "1982-11-30",
    "id": "CH-0186",
    "date_display": "30 Nov 1982"
+  },
+  {
+   "date": "1983",
+   "event": "A published Rankine lecture describes the Llandough quarry as “a disused brickworks now developed as a small industrial estate” (link to the Great House Farm quarry parcel not checked).",
+   "source": "Developments in Soil Mechanics: the second ten Rankine lectures (Thomas Telford, 1983), Fig. 56",
+   "url": "https://archive.org/details/developmentsinso0000unse_y4b4",
+   "wayback": "",
+   "evidence": "EV-0725",
+   "origin": "spill",
+   "category": "history",
+   "sort": "1983",
+   "id": "CH-0628",
+   "date_display": "1983",
+   "spill": "SP-00089"
   },
   {
    "date": "23 Feb 1983",
@@ -7446,6 +7474,20 @@
    "date_display": "22 Oct 2026"
   },
   {
+   "date": "2026-10-23",
+   "event": "bp replies to the 16 Oct 2026 preservation request for Great House Farm / Tŷ Mawr records (1969 to date): it knows of no live cause of action, treats BP Properties Ltd v Buckler (1987) as concluded, and is “not able to confirm” a preservation hold. A further request on 24 Oct asks for an answer by 7 Nov 2026.",
+   "source": "bp, email of 23 Oct 2026 09:26 UTC; further request 24 Oct 2026",
+   "url": "https://cedwyn.bucklerfamily.estate/api/catalogue/EV-0720",
+   "wayback": "",
+   "evidence": "EV-0720",
+   "origin": "spill",
+   "category": "correspondence",
+   "sort": "2026-10-23",
+   "id": "CH-0623",
+   "date_display": "23 Oct 2026",
+   "spill": "SP-00098"
+  },
+  {
    "date": "26 Oct 2026",
    "event": "Wales Office internal review of 26FOI 103 due (per the family’s email; not checked against the authority’s letter) (PENDING)",
    "source": "Legal Wiki, Master Timeline",
@@ -7469,6 +7511,20 @@
    "date_display": "26 Oct 2026"
   },
   {
+   "date": "2026-11-02",
+   "event": "The SPAB Archive replies that a search of its online catalogue under all the names given finds no file and no photographs on Great House Farm (Tŷ Mawr), Llandough; whether its paper indexes were searched is not stated.",
+   "source": "SPAB Archive Officer, email of 2 Nov 2026 16:19 UTC",
+   "url": "https://cedwyn.bucklerfamily.estate/api/catalogue/EV-0718",
+   "wayback": "",
+   "evidence": "EV-0718",
+   "origin": "spill",
+   "category": "correspondence",
+   "sort": "2026-11-02",
+   "id": "CH-0621",
+   "date_display": "2 Nov 2026",
+   "spill": "SP-00096"
+  },
+  {
    "date": "2026-11-03",
    "event": "Companies House Archive Searches replies that the records of Western Ground Rents Limited (00342092), the 1938 purchaser in the Tŷ Mawr (Great House) title chain, were not sent to the National Archives and that the paper records and microfiche were destroyed. The National Archives catalogue lists the company's files BT 31/87651 and BT 31/84793 as open at Kew (EV-0700, EV-0701).",
    "source": "Companies House Archive Searches, email of 3 Nov 2026; TNA Discovery C18015071, C18012213",
@@ -7483,6 +7539,34 @@
    "spill": "SP-00083"
   },
   {
+   "date": "2026-11-03",
+   "event": "A complaint under section 50 of the Freedom of Information Act 2000 goes to the Information Commissioner’s Office about Amgueddfa Cymru – Museum Wales’s handling of FOI 2026-024 (a discovery at Tŷ Mawr (Great House)), within six weeks of the 22 Sep 2026 review; it asks for the searches to be re-run under every name of the house and the Museum’s own “Church Farm” and “Llandough Farm” terms.",
+   "source": "Email to the Information Commissioner’s Office, 3 Nov 2026 14:12 UTC",
+   "url": "https://cedwyn.bucklerfamily.estate/api/catalogue/EV-0721",
+   "wayback": "",
+   "evidence": "EV-0721",
+   "origin": "spill",
+   "category": "correspondence",
+   "sort": "2026-11-03",
+   "id": "CH-0624",
+   "date_display": "3 Nov 2026",
+   "spill": "SP-00094"
+  },
+  {
+   "date": "2026-11-03",
+   "event": "Companies House Archive Searches states that the records of Mountjoy Limited (00179977; dissolved 31 Jan 2001), the Bute company that sold to Western Ground Rents in 1938, were not sent to the National Archives and that its paper records and microfiche were destroyed.",
+   "source": "Companies House Archive Searches, email of 3 Nov 2026 (our ref: Mountjoy Limited)",
+   "url": "https://cedwyn.bucklerfamily.estate/api/catalogue/EV-0722",
+   "wayback": "",
+   "evidence": "EV-0722",
+   "origin": "spill",
+   "category": "correspondence",
+   "sort": "2026-11-03",
+   "id": "CH-0625",
+   "date_display": "3 Nov 2026",
+   "spill": "SP-00105"
+  },
+  {
    "date": "2026-11-04",
    "event": "HM Land Registry (ref Z084NQV, title WA231076) replies that the statement asked about is contained in the first-registration application (Form 1E), that no application for alteration or indemnity may be considered (its letters of 23 Mar, 19 Apr and 25 May 2026), and that the appropriate forum for any further action is the Court (HM Land Registry's position). No date is given for any notice to the occupier.",
    "source": "HM Land Registry letter, 4 Nov 2026, ref Z084NQV (catalogue EV-0684)",
@@ -7495,6 +7579,34 @@
    "id": "CH-0601",
    "date_display": "4 Nov 2026",
    "spill": "SP-00112"
+  },
+  {
+   "date": "2026-11-04",
+   "event": "The National Library of Wales answers FOI/2026/16 (the 1610 Herbert survey S7 and Bute X.6(12) on microfilm) by treating the information as reasonably accessible under section 21 (Reading Room, researchers, copying); it does not say whether S7 has a Llandough-juxta-Penarth entry.",
+   "source": "National Library of Wales, response to FOI/2026/16 dated 4 Nov 2026 (sent 5 Nov)",
+   "url": "https://cedwyn.bucklerfamily.estate/api/catalogue/EV-0719",
+   "wayback": "",
+   "evidence": "EV-0719",
+   "origin": "spill",
+   "category": "correspondence",
+   "sort": "2026-11-04",
+   "id": "CH-0622",
+   "date_display": "4 Nov 2026",
+   "spill": "SP-00100"
+  },
+  {
+   "date": "2026-11-04",
+   "event": "Amgueddfa Cymru – Museum Wales, on FOI 2026-020, checks the added names of the house, states that records would be indexed under “Llandough”, and finds no records of furniture or other moveable property from Great House Farm / Tŷ Mawr.",
+   "source": "Amgueddfa Cymru – Museum Wales FOI Team, email of 4 Nov 2026, FOI 2026-020",
+   "url": "https://cedwyn.bucklerfamily.estate/api/catalogue/EV-0723",
+   "wayback": "",
+   "evidence": "EV-0723",
+   "origin": "spill",
+   "category": "correspondence",
+   "sort": "2026-11-04",
+   "id": "CH-0626",
+   "date_display": "4 Nov 2026",
+   "spill": "SP-00099"
   },
   {
    "date": "2026-11-06",
@@ -7530,6 +7642,70 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.32.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0628 (1983): A published Rankine lecture describes the Llandough quarry as “a disused brickworks now developed as a small industrial estate” (link to the [spill SP-00089]",
+   "size": "604 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.31.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0627 (1 Mar 1969): The Times reports the British Petroleum Pension Fund’s formal offer to acquire Western Ground Rents Ltd (index entry; the article itself not [spill SP-00020]",
+   "size": "603 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.30.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0626 (4 Nov 2026): Amgueddfa Cymru – Museum Wales, on FOI 2026-020, checks the added names of the house, states that records would be indexed under “Llandough” [spill SP-00099]",
+   "size": "602 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.29.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0625 (3 Nov 2026): Companies House Archive Searches states that the records of Mountjoy Limited (00179977; dissolved 31 Jan 2001), the Bute company that sold t [spill SP-00105]",
+   "size": "601 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.28.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0624 (3 Nov 2026): A complaint under section 50 of the Freedom of Information Act 2000 goes to the Information Commissioner’s Office about Amgueddfa Cymru – Mu [spill SP-00094]",
+   "size": "600 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.27.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0623 (23 Oct 2026): bp replies to the 16 Oct 2026 preservation request for Great House Farm / Tŷ Mawr records (1969 to date): it knows of no live cause of actio [spill SP-00098]",
+   "size": "599 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.26.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0622 (4 Nov 2026): The National Library of Wales answers FOI/2026/16 (the 1610 Herbert survey S7 and Bute X.6(12) on microfilm) by treating the information as  [spill SP-00100]",
+   "size": "598 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.25.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0621 (2 Nov 2026): The SPAB Archive replies that a search of its online catalogue under all the names given finds no file and no photographs on Great House Far [spill SP-00096]",
+   "size": "597 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
   {
    "version": "1.24.0",
    "date": "2026-11-07",
