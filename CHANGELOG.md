@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0] - 2026-11-07
+
+### Added
+- New entry "River Ely (Afon Llai)" (/c/river-ely/, lexicon id `river-ely`): the forms Ely and Afon Llai from Captain W. H. Smyth, *Nautical Observations on the Port and Maritime Vicinity of Cardiff* (Cardiff, 1840), p.13 and footnote, checked on the page image of the digitised copy; Alan Thorne, *Place names of Penarth* (1997), p.4, as a secondary source. Records what is not checked: a parliamentary version of the 1840 words, and the scholarly view of the derivation. Closes unclehowell/cedwyn-nomenclature#16.
+
+### Validated
+- No existing concept, variant or page was changed; 26 → 27 concepts. The new entry is found by the search box; the A–Z list on the landing page is left unchanged while the page edit freeze is on.
+
 ## [1.2.2] - 2026-11-02
 
 ### Added
