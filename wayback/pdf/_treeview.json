@@ -1081,5 +1081,18 @@
     "title_v": 1,
     "catalogue_id": "AR-HCJ-214-1958-LECKWITH-COMMON",
     "source": "Journals of the House of Commons, vol. 214 (1958-59), pp.22, 40, 328, 346; five-page extract of Parliament's 386-page PDF"
+  },
+  {
+    "name": "2026-11-04_south-wales-police_sar-1293-26_disclosure_en_v0.0.0",
+    "path": "pdf/foi/2026-11-04_south-wales-police_sar-1293-26_disclosure.pdf",
+    "_links": {
+      "html": "pdf/foi/2026-11-04_south-wales-police_sar-1293-26_disclosure.pdf"
+    },
+    "tags": [
+      "foi",
+      "bpvsbuckler",
+      "sar",
+      "gdpr"
+    ]
   }
 ]
