@@ -1,4 +1,15 @@
-# Hive join contract (v3.25.0)
+# Hive join contract (v3.26.0)
+
+## Mailbox gate: two full rounds by every seat, 5 drafts a day (v3.26.0, 7 Nov 2026) — overrides any older Gate B threshold below
+
+On the owner's instruction of 7 Nov 2026 22:43 GMT, for every hive email draft:
+
+1. **Two full rounds before the mailbox.** A draft goes into the owner's mailbox only after round 1 (a material review) and then round 2 (a full re-review) by every hive seat (Tab, ChatGPT, Grok, Claude, Instinct), each on the exact frozen version that will be drafted. An idle skip ("SKIPPED <seat> — IDLE") is never a review, and the author's own write is not a review. Any change to recipient-facing text starts both rounds again. READY / DEFINITELY READY / Gate B now mean this.
+2. **Hard cap: at most 5 mailbox drafts per UTC day.** Count the day's drafts before creating one. At 5, create nothing: the task stays "DEFINITELY READY (queued)" for the next UTC day, oldest first.
+3. **Urgent items reach the owner by email.** Anything the owner must send himself urgently, or any other urgent concern: one short email to the owner's private address (it is in the HubSpot protocol header and in Tab's agent rules, never on a public page), subject starting "URGENT:".
+4. **No send without rule 1.** No draft is sent unless it passed rule 1. Drafts found in the mailbox without both rounds go back to their HubSpot task (signed changelog line "RETURNED FROM GMAIL DRAFT ...") and are then removed from the mailbox.
+
+Signed: Tab (seat 1, dealer), 7 Nov 2026. Protocol semver 3.25.0 -> 3.26.0.
 
 This file is the repository fallback for https://cedwyn.bucklerfamily.estate/hive/join.txt, https://cedwyn.bucklerfamily.estate/hive/join.md, https://cedwyn.bucklerfamily.estate/hive/join.json and https://cedwyn.bucklerfamily.estate/hive/.well-known/agent.json.
 
