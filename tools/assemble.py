@@ -13,6 +13,12 @@ report = {}
 # silently use a Cedwyn legacy branch. Recorded under _split_source.
 SPLIT = {}
 SPLIT_FAILURES = []
+# Build commands for source-only repositories whose output is produced during
+# assembly. Kept in the build code rather than the public theme manifest.
+SPLIT_BUILDS = {
+    'docs': 'python3 -m pip install --quiet --break-system-packages -r requirements.txt && python3 _theme-docs/build.py',
+    'projects': 'node projects/check.mjs',
+}
 try:
     _sr = json.load(open(ROOT / 'split-repos.json'))
     for _a in _sr.get('apps', []):
@@ -102,34 +108,90 @@ def snapshot(t, out):
     report.setdefault('_snapshot', {})[t['id']] = {'ref': want, 'files': n, 'rc': r.returncode, 'peer_theme_roots_detected': peer_theme_roots[:30]}
     return n if r.returncode == 0 and (out / 'index.html').exists() else 0
 
-def fetch_split_repo(repo, out, branch='main'):
-    """Fetch the dedicated repo's branch into out/. Used when split-repos.json has deploy=repo (#311)."""
+def fetch_split_repo(repo, out, theme):
+    """Build/copy a dedicated app repository using the same root, build and output
+    contract that the estate theme previously applied to its legacy branch. Never
+    substitute a Cedwyn branch. Worker-rendered apps may be read-only crawled from
+    their declared live Worker URL after their dedicated source repo is checked."""
+    tid = theme.get('id', out.name)
     work = pathlib.Path('split_tmp_' + out.name)
     shutil.rmtree(work, ignore_errors=True)
     work.mkdir()
-    # shallow clone of the dedicated repo
-    r = sh(f"git clone --depth 1 --branch {branch} https://github.com/{repo}.git {work}", t=600)
+    clone_branch = theme.get('repo_branch', 'main')
+    r = sh(f"git clone --depth 1 --branch {clone_branch} https://github.com/{repo}.git {work}", t=600)
     if r.returncode != 0:
-        # try default branch if main missing
         shutil.rmtree(work, ignore_errors=True)
         work.mkdir()
         r = sh(f"git clone --depth 1 https://github.com/{repo}.git {work}", t=600)
     if r.returncode != 0:
+        err = (r.stderr or r.stdout or '')[-500:]
         shutil.rmtree(work, ignore_errors=True)
-        return 0, f"clone failed: {(r.stderr or r.stdout or '')[-300:]}"
-    # Prefer public/ or dist/ or site/ if present, else repo root
-    for cand in ('public', 'dist', 'site', 'static'):
-        d = work / cand
-        if d.is_dir() and any(d.iterdir()):
-            shutil.copytree(d, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
+        return 0, f"clone failed: {err}", {}
+
+    meta = {'repo_branch': clone_branch}
+    build = theme.get('build') or SPLIT_BUILDS.get(tid)
+    root = work / (theme.get('root') or '')
+    if build:
+        if not root.is_dir():
             shutil.rmtree(work, ignore_errors=True)
-            n = sum(1 for _ in out.rglob('*') if _.is_file())
-            return n, f"repo:{repo}/{cand}"
-    # root
-    shutil.copytree(work, out, dirs_exist_ok=True, ignore=shutil.ignore_patterns('.git', 'node_modules', '.github'))
+            return 0, f"build root missing: {theme.get('root') or '.'}", meta
+        b = sh(build, cwd=root, t=theme.get('build_timeout', 900))
+        meta['build'] = {
+            'command': build,
+            'rc': b.returncode,
+            'stdout_tail': (b.stdout or '')[-1200:],
+            'stderr_tail': (b.stderr or '')[-1600:]
+        }
+        report.setdefault('_split_build_logs', {})[tid] = meta['build']
+        if b.returncode != 0:
+            shutil.rmtree(work, ignore_errors=True)
+            return 0, f"build failed (exit {b.returncode})", meta
+
+    # Respect the theme's declared output directory. A non-empty static/ folder is
+    # not necessarily the compiled site; it may be source, assets, or a nested app.
+    rel = theme.get('dir') or ''
+    d = work / rel
+    if d.is_dir() and (d / 'index.html').is_file():
+        shutil.copytree(
+            d, out, dirs_exist_ok=True,
+            ignore=shutil.ignore_patterns('.git', 'node_modules', '.github', 'worker')
+        )
+        meta['output_dir'] = rel or '.'
+        if theme.get('overlay'):
+            overlay = work / theme['overlay']
+            if overlay.is_dir():
+                shutil.copytree(
+                    overlay, out, dirs_exist_ok=True,
+                    ignore=shutil.ignore_patterns('.git', 'node_modules', '.github', 'functions', 'worker')
+                )
+                meta['overlay'] = theme['overlay']
+    else:
+        meta['output_dir'] = rel or '.'
+        meta['output_missing_index'] = str(d.relative_to(work)) if d.exists() else f"{rel or '.'} (missing)"
+
     shutil.rmtree(work, ignore_errors=True)
-    n = sum(1 for _ in out.rglob('*') if _.is_file())
-    return n, f"repo:{repo}/root"
+    n = sum(1 for p in out.rglob('*') if p.is_file())
+    if n and (out / 'index.html').is_file():
+        return n, f"repo:{repo}/{rel or 'root'}", meta
+
+    # A small number of app shells are rendered by their own Worker rather than
+    # emitted as static HTML (e.g. the Dartboard's TanStack Start Worker). The
+    # source repo remains the authoritative code location; this is a read-only
+    # compiled-page capture from the app's explicitly declared Worker endpoint.
+    if theme.get('crawl'):
+        shutil.rmtree(out, ignore_errors=True)
+        out.mkdir(parents=True, exist_ok=True)
+        n = crawl(theme['crawl'], out, robots=False, quota=theme.get('crawl_quota', '150m'),
+                  t=theme.get('crawl_secs', 420), sitemap=theme.get('crawl_sitemap'))
+        meta['worker_url'] = theme['crawl']
+        if n and (out / 'index.html').is_file():
+            meta['rendered_from'] = 'declared live Worker endpoint; verify Worker deployment provenance separately'
+            return n, f"worker-crawl:{theme['crawl']}", meta
+
+    shutil.rmtree(out, ignore_errors=True)
+    out.mkdir(parents=True, exist_ok=True)
+    reason = meta.get('output_missing_index', 'selected output has no index.html')
+    return 0, f"no compiled index.html: {reason}", meta
 
 def one(t):
     tid = t['id']; out = DIST / tid; shutil.rmtree(out, ignore_errors=True); out.mkdir(parents=True)
@@ -137,8 +199,10 @@ def one(t):
     # REPO SPLIT step 3 (#311): prefer dedicated repo when marked deploy=repo
     sa = SPLIT.get(tid) or SPLIT.get(t.get('branch') or '') or SPLIT.get(t.get('snapshot_branch') or '')
     if sa and sa.get('deploy') == 'repo' and sa.get('repo'):
-        n, how = fetch_split_repo(sa['repo'], out)
-        report.setdefault('_split_source', {})[tid] = {'repo': sa['repo'], 'how': how, 'files': n}
+        n, how, split_meta = fetch_split_repo(sa['repo'], out, t)
+        report.setdefault('_split_source', {})[tid] = {
+            'repo': sa['repo'], 'how': how, 'files': n, **split_meta
+        }
         if n and (out / 'index.html').exists():
             # success — skip branch/snapshot paths
             big = []
@@ -146,17 +210,23 @@ def one(t):
                 if f.is_file() and f.stat().st_size > MAXF:
                     big.append(str(f.relative_to(DIST))); f.unlink()
             size = sum(f.stat().st_size for f in out.rglob('*') if f.is_file())
-            report[tid] = {'how': how, 'files': n, 'bytes': size, 'has_index': True, 'dropped_over_24MB': big, 'secs': round(time.time() - t0), 'split_repo': sa['repo']}
+            report[tid] = {
+                'how': how, 'files': n, 'bytes': size, 'has_index': True,
+                'dropped_over_24MB': big, 'secs': round(time.time() - t0),
+                'split_repo': sa['repo'], **split_meta
+            }
             print(tid, report[tid]['how'], n, round(size / 1e6, 1), 'MB', flush=True)
             return
         # Fail closed: the dedicated repository is authoritative. Do not read a
-        # Cedwyn legacy branch, crawl another host, or substitute a DATRO-derived copy.
+        # Cedwyn legacy branch or a DATRO-derived copy as a fallback.
         reason = how or "dedicated repository did not provide an index.html"
         failure = {"theme": tid, "repo": sa["repo"], "reason": reason}
         SPLIT_FAILURES.append(failure)
-        report[tid] = {"how": "split-repo-failed", "files": n, "bytes": 0,
-                       "has_index": False, "error": reason,
-                       "secs": round(time.time() - t0), "split_repo": sa["repo"]}
+        report[tid] = {
+            "how": "split-repo-failed", "files": n, "bytes": 0,
+            "has_index": False, "error": reason, "secs": round(time.time() - t0),
+            "split_repo": sa["repo"], **split_meta
+        }
         print(tid, "SPLIT REPO FAILED — no legacy fallback", flush=True)
         return
     if t.get('snapshot_branch') and not FORCE_CRAWL:
