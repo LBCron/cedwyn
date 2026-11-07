@@ -541,6 +541,10 @@
       var hm = mk("a", "ghf-v2-dhome", s.home); hm.href = HOME; inn.appendChild(hm);
       // Values and Standards (25 Oct 2026): the editorial standards page, in every menu. - 
       var vsl = mk("a", "ghf-v2-dhome", s.values || "Values and Standards"); vsl.href = "/values/"; inn.appendChild(vsl);
+      // 3 Nov 2026 (owner purge rule 00:48 GMT 2 Nov: routes to /ebooks/ belong in the menu, footer and /ebooks/ itself): one plain
+      // "E-books" link in every menu, in this scope (/wales/ebooks/, /argentina/ebooks/). Not a strip, chip or button. - Sion's Tab agent
+      var ebp = (location.pathname.match(/^\/(wales|argentina)\//) || [])[1], ebl = mk("a", "ghf-v2-dhome", { cy: "E-lyfrau", es: "E-libros" }[lg()] || "E-books");
+      ebl.href = (ebp ? "/" + ebp : "") + "/ebooks/"; ebl.setAttribute("data-cw-menu-link", "ebooks"); inn.appendChild(ebl);
     }
     function openDrawer() {
       if (!drawer) {

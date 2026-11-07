@@ -559,6 +559,14 @@ try:
     purge_promo.run(DIST)
 except Exception as _e:
     print('promo purge failed:', _e)
+# 3 Nov 2026 (owner, 04:14 GMT: "Do whatever you think will drive website traffic and sales"; purge rule: routes to /ebooks/ belong in
+# the menu, footer and /ebooks/ itself): one plain "E-books" link in the footer of every page that has one. Never stops a build - Sion's Tab agent
+try:
+    import site_links
+    site_links.run(DIST)
+    site_links.ebooks_ld(DIST)   # 1.1.0: Book/Product JSON-LD on /ebooks/ (markup only)
+except Exception as _e:
+    print('footer e-books link failed:', _e)
 
 # Holdings wording (owner rule, 22:25 GMT 30 Oct 2026; P-104): public text never states whether the family holds a record; it names
 # which other party should hold the original and what it has disclosed. Exact-phrase rewrites from data/holdings-wording.json over
