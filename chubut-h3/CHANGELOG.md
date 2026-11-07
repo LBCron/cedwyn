@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.2.2 (7 Nov 2026)
+Map usable after zooming in. The tiles were loading (every request HTTP 200, direct from a/b/c.tile.openstreetmap.org, no 403 or policy tile), but this stretch of the Chubut coast is open steppe that OpenStreetMap has not mapped in detail: from zoom 15 every standard tile around the outline is one plain land colour (#F2EFE9, a 103-byte PNG), so the map turned pale and blank after one zoom, with only faint seams between identical tiles. Both maps now carry a Satellite / Street map switch (Leaflet layers control, expanded); the Chubut map opens on Esri World Imagery (`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}`, already listed in cedwyn `themes.json` `allowed_tile_templates` and used on /maps/; imagery to zoom 17, enlarged beyond, with its attribution), and Llandough keeps the OpenStreetMap layer first. Both layers keep `referrerPolicy: strict-origin-when-cross-origin`. Issue #2.
+
 ## v0.2.1 (7 Nov 2026)
 Map tiles on the live page. The site build keeps a map-tile address only when it starts with a template listed in `allowed_tile_templates` in unclehowell/cedwyn `themes.json` (`https://{s}.tile.openstreetmap.org/`); v0.1.1's bare `https://tile.openstreetmap.org/` form is not listed, so the build rewrote it into a `/wayback/go/?u=` link and the live page loaded no tiles (blocked by the browser). The tile layer is back on the `{s}` form (`subdomains: "abc"`) and keeps `referrerPolicy: strict-origin-when-cross-origin`, which the tile servers need. Issue #2.
 

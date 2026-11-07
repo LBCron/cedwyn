@@ -3,13 +3,13 @@
   "pages_scanned": 9669,
   "references_checked": {
     "resource": 220207,
-    "nav": 499075
+    "nav": 499076
   },
-  "database_backed_paths": 7772,
-  "unique_missing_destinations": 6475,
-  "missing_references": 54631,
+  "database_backed_paths": 7775,
+  "unique_missing_destinations": 6476,
+  "missing_references": 54632,
   "missing_navigation_references": 38234,
-  "missing_resource_references": 16397,
+  "missing_resource_references": 16398,
   "unique_broken_fragments": 2011,
   "broken_fragment_references": 3637,
   "form_or_endpoint_actions_not_checked": {

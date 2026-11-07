@@ -29,8 +29,16 @@ var d=document,BLUE="#1f4f7a",HEX="#4E8CC8",GOLD="#C8900E",RES=12,DATA=null,M={}
 function fmt(n){return n.toLocaleString("en-GB");}
 /* v0.2.1: the {s} host form is the one the site build's allowed_tile_templates lists (themes.json); the bare host form of v0.1.1
    was rewritten by the build into an archive link, so no tiles loaded on the live page. */
-function tiles(m){L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{subdomains:"abc",maxNativeZoom:19,maxZoom:19,referrerPolicy:"strict-origin-when-cross-origin",attribution:"© OpenStreetMap contributors"}).addTo(m);}
-function mk(id,side){var m=L.map(id,{preferCanvas:true,zoomControl:true,scrollWheelZoom:false});tiles(m);
+/* v0.2.2: the Chubut site is open steppe that OpenStreetMap has not mapped in detail, so from zoom 15 its standard tiles there
+   are one plain land colour (103-byte PNGs, all HTTP 200): the map looked pale and blank after zooming in, with only the seams
+   between identical tiles showing. Each map now carries a Satellite / Street map switch; the Chubut map opens on satellite
+   imagery (the World Imagery template the site build already allows, as on /maps/; real imagery to zoom 17, enlarged beyond),
+   Llandough keeps the street map first. */
+function tiles(m,sat){var o={referrerPolicy:"strict-origin-when-cross-origin",maxZoom:19},
+ osm=L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",L.extend({subdomains:"abc",maxNativeZoom:19,attribution:"© OpenStreetMap contributors"},o)),
+ img=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",L.extend({maxNativeZoom:17,attribution:"Imagery: Esri, Maxar, Earthstar Geographics and the GIS User Community"},o));
+ (sat?img:osm).addTo(m);L.control.layers({"Satellite":img,"Street map":osm},null,{collapsed:false,position:"topright"}).addTo(m);}
+function mk(id,side){var m=L.map(id,{preferCanvas:true,zoomControl:true,scrollWheelZoom:false});tiles(m,side==="chubut");
  var S=DATA[side],r=L.canvas({padding:.3}),out=L.layerGroup().addTo(m),hex=L.layerGroup().addTo(m),all=[];
  S.parcels.forEach(function(p){p.parts.forEach(function(rg){var pl=L.polygon(rg,{renderer:r,color:GOLD,weight:1.6,fill:true,fillOpacity:.04,fillColor:GOLD});
   pl.on("click",function(e){show(side,p,e.latlng);});pl.addTo(out);all.push(pl);});});
