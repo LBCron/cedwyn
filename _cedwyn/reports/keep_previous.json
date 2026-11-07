@@ -42,7 +42,7 @@
   },
   "terrain": {
    "files_now": 6,
-   "files_previous_build": 10,
+   "files_previous_build": 9,
    "home": true
   },
   "cyberspace": {
@@ -52,7 +52,7 @@
   }
  },
  "restored": {
-  "terrain": 6
+  "terrain": 5
  },
  "refused": [
   "terrain"
