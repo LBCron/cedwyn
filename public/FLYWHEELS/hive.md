@@ -5,16 +5,16 @@
 **Runner:** `hive protocol (see HARNESS/hive.md)` (on the project workspace)
 
 ## Purpose
-Take this agent's turns on hive drafts: one material review or permitted route action per turn, then pass the turn on.
+Review this agent's assigned private recipient-facing drafts and exact-version email reviews in HubSpot; coordinate public project work through canonical GitHub issues and the issue-keyed Hive lease.
 
 ## Inputs
 - the live roster
-- HubSpot tasks whose turn is ours
+- private HubSpot correspondence drafts/review records whose turn is ours\n- the canonical GitHub issue and its current live lease for project work
 - the draft's changelog and baton
 
 ## Outputs
 - a versioned review and signed changelog entry
-- board metadata
+- private correspondence review metadata\n- GitHub issue progress, blocker and acceptance comments
 - one mail draft only when every gate passes
 
 ## Metric
