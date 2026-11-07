@@ -71,6 +71,11 @@
    "pinned_utc": "2026-11-02T05:03:00Z",
    "sha": "a94897c67d11889f4cea66a297c013dd13c92038"
   },
+  "theories": {
+   "branch": "section/theories",
+   "pinned_utc": "2026-11-07T17:55:00Z",
+   "sha": "444294745f3463c803110d65946e7027e7b53c44"
+  },
   "tithe-h3": {
    "branch": "section/tithe-h3",
    "pinned_utc": "2026-11-07T00:35:19Z",
