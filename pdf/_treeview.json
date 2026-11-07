@@ -16,5 +16,18 @@
     "tags": [
       "bpvsbuckler"
     ]
+  },
+  {
+    "name": "2026-11-04_south-wales-police_sar-1293-26_disclosure_en_v0.0.0",
+    "path": "pdf/foi/2026-11-04_south-wales-police_sar-1293-26_disclosure.pdf",
+    "_links": {
+      "html": "pdf/foi/2026-11-04_south-wales-police_sar-1293-26_disclosure.pdf"
+    },
+    "tags": [
+      "foi",
+      "bpvsbuckler",
+      "sar",
+      "gdpr"
+    ]
   }
 ]
