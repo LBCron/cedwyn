@@ -1,10 +1,10 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.44.0",
- "updated_utc": "2026-11-07T18:37Z",
- "count": 626,
+ "version": "1.45.0",
+ "updated_utc": "2026-11-07T18:40Z",
+ "count": 628,
  "by_category": {
-  "heritage": 115,
+  "heritage": 117,
   "press": 165,
   "history": 55,
   "legal": 134,
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 54
+  "spill": 56
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -97,6 +97,20 @@
    "id": "CH-0646",
    "date_display": "1535",
    "spill": "GH-cedwyn-research-5"
+  },
+  {
+   "date": "1536",
+   "event": "John Leland's Itinerary lists \"Pont Lecwith of 3. [arches] of stone\" among the bridges on the Ely, and passes \"Cogan Pille ... wher is a fair maner place on the ripe side longging to Mr. Herebert of Swansey, and then to Ponte Lecwith of stone scant a mile\" (1906 edition, pp. 19, 25; EV-0830). Coflein dates a stone bridge here \"as early as 1536\" (EV-0828). The manuscript is not checked.",
+   "source": "The Itinerary in Wales of John Leland, ed. L. Toulmin Smith (1906), archive.org copy",
+   "url": "https://archive.org/details/itineraryinwales00lelauoft/page/n41",
+   "wayback": "",
+   "evidence": "EV-0830",
+   "origin": "spill",
+   "category": "heritage",
+   "sort": "1536-00-00",
+   "id": "CH-0651",
+   "date_display": "c.1536-1539",
+   "spill": "GH-cedwyn-research-31"
   },
   {
    "date": "1543",
@@ -1384,6 +1398,20 @@
    "id": "CH-0650",
    "date_display": "1928",
    "spill": "GH-cedwyn-research-4b"
+  },
+  {
+   "date": "1935",
+   "event": "A reinforced concrete single-arch bridge (Coflein NPRN 307689) is opened in 1935 alongside Leckwith Old Bridge and takes the traffic; the three-arched stone bridge survives beside it (Coflein NPRN 24126, EV-0828; also the Leckwith community council village history, EV-0826).",
+   "source": "RCAHMW Coflein, NPRN 24126 (Leckwith Old Bridge), read 7 Nov 2026",
+   "url": "https://coflein.gov.uk/en/site/24126/",
+   "wayback": "http://web.archive.org/web/20260112031130/https://coflein.gov.uk/en/site/24126/",
+   "evidence": "EV-0828",
+   "origin": "spill",
+   "category": "heritage",
+   "sort": "1935-00-00",
+   "id": "CH-0652",
+   "date_display": "1935",
+   "spill": "GH-cedwyn-maps-1"
   },
   {
    "date": "1936",
@@ -7950,6 +7978,14 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.45.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0651 (c.1536-1539); CH-0652 (1935) [idle-watch: cedwyn-research#31, cedwyn-maps#1; catalogue EV-0828, EV-0830]",
+   "size": "628 events",
+   "price": "free",
+   "who": "Tab agent (idle-watch run)"
+  },
   {
    "version": "1.44.0",
    "date": "2026-11-07",
