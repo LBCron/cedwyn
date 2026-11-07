@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn_academy_architecture/v1",
- "version": "1.0.18",
- "updated": "2026-11-05",
+ "version": "1.0.19",
+ "updated": "2026-11-07",
  "refreshed_by": "the agent library cycle (every 6 hours); edit this file, then rebuild the academy",
  "source_documents": [
   "/projects/data-architecture/ (programme page: plan, work packages, milestones)",
@@ -9,10 +9,10 @@
   "/academy/HARNESS/commits.md"
  ],
  "structure": {
-  "repository": "one repository for the whole site, 140+ branches",
+  "repository": "the main repository holds the site shell, the central catalogue database, the agent and machine interface and the API; from 6 Nov 2026 each webapp moves to its own dedicated repository that deploys and previews on its own (the split registry on main lists them; old theme branches become mirrors refreshed by a sync)",
   "branches": {
    "main": "the shell: shared header, menu and runtime, landing page, build tools, themes.json, sections.lock, shared rules, CI. Site-wide changes only, by pull request labelled site-wide.",
-   "theme branches": "one webapp per branch (for example kissed-frogs, nomenclature, projects, maps, cedwyn-movie); the branch folder (usually public/) is copied to /{id}/ at build time",
+   "theme branches": "one webapp per branch (for example kissed-frogs, nomenclature, projects, maps, cedwyn-movie); the branch folder (usually public/) is copied to /{id}/ at build time; for a webapp listed in the split registry the branch is a mirror of its dedicated repository and is overwritten at each sync, so commits go to the dedicated repository",
    "section/{id}": "snapshot branches for crawled sections (research, wiki, fcg, app, chat, estate, patagonia, cyberspace), pinned by sections.lock and moved by the sections-ci workflow",
    "agents": "this academy (public/ copied to /academy/ outside the theme list, noindex)",
    "hive": "hive state (roster, board, join file, batons) served at /hive/",
@@ -56,7 +56,8 @@
   ],
   "shared_header": "one JSON file per site under web/_cedwyn/ghf/sites/, plus themes.json and site-areas.json, produce the uniform header and menu that titles every page; pages therefore never repeat a big title",
   "versions": "/_cedwyn/versions.json is the one site-wide version scheme: the newest edition of any product is v0.0.2, the one before it v0.0.1, older ones -v0.0.2, -v0.0.3 and so on (no -v0.0.1); read by /documentary/ and /ebooks/",
-  "discovery": "/llms.txt, /agents.json, robots.txt and one alternate link plus ai-agents meta per page head point machines at /academy/; nothing machine-facing appears on human pages"
+  "discovery": "/llms.txt, /agents.json, robots.txt and one alternate link plus ai-agents meta per page head point machines at /academy/; nothing machine-facing appears on human pages",
+  "slots": "59 webapp slots, each paired with an estate land parcel number; an empty slot holds a blank coming-soon-NN repository until a real webapp replaces it; the navigator counts N of 59 and its arrows go to N-1 and N+1, wrapping 1 to 59"
  },
  "data": {
   "master": "data/core/ in git (JSON Schema 2020-12): one record per thing",

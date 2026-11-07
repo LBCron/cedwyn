@@ -34,3 +34,12 @@
 - BP: registered proprietor from 1982/83.
 - Courts' wording: shown as the court's view.
 - A rent-book entry does not identify the Tŷ Mawr parcel unless it names it.
+
+## Replies received, November 2026 (neutral summary; the email archive is the record)
+- Cadw, ATISN 26-0009 (6 Nov 2026): on the 1988 listing file CL72/381, a June records-management email described the file as destroyed; in October the head of archives questioned the basis for that statement; Cadw holds no information establishing when the file was destroyed. Documents 1–5 released.
+- South Wales Police, FOI 1188/26 internal review (6 Nov 2026): "not held" upheld after consulting departments and searching the force's deposits at Glamorgan Archives; an ICO complaint route is offered.
+- Ordnance Survey, FOI-26-46: naming and revision records not held; five historic map images supplied; the Object Name Book is recorded as "Missing at Transfer".
+- Glamorgan Archives: the parish tithe map and apportionment are P35/9-10; vestry minutes and churchwardens' accounts are not held; any enclosure awards would be among the Bute estate plans DB/E/1-2.
+- Dŵr Cymru: historical disconnection records, indexes and work orders not held; the request is treated as outside the environmental information rules.
+- Mount Stuart archive: a 30-minute search found none of the documents asked for; further enquiries are paused until a review in January 2027; the Mountjoy collection there is privately owned and uncatalogued.
+- National Library of Wales: the Bute deposit ends in 1936 and holds no 1938 conveyance to Western Ground Rents; the next place to look is The National Archives (IR 94/51/58, not checked).

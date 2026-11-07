@@ -513,5 +513,7 @@ Details: [Data architecture](data.md).
 ## Also in the flywheel list
 
 - [Morning brief](../FLYWHEELS/morning-brief.md): daily 08:00 UK; Tell the project lead what finished overnight, mail that needs him, today's calendar and deadlines due soon.
+- [Pull request shipping](../FLYWHEELS/pr-shipping.md): every 12 hours; List the open pull requests on the main repository, check each preview at 390 px, conflicts with main and whether a merged change supersedes it, and rank a merge list by the north star (sales, then traffic, then reconstruction) so previewed work reaches the owner's review.
+- [Spill processor](../FLYWHEELS/spill-processor.md): every 3 hours; Take facts other agents drop at /spill/, check each source, accept or decline with a note, and release accepted items into the master catalogue first and then the webapp that depends on it (the chronology for dated items), one version per release, with one issue per item in the target repository.
 
 Every loop shares the house guardrails: zero spend, contacts nobody unless its brief asks for it, public text passes the editorial scanner, no force-push, commits carry the agent's signature, and a loop never commits to a branch another running worker owns (it leaves a proposed patch).
