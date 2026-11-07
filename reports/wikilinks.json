@@ -1,7 +1,7 @@
 {
- "pages": 5420,
- "glossary_links": 12817,
- "name_links": 17304,
+ "pages": 6228,
+ "glossary_links": 16224,
+ "name_links": 20292,
  "themes": {
   "accounts": 1,
   "argentina": 2,
@@ -13,11 +13,11 @@
   "dartboard": 16,
   "directory": 274,
   "disproven": 1,
-  "docs": 1830,
+  "docs": 2791,
   "documentary": 3,
   "familytree": 1,
   "fb": 267,
-  "fb2": 267,
+  "fb2": 114,
   "fcg": 124,
   "forensic": 122,
   "hubspot": 1,
@@ -54,6 +54,6 @@
  "variants": 98,
  "public_variants": 82,
  "agents_link": "/academy/",
- "agent_blocks_hidden": 13417,
- "agent_pages": 6194
+ "agent_blocks_hidden": 23457,
+ "agent_pages": 11214
 }
