@@ -598,9 +598,9 @@ sc('VII', 'ghf-19900313-1', '1990-03-13', 'February – March 1990', "Outline pe
    'Planning file',
    "On 13 March 1990 outline permission is granted with 18 conditions. The officer's report notes the farm buildings \"were unfortunately demolished a little while ago\". GGAT's further comments of 8 February 1990 are missing from the file.",
    [REDEV, LEGAL], aliases=['ghf-19900208-1'])
-sc('VII', 'ghf-19900529-1', '1990-05-29', '29 May 1990', "Death of William Buckler", 'Llandough', 'A',
-   'Family account (date corrected from family information)',
-   "William Buckler died on 29 May 1990 at Llandough Hospital. Funeral and burial details require confirmation against the obituary and relevant records.",
+sc('VII', 'ghf-19900529-1', '1990-04-29', '29 April 1990', "Death of William Buckler", 'Llandough', 'A',
+   'Probate calendar (EV-0274)',
+   "William Buckler died on 29 April 1990 at Llandough Hospital (date: probate calendar, EV-0274). Funeral and burial details require confirmation against the obituary and relevant records.",
    [w('/williams-buckler-family/', 'The Williams / Buckler Family — William')],
    aliases=['ghf-19920515-1'],
    ledger={'A': "Freehold claim: Mary's heirs · never adjudicated, never extinguished"})

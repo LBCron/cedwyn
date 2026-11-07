@@ -163,6 +163,9 @@ These bind every agent, every cycle. When two orders conflict, the newer one win
 91. Project correspondence belongs to the hive: drafts are reviewed by the hive seats under its protocol, and a draft that passes the gate is prepared and sent without asking the owner about each one. Only what truly needs the owner (a document behind a portal only he can open) is raised with him (6 Nov 2026).
 92. Scope: Cedwyn, Tŷ Mawr (Great House) and the Williams family, with every name variant of each. Other family members and other matters are out of scope for the e-books and all public outputs (5 Nov 2026).
 93. Never assume a family relationship between named people. Write the name the source gives; state a relationship only when a record states it, and cite that record (7 Nov 2026).
+94. Definitives, not "may": no finding is left at "may", "likely" or "possibly destroyed" without a matching information request, subject access request, supplement or web-form enquiry drafted to settle it. Follow every record's chain of custody: where it went, when, under what authority, and the retention or destruction schedule that applied. Ask for the institution's own copy and its custody record; never rely on the family supplying a document (7 Nov 2026).
+95. Social scope: posts and comments are only about Tŷ Mawr (Great House), Llandough and Leckwith, the Williams family, BP Properties Ltd v Buckler (1987) and the Cedwyn estate records. Nothing on Roman Wales, other counties or general Welsh history (7 Nov 2026).
+96. Tŷ Mawr stood beside St Dochdwy's church in Llandough and was demolished in 1988. The 1994 excavation at grid reference ST 1681 7331 was on the Tŷ Mawr site: never describe that grid reference as a separate place (7 Nov 2026).
 
 ## Catalogue lock (owner instruction, 3 Nov 2026)
 

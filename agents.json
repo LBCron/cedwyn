@@ -5786,5 +5786,5 @@
  "work_index_only": true,
  "private_correspondence_authority": "HubSpot: recipient-facing drafts and exact-version correspondence review only",
  "source_branch": "agents",
- "source_commit": "e2d623883d182b2784b2cf6cce5666d8dc2d3334"
+ "source_commit": "8c8d650049def93b4ba8a551565a38ede0b7f0f8"
 }

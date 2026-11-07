@@ -11,4 +11,5 @@
 7. When a body sits outside FOI, find whose records it keeps: a request to the authority it holds them for can be enforced through the Information Commissioner.
 8. Open with preservation: ask the body to keep, and not destroy, anything associated with the farm, then make the records request in the same email. A preservation notice sent alone drew a positive reply about 6% of the time, against about 24% when it travelled with a request.
 9. What drew answers (first measure, 2 Nov 2026, 312 conversations; small numbers, read as a guide): archives and museums replied positively about 31% of the time, central government about 4%; environmental-information requests about 30%, FOI requests about 15%, plain records enquiries about 11%; requests naming catalogue references about 27%, against 11% without. Name the reference and a date window wherever one exists.
-10. Draft only. The draft goes through the hive; the project lead sends.
+10. Draft only. The draft goes through the hive, which sends it once it passes the gate (6 Nov 2026).
+11. Ask for the institution's own copy of each record, with its custody history and the retention or destruction schedule that applied; never rely on the family supplying a document (7 Nov 2026).
