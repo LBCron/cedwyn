@@ -169,14 +169,16 @@
    "cadence": "daily 03:30 UK",
    "prefix": "CONTACTS FLYWHEEL RUN",
    "runner": "work/contacts-flywheel/RUNNER.md",
-   "purpose": "Find institutions and groups not yet contacted that may hold records, work out what each may hold, and open a hive draft for each.",
+   "purpose": "Find institutions and groups that may hold records, verify what each may hold, and record public-safe research work in GitHub. Create a private Hive correspondence draft only when a specific recipient-facing request is justified.",
    "inputs": [
-    "the contacted list (sent mail, HubSpot, drafts)",
-    "research findings"
+    "the contacted list (sent mail and private HubSpot correspondence drafts)",
+    "research findings",
+    "the canonical GitHub issue register"
    ],
    "outputs": [
-    "3–6 new candidates with sources and a verified public address",
-    "one hive task each"
+    "3–6 credible candidates with public source evidence and a verified public address",
+    "a reused or new GitHub issue for each actionable public-safe research deliverable",
+    "a separate private Hive/HubSpot draft only where recipient correspondence is needed"
    ],
    "metric": "new credible holders found per run",
    "report": "Nothing unless a draft reaches ready or something needs the project lead."
@@ -187,16 +189,17 @@
    "cadence": "every 5 minutes",
    "prefix": "HIVE TURN",
    "runner": "hive protocol (see HARNESS/hive.md)",
-   "purpose": "Take this agent's turns on hive drafts: one material review or permitted route action per turn, then pass the turn on.",
+   "purpose": "Review this agent's assigned private recipient-facing drafts and exact-version email reviews in HubSpot; coordinate public project work through canonical GitHub issues and the issue-keyed Hive lease.",
    "inputs": [
     "the live roster",
-    "HubSpot tasks whose turn is ours",
+    "private HubSpot correspondence drafts/review records assigned to this agent",
+    "the canonical GitHub issue and its current live lease",
     "the draft's changelog and baton"
    ],
    "outputs": [
-    "a versioned review and signed changelog entry",
-    "board metadata",
-    "one mail draft only when every gate passes"
+    "a versioned private correspondence review and signed changelog entry",
+    "GitHub issue progress, blocker and acceptance comments for public project work",
+    "one private mail draft only when every exact-version gate passes"
    ],
    "metric": "the exact-version readiness gate",
    "report": "Only when a draft is ready (mail draft created) or a blocker needs the project lead."
@@ -259,14 +262,15 @@
    "cadence": "plan daily 09:00 UK; execute every 2 hours 10:00–22:00",
    "prefix": "BIZDEV",
    "runner": "work/bizdev/BRIEF.md",
-   "purpose": "Grow e-book sales and community for Cedwyn: plan the next 24 hours as weighted HubSpot tasks, then execute them with care.",
+   "purpose": "Grow e-book sales and community for Cedwyn: plan the next 24 hours as prioritised GitHub issue deliverables, then execute them with care. Keep HubSpot only for private recipient-facing correspondence drafts and reviews.",
    "inputs": [
     "the weighted channel list",
     "yesterday's results",
-    "the skills library"
+    "the skills library",
+    "the canonical GitHub issue register"
    ],
    "outputs": [
-    "completed tasks with outcome notes",
+    "completed GitHub issue deliverables with outcome and acceptance notes",
     "a log row per action",
     "lessons in the growth project"
    ],
@@ -414,12 +418,13 @@
    "runner": "work/programme-office/RUNNER.md",
    "purpose": "Keep the objectives register (Wales tour, Argentina land and museum, chronology, e-books, the case) scored, mirrored into projects, and moving.",
    "inputs": [
-    "HubSpot projects",
+    "GitHub project issues, milestones and linked pull requests",
     "growth data",
-    "research"
+    "research",
+    "private correspondence status only where a recipient-facing draft exists in HubSpot"
    ],
    "outputs": [
-    "re-scored objectives",
+    "re-scored objectives linked to their canonical GitHub issues",
     "project pages",
     "draft e-books"
    ],
@@ -473,14 +478,14 @@
    "cadence": "every 6 hours",
    "prefix": "ONLINE GAP FINDER RUN",
    "runner": "work/online-gap-finder/RUNNER.md",
-   "purpose": "Find public information about the farm, its places, people and the case that is not yet on the site, and queue each find as a task for the right page.",
+   "purpose": "Find public information about the farm, its places, people and the case that is not yet on the site, and queue each verified public-safe deliverable against its canonical GitHub issue.",
    "inputs": [
     "public archives, catalogues, newspapers and reference sites",
     "the live site (sitemap, research, wiki, Wales sections)",
     "a seen-ledger so nothing is repeated"
    ],
    "outputs": [
-    "one '[CEDWYN GAP] <title> -> <area>' HubSpot task per genuine gap, with source, capture and target page"
+    "one GitHub issue per genuinely actionable public-safe gap only when no matching issue exists, with source, capture, target page and acceptance criteria"
    ],
    "metric": "genuine gaps queued per run; gaps later published",
    "report": "Nothing routine; one line only when a find changes the chronology or the reopen grounds."
@@ -526,20 +531,20 @@
    "id": "repo-sync",
    "name": "Repository and project-board sync",
    "cadence": "every 6 hours",
-   "prefix": "REPO-HUBSPOT SYNC RUN",
+   "prefix": "REPO-GITHUB SYNC RUN",
    "runner": "work/repo-hubspot-sync/RUNNER.md",
    "purpose": "Keep the project board in step with the repository and the live site: what was done, and what still needs doing.",
    "inputs": [
     "new commits, pull requests and issues",
-    "the academy work board",
+    "the Academy candidate work index",
     "the problems queue"
    ],
    "outputs": [
-    "dated notes on matching tasks",
-    "tasks completed only when verified live",
-    "new '[CEDWYN REPO]' tasks for outstanding work"
+    "dated progress, decisions and verification comments on matching GitHub issues",
+    "issues closed only when acceptance is independently verified",
+    "new GitHub issues for verified, actionable outstanding work not already tracked"
    ],
-   "metric": "open repository work with no matching task (target zero)",
+   "metric": "open repository work with no matching canonical GitHub issue (target zero)",
    "report": "Nothing routine."
   },
   {
@@ -5763,7 +5768,6 @@
  "machine_interfaces": {
   "snowball_agent_bridge": {
    "manifest": "/x78s8jej33i8f8rrj4is88/manifest.json",
-   "tasks": "/x78s8jej33i8f8rrj4is88/tasks.json",
    "x_activity": "/x78s8jej33i8f8rrj4is88/x.json",
    "contributions": "/x78s8jej33i8f8rrj4is88/contributions.json",
    "queue_summary": "/x78s8jej33i8f8rrj4is88/queue-summary.json",
@@ -5773,7 +5777,12 @@
     "limit": 50,
     "next": "pagination.next_offset"
    },
-   "access": "public metadata only; privileged data/actions require the acting agent's own authorised connectors"
+   "access": "public metadata only; privileged data/actions require the acting agent's own authorised connectors",
+   "github_issues": "https://github.com/unclehowell/cedwyn/issues"
   }
- }
+ },
+ "work_authority": "GitHub Issues",
+ "work_index": "/academy/work.json",
+ "work_index_only": true,
+ "private_correspondence_authority": "HubSpot: recipient-facing drafts and exact-version correspondence review only"
 }
