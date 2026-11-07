@@ -1,16 +1,16 @@
 {
  "name": "Great House Farm (Tŷ Mawr), Llandough-juxta-Penarth — central case chronology",
- "version": "1.19.0",
- "updated_utc": "2026-11-07T00:46Z",
- "count": 591,
+ "version": "1.24.0",
+ "updated_utc": "2026-11-07T06:42Z",
+ "count": 596,
  "by_category": {
   "heritage": 111,
   "press": 162,
   "history": 45,
-  "legal": 131,
+  "legal": 132,
   "social": 4,
-  "title": 75,
-  "correspondence": 87
+  "title": 77,
+  "correspondence": 89
  },
  "by_origin": {
   "wiki-master-timeline": 183,
@@ -19,7 +19,7 @@
   "csscpsg-legal": 140,
   "dartboard-archaeology": 23,
   "roadmap": 64,
-  "spill": 19
+  "spill": 24
  },
  "sources": {
   "wiki-master-timeline": "https://greathousefarmwiki.wordpress.com/timeline/",
@@ -1673,6 +1673,20 @@
    "date_display": "31 October 1958"
   },
   {
+   "date": "1958-11-11",
+   "event": "House of Commons Journal: Mr. Brooke presents the City of Cardiff (Leckwith Common) Compulsory Purchase Order, 1957 (dated 8 Sep 1958), with a certificate by the Minister of Housing and Local Government under section 2 of the Statutory Orders (Special Procedure) Act, 1945; “Ordered, That the said Paper do lie upon the Table.” The volume names no owners or plots and does not mention Llandough or Great House. The no-petition report on the order follows on 25 Nov 1958 (EV-0038).",
+   "source": "House of Commons Journal vol. 214 (1958-59), 11 Nov 1958, printed p.22; index p.328",
+   "url": "https://web.archive.org/web/20220603125827/https://assets.parliament.uk/Journals/HCJ_volume_214.pdf",
+   "wayback": "",
+   "evidence": "EV-0717",
+   "origin": "spill",
+   "category": "legal",
+   "sort": "1958-11-11",
+   "id": "CH-0620",
+   "date_display": "11 Nov 1958",
+   "spill": "SP-00048"
+  },
+  {
    "date": "20 Nov 1958",
    "event": "Western Mail, p.7 (snippet only, EV-0037): “Mrs. Buckler stated that the water was cut off from her house and grounds for nearly 10 years by order of Western Ground Rents.” She told the planning committee: “This is a Welsh case of Crichel Down.” The water date conflicts with a c.1988 cut-off (SC-48). The same report, in a longer search window read in the 21 Oct 2026 sweep: “‘This is a Welsh case of Crichel Down,’ said Mrs. Buckler. ‘The Glamorgan County Council, Penarth Urban and Cardiff Rural Councils and Western Ground Rents have walked in and taken …’” (the window ends there), and the rubbish-tip lettings were “made over her head” by Western Ground Rents. Her words as reported; not a finding against any council or company. The reported reference to “Cardiff Rural Council” must be reconciled with the administrative correction in SC-22. Press Archive — unconfirmed references",
    "source": "Legal Wiki, Master Timeline · EV-0037",
@@ -2809,6 +2823,20 @@
    "sort": "1986-07-25",
    "id": "CH-0201",
    "date_display": "25 Jul 1986"
+  },
+  {
+   "date": "1986-09-22",
+   "event": "Cardiff Industrial Estates Limited (Companies House 00759094, incorporated 29 April 1963) changes its name to Ropemaker Properties Limited, the company later named in the 1988 Estates Gazette report on BP's Welsh property sales (EV-0093).",
+   "source": "Companies House, company 00759094, previous company names",
+   "url": "https://find-and-update.company-information.service.gov.uk/company/00759094",
+   "wayback": "",
+   "evidence": "EV-0714",
+   "origin": "spill",
+   "category": "title",
+   "sort": "1986-09-22",
+   "id": "CH-0618",
+   "date_display": "22 Sep 1986",
+   "spill": "SP-00085"
   },
   {
    "date": "1987",
@@ -5319,6 +5347,20 @@
    "date_display": "Mar 2023"
   },
   {
+   "date": "2024-05-08",
+   "event": "Llandough Community Council's annual meeting reviews its asset register: Village Green No. 41 (VG41) is documented by a Commons Commissioners letter in the Clerk's file, while the extended village-green parcel is held by title deeds with the council's solicitors.",
+   "source": "Llandough Community Council, Annual Meeting minutes 8 May 2024, item 8",
+   "url": "http://web.archive.org/web/20250805044738/https://www.llandough-cc.co.uk/_UserFiles/Files/_Minutes/182482-AnnMin2024.pdf",
+   "wayback": "",
+   "evidence": "EV-0711",
+   "origin": "spill",
+   "category": "title",
+   "sort": "2024-05-08",
+   "id": "CH-0617",
+   "date_display": "8 May 2024",
+   "spill": "SP-00091"
+  },
+  {
    "date": "2025–26",
    "event": "Records requests to public bodies (Records Access Chronology)",
    "source": "Legal Wiki, Master Timeline",
@@ -6461,6 +6503,20 @@
    "date_display": "22 Sep 2026"
   },
   {
+   "date": "2026-09-22",
+   "event": "Amgueddfa Cymru – Museum Wales internal review of FOI 2026-024 upholds the “not held” answer and states that the other archaeological records found at Tŷ Mawr (Great House) during the searches will receive a separate response.",
+   "source": "Amgueddfa Cymru – Museum Wales, internal review of FOI 2026-024, 22 Sep 2026",
+   "url": "https://cedwyn.bucklerfamily.estate/api/catalogue/EV-0716",
+   "wayback": "",
+   "evidence": "EV-0716",
+   "origin": "spill",
+   "category": "correspondence",
+   "sort": "2026-09-22",
+   "id": "CH-0619",
+   "date_display": "22 Sep 2026",
+   "spill": "SP-00093"
+  },
+  {
    "date": "7 and 24 Sep 2026",
    "event": "Glamorgan Archives: £60 for 53 images (ACA/8/2); £50 rate-book search; £50 planning-minutes search",
    "source": "Glamorgan Archives ACA/8/2",
@@ -7413,6 +7469,20 @@
    "date_display": "26 Oct 2026"
   },
   {
+   "date": "2026-11-03",
+   "event": "Companies House Archive Searches replies that the records of Western Ground Rents Limited (00342092), the 1938 purchaser in the Tŷ Mawr (Great House) title chain, were not sent to the National Archives and that the paper records and microfiche were destroyed. The National Archives catalogue lists the company's files BT 31/87651 and BT 31/84793 as open at Kew (EV-0700, EV-0701).",
+   "source": "Companies House Archive Searches, email of 3 Nov 2026; TNA Discovery C18015071, C18012213",
+   "url": "https://discovery.nationalarchives.gov.uk/details/r/C18015071",
+   "wayback": "",
+   "evidence": "EV-0710",
+   "origin": "spill",
+   "category": "correspondence",
+   "sort": "2026-11-03",
+   "id": "CH-0616",
+   "date_display": "3 Nov 2026",
+   "spill": "SP-00083"
+  },
+  {
    "date": "2026-11-04",
    "event": "HM Land Registry (ref Z084NQV, title WA231076) replies that the statement asked about is contained in the first-registration application (Form 1E), that no application for alteration or indemnity may be considered (its letters of 23 Mar, 19 Apr and 25 May 2026), and that the appropriate forum for any further action is the Court (HM Land Registry's position). No date is given for any notice to the occupier.",
    "source": "HM Land Registry letter, 4 Nov 2026, ref Z084NQV (catalogue EV-0684)",
@@ -7460,6 +7530,46 @@
   }
  ],
  "changelog": [
+  {
+   "version": "1.24.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0620 (11 Nov 1958): House of Commons Journal: Mr. Brooke presents the City of Cardiff (Leckwith Common) Compulsory Purchase Order, 1957 (dated 8 Sep 1958), with [spill SP-00048]",
+   "size": "596 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.23.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0619 (22 Sep 2026): Amgueddfa Cymru – Museum Wales internal review of FOI 2026-024 upholds the “not held” answer and states that the other archaeological record [spill SP-00093]",
+   "size": "595 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.22.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0618 (22 Sep 1986): Cardiff Industrial Estates Limited (Companies House 00759094, incorporated 29 April 1963) changes its name to Ropemaker Properties Limited,  [spill SP-00085]",
+   "size": "594 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.21.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0617 (8 May 2024): Llandough Community Council's annual meeting reviews its asset register: Village Green No. 41 (VG41) is documented by a Commons Commissioner [spill SP-00091]",
+   "size": "593 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
+  {
+   "version": "1.20.0",
+   "date": "2026-11-07",
+   "change": "Added CH-0616 (3 Nov 2026): Companies House Archive Searches replies that the records of Western Ground Rents Limited (00342092), the 1938 purchaser in the Tŷ Mawr (Gre [spill SP-00083]",
+   "size": "592 events",
+   "price": "free",
+   "who": "Tab agent (spill processor)"
+  },
   {
    "version": "1.19.0",
    "date": "2026-11-07",
