@@ -1243,6 +1243,51 @@
      "text": "London Gazette, 24 November 1896, issue 26797 p.6654 (AR-GAZETTE-1896-11-24-TVR-LLANDOUGH); London Gazette, 26 November 1901, issue 27380 p.8304 (AR-GAZETTE-1901-11-26-TVR-LLANDOUGH-PLOTS); deposited plan and book of reference HL/PO/PB/3/plan1897/T1 and Glamorgan Archives Q/D/P/602."
     }
    ]
+  },
+  {
+   "id": "AR-HCJ-152-1897-TVR-BILL",
+   "kind": "artifact",
+   "slug": "ar-hcj-152-1897-tvr-bill",
+   "title": "Journals of the House of Commons, vol. 152 (1897): proceedings on the Taff Vale Railway Bill [Lords]",
+   "aliases": [],
+   "date": {
+    "display": "21 May - 14 July 1897",
+    "sort": 1897.0,
+    "precision": "day"
+   },
+   "place_text": "Taff Vale Railway Bill for the 1897 session, which sought lands in Llandough-juxta-Cardiff beside the Penarth Branch (and in Canton), as given in the London Gazette notice of 24 November 1896",
+   "description": "The Commons Journal entries for the Taff Vale Railway Bill, a Bill \"to empower the Taff Vale Railway Company to construct a new Railway and other Works, and acquire Lands; to amend certain Provisions contained in the Acts relating to the Barry Railway Company, and for other purposes\". Brought from the Lords and read the first time on 21 May 1897; Standing Orders reported complied with on 1 June; read a second time and committed on 17 June; on 25 June the House agreed that Standing Order 129 be dispensed with for the Rhymney Railway Company's petition against the Bill; on 30 June Mr de Tatton Egerton reported from the committee that the preamble, amended by striking out the recital relating to the amendment of the Barry Railway Acts, was proved; the Bill as amended was considered on 14 July 1897.",
+   "transcript": "",
+   "transcript_status": "Read on 7 November 2026 in the archive.org full text of the volume (OCR). No entry in the volume names Llandough or Leckwith, or any owner, lessee or occupier of land in those parishes.",
+   "interpretation": "What it shows: the 1897 Bill's passage through the Commons, its committee, and that the Rhymney Railway Company petitioned against it. What it does not show: the plots, the book of reference, or any landowner. The Journal of this period does not enter every petition against a private Bill, so no landowner petition appearing here does not mean none was lodged; the Lords Journal, where the Bill began, is not checked.",
+   "provenance": {
+    "holder": "House of Commons (printed Journal; copy digitised on archive.org)",
+    "reference": "Journals of the House of Commons, vol. 152 (19 January - 6 August 1897), entries of 21 May, 1 June, 17 June, 25 June, 30 June and 14 July 1897",
+    "date": "1897",
+    "obtained": "Full text read on 7 November 2026: https://archive.org/details/sim_great-britain-house-of-commons-journal_january-19-august-06-1897_152",
+    "independent_origin_id": "ORIG-HCJ-152-1897"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Parliamentary proceedings on a Bill that sought compulsory powers over land in Llandough-juxta-Cardiff; no parish name in the Journal entries.",
+    "tags": [
+     "house-of-commons-journal",
+     "taff-vale-railway",
+     "private-bill",
+     "llandough",
+     "1897"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "Related records",
+     "text": "Opposed private bill committee evidence, Lords and Commons 1896-1897 (AR-PARLARCH-1896-1897-TVR-OPPOSED-BILL-EVIDENCE); London Gazette, 24 November 1896, issue 26797 p.6654 (AR-GAZETTE-1896-11-24-TVR-LLANDOUGH); deposited plan and book of reference HL/PO/PB/3/plan1897/T1."
+    }
+   ]
   }
  ]
 }
