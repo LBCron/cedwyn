@@ -1,4 +1,4 @@
-# Webapp navigation standard (nav 1.1.0, 2 Nov 2026)
+# Webapp navigation standard (nav 1.2.0, 7 Nov 2026)
 
 Source: the owner's request of 2 Nov 2026, 04:13 GMT (navigation through the webapps kept getting stuck), and the 390 px crawl of the live site that morning (slots 40+ unreachable, chain re-filtered per half, no nav without JS).
 
@@ -8,7 +8,8 @@ Every Cedwyn webapp can be reached from every other one, in order, with nothing 
 - The ONE ordered list is `/areas.json` → `"nav"`, written by `tools/site.py` on every build.
 - Slots 1–39 come from `data/site-areas.json` (owner file, `serendipity_slot`).
 - Every later webapp declares its slot ONCE, on its own `themes.json` entry: `"slot": 45`, plus `"path"` if it is not `/<id>/` and `"served_by": "worker"` if a Worker serves it instead of the build. Take the next free slot: `python3 -c "import json;print(sorted(a['slot'] for a in json.load(open('dist/areas.json'))['nav']))"`.
-- Nobody hand-types "NN of 59" anywhere. The header, the menu and the no-JS bar all read the slot from the registry. The build also corrects a stale `cw-parcel-link` number on a slot's landing page.
+- The label reads "NN of TT": NN is the webapp's place in the chain and TT is the number of webapps in the chain (nav 1.2.0), so ‹ always opens NN−1 and › NN+1, wrapping from TT to 1. `parcel_total` (the planned 59) no longer sets the label; TT reaches 59 when all 59 webapps are registered and built.
+- Nobody hand-types "NN of TT" anywhere. The header, the menu and the no-JS bar all read the slot from the registry. The build also corrects a stale `cw-parcel-link` number on a slot's landing page.
 - `"href"` is the address a link opens with no redirect hop (`/online/<id>/` for `data/halves.json` `online_only` apps). `"src"` is the built folder.
 
 ## The apex (nav 1.1.0)
@@ -18,7 +19,8 @@ Every Cedwyn webapp can be reached from every other one, in order, with nothing 
 
 ## One chain for everyone
 - ‹ › step through every built slot in slot order and wrap from the last to the first. The menu numbers are slot numbers.
-- Inside /wales/ or /argentina/, a stop that half serves keeps the visitor in it. Every other stop (a stop the half does not serve, a webapp from slot 40 on, an /online/ app) opens at its own address. No stop is dropped.
+- Every stop opens at its own registry address (`href`), whichever half the visitor came from (nav 1.2.0). The remembered half no longer sends ‹ › to a /wales/ or /argentina/ copy. No stop is dropped.
+- scope.js 1.2.0 draws no "This area is about …" card, no "see Wales / Argentina / Online" line and no hop to another scope's copy; a webapp that belongs to one scope is shown in that scope at whatever address it was opened.
 
 ## Server-rendered, refreshed at runtime
 - `tools/nav.py dist` stamps a small bar into every slot page: ‹ title · NN of 59 › plus an "All webapps" list. It works with no JS.
@@ -37,6 +39,7 @@ It warns, without failing, when a slot is registered but not built, or when a sl
 ## Changelog
 | Version | Date | Change |
 |---|---|---|
+| 1.2.0 | 2026-11-07 | Owner: ‹ › beside "NN of 59" must open the next number down / up on every webapp, and the "This area is about …" headers must go. NN = place in the chain, TT = chain length (header, no-JS bar, menu numbers); every arrow opens the flat registry address; scope.js 1.2.0 drops the area card, the cross-scope lines and the hop. — Sion's Tab agent |
 | 1.1.1 | 2026-11-02 | `apex` is the flat path (`/wiki/`), read against https://bucklerfamily.estate; the absolute form was rewritten by the self-contained pass and failed build 41402080152. |
 | 1.1.0 | 2026-11-02 | Flat apex address per slot (`apex`), used by the header on bucklerfamily.estate; build check for it; session cache key cdw-nav-v3. |
 | 1.0.0 | 2026-11-02 | One slot registry (`/areas.json` "nav": site-areas.json + themes.json "slot"). One chain for every visitor, in slot order (no half filter, no list-position numbers). Server-rendered no-JS bar stamped at build. Build check. Slots 40, 42, 43 (and later webapps) join the nav. |

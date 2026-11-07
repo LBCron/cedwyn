@@ -4,7 +4,10 @@
 Owner, 04:13 GMT 2 Nov 2026: "It has never been solved whereby I can navigate through all 59 webapps. The way the navigation
 is done is flawed architecturally. It keeps getting stuck. Fix it". Design and changelog: docs/NAV.md.
 
-  python3 tools/nav.py dist           stamp the no-JS bar (prev, "NN of 59", next, every webapp) into every slot page
+  python3 tools/nav.py dist           stamp the no-JS bar (prev, "NN of TT", next, every webapp) into every slot page
+                                      1.2.0 (owner, 7 Nov 2026): NN is the webapp's place in the chain and TT the chain's length,
+                                      so ‹ always opens NN-1 and › NN+1 (wrapping TT to 1); the planned parcel_total no longer
+                                      sets the label
   python3 tools/nav.py dist --check   exit 1 on a duplicate slot, a slot over the total, a built slot with no page,
                                       a bar link that leads nowhere, or a slot page without the bar
 
@@ -12,7 +15,7 @@ The registry is dist/areas.json "nav" (tools/site.py: data/site-areas.json slots
 basecamp.js reads the same list at runtime and hides this bar once its own header is drawn (html.ghf-v2-on)."""
 import html, json, pathlib, re, sys
 
-VERSION = '1.1.1'
+VERSION = '1.2.0'
 OF = {'cy': 'o', 'es': 'de'}
 ALL = {'en': 'All webapps', 'cy': "Pob ap gwe", 'es': 'Todas las aplicaciones'}
 PREV = {'en': 'Previous webapp', 'cy': "Ap gwe blaenorol", 'es': 'Aplicación anterior'}
@@ -59,8 +62,8 @@ def bar(chain, i, total, l):
     a, n = chain[i], len(chain)
     pv, nx = chain[(i - 1) % n], chain[(i + 1) % n]
     e = lambda x: html.escape(str(x), quote=True)
-    li = ''.join('<li value="%d"><a href="%s"%s>%s</a></li>' % (int(c['slot']), e(c['href']), ' aria-current="page"' if c is a else '', e(name(c, l)))
-                 for c in chain)
+    li = ''.join('<li value="%d"><a href="%s"%s>%s</a></li>' % (j + 1, e(c['href']), ' aria-current="page"' if c is a else '', e(name(c, l)))
+                 for j, c in enumerate(chain))
     return ('<nav class="cw-slotnav" data-cw-nav="%s" data-cw-slot="%d" aria-label="%s"><style>%s</style>'
             '<a class="cw-sn-arr" href="%s" rel="prev" aria-label="%s: %s" title="%s: %s">&#8249;</a>'
             '<span class="cw-sn-name"><b>%s</b><small>%d %s %d</small></span>'
@@ -68,27 +71,27 @@ def bar(chain, i, total, l):
             '<details><summary>%s (%d)</summary><ol>%s</ol></details></nav><!--/cw-slotnav-->') % (
         VERSION, int(a['slot']), e(ALL[l]), CSS,
         e(pv['href']), e(PREV[l]), e(name(pv, l)), e(PREV[l]), e(name(pv, l)),
-        e(name(a, l)), int(a['slot']), OF.get(l, 'of'), total,
+        e(name(a, l)), i + 1, OF.get(l, 'of'), n,
         e(nx['href']), e(NEXT[l]), e(name(nx, l)), e(NEXT[l]), e(name(nx, l)),
         e(ALL[l]), n, li)
 
 
-def fix_frozen(s, a, pv, nx, total, l):
+def fix_frozen(s, a, pv, nx, total, l, pos=None):
     """Old copies baked into page HTML: the 23-site chain ("2 of 23", Previous/Next site) and hand-typed parcel links."""
     e = lambda x: html.escape(str(x), quote=True)
     s = re.sub(r'<a href="[^"]*" title="Previous site: [^"]*" aria-label="Previous site: [^"]*"',
                '<a href="%s" title="Previous site: %s" aria-label="Previous site: %s"' % (e(pv['href']), e(name(pv, l)), e(name(pv, l))), s, count=1)
     s = re.sub(r'<a href="[^"]*" title="Next site: [^"]*" aria-label="Next site: [^"]*"',
                '<a href="%s" title="Next site: %s" aria-label="Next site: %s"' % (e(nx['href']), e(name(nx, l)), e(name(nx, l))), s, count=1)
-    s = re.sub(r'(title="Previous site: .{0,1600}?>)\d+ of \d+(</div>)', lambda m: m.group(1) + '%d of %d' % (int(a['slot']), total) + m.group(2), s, count=1, flags=re.S)
+    s = re.sub(r'(title="Previous site: .{0,1600}?>)\d+ of \d+(</div>)', lambda m: m.group(1) + '%d of %d' % (pos or int(a['slot']), total) + m.group(2), s, count=1, flags=re.S)
     s = re.sub(r'(<a class="cw-parcel-link"[^>]*data-parcel-slot=")\d+("[^>]*>)\d+ (of|o|de) (\d+)</a>',
-               lambda m: '%s%d%s%d %s %s</a>' % (m.group(1), int(a['slot']), m.group(2), int(a['slot']), m.group(3), m.group(4)), s, count=1)
+               lambda m: '%s%d%s%d %s %d</a>' % (m.group(1), int(a['slot']), m.group(2), pos or int(a['slot']), m.group(3), total), s, count=1)
     return s
 
 
 def stamp(dist):
     doc, chain, _ = registry(dist)
-    total = int(doc.get('parcel_total') or 59)
+    total = len(chain)   # 1.2.0: the label's total is the chain itself
     n = 0
     for i, a in enumerate(chain):
         for f in pages(dist, a):
@@ -97,7 +100,7 @@ def stamp(dist):
             if not m: continue
             l = lang_of(s)
             s = BAR.sub('', s)
-            s = fix_frozen(s, a, chain[(i - 1) % len(chain)], chain[(i + 1) % len(chain)], total, l)
+            s = fix_frozen(s, a, chain[(i - 1) % len(chain)], chain[(i + 1) % len(chain)], total, l, i + 1)
             m = re.search(r'<body[^>]*>', s)
             s = s[:m.end()] + bar(chain, i, total, l) + s[m.end():]
             f.write_text(s, 'utf-8'); n += 1
