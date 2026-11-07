@@ -13,6 +13,9 @@ report = {}
 # silently use a Cedwyn legacy branch. Recorded under _split_source.
 SPLIT = {}
 SPLIT_FAILURES = []
+# Dedicated static repositories can intentionally use a root different from the
+# legacy theme branch. Wiki's compiled WordPress export is rooted at the repo root.
+SPLIT_DIRS = {'wiki': ''}
 # Build commands for source-only repositories whose output is produced during
 # assembly. Kept in the build code rather than the public theme manifest.
 SPLIT_BUILDS = {
@@ -129,7 +132,7 @@ def fetch_split_repo(repo, out, theme):
         return 0, f"clone failed: {err}", {}
 
     meta = {'repo_branch': clone_branch}
-    build = theme.get('build') or SPLIT_BUILDS.get(tid)
+    build = SPLIT_BUILDS.get(tid) or theme.get('build')
     root = work / (theme.get('root') or '')
     if build:
         if not root.is_dir():
@@ -149,7 +152,7 @@ def fetch_split_repo(repo, out, theme):
 
     # Respect the theme's declared output directory. A non-empty static/ folder is
     # not necessarily the compiled site; it may be source, assets, or a nested app.
-    rel = theme.get('dir') or ''
+    rel = SPLIT_DIRS.get(tid, theme.get('dir') or '')
     d = work / rel
     if d.is_dir() and (d / 'index.html').is_file():
         shutil.copytree(
