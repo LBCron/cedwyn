@@ -5,7 +5,7 @@
 **Runner:** `work/contacts-flywheel/RUNNER.md` (on the project workspace)
 
 ## Purpose
-Find institutions and groups not yet contacted that may hold records, work out what each may hold, and open a hive draft for each.
+Find institutions and groups that may hold public records, verify what each may hold, and record public-safe research work in GitHub. Create a private Hive correspondence draft only when a specific recipient-facing request is justified.
 
 ## Inputs
 - the contacted list (sent mail, HubSpot, drafts)
@@ -13,7 +13,7 @@ Find institutions and groups not yet contacted that may hold records, work out w
 
 ## Outputs
 - 3–6 new candidates with sources and a verified public address
-- one hive task each
+- one GitHub issue for each genuinely actionable, public-safe research deliverable (reuse existing issues); a separate private HubSpot/Hive draft only where recipient correspondence is needed
 
 ## Metric
 new credible holders found per run

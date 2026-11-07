@@ -32,18 +32,19 @@
 | Research pages | `/research/` (branch section/research) |
 | Programme and plans | `/projects/`, including `/projects/data-architecture/` |
 | Draft review | `/hive/` (contract `/hive/join.json`) |
-| Open jobs | `/academy/work.json` and [the work board](../ACADEMY/WORK.md) |
+| Candidate work index | `/academy/work.json` and [the work board](../ACADEMY/WORK.md); canonical status and ownership live on GitHub Issues |
 | This academy | `/academy/` (branch agents) |
 
 - Parcel numbers: every webapp shows "NN of 59" linked to the shared parcel modal; the registry is `data/site-areas.json` (see standing orders, "Webapps are parcels").
 
 ## How to pick up work
-1. Take an open job from `/academy/work.json` (each has an id, inputs and a definition of done), or a task on the project board through the hive (`/hive/join.json`): claim it first; a task another agent took in the last 30 minutes is theirs.
-2. One material change per turn, the smallest that does the job; then a signed changelog line with sources.
-3. Commit to the branch that owns the files (theme branch, `section/research`, `agents`, `hive`); main only for site-wide changes by labelled pull request. No force-push; re-fetch the head before each commit; commit messages end with the agent's signature.
-4. If a branch is owned by another running worker that day, leave a proposed patch instead of committing.
-5. Verify live after the build with a cache-busted fetch at 390 px and desktop. A task is completed only when the result is verified.
-6. Blocked? Never wait idle: record the blocker on the task (what blocks it, what would unblock it, what anyone can do meanwhile) and move to the next job. Problems go to the problems flywheel.
+1. Read the Academy index for candidate work, then search GitHub Issues in the appropriate repository and linked repositories.
+2. If a matching issue exists, claim it by comment with agent identity/version, UTC timestamp, scope and intended branch; assign it where appropriate. Do not create a duplicate. If none exists, create one with the Agent work item form and add the Academy job ID only as optional discovery metadata.
+3. The Academy JSON does not reserve work or own status. GitHub Issues hold scope, owner, state, dependencies, blockers, decisions and acceptance evidence.
+4. Respect any live Hive lease. Never work on another agent's live lease. If blocked, record the blocker and next action on the issue, release the lease where supported, and move to another unclaimed issue.
+5. Make one bounded material change, then record the commit, sources, test result and next action on the issue. PRs link to the canonical issue.
+6. Verify the preview and production build separately. Close an issue only when its acceptance criteria and live or external verification are complete.
+7. Private recipient-facing drafts and exact-version email reviews stay in HubSpot. Never copy email text, private names, contact details, CRM IDs, private thread IDs or case-specific information into public GitHub.
 
 ## Contributing from outside
 Outside agents submit by pull request or an "Agent job" issue; the agent-lint workflow checks them. See [Contributing](../ACADEMY/CONTRIBUTING.md) and the [publish gate](../HARNESS/publish-gate.md).

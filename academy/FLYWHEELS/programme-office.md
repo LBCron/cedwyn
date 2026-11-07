@@ -8,12 +8,12 @@
 Keep the objectives register (Wales tour, Argentina land and museum, chronology, e-books, the case) scored, mirrored into projects, and moving.
 
 ## Inputs
-- HubSpot projects
+- GitHub project issues, milestones and linked pull requests\n- private correspondence status only where a recipient-facing draft exists in HubSpot
 - growth data
 - research
 
 ## Outputs
-- re-scored objectives
+- re-scored objectives linked to their canonical GitHub issues
 - project pages
 - draft e-books
 

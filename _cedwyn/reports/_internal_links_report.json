@@ -3,12 +3,12 @@
   "pages_scanned": 9668,
   "references_checked": {
     "resource": 220192,
-    "nav": 499009
+    "nav": 499037
   },
-  "database_backed_paths": 7770,
-  "unique_missing_destinations": 6474,
-  "missing_references": 54600,
-  "missing_navigation_references": 38205,
+  "database_backed_paths": 7771,
+  "unique_missing_destinations": 6475,
+  "missing_references": 54626,
+  "missing_navigation_references": 38231,
   "missing_resource_references": 16395,
   "unique_broken_fragments": 2011,
   "broken_fragment_references": 3637,
@@ -850,6 +850,33 @@
           "from": "/qa/static/bpvsbuckler/static/archives/canvas/miscellaneous/deletable_layout/fixed-header.html",
           "attribute": "script[src]",
           "url": "../js/adminlte.js"
+        }
+      ]
+    },
+    {
+      "kind": "nav",
+      "path": "/dartboard/that-old-chestnut/",
+      "references": 26,
+      "examples": [
+        {
+          "from": "/dartboard/",
+          "attribute": "a[href]",
+          "url": "/dartboard/that-old-chestnut/#cn-toc-l10"
+        },
+        {
+          "from": "/dartboard/",
+          "attribute": "a[href]",
+          "url": "/dartboard/that-old-chestnut/#toc-s11"
+        },
+        {
+          "from": "/dartboard/",
+          "attribute": "a[href]",
+          "url": "/dartboard/that-old-chestnut/#toc-s11"
+        },
+        {
+          "from": "/dartboard/",
+          "attribute": "a[href]",
+          "url": "/dartboard/that-old-chestnut/#cn-toc-f03"
         }
       ]
     },
@@ -4036,33 +4063,6 @@
           "from": "/docs/ghf_wiki/co_southwalespoliceemailcorrespondencp2931/latest/html/en/",
           "attribute": "a[href]",
           "url": "1-record.html#thread-6-internal-review-1188-26-of-foi-719-26"
-        }
-      ]
-    },
-    {
-      "kind": "nav",
-      "path": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/1-record.html",
-      "references": 8,
-      "examples": [
-        {
-          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html"
-        },
-        {
-          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html"
-        },
-        {
-          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html#before-after-record"
-        },
-        {
-          "from": "/docs/ghf_wiki/rp_masterchangelogoctober2026/latest/html/en/",
-          "attribute": "a[href]",
-          "url": "1-record.html#change-log-addendum-21-october-2026"
         }
       ]
     }
