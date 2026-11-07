@@ -1,4 +1,7 @@
 # Changelog
 
+## v0.1.1 (6 Nov 2026)
+Map tiles: the tile images now send the page's origin as the referrer (`referrerPolicy: strict-origin-when-cross-origin` on the tile layer), because the site-wide `Referrer-Policy: no-referrer` header stripped it and the OpenStreetMap tile servers refuse requests with no referrer; the deprecated `{s}` subdomains are dropped for the single `tile.openstreetmap.org` host. Issue #2.
+
 ## v0.1.0 (3 Nov 2026)
 First version. The 43 parcels of the Tithe H3 map (v0.4.0) transposed to the shore of Golfo Nuevo, about 9.7 km south-east of the centre of Puerto Madryn (coast point -42.80441, -64.93000), with the outline's centre 2.65 km inland at right angles to the coast (bearing about 216°), the same distance as the Llandough outline's centre from the sea (nearest OpenStreetMap coastline point: the Cardiff Bay barrage by Penarth Head, 51.45100, -3.16467). Offsets in metres east/north of the centroid (azimuthal equidistant), so size (54.4 ha) and north orientation are kept. Nearest field edge to the sea: 2.00 km at Llandough, 2.05 km on the Chubut coast. H3 resolutions 8 (cell of each parcel centre) and 10 to 13, computed in the browser with h3-js 4.5.0 (centroid-in-polygon); at res 12, 2,302 distinct cells on the Chubut coast against 1,890 at Llandough (cells there are about 234 m² against about 285 m²). A Llandough map shows the same outline and its line to the sea. (i) changelog modal in the footer.

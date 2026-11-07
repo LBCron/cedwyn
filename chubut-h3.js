@@ -27,7 +27,7 @@ d.addEventListener("ghf-lang-change",function(){setTimeout(both,0);});
 (function(){
 var d=document,BLUE="#1f4f7a",HEX="#4E8CC8",GOLD="#C8900E",RES=12,DATA=null,M={};
 function fmt(n){return n.toLocaleString("en-GB");}
-function tiles(m){L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{subdomains:"abc",maxNativeZoom:19,maxZoom:19,attribution:"© OpenStreetMap contributors"}).addTo(m);}
+function tiles(m){L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxNativeZoom:19,maxZoom:19,referrerPolicy:"strict-origin-when-cross-origin",attribution:"© OpenStreetMap contributors"}).addTo(m);}
 function mk(id,side){var m=L.map(id,{preferCanvas:true,zoomControl:true,scrollWheelZoom:false});tiles(m);
  var S=DATA[side],r=L.canvas({padding:.3}),out=L.layerGroup().addTo(m),hex=L.layerGroup().addTo(m),all=[];
  S.parcels.forEach(function(p){p.parts.forEach(function(rg){var pl=L.polygon(rg,{renderer:r,color:GOLD,weight:1.6,fill:true,fillOpacity:.04,fillColor:GOLD});
