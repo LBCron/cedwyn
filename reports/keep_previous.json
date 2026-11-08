@@ -2,17 +2,17 @@
  "checked": {
   "fcg": {
    "files_now": 153,
-   "files_previous_build": 154,
+   "files_previous_build": 155,
    "home": true
   },
   "research": {
-   "files_now": 1614,
+   "files_now": 1618,
    "files_previous_build": 1648,
    "home": true
   },
   "app": {
    "files_now": 24,
-   "files_previous_build": 23,
+   "files_previous_build": 24,
    "home": true
   },
   "chat": {
@@ -42,7 +42,7 @@
   },
   "terrain": {
    "files_now": 6,
-   "files_previous_build": 9,
+   "files_previous_build": 10,
    "home": true
   },
   "cyberspace": {
@@ -52,7 +52,7 @@
   }
  },
  "restored": {
-  "terrain": 5
+  "terrain": 6
  },
  "refused": [
   "terrain"

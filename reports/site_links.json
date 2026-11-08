@@ -1,7 +1,7 @@
 {
  "version": "1.0.0",
- "added_in_own_footer_or_before_agent_footer": 11226,
- "no_footer_left_alone": 2758,
+ "added_in_own_footer_or_before_agent_footer": 11230,
+ "no_footer_left_alone": 2772,
  "already": 0,
  "sample": [
   "index.html",
