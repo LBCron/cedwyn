@@ -26,6 +26,15 @@ MARKUP = re.compile(r'<(?:img|source|video|audio|embed|object|iframe|input|image
 MATTR = re.compile(r"""\s(?:src|data|poster|srcset|href|xlink:href)\s*=\s*["']([^"']+)["']""", re.I)
 FETCHLIT = re.compile(r"""fetch\(\s*["']([^"'?#\s:]+\.(?:json|csv|xml|geojson))(?:\?[^"']*)?["']""")
 QSTR = re.compile(r"""["'`]([^"'`\s<>]{1,300})["'`]""")
+# 8 Nov 2026 (follow-up to #513/#514): a data file a page offers as a plain <a href> download (tithe-h3's GeoJSON/JSON,
+# the watchtower's peekaboo-watch.json, mr-wolf's leaderboard.json) or names in a data- attribute (ghf-lang.js reads
+# data-dict="/mr-wolf/lang.json") is opened outside the service worker, so dropping it answered 404. Keep those as files. - Sion's Tab agent
+ALINK = re.compile(r'<(?:a|area)\b[^>]*>', re.I | re.S)
+HREFV = re.compile(r"""\shref\s*=\s*["']([^"']+)["']""", re.I)
+DATAATTR = re.compile(r"""\sdata-[\w-]+\s*=\s*["']([^"'\s]+)["']""", re.I)
+SCRIPTBODY = re.compile(r'(<script\b[^>]*>).*?(</script>)', re.I | re.S)
+DATAFILE = re.compile(r'\.(json|geojson|xml|csv)$', re.I)
+def _datafile(v): return bool(DATAFILE.search(v.strip().split('#')[0].split('?')[0]))
 def resolve(base_rel, u):
     u = u.strip().split('#')[0].split('?')[0]
     if not u or u.startswith(('data:', 'blob:', 'javascript:', 'mailto:')): return None
@@ -81,6 +90,16 @@ def main():
             for v in FETCHLIT.findall(s):   # data files the page's own scripts fetch (first visit: no service worker yet)
                 r = resolve(rel, v)
                 if r: keep.setdefault(r, 'fetched by script')
+            nos = SCRIPTBODY.sub(r'\1\2', s)   # script tags kept (data-dict lives on one), script bodies out
+            for t in ALINK.findall(nos):   # data downloads linked from the page (see ALINK above)
+                for v in HREFV.findall(t):
+                    if _datafile(v):
+                        r = resolve(rel, v)
+                        if r: keep.setdefault(r, 'data file linked from the page')
+            for v in DATAATTR.findall(nos):
+                if _datafile(v):
+                    r = resolve(rel, v)
+                    if r: keep.setdefault(r, 'data file named in a data- attribute')
             if '/_cedwyn/runtime.js' not in s:   # a page that does not load the runtime: everything it names stays a file
                 for v in QSTR.findall(s):
                     if DBX.search(v.split('?')[0].split('#')[0]):
