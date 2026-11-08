@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-29T22:56:28Z",
+"generated": "2026-11-08T02:19:52Z",
 "version": "1.0.0",
 "targets": [
 {
@@ -8,7 +8,7 @@
 "label": "Companies House search: companies named Mountjoy",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Ffind-and-update.company-information.service.gov.uk%2Fsearch%2Fcompanies%3Fq%3DMountjoy%2BLimited",
 "status": "present",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [
 "MOUNTJOY",
@@ -22,7 +22,7 @@
 "label": "Coflein site 20182",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fcoflein.gov.uk%2Fen%2Fsite%2F20182",
 "status": "present",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [
 "1988",
@@ -37,7 +37,7 @@
 "label": "London Gazette: Western Ground Rents",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.thegazette.co.uk%2Fall-notices%2Fnotice%3Ftext%3D%2522Western%2BGround%2BRents%2522",
 "status": "present",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [
 "WESTERN GROUND RENTS",
@@ -51,7 +51,7 @@
 "label": "Discovery: 1938 conveyance to Western Ground Rents Ltd",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3D%2522Western%2520Ground%2520Rents%2522",
 "status": "present",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [
 "Western Ground Rents Ltd, rental books and plans | https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fdetails%2Fr%2FN13741426",
@@ -67,10 +67,10 @@
 "label": "BFI Player: Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fplayer.bfi.org.uk%2Fsearch%3Fq%3DLlandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-10-29T23:05:04Z",
 "first_checked": "2026-10-29T22:48:32Z",
 "matches": [],
-"note": ""
+"note": "robots; no ia capture"
 },
 {
 "id": "362736ce",
@@ -78,7 +78,7 @@
 "label": "BP Archive page",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.bp.com%2Fen%2Fglobal%2Fcorporate%2Fwho-we-are%2Four-history%2Fbp-archive.html",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:48:32Z",
 "matches": [],
 "note": ""
@@ -89,7 +89,7 @@
 "label": "Mount Stuart (Bute archives) search: Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.mountstuart.com%2F%3Fs%3DLlandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -100,7 +100,7 @@
 "label": "Cadw listed buildings (open data, Llandough and Leckwith area)",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdatamap.gov.wales%2Fgeoserver%2Fows%3Fservice%3DWFS%26version%3D2.0.0%26request%3DGetFeature%26typeNames%3Dinspire-wg%3ACadw_ListedBuildings%26outputFormat%3Dapplication%2Fjson%26srsName%3DEPSG%3A27700%26count%3D500%26bbox%3D314500%2C171500%2C318800%2C175500%2CEPSG%3A27700",
 "status": "absent",
-"checked": "2026-10-29T22:55:28Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:55:28Z",
 "matches": [],
 "note": ""
@@ -111,7 +111,7 @@
 "label": "Church in Wales: Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.churchinwales.org.uk%2Fen%2F%3Fs%3DLlandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -122,7 +122,7 @@
 "label": "Dŵr Cymru environmental information (EIR) page",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fcorporate.dwrcymru.com%2Fen%2Fcommunity%2Fenvironment%2Fenvironmental-information-regulations",
 "status": "absent",
-"checked": "2026-10-29T22:55:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:55:32Z",
 "matches": [],
 "note": ""
@@ -133,7 +133,7 @@
 "label": "London Gazette: Llandough Great House Farm",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.thegazette.co.uk%2Fall-notices%2Fnotice%3Ftext%3D%2522Great%2BHouse%2BFarm%2522%2BLlandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -144,7 +144,7 @@
 "label": "GOV.UK search: Western Ground Rents Ltd",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.gov.uk%2Fsearch%2Fall%3Fkeywords%3D%2522Western%2520Ground%2520Rents%2522",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -155,7 +155,7 @@
 "label": "GOV.UK search: Great House Farm",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.gov.uk%2Fsearch%2Fall%3Fkeywords%3D%2522Great%2520House%2520Farm%2522%2520Llandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -166,7 +166,7 @@
 "label": "GOV.UK search: Llandough land",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.gov.uk%2Fsearch%2Fall%3Fkeywords%3DLlandough%2520Penarth%2520land",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -177,7 +177,7 @@
 "label": "GOV.UK search: BP Properties at Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.gov.uk%2Fsearch%2Fall%3Fkeywords%3D%2522BP%2520Properties%2522",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -188,7 +188,7 @@
 "label": "HER record GGAT02038s (Great House Farm)",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Farchwilio.org.uk%2Fher%2Fchi3%2Freport%2Fpage.php%3Fwatprn%3DGGAT02038s",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -199,7 +199,7 @@
 "label": "Llandough Community Council home",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.llandough-cc.co.uk%2F",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -210,7 +210,7 @@
 "label": "Museum Wales collections: Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fmuseum.wales%2Fcollections%2Fonline%2F%3Fterms%3DLlandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -221,7 +221,7 @@
 "label": "People's Collection Wales: Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.peoplescollection.wales%2Fdiscover%2Fquery%2FLlandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:48:32Z",
 "matches": [],
 "note": ""
@@ -232,7 +232,7 @@
 "label": "Discovery: Great House Farm, Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3D%2522Great%2520House%2520Farm%2522%2520Llandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -243,7 +243,7 @@
 "label": "Discovery: Tŷ Mawr, Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3D%2522Ty%2520Mawr%2522%2520Llandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -254,7 +254,7 @@
 "label": "Discovery: Cydfin farm",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3DCydfin",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -265,7 +265,7 @@
 "label": "Discovery: 1938 Llandough conveyance",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3DLlandough%2520conveyance%25201938",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -276,7 +276,7 @@
 "label": "Discovery: 1988 Llandough eviction coverage",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3DLlandough%2520eviction%25201988",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -287,7 +287,7 @@
 "label": "Discovery: BP Properties, Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3D%2522BP%2520Properties%2522%2520Llandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -298,7 +298,7 @@
 "label": "Discovery: 1987 Llandough farm litigation",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3DLlandough%2520Penarth%2520farm%25201987",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -309,7 +309,7 @@
 "label": "Discovery: Mountjoy Ltd, Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3DMountjoy%2520Llandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -320,7 +320,7 @@
 "label": "Discovery: Llandough village green (VG41)",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fdiscovery.nationalarchives.gov.uk%2Fresults%2Fr%3F_q%3DLlandough%2520village%2520green",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -331,7 +331,7 @@
 "label": "Vale of Glamorgan FOI page (no disclosure log published)",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.valeofglamorgan.gov.uk%2Fen%2Four_council%2Ffreedom_of_information%2FRequests-for-Information.aspx",
 "status": "absent",
-"checked": "2026-10-29T22:55:30Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:55:30Z",
 "matches": [],
 "note": ""
@@ -342,7 +342,7 @@
 "label": "GOV.WALES search: Llandough",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.gov.wales%2Fsearch%3Fglobal_keywords%3DLlandough",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -353,7 +353,7 @@
 "label": "Welsh Government FOI responses index",
 "page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fwww.gov.wales%2Fabout%2Fopen-government%2Ffreedom-of-information%2Fresponses",
 "status": "absent",
-"checked": "2026-10-29T22:48:32Z",
+"checked": "2026-11-08T02:12:43Z",
 "first_checked": "2026-10-29T22:27:50Z",
 "matches": [],
 "note": ""
@@ -378,7 +378,7 @@
 "checked": null,
 "first_checked": null,
 "matches": [],
-"note": "live bot-check page; no ia capture"
+"note": "live bot-check page; ia 20261023074028"
 },
 {
 "id": "9af465a7",
