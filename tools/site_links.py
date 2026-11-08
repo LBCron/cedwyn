@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""site_links.py 1.1.0 - one plain "E-books" link in the footer of every built page (3 Nov 2026). - Sion's Tab agent
+"""site_links.py 1.2.0 - one plain "E-books" link and one plain "New records by email" link in the footer of every built page. - Sion's Tab agent
+1.2.0 (8 Nov 2026, sales fix run 91): the footer line also links the mailing list (/subscribe/). Measured 8 Nov: about 500 outside
+page views a day across cedwyn + apex, 0 outside visits to /subscribe/ ever and 0 organic list signups ever, because no built page
+linked the list page (only the free PDFs did, since sf88). Same plain text link in the same <p>, no strip, chip, button or image.
+Skipped on /subscribe/ itself.
 Owner purge rule, 00:48 GMT 2 Nov 2026: the cross-promo chrome (e-book strip, home e-book button, graph promo, section ribbon chips,
 "Outside records" popup) stays purged; routes to /ebooks/ belong in the menu, the footer and the /ebooks/ page itself. The menu
 link is drawn by basecamp.js (side menu, beside Values and Standards); this pass adds the footer link at build so it also shows
@@ -13,9 +17,11 @@ the /ebooks/ pages themselves. Idempotent (data-cw-foot). Report: dist/_cedwyn/r
 1.1.0 (3 Nov 2026): ebooks_ld() adds an ItemList of Book/Product JSON-LD to /ebooks/ from data/ebooks.json (markup only).
 Usage: python3 tools/site_links.py dist   (site.py calls it right after purge_promo.py)"""
 import json, pathlib, re, sys
-VERSION = '1.0.0'   # footer link version (data-cw-foot); 1.1.0 of this file adds ebooks_ld()
+VERSION = '1.1.0'   # footer link version (data-cw-foot); 1.1.0 = e-books + mailing list (file 1.2.0); file 1.1.0 added ebooks_ld()
 SKIP = ('wayback/websites/', 'wayback/mail/', 'wayback/html/', 'wayback/snapshot/', '_cedwyn/', 'db/', '_blob/')
 LABEL = {'en': 'E-books', 'cy': 'E-lyfrau', 'es': 'E-libros'}
+LIST = {'en': 'New records by email', 'cy': 'Cofnodion newydd drwy e-bost', 'es': 'Nuevos registros por correo'}
+SUBSCRIBE = re.compile(r'^subscribe(?:/|\.html$|$)')
 STYLE = 'margin:10px 0 6px;padding:0 8px;font-size:14px;line-height:1.4;text-align:center'
 FOOT_OPEN = re.compile(r'<footer\b([^>]*)>', re.I)
 AGENT = re.compile(r'<footer\b[^>]*\bid="ghf-agent-footer"', re.I)
@@ -32,8 +38,10 @@ def lang_of(s):
 def link(rel, s):
     pre = rel.split('/', 1)[0] if rel.split('/', 1)[0] in ('wales', 'argentina') and '/' in rel else ''
     href = ('/' + pre if pre else '') + '/ebooks/'
-    return ('<p class="cw-foot-links" data-cw-foot="%s" style="%s"><a href="%s">%s</a></p>'
-            % (VERSION, STYLE, href, LABEL[lang_of(s)]))
+    l = lang_of(s)
+    sub = '' if SUBSCRIBE.match(rel) else ' · <a href="/subscribe/">%s</a>' % LIST[l]
+    return ('<p class="cw-foot-links" data-cw-foot="%s" style="%s"><a href="%s">%s</a>%s</p>'
+            % (VERSION, STYLE, href, LABEL[l], sub))
 
 
 def place(rel, s):
