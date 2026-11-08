@@ -24,5 +24,22 @@ Cedwyn.graphql('query($q:String!,$t:String){search(q:$q,theme:$t,limit:40){theme
 if(r.errors){res.innerHTML='<p class="muted">'+esc(r.errors[0].message)+'</p>';return;}
 var hs=r.data.search||[];res.innerHTML='<p class="muted">'+hs.length+' results</p>'+hs.map(function(x){return '<div class="card"><h3><a href="'+esc(x.path)+'">'+esc(x.artifact.title)+'</a></h3><div class="muted">'+esc(x.theme)+' · <a href="?a='+x.artifact.id+'">catalogue entry</a></div><div class="snip">'+esc(x.snippet)+'</div></div>';}).join('');});}
 document.getElementById('f').onsubmit=function(e){e.preventDefault();var q=document.getElementById('q').value.trim(),t=document.getElementById('th').value;history.replaceState(null,'','?q='+encodeURIComponent(q)+(t?'&theme='+t:''));if(q)search(q,t);};
-if(P.get('a'))show(P.get('a'));else if(P.get('q')){document.getElementById('q').value=P.get('q');search(P.get('q'),P.get('theme'));}
+/* ?id=EV-0156 (or MR-, AR-, PE- ...): one record from the central catalogue, read from the same-origin /api/catalogue/<id>.
+   Record pages and webapps link /catalogue/?id=<ID>; before this, this page ignored ?id and showed an empty search. */
+function showRecord(id){res.innerHTML='<p class="muted">Loading '+esc(id)+'…</p>';
+fetch('/api/catalogue/'+encodeURIComponent(id),{headers:{'Accept':'application/json'}}).then(function(r){if(r.status===404)return null;if(!r.ok)throw new Error('The catalogue answered '+r.status);return r.json();}).then(function(j){
+var a=j&&j.item;if(!a){res.innerHTML='<p>No catalogue record '+esc(id)+'. Try a search above.</p>';document.getElementById('q').value=id;return;}
+document.title=a.id+' · '+(a.title||'')+' · Catalogue · Cedwyn';
+var d=a.data||{},h='<div class="card" id="'+esc(a.id)+'"><h3>'+esc(a.title)+'</h3><div class="muted">'+esc(a.id)+' · '+esc(String(a.kind||'').replace(/_/g,' '))+(a.date_display?' · '+esc(a.date_display):'')+(a.alias?' · also '+esc(a.alias):'')+'</div>';
+if(a.status)h+='<p><b>Status:</b> '+esc(a.status)+'</p>';
+if(a.holder)h+='<p><b>Held by:</b> '+esc(a.holder)+'</p>';
+if(a.summary)h+='<p>'+esc(a.summary)+'</p>';
+[['type','Type'],['label','Label'],['provenance','Provenance'],['why_we_believe_it_exists','Why it should exist'],['source','Source'],['interpretation','Interpretation']].forEach(function(k){var v=d[k[0]];if(typeof v==='string'&&v&&v!==a.summary)h+='<p><b>'+k[1]+':</b> '+esc(v)+'</p>';});
+if(a.page&&!/^\/catalogue\//.test(a.page)&&/^\//.test(a.page))h+='<p><a href="'+esc(a.page)+'">Open the record page</a></p>';
+var ln=(j.links||[]).filter(function(l){return l&&l.src&&l.dst;}).slice(0,40);
+if(ln.length)h+='<p><b>Linked records:</b> '+ln.map(function(l){var o=l.src===a.id,t=o?l.dst:l.src;return '<a href="?id='+encodeURIComponent(t)+'">'+esc(t)+'</a>'+(l.rel?' <span class="muted">('+(o?'':'← ')+esc(l.rel)+')</span>':'');}).join(' · ')+'</p>';
+if(a.updated)h+='<p class="muted">Record updated '+esc(String(a.updated).slice(0,10))+'</p>';
+res.innerHTML=h+'</div>';}).catch(function(e){res.textContent=String(e);});}
+var RID=(P.get('id')||'').trim().toUpperCase();
+if(/^[A-Z]{2,4}-\d{2,5}$/.test(RID))showRecord(RID);else if(P.get('a'))show(P.get('a'));else if(P.get('q')){document.getElementById('q').value=P.get('q');search(P.get('q'),P.get('theme'));}
 </script></body></html>
