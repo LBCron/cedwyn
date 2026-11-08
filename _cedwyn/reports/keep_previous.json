@@ -7,7 +7,7 @@
   },
   "research": {
    "files_now": 1618,
-   "files_previous_build": 1648,
+   "files_previous_build": 1652,
    "home": true
   },
   "app": {
@@ -22,7 +22,7 @@
   },
   "email": {
    "files_now": 1651,
-   "files_previous_build": 1673,
+   "files_previous_build": 1687,
    "home": true
   },
   "dartboard": {
@@ -42,7 +42,7 @@
   },
   "terrain": {
    "files_now": 6,
-   "files_previous_build": 10,
+   "files_previous_build": 9,
    "home": true
   },
   "cyberspace": {
@@ -52,7 +52,7 @@
   }
  },
  "restored": {
-  "terrain": 6
+  "terrain": 5
  },
  "refused": [
   "terrain"

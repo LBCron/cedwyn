@@ -1,5 +1,5 @@
 {
-"generated": "2026-10-29T22:56:28Z",
+"generated": "2026-11-08T05:23:21Z",
 "version": "1.0.0",
 "method": "Institution watch: dated releases recorded by the project, earliest Internet Archive copies of farm records (first-seen register), absence checks of indexes where records should appear if released, and page-text changes of pages cited in FOI/EIR/SAR replies. Robots rules respected; Internet Archive copies used where live reading is not allowed.",
 "institutions": [
@@ -127,6 +127,11 @@
 "id": "dwr",
 "name": "Dwr Cymru Welsh Water",
 "short": "Dwr Cymru"
+},
+{
+"id": "archives",
+"name": "Other archives",
+"short": "Other"
 }
 ],
 "events": [
@@ -2058,6 +2063,28 @@
 "hits": [],
 "source": "live",
 "id": "2b5b88c059"
+},
+{
+"type": "altered",
+"date": "2026-11-08",
+"inst": "govuk",
+"title": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=http%3A%2F%2Fwww.gov.uk%2Fland-registry.cy",
+"page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=http%3A%2F%2Fwww.gov.uk%2Fland-registry.cy",
+"summary": "Page text changed since the check of 2026-10-29 (9205 -> 9486 characters).",
+"hits": [],
+"source": "live",
+"id": "01fc82510b"
+},
+{
+"type": "altered",
+"date": "2026-11-08",
+"inst": "archives",
+"title": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fcotswoldarchaeology.co.uk%2Fhighlight-5-llandough-early-medieval-cemetery-glamorgan-1994%2F",
+"page_url": "https://cedwyn.bucklerfamily.estate/wayback/go/?u=https%3A%2F%2Fcotswoldarchaeology.co.uk%2Fhighlight-5-llandough-early-medieval-cemetery-glamorgan-1994%2F",
+"summary": "Page text changed since the check of 2026-10-29 (7421 -> 7411 characters).",
+"hits": [],
+"source": "live",
+"id": "fb3ab88a56"
 }
 ]
 }
