@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-07",
- "count": 84,
+ "generated": "2026-11-08",
+ "count": 86,
  "items": [
   {
    "mr": "MR-0001",
@@ -1503,6 +1503,34 @@
    ],
    "search_record": [],
    "url": "/research/missing-records/mr-0084/"
+  },
+  {
+   "mr": "MR-0085",
+   "title": "Bute Estate Records R 1/43–59: Country rentals, 1876–1893 (National Library of Wales)",
+   "date": "1876–1893",
+   "status": "LOCATED, NOT YET OBTAINED",
+   "holder": "National Library of Wales, Aberystwyth: Bute Estate Records (GB 0210 BUTE), R 1/43–59",
+   "basis": "cross-reference (National Library of Wales catalogue: file R 1/43–59 'Country rentals, 1876–1893', MMS 992088095302419, within series R 1 'Glamorgan Estate rentals, 1728–1893', MMS 992088177902419, catalogue entry EV-0698; read through the library's public discovery interface on 8 Nov 2026)",
+   "why": "In 1876/77 the Bute estate districts were reorganised and the remaining Glamorgan Estate rental was renamed the Country rental; it runs to 1892/93, and the districts it lists include Leckwith and Llandough. The file R 1/43–59 holds seventeen annual volumes, from R 1/43 (1876–7) to R 1/59 (1892–3). They would show who paid rent to the Bute estate for holdings in Llandough and Leckwith in each of those years, including 1876–78, and at what rent. Against: a rental lists tenants, holdings and sums, and does not identify the Tŷ Mawr parcel unless an entry names it; which Llandough entries these volumes carry is not checked.",
+   "refs": [
+    "EV-0698"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0085/"
+  },
+  {
+   "mr": "MR-0086",
+   "title": "1910 Finance Act valuation record sheet plans for Llandough, the maps that pair with the Glamorgan Archives valuation book DVAL/1/33",
+   "date": "c.1910",
+   "status": "LOCATED, NOT YET OBTAINED",
+   "holder": "The National Archives, Kew: IR 131/4 (Cardiff District record sheet plans). The valuation book DVAL/1/33 is at Glamorgan Archives.",
+   "basis": "cross-reference (Glamorgan Archives reply of 7 Sep 2026 naming the Llandough valuation book DVAL/1/33 and stating that the maps are held by The National Archives; TNA Discovery, series IR 131/4 'Finance Act 1910, Record Sheet Plans: Welsh Region: Cardiff District', read 8 Nov 2026); statute (Finance (1909–10) Act 1910, land valuation); the Glamorgan Archives catalogue entry for DVAL/1/33 is not checked (the catalogue did not load)",
+   "why": "DVAL/1/33 is not a reference at The National Archives. It is Glamorgan Archives' reference for the 1910 land valuation book for Llandough; Glamorgan Archives wrote on 7 Sep 2026 that it does not hold the maps that go with the book and that they are at The National Archives. The maps that pair with it are the Finance Act 1910 record sheet plans for the Cardiff valuation district, series IR 131/4, one 1:2500 Ordnance Survey sheet per piece. The assessment numbers marked on those sheets tie each plot to its entry in the valuation book and in the field books (IR 58). For Great House the sheet is Glamorgan XLVII.6, IR 131/4/96, already recorded on MR-0048. Other Glamorgan XLVII sheets in the same series that may cover the rest of the parish: XLVII.2 (IR 131/4/94), XLVII.3 (IR 131/4/54), XLVII.5 (IR 131/4/95), XLVII.7 (IR 131/4/97; Penarth quarters IR 131/4/245 and 246), XLVII.10 (IR 131/4/99) and XLVII.11 (Penarth quarters IR 131/4/247 to 249). Which of these the parish covers is not checked. Against: the sheets show plot boundaries and assessment numbers only; the owner, occupier and tenure are in the book and the field books.",
+   "refs": [
+    "MR-0048"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0086/"
   }
  ]
 }
