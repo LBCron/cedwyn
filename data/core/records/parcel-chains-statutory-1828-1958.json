@@ -1,7 +1,7 @@
 {
  "schema": "cedwyn-core/0.1.0",
  "note": "Statutory and civic records touching land in Llandough-juxta-Penarth and Leckwith, 1828-1958, catalogued 3 November 2026 for the parcel chains work. Each entry is a catalogue record of the source; which parcels each touched is open until the deposited plans and books of reference are read.",
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "records": [
   {
    "id": "AR-GAZETTE-1884-11-25-BARRY-LLANDOUGH",
@@ -1286,6 +1286,99 @@
     {
      "heading": "Related records",
      "text": "Opposed private bill committee evidence, Lords and Commons 1896-1897 (AR-PARLARCH-1896-1897-TVR-OPPOSED-BILL-EVIDENCE); London Gazette, 24 November 1896, issue 26797 p.6654 (AR-GAZETTE-1896-11-24-TVR-LLANDOUGH); deposited plan and book of reference HL/PO/PB/3/plan1897/T1."
+    }
+   ]
+  },
+  {
+   "id": "AR-HCJ-140-1885-BARRY-CPBJR-BILLS",
+   "kind": "artifact",
+   "slug": "ar-hcj-140-1885-barry-cpbjr-bills",
+   "title": "Journals of the House of Commons, vol. 140 (1884-85): proceedings on the Barry Dock and Railways Bill [Lords] and the Cardiff, Penarth and Barry Junction Railways Bill [Lords]",
+   "aliases": [],
+   "date": {
+    "display": "15 May - 6 August 1885",
+    "sort": 1885.0,
+    "precision": "day"
+   },
+   "place_text": "Two Bills of the 1885 session whose London Gazette notices of November 1884 named Llandough-juxta-Cardiff: the Barry Dock and Railways Bill (Railway No.1 terminating in Llandough) and the Cardiff, Penarth and Barry Junction Railways Bill (Railway No.1 commencing in Llandough)",
+   "description": "The Commons Journal entries for both Bills, which began in the House of Lords. Barry Dock and Railways Bill: read the first time 15 May 1885; Standing Orders reported complied with 19 May; read a second time and committed 4 June; on 16 July Mr Hardcastle reported from the committee that a report of the Secretary of State for the Home Department relative to the Bill had been referred to it, and that its recommendations had already been carried out by a clause the promoters inserted in the House of Lords; considered as amended 21 July; the Lords agreed to the Commons amendments in late July; listed for Royal Assent on 31 July 1885 as the Barry Dock and Railways Act, 1885. Cardiff, Penarth and Barry Junction Railways Bill: read the first time in late June; the Examiners reported that the Standing Orders had not been complied with; on 7 July the House resolved that the Standing Orders be dispensed with provided that all powers relating to working agreements with the Barry Dock and Railways Company were struck out; on 16 July Mr Hardcastle reported that, under Standing Order No. 183 (houses occupied by persons belonging to the labouring classes), a report from the Local Government Board had been referred to the committee and a clause inserted to carry out its recommendations, and that the preamble had been amended by striking out the recital on agreements with the Barry company; read the third time 29-30 July; the Lords agreed to the Commons amendments in early August; listed for Royal Assent on 6 August 1885 as the Cardiff, Penarth, and Cadoxton-juxta-Barry Junction Railway Act, 1885.",
+   "transcript": "",
+   "transcript_status": "Read on 8 November 2026 in the archive.org full text of the volume (OCR); dates taken from the Journal's page headings. No entry in the volume names Llandough, Leckwith or Cogan, or any owner, lessee or occupier of land in those parishes.",
+   "interpretation": "What it shows: that both Bills passed in 1885; that the Cardiff, Penarth and Barry Junction scheme came within Standing Order 183, which applied where the lands to be taken included houses occupied by persons of the labouring classes, and that a re-housing clause was added; and that the Barry Bill carried a Home Department report. What it does not show: which parish held those houses, the plots, the book of reference, or any landowner. The Journal of this period does not enter every petition against a private Bill, and the Lords Journal, where both Bills began, is not checked.",
+   "provenance": {
+    "holder": "House of Commons (printed Journal; copy digitised on archive.org)",
+    "reference": "Journals of the House of Commons, vol. 140 (23 October 1884 - 14 August 1885), entries of 15 May, 19 May, 4 June, 23 June, 6-7 July, 16 July, 21 July, 29-30 July, 31 July and 4-6 August 1885",
+    "date": "1885",
+    "obtained": "Full text read on 8 November 2026: https://archive.org/details/sim_great-britain-house-of-commons-journal_october-23-1884-august-14-1885_140",
+    "independent_origin_id": "ORIG-HCJ-140-1885"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Parliamentary proceedings on two Bills whose notices sought land in Llandough-juxta-Cardiff; no parish name in the Journal entries.",
+    "tags": [
+     "house-of-commons-journal",
+     "barry-dock-and-railways",
+     "cardiff-penarth-and-barry-junction-railways",
+     "private-bill",
+     "standing-order-183",
+     "llandough",
+     "1885"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "Related records",
+     "text": "London Gazette, 25 November 1884 (AR-GAZETTE-1884-11-25-BARRY-LLANDOUGH); London Gazette, 18 November 1884 (AR-GAZETTE-1884-11-18-CPBJR-LLANDOUGH); Glamorgan Archives Q/D/P/467 (AR-GLAMARCH-QDP-467-BARRY-1884); opposed Bill committee evidence, 1885 (AR-PARLARCH-1885-CPBJR-OPPOSED-BILL-EVIDENCE); deposited plans HL/PO/PB/3/plan1885/B4 and plan1885/C4; Local Act 48 & 49 Vict. c.cxli (HL/PO/PB/1/1885/48and49V1n186)."
+    }
+   ]
+  },
+  {
+   "id": "AR-PARLARCH-1885-CPBJR-OPPOSED-BILL-EVIDENCE",
+   "kind": "artifact",
+   "slug": "ar-parlarch-1885-cpbjr-opposed-bill-evidence",
+   "title": "Parliamentary Archives and The National Archives: opposed private bill committee evidence and bound Bill papers for the Cardiff, Penarth and Barry Junction Railways Bill, 1885",
+   "aliases": [],
+   "date": {
+    "display": "1885",
+    "sort": 1885.0,
+    "precision": "year"
+   },
+   "place_text": "Cardiff, Penarth and Barry Junction Railways Bill for the 1885 session, whose Railway No.1 began in Llandough-juxta-Cardiff by a junction with the Penarth Harbour dock branch (London Gazette, 18 November 1884)",
+   "description": "Five catalogue entries. Bound minutes of evidence taken before opposed private bill committees in 1885: House of Lords, volume 5 (YHL/PO/PB/5/51/5: Cardiff and Monmouthshire Valley Railway Bill, no evidence recorded; Cardiff, Penarth and Barry Junction Railways Bill; Cart Navigation Bill; Coatbridge Burgh Bill; Columbia Market and Railway Bill) and House of Commons, volume 5 (YHC/CL/PB/2/53/5: Canterbury and Kent Coast Railway bill; Cardiff, Penarth and Barry Junction Railways bill; Cart Navigation bill; Coatbridge Burgh bill). The National Archives RAIL 1066/555, 556 and 557, each titled Cardiff, Penarth and Barry Junction Railway, 1885, in the series of Parliamentary Bills and Minutes of Evidence, whose series description lists evidence, petitions and proceedings on Bills, sometimes with maps, plans and the Bill at its stages. Committee evidence and petitions record the parties heard for and against a Bill, which can include owners and occupiers of land in the deposited plans.",
+   "transcript": "",
+   "transcript_status": "Catalogue entries only, read on 8 November 2026 through The National Archives Discovery catalogue; all are marked as not digitised and their contents are not checked.",
+   "interpretation": "What it shows: that the 1885 Bill was opposed and taken in committee in both Houses, and that bound papers for it survive in the railway records at Kew. What it does not show: who opposed it, whether the Llandough lands were discussed, or any owner or occupier.",
+   "provenance": {
+    "holder": "Parliamentary Archives (YHL, YHC references, catalogued in The National Archives Discovery); The National Archives, Kew (RAIL 1066)",
+    "reference": "YHL/PO/PB/5/51/5; YHC/CL/PB/2/53/5; RAIL 1066/555; RAIL 1066/556; RAIL 1066/557",
+    "date": "1885",
+    "obtained": "Catalogue read on 8 November 2026: https://discovery.nationalarchives.gov.uk/details/r/c167ca08-3336-4452-ac49-b0e60f65ae45 ; https://discovery.nationalarchives.gov.uk/details/r/aeb145d6-0228-41bb-88e4-e9fb5f059916 ; https://discovery.nationalarchives.gov.uk/details/r/C991290 ; https://discovery.nationalarchives.gov.uk/details/r/C991291 ; https://discovery.nationalarchives.gov.uk/details/r/C991292",
+    "independent_origin_id": "ORIG-PARLARCH-1885-CPBJR"
+   },
+   "grade": null,
+   "scope": {
+    "disposition": "in_scope",
+    "label": "In scope: statutory or civic record for the parishes",
+    "reason": "Committee evidence and Bill papers for a Bill that sought compulsory powers over land in Llandough-juxta-Cardiff.",
+    "tags": [
+     "parliamentary-archives",
+     "opposed-bill-evidence",
+     "cardiff-penarth-and-barry-junction-railways",
+     "rail-1066",
+     "llandough",
+     "1885"
+    ]
+   },
+   "places": [],
+   "evidence": [],
+   "detail": [
+    {
+     "heading": "Related records",
+     "text": "London Gazette, 18 November 1884 (AR-GAZETTE-1884-11-18-CPBJR-LLANDOUGH); Commons Journal vol. 140 (AR-HCJ-140-1885-BARRY-CPBJR-BILLS); deposited plan, book of reference and list of owners, lessees and occupiers HL/PO/PB/3/plan1885/C4; company minutes TNA RAIL 96/1 (1885-1889)."
     }
    ]
   }
