@@ -106,6 +106,12 @@ def resolve_blob(u, page_rel):
     if b and not (DIST / absp.lstrip('/')).exists():
         stats['blobbed_refs'] += 1; return b
     return u
+def _theme_root_has(s, tid):
+    """True when '/<tid>' + s names a real file or folder in the built theme (or one the blob store took over)."""
+    base = urllib.parse.unquote(re.match(r'([^?#]*)', s).group(1))
+    tgt = '/' + tid + base
+    p = DIST / tgt.lstrip('/')
+    return p.is_file() or (p / 'index.html').is_file() or tgt in moved
 def rw(u, tid, link, page_rel):
     if u is None: return u
     s = u.strip()
@@ -129,6 +135,14 @@ def rw(u, tid, link, page_rel):
     if s.startswith('/'):
         if s == '/': stats['prefixed'] += 1; return '/' + tid + '/'
         if s.startswith(RESERVED): return u
+        # 8 Nov 2026 (P-DOUBLED-SECTION-SLUG): app sources written for their live address already link /<theme>/...
+        # (cedwyn-spill /spill/llms.txt, cedwyn-analytics /analytics/api/..., cedwyn-cloudflare /cloudflare/api/...);
+        # prefixing those again gave /<theme>/<theme>/... (404). Such a path is left as written unless the theme really
+        # holds a <theme>/ folder at that place (/story/ ships story/transcript.txt, linked as /story/transcript.txt),
+        # in which case the old theme-root reading stands. - Sion's Tab agent
+        if (s == '/' + tid or s.startswith(('/' + tid + '/', '/' + tid + '?', '/' + tid + '#'))) and not _theme_root_has(s, tid):
+            stats['already_prefixed'] = stats.get('already_prefixed', 0) + 1
+            return resolve_blob(s, page_rel)
         stats['prefixed'] += 1
         return resolve_blob('/' + tid + s, page_rel)
     return resolve_blob(s, page_rel)
