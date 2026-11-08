@@ -1,0 +1,62 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in public/data/*.json, public/index.html, public/r/*/index.html. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-08T06:41:29Z",
+ "count": 4,
+ "not_in_central": [
+  "EV-0600",
+  "EV-0601",
+  "EV-0602",
+  "EV-0603",
+  "EV-0604",
+  "EV-0605",
+  "EV-0606"
+ ],
+ "items": {
+  "EV-0174": {
+   "id": "EV-0174",
+   "kind": "evidence",
+   "title": "NPCC response to FOI request 3156/2026: no information within scope identified",
+   "date_display": "16 September 2026",
+   "date_sort": "2026-09-16",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0183": {
+   "id": "EV-0183",
+   "kind": "evidence",
+   "title": "NPCC internal review decisions 3157/2026 and 3176/2026",
+   "date_display": "29 September 2026",
+   "date_sort": "2026-09-29",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0191": {
+   "id": "EV-0191",
+   "kind": "evidence",
+   "title": "NPCC FOI 3065/2026 response on search disclosure (Great House Farm / Llandough searches)",
+   "date_display": "9 October 2026",
+   "date_sort": "2026-10-09",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0513": {
+   "id": "EV-0513",
+   "kind": "evidence",
+   "title": "Llandough Community Council, agenda for the Council meeting of Thursday 22 October 2026 at 7.00pm (held remotely only), issued 13 October 2026. Item 10: a request about recollections of the village from the 1950s to the 1990s and about the 1,026 burials beneath Church View Close, the former site of Great House Farm (Tŷ Mawr)",
+   "date_display": "13 October 2026 (agenda issued); 22 October 2026 (meeting)",
+   "date_sort": "2026-10-13",
+   "status": "HELD (agenda read in full, 23 Oct 2026). Minutes of the 22 October 2026 meeting: not yet published at 09:45 BST on 23 October 2026.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0513-llandough-community-council-agenda-22-october-2026-item-10/"
+  }
+ }
+}

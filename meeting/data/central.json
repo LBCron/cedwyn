@@ -1,0 +1,65 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in static/2026-10-22/**/*.html, static/2026-10-22/**/*.json. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-08T02:30:06Z",
+ "count": 5,
+ "not_in_central": [
+  "EV-0226"
+ ],
+ "items": {
+  "EV-0037": {
+   "id": "EV-0037",
+   "kind": "evidence",
+   "title": "Western Mail: “It’s a Crichel Down, says woman farmer” (Mrs M. D. Buckler)",
+   "date_display": "20 November 1958 (committee meeting 19 November 1958)",
+   "date_sort": "1958-11-20",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0037-western-mail-1958-crichel-down/"
+  },
+  "EV-0224": {
+   "id": "EV-0224",
+   "kind": "evidence",
+   "title": "1881 census, Llandough, RG11/5288 page 2: “Llandough Home Farm”, John Williams, farmer",
+   "date_display": "Census night, 3 April 1881",
+   "date_sort": "1881-04-03",
+   "status": "HELD (photo). Transcribed from the photo, 19 Oct 2026.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0224-1881-census-llandough-rg11-5288/"
+  },
+  "EV-0225": {
+   "id": "EV-0225",
+   "kind": "evidence",
+   "title": "Trade directories, 1868–1901: John Williams at “Great House”, Llandough",
+   "date_display": "1868, 1875, 1880, 1887, 1891 and 1901",
+   "date_sort": "1868",
+   "status": "HELD (public online copy). Quotes read from the linked pages, 19 Oct 2026.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0225-trade-directories-1868-1901-john-williams-great-house/"
+  },
+  "EV-0227": {
+   "id": "EV-0227",
+   "kind": "evidence",
+   "title": "Cardiff Times: John Williams “of Llandough Farm”, guest at the Bute rent audit dinner; tenant since 1855",
+   "date_display": "16 July 1904",
+   "date_sort": "1904-07-16",
+   "status": "HELD (public online copy).",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0227-cardiff-times-1904-john-williams-tenancy-since-1855/"
+  },
+  "EV-0228": {
+   "id": "EV-0228",
+   "kind": "evidence",
+   "title": "Llandough Farm and the Rees family, 1841–1910 (a separate farm, recorded for disambiguation)",
+   "date_display": "c.1841; 1865; 1886; 1898; 1910",
+   "date_sort": "1841",
+   "status": "HELD (public online copies).",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0228-llandough-farm-rees-family-1841-1910/"
+  }
+ }
+}

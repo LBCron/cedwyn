@@ -1,0 +1,45 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in public/index.html, public/quotes/index.html, public/terms/index.html. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-07T23:47:22Z",
+ "count": 3,
+ "not_in_central": [],
+ "items": {
+  "EV-0035": {
+   "id": "EV-0035",
+   "kind": "evidence",
+   "title": "Western Mail: “City wants common for play-field” — Leckwith Common inquiry (Mrs Mary Doreen Buckler)",
+   "date_display": "7 May 1958 (inquiry 6 May 1958)",
+   "date_sort": "1958-05-07",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0035-western-mail-1958-leckwith-common-hearing/"
+  },
+  "EV-0227": {
+   "id": "EV-0227",
+   "kind": "evidence",
+   "title": "Cardiff Times: John Williams “of Llandough Farm”, guest at the Bute rent audit dinner; tenant since 1855",
+   "date_display": "16 July 1904",
+   "date_sort": "1904-07-16",
+   "status": "HELD (public online copy).",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0227-cardiff-times-1904-john-williams-tenancy-since-1855/"
+  },
+  "EV-0291": {
+   "id": "EV-0291",
+   "kind": "evidence",
+   "title": "National Library of Wales, Bute Estate Records: catalogue entries D153/1–8 (Llandough) and D242/1–27, D247/1–69, D258/1–110 (Pwllypant estate, p. Eglwysilan)",
+   "date_display": "D153: 1811–1912 · D242: 1775–1921 · D247: 1723–1895 · D258: 1867–1877 (catalogue dates)",
+   "date_sort": "1811",
+   "status": "HELD (catalogue text, read online 21 Oct 2026); the deeds and the plan on D153/4 SOURCE PENDING",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0291-nlw-bute-catalogue-d153-llandough-33-acres-great-house-farm-limeworks-and-pwllypant-d242-d247-d258/"
+  }
+ }
+}

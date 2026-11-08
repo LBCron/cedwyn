@@ -1,0 +1,54 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in public/data/register.json. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-08T06:08:48Z",
+ "count": 4,
+ "not_in_central": [],
+ "items": {
+  "EV-0049": {
+   "id": "EV-0049",
+   "kind": "evidence",
+   "title": "Mary Williams's plea of ownership in BP Pension Trust's 1974 county-court action",
+   "date_display": "3 July 1974 and the 1974 proceedings",
+   "date_sort": "1974-07-03",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0049-mary-williams-plea-ownership-pleadings/"
+  },
+  "EV-0094": {
+   "id": "EV-0094",
+   "kind": "evidence",
+   "title": "Cadw barn survey photograph, 1988 (disclosed 11 June 2026)",
+   "date_display": "29 July 1988",
+   "date_sort": "1988-07-29",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0094-cadw-barn-survey-photo-1988/"
+  },
+  "EV-0147": {
+   "id": "EV-0147",
+   "kind": "evidence",
+   "title": "HM Land Registry letter on registration history of Tŷ Mawr Farm",
+   "date_display": "23 March 2026",
+   "date_sort": "2026-03-23",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0244": {
+   "id": "EV-0244",
+   "kind": "evidence",
+   "title": "Welsh Government ATISN 26-0010 disclosure response: retention and destruction schedules; searches under the farm name, Western Ground Rents Ltd and BP Properties Ltd",
+   "date_display": "19 October 2026 (emailed 10:25 BST)",
+   "date_sort": "2026-10-19",
+   "status": "HELD — open the letter (PDF, Wayback archive). Public copy: the requester’s personal email address is redacted; nothing else is changed.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0244-welsh-government-atisn-26-0010-disclosure-response-19-oct-2026/"
+  }
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in the served files (public/**/*.html, public/**/*.json, public/**/*.js). Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-08T00:53:33Z",
+ "count": 1,
+ "not_in_central": [
+  "EV-0295",
+  "EV-0298",
+  "EV-0324",
+  "EV-0335",
+  "EV-0350",
+  "EV-0371",
+  "EV-0372",
+  "EV-0374",
+  "EV-0375",
+  "EV-0388",
+  "EV-0413",
+  "EV-0428",
+  "EV-0432",
+  "EV-0442",
+  "EV-0460",
+  "EV-0488",
+  "EV-0489",
+  "EV-0494"
+ ],
+ "items": {
+  "EV-0215": {
+   "id": "EV-0215",
+   "kind": "evidence",
+   "title": "Tithe apportionment, Landough, Cogan and Leckwith — John Williams’s holding",
+   "date_display": "c.1841",
+   "date_sort": "1841",
+   "status": "HELD (public online copy)",
+   "page": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/"
+  }
+ }
+}

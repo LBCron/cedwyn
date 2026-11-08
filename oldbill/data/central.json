@@ -1,0 +1,120 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in public/data/tickets.json, public/data/ledger.json, public/data/damages.json. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-08T06:39:30Z",
+ "count": 11,
+ "not_in_central": [
+  "EV-0274",
+  "EV-0290"
+ ],
+ "items": {
+  "EV-0025": {
+   "id": "EV-0025",
+   "kind": "evidence",
+   "title": "Surrender and re-grant of Frederick Buckler's yearly tenancy (unwritten; no written record)",
+   "date_display": "2 February 1949",
+   "date_sort": "1949-02-02",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0025-frederick-buckler-unwritten-tenancy-1949/"
+  },
+  "EV-0032": {
+   "id": "EV-0032",
+   "kind": "evidence",
+   "title": "1955 Order 14 possession order against Frederick Buckler (not yet located)",
+   "date_display": "1955 (exact date to be confirmed)",
+   "date_sort": "1955-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0032-1955-order-14-possession-order/"
+  },
+  "EV-0080": {
+   "id": "EV-0080",
+   "kind": "evidence",
+   "title": "Court of Appeal judgment: BP Properties Ltd v Buckler [1987] EWCA Civ 2",
+   "date_display": "31 July 1987",
+   "date_sort": "1987-07-31",
+   "status": "HELD-ONLINE",
+   "page": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/"
+  },
+  "EV-0122": {
+   "id": "EV-0122",
+   "kind": "evidence",
+   "title": "European Commission of Human Rights application 14464/88 and inadmissibility decision",
+   "date_display": "lodged 3 May 1988; registered 12 December 1988; declared inadmissible 14 April 1989",
+   "date_sort": "1989-04-14",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0122-echr-application-14464-88-inadmissibility/"
+  },
+  "EV-0153": {
+   "id": "EV-0153",
+   "kind": "evidence",
+   "title": "HM Land Registry stage-two complaint decision",
+   "date_display": "25 May 2026 (date shown by file title)",
+   "date_sort": "2026-05-25",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0159": {
+   "id": "EV-0159",
+   "kind": "evidence",
+   "title": "South Wales Police response to FOI request 719/26",
+   "date_display": "16 July 2026",
+   "date_sort": "2026-07-16",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0244": {
+   "id": "EV-0244",
+   "kind": "evidence",
+   "title": "Welsh Government ATISN 26-0010 disclosure response: retention and destruction schedules; searches under the farm name, Western Ground Rents Ltd and BP Properties Ltd",
+   "date_display": "19 October 2026 (emailed 10:25 BST)",
+   "date_sort": "2026-10-19",
+   "status": "HELD — open the letter (PDF, Wayback archive). Public copy: the requester’s personal email address is redacted; nothing else is changed.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0244-welsh-government-atisn-26-0010-disclosure-response-19-oct-2026/"
+  },
+  "EV-0245": {
+   "id": "EV-0245",
+   "kind": "evidence",
+   "title": "Cadw / Welsh Government ATISN 27589 response (ref qA2496208): request for July–December 1988 listing papers refused under FOIA s.14(2)",
+   "date_display": "19 October 2026 (emailed 14:26 BST)",
+   "date_sort": "2026-10-19",
+   "status": "HELD — open the letter (PDF, Wayback archive). Public copy: the requester’s personal email address is redacted; nothing else is changed.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0245-cadw-atisn-27589-response-s14-2-19-oct-2026/"
+  },
+  "EV-0276": {
+   "id": "EV-0276",
+   "kind": "evidence",
+   "title": "Press set, 1994–1996: Ideal Homes (Wales) built “Churchview Close”, Llandough (first buyers by January 1995); Persimmon bought Ideal Homes in early 1996 and sold the last house there by September 1996 (snippets)",
+   "date_display": "1994 – September 1996",
+   "date_sort": "1996-09",
+   "status": "SOURCE PENDING (snippets only)",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0276-churchview-close-llandough-ideal-homes-persimmon-1994-1996/"
+  },
+  "EV-0288": {
+   "id": "EV-0288",
+   "kind": "evidence",
+   "title": "Press search snippets, Nov 1968 – Feb 1969: Amalgamated Investment & Property bids for Western Ground Rents (Nov 1968); a counter-bid (Jan 1969); the WGR board favours Great Portland Estates (8 Feb 1969); British Petroleum makes an agreed cash bid of 17s a share, about £18–19 million, on 15 Feb 1969, to pass WGR’s properties “on to the” BP pension fund; Amalgamated’s offer lapses (18 Feb 1969)",
+   "date_display": "19 November 1968 – 18 February 1969",
+   "date_sort": "1968-11-19",
+   "status": "SOURCE PENDING (snippets read 21 Oct 2026)",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0288-snippets-only-press-on-the-1968-69-takeover-battle-for-western-ground-rents-ltd-en/"
+  },
+  "EV-0293": {
+   "id": "EV-0293",
+   "kind": "evidence",
+   "title": "The 1994 excavation north of St Dochdwy’s: the HER records, the published report, the Museum Wales accession and Burial 631",
+   "date_display": "1994 (excavation); 28 Jul 1994 (donation); 2005 (published report); 2 May 2007 (museum article); HER record compiled 12 Mar 2004, updated 24 Aug 2024",
+   "date_sort": "1994-07-28",
+   "status": "HELD (public online records, read 21 Oct 2026). Cotswold Archaeological Trust Report 94213 and the 2005 full text: see the Archaeology and Heritage page.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0293-llandough-1994-cemetery-excavation-her-ggat02272s-museum-wales-95-56h-burial-631/"
+  }
+ }
+}

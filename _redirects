@@ -251,3 +251,5 @@
 /fb/n/r-20* /fb2/n/r-20:splat 301
 /fb/p/p-20* /fb2/p/p-20:splat 301
 /shop/thank-you/* /shop/ 301
+/docs/:sec/:id/latest/html/ /docs/:sec/:id/latest/html/en/ 302
+/docs/:sec/:id/latest/html /docs/:sec/:id/latest/html/en/ 302

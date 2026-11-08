@@ -1,0 +1,350 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in public/**/*.html, public/data/*.json. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-07T21:10:55Z",
+ "count": 36,
+ "not_in_central": [
+  "EV-0243",
+  "EV-0263",
+  "EV-0265",
+  "EV-0274",
+  "EV-0288",
+  "EV-0290",
+  "EV-0293"
+ ],
+ "items": {
+  "EV-0006": {
+   "id": "EV-0006",
+   "kind": "evidence",
+   "title": "1877 Bute–Daniel Thomas & Son agreement (sale or quarry lease of house parcel)",
+   "date_display": "1877",
+   "date_sort": "1877-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0006-bute-thomas-agreement-1877/"
+  },
+  "EV-0014": {
+   "id": "EV-0014",
+   "kind": "evidence",
+   "title": "Bute yearly agricultural tenancy to John Williams, with plan",
+   "date_display": "February 1916",
+   "date_sort": "1916-02-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0014-bute-tenancy-john-williams-1916/"
+  },
+  "EV-0016": {
+   "id": "EV-0016",
+   "kind": "evidence",
+   "title": "1928 Last House-Parcel Rent Receipt and End of Quarrying",
+   "date_display": "1928",
+   "date_sort": "1928-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0016-1928-last-rent-receipt-quarrying/"
+  },
+  "EV-0019": {
+   "id": "EV-0019",
+   "kind": "evidence",
+   "title": "Bute Estate to Western Ground Rents Ltd conveyance of reversion, with plan",
+   "date_display": "1938",
+   "date_sort": "1938-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0019-bute-wgr-conveyance-plan-1938/"
+  },
+  "EV-0023": {
+   "id": "EV-0023",
+   "kind": "evidence",
+   "title": "DBDT123/7 — 1939 agreement, Western Ground Rents to John Williams, with plan",
+   "date_display": "May 1939",
+   "date_sort": "1939-05-00",
+   "status": "PARTLY HELD",
+   "page": "/research/evidence/ev-0023-1939-wgr-john-williams-tenancy-plan/"
+  },
+  "EV-0031": {
+   "id": "EV-0031",
+   "kind": "evidence",
+   "title": "Reported 1954 further attempt to treat Frederick Buckler as a tenant (source pending)",
+   "date_display": "1954",
+   "date_sort": "1954-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0031-1954-buckler-tenancy-attempt/"
+  },
+  "EV-0032": {
+   "id": "EV-0032",
+   "kind": "evidence",
+   "title": "1955 Order 14 possession order against Frederick Buckler (not yet located)",
+   "date_display": "1955 (exact date to be confirmed)",
+   "date_sort": "1955-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0032-1955-order-14-possession-order/"
+  },
+  "EV-0034": {
+   "id": "EV-0034",
+   "kind": "evidence",
+   "title": "Writ or warrant of possession, execution record and officer's return",
+   "date_display": "on or about 4 July 1955",
+   "date_sort": "1955-07-04",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0034-writ-possession-execution-return-1955/"
+  },
+  "EV-0035": {
+   "id": "EV-0035",
+   "kind": "evidence",
+   "title": "Western Mail: “City wants common for play-field” — Leckwith Common inquiry (Mrs Mary Doreen Buckler)",
+   "date_display": "7 May 1958 (inquiry 6 May 1958)",
+   "date_sort": "1958-05-07",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0035-western-mail-1958-leckwith-common-hearing/"
+  },
+  "EV-0037": {
+   "id": "EV-0037",
+   "kind": "evidence",
+   "title": "Western Mail: “It’s a Crichel Down, says woman farmer” (Mrs M. D. Buckler)",
+   "date_display": "20 November 1958 (committee meeting 19 November 1958)",
+   "date_sort": "1958-11-20",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0037-western-mail-1958-crichel-down/"
+  },
+  "EV-0039": {
+   "id": "EV-0039",
+   "kind": "evidence",
+   "title": "WGR Tenancy Offers Concerning Remaining House and Garden (1959 and 1965)",
+   "date_display": "1959 and 1965",
+   "date_sort": "1959-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0039-wgr-tenancy-offers-1959-1965/"
+  },
+  "EV-0040": {
+   "id": "EV-0040",
+   "kind": "evidence",
+   "title": "Deed with plan between WGR, South Western Brick & Tile and Cardiff City",
+   "date_display": "29 March 1961",
+   "date_sort": "1961-03-29",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0040-1961-wgr-brick-tile-deed/"
+  },
+  "EV-0041": {
+   "id": "EV-0041",
+   "kind": "evidence",
+   "title": "Cardiff County Court possession order (farmhouse and garden) — not yet held",
+   "date_display": "11 December 1962",
+   "date_sort": "1962-12-11",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0041-cardiff-county-court-possession-order-1962/"
+  },
+  "EV-0043": {
+   "id": "EV-0043",
+   "kind": "evidence",
+   "title": "Conveyance with plan, WGR to BP Pension Trust (recited as root of BP title)",
+   "date_display": "31 December 1969",
+   "date_sort": "1969-12-31",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0043-wgr-bp-pension-trust-conveyance/"
+  },
+  "EV-0044": {
+   "id": "EV-0044",
+   "kind": "evidence",
+   "title": "VG41 village-green registration: register entry, map and ownership section",
+   "date_display": "16 June 1970",
+   "date_sort": "1970-06-16",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0044-vg41-village-green-registration-1970/"
+  },
+  "EV-0045": {
+   "id": "EV-0045",
+   "kind": "evidence",
+   "title": "Abstract of Title, 1971 (BP Pension Trust) — Known Only from Recitals",
+   "date_display": "1971",
+   "date_sort": "1971-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0045-1971-abstract-title-bp-pension/"
+  },
+  "EV-0048": {
+   "id": "EV-0048",
+   "kind": "evidence",
+   "title": "Daily Telegraph report: 'Open day' to save ancient Welsh house (Ty Mawr, Llandough)",
+   "date_display": "16 April 1974",
+   "date_sort": "1974-04-16",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0048-telegraph-open-day-ancient-house/"
+  },
+  "EV-0049": {
+   "id": "EV-0049",
+   "kind": "evidence",
+   "title": "Mary Williams's plea of ownership in BP Pension Trust's 1974 county-court action",
+   "date_display": "3 July 1974 and the 1974 proceedings",
+   "date_sort": "1974-07-03",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0049-mary-williams-plea-ownership-pleadings/"
+  },
+  "EV-0050": {
+   "id": "EV-0050",
+   "kind": "evidence",
+   "title": "Licence letters from BP Pension Trust and BP Properties to Mrs Buckler (Mrs Williams)",
+   "date_display": "31 October 1974",
+   "date_sort": "1974-10-31",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0050-1974-bp-licence-letters/"
+  },
+  "EV-0063": {
+   "id": "EV-0063",
+   "kind": "evidence",
+   "title": "WA240304 item 11: Form 1C application & solicitor's certificate of title",
+   "date_display": "1983 (undated on the schedule)",
+   "date_sort": "1983-00-01",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0063-hmlr-wa240304-item-11-form-1c/"
+  },
+  "EV-0066": {
+   "id": "EV-0066",
+   "kind": "evidence",
+   "title": "WA240304 file item 10: register / first-registration application, 23 February 1983",
+   "date_display": "23 February 1983",
+   "date_sort": "1983-02-23",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0066-hmlr-wa240304-item-10-register-1983/"
+  },
+  "EV-0078": {
+   "id": "EV-0078",
+   "kind": "evidence",
+   "title": "Amalgamation application and supporting plan (WA231076 item 14)",
+   "date_display": "2 February 1987",
+   "date_sort": "1987-02-02",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0078-1987-title-amalgamation-application-plan/"
+  },
+  "EV-0080": {
+   "id": "EV-0080",
+   "kind": "evidence",
+   "title": "Court of Appeal judgment: BP Properties Ltd v Buckler [1987] EWCA Civ 2",
+   "date_display": "31 July 1987",
+   "date_sort": "1987-07-31",
+   "status": "HELD-ONLINE",
+   "page": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/"
+  },
+  "EV-0108": {
+   "id": "EV-0108",
+   "kind": "evidence",
+   "title": "South Wales Echo search extract: villagers' anger at BP demolition of Llandough farmhouse",
+   "date_display": "Friday 9 December 1988",
+   "date_sort": "1988-12-09",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0108-south-wales-echo-bp-demolition-anger/"
+  },
+  "EV-0124": {
+   "id": "EV-0124",
+   "kind": "evidence",
+   "title": "Outline planning permission 89/01396/OUT – residential development, Great House Farm, Leckwith Road",
+   "date_display": "Application received 8th November 1989 (decision/issue date not visible on pages 1–2)",
+   "date_sort": "1989-11-08",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0124-outline-planning-permission-89-01396-out-residenti/"
+  },
+  "EV-0127": {
+   "id": "EV-0127",
+   "kind": "evidence",
+   "title": "Planning application (Form D) for approval of reserved matters: 20 detached houses at Great House Farm, Leckwith Road",
+   "date_display": "14 May 1992",
+   "date_sort": "1992-05-14",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0127-planning-application-form-d-for-approval-of-reserv/"
+  },
+  "EV-0128": {
+   "id": "EV-0128",
+   "kind": "evidence",
+   "title": "GGAT letter (27 July 1992, page 2 missing) and reserved-matters approval 92/00671/RES",
+   "date_display": "27 July 1992; approval 38 days later",
+   "date_sort": "1992-07-27",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0128-ggat-letter-reserved-matters-approval/"
+  },
+  "EV-0136": {
+   "id": "EV-0136",
+   "kind": "evidence",
+   "title": "Transfer of the woodland to Forest of Cardiff (title WA735527), with plan",
+   "date_display": "10 November 1994",
+   "date_sort": "1994-11-10",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0136-forest-of-cardiff-woodland-transfer-1994/"
+  },
+  "EV-0139": {
+   "id": "EV-0139",
+   "kind": "evidence",
+   "title": "Transfer, Forest of Cardiff to Goldsworthy Homes, excision from title WA735527",
+   "date_display": "2005",
+   "date_sort": "2005-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0139-forest-cardiff-goldsworthy-transfer-excision/"
+  },
+  "EV-0169": {
+   "id": "EV-0169",
+   "kind": "evidence",
+   "title": "HM Land Registry title register for WA735527, September 2026 copy",
+   "date_display": "September 2026",
+   "date_sort": "2026-09-00",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0169-wa735527-title-register-september-2026/"
+  },
+  "EV-0170": {
+   "id": "EV-0170",
+   "kind": "evidence",
+   "title": "HM Land Registry title register for title WA231076",
+   "date_display": "September 2026",
+   "date_sort": "2026-09-00",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0170-wa231076-title-register-september-2026/"
+  },
+  "EV-0201": {
+   "id": "EV-0201",
+   "kind": "evidence",
+   "title": "Planning officer's report: outline application, former Great House Farm, Llandough",
+   "date_display": "Undated (refers to Welsh Office Circular 1/85)",
+   "date_sort": "0000-00-00",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0201-planning-officer-s-report-on-outline-application-f/"
+  },
+  "EV-0215": {
+   "id": "EV-0215",
+   "kind": "evidence",
+   "title": "Tithe apportionment, Landough, Cogan and Leckwith — John Williams’s holding",
+   "date_display": "c.1841",
+   "date_sort": "1841",
+   "status": "HELD (public online copy)",
+   "page": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/"
+  },
+  "EV-0216": {
+   "id": "EV-0216",
+   "kind": "evidence",
+   "title": "1965 contract, condition F: root of title \"a Conveyance on sale dated 25th December 1938\"",
+   "date_display": "1965",
+   "date_sort": "1965",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0216-1965-contract-condition-f-conveyance-25-december-1938/"
+  },
+  "EV-0217": {
+   "id": "EV-0217",
+   "kind": "evidence",
+   "title": "Forest of Cardiff accounts to 30 Jun 2006: Sale of Land — Leckwith Road, Llandough £20,000",
+   "date_display": "year to 30 Jun 2006",
+   "date_sort": "2006-06-30",
+   "status": "HELD (public copy)",
+   "page": "/research/evidence/ev-0217-forest-of-cardiff-accounts-2006-sale-of-land-leckwith-road/"
+  },
+  "EV-0220": {
+   "id": "EV-0220",
+   "kind": "evidence",
+   "title": "Leckwith Woods: WGR gift of c.109 acres to Cardiff council (1940–42)",
+   "date_display": "1940–Apr 1942",
+   "date_sort": "1940",
+   "status": "HELD (public online copy)",
+   "page": "/research/evidence/ev-0220-leckwith-woods-wgr-gift-1940-1942/"
+  }
+ }
+}

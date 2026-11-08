@@ -1,0 +1,207 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in ledger/*.beancount, public/data.json, tools/template.html. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-08T01:34:32Z",
+ "count": 21,
+ "not_in_central": [],
+ "items": {
+  "EV-0007": {
+   "id": "EV-0007",
+   "kind": "evidence",
+   "title": "Bute trustees' abstract of receipts and payments, 1877 (Bute X.6(12))",
+   "date_display": "1877",
+   "date_sort": "1877-00-00",
+   "status": "PENDING",
+   "page": null
+  },
+  "EV-0014": {
+   "id": "EV-0014",
+   "kind": "evidence",
+   "title": "Bute yearly agricultural tenancy to John Williams, with plan",
+   "date_display": "February 1916",
+   "date_sort": "1916-02-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0014-bute-tenancy-john-williams-1916/"
+  },
+  "EV-0016": {
+   "id": "EV-0016",
+   "kind": "evidence",
+   "title": "1928 Last House-Parcel Rent Receipt and End of Quarrying",
+   "date_display": "1928",
+   "date_sort": "1928-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0016-1928-last-rent-receipt-quarrying/"
+  },
+  "EV-0022": {
+   "id": "EV-0022",
+   "kind": "evidence",
+   "title": "Press reports of completion of Bute (Mountjoy) sale of Cardiff ground rents to Western Ground Rents",
+   "date_display": "24 December 1938 (reports); completion 23 December 1938",
+   "date_sort": "1938-12-24",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0022-press-1938-bute-wgr-sale-completion/"
+  },
+  "EV-0023": {
+   "id": "EV-0023",
+   "kind": "evidence",
+   "title": "DBDT123/7 — 1939 agreement, Western Ground Rents to John Williams, with plan",
+   "date_display": "May 1939",
+   "date_sort": "1939-05-00",
+   "status": "PARTLY HELD",
+   "page": "/research/evidence/ev-0023-1939-wgr-john-williams-tenancy-plan/"
+  },
+  "EV-0025": {
+   "id": "EV-0025",
+   "kind": "evidence",
+   "title": "Surrender and re-grant of Frederick Buckler's yearly tenancy (unwritten; no written record)",
+   "date_display": "2 February 1949",
+   "date_sort": "1949-02-02",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0025-frederick-buckler-unwritten-tenancy-1949/"
+  },
+  "EV-0030": {
+   "id": "EV-0030",
+   "kind": "evidence",
+   "title": "Glamorgan Archives ACA: Cardiff County Court registers (1953 arrears, 1962 possession, 1963 committal)",
+   "date_display": "1953–1975",
+   "date_sort": "1953-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0030-cardiff-county-court-registers-aca/"
+  },
+  "EV-0035": {
+   "id": "EV-0035",
+   "kind": "evidence",
+   "title": "Western Mail: “City wants common for play-field” — Leckwith Common inquiry (Mrs Mary Doreen Buckler)",
+   "date_display": "7 May 1958 (inquiry 6 May 1958)",
+   "date_sort": "1958-05-07",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0035-western-mail-1958-leckwith-common-hearing/"
+  },
+  "EV-0038": {
+   "id": "EV-0038",
+   "kind": "evidence",
+   "title": "Hansard / Commons Journal: no petition presented against Leckwith Common order",
+   "date_display": "25 November 1958",
+   "date_sort": "1958-11-25",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0038-hansard-1958-leckwith-common-no-petition/"
+  },
+  "EV-0039": {
+   "id": "EV-0039",
+   "kind": "evidence",
+   "title": "WGR Tenancy Offers Concerning Remaining House and Garden (1959 and 1965)",
+   "date_display": "1959 and 1965",
+   "date_sort": "1959-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0039-wgr-tenancy-offers-1959-1965/"
+  },
+  "EV-0041": {
+   "id": "EV-0041",
+   "kind": "evidence",
+   "title": "Cardiff County Court possession order (farmhouse and garden) — not yet held",
+   "date_display": "11 December 1962",
+   "date_sort": "1962-12-11",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0041-cardiff-county-court-possession-order-1962/"
+  },
+  "EV-0042": {
+   "id": "EV-0042",
+   "kind": "evidence",
+   "title": "Conveyance 11 Jun 1965: Lakeside & Llandough Development Co / WGR → Glamorgan CC (Llandough school site)",
+   "date_display": "11 Jun 1965",
+   "date_sort": "1965-06-11",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0043": {
+   "id": "EV-0043",
+   "kind": "evidence",
+   "title": "Conveyance with plan, WGR to BP Pension Trust (recited as root of BP title)",
+   "date_display": "31 December 1969",
+   "date_sort": "1969-12-31",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0043-wgr-bp-pension-trust-conveyance/"
+  },
+  "EV-0050": {
+   "id": "EV-0050",
+   "kind": "evidence",
+   "title": "Licence letters from BP Pension Trust and BP Properties to Mrs Buckler (Mrs Williams)",
+   "date_display": "31 October 1974",
+   "date_sort": "1974-10-31",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0050-1974-bp-licence-letters/"
+  },
+  "EV-0080": {
+   "id": "EV-0080",
+   "kind": "evidence",
+   "title": "Court of Appeal judgment: BP Properties Ltd v Buckler [1987] EWCA Civ 2",
+   "date_display": "31 July 1987",
+   "date_sort": "1987-07-31",
+   "status": "HELD-ONLINE",
+   "page": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/"
+  },
+  "EV-0147": {
+   "id": "EV-0147",
+   "kind": "evidence",
+   "title": "HM Land Registry letter on registration history of Tŷ Mawr Farm",
+   "date_display": "23 March 2026",
+   "date_sort": "2026-03-23",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0216": {
+   "id": "EV-0216",
+   "kind": "evidence",
+   "title": "1965 contract, condition F: root of title \"a Conveyance on sale dated 25th December 1938\"",
+   "date_display": "1965",
+   "date_sort": "1965",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0216-1965-contract-condition-f-conveyance-25-december-1938/"
+  },
+  "EV-0220": {
+   "id": "EV-0220",
+   "kind": "evidence",
+   "title": "Leckwith Woods: WGR gift of c.109 acres to Cardiff council (1940–42)",
+   "date_display": "1940–Apr 1942",
+   "date_sort": "1940",
+   "status": "HELD (public online copy)",
+   "page": "/research/evidence/ev-0220-leckwith-woods-wgr-gift-1940-1942/"
+  },
+  "EV-0288": {
+   "id": "EV-0288",
+   "kind": "evidence",
+   "title": "Press search snippets, Nov 1968 – Feb 1969: Amalgamated Investment & Property bids for Western Ground Rents (Nov 1968); a counter-bid (Jan 1969); the WGR board favours Great Portland Estates (8 Feb 1969); British Petroleum makes an agreed cash bid of 17s a share, about £18–19 million, on 15 Feb 1969, to pass WGR’s properties “on to the” BP pension fund; Amalgamated’s offer lapses (18 Feb 1969)",
+   "date_display": "19 November 1968 – 18 February 1969",
+   "date_sort": "1968-11-19",
+   "status": "SOURCE PENDING (snippets read 21 Oct 2026)",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0288-snippets-only-press-on-the-1968-69-takeover-battle-for-western-ground-rents-ltd-en/"
+  },
+  "EV-0618": {
+   "id": "EV-0618",
+   "kind": "evidence",
+   "title": "Press, 1904–05: Cardiff’s Western Sewer Sub-committee completes the conveyance of the pumping-station site and sewer easements from the representatives of Lord Bute (Evening Express 23 Mar 1905; Weekly Mail 11 Jun 1904)",
+   "date_display": "11 June 1904; 23 March 1905",
+   "date_sort": "1904-06-11",
+   "status": "READ (newspaper text). The deed itself is not yet copied.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0618-cardiff-western-sewer-bute-easements-1904-1905/"
+  },
+  "EV-0620": {
+   "id": "EV-0620",
+   "kind": "evidence",
+   "title": "23 May 1975: conveyance of the farmhouse plot and other land, BP Pension Trust to BP Properties; the rest kept as \"Retained Land\"",
+   "date_display": "23 May 1975",
+   "date_sort": "1975-05-23",
+   "status": "PENDING — the deed is on the HM Land Registry file.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0620-bp-pension-trust-to-bp-properties-1975/"
+  }
+ }
+}

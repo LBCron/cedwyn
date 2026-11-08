@@ -1,0 +1,128 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in public/people.json, public/index.html. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-08T06:45:52Z",
+ "count": 12,
+ "not_in_central": [
+  "EV-0274"
+ ],
+ "items": {
+  "EV-0014": {
+   "id": "EV-0014",
+   "kind": "evidence",
+   "title": "Bute yearly agricultural tenancy to John Williams, with plan",
+   "date_display": "February 1916",
+   "date_sort": "1916-02-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0014-bute-tenancy-john-williams-1916/"
+  },
+  "EV-0023": {
+   "id": "EV-0023",
+   "kind": "evidence",
+   "title": "DBDT123/7 — 1939 agreement, Western Ground Rents to John Williams, with plan",
+   "date_display": "May 1939",
+   "date_sort": "1939-05-00",
+   "status": "PARTLY HELD",
+   "page": "/research/evidence/ev-0023-1939-wgr-john-williams-tenancy-plan/"
+  },
+  "EV-0025": {
+   "id": "EV-0025",
+   "kind": "evidence",
+   "title": "Surrender and re-grant of Frederick Buckler's yearly tenancy (unwritten; no written record)",
+   "date_display": "2 February 1949",
+   "date_sort": "1949-02-02",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0025-frederick-buckler-unwritten-tenancy-1949/"
+  },
+  "EV-0067": {
+   "id": "EV-0067",
+   "kind": "evidence",
+   "title": "Death index entry for Mary Doreen Williams, South Glamorgan, March 1983",
+   "date_display": "March 1983",
+   "date_sort": "1983-03-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0067-mary-doreen-williams-death-index/"
+  },
+  "EV-0080": {
+   "id": "EV-0080",
+   "kind": "evidence",
+   "title": "Court of Appeal judgment: BP Properties Ltd v Buckler [1987] EWCA Civ 2",
+   "date_display": "31 July 1987",
+   "date_sort": "1987-07-31",
+   "status": "HELD-ONLINE",
+   "page": "/research/evidence/ev-0080-bp-properties-v-buckler-judgment/"
+  },
+  "EV-0215": {
+   "id": "EV-0215",
+   "kind": "evidence",
+   "title": "Tithe apportionment, Landough, Cogan and Leckwith — John Williams’s holding",
+   "date_display": "c.1841",
+   "date_sort": "1841",
+   "status": "HELD (public online copy)",
+   "page": "/research/evidence/ev-0215-tithe-apportionment-john-williams-c1841/"
+  },
+  "EV-0224": {
+   "id": "EV-0224",
+   "kind": "evidence",
+   "title": "1881 census, Llandough, RG11/5288 page 2: “Llandough Home Farm”, John Williams, farmer",
+   "date_display": "Census night, 3 April 1881",
+   "date_sort": "1881-04-03",
+   "status": "HELD (photo). Transcribed from the photo, 19 Oct 2026.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0224-1881-census-llandough-rg11-5288/"
+  },
+  "EV-0225": {
+   "id": "EV-0225",
+   "kind": "evidence",
+   "title": "Trade directories, 1868–1901: John Williams at “Great House”, Llandough",
+   "date_display": "1868, 1875, 1880, 1887, 1891 and 1901",
+   "date_sort": "1868",
+   "status": "HELD (public online copy). Quotes read from the linked pages, 19 Oct 2026.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0225-trade-directories-1868-1901-john-williams-great-house/"
+  },
+  "EV-0227": {
+   "id": "EV-0227",
+   "kind": "evidence",
+   "title": "Cardiff Times: John Williams “of Llandough Farm”, guest at the Bute rent audit dinner; tenant since 1855",
+   "date_display": "16 July 1904",
+   "date_sort": "1904-07-16",
+   "status": "HELD (public online copy).",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0227-cardiff-times-1904-john-williams-tenancy-since-1855/"
+  },
+  "EV-0230": {
+   "id": "EV-0230",
+   "kind": "evidence",
+   "title": "Western Mail: “LLANDOUGH BRIDE”, wedding of Mr. Fred Buckler and Miss Mary Doreen (Nancy) Williams, of Great House Farm",
+   "date_display": "Wednesday 5 August 1936",
+   "date_sort": "1936-08-05",
+   "status": "PENDING — snippet only. Page image: British Newspaper Archive subscription.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0230-western-mail-1936-llandough-bride-buckler-williams/"
+  },
+  "EV-0243": {
+   "id": "EV-0243",
+   "kind": "evidence",
+   "title": "Barry Dock News, 23 October 1908, p.3: “Court Leet at Llandough” (court leet and court baron of the lordship of Bute)",
+   "date_display": "23 October 1908 (court held “Thursday week last”)",
+   "date_sort": "1908-10-23",
+   "status": "HELD (public online copy; OCR read in full).",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0243-barry-dock-news-1908-court-leet-john-williams-great-house/"
+  },
+  "EV-0246": {
+   "id": "EV-0246",
+   "kind": "evidence",
+   "title": "Death notices, 30 December 1864: Amy Williams, widow of John Williams of Great House farm",
+   "date_display": "30 December 1864 (death 23 December 1864)",
+   "date_sort": "1864-12-30",
+   "status": "HELD (public online copies; OCR read). VERIFIED.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0246-cardiff-times-1864-death-of-amy-williams-great-house-farm/"
+  }
+ }
+}

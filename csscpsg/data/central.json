@@ -1,0 +1,369 @@
+{
+ "source": "https://cedwyn.bucklerfamily.estate/api/catalogue",
+ "note": "This webapp's own data store: the central-catalogue fields for the record IDs cited in public/data/*.json, public/index.html, public/v2/index.html. Derived and read-only; never edit by hand (tools/sync_central.py rewrites it).",
+ "fields": [
+  "id",
+  "kind",
+  "title",
+  "date_display",
+  "date_sort",
+  "status",
+  "page"
+ ],
+ "synced_utc": "2026-11-08T05:51:36Z",
+ "count": 39,
+ "not_in_central": [],
+ "items": {
+  "EV-0006": {
+   "id": "EV-0006",
+   "kind": "evidence",
+   "title": "1877 Bute–Daniel Thomas & Son agreement (sale or quarry lease of house parcel)",
+   "date_display": "1877",
+   "date_sort": "1877-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0006-bute-thomas-agreement-1877/"
+  },
+  "EV-0008": {
+   "id": "EV-0008",
+   "kind": "evidence",
+   "title": "Reported lease of 6 November 1877 to John Williams (original unlocated)",
+   "date_display": "6 November 1877 (as reported in Mary Williams's later account; matching instrument not identified)",
+   "date_sort": "1877-11-06",
+   "status": "PENDING",
+   "page": null
+  },
+  "EV-0013": {
+   "id": "EV-0013",
+   "kind": "evidence",
+   "title": "Bute conveyance of 23 February 1905 referred to on the WA231076 file",
+   "date_display": "23 February 1905",
+   "date_sort": "1905-02-23",
+   "status": "PENDING",
+   "page": null
+  },
+  "EV-0014": {
+   "id": "EV-0014",
+   "kind": "evidence",
+   "title": "Bute yearly agricultural tenancy to John Williams, with plan",
+   "date_display": "February 1916",
+   "date_sort": "1916-02-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0014-bute-tenancy-john-williams-1916/"
+  },
+  "EV-0019": {
+   "id": "EV-0019",
+   "kind": "evidence",
+   "title": "Bute Estate to Western Ground Rents Ltd conveyance of reversion, with plan",
+   "date_display": "1938",
+   "date_sort": "1938-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0019-bute-wgr-conveyance-plan-1938/"
+  },
+  "EV-0020": {
+   "id": "EV-0020",
+   "kind": "evidence",
+   "title": "Western Ground Rents rental books and plan book (D696), c.1938–1944",
+   "date_display": "c.1938–1944",
+   "date_sort": "1938-00-00",
+   "status": "PENDING",
+   "page": null
+  },
+  "EV-0022": {
+   "id": "EV-0022",
+   "kind": "evidence",
+   "title": "Press reports of completion of Bute (Mountjoy) sale of Cardiff ground rents to Western Ground Rents",
+   "date_display": "24 December 1938 (reports); completion 23 December 1938",
+   "date_sort": "1938-12-24",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0022-press-1938-bute-wgr-sale-completion/"
+  },
+  "EV-0023": {
+   "id": "EV-0023",
+   "kind": "evidence",
+   "title": "DBDT123/7 — 1939 agreement, Western Ground Rents to John Williams, with plan",
+   "date_display": "May 1939",
+   "date_sort": "1939-05-00",
+   "status": "PARTLY HELD",
+   "page": "/research/evidence/ev-0023-1939-wgr-john-williams-tenancy-plan/"
+  },
+  "EV-0025": {
+   "id": "EV-0025",
+   "kind": "evidence",
+   "title": "Surrender and re-grant of Frederick Buckler's yearly tenancy (unwritten; no written record)",
+   "date_display": "2 February 1949",
+   "date_sort": "1949-02-02",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0025-frederick-buckler-unwritten-tenancy-1949/"
+  },
+  "EV-0032": {
+   "id": "EV-0032",
+   "kind": "evidence",
+   "title": "1955 Order 14 possession order against Frederick Buckler (not yet located)",
+   "date_display": "1955 (exact date to be confirmed)",
+   "date_sort": "1955-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0032-1955-order-14-possession-order/"
+  },
+  "EV-0034": {
+   "id": "EV-0034",
+   "kind": "evidence",
+   "title": "Writ or warrant of possession, execution record and officer's return",
+   "date_display": "on or about 4 July 1955",
+   "date_sort": "1955-07-04",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0034-writ-possession-execution-return-1955/"
+  },
+  "EV-0042": {
+   "id": "EV-0042",
+   "kind": "evidence",
+   "title": "Conveyance 11 Jun 1965: Lakeside & Llandough Development Co / WGR → Glamorgan CC (Llandough school site)",
+   "date_display": "11 Jun 1965",
+   "date_sort": "1965-06-11",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0044": {
+   "id": "EV-0044",
+   "kind": "evidence",
+   "title": "VG41 village-green registration: register entry, map and ownership section",
+   "date_display": "16 June 1970",
+   "date_sort": "1970-06-16",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0044-vg41-village-green-registration-1970/"
+  },
+  "EV-0045": {
+   "id": "EV-0045",
+   "kind": "evidence",
+   "title": "Abstract of Title, 1971 (BP Pension Trust) — Known Only from Recitals",
+   "date_display": "1971",
+   "date_sort": "1971-00-00",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0045-1971-abstract-title-bp-pension/"
+  },
+  "EV-0049": {
+   "id": "EV-0049",
+   "kind": "evidence",
+   "title": "Mary Williams's plea of ownership in BP Pension Trust's 1974 county-court action",
+   "date_display": "3 July 1974 and the 1974 proceedings",
+   "date_sort": "1974-07-03",
+   "status": "PENDING",
+   "page": "/research/evidence/ev-0049-mary-williams-plea-ownership-pleadings/"
+  },
+  "EV-0057": {
+   "id": "EV-0057",
+   "kind": "evidence",
+   "title": "Hansard: Ted Rowlands MP criticises Western Ground Rents and BP pension fund",
+   "date_display": "22 May 1980",
+   "date_sort": "1980-05-22",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0094": {
+   "id": "EV-0094",
+   "kind": "evidence",
+   "title": "Cadw barn survey photograph, 1988 (disclosed 11 June 2026)",
+   "date_display": "29 July 1988",
+   "date_sort": "1988-07-29",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0094-cadw-barn-survey-photo-1988/"
+  },
+  "EV-0095": {
+   "id": "EV-0095",
+   "kind": "evidence",
+   "title": "Cadw farmhouse survey photograph, 29 July 1988 (disclosed 11 June 2026)",
+   "date_display": "29 July 1988",
+   "date_sort": "1988-07-29",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0095-cadw-farmhouse-survey-photo-1988/"
+  },
+  "EV-0118": {
+   "id": "EV-0118",
+   "kind": "evidence",
+   "title": "Sites and Monuments Record card PRN 02038s: “building destroyed by owners”",
+   "date_display": "March 1989",
+   "date_sort": "1989-03-00",
+   "status": "HELD-ONLINE",
+   "page": null
+  },
+  "EV-0122": {
+   "id": "EV-0122",
+   "kind": "evidence",
+   "title": "European Commission of Human Rights application 14464/88 and inadmissibility decision",
+   "date_display": "lodged 3 May 1988; registered 12 December 1988; declared inadmissible 14 April 1989",
+   "date_sort": "1989-04-14",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0122-echr-application-14464-88-inadmissibility/"
+  },
+  "EV-0124": {
+   "id": "EV-0124",
+   "kind": "evidence",
+   "title": "Outline planning permission 89/01396/OUT – residential development, Great House Farm, Leckwith Road",
+   "date_display": "Application received 8th November 1989 (decision/issue date not visible on pages 1–2)",
+   "date_sort": "1989-11-08",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0124-outline-planning-permission-89-01396-out-residenti/"
+  },
+  "EV-0129": {
+   "id": "EV-0129",
+   "kind": "evidence",
+   "title": "Approved planning drawings 92/00671/RES: screen wall detail, site location plan, Llandough",
+   "date_display": "3 SEP 1992 (approval stamp); screen wall drawing dated 'July 88' (reading uncertain)",
+   "date_sort": "1992-09-03",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0133": {
+   "id": "EV-0133",
+   "kind": "evidence",
+   "title": "Ideal Homes Wales, Llandough Farm – site location map and Village Green planting plan",
+   "date_display": "Received stamp 12 JAN 1994 (Planning and Development); location map bears an earlier Borough planning stamp, partly legible as '3 SEP 199?'",
+   "date_sort": "1994-01-12",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0147": {
+   "id": "EV-0147",
+   "kind": "evidence",
+   "title": "HM Land Registry letter on registration history of Tŷ Mawr Farm",
+   "date_display": "23 March 2026",
+   "date_sort": "2026-03-23",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0148": {
+   "id": "EV-0148",
+   "kind": "evidence",
+   "title": "HM Land Registry FOI Response F260213 (13 April 2026)",
+   "date_display": "13 April 2026",
+   "date_sort": "2026-04-13",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0153": {
+   "id": "EV-0153",
+   "kind": "evidence",
+   "title": "HM Land Registry stage-two complaint decision",
+   "date_display": "25 May 2026 (date shown by file title)",
+   "date_sort": "2026-05-25",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0159": {
+   "id": "EV-0159",
+   "kind": "evidence",
+   "title": "South Wales Police response to FOI request 719/26",
+   "date_display": "16 July 2026",
+   "date_sort": "2026-07-16",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0214": {
+   "id": "EV-0214",
+   "kind": "evidence",
+   "title": "Llandough Community Council minutes, 1987: Great House Farm right of way, VG41, BP’s agents",
+   "date_display": "1987",
+   "date_sort": "1987-00-00",
+   "status": "HELD",
+   "page": null
+  },
+  "EV-0216": {
+   "id": "EV-0216",
+   "kind": "evidence",
+   "title": "1965 contract, condition F: root of title \"a Conveyance on sale dated 25th December 1938\"",
+   "date_display": "1965",
+   "date_sort": "1965",
+   "status": "HELD",
+   "page": "/research/evidence/ev-0216-1965-contract-condition-f-conveyance-25-december-1938/"
+  },
+  "EV-0244": {
+   "id": "EV-0244",
+   "kind": "evidence",
+   "title": "Welsh Government ATISN 26-0010 disclosure response: retention and destruction schedules; searches under the farm name, Western Ground Rents Ltd and BP Properties Ltd",
+   "date_display": "19 October 2026 (emailed 10:25 BST)",
+   "date_sort": "2026-10-19",
+   "status": "HELD — open the letter (PDF, Wayback archive). Public copy: the requester’s personal email address is redacted; nothing else is changed.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0244-welsh-government-atisn-26-0010-disclosure-response-19-oct-2026/"
+  },
+  "EV-0245": {
+   "id": "EV-0245",
+   "kind": "evidence",
+   "title": "Cadw / Welsh Government ATISN 27589 response (ref qA2496208): request for July–December 1988 listing papers refused under FOIA s.14(2)",
+   "date_display": "19 October 2026 (emailed 14:26 BST)",
+   "date_sort": "2026-10-19",
+   "status": "HELD — open the letter (PDF, Wayback archive). Public copy: the requester’s personal email address is redacted; nothing else is changed.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0245-cadw-atisn-27589-response-s14-2-19-oct-2026/"
+  },
+  "EV-0249": {
+   "id": "EV-0249",
+   "kind": "evidence",
+   "title": "London Gazette, 3 July 1996 (Issue 54455, p. 8982): Western Ground Rents Ltd (no. 342092) placed in members’ voluntary liquidation with four BP companies, registered office BP House",
+   "date_display": "3 July 1996 (liquidator appointed 26 June 1996)",
+   "date_sort": "1996-07-03",
+   "status": "HELD (public online copy; read 19 Oct 2026)",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0249-london-gazette-3-jul-1996-western-ground-rents-bp-group-liquidation/"
+  },
+  "EV-0263": {
+   "id": "EV-0263",
+   "kind": "evidence",
+   "title": "Commons Registration Act 1965 s.5 and SI 1968/989: registrations were publicised by public notice only; Glamorgan County Council’s London Gazette notices of 22 October 1968 and 24 October 1969; second objection period for VG41 ran 1 May 1970 – 31 July 1972",
+   "date_display": "1968–1972 (objection period ended 31 July 1972)",
+   "date_sort": "1972-07-31",
+   "status": "HELD (texts read 19 Oct 2026); the 1970 Glamorgan second-period notice listing VG41 NOT FOUND (Gazette OCR)",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0263-commons-registration-1965-publicity-glamorgan-notices-vg41/"
+  },
+  "EV-0265": {
+   "id": "EV-0265",
+   "kind": "evidence",
+   "title": "Registration background: compulsory registration of title began in the Vale of Glamorgan on 1 December 1975 (SI 1975/160); the solicitor’s certificate on first registration (LRR 1925 r.29; 1989 text); the HMLR “about to be registered” Gazette notices ran only to about May 1975",
+   "date_display": "1 December 1975 (compulsory registration)",
+   "date_sort": "1975-12-01",
+   "status": "HELD (texts read 16–19 Oct 2026); the 1983 Form 1C and r.29 wording as used in Feb 1983 NOT SEEN",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0265-hmlr-registration-background-compulsory-1975-r29-certificate/"
+  },
+  "EV-0272": {
+   "id": "EV-0272",
+   "kind": "evidence",
+   "title": "Cadw listed-building records 13430, 13431, 13432: the Llandough community resurvey list was issued on 6 April 1989 (church 4 June 1989), after the December 1988 demolition",
+   "date_display": "6 April 1989 (designation dates); survey 1988",
+   "date_sort": "1989-04-06",
+   "status": "HELD (public record, read 20 Oct 2026)",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0272-cadw-1989-llandough-resurvey-list-13430-13431-13432/"
+  },
+  "EV-0275": {
+   "id": "EV-0275",
+   "kind": "evidence",
+   "title": "London Gazette, 30 October 1990, 22 October 1991 and 20 June 1997: Welsh Office proposals to stop up parts of Old Barry Road, Llandough under s.247 TCPA 1990 for residential development (refs ZC 510-5-7-10 and ZC510-5-72-2)",
+   "date_display": "30 October 1990; 22 October 1991; 20 June 1997",
+   "date_sort": "1990-10-30",
+   "status": "HELD (notices read 20 Oct 2026)",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0275-london-gazette-old-barry-road-llandough-stopping-up-1990-1991-1997/"
+  },
+  "EV-0277": {
+   "id": "EV-0277",
+   "kind": "evidence",
+   "title": "London Gazette, 3 July 1996 (p.8990) and 18 April 1997 (p.4683): Western Ground Rents Ltd’s members’ voluntary winding-up: notice to creditors (“All known Creditors have been or will be paid in full”) and final meetings on 16 May 1997 to lay an account of how “the property of the Companies have been disposed of”",
+   "date_display": "26 June 1996 (notice); 16 May 1997 (final meetings)",
+   "date_sort": "1996-06-26",
+   "status": "HELD (notices read 20 Oct 2026)",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0277-london-gazette-1996-1997-western-ground-rents-creditors-and-final-meetings/"
+  },
+  "EV-0287": {
+   "id": "EV-0287",
+   "kind": "evidence",
+   "title": "London Gazette, 31 October 1958 (Issue 41537), p.6652: Ministry of Housing and Local Government (Welsh Office) notice, 27 October 1958, of intention to lay before Parliament “the City of Cardiff (Leckwith Common) Compulsory Purchase Order, 1957, confirmed by him on the 8th September 1958, under section 5 of the Physical Training and Recreation Act, 1937” (Statutory Orders (Special Procedure) Act, 1945)",
+   "date_display": "27 October 1958 (notice); 31 October 1958 (publication); order confirmed 8 September 1958",
+   "date_sort": "1958-10-27",
+   "status": "HELD (notice read 21 Oct 2026)",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0287-london-gazette-31-oct-1958-p-6652-the-city-of-cardiff-leckwith-common-compulsory-p/"
+  },
+  "EV-0293": {
+   "id": "EV-0293",
+   "kind": "evidence",
+   "title": "The 1994 excavation north of St Dochdwy’s: the HER records, the published report, the Museum Wales accession and Burial 631",
+   "date_display": "1994 (excavation); 28 Jul 1994 (donation); 2005 (published report); 2 May 2007 (museum article); HER record compiled 12 Mar 2004, updated 24 Aug 2024",
+   "date_sort": "1994-07-28",
+   "status": "HELD (public online records, read 21 Oct 2026). Cotswold Archaeological Trust Report 94213 and the 2005 full text: see the Archaeology and Heritage page.",
+   "page": "https://cedwyn.bucklerfamily.estate/research/evidence/ev-0293-llandough-1994-cemetery-excavation-her-ggat02272s-museum-wales-95-56h-burial-631/"
+  }
+ }
+}
