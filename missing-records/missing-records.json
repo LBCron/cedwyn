@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-08",
- "count": 86,
+ "count": 88,
  "items": [
   {
    "mr": "MR-0001",
@@ -1531,6 +1531,42 @@
    ],
    "search_record": [],
    "url": "/research/missing-records/mr-0086/"
+  },
+  {
+   "mr": "MR-0087",
+   "title": "The applicant's copy of the list of documents delivered with the February 1983 first-registration application for the farmhouse and garden (title WA240304)",
+   "date": "1983-02",
+   "status": "NOT YET ASKED",
+   "holder": "The applicant's side: the deed records of BP Properties Ltd and its successors, or the solicitors who lodged the 1983 application. The Registry's copy is MR-0020.",
+   "basis": "statute (Land Registration Rules 1925, r.20(i)-(iv), text read in a c.1930 printing of the rules); cross-reference (HM Land Registry document list for WA240304, 30 Jul 2026; MR-0020); practice (return of deeds with the applicant's copy, not checked)",
+   "why": "Rule 20 of the Land Registration Rules 1925, as printed in a statute collection of about 1930, required an application for first registration to be accompanied by every original deed and document relating to the title in the applicant's possession or control (abstracts of title, contracts and counsel's opinions included), a copy or abstract of the latest document of title, particulars by plan, and 'a list in triplicate of all documents delivered'. The application for the farmhouse and garden (WA240304) was made by BP Properties Ltd on 23 February 1983. A list in three copies should therefore have existed, and in ordinary conveyancing practice one copy comes back to the applicant's solicitors with the returned deeds (practice, not checked for this file). That list would show which documents BP Properties Ltd showed as its title: the May 1975 conveyance (MR-0050), and whether the 1938 conveyance, the 1969 conveyance or any abstract went in. The Registry's own copy and examination papers are MR-0020; the Registry's document list of 30 July 2026 keeps only the 1975 conveyance and plans for this title. Against: the rule allowed the Registrar to direct otherwise; amendments to rule 20 between 1930 and 1983 are not checked; a list that does not survive is a records gap, not evidence of anything done wrong.",
+   "refs": [
+    "MR-0020",
+    "MR-0050"
+   ],
+   "search_record": [],
+   "url": "/research/missing-records/mr-0087/"
+  },
+  {
+   "mr": "MR-0088",
+   "title": "Glamorgan County Naturalists' Trust site files, survey records, maps and photographs for Llandough and Leckwith, 1961–2002",
+   "date": "1961-2002",
+   "status": "NOT HELD BY THE WILDLIFE TRUST; POSSIBLE COPIES AT SEWBREC, NOT YET ASKED",
+   "holder": "South East Wales Biodiversity Records Centre (digitised Mary Gillham archive), not yet asked. The Wildlife Trust of South and West Wales holds nothing in the office (reply of 7 Nov 2026).",
+   "basis": "practice (county naturalists' trust site files and survey records, 1961–2002); cross-reference (SSSI 0524 notification, MR-0083; the Trust's reply of 7 Nov 2026 pointing to the Mary Gillham archive at SEWBReC)",
+   "why": "The Glamorgan County Naturalists' Trust, founded in January 1961 and later the Glamorgan Wildlife Trust, merged into the present Wildlife Trust of South and West Wales in 2002. A county naturalists' trust of that period kept site files and survey notes on woodland and grassland it watched or proposed for protection, and the wooded slopes between Llandough and Leckwith were notified as an SSSI (0524) in the same years (MR-0083). Such files would record who was approached as owner or occupier of the land, a third party's contemporary account of who held and worked it. On 7 Nov 2026 the Trust replied that it does not hold any data on the site, that it 'may have had some historically', and that some of the paperwork was lost in a fire in about 2003; it pointed to the digitised archive of the naturalist Mary Gillham, held by the South East Wales Biodiversity Records Centre (SEWBReC), as the most likely home of anything that survived. Against: the Trust could not say any file on this site ever existed; a naturalist's survey report would describe habitat and species, not tenure, and may not name the farm. Parcel not identified: the woodland (Parcel A woodland) and the Leckwith slopes are the likely subjects; a grid reference or site name in a surviving report would identify it.",
+   "refs": [
+    "MR-0083"
+   ],
+   "search_record": [
+    [
+     "2026-11-07",
+     "The Wildlife Trust of South and West Wales",
+     "email reply to a records enquiry of 2 Nov 2026 about Glamorgan County Naturalists' Trust site files for Llandough-juxta-Penarth and Leckwith, 1961–2002",
+     "\"We don't currently have any data relating to this site in the office\" and \"some of the relevant paperwork was lost in a fire in about 2003\" (no list of what was lost; the reply points to the Mary Gillham archive at SEWBReC)"
+    ]
+   ],
+   "url": "/research/missing-records/mr-0088/"
   }
  ]
 }
